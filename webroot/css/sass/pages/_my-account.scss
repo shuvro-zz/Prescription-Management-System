@@ -1,0 +1,117 @@
+.account {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr:nth-of-type(odd) {
+            background: $white;
+        }
+        td, th {
+            padding: 14px 8px;
+            border-bottom: 1px solid $grayish-light-blue;
+        }
+        th {
+            background: $white;
+            color: $black;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 18px 6px;
+            border-bottom: 1px solid $grayish-light-blue;
+            text-align: left;
+        }
+
+        td {
+            a {
+                font-weight: 600;
+
+            }
+            .link-orange {
+                color: $orange;
+            }
+
+            address {
+                padding: 5px 10px;
+                font-weight: 400;
+                text-transform: capitalize;
+                overflow: hidden;
+                max-width: 250px;
+                max-height: 60px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+    }
+}
+
+.table-container {
+    margin-bottom: 30px;
+
+    tbody {
+        max-height: 1000px;
+        overflow: auto;
+    }
+
+    .stat-completed {
+        padding-left: 18px;
+        position: relative;
+
+        &:before {
+            content: "";
+            @include absolute(4px, 0, 0, auto);
+            @include size(10px, 10px);
+            background: $success;
+            @include border-radius(50%);
+        }
+    }
+    .stat-active {
+        padding-left: 18px;
+        position: relative;
+
+        &:before {
+            content: "";
+            @include absolute(4px, 0, 0, auto);
+            @include size(10px, 10px);
+            background: $error;
+            @include border-radius(50%);
+        }
+    }
+}
+
+.account {
+    h5 {
+        margin-bottom: 0px;
+    }
+}
+
+.account-sidebar {
+    padding: 54px 36px;
+    max-width: 360px;
+    border-radius: 0;
+    border: medium none;
+
+    .user-details {
+
+        margin-top: 40px;
+
+        span {
+            color: $black;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        a {
+            display: block;
+            margin: 25px 0;
+            font-weight: 600;
+        }
+
+        .link {
+            color: $orange;
+            text-decoration: underline;
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+    }
+}

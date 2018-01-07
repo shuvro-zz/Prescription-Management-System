@@ -1,0 +1,257 @@
+/* -------------------------------------------
+Sidebar style here... */
+.left-sidebar {
+    width: 234px;
+    height: -webkit-calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    background-color: $desaturate-blue;
+    padding: 40px 0;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    overflow-y: auto;
+    @include breakpoint ($tablet) {
+        text-align: center;
+        width: 124px;
+    }
+}
+
+.navigation-item {
+    @include breakpoint ($tablet) {
+        padding-left: 0 !important;
+    }
+    .sub-menu {
+        max-width: 234px;
+        background: #242838;
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0 -30px !important;
+
+        @include breakpoint($tablet) {
+            width: 124px;
+            margin: 0 0 !important;;
+        }
+
+        li {
+            padding: 0px;
+        }
+
+        .active a {
+            color: $modarate-cyan;
+            border-left: 4px solid $modarate-cyan;
+            outline: none;
+        }
+
+        a {
+            width: 100%;
+            height: 50px;
+            font-family: "Lato", sans-serif;
+            font-size: 13px;
+            color: #9aaac3;
+            padding-left: 30px;
+            text-transform: capitalize;
+            white-space: nowrap;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #242838;
+            border-bottom: 1px solid #1d202c;
+
+            @include breakpoint ($tablet) {
+                padding-left: 0px;
+                line-height: 50px;
+            }
+
+            &:hover {
+                color: $modarate-cyan;
+                border-left: 4px solid $modarate-cyan;
+            }
+
+            &:active {
+                color: $modarate-cyan;
+                border-left: 4px solid $modarate-cyan;
+                outline: none;
+            }
+
+        }
+
+    }
+
+    .sub-navigation {
+
+        &:after {
+            content: "\f105";
+            position: absolute;
+            left: auto;
+            font-size: 16px;
+            right: 9%;
+            color: #ccc;
+            top: calc(40% - 10px);
+            bottom: auto;
+            font-family: "fontawesome";
+        }
+
+        &.active {
+            &:after {
+                content: "\f107";
+                position: absolute;
+                left: auto;
+                font-size: 16px;
+                right: 9%;
+                color: #ccc;
+                top: calc(40% - 10px);
+                bottom: auto;
+                font-family: "fontawesome";
+            }
+
+        }
+
+        li {
+            padding: 0;
+        }
+
+        span {
+
+        }
+        //&:last-child {
+        //  border-bottom: none;
+        //}
+    }
+}
+
+.navigation-item {
+    .sub-menu-attendees {
+        max-width: 234px;
+        background: #242838;
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0 -30px !important;
+
+        @include breakpoint($tablet) {
+            width: 124px;
+            margin: 0 0 !important;;
+        }
+
+        li {
+            padding: 0px;
+        }
+
+        .active a {
+            color: $modarate-cyan;
+            border-left: 4px solid $modarate-cyan;
+            outline: none;
+        }
+
+        a {
+            width: 100%;
+            height: 50px;
+            font-family: "Lato", sans-serif;
+            font-size: 13px;
+            color: #9aaac3;
+            padding-left: 30px;
+            text-transform: capitalize;
+            white-space: nowrap;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #242838;
+            border-bottom: 1px solid #1d202c;
+
+            @include breakpoint ($tablet) {
+                font-size: 12px;
+                padding-left: 0px;
+                line-height: 50px;
+            }
+
+            &:hover {
+                color: $modarate-cyan;
+                border-left: 4px solid $modarate-cyan;
+            }
+
+            &:active {
+                color: $modarate-cyan;
+                border-left: 4px solid $modarate-cyan;
+                outline: none;
+            }
+
+        }
+
+    }
+
+    .sub-navigation {
+
+        &:after {
+            content: "\f105";
+            position: absolute;
+            left: auto;
+            font-size: 16px;
+            right: 9%;
+            color: #ccc;
+            top: calc(40% - 10px);
+            bottom: auto;
+            font-family: "fontawesome";
+
+            @include breakpoint ($tablet) {
+                right: 6%;
+                top: calc(48% - 10px);
+
+            }
+
+        }
+
+        &.active {
+            &:after {
+                content: "\f107";
+                position: absolute;
+                left: auto;
+                font-size: 16px;
+                right: 9%;
+                color: #ccc;
+                top: calc(40% - 10px);
+                bottom: auto;
+                font-family: "fontawesome";
+
+                @include breakpoint ($tablet) {
+                    right: 6%;
+                    top: calc(48% - 10px);
+
+                }
+
+            }
+
+        }
+
+        li {
+            padding: 0;
+        }
+
+        span {
+
+        }
+        //&:last-child {
+        //  border-bottom: none;
+        //}
+    }
+}
+
+li.navigation-item.orders.active .sub-menu .navigation-item.active a {
+    color: #FFFFFF;
+}
+
+li.navigation-item.orders.active .sub-menu .navigation-item a {
+    color: #9aaac3;
+}
+
+.leftside-navigation .navigation-item.active .sub-menu-attendees
+li {
+    a {
+        color: #9aaac3;
+    }
+}
+
+.leftside-navigation .navigation-item.active .sub-menu-attendees .navigation-item.active a {
+    color: #FFFFFF;
+}

@@ -1,0 +1,51 @@
+/* -------------------------------------------
+pop up styles here */
+.status-list {
+    @include flex-wrap(wrap);
+    margin: 20px 0 30px 0;
+
+    > * {
+        @include display-flex;
+        @include align-items(center);
+        line-height: 20px;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 10px;
+        position: relative;
+        @include flex-wrap(wrap);
+        @include flex-basis(calc(25%));
+
+        &.status {
+
+            &:before {
+                content: "";
+                @include size(25px, 25px);
+                display: block;
+                font-size: 25px;
+                @include absolute(auto, auto, auto, 0);
+            }
+
+            &.success-icon {
+                &:before {
+                    background: url("/css/admin_styles/images/sucess-icon.png") no-repeat;
+                }
+            }
+
+            &.failed-icon {
+                &:before {
+                    background: url("/css/admin_styles/images/failed-icon.png") no-repeat;
+                }
+            }
+
+        }
+    }
+}
+
+.model-event {
+    h5 {
+        text-transform: capitalize;
+    }
+    .modal-dialog {
+        width: 720px;
+    }
+}

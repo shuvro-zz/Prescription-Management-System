@@ -1,0 +1,45 @@
+/* -------------------------------------------
+Tab styles here */
+
+.icon{
+    display: inline-block;
+}
+
+.calendar{
+    @include spr-sprite(calendar-icon);
+    @include size(22px, 25px);
+}
+
+.location{
+    @include spr-sprite(location-icon);
+    @include size(21px, 28px);
+}
+
+.location-sml{
+    background: url("../images/spr/location-sml.png") no-repeat;
+    @include size(17px, 23px);
+}
+
+.bigest-event{
+    background: url("../images/spr/bigest-event.png") no-repeat;
+    @include size(48px, 55px);
+}
+.online-ticket{
+    background: url("../images/spr/online-ticket.png") no-repeat;
+    @include size(48px, 56px);
+}
+.video-stram{
+    background: url("../images/spr/video-stream.png") no-repeat;
+    @include size(48px, 56px);
+}
+
+.kpcc{
+    background: url("../images/spr/kpc-icon.png") no-repeat;
+    @include size(19px, 16px);
+}
+
+.price-icon{
+    background: url("../images/spr/icon-price.png") no-repeat;
+    @include size(20px, 21px);
+}
+

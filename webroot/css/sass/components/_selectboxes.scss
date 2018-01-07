@@ -1,0 +1,74 @@
+/* -------------------------------------------
+select menu */
+.select-style:before {
+  content: "\f107 ";
+  font-family: "fontawesome";
+  position: absolute;
+  left: auto;
+  height: 20px;
+  width: 20px;
+  right: 4px;
+  background-color: $white;
+  text-align: center;
+  top: calc(100% - 30px);
+  bottom: auto;
+}
+
+.select-style select {
+  padding: 5px 6px 0 8px;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  background-color: #FFFFFF;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.select-style select:focus {
+  outline: none;
+}
+
+
+.countryPicker{
+  width: 100%;
+  button{
+    @include border-radius(0);
+  }
+
+  .bs-caret{
+    position: relative;
+    top: 4px;
+  }
+  .flag{
+    float: left;
+    margin-right: 10px;
+  }
+
+  .dropdown-toggle {
+    .filter-option{
+      line-height: 32px;
+      text-transform: capitalize;
+    }
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    li{
+      overflow: hidden;
+      a{
+        font-size: 14px;
+        line-height: 32px;
+        text-transform: capitalize;
+        padding: 0 0 0 12px;
+
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+  }
+}
+

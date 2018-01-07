@@ -1,0 +1,60 @@
+/* -------------------------------------------
+Tab styles here */
+.alert{
+  position: relative;
+  color: #696969;
+  &.alert-success{
+    background: $white;
+    border-color: #9fd460;
+    padding-left: 90px;
+    &::before{
+      content: "";
+      width: 60px;
+      height: 100%;
+      border-radius: 3px;
+      background: url(../images/alert-check.png) no-repeat center;
+      @include absolute(0, auto, auto, 0);
+      background-color: #9fd460;
+    }
+    strong{
+      color:#9fd460 ;
+      font-weight: 700;
+    }
+  }
+  &.alert-warning{
+    background: $white;
+    border-color: #f4c470;
+    padding-left: 90px;
+    &::before{
+      content: "";
+      width: 60px;
+      height: 100%;
+      border-radius: 3px;
+      background: url(../images/alert-warning.png) no-repeat center;
+      @include absolute(0, auto, auto, 0);
+      background-color: #f4c470;
+    }
+    strong{
+      color:#f4c470 ;
+      font-weight: 700;
+    }
+  }
+  &.alert-danger{
+    background: $white;
+    border-color: #f37868;
+    padding-left: 90px;
+    &::before{
+      content: "";
+      width: 60px;
+      height: 100%;
+      border-radius: 3px;
+      background: url(../images/alert-danger.png) no-repeat center;
+      @include absolute(0, auto, auto, 0);
+      background-color: #f37868;
+    }
+    strong{
+      color:#f37868 ;
+      font-weight: 700;
+    }
+  }
+}

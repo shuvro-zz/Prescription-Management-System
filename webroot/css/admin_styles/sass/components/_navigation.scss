@@ -1,0 +1,363 @@
+/* -------------------------------------------
+Navigation styles here */
+.leftside-navigation,
+.right-sidebar {
+    ul {
+        padding: 0;
+        margin: 0;
+        @include list-style;
+    }
+}
+
+.leftside-navigation {
+
+    .navigation-item {
+        padding-left: 30px;
+        margin-bottom: 1px;
+        position: relative;
+
+        a {
+            @include size(100%, 58px);
+            font-family: $lato;
+            font-size: 13px;
+            color: $link-color;
+            font-weight: 500;
+            text-transform: uppercase;
+            white-space: nowrap;
+            position: relative;
+            @include display-flex;
+            @include align-items(center);
+
+            @include breakpoint($tablet) {
+                font-size: 10px;
+                @include flex-direction(column);
+            }
+
+            .nav-icon {
+                width: 40px;
+                @include breakpoint($tablet) {
+                    width: auto;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+
+        &.active {
+            a {
+                color: $white;
+            }
+
+            &.dashboard {
+                .icon {
+                    @include spr-sprite(icon-dasboard-hover);
+                }
+            }
+            &.events {
+                .icon {
+                    @include spr-sprite(icon-event-hover);
+                }
+            }
+            &.ecommerce {
+                .icon {
+                    @include spr-sprite(icon-ecommerce-hover);
+                }
+            }
+            &.users,
+            &.attendees {
+                .icon {
+                    @include spr-sprite(icon-user-hover);
+                }
+            }
+            &.venues {
+                .icon {
+                    @include spr-sprite(icon-venues-hover);
+                }
+            }
+            &.pages {
+                .icon {
+                    @include spr-sprite(icon-pages-hover);
+                }
+            }
+            &.transactions {
+                .icon {
+                    @include spr-sprite(icon-reports-hover);
+                }
+            }
+            &.settings {
+                .icon {
+                    @include spr-sprite(icon-settings-hover);
+                }
+            }
+
+
+            &.categories {
+                .icon {
+                    @include spr-sprite(icon-dasboard-hover);
+                }
+            }
+            &.orders {
+                .icon {
+                    @include spr-sprite(icon-orders-hover);
+                }
+            }
+            &.customers {
+                .icon {
+                    @include spr-sprite(icon-dasboard-hover);
+                }
+            }
+            &.reports {
+                .icon {
+                    @include spr-sprite(icon-reports-hover);
+                }
+            }
+        }
+
+        &.dashboard {
+            a {
+                .icon {
+                    @include spr-sprite(icon-dasboard);
+                    @include size(19px, 19px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-dasboard-hover);
+                    }
+                }
+            }
+        }
+        &.events {
+            a {
+                .icon {
+                    @include spr-sprite(icon-event);
+                    @include size(16px, 20px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-event-hover);
+                    }
+                }
+            }
+        }
+        &.ecommerce {
+            a {
+                .icon {
+                    @include size(19px, 19px);
+                    @include spr-sprite(icon-ecommerce);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-ecommerce-hover);
+                    }
+                }
+            }
+        }
+        &.users,
+        &.attendees {
+            a {
+                .icon {
+                    @include spr-sprite(icon-user);
+                    @include size(19px, 20px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-user-hover);
+                    }
+                }
+            }
+        }
+        &.venues {
+            a {
+                .icon {
+                    @include spr-sprite(icon-venues);
+                    @include size(16px, 20px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-venues-hover);
+                    }
+                }
+            }
+        }
+        &.pages {
+            a {
+                .icon {
+                    @include spr-sprite(icon-pages);
+                    @include size(16px, 20px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-pages-hover);
+                    }
+                }
+            }
+        }
+        &.transactions {
+            a {
+                .icon {
+                    @include spr-sprite(icon-reports);
+                    @include size(22px, 16px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-reports-hover);
+                    }
+                }
+            }
+        }
+        &.settings {
+            a {
+                .icon {
+                    @include spr-sprite(icon-settings);
+                    @include size(19px, 19px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-settings-hover);
+                    }
+                }
+            }
+        }
+        &.pages {
+            a {
+                .icon {
+                    @include spr-sprite(icon-pages);
+                    @include size(16px, 20px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-pages-hover);
+                    }
+                }
+            }
+        }
+
+
+        &.categories {
+            a {
+                .icon {
+                    @include spr-sprite(icon-dasboard);
+                    @include size(19px, 19px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-dasboard-hover);
+                    }
+                }
+            }
+        }
+        &.orders {
+            a {
+                .icon {
+                    @include spr-sprite(icon-orders);
+                    @include size(19px, 19px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-orders-hover);
+                    }
+                }
+            }
+        }
+        &.customers {
+            a {
+                .icon {
+                    @include spr-sprite(icon-dasboard);
+                    @include size(19px, 19px);
+                }
+
+                &:hover {
+                    .icon {
+                        @include spr-sprite(icon-dasboard-hover);
+                    }
+                }
+            }
+        }
+        &.reports {
+            a {
+                .icon {
+                    background: url("../images/spr/icon-reports.png") no-repeat;
+                    @include size(22px, 16px);
+                }
+
+                &:hover {
+                    .icon {
+                        background: url("../images/spr/icon-reports-hover.png") no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.right-sidebar {
+    ul {
+        li {
+            margin-bottom: 23px;
+            @include breakpoint($tablet) {
+                margin-bottom: 15px;
+            }
+            a {
+                @include display-flex;
+                @include align-items(center);
+                font-size: 12px;
+                color: #909193;
+                font-weight: 600;
+                text-transform: uppercase;
+
+                @include breakpoint($tablet) {
+                    font-size: 11px;
+                    line-height: 18px;
+                }
+
+                span {
+                    @include circle;
+                    @include size(23px, 23px);
+                    background-color: $grayish-light;
+                    color: #c6c9cd;
+                    margin-right: 26px;
+
+                    @include breakpoint($tablet) {
+                        margin-right: 16px;
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    color: $vivid-blue;
+                    text-decoration: none;
+
+                    span {
+                        background-color: $vivid-blue;
+                        color: $white;
+                    }
+                }
+            }
+
+            &.active {
+                a {
+                    color: $modarate-cyan;
+                    span {
+                        background-color: $modarate-cyan;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

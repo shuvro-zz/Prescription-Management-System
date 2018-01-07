@@ -1,0 +1,278 @@
+.wizard-config {
+
+    .cancel{
+        margin-bottom: 30px;
+    }
+
+    .select-style:before {
+        top: 39px;
+        right: 30px;
+    }
+
+    .flex-container {
+        display: flex !important;
+    }
+    .error {
+        color: red !important;
+    }
+
+    .input.text{
+        position: relative !important;
+    }
+
+    .container {
+        margin: 40px auto;
+        max-width: 982px;
+        height: auto;
+
+        @include breakpoint($smart-phone){
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+
+    .hero-heading {
+        font-size: 22px;
+        display: block;
+        color: $black;
+        margin-bottom: 20px;
+        position: relative;
+
+        &:after {
+            background-color: $orange;
+            bottom: -14px;
+            content: "";
+            height: 2px;
+            left: calc(52% - 35px);
+            right: auto;
+            position: absolute;
+            width: 35px;
+        }
+    }
+
+    .setup-logo {
+        margin-bottom: 15px;
+    }
+
+    .cradit-part {
+        margin-top: 20px;
+    }
+
+    .set-up-wrpper {
+        background-color: #f0f3f8;
+        border: 1px solid #d7d7d7;
+        padding: 64px 86px;
+
+        @include breakpoint($smart-phone){
+            border-right: none;
+            border-left: none;
+            padding-right: 5px;
+            padding-left: 5px;
+
+            .row{
+                margin: 0;
+                .col-sm-3,
+                .col-sm-6,
+                .col-sm-12 {
+                    padding: 0;
+                }
+            }
+        }
+
+        a {
+            color: #525355;
+            font-weight: 600;
+            text-decoration: none;
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        .subdomain.email {
+            border-left: 2px solid $gray;
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+
+        .form-row{
+            position: relative;
+        }
+    }
+
+    .btn-continue {
+        @extend button;
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+        text-align: center !important;
+        display: inline-block;
+    }
+
+    .uploader-thumbs {
+        flex-basis: 200px;
+    }
+
+    .multiselect-container {
+        list-style-type: none;
+        margin: 0;
+        max-height: 220px;
+        overflow: auto;
+        padding: 0 20px 20px;
+        position: absolute;
+        text-align: left;
+        width: 100%;
+
+        li {
+            float: left;
+            overflow: hidden;
+            padding: 0 30px 10px 10px;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 33%;
+
+            a {
+                &:focus {
+                    outline: none;
+                }
+                label {
+                    border: medium none;
+                    cursor: pointer;
+                    float: left;
+                    height: 100%;
+                    margin: 10px 0;
+                    padding: 3px 0 3px 20px;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+}
+
+.stepper-bar {
+    @include size (728px, auto);
+    min-height: 0;
+    margin: 10px auto 26px auto;
+}
+
+b, strong {
+    font-weight: 900;
+}
+
+.stepper-bar_supporting-text {
+    width: 100%;
+    padding: 0;
+}
+
+.mdl-stepper-horizontal-alternative {
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+
+    .mdl-stepper-step {
+        display: table-cell;
+        padding: 24px 0;
+        position: relative;
+        width: 25%;
+
+        &:last-child {
+            .mdl-stepper-bar-right {
+                display: none;
+            }
+        }
+
+        &.active-step-plus::before {
+            @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+            content: "";
+            height: 4px;
+            left: -45%;
+            position: absolute;
+            right: auto;
+            top: 36px;
+            width: 100%;
+            z-index: 4;
+        }
+        &.active-step-plus::before {
+            @extend .active-step-plus;
+        }
+        &.active-step-plus::before {
+            @extend .active-step-plus;
+        }
+
+        &.active-step {
+            .mdl-stepper-circle {
+                @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+            }
+
+            .mdl-stepper-title {
+                color: rgba(0, 0, 0, 0.87);
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .mdl-stepper-optional {
+                color: #4b4d4f;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+
+        .mdl-stepper-circle {
+            background-color: #c6cbd4;
+            border-radius: 50%;
+            color: $white;
+            font-size: 12px;
+            height: 24px;
+            line-height: 2em;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            width: 24px;
+            z-index: 9;
+            margin-bottom: 10px;
+        }
+
+        .mdl-stepper-title,
+        .mdl-stepper-optional {
+            color: rgba(0, 0, 0, 0.26);
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+            @include breakpoint($smart-phone){
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+
+        .mdl-stepper-bar-right {
+            border-top: 4px solid #c6cbd4;
+            height: 4px;
+            position: absolute;
+            top: 36px;
+            left: 50%;
+            position: absolute;
+            right: auto;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .mdl-stepper-bar-left {
+            left: 0;
+            margin-right: 20px;
+            right: 50%;
+        }
+
+    }
+}
+
+.input.password {
+    position: relative;
+}
+
+.input.text {
+    position: relative;
+}
+
+.input.email {
+    position: relative;
+}

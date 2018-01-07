@@ -1,0 +1,243 @@
+.order-details {
+    .header-wrapper {
+        height: 125px;
+        padding: 20px 0;
+        background: #fff;
+        border-bottom: 1px solid #e8e8e8;
+        margin: 30px 0;
+        display: flex;
+    }
+    .logo {
+        width: 32%;
+        float: left;
+    }
+    .media, .media-body {
+        overflow: visible;
+    }
+    .address {
+    }
+    .student-info {
+        width: 40%;
+        float: left;
+        min-height: 120px;
+        padding: 30px 0px;
+        margin-bottom: 25px;
+    }
+    .order-info {
+        float: right;
+        margin-bottom: 30px;
+    }
+    .w-b {
+        border-right: 2px solid #fff;
+    }
+    .text-bold {
+        font-weight: 700;
+        line-height: 30px;
+        margin-right: 15px;
+        display: inline-block;
+        min-width: 190px;
+        position: relative;
+        &:after {
+            content: ":";
+            position: absolute;
+            font-weight: 900;
+            right: 10px;
+        }
+    }
+    h4.invoice {
+        font-size: 24px;
+        color: #222;
+        text-transform: uppercase;
+    }
+    .invoice-black {
+        text-align: right;
+        font-weight: 900;
+        color: #222;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+    span.info-button {
+        display: block;
+        padding: 10px 30px;
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+        float: left;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    .section.details {
+        padding: 12px 0px;
+    }
+    thead tr th {
+        padding: 15px;
+        background: #383838;
+        color: #fff;
+    }
+    .section.details span.label {
+        font-size: 16px;
+        text-align: left !important;
+        padding: 5px 0;
+        line-height: 11px;
+        color: #222;
+        font-weight: 600;
+        display: block;
+        min-width: 130px;
+        min-height: 32px;
+        @include text-truncate;
+    }
+    span.total-button {
+        padding: 10px 40px;
+        color: #fff;
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+        font-size: 32px;
+       // margin-right: 70px;
+   }
+   .order-details .instruction-qr-code {
+    margin: 30px 0;
+    display: block;
+    float: left;
+}
+span.summary {
+        //float: right;
+        width: calc(100% - 142px);
+    }
+
+    spac.section-head {
+        text-transform: uppercase;
+        font-weight: 600;
+        display: block;
+    }
+    table tr:nth-of-type(odd) {
+        background: #fff !important;
+    }
+}
+
+.order-details spac.section-head {
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 2px solid $orange;
+    margin-right: 20px;
+}
+
+.fifth-section.order-details-venue {
+    border-bottom: 10px solid #ff4c06;
+    margin-bottom: 30px;
+}
+
+.third-section {
+    td, th {
+        padding: 11px;
+    }
+    .big-text {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: right;
+        text-transform: uppercase;
+        position: relative;
+
+    }
+    .grand-total {
+        position: relative;
+    }
+}
+
+p.desc {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.logo > img {
+    width: 200px;
+}
+
+.order-details .media, .order-details .media-body {
+    overflow: visible;
+    width: 320px;
+}
+
+.product-details-row {
+    position: relative;
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.attendee.information, .ticket-info-set, .ticket-details {
+    width: 30%;
+    display: table-cell;
+}
+
+.fourth-section.order-details-product-details {
+    padding: 20px 0;
+}
+
+.border-box {
+    border: 2px solid #d7d7d7 !important;
+    display: block;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 120px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    height: 30px;
+}
+
+.order-details span.section-head {
+    border-bottom: 2px solid $orange;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+.order-details span.section-head {
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.order-details .qr-code {
+    width: 142px;
+    float: left;
+}
+
+td.border-btm {
+    border-bottom: 2px solid $black;
+
+    &::before {
+        content: "";
+        @include absolute(auto, 197px, -2px, auto);
+        @include size(244px, 2px);
+        background-color: $black;
+
+        @include breakpoint ($tablet) {
+            @include absolute(auto, 113px, -2px, auto);
+            @include size(304px, 2px);
+        }
+
+        @include breakpoint ($mobile) {
+            @include absolute(auto, 109px, -2px, auto);
+            @include size(304px, 2px);
+        }
+    }
+
+}
+
+.order-details .instruction-qr-code {
+    margin: 20px 0;
+    clear: both;
+    display: table;
+}

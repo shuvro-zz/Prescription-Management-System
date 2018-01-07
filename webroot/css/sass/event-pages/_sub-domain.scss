@@ -1,0 +1,350 @@
+.carusol-box {
+    ul {
+        padding: 0px;
+    }
+    .current-event {
+        font-weight: 700;
+        position: relative;
+        margin-bottom: 30px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            @include size (270px, 4px);
+            background-color: #ff4c06;
+            @include absolute(auto, auto, -8px, 0);
+        }
+    }
+
+    .display-center {
+        @include display-center;
+        height: 100%;
+        text-align: center;
+        h2 {
+            font-weight: 700;
+            color: $white;
+            font-size: 32px;
+        }
+    }
+
+    .banner-day-date {
+        font-size: 64px;
+        font-weight: 700;
+        color: #fff;
+        font-family: $raleway;
+        line-height: 45px;
+        @include breakpoint($ipad) {
+            font-size: 40px !important;
+        }
+    }
+    .banner-event-year {
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1;
+        font-family: $raleway;
+        text-transform: uppercase;
+        text-align: left;
+        margin-left: 10px;
+    }
+}
+
+.sub-domain-home-footer {
+    ul {
+        padding: 0;
+        li {
+            a {
+                display: block;
+                &.fb-icon {
+                    background: url("/img/images/icon-fb.png") no-repeat center top;
+                    @include size(60px, 60px);
+                }
+                &.twit-icon {
+                    background: url("/img/images/icon-twit.png") no-repeat center top;
+                    @include size(60px, 60px);
+                }
+                &.inta-icon {
+                    background: url("/img/images/icon-insta.png") no-repeat center top;
+                    @include size(60px, 60px);
+                }
+            }
+        }
+    }
+    .current-event {
+        font-weight: 700;
+        position: relative;
+        font-size: 20px;
+        display: inline-block;
+
+        &:after {
+            position: absolute;
+            content: "";
+            @include size (100%, 2px);
+            background-color: #ff4c06;
+            @include absolute(auto, auto, 0, 0);
+        }
+    }
+}
+
+.disply-inline {
+    margin-bottom: 20px;
+    display: table;
+    li {
+        padding: 0px;
+        float: left;
+    }
+}
+
+.hero-event-faq {
+    background-image: url("/img/images/home-event_11.jpg");
+}
+
+.hero-event-allocat {
+    background-image: url("/img/images/home-event_04.jpg");
+}
+
+.hero-event-solution {
+    background-image: url("/img/images/home-event_10.jpg");
+}
+
+.contactus-banner {
+    background-image: url("/img/images/events/contactus.jpg");
+}
+
+.des-list {
+    padding: 0;
+
+    li {
+        font-size: 18px;
+        color: #6d7a8d;
+        position: relative;
+
+        .box {
+            margin-left: 10px;
+
+            &:after {
+                @include absolute(15px, auto, auto, 0);
+                @include size(5px, 5px);
+                @include border-radius (50%);
+                background-color: $black;
+                content: "";
+            }
+        }
+    }
+}
+
+.pad-btm {
+    padding-bottom: 0;
+}
+
+.lower-heading {
+    h2 {
+        font-size: 45px;
+        font-weight: 700;
+        text-transform: lowercase;
+        margin-bottom: 30px;
+        @include breakpoint ($mobile) {
+            font-size: 35px;
+        }
+    }
+}
+
+.des-list-solution.des-list {
+    margin: 40px 0 60px;
+}
+
+.des-list-solution li {
+    font-size: 25px;
+    line-height: 40px;
+    color: $black;
+    position: relative;
+
+    @include breakpoint ($mobile) {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .box {
+        &:after {
+            content: "";
+            background-color: $black;
+            @include size(5px, 5px);
+            @include absolute(20px, auto, auto, 0);
+            @include border-radius(50%);
+
+            @include breakpoint ($mobile) {
+                top: 14px;
+            }
+        }
+    }
+}
+
+section.track-bg.about-btm.selling.about-page-add.normal-text {
+    background-color: #36bfb9;
+
+    span.heading-event {
+        color: #657273;
+        font-size: 54px;
+        margin-bottom: 10px;
+
+        @include breakpoint($small-device) {
+            font-size: 26px;
+        }
+    }
+}
+
+.track-bg p {
+    color: #fff;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.flex-box-items-box {
+    margin-bottom: 0;
+
+}
+
+.faq-center {
+    @include absolute(50%, auto, auto, 50%);
+    @include translate(-50%, -50%);
+
+    h2 {
+        font-weight: 700;
+        color: #fff;
+        font-size: 49px;
+        line-height: 51px;
+        letter-spacing: 5px;
+        margin-bottom: 0;
+
+        @include breakpoint($small-device) {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+section.track-bg.about-btm.selling.about-page-add.normal-text span.heading-event {
+    margin-left: 0;
+}
+
+.modal-header .close {
+    margin-top: -2px;
+    width: 40px;
+}
+
+.modal-head-title {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.term-condition {
+    max-width: 120px;
+}
+
+//Responsive for feature page
+@include breakpoint ($mobile) {
+
+    .hero-content,
+    .contactus-banner {
+        text-align: center;
+    }
+
+    .feature-list {
+        .feature-heading h1 {
+            font-size: 36px;
+            line-height: 47px;
+        }
+        .title-text {
+            font-size: 17px;
+        }
+
+        .feature-list-inline {
+            ul {
+                padding: 0 15px;
+            }
+        }
+    }
+    .heading-event {
+        margin-left: 0;
+    }
+
+    .list-style {
+        .des-list-solution {
+            margin: 20px 0 40px;
+
+        }
+    }
+
+    .section {
+        .flex-box-items-box {
+            margin-bottom: 30px;
+        }
+    }
+
+    .service-fee {
+        .fees-box {
+            .inner-content {
+                border: 4px solid #647373;
+                max-height: 233px;
+                padding: 50px 0;
+
+                h2 {
+                    font-size: 68px;
+                }
+            }
+        }
+    }
+
+    .addition-fee {
+        .inner-contentd {
+            margin-top: 25px;
+            max-height: 200px;
+            padding: 15px 0;
+        }
+    }
+
+    .calculate-forms {
+        .width-max, .width-max2 {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+.organizatio-slider {
+    @include breakpoint($mobile) {
+        flex-direction: column;
+    }
+}
+
+.organization-hero {
+    @include breakpoint($ipad-landscape) {
+        .carousel-control {
+            width: 5%;
+        }
+    }
+    .banner-event-dsc {
+        @include breakpoint($mobile) {
+            text-align: center;
+            min-height: auto;
+        }
+        .banner-event-name {
+            @include breakpoint($mobile) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .book-now {
+        float: inherit !important;
+        display: inline-block !important;
+    }
+}
+
+.section.carusol-box {
+    .slider-img img {
+    }
+}

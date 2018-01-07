@@ -1,0 +1,52 @@
+a.btn.btn-default.waves-effect.btn-cancel {
+    margin: 0 15px;
+    flex: 0 0 50%;
+    @include display-center;
+}
+button.btn.mr5.waves-effect {
+    margin: 0 15px;
+    flex: 1 1 0;
+}
+.workspace-dashboard .panel-body .event-listing {
+    margin: 0;
+}
+
+form#site-search {
+    float: left;
+    display: flex;
+}
+.input.select{
+    .bootstrap-select.btn-group {
+        background: transparent;
+        margin:0 10px;
+        width:250px;
+        button{
+            width:250px !important;
+        }
+    }
+}
+.status-area a.btn.btn-default.waves-effect.btn-cancel {
+    height: 29px !important;
+    font-weight: 400;
+    font-size: 12px;
+    color: #b1b6b9;
+}
+span.filter-option.pull-left {
+    margin-top: -5px;
+}
+
+.event-src-box {
+    button.btn.btn-primary.mr5 {
+        line-height: 18px !important;
+    }
+}
+.status-area .dropdown-menu a {
+    padding: 4px 7px !important;
+}
+.btn-default.btn-cancel {
+    padding: 10px 15px;
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $desaturate-blue;
+}

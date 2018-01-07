@@ -1,0 +1,168 @@
+/* -------------------------------------------
+Header styles here */
+.topbar{
+    height: 60px;
+    background-color: $modarate-cyan2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    @include display-center;
+
+    .logo{
+        @include flex(0 0 234px);
+        @include display-center;
+        height: 100%;
+        background-color: $modarate-cyan3;
+
+        @include breakpoint ($tablet) {
+            @include flex(0 0 124px);
+        }
+    }
+
+    .topbar-inner{
+        @include flex(1);
+        padding: 12px 38px;
+
+        .flex-container{
+            @include align-items(center);
+            @include justify-content(space-between);
+
+            .flex-container{
+                @include display-flex;
+                @include align-items(center);
+            }
+        }
+
+        .nav-text {
+            color:$white;
+            font-weight: 600;
+            letter-spacing: 0.1px;
+
+            &:hover{
+                color:$black;
+            }
+        }
+    }
+}
+
+.toggle-menu{
+    margin-top: 2px;
+    margin-right: 34px;
+
+    .toggle-menu-bar{
+        .fa{
+            font-size: 26px;
+            color: $white;
+        }
+    }
+}
+
+
+.search-area{
+    .input-group{
+        .form-control{
+            padding: 6px 18px;
+        }
+        .input-group-btn{
+            button{
+                border: medium none;
+                border-bottom-right-radius: 50px;
+                border-top-right-radius: 50px;
+                height: 36px;
+                margin-right: 1px;
+            }
+            .search-icon{
+                color: #9b9b9b;
+                padding: 0 5px;
+                @include display-center;
+            }
+        }
+    }
+    .input-group,
+    input{
+        @include size(286px, 36px);
+        color: #b6b6b6;
+        font-family: $lato;
+        font-size: 13px;
+        font-weight: 600;
+        border: none;
+        @include border-radius(50px);
+    }
+}
+
+.profile-area{
+    @include display-flex;
+    @include align-items(center);
+
+    .message-box {
+        margin-right: 20px;
+        margin-left:5px;
+    }
+    .user-profile{
+        .dropdown-menu{
+            right: 0;
+            left: auto;
+            text-align: left;
+            top: 50px;
+            box-shadow: none;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            a{
+                font-size: 16px;
+            }
+        }
+    }
+    .notification .notifier span {
+        color: #9ff5f1;
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    .notification .notifier .counter {
+        background-color: #f2672a;
+        border-radius: 20px;
+        color: #fff;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: bold;
+        height: 16px;
+        left: -20px;
+        line-height: 16px;
+        min-width: 16px;
+        padding: 0 2px;
+        position: relative;
+        text-align: center;
+        top: -11px;
+    }
+    .message-box .message span {
+        color: #9ff5f1;
+        font-size: 18px;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    .message-box .message .counter {
+        background-color: #f2672a;
+        border-radius: 20px;
+        color: #fff;
+        display: inline-block;
+        font-size: 10px;
+        font-weight: bold;
+        height: 16px;
+        left: -20px;
+        line-height: 16px;
+        min-width: 16px;
+        padding: 0 2px;
+        position: relative;
+        text-align: center;
+        top: -11px;
+    }
+    .user-name {
+        color: #fff;
+        font-family: "Montserrat";
+        font-size: 14px;
+        margin-left: 5px;
+        margin-right: 8px;
+    }
+}

@@ -1,0 +1,124 @@
+/* -------------------------------------------
+Event Lists styles here... */
+.event-filters {
+    padding: 30px 0;
+
+    .flex-container{
+        @include breakpoint($mobile) {
+            @include flex-direction(column);
+
+            .input.text{
+                margin-right: 0;
+            }
+        }
+    }
+    .form-group {
+        @include flex(1);
+        margin-bottom: 0;
+
+        @include breakpoint($mobile) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .button-row {
+        button {
+            font-weight: 700;
+        }
+        .search-btn {
+            width: 180px;
+            margin-right: 7px;
+        }
+
+        .reset {
+            width: 120px;
+        }
+    }
+}
+
+.events-box-item {
+    max-height: 260px;
+    min-height: 230px;
+    height: auto;
+    background-color: $white;
+    padding: 27px 20px;
+    margin-bottom: 30px;
+    @include border-radius(5px);
+    @include box-shadow(0 0 2px 1px #e9e9e9);
+
+
+    &.flex-container {
+        .image-thumb {
+            margin-right: 28px;
+            height: 182px;
+            width: 100%;
+
+            &.flex-item {
+                @include flex(0 0 165px);
+            }
+        }
+        .events-item-info {
+            .item-list {
+                @include display-flex;
+                @include align-items(center);
+                margin-bottom: $gutter-width;
+
+                .icon-box {
+                    width: 36px;
+                }
+
+                @include breakpoint($ipad){
+                    .events-box-item {
+                        height: auto;
+                        min-height: 265px;
+                        padding:15px 15px;
+                    }
+
+                    .image-thumb{
+                        margin-right: 15px;
+                    }
+
+                    .describ.addr {
+                        @include text-truncate;
+                        width: 80px;
+                    }
+                }
+
+                .date-time {
+                    @include display-flex;
+                    @include align-items(center);
+                    label {
+                        font-family: $montserrat;
+                        font-size: 35px;
+                        line-height: 1;
+                        font-weight: 300;
+                        margin-bottom: 0;
+                    }
+                    em {
+                        margin-left: 7px;
+                        display: block;
+                        font-style: normal;
+                        line-height: 1;
+                        color: $dark-gray;
+                    }
+                }
+
+                .price {
+                    color: $orange;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint($mobile){
+    .events-box-item.flex-container {
+        display: inherit;
+        @include flex-direction(column);
+        max-height: unset;
+    }
+
+    .flex-item.events-item-info{
+        margin-top: 20px;
+    }
+}

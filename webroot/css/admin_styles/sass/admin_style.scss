@@ -1,0 +1,63 @@
+/**
+ * --------------------------------------------------------------------------------------------------------
+ * shared with all .scss files.
+ * --------------------------------------------------------------------------------------------------------
+ */
+
+ @import "breakpoint";
+ @import "compass";
+    @import "compass/css3";                        // Use one CSS3 mixin instead of multiple vendor prefixes.
+    @import "compass/support";                     // Add Compass' IE and vendor prefix support variables.
+    @import "compass/utilities/general/clearfix";  // Better than Drupal's clearfix.
+    @import "compass/utilities/sprites";           // See http://compass-style.org/help/tutorials/spriting/
+    @import "spr/*.png";
+
+    @import "helpers/variables";
+    @import "helpers/mixins";
+
+    @import "base/typography";
+
+    @import "helpers/helpers";
+
+    @import "components/buttons";
+    @import "components/checkboxes";
+    @import "components/radio";
+    @import "components/togglebutton";
+    @import "components/selectboxes";
+    @import "components/forms";
+    @import "components/icons";
+    @import "components/tab";
+    @import "components/accordion";
+    @import "components/dropdown";
+    @import "components/popup";
+    @import "components/loader";
+    @import "components/notify";
+    @import "components/paginaiton";
+    @import "components/progress-bar";
+    @import "components/ratings";
+    @import "components/calendar";
+    @import "components/navigation";
+    @import "components/datetime";
+    @import "components/slider";
+
+    @import "layout/common";
+    @import "layout/header";
+    @import "layout/footer";
+    @import "layout/sidebar";
+
+    @import "pages/home";
+    @import "pages/contact";
+    @import "pages/signin";
+    @import "pages/error";
+    @import "pages/seat-management";
+    @import "pages/event-setting";
+    @import "pages/event-import";
+    @import "pages/table_seat";
+    @import "pages/_multiple_event.scss";
+
+    @import "pages/config_wizard";
+
+    @import "themes/admin";
+    @import "themes/dashboard";
+    @import "pages/back-pdf";
+

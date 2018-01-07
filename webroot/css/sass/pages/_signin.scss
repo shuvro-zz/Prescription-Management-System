@@ -1,0 +1,86 @@
+/* -------------------------------------------
+SignIn styles here... */
+.school-login {
+    background-color: #f6f7f9;
+    border: 1px solid #e1e1e1;
+    margin: 0 auto;
+    padding: 60px;
+    max-width: 490px;
+    @include border-radius(6px);
+    @include breakpoint ($mobile){
+        padding: 60px 20px;
+    }
+
+    p {
+        font-weight: 600;
+    }
+
+    .intro-header {
+        margin-bottom: 45px;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        line-height: normal;
+        margin: 0 5px 0 0;
+    }
+    label {
+        display: inline-block;
+        font-weight: 600;
+        margin: 5px;
+        color: $dark-gray;
+        max-width: 100%;
+    }
+
+    a {
+        color: $dark-gray;
+        font-weight: 500;
+    }
+
+    .remeber-box {
+        justify-content: space-between;
+    }
+
+    .separate-box {
+        margin-bottom: 10px;
+        margin-top: 15px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+
+        span {
+            background: #F6F7F9 none repeat scroll 0 0;
+            color: rgba(48, 48, 48, 0.5);
+            display: inline-block;
+            font-size: 19px;
+            font-weight: 700;
+            margin: -15px auto 0;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        &:before {
+            background: #d7d7d7 none repeat scroll 0 0;
+            bottom: auto;
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+    .form-group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+}
+
+.school-signup {
+    @extend .school-login;
+    max-width: 900px;
+    padding: 60px 40px;
+}

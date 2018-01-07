@@ -1,0 +1,118 @@
+/* -------------------------------------------
+select menu */
+.select-style {
+    position: relative;
+    &:after {
+        content: "";
+        @include size(10px, 5px);
+        @include spr-sprite(arrow-down);
+        @include absolute(20px, 16px);
+    }
+
+    select {
+        padding: 5px 32px 5px 15px;
+        width: 100%;
+        border: 1px solid #dde3e5;
+        box-shadow: none;
+        background-color: $white;
+        background-image: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 44px;;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+}
+
+.select-box-style {
+    &:before {
+        content: "\f107 ";
+        font-family: "fontawesome";
+        position: absolute;
+        left: auto;
+        right: 10px;
+        top: calc(100% - 58px);
+        bottom: auto;
+    }
+    select {
+        padding: 5px 22px 5px 8px;
+        width: 100%;
+        border: 1px solid #dde3e5;
+        box-shadow: none;
+        background-color: $white;
+        background-image: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 44px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+
+.select-fancy {
+    display: inline-block;
+    border: 1px solid #e5e5e5;
+    position: relative;
+    width: 100%;
+    height: 44px;
+    overflow: hidden;
+    vertical-align: middle;
+    box-shadow: inset 0 -2px 5px rgba(255, 255, 255, 0.4);
+    margin-bottom:20px;
+    @include box-sizing(border-box);
+
+    &, > * {
+        cursor: pointer;
+    }
+
+    select {
+        @include size(100%, 44px);
+        @include box-sizing(border-box);
+
+        background: transparent;
+        border: 0;
+        outline: 0;
+        text-shadow: 1px 1px rgba(255, 255, 255, 0.7);
+        padding: 6px 0 6px 8px;
+        font-size: 14px;
+
+        -webkit-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-appearance: none;
+        -moz-appearance: radio-container;
+        appearance: none;
+
+    }
+}
+
+.select-fancy-image {
+    background: url("/img/images/select-arrow.png") no-repeat right;
+    @include background(url("/img/images/select-arrow.png") no-repeat center right);
+    background-color: #fff;
+}
+
+.select-fancy-noimage {
+
+    &:after {
+        content: '';
+        width: 0;
+        position: absolute;
+        right: 7px;
+        top: 50%;
+        margin-top: -3px;
+        border-width: 6px 4px;
+        border-style: solid;
+        pointer-events: none;
+        border-color: #656565 transparent transparent transparent;
+    }
+}

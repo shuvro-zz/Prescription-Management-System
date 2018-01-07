@@ -1,0 +1,60 @@
+/**
+* Color Variables
+* The variables set here serve only as example of how you can use SASS variables
+* to centralize and control frequently used styles more easily. Here you will
+* find variables for colors, fonts and the global gutter width.
+*/
+
+$white:                 #ffffff;
+$black:                 #000000;
+$green:                 #5eaf84;
+$orange:                #ff5835;
+
+
+$modarate-blue:         #474f9c;
+$dark-blue:             #2a2c44;
+$darker-blue:           #184a72;
+$soft-blue:             #ff5835;
+$softer-blue:           #56b2e7;
+
+$soft-red:              #fc6666;
+$mostly-white:          #f9f9f9;
+$grayish-light-blue:    #f0f3f8;
+$grayish:               #6d7a8d;
+$grayish-light:         #d8dee6;
+$grayish-dark:          #8a8a8a;
+
+$grayish-lighter:       #f2f4f7;
+$dark-gray:             #5d5d5d;
+$light-gray:            #e1e1e1;
+$text-gray-bold:        #8f979d;
+
+$dark-cyan:             #008cb0;
+$modarate-cyan:         #36bfb9;
+
+$success:              #9fd460;
+$warning:              #f4c470;
+$gold:                 #e0ac00;
+$error:                #ec373d;
+
+$btn-color:            #ff5835;
+
+// Fonts
+$raleway:       'Raleway', sans-serif;
+$montserrat:      'Montserrat', sans-serif;
+
+$font-size-base: 16px;
+$line-height-base: 24px;
+$gutter-width: 15px;
+
+// Breakpoint
+$small:200px 320px;
+$mobile2: 320px 480px;
+$mobile: 320px 767px;
+$ipad: 768px 769px;
+$ipad-landscape: 768px 1024px;
+$ipad-portrait: 770px 991px;
+$small-device: 0px 1024px;
+$tablet-portrait: 992px 1199px;
+$tablet: 1024px 1280px;
+$large-desktop: 1200px 1920px;

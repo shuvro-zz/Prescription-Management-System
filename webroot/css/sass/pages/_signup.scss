@@ -1,0 +1,227 @@
+.banner-hero-heading {
+    color: $black;
+    font-family: $raleway;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    margin: 0;
+    position: relative;
+
+    &:after {
+        background-color: $btn-color;
+        bottom: -14px;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 35px;
+    }
+
+}
+
+.banner-text {
+    margin-bottom: 30px;
+    margin-top: 35px;
+
+    .sign-up-dsc {
+        color: #757679;
+        font-family: $raleway;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        line-height: 21px;
+        margin: 25px 0 0;
+    }
+
+    .email {
+        color: #7b7d80;
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        text-decoration: none;
+    }
+    .subdomain {
+        color: #a4a7ad;
+        font-family: $raleway;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 22px;
+
+        a {
+            color: $dark-blue;
+            font-size: 12px;
+            display: block;
+
+            &:hover {
+                color: $soft-blue
+            }
+        }
+    }
+
+}
+
+.sign-up-form {
+    .span-link {
+        margin-left: 25px;
+        position: relative;
+        float: right;
+
+        a {
+            color: $btn-color;
+            font-family: $raleway;
+            font-size: 12px;
+            line-height: 20px;
+            text-decoration: none;
+        }
+    }
+
+    label {
+        color: $black;
+        font-family: $raleway;
+        font-size: $font-size-base;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+        position: relative;
+
+        input {
+            background: $white;
+            border: 1px solid #e1e1e1;
+            @include border-radius (2px);
+            box-shadow: none;
+            height: 44px;
+        }
+
+        select {
+            background: $white;
+            border: 1px solid #e1e1e1;
+            border-radius: 2px;
+            box-shadow: none;
+            font-family: $raleway;
+            color: #8d8d8d;
+            font-size: 13px;
+            height: 44px;
+        }
+
+        option {
+            border: medium none;
+            color: #222;
+            line-height: 25px;
+            padding: 5px;
+        }
+
+    }
+
+}
+
+.btn.btn-continue {
+//background-color: $btn-color;
+@include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+@include border-radius (8px);
+color: #fff;
+font-family: $raleway;
+font-size: 14px;
+font-weight: 600;
+height: 44px;
+letter-spacing: 1.1px;
+text-transform: uppercase;
+width: 100%;
+    border: none;
+}
+
+.holder-gradpack {
+    background-color: $white;
+    border-color: #e1e1e1 #e1e1e1 #e1e1e1;
+    border-radius: 0;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px medium;
+    color: #a8a8a8;
+    display: block;
+    font-family: $raleway;
+    font-size: 13px;
+    font-weight: 500;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    text-align: center;
+    @include text-truncate;
+}
+
+.no-pad {
+    padding: 0;
+}
+
+.left-pad {
+    padding-left: 0;
+}
+
+.right-pad {
+    padding-right: 0;
+}
+
+//label.error {
+// bottom: -24;
+// font-size: 12px;
+//  left: auto;
+//position: absolute;
+// right:0;
+//  top: auto;
+//}
+span.note {
+    top: auto;
+    font-size: 12px;
+    right: auto;
+    font-weight: 600;
+    color: $error;
+    bottom: -22px;
+}
+
+.input.text {
+    position: relative;
+}
+
+label.error {
+    bottom: -24px;
+    font-size: 12px;
+    position: absolute;
+    right: auto;
+    top: auto;
+}
+
+#student-dob-error.error {
+    bottom: 0;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 47px;
+    width: 100%;
+}
+
+@include breakpoint($mobile) {
+
+    .left-pad {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .right-pad {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .set-up-page{
+        .box {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+    }
+
+    .notification-success {
+        font-size: 11px;
+        top: -70px;
+    }
+}

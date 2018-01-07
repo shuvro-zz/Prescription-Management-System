@@ -1,0 +1,67 @@
+/* -------------------------------------------
+Toggle Button styles here */
+.toggle-container{
+    display: flex;
+    align-items: center;
+}
+.toggle-button{
+    position: relative;
+    @include size(30px, 18px);
+    margin-right: 14px;
+
+    label,
+    span{
+        @include absolute(0, 0, 0, 0);
+        @include transition-duration(0.2s);
+    }
+    label{
+        background-color: $white;
+        margin-bottom: 0;
+        @include box-shadow(0 0 0 1px $gray);
+        @include border-radius(20px);
+
+        // &:before,
+        // &:after{
+        //     @include absolute(0);
+        //     width: 34px;
+        //     line-height: 20px;
+        //     color: $white;
+        //     text-align: center;
+        // }
+
+        // &:before {
+        //     left: 0;
+        //     font-size: 11px;
+        //     content: 'ON';
+        // }
+        // &:after {
+        //     right: 0;
+        //     font-size: 10px;
+        //     content: 'OFF';
+        // }
+
+        span {
+            z-index: 1;
+            @include size(16px, 16px);
+            margin: 1px 0 0;
+            background-color: $white;
+            @include box-shadow(0 0 0 1px $gray);
+            @include border-radius(50%);
+        }
+    }
+
+
+    input[type=checkbox]{
+        position: absolute;
+        @include opacity(0);
+    }
+
+    input:checked+label {
+        background-color: $modarate-cyan;
+        @include box-shadow(0 0 0 1px $modarate-cyan2);
+    }
+
+    input:checked+label span {
+        transform: translateX(15px);
+    }
+}

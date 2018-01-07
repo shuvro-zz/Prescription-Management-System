@@ -1,0 +1,116 @@
+/* -------------------------------------------
+Typography styles here */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body {
+    height: calc(100% - 60px);
+    font-family: $lato;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: 400;
+    background-color: $grayish-light;
+    color: $gray-dark;
+}
+
+// Heading
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: $lato;
+    color: $grayish-blue;
+    font-weight: 900;
+    margin: 0;
+}
+
+h1, .h1 {
+    font-size: 18px;
+    line-height: $line-height-base;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.h1 {
+    @include border-title;
+}
+
+h2, .h2 {
+    font-size: 16px;
+    line-height: $line-height-base;
+    margin-bottom: 10px;
+}
+
+h5, .h5 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $black;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    @include bottom-border;
+}
+
+p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $gray-dark;
+    margin: 0 0 $gutter-width;
+}
+
+a {
+    color: $link-color;
+    &:hover,
+    &:focus {
+        color: $modarate-cyan2;
+    }
+}
+
+//All Organizations css
+
+.button-area {
+    max-width: 134px;
+    .clear-cache-btn {
+        @include size(auto, 35px);
+        white-space: nowrap;
+
+        @include breakpoint ($tablet) {
+            font-size: 10px;
+        }
+    }
+}
+
+//Billing History css
+.action-list {
+    white-space: nowrap;
+
+    span {
+        margin: 0 4px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+
+//add bill modal css
+
+.display-table {
+    &.inline-button {
+        margin: 20px 0;
+        button {
+            text-align: center;
+            width: calc(50% - 15px);
+
+            &:first-of-type {
+                margin-right: 15px;
+            }
+
+            &:last-of-type {
+                margin-left: 15px;
+            }
+        }
+    }
+}

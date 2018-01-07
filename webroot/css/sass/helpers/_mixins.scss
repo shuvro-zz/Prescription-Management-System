@@ -1,0 +1,252 @@
+/* -------------------------------------------
+Mixins styles here... */
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+// Clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// List type
+@mixin list-style {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// Absolute Position edited
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+
+// Triangle
+@mixin arrow($width: 26px, $height: 26px, $direction: up, $color: $page) {
+    @include size(0, 0);
+
+    @if $direction == right {
+        border-top: $height/2 solid transparent;
+        border-bottom: $height/2 solid transparent;
+        border-left: $width solid $color;
+    }
+
+    @if $direction == left {
+        border-top: $height/2 solid transparent;
+        border-bottom: $height/2 solid transparent;
+        border-right: $width solid $color;
+    }
+
+    @if $direction == up {
+        border-left: $width/2 solid transparent;
+        border-right: $width/2 solid transparent;
+        border-bottom: $height/2 solid $color;
+    }
+
+    @if $direction == down {
+        border-left: $width/2 solid transparent;
+        border-right: $width/2 solid transparent;
+        border-top: $height/2 solid $color;
+    }
+}
+
+// Usage
+//  &:after {
+//    @include arrow(54px, 54px, up, $page);
+//    @include absolute(0, auto, auto, 0);
+//    content: "";
+//    margin:0;
+// }
+
+@mixin triangle-topleft {
+    @include size(0, 0);
+    border-top: 30px solid $dark-blue;
+    border-right: 30px solid transparent;
+}
+
+//Center-align a block level element
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Display Flexbox
+@mixin display-center {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+}
+
+// Table
+// --------
+@mixin th-width($col, $width) {
+    #{$col} {
+        width: $width;
+    }
+}
+
+@mixin table-columns($widths...) {
+    width: 100%;
+
+    th, td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    $n: 1;
+    $var: "th:nth-child(" + $n + ")";
+    @each $width in $widths {
+        @include th-width($var, $width);
+        $n: $n + 1;
+        $var: "th:nth-child(" + $n + ")";
+    }
+}
+
+// Common Button
+@mixin common-button {
+    @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    padding: 0 15px;
+    @include size(100%, 44px);
+    @include display-center;
+    font-weight: 500;
+    @include border-radius(8px);
+    @include box-shadow(inset 0 0 0 rgba($white, 0.1));
+    @include transition(all ease-in 300ms);
+    outline: none;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        @include box-shadow(inset 0 55px 0 rgba($white, 0.1));
+    }
+
+    &.back,
+    &.reset {
+        background: #d3d7de;
+        color: #707070;
+        text-align: center;
+
+        &:hover {
+            color: rgba($black, 0.6);
+        }
+    }
+
+    &.logout {
+        background: $white;
+        color: $black;
+        border: 1px solid $warning;
+        margin-right: 10px;
+        font-size: 13px;
+        padding: 0 10px;
+        text-transform: capitalize;
+
+        &:hover {
+            color: rgba($black, 0.6);
+        }
+    }
+    &.submit-big {
+        height: 51px;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        &:hover {
+            color: rgba($black, 0.6);
+        }
+    }
+}
+
+// Circle ball
+@mixin circle {
+    background-color: $soft-red;
+    color: $white;
+    font-family: Arial;
+    font-size: 9px;
+    line-height: 1;
+    @include display-center;
+    @include border-radius(50%);
+}
+
+// Title Border
+@mixin border-title {
+    font-family: $raleway;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 40px;
+    color: $black;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    @include display-flex;
+    @include justify-content(center);
+
+    small {
+        text-transform: none;
+    }
+
+    &:before {
+        content: "";
+        @include size(40px, 2px);
+        background: $btn-color;
+        @include absolute(auto, auto, 0, 50%);
+        @include translateX(-50%);
+    }
+}
+
+@mixin bottom-border {
+    padding-bottom: 5px;
+    position: relative;
+
+    &:before {
+        content: "";
+        @include size(40px, 2px);
+        background: $btn-color;
+        @include absolute(auto, auto, 0, 0);
+    }
+}
+
+@mixin center-vertically {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+}
+
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+-ms-transform: translate($x, $y); // IE9 only
+-o-transform: translate($x, $y);
+transform: translate($x, $y);
+}
+
+@mixin appearance ($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}

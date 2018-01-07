@@ -1,0 +1,98 @@
+/* -------------------------------------------
+Typography styles here */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,500,600,700');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body{
+    font-family: "Raleway",sans-serif;
+    font-weight: 400;
+    margin-top: 100px;
+
+    &.org-body{
+        @include breakpoint($mobile) {
+            margin-top: 145px;
+        }
+    }
+
+    @include breakpoint($mobile) {
+        margin-top: 167px;
+    }
+}
+
+// Heading
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: $raleway;
+    margin: 0;
+}
+
+h1, .h1{
+    font-size: 31px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $white;
+    text-transform: uppercase;
+}
+
+h2, .h2{
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 300;
+    color: #333538;
+    margin-bottom: 10px;
+}
+
+h3, .h3{
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 15px;
+}
+
+h4, .h4{
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 15px;
+}
+
+h5, .h5{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $black;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    @include bottom-border;
+}
+
+h6, .h6{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $black;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $grayish;
+    margin: 0 0 $gutter-width;
+}
+
+a{
+    &:hover,
+    &:focus{
+        color: $btn-color;
+        text-decoration: none;
+    }
+}

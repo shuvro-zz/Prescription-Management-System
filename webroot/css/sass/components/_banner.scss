@@ -1,0 +1,10 @@
+/* -------------------------------------------
+Banner styles here */
+.banner{
+    @include size(100%, 152px);
+    background: url("/img/images/events/event-banner-new.jpg") no-repeat center top;
+    @include background-size(cover);
+    @include display-flex;
+    @include align-items(center);
+}
+

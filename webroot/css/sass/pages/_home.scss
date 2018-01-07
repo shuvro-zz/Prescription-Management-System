@@ -1,0 +1,149 @@
+/* -------------------------------------------
+Home styles here... */
+
+.how-works {
+  background-color: $white;
+
+  .box {
+    text-align: center;
+    .icon-box {
+      //@include display-center;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+
+      &:after {
+        content: "";
+        @include size(100%, 1px);
+        background-color: #f5f6fc;
+        @include absolute(50%, 0);
+        @include translateY(-50%);
+        z-index: -3;
+      }
+    }
+    h4 {
+      margin-bottom: 20px;
+      span {
+        color: $soft-blue;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.organization {
+  background-color: #f0f3f8;
+
+  .parent {
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    display: inline-block;
+
+
+    .brand-box {
+      margin: 0 14px 14px 0;
+      background-color: $white;
+      @include size(178px, 172px);
+      @include display-center;
+      @include border-radius(10px);
+      padding: 10px;
+      overflow: hidden;
+      text-align: center;
+
+      &:nth-child(6n + 0) {
+        @include breakpoint($large-desktop) {
+          margin-right: 0;
+        }
+      }
+      img {
+        width: 145px;
+        height: auto;
+      }
+
+      // &:nth-child(4n + 0){
+      //     @include breakpoint($tablet){
+      //         margin-right: 0;
+      //     }
+      // }
+      // &:nth-child(3n + 0){
+      //     @include breakpoint($tablet-portrait){
+      //         margin-right: 0;
+      //     }
+      // }
+
+      // &:nth-child(1n + 0){
+      //     @include breakpoint($mobile){
+      //         width: 100%;
+      //         margin-right: 0;
+      //     }
+      // }
+    }
+  }
+}
+
+/* -------------------------------------------
+Organization logo align fixing for IE 11 */
+
+.organization-list{
+  .parent {
+    display: inline-block;
+  }
+
+  .brand-box {
+    float: left;
+  }
+
+}
+
+/* -------------------------------------------
+what is gradpak */
+
+.gradpak-home-content {
+
+  background: #1d1d1d;
+  padding-top: 85px;
+  display: none;
+
+  h3 {
+    padding: 60px 0 20px 0;
+    color: $white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: $raleway;
+  }
+
+  p {
+    color: $white;
+    text-align: center;
+  }
+
+  .hide-area {
+    text-align: center;
+    padding: 25px 0 140px 0;
+    margin-top: 40px;
+
+    a {
+      //background: rgba(, 0, 0, 0.2) none repeat scroll 0 0;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 3px;
+      color: #fff;
+      display: inline-block;
+      font-size: 18px;
+      padding: 10px 50px;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 400;
+      font-family: $raleway;
+    }
+
+    :hover {
+      background: $orange;
+      border: 1px solid $orange;
+    }
+
+  }
+
+}

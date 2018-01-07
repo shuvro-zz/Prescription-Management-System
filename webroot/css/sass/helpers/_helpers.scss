@@ -1,0 +1,347 @@
+/* -------------------------------------------
+Helper styles here... */
+
+.v-middle {
+    @include display-center;
+}
+
+.section {
+    padding: 100px 0;
+
+    @include breakpoint($small-device) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.section-seat {
+    padding: 40px 0;
+
+    @include breakpoint($small-device) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.gray-bg {
+    background-color: $grayish-light-blue;
+}
+
+.blue {
+    color: $darker-blue;
+}
+
+.intro-header {
+    margin-bottom: 67px;
+}
+
+.both-side-border {
+    font-size: 12px;
+    color: $white;
+    position: relative;
+    padding: 0 $gutter-width;
+
+    &:after,
+    &:before {
+        content: "";
+        background-color: $white;
+        @include size(20px, 1px);
+        @include absolute(50%);
+        @include translateY(-50%);
+    }
+
+    &:after {
+        left: -20px;
+    }
+
+    &:before {
+        right: -20px;
+    }
+}
+
+.heading {
+    @include border-title;
+}
+
+.page-title {
+    @include display-flex;
+    font-size: 31px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $black;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.flex-container {
+    @include display-flex;
+
+    .flex-item {
+        @include flex(1);
+    }
+}
+
+.quick-link {
+    ul {
+        @include list-style;
+        @include display-flex;
+        @include flex-wrap(wrap);
+        li {
+            @include flex-basis(calc(50% - 10px));
+            padding-right: 10px;
+            a {
+                font-size: 13px;
+                line-height: $line-height-base;
+                font-weight: 400;
+                color: $dark-gray;
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+    }
+}
+
+.imgage-container {
+    margin-bottom: 30px;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.margin {
+    margin-bottom: 15px;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.text-gray-bold {
+    color: $text-gray-bold;
+}
+
+.heading-style {
+    color: $darker-blue;
+}
+
+.work-number {
+    color: $btn-color !important;
+}
+
+.input-small {
+    max-width: 90px;
+}
+
+.border-btm {
+    border-bottom: 1px solid $mostly-white;
+    margin-bottom: 15px;
+}
+
+.no-pad {
+    padding: 0;
+}
+
+.left-pad {
+    padding-left: 0;
+}
+
+.right-pad {
+    padding-right: 0;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.icon-pdf {
+    color: $error;
+    font-size: 16px;
+}
+
+.error {
+    color: $error !important;
+}
+
+.organization-list .no-image {
+    background: #ccc !important;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+ul, li, p {
+    margin: 0;
+    list-style: none;
+}
+
+.bootstrap-select .active a {
+    background-color: $orange;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+.hidden-scrollbar {
+    overflow: hidden;
+}
+
+.on-hover:hover {
+    cursor: pointer;
+    background: #fcf8e3;
+    box-shadow: 0 0px 0px 2px $orange;
+}
+
+.input-required, .red {
+    font-size: 22px;
+    color: $error;
+    line-height: 0;
+    font-weight: 700;
+    padding: 0;
+    display: inline;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.frmb .field-actions .btn.copy-button.icon-copy {
+    display: none;
+}
+
+.category.open b {
+    display: none;
+}
+
+.node-body {
+    h3 {
+        margin: 20px 0 10px 0;
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    ul {
+        padding: 0;
+    }
+}
+
+.menu-active {
+    color: #36bfb9 !important;
+}
+
+.form-builder-form {
+    .button-group {
+        padding-top: 10px !important;
+    }
+    .form-container {
+        margin-bottom: 20px;
+    }
+}
+
+.form-horizontal .form-group {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 30px;
+}
+
+.event-booking {
+    .form-builder-form {
+        .button-group button {
+            max-width: 806px !important;
+            margin: 0 -30px !important;
+
+        }
+    }
+}
+
+.error-page h1 {
+    color: $orange !important;
+}
+
+.max-60 {
+    max-width: 26px;
+    height: 32px !important;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid $grayish-dark;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $grayish-dark;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-left: 4px solid $orange;
+    border-bottom: 4px solid transparent;
+}
+
+.form-control[readonly] {
+    background-color: $white;
+}
+
+.modal {
+    z-index: 99999;
+}
+
+.br {
+    display: block;
+    @include breakpoint($mobile) {
+        display: inline;
+    }
+}
+
+.additional-detail-booking {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.more-booking-info {
+    width: unset;
+    margin-bottom: 20px;
+}
+
+.plusMinus {
+    float: left;
+    font-size: 30px;
+    line-height: 20px;
+    margin-right: 10px;
+    padding: 0
+}
+
+.lower-heading {
+  h2 {
+      .upper-case {
+          text-transform: uppercase;
+      }
+  }
+
+}
+
+.back-to-login{
+    &:hover{
+        text-decoration: underline;
+    }
+}

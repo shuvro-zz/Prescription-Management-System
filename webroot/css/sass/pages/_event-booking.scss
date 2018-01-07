@@ -1,0 +1,228 @@
+/* -------------------------------------------
+Event booking styles here... */
+
+.payment-valid {
+    .form-group {
+        position: relative;
+    }
+}
+
+.form-container {
+    margin-bottom: 40px;
+}
+
+.event-sidebar {
+    padding-left: 20px;
+
+    .booking-details-item {
+        display: block;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+
+        label {
+            display: block;
+            font-size: 12px;
+            color: #979797;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .money {
+            // font-family: $montserrat;
+            font-size: 18px;
+            line-height: 28px;
+
+            em {
+                color: $orange;
+                font-style: normal;
+            }
+        }
+    }
+
+    .seat-booked {
+        margin-bottom: 6px;
+    }
+
+}
+
+.event-info {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.event-info-item {
+    @include display-flex;
+    @include align-items(center);
+
+    @include breakpoint($mobile) {
+        margin-bottom: 20px;
+    }
+
+    .icon-details {
+        @include flex(1);
+        font-family: $montserrat;
+        color: #6e6e6e;
+
+        span {
+            text-transform: uppercase;
+        }
+    }
+    .icon-box {
+        @include flex(0 0 47px);
+        @include display-center;
+        height: 47px;
+        margin-right: 23px;
+        @include box-shadow(0 0 0 1px $btn-color);
+    }
+}
+
+.ticket-type {
+    label {
+        font-size: 11px;
+        color: #a9a9a9;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    ul {
+        @include list-style;
+        @include display-flex;
+        @include flex-wrap(wrap);
+        li {
+            @include display-center;
+            @include size(auto, 33px);
+            // font-family: $montserrat;
+            color: $dark-gray;
+            text-transform: uppercase;
+            border: 1px solid $light-gray;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            @include border-radius(4px);
+            @include breakpoint($mobile) {
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: $btn-color;
+                margin-left: 5px;
+            }
+
+            .ticket-lbl {
+                background-color: $orange;
+                color: $white;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                height: 33px;
+                line-height: 33px;
+                padding: 1px 10px;
+                margin: -2px 8px 0 -5px;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    @include absolute(50%, -4px);
+                    @include size(0, 0);
+                    border-top: 4px solid transparent;
+                    border-left: 4px solid $orange;
+                    border-bottom: 4px solid transparent;
+                    @include transform(translateY(-50%));
+
+                }
+            }
+
+            .line-through {
+                color: $text-gray-bold;
+                text-decoration: line-through;
+            }
+        }
+    }
+}
+
+.map {
+    button {
+        margin-bottom: 35px;
+    }
+}
+
+.event-list-item {
+    @include list-style;
+    padding-top: 40px;
+
+    li {
+        @include display-flex;
+        margin-bottom: $gutter-width;
+
+        .icon-box {
+            @include flex(0 0 66px);
+        }
+        .icon-details {
+            @include flex(1);
+
+            h6 {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+}
+
+.imgage-container {
+    position: relative;
+
+    .sub-hero-title {
+        left: 15%;
+        position: absolute;
+        top: 30%;
+        @media only screen and (max-width: 1024px) {
+            top: 13% !important;
+        }
+        .page-title {
+            font-size: 28px;
+            color: $black;
+            font-weight: 600;
+            text-transform: capitalize;
+            line-height: 28px;
+            display: block;
+        }
+    }
+}
+
+div#map {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.cart-summary {
+    @include clearfix;
+    .booking-details-item {
+        margin-bottom: 20px;
+    }
+    > span {
+        display: block;
+        border-bottom: 1px solid #ebebeb;
+        padding: 5px 0;
+        @include clearfix;
+
+        &:last-child {
+            margin-bottom: 20px;
+        }
+        > * {
+            float: left;
+        }
+        > label {
+            width: 120px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: capitalize;
+            padding-right: 10px;
+            margin-bottom: 0;
+        }
+        > span {
+            width: calc(100% - 120px);
+        }
+    }
+}

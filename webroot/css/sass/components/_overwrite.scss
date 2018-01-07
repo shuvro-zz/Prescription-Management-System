@@ -1,0 +1,11 @@
+.xdsoft_datetimepicker {
+    z-index: 99999 !important;
+
+    .xdsoft_next,
+    .xdsoft_prev {
+        @include background-size(inherit);
+    }
+}
+
+
+//

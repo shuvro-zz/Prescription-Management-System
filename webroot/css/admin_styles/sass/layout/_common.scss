@@ -1,0 +1,103 @@
+/* -------------------------------------------
+Common Layout styles here */
+.workspace {
+    @include display-flex;
+    @include flex-direction(column);
+    height: -webkit-calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    margin-left: 234px;
+    overflow-y: hidden;
+
+    @include breakpoint ($tablet) {
+        margin-left: 124px;
+    }
+
+    .workspace-body {
+
+        .main-container {
+            @include display-flex;
+            height: -webkit-calc(100vh - 210px);
+            height: calc(100vh - 210px);
+
+            @include breakpoint ($tablet) {
+                // height: -webkit-calc(100vh - 210px);
+                // height: calc(100vh - 210px);
+            }
+
+
+            .content {
+                @include flex(1);
+                overflow: hidden;
+                overflow-y: auto;
+                padding: 40px 38px;
+
+                .panel-organization {
+                    left: 0;
+                    margin-left: 234px;
+                    margin-top: 60px;
+                    overflow: auto;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: 2;
+
+                    @include breakpoint ($tablet) {
+                        margin-left: 125px;
+                    }
+                }
+
+            }
+
+            .right-sidebar {
+                @include flex(0 0 242px);
+                background-color: $white;
+                overflow: hidden;
+                overflow-y: auto;
+                padding: 40px 15px;
+
+                @include breakpoint ($tablet) {
+                    @include flex(0 0 175px);
+                }
+            }
+
+        }
+
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+            .main-container {
+                height: 558px;
+            }
+        }
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+            .main-container {
+                height: 814px;
+            }
+        }
+
+        .form-btm {
+            margin: 12px 0 30px 0px;
+        }
+    }
+
+    .footer {
+        // height: 120px;
+        height: 90px;
+        background-color: $grayish-lighter;
+        padding: $gutter-width 38px;
+        @include display-flex;
+        @include align-items(center);
+
+        @include breakpoint ($tablet) {
+            height: 90px;
+        }
+    }
+}
+
+.main-container-form {
+    height: -webkit-calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    overflow: auto;
+    padding: 40px 38px;
+
+}
+

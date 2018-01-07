@@ -1,0 +1,79 @@
+/* -------------------------------------------
+Tab styles here */
+// background-color: $white;
+// border: 1px solid #d7d7d7;
+// @include border-radius(2px);
+.checkbox {
+    @include size(20px, 20px);
+    // min-height: inherit !important;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 0 !important;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+    position: relative;
+    // border: 1px solid #d7d7d7;
+    @include border-radius(2px);
+
+    &.checked {
+        border: 1px solid #42c0ba;
+        background-color: #4dc7c1;
+
+        &:after {
+            content: "\f00c";
+            font: normal normal normal 10px/1 FontAwesome;
+            color: $white;
+            @include absolute(50%, auto, auto, 50%);
+            @include translate(-50%, -50%);
+        }
+
+        &.disabled {
+            background-color: #bbb;
+            border: 1px solid #aaa;
+            cursor: default;
+
+            &:after {
+                background-color: #ddd;
+            }
+
+            &:before {
+                color: $white;
+
+            }
+        }
+    }
+
+    &.partial {
+        @include size(18px, 18px);
+        background-color: #119999;
+        border: 3px solid $white;
+        outline: 1px solid #1199c4;
+    }
+
+    &.disabled {
+        background-color: #bbb;
+        border: 1px solid #aaa;
+        cursor: default;
+
+        &:after {
+            background-color: #ddd;
+        }
+
+        &:before {
+            color: $white;
+        }
+    }
+}
+
+.checkbox-label {
+    margin-right: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.workspace-body{
+    input[type=checkbox] {
+        height: 13px;
+        margin-left: 0;
+    }
+}

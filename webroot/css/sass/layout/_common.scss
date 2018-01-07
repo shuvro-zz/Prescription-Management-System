@@ -1,0 +1,39 @@
+/* -------------------------------------------
+Common Layout styles here */
+.organization,
+.upcoming-events,
+.completed-events {
+  .intro-header {
+    padding: 0 10%;
+
+    p {
+      color: $dark-gray;
+      text-align: center;
+    }
+  }
+}
+
+@include breakpoint($mobile) {
+  .organization {
+    .parent.organization-list {
+      .brand-box {
+        height: 130px;
+        width: 130px;
+      }
+    }
+  }
+
+  .how-works {
+    .how-works-content {
+      .box {
+        .intro-text {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .about-us-content {
+      padding: 0 15px;
+    }
+  }
+
+}

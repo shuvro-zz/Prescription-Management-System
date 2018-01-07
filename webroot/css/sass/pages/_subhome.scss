@@ -1,0 +1,280 @@
+.organization-hero {
+    @include background-size(cover);
+    font-family: "montserrat";
+
+    .carousel-control{
+        background: none!important;
+
+        @include breakpoint($mobile){
+            display: none;
+        }
+    }
+
+    .hero-event{
+        background: none;
+    }
+    .hero-content {
+        color: #fff;
+        font-weight: 600;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .banner-day-date {
+        font-size: 60px;
+        line-height: 1;
+        margin-right: 8px;
+        @include breakpoint($mobile){
+            width: 50%;
+            text-align: right;
+        }
+    }
+
+    .banner-event-date{
+        @include breakpoint($mobile){
+            width: 100%;
+        }
+    }
+
+    .banner-event-date-group {
+        padding: 46px 25px;
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+
+        .banner-big-date {
+            justify-content: flex-start;
+        }
+
+        @include breakpoint($mobile){
+            @include display-flex;
+            padding: 15px;
+            position: relative;
+
+            > *{
+                width: 50%;
+            }
+
+            &:after{
+                content: "";
+                @include size(2px, 100%);
+                @include absolute(0, auto, auto, 50%);
+                background-color: rgba($black, 0.1);
+                @include translateX(-50%);
+            }
+        }
+    }
+
+    .banner-event-dsc {
+        width: 618px;
+        background-color: rgba($black, 0.4);
+        padding: 20px 38px;
+        text-align: left;
+        min-height: 177px;
+
+        @include breakpoint($mobile){
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+
+    .banner-event-year {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
+        text-transform: uppercase;
+        @include display-center;
+
+        @include breakpoint($mobile){
+            max-width: 80px;
+            text-transform: none;
+        }
+    }
+
+    .banner-event-time {
+        font-size: 18px;
+
+        @include breakpoint($mobile){
+            @include display-center;
+        }
+    }
+
+    .banner-event-name {
+        font-size: 34px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 44px;
+        text-transform: uppercase;
+    }
+
+    P {
+        color: $white;
+        font-size: 16px;
+        margin-top: 10px;
+        max-height: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    .carousel-caption {
+        bottom: auto;
+        left: 50%;
+        top: 50%;
+        right: auto;
+        max-width: 790px;
+        @include translate(-50%, -50%);
+
+        @include breakpoint($mobile){
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+
+    .book-now {
+        float: right;
+        padding: 16px 50px;
+        color: #fff;
+        display: block;
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+        @include border-radius(0);
+
+        &:hover {
+            color: rgba($black, 0.6);
+        }
+    }
+    .item.v-middle, .item > img {
+        height: -webkit-calc(100vh - 100px);
+        height: calc(100vh - 100px);
+        width: 100%;
+
+        @include breakpoint($mobile2) {
+            height: -webkit-calc(80vh - 20px);
+            height: calc(80vh - 20px);
+        }
+
+    }
+
+    .item > img {
+        @include breakpoint($small-device) {
+            width: 200%;
+            max-width: 200%;
+            margin-left: -50%;
+        }
+    }
+
+
+    @include breakpoint($ipad-portrait) {
+        .organizatio-slider {
+            .banner-event-date-group {
+                padding: 46px 8px;
+                @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+                height: 176px;
+            }
+            .banner-event-dsc {
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: 20px 38px;
+                width: 448px;
+                text-align: left;
+                min-height: 178px;
+                overflow: auto;
+            }
+        }
+    }
+
+}
+
+.event-item-box {
+    color: $darker-blue;
+    font-family: "montserrat";
+    background-color: $white;
+    border: 1px solid #e1e1e1;
+    @include border-radius(2px);
+    align-items: center;
+    padding: 20px;
+    margin: 15px 0;
+
+    .day-date {
+        font-size: 30px;
+        line-height: 1;
+        margin-right: 8px;
+    }
+
+    .event-date {
+        border-right: 1px solid #d8dee6;
+        margin-right: 15px;
+        padding-right: 20px;
+        width: calc(30% - -35px);
+    }
+
+    .event-year {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+
+    .event-time {
+        font-size: 12px;
+    }
+
+    .event-name {
+        color: $dark-gray;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 25px;
+    }
+    .event-dsc {
+        max-height: 70px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+}
+
+.school {
+
+    .camberwell-phto {
+        padding-right: 60px;
+    }
+
+    .heading {
+        flex-direction: column;
+        color: $darker-blue;
+
+        &:before {
+            left: 0;
+            position: absolute;
+            right: auto;
+            top: auto;
+            transform: translateX(0);
+
+        }
+    }
+
+}
+
+.organization-work {
+
+    background-color: #f0f3f8;
+
+    .box {
+        h4 {
+            span {
+                color: $orange;
+            }
+        }
+    }
+
+}
+
+.carousel-indicators {
+    li {
+        background-color: $white;
+        &.active {
+            background-color: $orange;
+            border-color: $orange;;
+        }
+    }
+}

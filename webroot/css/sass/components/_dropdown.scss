@@ -1,0 +1,18 @@
+/* -------------------------------------------
+Dropdwon styles here */
+.dropdown {
+    &:hover {
+        .dropdown-menu {
+            display: block;
+        }
+
+        @include breakpoint($mobile) {
+            .dropdown-menu {
+                min-width: 100%;
+                box-shadow: none;
+                border: none;
+            }
+        }
+    }
+}
+

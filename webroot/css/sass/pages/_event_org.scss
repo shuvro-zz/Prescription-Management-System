@@ -1,0 +1,97 @@
+.border-with-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+
+    h2 {
+        font-family: $raleway;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &:after {
+        @include absolute(auto, auto, 0, 0);
+        content: "";
+        @include size(100%, 4px);
+        background-color: $btn-color;
+    }
+}
+
+.event-filters {
+    .input.text {
+        margin-right: 30px;
+        @media only screen and (max-width: 767px) {
+            margin-right: 10px;
+        }
+    }
+    input.form-control {
+        font-size: 16px;
+        height: 55px;
+        border: 2px solid #cbccd0;
+        @include border-radius(8px);
+    }
+    .btn-search {
+        flex-basis: 120px;
+        button {
+            height: 55px;
+        }
+    }
+}
+.section.upcoming-org-events {
+    padding-top: 0;
+}
+
+.banner-image-new {
+    @include size(100%, 200px);
+    background: url("/img/images/events/event-banner-new.jpg") no-repeat center top;
+    @include background-size(cover);
+    @include display-flex;
+    @include align-items(center);
+
+    &.no-image{
+        height: 100px;
+        margin-top: 130px;
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+    }
+
+    @include breakpoint($mobile){
+        height: 100px;
+    }
+}
+
+/* main css for org events */
+
+
+.upcoming-org-events {
+    .events-box-items {
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+        padding: 27px 0;
+    }
+
+    .events-item-info {
+        h3 {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .date-panel,
+        .time-panel,
+        .describ {
+            font-size: 18px;
+            font-weight: 700;
+            margin-right: 8px;
+            padding-right: 6px;
+            position: relative;
+        }
+        .date-panel {
+            &:after {
+                @include absolute(5px, -4px, auto, auto);
+                content: "";
+                @include size(2px, 14px);
+                background-color: $black;
+            }
+        }
+    }
+}

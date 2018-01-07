@@ -1,0 +1,910 @@
+.header-for-event {
+    .get-start {
+        display: block;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 25px 25px 15px;
+        color: #fff;
+        height: 100%;
+        @include breakpoint($small) {
+            padding: 25px 15px;
+        }
+        @include breakpoint($mobile) {
+            padding: 10px 15px;
+            left: 0;
+            top: 100px;
+            height: initial;
+        }
+        @include breakpoint($ipad) {
+            padding: 25px 15px;
+        }
+        @include breakpoint($ipad-portrait) {
+            padding: 25px 15px;
+        }
+        @include breakpoint($tablet-portrait) {
+            padding: 25px 15px;
+        }
+
+        @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+        @include align-content(center);
+        @include align-items(stretch);
+
+        span{
+            display: block;
+        }
+    }
+
+
+    .its-free {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .both-side-border {
+        font-size: 15px;
+    }
+}
+.org-body{
+    .get-start {
+        .its-free {
+            max-width: 114px;
+
+            @include breakpoint($mobile) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+.section.about-btm{
+    padding: 40px 0;
+}
+.about-dsc{
+    padding-bottom: 40px;
+}
+.hero-event-works {
+    background-image: url("/img/images/home-event_05.jpg");
+}
+
+.hero-event-features {
+    background-image: url("/img/images/home-event_12.jpg");
+}
+
+.hero-event-pricing {
+    background-image: url("/img/images/home-event_08.jpg");
+
+    .hero-content {
+
+        .start-now {
+            @include size(100%, 60px);
+            max-width: 260px;
+            font-size: 25px;
+            color: $white;
+            @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px $gutter-width;
+            border: none;
+            @include display-center;
+            @include border-radius(5px);
+
+            &:hover {
+                color: $black;
+            }
+
+        }
+    }
+}
+
+.hero-event {
+    background-image: url("/img/images/about_01.jpg");
+
+    .hero-content {
+        .start-now {
+            @include size(100%, 60px);
+            max-width: 260px;
+            font-size: 25px;
+            color: $white;
+            @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 5px $gutter-width;
+            border: none;
+            @include display-center;
+            @include border-radius(10px);
+
+            &:hover {
+                color: $black;
+            }
+            @include breakpoint($small-device) {
+                margin-top: 10px;
+                height: 40px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.hero-event-works,
+.hero-event-features,
+.hero-event-pricing,
+.hero-event,
+.hero-event-faq,
+.hero-event-allocat,
+.hero-event-solution,
+.contactus-banner {
+    height: -webkit-calc(780px - 100px);
+    height: calc(780px - 100px);
+    background-repeat: no-repeat;
+    background-position: center top;
+    @include background-size(cover);
+
+    @include breakpoint($mobile){
+        height: -webkit-calc(100vh - 167px);
+        height: calc(100vh - 167px);
+    }
+
+    .hero-content{
+        max-width: 850px;
+        @include display-center;
+        @include flex-direction(column);
+        position: relative;
+
+        h1 {
+            font-family: $raleway;
+            font-size: 54px;
+            line-height: 60px;
+            color: #36bfb9;
+            font-weight: bold;
+            text-transform: upppercase;
+            margin-bottom: 10px;
+            @include text-shadow(0 5px 5px rgba($black, 0.2));
+
+            @include breakpoint ($mobile){
+                font-size: 27px;
+                line-height: 30px;
+            }
+
+            span {
+                display: block;
+                font-size: 16px;
+                text-align: center;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+            }
+        }
+
+        p {
+            font-size: 26px;
+            line-height: 32px;
+            color: $white;
+            max-height: 160px;
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 660px;
+
+            @include breakpoint ($mobile){
+                font-size: 14px;
+                line-height: 24px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.feature-heading {
+    margin-bottom: 30px;
+    h1 {
+        font-size: 40px;
+        color: #0a0a0a;
+        text-transform: none;
+        font-weight: 300;
+        margin-bottom: 17px;
+    }
+}
+
+.our-works-features,
+.feature-list {
+    .feature-box {
+        .icon-box {
+            img {
+                margin: 0 auto;
+                @include breakpoint($ipad) {
+                    max-width: 70%;
+                }
+                @include breakpoint($mobile) {
+                    max-width: 40%;
+                }
+                @include breakpoint($small) {
+                    max-width: 40%;
+                }
+            }
+        }
+
+
+        .content-box {
+            h2 {
+                font-size: 26px;
+                font-weight: 700;
+                color: #818486;
+                margin-top: 20px;
+                font-family: $raleway;
+                @include breakpoint($mobile) {
+                    margin-top: 15px;
+                }
+                @include breakpoint($small) {
+                    margin-top: 5px;
+                }
+
+                @include breakpoint($small-device) {
+                    font-size: 18px;
+                }
+
+            }
+        }
+    }
+    @include breakpoint($mobile) {
+        .feature-box{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.how-title{
+    h1{
+        text-transform: lowercase;
+        font-size: 40px;
+    }
+}
+
+.our-works-features {
+    @include breakpoint($mobile) {
+        padding-bottom: 0;
+    }
+    .col-sm-6.col-md-3{
+        @include breakpoint($ipad) {
+            min-height: 300px;
+        }
+        @include breakpoint($mobile) {
+            margin: 0 auto;
+        }
+    }
+
+}
+
+.normal-text {
+    padding: 40px 0;
+    .box-item{
+        padding: 0 50px;
+        margin-bottom: 50px;
+
+        @include breakpoint($small-device) {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        h3{
+            font-size: 18px;
+        }
+        p{
+            font-size: 18px;
+            margin-bottom: 20px;
+
+            @include breakpoint($small-device) {
+                font-size: 14px;
+            }
+
+            &.margin-bottom{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.big-light-text {
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: none;
+    line-height: 46px;
+    letter-spacing: 2px;
+    color: $white;
+
+    &.aboutus-text{
+        font-size: 29px;
+
+        @include breakpoint($small-device) {
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+
+    @include breakpoint($small-device) {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    &.black{
+        color: $black;
+    }
+
+    &.white{
+        color: $white;
+    }
+}
+
+
+.big-text {
+    font-size: 33px;
+    line-height: 46px;
+    color: #ffffff;
+    text-align: center;
+
+    @include breakpoint($small-device) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.sign-up-free {
+    h1 {
+        font-size: 45px;
+        text-transform: none;
+        @include breakpoint($ipad) {
+            font-size: 40px;
+        }
+        @include breakpoint($small-device) {
+            font-size: 22px;
+        }
+    }
+
+    h2 {
+        color: $white;
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 15px;
+        @include breakpoint($small-device) {
+            font-size: 20px;
+            margin-top: 3px;
+        }
+        span {
+            font-weight: 700;
+            font-size: 35px;
+            vertical-align: top;
+            @include breakpoint($small-device) {
+                font-size: 20px;
+            }
+        }
+
+        a{
+            color: $white;
+            &:hover{
+                color: $black;
+            }
+        }
+    }
+}
+
+.carusol-slider-list {
+    .slide-item {
+        position: relative;
+    }
+
+    .inner-text-center {
+        position: absolute;
+        top: auto;
+        bottom: 10%;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        transform: scale(0.8);
+
+        @media only screen and (max-width: 1024px) {
+            height: 100%;
+        }
+
+        h2 {
+            font-weight: 700;
+            color: #fff;
+            font-size: 32px;
+        }
+
+    }
+
+}
+
+.inner-text-center.flex-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-static {
+    background: url("/img/images/static-banner.jpg") no-repeat center top;
+    @include size(100%, 450px);
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+
+}
+
+.sign-up-free {
+    padding-bottom: 25px;
+    @include background-image(linear-gradient(to bottom, #ff8f29, #ff4c06));
+}
+
+.event-home-footer {
+    padding-bottom: 0;
+    padding-top: 40px;
+    margin-top:0;
+    border-top: 5px solid #818486;
+    ul {
+        margin-bottom: 10px;
+        @include breakpoint($mobile) {
+            padding-left: 22px;
+            padding-top: 20px;
+        }
+        li {
+            a {
+                color: #000;
+                text-decoration: none;
+                font-size: 20px;
+
+                &:hover {
+                    color: #ff8f29;
+                }
+
+                @include breakpoint($small-device) {
+                    font-size: 14px;
+                }
+            }
+            select{
+                width: 100%;
+            }
+        }
+    }
+
+    .creadit-btm {
+        color: #000;
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+        min-height: 40px;
+        border: none;
+
+        @include breakpoint($small-device) {
+            font-size: 13px;
+        }
+    }
+}
+
+.white-text {
+    color: $white !important;;
+}
+
+.about-btm {
+    background-color: #36bfb9;
+
+    .big-light-text{
+        font-size: 28px;
+    }
+}
+
+.event-home-footer a img {
+    max-width: 294px;
+}
+
+.feature-list {
+    span {
+        color: $white;
+    }
+}
+
+.feature-list .content-box h2 {
+    color: $white !important;
+}
+
+.about-page-add {
+    background-color: #4D5858;
+
+    h2 {
+        font-size: 45px;
+        line-height: 42px;
+        font-weight: 600;
+        color: $modarate-cyan;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        a {
+            color: $modarate-cyan;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    h1,
+    h2{
+        @include breakpoint($mobile){
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+}
+
+.about-dsc {
+    .first-text {
+        font-size: 18px;
+        line-height: 35px;
+        max-width: 920px;
+        margin: auto;
+        padding-bottom: 30px;
+    }
+}
+
+.flex-box-groups {
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include align-items (center);
+
+    @include breakpoint ($mobile) {
+        @include flex-direction(column);
+        .flex-box-items{
+            margin-bottom: 15px;
+        }
+    }
+
+    .seatting {
+        background: url("/img/images/how_it_works_01.jpg") no-repeat center top;
+        @include size(100%, 320px);
+    }
+
+    .discover {
+        background: url("/img/images/how_it_works_02.jpg") no-repeat center top;
+        @include size(100%, 320px);
+    }
+
+    .solutions {
+        background: url("/img/images/how_it_works_03.jpg") no-repeat center top;
+        @include size(100%, 320px);
+    }
+
+    .display-center {
+        @include display-center;
+        @include flex-direction (column);
+        height: 100%;
+        text-align: center;
+        h2 {
+            max-width: 300px;
+            font-weight: 700;
+            color: $white;
+            font-size: 38px;
+
+            @include breakpoint ($mobile) {
+                max-width: 100%;
+                font-size: 20px;
+                line-height: 28px;
+                letter-spacing: 2px;
+            }
+        }
+
+    }
+}
+
+.feature-list {
+    .title-text {
+        font-size: 20px;
+    }
+    .feature-list-inline {
+        .inline-features {
+            @include justify-content(space-between);
+            @include flex-wrap (wrap);
+
+            @include breakpoint($mobile){
+                @include flex-direction(column);
+            }
+
+            li {
+                @include breakpoint($mobile){
+                    background-color: #f5f5f5;
+                    margin-bottom: 1px;
+                }
+                a {
+                    font-size: 18px;
+                    color: $error;
+                    font-weight: 600;
+                    &:hover {
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.heading-event {
+    font-size: 40px;
+    font-weight: 600;
+    display: block;
+    color: #36bfb9;
+    margin-bottom: 30px;
+
+    @include breakpoint($small-device) {
+        font-size: 26px;
+    }
+}
+.heading-host,
+.heading-box-host {
+    font-size: 40px;
+    font-weight: 600;
+    display: block;
+    color: #36bfb9;
+    margin-bottom: 30px;
+
+    @include breakpoint($small-device) {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+}
+.heading-box-host {
+    margin-top: 20px;
+}
+
+.box-item {
+    text-align: center;
+    h3 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    p {
+        margin-bottom: 30px;
+        font-size: 15px;
+    }
+}
+
+.selling {
+    background-color: #657273;
+
+    p {
+        color: #000;
+    }
+}
+
+
+.host-box{
+    position: relative;
+    margin-left: -36px;
+
+    @include breakpoint($small-device){
+        margin-left: 0;
+        padding-left: 30px;
+    }
+
+    ul{
+        padding: 0;
+        margin: 0;
+        li{
+            font-size: 20px;
+            margin: 0;
+            padding: 0 0 10px;
+
+            @include breakpoint($small-device){
+                font-size: 14px;
+            }
+        }
+    }
+}
+.host-list{
+    position: relative;
+    overflow: hidden;
+}
+.host-image{
+    img{
+        width: 100%;
+    }
+}
+
+
+
+.host-list-box {
+    @include justify-content (space-between);
+    @include display-flex;
+    @include align-items (center);
+
+    @include breakpoint ($mobile){
+        @include flex-direction (column);
+    }
+}
+
+.normal-text.having-trouble {
+    h3 {
+        font-size: 48px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        line-height: 46px;
+
+        @include breakpoint($small-device) {
+            font-size: 26px;
+            line-height: 30px;
+        }
+    }
+    p {
+        font-size: 20px;
+    }
+}
+
+.inner-content {
+    max-height: 188px;
+    border: 4px solid #647373;
+    padding: 50px 0;
+
+    h2 {
+        font-size: 90px;
+        font-weight: 300;
+        color: #36bfb9;
+        margin-bottom: 30px;
+        font-family: "Roboto Light";
+
+        @include breakpoint($small-device){
+            font-size: 70px;
+        }
+
+        span {
+            font-size: 55px;
+            margin: 0 -18px;
+        }
+
+        .span1 {
+            font-size: 55px;
+            margin: 0 -29px;
+        }
+
+        .plus {
+            font-size: 37px;
+            margin: 0;
+            vertical-align: middle;
+        }
+    }
+}
+
+.inner-contentd {
+    max-height: 200px;
+    padding: 60px 0;
+    margin-top: 48px;
+
+    h2 {
+        font-size: 85px;
+        font-weight: 300;
+        color: #36bfb9;
+        margin-bottom: 39px;
+        font-family: "Roboto Light";
+    }
+}
+
+.sort-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.per-ticket {
+    font-size: 24px;
+    font-style: normal;
+    color: #929aa5;
+}
+
+.cents {
+    font-size: 19px;
+    font-style: normal;
+    margin-top: 45px;
+    position: absolute;
+    margin-left: -80px;
+}
+
+.calculator-part {
+    .container-fluid {
+        .row {
+            > .col-sm-6{
+                padding: 0;
+
+                > div,
+                > span{
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+    .header-calculator {
+        margin-top: 30px;
+        h2 {
+            font-size: 35px;
+            line-height: 40px;
+            color: #36bfb9;
+            font-weight: 600;
+
+            @include breakpoint($small-device) {
+                font-size: 26px;
+            }
+        }
+
+        p {
+            margin-bottom: 50px;
+            font-size: 20px;
+        }
+    }
+
+    .border {
+        display: inline-block;
+        width: 72%;
+        background: #B3BCBC;
+        height: 4px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.calculate-forms {
+
+    figure {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border: 4px solid #647373;
+    }
+    input {
+        margin-bottom: 55px;
+
+        @include breakpoint($mobile) {
+            margin-bottom: 0;
+        }
+    }
+    label.label-cal {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+    .width-max {
+        max-width: 210px;
+        margin-left: 28px;
+    }
+    .width-max2 {
+        max-width: 450px;
+    }
+
+}
+
+.contactus-text {
+    width: 100%;
+    background: #1DBCBB;
+}
+
+button.submit-big {
+    border-radius: 7px;
+}
+
+.faq-btm-secion{
+    &.how-title h1{
+        font-size: 50px;
+        margin: 18px 0;
+        letter-spacing: 2px;
+        color: #1DBCBB;
+        line-height: 50px;
+        text-transform: none;
+
+        @include breakpoint($small-device) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        a{
+            color: #1DBCBB;
+
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+}

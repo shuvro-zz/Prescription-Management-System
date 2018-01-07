@@ -1,0 +1,49 @@
+/* -------------------------------------------
+Date Time styles here */
+.event-booking {
+  [name*="[year]"], [name*="[month]"], [name*="[day]"] {
+    height: 38px;
+    border: 1px solid $light-gray;
+    padding: 4px;
+    margin-left: 10px;
+  }
+  [for*="smoking"] {
+    display: block;
+    margin-left: 10px;
+  }
+  input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 10px;
+    float: left;
+  }
+  [id*="smoking"] {
+    top: 5px;
+  }
+  .form-group{
+    margin-bottom: 20px;
+  }
+}
+
+.xdsoft_scrollbar{
+  > .xdsoft_scroller{
+    height: 30px !important;
+  }
+}
+
+.xdsoft_datetimepicker {
+  .xdsoft_monthpicker {
+    .xdsoft_label {
+     > .xdsoft_select {
+      max-height: 150px !important;
+    }
+    &.xdsoft_month{
+      text-align: center !important;
+    }
+    &.xdsoft_year{
+      width: 54px;
+    }
+  }
+}
+}

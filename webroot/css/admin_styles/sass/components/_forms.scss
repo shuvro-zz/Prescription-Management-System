@@ -1,0 +1,122 @@
+/* -------------------------------------------
+Forms styles here */
+
+.form-row {
+    margin-bottom: 30px;
+
+    label {
+        display: block;
+        font-size: $font-size-base;
+        color: $gray-dark;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+        @include breakpoint($tablet) {
+            font-size: 12px;
+        }
+    }
+
+    .info-img-size {
+        font-size: 10px;
+    }
+
+    .inputs {
+        position: relative;
+    }
+
+    .error {
+        color: $error !important;
+    }
+}
+
+.form-control {
+    @include size(100%, 43px);
+    font-size: $font-size-base;
+    color: $gray-dark;
+    font-weight: 500;
+    border: 1px solid #dde3e5;
+    padding: 5px $gutter-width;
+    @include border-radius(3px);
+    box-shadow: none;
+}
+
+.control-group {
+    font-family: $lato;
+    background: $white;
+    text-align: left;
+    padding: 30px;
+    margin: 10px;
+    @include box-shadow(0 1px 2px rgba($black, 0.1));
+}
+
+.control {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &:hover {
+        input ~ .control__indicator {
+            background: #ccc;
+        }
+
+        input:not([disabled]):checked ~ .control__indicator {
+            background: #0e647d;
+        }
+    }
+
+    input:checked ~ .control__indicator:after {
+        display: block; // Show Check
+    }
+
+    input:checked ~ .control__indicator {
+        background: #2aa1c0;
+    }
+
+    input:focus ~ .control__indicator {
+        background: #ccc;
+    }
+
+    input:checked:focus ~ .control__indicator {
+        background: #0e647d;
+    }
+
+    input:disabled ~ .control__indicator {
+        background: #e6e6e6;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+}
+
+// Checkbox tick
+.control--checkbox {
+    .control__indicator {
+        @include absolute(2px, auto, auto, 0);
+        @include size(20px, 20px);
+        background: #e6e6e6;
+        @include border-radius(3px);
+
+        &:after {
+            content: "";
+            display: none; // Hide check
+            @include size(5px, 10px);
+            @include absolute(4px, auto, auto, 8px);
+            border: solid $white;
+            border-width: 0 2px 2px 0;
+            @include transform(rotate(45deg));
+        }
+    }
+
+    // Disabled tick colour
+    input:disabled ~ .control__indicator:after {
+        border-color: #7b7b7b;
+    }
+}

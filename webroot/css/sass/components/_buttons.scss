@@ -1,0 +1,45 @@
+/* -------------------------------------------
+Button styles here */
+.button-group {
+    padding-top: 30px;
+}
+
+button {
+    @include common-button;
+}
+
+.more {
+    @include size(100%, 60px);
+    max-width: 210px;
+    color: $white;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 5px $gutter-width;
+    border: 2px solid $white;
+    @include display-center;
+    @include border-radius(30px);
+
+    &:hover {
+        color: $soft-blue;
+        border-color: $soft-blue;
+    }
+}
+
+.link-button {
+    padding: 8px 16px;
+    background: $white;
+    margin-right: 10px;
+    text-transform: capitalize;
+    border: 1px solid $orange;
+    border-radius: 2px;
+    &:hover {
+        color:$orange ;
+    }
+}
+
+.select-seat-back-btn,
+.select-seat-btn{
+    @include common-button;
+    max-width: 250px;
+    margin: 0 10px
+}

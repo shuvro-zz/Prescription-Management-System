@@ -1,0 +1,15 @@
+{
+  "name": "gradpak-gulp",
+  "version": "1.0.0",
+  "author": "Ahmed",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-install": "^0.6.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}

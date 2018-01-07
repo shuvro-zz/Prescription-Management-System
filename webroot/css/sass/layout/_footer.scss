@@ -1,0 +1,197 @@
+/* -------------------------------------------
+Footer styles here */
+#org-footer {
+  background-color: #f6f7fb;
+}
+
+.footer {
+  padding-top: 100px;
+
+  &.footer-bg {
+    background-color: $mostly-white;
+    padding-top: 40px;
+  }
+
+  li{
+    padding: 0;
+  }
+
+  .newsletter-form {
+    margin-bottom: 60px;
+    position: relative;
+
+    label.error {
+      left: auto;
+      right: calc(100% - 60%);
+    }
+  }
+}
+
+.footer-content {
+  padding: 30px 0;
+
+  .intro-header {
+    margin-bottom: 24px;
+  }
+
+  .heading {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    text-transform: capitalize;
+    @include justify-content(flex-start);
+
+    &:before {
+      left: 0;
+      @include translateX(0);
+    }
+  }
+
+  address {
+    line-height: $line-height-base;
+  }
+
+  .call-us {
+    @include display-flex;
+    @include flex-direction(column);
+
+    > span {
+      label {
+        color: $dark-gray;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin-right: 3px;
+        position: relative;
+
+        &:after {
+          content: ":";
+        }
+      }
+
+      a {
+        color: $dark-gray;
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+  .quick-link ul {
+    margin: -4px 0;
+    li {
+      padding: 0px 10px 5px 0;
+    }
+  }
+}
+
+.bottom-footer {
+  min-height: 70px;
+  color: $dark-gray;
+  border-top: 1px solid #e1e1e1;
+  @include display-center;
+
+  .row {
+    width: 100%;
+  }
+
+  .flex-container {
+    > .flex-item {
+      @include flex(inherit);
+    }
+  }
+
+  ul {
+    @include list-style;
+    @include display-flex;
+    @include justify-content(flex-end);
+    li {
+      margin-left: $gutter-width;
+      a {
+        color: $dark-gray;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+  .copyright {
+    margin-right: 50px;
+    a {
+      color: $dark-gray;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+  .powerd-by {
+    display: block;
+    font-size: 13px;
+    text-align: right;
+
+    a {
+      color: $darker-blue;
+      font-weight: 700;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
+
+
+@include breakpoint($mobile) {
+
+  .footer {
+    .newsletter-form {
+      margin-bottom: 15px;
+      label {
+        font-size: 12px;
+      }
+      input {
+        margin-left: 6px;
+      }
+      button {
+        margin-left: 8px;
+        max-width: 90px;
+      }
+      label.error {
+        left: auto;
+        right: calc(100% - 60%);
+      }
+
+    }
+
+    .f-logo {
+      a {
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .footer-content{
+    address, .call-us {
+      margin-bottom: 35px;
+    }
+  }
+
+  .bottom-footer{
+    .copyright {
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+    .item{
+      margin-top: 20px;
+      ul {
+        justify-content: flex-start;
+        li {
+          font-size: 13px;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,249 @@
+/* -------------------------------------------
+Mixins styles here... */
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+}
+&:after {
+    clear: both;
+}
+}
+
+// List type
+@mixin list-style {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Absolute Position
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// Triangle
+@mixin arrow($width: 26px, $height: 26px, $direction: up, $color: $page) {
+  @include size(0, 0);
+  // Right
+  @if $direction == right {
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+    border-left: $width solid $color;
+}
+  // Left
+  @if $direction == left {
+    border-top: $height/2 solid transparent;
+    border-bottom: $height/2 solid transparent;
+    border-right: $width solid $color;
+}
+  // Up
+  @if $direction == up {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-bottom: $height/2 solid $color;
+}
+  // Down
+  @if $direction == down {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-top: $height/2 solid $color;
+}
+}
+
+// Usage
+//  &:after {
+//    @include arrow(54px, 54px, up, $page);
+//    @include absolute(0, auto, auto, 0);
+//    content: "";
+//    margin:0;
+// }
+
+@mixin triangle-topleft {
+  @include size(0, 0);
+  border-top: 30px solid $modarate-cyan2;
+  border-right: 30px solid transparent;
+}
+
+//Center-align a block level element
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Display Flexbox
+@mixin display-center {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+// Table
+// --------
+@mixin th-width($col, $width) {
+  #{$col} {
+    width: $width;
+}
+}
+
+@mixin table-columns($widths...) {
+  width: 100%;
+
+  th, td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+$n: 1;
+$var: "th:nth-child(" + $n + ")";
+@each $width in $widths {
+    @include th-width($var, $width);
+    $n: $n + 1;
+    $var: "th:nth-child(" + $n + ")";
+}
+}
+
+// Common Button
+@mixin common-button {
+  background: $modarate-cyan2;
+  font-family: $lato;
+  color: $white;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid $gray;
+  padding: 0 15px;
+  min-width: 84px;
+  outline: none;
+  @include size(100%, 45px);
+  // display: inline-block;
+  @include display-center;
+  @include border-radius(3px);
+  @include box-shadow(inset 0 0 0 rgba($white, 0.1));
+  @include transition(all ease-in 300ms);
+
+  &:hover {
+    color: $white;
+    @include box-shadow(inset 0 38px 0 rgba($white, 0.1));
+}
+
+&.back,
+&.reset {
+    background: $white;
+    color: $black;
+    text-align: center;
+    //display: inline-block;
+
+    &:hover {
+      color: rgba($black, 0.6);
+  }
+}
+
+&.save {
+    background: $modarate-cyan2;
+}
+
+&.cancel {
+    color: $gray-dark;
+    background: #d1d5dd;
+}
+
+&.category {
+    color: $gray-dark;
+    background: $white;
+    border: 1px solid $gray-light;
+    justify-content: flex-start;
+    text-transform: capitalize;
+    text-align: left;
+
+    &:after {
+      content: "\f107";
+      font: normal normal normal 14px/1 FontAwesome;
+      margin: 6px 12px;
+      position: absolute;
+      right: 0;
+      top: auto;
+      bottom: 6px;
+  }
+}
+
+&.add-more {
+    &:hover {
+      color: $black;
+  }
+}
+}
+
+// Circle ball btn
+@mixin circle {
+  background-color: $vivid-blue;
+  color: $white;
+  font-family: Arial;
+  font-size: 12px;
+  line-height: 1;
+  @include display-center;
+  @include border-radius(50%);
+}
+
+// Title Border
+@mixin border-title {
+  @include display-flex;
+  color: $grayish-blue;
+  text-transform: capitalize;
+  padding-bottom: 7px;
+  position: relative;
+
+  small {
+    text-transform: none;
+}
+
+&:before {
+    content: "";
+    @include size(52px, 2px);
+    background: $modarate-cyan;
+    @include absolute(auto, auto, 0, 0);
+}
+}
+
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ajebaje {
+  color: red;
+}
+
+@mixin bottom-border {
+    padding-bottom: 5px;
+    position: relative;
+
+    &:before {
+        content: "";
+        @include size(40px, 2px);
+        background: $modarate-cyan2;
+        @include absolute(auto, auto, 0, 0);
+    }
+}

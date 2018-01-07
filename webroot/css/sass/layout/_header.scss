@@ -1,0 +1,486 @@
+/* -------------------------------------------
+Header styles here */
+.header {
+    height: 100px;
+    background-color: $white;
+    @include display-center;
+    @include justify-content(space-between);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99999;
+    @include box-shadow(0 1px 1px rgba($black, 0.1));
+
+    @include breakpoint($mobile) {
+        height: 167px;
+    }
+
+    #logo {
+        padding-left: 52px;
+        @include breakpoint($small) {
+            left: 0;
+            padding-left: 0 !important;
+            position: absolute;
+            top: 5px;
+            z-index: 9999;
+        }
+        @include breakpoint($mobile) {
+            left: 0;
+            padding-left: 0 !important;
+            position: absolute;
+            top: 5px;
+            z-index: 9999;
+        }
+    }
+
+    .inner-header {
+
+        @include breakpoint($mobile) {
+            bottom: inherit !important;
+            top: 0 !important;
+            height: 100%;
+        }
+        .navigation-block {
+            padding-right: 20px;
+            position: absolute;
+            right: 180px;
+            top: 0px;
+            @include breakpoint($small-device){
+                right: 150px;
+            }
+        }
+
+        span.v {
+            text-transform: none;
+            font-size: 16px;
+        }
+    }
+}
+
+.org-body{
+    .header{
+        @include breakpoint($mobile) {
+            height: 145px;
+        }
+    }
+}
+
+#logo {
+    a {
+        img {
+            max-height: 88px;
+        }
+    }
+}
+
+.sign-up {
+    height: 92px;
+    color: $white;
+    text-transform: capitalize;
+    padding: $gutter-width 30px;
+    @include display-center;
+    @include flex-direction(column);
+    @include background-image(linear-gradient(to right, #55b8e6, #5f63f6));
+
+    .new-org {
+        font-weight: 600;
+
+    }
+    &:hover,
+    &:focus {
+        color: $white;
+    }
+}
+
+.book-ticket {
+    height: 92px;
+    background-color: $orange;
+    color: $white;
+    text-transform: capitalize;
+    padding: $gutter-width 30px;
+    @include display-center;
+    @include flex-direction(column);
+
+    .new-org {
+        font-weight: 600;
+
+    }
+    &:hover,
+    &:focus {
+        color: $white;
+    }
+}
+
+.topbar-contact {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(flex-end);
+
+    @include breakpoint($mobile) {
+        position: relative;
+        top: 40px;
+        right: 60px;
+        padding: 0;
+        margin: 0;
+    }
+
+    > span {
+        padding-left: 20px;
+        margin-left: 18px;
+
+        &:last-child {
+            position: relative;
+
+            &:before {
+                background-color: #909090;
+                @include size(1px, 11px);
+                @include absolute(50%, auto, auto, 0);
+                @include translateY(-50%);
+                @include display-flex;
+                @include align-items(center);
+
+            }
+        }
+
+        @include breakpoint($mobile) {
+            margin-left: 0;
+        }
+    }
+
+    a {
+        font-size: 13px;
+        color: #909090;
+        em {
+            font-style: normal;
+            margin-left: 10px;
+
+            &.phone-number{
+                @include breakpoint($ipad-landscape){
+                    display: none;
+                }
+            }
+            @include breakpoint($mobile) {
+                display: none;
+            }
+
+        }
+
+        &.modal-link{
+            em{
+                @include breakpoint($mobile) {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .fa {
+            color: $orange;
+        }
+
+        &:hover {
+            color: $darker-blue;
+            text-decoration: none;
+        }
+    }
+    .border > a {
+        position: relative;
+        &:before {
+            content: "";
+            background-color: #909090;
+            @include size(1px, 11px);
+            @include absolute(50%, auto, auto, -16px);
+            @include translateY(-50%);
+            @include display-flex;
+            @include align-items(center);
+
+        }
+    }
+}
+
+.org-topbar {
+    a {
+        font-size: 13px;
+        color: #909090;
+        em {
+            font-style: normal;
+            margin-left: 10px;
+        }
+
+        .fa {
+            color: $orange;
+        }
+
+        &:hover {
+            color: $orange;
+            text-decoration: none;
+        }
+    }
+}
+
+@include breakpoint($ipad-portrait) {
+    .header {
+
+        #logo {
+            padding-left: 15px;
+
+            a {
+                img {
+                    max-height: 88px;
+                }
+            }
+        }
+
+        .inner-header {
+
+            .navigation-block {
+                padding-right: 15px;
+            }
+
+            .topbar-contact {
+
+                span {
+                    padding-left: 10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+
+
+
+        .sign-up {
+            padding: 15px 14px;
+        }
+    }
+}
+
+@include breakpoint($mobile) {
+    .header {
+        align-items: baseline;
+
+        .small-nav .fa.fa-bars {
+            font-size: 25px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        #logo {
+            padding-left: 15px;
+            flex: 1 1 auto;
+            margin-top: 5px;
+
+            a {
+                img {
+                    max-height: 80px;
+                }
+            }
+        }
+
+        .inner-header {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: auto;
+            bottom: 0;
+
+            .sign-up {
+                flex-direction: row;
+                height: 50px;
+                padding: 15px 30px;
+                width: 100%;
+
+                .both-side-border {
+                    padding: 0 6px;
+                    &:after,
+                    &:before {
+                        background-color: transparent !important;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@include breakpoint($ipad) {
+    .header {
+
+        #logo {
+            padding-left: 15px;
+
+            a {
+                img {
+                    max-height: 88px;
+                }
+            }
+        }
+
+        .inner-header {
+
+            .navigation-block {
+                padding-right: 15px;
+            }
+
+            .topbar-contact {
+                span {
+                    padding-left: 10px;
+                    margin-left: 18px;
+                }
+
+                a {
+                    font-size: 11px;
+                    em {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+
+        }
+
+        .book-ticket {
+            padding: 15px 14px;
+
+            span {
+                &.both-side-border {
+                    font-size: 9px;
+                }
+            }
+        }
+
+    }
+
+    .upcoming-event {
+
+        .event-item-box {
+            min-height: 120px;
+
+            .event-time {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .f-logo {
+        a {
+            img {
+                width: 145px;
+            }
+        }
+    }
+}
+
+@include breakpoint($ipad-portrait) {
+    .header {
+
+        #logo {
+            padding-left: 15px;
+
+            a {
+                img {
+                    max-height: 88px;
+                }
+            }
+        }
+
+        .inner-header {
+
+            .navigation-block {
+                // padding-right: 15px;
+            }
+
+            .topbar-contact {
+
+                span {
+                    padding-left: 10px;
+                    margin-left: 18px;
+                }
+
+                a {
+                    font-size: 12px;
+                    em {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+
+        }
+
+        .book-ticket {
+            padding: 15px 14px;
+
+            span {
+                &.both-side-border {
+                    font-size: 9px;
+                }
+            }
+        }
+
+    }
+
+    .upcoming-event {
+
+        .event-item-box {
+            min-height: 120px;
+
+            .event-time {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .f-logo {
+        a {
+            img {
+                width: 145px;
+            }
+        }
+    }
+}
+
+@include breakpoint($tablet-portrait) {
+
+    .main-nav-org {
+        ul {
+            li {
+                padding: 0 16px;
+            }
+        }
+    }
+
+    .f-logo {
+        a {
+            img {
+                width: 150px;
+            }
+        }
+    }
+
+    .upcoming-event {
+
+        .event-item-box {
+            min-height: 120px;
+
+            .event-time {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.company-name{
+    font-size: 24px;
+    text-transform: uppercase;
+    @include breakpoint($small-device){
+        font-size: 14px;
+    }
+
+    @include breakpoint($mobile) {
+        display: none;
+    }
+}

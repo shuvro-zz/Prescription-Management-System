@@ -1,0 +1,135 @@
+/* -------------------------------------------
+Floated Side Bar styles here */
+.seat-category {
+    position: relative;
+
+    .seat-labels {
+        @include display-flex(flex);
+        @include flex-wrap(wrap);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            font-family: $montserrat;
+            padding: 5px;
+        }
+    }
+
+    span {
+        font-size: 12px;
+        margin-right: 5px;
+        padding-left: 18px;
+    }
+}
+
+.floated-container {
+    width: 330px;
+    max-height: -webkit-calc(calc(45%));
+    max-height: calc(calc(45%));
+    background-color: $mostly-white;
+    padding: 22px;
+    border: 1px solid #ebebeb;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    @include translateY(-50%);
+    @include box-shadow(0 0 10px #ebebeb);
+
+    @include breakpoint($small-device){
+        display: none;
+    }
+
+    .seat-category,
+    .selected-seat {
+        margin-bottom: 40px;
+    }
+
+    h5 {
+        text-transform: none;
+        margin-bottom: 20px;
+    }
+}
+
+.selected-seat {
+    .label-type {
+        margin-bottom: 5px;
+
+        .lbl-type-list {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 600;
+        }
+    }
+    .inline-seat {
+        margin-bottom: 10px;
+        @include display-flex;
+        @include flex-wrap(wrap);
+        > span {
+            @include size(87px, 33px);
+            background-color: $white;
+            font-size: 12px;
+            color: #817f7e;
+            text-align: center;
+            border: 1px solid #ebebeb;
+            margin: 0 3px 5px 0;
+            @include display-flex;
+            @include align-items(center);
+            @include justify-content(center);
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+//Ticket Fare style
+.sidebar-cart-summary {
+    &.cart-summary {
+        @include clearfix;
+        .no-border {
+            border-bottom: medium none;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 10px;
+            }
+        }
+        > span {
+            color: #7f7f94;
+            font-size: 12px;
+            font-weight: 600;
+
+            > label {
+                color: #000;
+                font-weight: 700;
+            }
+
+            .total-orng {
+                color: $orange;
+                font-size: 13px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// select seat onpage title style
+.seat-levels-name {
+    h5 {
+        margin-right: 50px;
+    }
+    &.flex-container {
+        @include align-items(baseline);
+    }
+}
+
+.floated-container-right-side-bar {
+    h5 {
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+}

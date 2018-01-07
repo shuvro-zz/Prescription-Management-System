@@ -1,0 +1,89 @@
+
+/* -------------------------------------------
+Button styles here */
+
+button{
+    @include common-button;
+}
+.link-btn {
+    @include common-button;
+}
+.add-more{
+    max-width: 208px;
+    background: $white;
+    color: $gray-dark;
+    display: block;
+    text-transform: capitalize;
+    &:before{
+        content: "\f067";
+        font: normal normal normal 14px/1 FontAwesome;
+        margin-right: 6px;
+    }
+}
+
+.add-ticket-type{
+    max-width: 100%;
+}
+
+.action-button{
+    display: inline-block;
+    cursor: pointer;
+    .event-action{
+        padding: 4px 5px;
+        position: relative;
+        border: 1px solid transparent;
+    }
+    &.open{
+        .event-action{
+            background: $white;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border: 1px solid #bbb;
+            z-index: 1001;
+            border-bottom: 0 ;
+        }
+    }
+    .action-dropdown{
+        text-align: left;
+        border-top-right-radius: 0;
+        top: 23px;
+        border: 1px solid #bbb;
+        box-shadow: none;
+        right: 0;
+        left: auto;
+        a{
+            color: #5d5d5d;
+            text-align: left;
+            padding: 6px 10px;
+
+            &:hover{
+                background: transparent;
+            }
+            span{
+               padding-right: 3px;
+               font-size: 13px;
+           }
+       }
+   }
+}
+.inline-btn{
+    display: inline-block;
+    padding: 11px 20px;
+    width: auto;
+    line-height: 1;
+    height: auto;
+}
+
+.floating-btn {
+    @include common-button;
+    text-transform: capitalize;
+    height: 35px;
+    background-color: #848eb4;
+    outline: none;
+}
+
+.more-booking-info{
+    > span{
+        margin-right: 10px;
+    }
+}

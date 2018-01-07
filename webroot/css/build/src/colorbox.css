@@ -1,0 +1,331 @@
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+#cboxWrapper {
+    max-width: none;
+}
+#cboxOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+#cboxMiddleLeft, #cboxBottomLeft {
+    clear: left;
+}
+#cboxContent {
+    position: relative;
+}
+#cboxLoadedContent {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#cboxTitle {
+    margin: 0;
+}
+#cboxLoadingOverlay, #cboxLoadingGraphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+    cursor: pointer;
+}
+.cboxPhoto {
+    float: left;
+    margin: auto;
+    border: 0;
+    display: block;
+    max-width: none;
+    -ms-interpolation-mode: bicubic;
+}
+.cboxIframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+#colorbox, #cboxContent, #cboxLoadedContent {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+    background: url(images/overlay.png) repeat 0 0;
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
+}
+#colorbox {
+    outline: 0;
+}
+#cboxTopLeft {
+    width: 21px;
+    height: 21px;
+    background:#fff;
+}
+#cboxTopRight {
+    width: 21px;
+    height: 21px;
+    background:#fff;
+}
+#cboxBottomLeft {
+    width: 21px;
+    height: 21px;
+    background:#fff;
+}
+#cboxBottomRight {
+    width: 21px;
+    height: 21px;
+    background:#fff;
+}
+#cboxMiddleLeft {
+    width: 21px;
+    background:#fff;
+}
+#cboxMiddleRight {
+    width: 21px;
+    background:#fff;
+}
+#cboxTopCenter {
+    height: 21px;
+    background:#fff;
+}
+#cboxBottomCenter {
+    height: 21px;
+    background:#fff;
+}
+#cboxContent {
+    background:#fff;
+    overflow: hidden;
+}
+.cboxIframe {
+    background:#fff;
+}
+#cboxError {
+    padding: 50px;
+    border: 1px solid #ccc;
+}
+#cboxLoadedContent {
+    margin-bottom: 28px;
+}
+#cboxTitle {
+    position: absolute;
+    bottom: 0px;
+    left: 46%;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-weight: bold;
+}
+#cboxCurrent {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    color: #949494;
+}
+#cboxLoadingOverlay {
+    background: url(images/loading_background.png) no-repeat center center;
+}
+#cboxLoadingGraphic {
+    background: url(images/loading.gif) no-repeat center center;
+}
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    width: auto;
+    background: none;
+}
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {
+    outline: 0;
+}
+#cboxSlideshow {
+    position: absolute;
+    bottom: 4px;
+    right: 30px;
+    color: #0092ef;
+}
+#cboxPrevious {
+    background-image:url("images/popup-arrow-main-left.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
+    padding: 5px 10px;
+    left: 10px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 47%;
+    width: 32px;
+}
+#cboxPrevious:hover {
+    background-color: rgba(197, 18, 48, 0.8);
+}
+#cboxNext {
+    background-image:url("images/popup-arrow-main-right.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
+    padding: 5px 10px;
+    right: 10px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 47%;
+    width: 32px;
+}
+#cboxNext:hover {
+    background-color: rgba(197, 18, 48, 0.8);
+}
+#cboxClose {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    /*background: url(images/vedio-close-icon.png) no-repeat 0 0;*/
+    /*width: 15px;*/
+    /*height: 15px;*/
+    /*text-indent: -9999px;*/
+}
+#cboxClose:hover {
+    background-position: 0 -15px;
+}
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft, .cboxIE #cboxTopCenter, .cboxIE #cboxTopRight, .cboxIE #cboxBottomLeft, .cboxIE #cboxBottomCenter, .cboxIE #cboxBottomRight, .cboxIE #cboxMiddleLeft, .cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+}
+
+
+/* signin and signup start */
+
+.tech-login-main-container #cboxTopCenter, .tech-login-main-container #cboxTopLeft, .tech-login-main-container #cboxTopRight, .tech-login-main-container #cboxMiddleLeft, .tech-login-main-container #cboxMiddleRight, .tech-login-main-container #cboxBottomCenter, .tech-login-main-container #cboxBottomRight, .tech-login-main-container #cboxBottomLeft{
+    background: #fff;
+}
+.app #cboxTopCenter, .app #cboxTopLeft, .app #cboxTopRight, .app #cboxMiddleLeft, .app #cboxMiddleRight, .app #cboxBottomCenter, .app #cboxBottomRight, .app #cboxBottomLeft, .app .panel-body{
+    background: #fff;
+}
+.app #cboxClose{
+    right: 0 !important;
+    top: 0 !important;
+    left: inherit;
+    background-repeat: no-repeat;
+    width: 15px;
+    font-size: 0 !important;
+    height: 15px;
+    background-color: #fff;
+    background-image:url("images/signup-close-icon.png");
+}
+.app #cboxContent
+{
+    background: #fff;
+}
+.tech-login-main-container #cboxClose{
+    right: 0 !important;
+    top: 0 !important;
+    left: inherit;
+    background-image:url("images/signup-close-icon.png");
+}
+.tech-login-main-container .form-head h4, .tech-login-main-container h4.form-label{
+    text-align: center;
+    font-size: 25px;
+    padding: 30px 0;
+    font-family: 'proxima_nova_ltsemibold' !important;
+    text-transform: uppercase;
+}
+.tech-login-main-container .form-actions button, .tech-login-main-container .submit_button input
+{
+    width: 100%;
+    margin-top: 12px;
+}
+.tech-login-main-container .form-controls
+{
+    position: relative;
+}
+.tech-login-main-container .form-foot
+{
+    text-align: center;
+    padding-top: 25px;
+}
+.tech-login-main-container .user-form{
+    padding: 15px;
+}
+.tech-login-main-container .users_form_content .ajax-popup{
+    display: block;
+    text-align: center;
+}
+.tech-login-main-container .signup-link{
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 10px;
+    font-family: 'proxima_nova_ltsemibold' !important;
+}
+.tech-login-main-container .forgot-pass-link{
+    text-decoration: underline;
+    color: #484848;
+}
+.tech-login-main-container .btn-primary.active.focus, .tech-login-main-container .btn-primary.active:focus, .tech-login-main-container .btn-primary.active:hover, .tech-login-main-container .btn-primary.focus:active, .btn-primary:active:focus, .tech-login-main-container .btn-primary:active:hover, .tech-login-main-container .open > .dropdown-toggle.btn-primary.focus, .tech-login-main-container .open > .dropdown-toggle.btn-primary:focus, .tech-login-main-container .open > .dropdown-toggle.btn-primary:hover
+{
+    background: #c51230;
+    color: #fff;
+    border: none;
+}
+.tech-login-main-container .btn-common:hover, .tech-login-main-container .btn-common:focus
+{
+    border: 1px solid #c51230;
+}
+.tech-login-main-container .forgot .ajax-popup{
+    display: block;
+    text-align: center;
+    padding-top: 15px;
+}
+.tech-login-main-container .forgot .btn-common{
+    width: 100%;
+}
+/*
+.tech-login-main-container select.form-control
+{
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: 0;
+    border-bottom: 1px solid #ccc;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 15px 2px 0;
+    background-image:url("images/location_arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 8px;
+}
+.tech-login-main-container select.form-control{
+    position: relative;
+}
+*/
+/* signin and signup end */
+

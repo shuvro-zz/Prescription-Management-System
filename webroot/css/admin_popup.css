@@ -1,0 +1,263 @@
+body {
+    font-family: "lato";
+    font-weight: 400;
+    color: #222;
+    width: 800px;
+}
+
+h2 {
+    margin-bottom: 30px;
+    margin-left: 28px;
+    position: relative;
+}
+
+h2::after {
+    background-color: #1f97fe;
+    bottom: -14px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: auto;
+    width: 35px;
+}
+
+.page {
+    width: 800px;
+}
+
+.panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px 15px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.table {
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table {
+    background-color: transparent;
+}
+
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+    border-top: 0 none;
+}
+
+.table > thead > tr > th {
+    border-bottom: 2px solid #ddd;
+    vertical-align: bottom;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    border-top: 1px solid #ddd;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+
+table th {
+    border-bottom: 1px solid #f0f3f8;
+    padding: 18px 10px;
+    text-align: left;
+}
+
+table th {
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+a {
+    color: #242424;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3cc2bb;
+}
+
+.pagination {
+    border-radius: 4px;
+    display: inline-block;
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.pagination > li {
+    display: inline;
+}
+
+p {
+    color: #6d7a8d;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 15px;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    margin-left: 0;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+    background-color: #fff;
+    border-color: #ddd;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #337ab7;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+ul li {
+    display: inline;
+}
+
+.btn-group, .btn-group-vertical {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.btn-default {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+.btn {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#attachment-form {
+    width: 800px;
+}
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+.form-control {
+    border-color: #e1e1e1;
+    border-radius: 2px;
+    box-shadow: none;
+    height: 44px;
+}
+
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.input.file {
+    color: #5d5d5d;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+button {
+    align-items: center;
+    background: #9fd460 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.1) inset;
+    color: #fff;
+    cursor: pointer;
+    display: inline;
+    font-weight: 500;
+    height: 44px;
+    justify-content: center;
+    outline: medium none;
+    padding: 0 15px;
+    text-transform: uppercase;
+    transition: all 300ms ease-in 0s;
+    width: 180px;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.btn {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}

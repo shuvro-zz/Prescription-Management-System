@@ -1,0 +1,168 @@
+.event-setting {
+
+  p {
+    color: $grayish-blue;
+    font-weight: 500;
+    margin: 40px 0 26px;
+  }
+
+  .selection-wrapper {
+    justify-content: space-between;
+    width: 375px;
+
+    .toggle-container {
+      margin-bottom: 25px;
+    }
+
+  }
+
+  .input-width {
+    max-width: 390px;
+  }
+
+  .additional-booking {
+    margin: 15px 0;
+  }
+
+  .checkbox-wrap > label {
+    font-size: 13px;
+    color: $gray-dark;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .dietary-form {
+    margin-top: 25px;
+  }
+  .button-form-element {
+    margin-top: 40px;
+  }
+
+  .action {
+    background-color: $white;
+    border: 1px solid $gray;
+    @include border-radius(2px);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -25px;
+  }
+
+  .edit,
+  .delete {
+    color: $gray-dark;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    padding: 0 6px;
+    text-align: center;
+  }
+
+  .edit {
+    border-right: 1px solid $gray;
+  }
+
+  .dropdown-menu {
+    height: 208px;
+    margin: 2px 14px;
+    padding: 26px;
+    max-width: 395px;
+  }
+
+  .form-element {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .button-form-element.open, .add-more {
+    color: $modarate-cyan2;
+  }
+
+  .element-box {
+    margin: 0 0 20px;
+  }
+  .btn {
+    padding: 0;
+  }
+
+}
+
+.modal-content .form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.modal-content label.error {
+  bottom: -27px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  left: 0;
+  font-size: 12px;
+}
+
+label.error {
+  @include absolute(auto, auto, -16px);
+  font-size: 12px !important;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.event-cration-section {
+  [id^="frmb-"][id$="-form-wrap"] .frmb li {
+    height: auto;
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.lavel-booked .level-row-dom-remove {
+  display: none;
+}
+
+.level-name-dom {
+  margin: 0 calc(98px - 55px);
+}
+
+.level-price-dom {
+  margin: 0 87px;
+}
+
+.level-total-tickets-dom {
+  margin: 0 calc(121px - 54px);
+}
+
+.level-max-per-persone-dom {
+  margin: 0 calc(126px - 70px);
+}
+
+.event-banner,
+.event-slideshow,
+.event-thumbnail {
+  position: absolute;
+  left: 12px;
+  top: initial;
+}
+
+.uploadifive-queue-item {
+  position: absolute;
+  top: 0;
+  width: 500px !important;
+}
+.progress{
+  height: 10px;
+  width: 525px !important;
+  margin-top: 30px !important;
+  margin-bottom: 0 !important;
+}
+.progress-bar {
+  position: absolute;
+  height: 10px !important;
+  top: 94px !important;
+  max-width: 525px !important;
+}
+
+div#uploadifive-event-slideshow-image-file-0 {
+  position: absolute;
+  top: 30px !important;
+  width: 530px !important;
+}

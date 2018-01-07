@@ -1,0 +1,146 @@
+/* -------------------------------------------
+Helper styles here... */
+
+.v-middle {
+    @include display-center;
+}
+
+.flex-container {
+    @include display-flex;
+}
+
+.display-table {
+    display: table;
+    width: 100%;
+    > * {
+        display: table-cell;
+        padding-right: 30px;
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.reset {
+    margin-left: 15px;
+}
+
+.no-pad {
+    padding: 0;
+}
+
+.left-pad {
+    padding-left: 0;
+}
+
+.right-pad {
+    padding-right: 0;
+}
+
+.top-margin {
+    margin-top: 30px;
+}
+
+.text-area {
+    max-height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.uploadifive-button {
+    z-index: 1 !important;
+}
+
+.panel-body {
+    min-height: 106px;
+}
+
+li.selected.active {
+    a {
+        background-color: $modarate-cyan !important;
+    }
+}
+
+.on-hover:hover {
+    cursor: pointer;
+    box-shadow: 0 0px 0px 2px #4dc7c1;
+}
+
+.col-sm-12.text-center {
+    margin: -20px 0 0 0;
+    padding-bottom: 20px;
+}
+
+.text-defult {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mr-btm {
+    margin-bottom: 12px;
+}
+
+.additional-detail-booking {
+    width: 100%;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.link {
+    color: $modarate-cyan;
+    text-decoration: underline;
+
+    &:hover {
+        color: $desaturate-blue;
+    }
+}
+
+.btn-inline {
+    @include clearfix;
+    > * {
+        display: inline-block;
+        float: left;
+        max-width: 120px;
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.back-to-login{
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.gradpak-link{
+    display: inline-block;
+    margin-left: 10px;
+    .fa{
+        position: relative;
+
+        &:after{
+            content: "";
+            @include size(14px, 14px);
+            @include absolute(1px, -3px);
+            @include border-radius(50%);
+            @include box-shadow(0 0 0 2px $link-color);
+        }
+
+        &:hover{
+            &:after{
+                @include box-shadow(0 0 0 2px $modarate-cyan);
+            }
+        }
+    }
+    &:hover,
+    &:focus{
+        outline: none;
+    }
+}

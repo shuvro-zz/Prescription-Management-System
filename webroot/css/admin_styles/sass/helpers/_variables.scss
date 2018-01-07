@@ -1,0 +1,53 @@
+/**
+* Color Variables
+* The variables set here serve only as example of how you can use SASS variables
+* to centralize and control frequently used styles more easily. Here you will
+* find variables for colors, fonts and the global gutter width.
+*/
+
+$white:                 #ffffff;
+$black:                 #000000;
+$green:                 #5eaf84;
+$gray:                  #cccccc;
+$gray-dark:             #5d5d5d;
+$table-head-color:      #f7f7f7;
+$table-hover:           #fcfcfc;
+$gray-light:            #e1e1e1;
+$table-delet:           #949ca6;
+$grayish-blue:          #252834;
+$grayish-light:         #edf1f5;
+$grayish-lighter:       #e3e7eb;
+$desaturate-blue:       #2c3144;
+$desaturate-blue2:      #3e4b74;
+$orange:                #ff5835;
+
+$modarate-cyan:         #4dc7c1;
+$modarate-cyan2:        #3cc2bb;
+$modarate-cyan3:        #3ab4af;
+$bright-orange:         #f2672a;
+$vivid-blue:            #1f97fe;
+$darkturquoise:         #56b2e7;
+
+$link-color:            #9aaac3;
+$success:               #9fd460;
+$warning:               #f4c470;
+$error:                 #FF0000;
+$btn-color:             #ff5835;
+
+$color1: $white;
+$color2: $modarate-cyan;
+
+// Fonts
+$lato:          'Lato', sans-serif;
+$montserrat:    'Montserrat', sans-serif;
+
+$font-size-base: 14px;
+$line-height-base: 24px;
+$gutter-width: 15px;
+
+// Breakpoint
+$smart-phone: 320px 767px;
+$mobile: 767px;
+$tablet: 768px 1024px;
+$large-desktop: 1025px 1366px;
+$ex-large-desktop: 1067px 1920px;

@@ -1,0 +1,104 @@
+/* -------------------------------------------
+Contact styles here... */
+.info-box {
+    margin-bottom: 65px;
+}
+
+.contact-info-box {
+    align-items: center;
+    border: 1px solid #ebebeb;
+    padding: 27px 18px;
+    margin: 10px;
+
+    @include breakpoint($mobile){
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .icon-left {
+        flex: 0 0 70px;
+    }
+    .content-body {
+        flex: 1 1 0;
+    }
+    a {
+        color: $dark-blue;
+        display: block;
+        text-decoration: none;
+        &:hover {
+            color: $orange;
+        }
+    }
+    p {
+        color: $dark-blue;
+        line-height: 18px;
+        margin: 0;
+    }
+
+}
+
+textarea.form-control {
+    @include size(100%, 100px);
+    resize: none;
+}
+
+.contact-us {
+    padding: 50px 0;
+    .capcha-row{
+        @include breakpoint($small-device) {
+            margin-bottom: 0;
+        }
+    }
+    .button-group {
+        padding-top: 0px;
+    }
+    .form-group {
+        position: relative;
+    }
+}
+
+.expression-of-interest {
+    h2.banner-hero-heading.intro-header {
+        margin-bottom: 40px;
+        margin-left: 15px;
+    }
+    .expression-form {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+    .input.text {
+        margin-bottom: 30px;
+    }
+    .input.text.radio-group {
+        min-height: 72px;
+        label {
+            padding-top: 20px;
+        }
+    }
+    .radio-group {
+        span {
+            margin-right: 15px;
+            input {
+                margin-right: 5px;
+            }
+        }
+    }
+    textarea.form-control {
+        height: 85px;
+    }
+    .google-capcha {
+        margin-top: 30px;
+    }
+}
+
+@include breakpoint($ipad-portrait) {
+
+    .contact-us {
+        .contact-info-box {
+            padding: 8px 8px;
+            margin: 5px;
+            min-height: 115px;
+        }
+
+    }
+}

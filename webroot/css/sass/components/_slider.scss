@@ -1,0 +1,56 @@
+/* -------------------------------------------
+Slider styles here */
+
+.bx-wrapper {
+    .bx-controls-direction {
+        a {
+            width: 60px !important;
+            height: 60px !important;
+
+            @include breakpoint($small-device){
+                width: 30px !important;
+                height: 30px !important;
+            }
+        }
+    }
+
+    .bx-viewport{
+        @include breakpoint($mobile){
+            height: 237px !important;
+        }
+
+        .flex-box-groups{
+            .slide-item{
+                padding: 0;
+                @include breakpoint($mobile){
+                    margin-right: 0 !important;
+                }
+                img{
+                    @include breakpoint($small-device){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .bx-prev {
+        left: -78px !important;
+        background: url(../lib/bxslider/images/left-arrow.png) no-repeat !important;
+
+        @include breakpoint($small-device){
+            left: 10px !important;
+            background: url(../lib/bxslider/images/sm-left-arrow.png) no-repeat !important;
+        }
+    }
+
+    .bx-next {
+        right: -78px !important;
+        background: url(../lib/bxslider/images/rightt-arrow.png) no-repeat !important;
+
+        @include breakpoint($small-device){
+            right: 10px !important;
+            background: url(../lib/bxslider/images/sm-rightt-arrow.png) no-repeat !important;
+        }
+    }
+}
