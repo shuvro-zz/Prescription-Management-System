@@ -1,9 +1,8 @@
 # CakePHP 3
 
 /.idea/*
-/tmp/*
 
-/vendor/*
+
 /config/app.php
 
 /tmp/cache/models/*
