@@ -123,8 +123,7 @@
 <!--                    </div>-->
                     <div class="user-profile dropdown">
                         <?php $user = $this->request->session()->read('Auth.User'); ?>
-                        PMS
-                       <!-- --><?php /*echo $this->Html->image('/css/admin_styles/images/dashboard-students.png', ['alt' => 'User']) */?>
+                        <?php echo $this->Html->image('/css/admin_styles/images/dashboard-students.png', ['alt' => 'User']) ?>
 
                         <a href="#" data-toggle="dropdown" aria-expanded="true"><span class="user-name"><?php echo ucfirst($user['first_name']) ?> <i class="fa fa-angle-down"></i></span></a>
                         <div class="dropdown-menu  user-dropdown">

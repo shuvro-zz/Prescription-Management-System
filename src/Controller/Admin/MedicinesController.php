@@ -1,6 +1,5 @@
 <?php
 namespace App\Controller\Admin;
-
 use App\Controller\AppController;
 
 /**
@@ -17,16 +16,22 @@ class MedicinesController extends AppController
      */
     public function index()
     {
-        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
-            $search = $this->request->query['search'];
-            $query = $this->Medicines->find('All')->where([
-                'OR' => [
-                    ['Medicines.name LIKE' => '%' . $search . '%']
-                ]
-            ]);
+        $session = $this->request->session();
 
+        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
+            $session->write('search_query', $this->request->query['search']);
+        }
+        if($session->check('search_query')) {
+            $search = $session->read('search_query');
         }else{
             $search = '';
+        }
+
+        $where = $this->__search();
+
+        if($where){
+            $query = $this->Medicines->find('All')->where($where);
+        }else{
             $query = $this->Medicines;
         }
 
@@ -138,5 +143,29 @@ class MedicinesController extends AppController
         }
         return $this->redirect(['action' => 'index']);
 
+    }
+
+
+    function __search(){
+        $session = $this->request->session();
+        if($session->check('search_query')){
+            $search = $session->read('search_query');
+            $where = [
+                'OR' => [
+                    ['Medicines.name LIKE' => '%' . $search . '%']
+                ]
+            ];
+
+        }else{
+            $where = [];
+        }
+
+        return $where;
+    }
+
+    function reset(){
+        $session = $this->request->session();
+        $session->delete('search_query');
+        $this->redirect(['action' => 'index']);
     }
 }

@@ -1,5 +1,4 @@
 <div class="workspace-dashboard page page-ui-tables">
-
     <div class="page-heading">
         <div class="flex-container">
             <div class="flex-item"><h4><?= __('Medicines') ?></h4></div>
@@ -24,8 +23,17 @@
             <div class="status-area flex-container">
                 <div class="event-src-box">
                     <?php echo $this->Form->create('Medicines',['type' => 'get'],array('id' => 'site-search','url'=>array('action'=>'index'),'method'=>'get'));?>
-                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'label' => false, 'placeholder' => 'Type here for search...')); ?>
+                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'value'  => $search, 'label' => false, 'placeholder' => 'Type here for search...')); ?>
                     <button type="submit"> <i class="fa fa-search"></i></button>
+                    <div class="flex-container">
+                        <?php
+                        echo $this->Html->link(
+                            'Reset',
+                            ['action' => 'reset'],
+                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
+                        );
+                        ?>
+                    </div>
                     <?php echo $this->Form->end();?>
                 </div>
             </div>
@@ -36,6 +44,7 @@
                 <thead>
                     <tr>
                         <th><?= $this->Paginator->sort('name') ?></th>
+                        <th><?= $this->Paginator->sort('created') ?></th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
@@ -43,6 +52,7 @@
                     <?php foreach ($medicines as $medicine): ?>
                     <tr>
                         <td><?= h($medicine->name) ?></td>
+                        <td><?= h($medicine->created) ?></td>
                         <td class="actions" style="width: 204px;">
                         <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >

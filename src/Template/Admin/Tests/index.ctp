@@ -36,6 +36,7 @@
                 <thead>
                     <tr>
                         <th><?= $this->Paginator->sort('name') ?></th>
+                        <th><?= $this->Paginator->sort('created') ?></th>
                         <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
@@ -43,6 +44,7 @@
                     <?php foreach ($tests as $test): ?>
                     <tr>
                         <td><?= h($test->name) ?></td>
+                        <td><?= h($test->created) ?></td>
                         <td class="actions" style="width: 204px;">
                         <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >

@@ -27,6 +27,7 @@ class MedicinesTable extends Table
         $this->table('medicines');
         $this->displayField('name');
         $this->primaryKey('id');
+        $this->addBehavior('Timestamp');
     }
 
     /**
