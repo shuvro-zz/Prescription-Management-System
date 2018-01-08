@@ -17,9 +17,34 @@ class TestsController extends AppController
      */
     public function index()
     {
-        $tests = $this->paginate($this->Tests);
+        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
+            $search = $this->request->query['search'];
+            $query = $this->Tests->find('All')->where([
+                'OR' => [
+                    ['Tests.name LIKE' => '%' . $search . '%']
+                ]
+            ]);
 
-        $this->set(compact('tests'));
+        }else{
+            $search = '';
+            $query = $this->Tests;
+        }
+
+        $this->paginate = [
+            'limit' => 25,
+            'order' => [
+                'Tests.id' => 'desc'
+            ]
+        ];
+        $tests = $this->paginate($query);
+
+        if(count($tests)==0){
+            $this->Flash->adminWarning(__('No tests found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
+        }
+
+        $tests = $this->paginate($query);
+
+        $this->set(compact('tests', 'search'));
         $this->set('_serialize', ['tests']);
     }
 

@@ -54,7 +54,7 @@
                                     echo $this->Html->link(
                                     '<span class="fa fa-pencil-square"></span> Edit',
                                     ['action' => 'edit', $medicine->id],
-                                    ['escapeTitle' => false, 'title' => 'Edit Venue']
+                                    ['escapeTitle' => false, 'title' => 'Edit Medicine']
                                     );
                                     ?>
                                 </li>
@@ -76,21 +76,21 @@
             </table>
         </div>
 
-        <div class="bottom-pagination">
+        <!--<div class="bottom-pagination">
             <div class="pagination-area flex-container">
                 <div class="pagination-status-text">
-                    Showing <?php echo $this->Paginator->counter() ?> pages
+                    Showing <?php /*echo $this->Paginator->counter() */?> pages
                 </div>
                 <ul class="pagination">
                     <?php
-                    if($this->Paginator->numbers()) {
+/*                    if($this->Paginator->numbers()) {
                     echo $this->Paginator->prev('< ' . __(''));
                     echo $this->Paginator->numbers();
                     echo $this->Paginator->next(__('') . ' >');
                     }
-                    ?>
+                    */?>
                 </ul>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

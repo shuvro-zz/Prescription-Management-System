@@ -16,6 +16,7 @@
     <div class="col-md-12">
         <?php echo $this->Flash->render('admin_success'); ?>
         <?php echo $this->Flash->render('admin_error'); ?>
+        <?php echo $this->Flash->render('admin_warning'); ?>
     </div>
 
     <div class="event-listing">
@@ -31,57 +32,54 @@
         </div>
 
         <div class="table-responsive table-part">
-            <?php echo $this->Form->create('Tests',['type' => 'post'],array('id' => 'delete-all','url'=>array('action'=>'delete-all'),'method'=>'post'));?>
-            <?php echo $this->Form->button(__('Remove'), ['class' => 'btn btn-danger']) ?>
             <table class="table table-hover  table-striped">
                 <thead>
                     <tr>
-                                                                                        <th><?= $this->Paginator->sort('name') ?></th>
-                                                        <th class="actions"><?= __('Actions') ?></th>
+                        <th><?= $this->Paginator->sort('name') ?></th>
+                        <th class="actions"><?= __('Actions') ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($tests as $test): ?>
                     <tr>
-                                <td><?= h($test->name) ?></td>
-                                <td class="actions" style="width: 204px;">
-                            <div class="dropdown action-button">
-                                <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
-                                    <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
-                                </span>
-                                <ul class="dropdown-menu action-dropdown">
-                                    <li>
-                                        <?php
-                                        echo $this->Html->link(
-                                        '<span class="fa fa-pencil-square"></span> Edit',
-                                        ['action' => 'edit', $test->id],
-                                        ['escapeTitle' => false, 'title' => 'Edit Venue']
-                                        );
-                                        ?>
-                                    </li>
-                                    <li>
-                                        <?php
-                                        echo $this->Form->postLink(
-                                        '<span class="fa fa-trash"></span> Delete',
-                                        ['action' => 'delete', $test->id],
-                                        ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $test->id)]
-                                        );
-                                        ?>
-                                    </li>
-                                </ul>
-                            </div>
+                        <td><?= h($test->name) ?></td>
+                        <td class="actions" style="width: 204px;">
+                        <div class="dropdown action-button">
+                            <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
+                                <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
+                            </span>
+                            <ul class="dropdown-menu action-dropdown">
+                                <li>
+                                    <?php
+                                    echo $this->Html->link(
+                                    '<span class="fa fa-pencil-square"></span> Edit',
+                                    ['action' => 'edit', $test->id],
+                                    ['escapeTitle' => false, 'title' => 'Edit Venue']
+                                    );
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    echo $this->Form->postLink(
+                                    '<span class="fa fa-trash"></span> Delete',
+                                    ['action' => 'delete', $test->id],
+                                    ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $test->id)]
+                                    );
+                                    ?>
+                                </li>
+                            </ul>
+                        </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?php echo $this->Form->end();?>
         </div>
 
         <div class="bottom-pagination">
             <div class="pagination-area flex-container">
                 <div class="pagination-status-text">
-                    Showing <?php echo $this->Paginator->counter() ?> entries
+                    Showing <?php echo $this->Paginator->counter() ?> pages
                 </div>
                 <ul class="pagination">
                     <?php
