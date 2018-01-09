@@ -1,7 +1,6 @@
 # CakePHP 3
 /.idea/*
 /tmp/*
-/tmp
 /config/app.php
 
 /logs/*
