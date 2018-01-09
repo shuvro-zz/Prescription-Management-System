@@ -1,5 +1,6 @@
 # CakePHP 3
 .idea
+tmp
 /config/app.php
 
 /tmp/cache/models/*
