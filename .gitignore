@@ -3,6 +3,7 @@
 /vendor/*
 /config/app.php
 
+/tmp/debug_kit.sqlite
 /tmp/cache/models/*
 !/tmp/cache/models/empty
 /tmp/cache/persistent/*
