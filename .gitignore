@@ -1,9 +1,8 @@
 # CakePHP 3
 /.idea/*
 /tmp/*
+/tmp
 /config/app.php
-
-!/tmp/tests/empty
 
 /logs/*
 !/logs/empty
