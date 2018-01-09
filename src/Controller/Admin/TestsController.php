@@ -17,16 +17,23 @@ class TestsController extends AppController
      */
     public function index()
     {
-        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
-            $search = $this->request->query['search'];
-            $query = $this->Tests->find('All')->where([
-                'OR' => [
-                    ['Tests.name LIKE' => '%' . $search . '%']
-                ]
-            ]);
 
+        $session = $this->request->session();
+
+        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
+            $session->write('tests_search_query', $this->request->query['search']);
+        }
+        if($session->check('tests_search_query')) {
+            $search = $session->read('tests_search_query');
         }else{
             $search = '';
+        }
+
+        $where = $this->__search();
+
+        if($where){
+            $query = $this->Tests->find('All')->where($where);
+        }else{
             $query = $this->Tests;
         }
 
@@ -128,5 +135,26 @@ class TestsController extends AppController
             $this->Flash->error(__('The test could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    function __search(){
+        $session = $this->request->session();
+        if($session->check('tests_search_query')){
+            $search = $session->read('tests_search_query');
+            $where = [
+                'OR' => [
+                    ['Tests.name LIKE' => '%' . $search . '%']
+                ]
+            ];
+        }else{
+            $where = [];
+        }
+        return $where;
+    }
+
+    function reset(){
+        $session = $this->request->session();
+        $session->delete('tests_search_query');
+        $this->redirect(['action' => 'index']);
     }
 }

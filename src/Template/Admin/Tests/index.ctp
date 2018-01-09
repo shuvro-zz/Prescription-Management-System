@@ -24,8 +24,17 @@
             <div class="status-area flex-container">
                 <div class="event-src-box">
                     <?php echo $this->Form->create('Tests',['type' => 'get'],array('id' => 'site-search','url'=>array('action'=>'index'),'method'=>'get'));?>
-                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'label' => false, 'placeholder' => 'Type here for search...')); ?>
+                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'value' => $search, 'label' => false, 'placeholder' => 'Type here for search...')); ?>
                     <button type="submit"> <i class="fa fa-search"></i></button>
+                    <div class="flex-container">
+                        <?php
+                        echo $this->Html->link(
+                            'Reset',
+                            ['action' => 'reset'],
+                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
+                        );
+                        ?>
+                    </div>
                     <?php echo $this->Form->end();?>
                 </div>
             </div>

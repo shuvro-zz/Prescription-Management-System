@@ -19,10 +19,10 @@ class MedicinesController extends AppController
         $session = $this->request->session();
 
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
-            $session->write('search_query', $this->request->query['search']);
+            $session->write('medicines_search_query', $this->request->query['search']);
         }
-        if($session->check('search_query')) {
-            $search = $session->read('search_query');
+        if($session->check('medicines_search_query')) {
+            $search = $session->read('medicines_search_query');
         }else{
             $search = '';
         }
@@ -148,8 +148,8 @@ class MedicinesController extends AppController
 
     function __search(){
         $session = $this->request->session();
-        if($session->check('search_query')){
-            $search = $session->read('search_query');
+        if($session->check('medicines_search_query')){
+            $search = $session->read('medicines_search_query');
             $where = [
                 'OR' => [
                     ['Medicines.name LIKE' => '%' . $search . '%']
@@ -159,13 +159,12 @@ class MedicinesController extends AppController
         }else{
             $where = [];
         }
-
         return $where;
     }
 
     function reset(){
         $session = $this->request->session();
-        $session->delete('search_query');
+        $session->delete('medicines_search_query');
         $this->redirect(['action' => 'index']);
     }
 }

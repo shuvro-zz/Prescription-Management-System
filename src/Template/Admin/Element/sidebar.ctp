@@ -15,30 +15,30 @@
                 <a href="<?php echo $this->Url->build(array( 'controller' => 'Tests','action' => 'index' )); ?>" title="Tests"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Tests</span></a>
             </li>
-            <li class="navigation-item dashboard <?php if($this->name=='Events') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'events','action' => 'index' ));?>" title="Events"><span class="nav-icon"><span class="icon"></span>
+            <!--<li class="navigation-item dashboard <?php /*if($this->name=='Events') echo 'active'*/?>">
+                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'events','action' => 'index' ));*/?>" title="Events"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Events</span></a>
             </li>
-            <li class="navigation-item dashboard <?php if($this->name=='Venues') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'venues','action' => 'index' ));?>" title="Venues"><span class="nav-icon"><span class="icon"></span>
+            <li class="navigation-item dashboard <?php /*if($this->name=='Venues') echo 'active'*/?>">
+                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'venues','action' => 'index' ));*/?>" title="Venues"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Venues</span></a>
             </li>
-            <li class="navigation-item dashboard <?php if($this->name=='Conferences') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'conferences','action' => 'index' ));?>" title="Conferences"><span class="nav-icon"><span class="icon"></span>
+            <li class="navigation-item dashboard <?php /*if($this->name=='Conferences') echo 'active'*/?>">
+                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'conferences','action' => 'index' ));*/?>" title="Conferences"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Conferences</span></a>
             </li>
-            <li class="navigation-item dashboard <?php if($this->name=='Attendees') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'attendees','action' => 'index' ));?>" title="Attendees"><span class="nav-icon"><span class="icon"></span>
+            <li class="navigation-item dashboard <?php /*if($this->name=='Attendees') echo 'active'*/?>">
+                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'attendees','action' => 'index' ));*/?>" title="Attendees"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Attendees</span></a>
             </li>
-            <li class="navigation-item dashboard <?php if($this->name=='AttendeeTypes') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'AttendeeTypes','action' => 'index' ));?>" title="Attendee Types"><span class="nav-icon"><span class="icon"></span>
+            <li class="navigation-item dashboard <?php /*if($this->name=='AttendeeTypes') echo 'active'*/?>">
+                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'AttendeeTypes','action' => 'index' ));*/?>" title="Attendee Types"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Attendee Types</span></a>
             </li>
-            <li class="navigation-item dashboard <?php if($this->name=='Reports') echo 'active'?>">
+            <li class="navigation-item dashboard <?php /*if($this->name=='Reports') echo 'active'*/?>">
                 <a href="#" title="Reports"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Reports</span></a>
-            </li>
+            </li>-->
             <li class="navigation-item dashboard <?php if($this->name=='Settings') echo 'active'?>">
                 <a href="<?php echo $this->Url->build(array( 'controller' => 'Settings','action' => 'add' )) ?>" title="Settings"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Settings</span></a>
