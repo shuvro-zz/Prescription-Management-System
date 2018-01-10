@@ -38,7 +38,7 @@ class TestsController extends AppController
         }
 
         $this->paginate = [
-            'limit' => 25,
+            'limit' => 5,
             'order' => [
                 'Tests.id' => 'desc'
             ]

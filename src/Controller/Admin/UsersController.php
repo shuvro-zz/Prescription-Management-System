@@ -41,29 +41,41 @@ class UsersController extends AppController
 
     public function index()
     {
-        $query = $this->_getData();
-        $this->set('users', $this->paginate($query));
-        $this->set('_serialize', ['users']);
-    }
+        $session = $this->request->session();
 
-    public function _getData()
-    {
-        if (!empty($this->request->data['search'])) {
-            $search = $this->request->data['search'];
-            $query = $this->Users->find('All')->where([
-                'OR' => [
-                    ['first_name LIKE' => '%' . $search . '%'],
-                    ['last_name LIKE' => '%' . $search . '%'],
-                    ['email LIKE' => '%' . $search . '%'],
-                    ['phone LIKE' => '%' . $search . '%'],
-                    ['company LIKE' => '%' . $search . '%']
-                ],
-            ]);
-        } else{
-            $query = $this->Users->find('All');
+        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
+            $session->write('users_search_query', $this->request->query['search']);
+        }
+        if($session->check('users_search_query')) {
+            $search = $session->read('users_search_query');
+        }else{
+            $search = '';
         }
 
-        return $query;
+        $where = $this->__search();
+
+        if($where){
+            $query = $this->Users->find('All')->where($where);
+        }else{
+            $query = $this->Users;
+        }
+
+        $this->paginate = [
+            'limit' => 5,
+            'order' => [
+                'Users.id' => 'desc'
+            ]
+        ];
+        $users = $this->paginate($query);
+
+        if(count($users)==0){
+            $this->Flash->adminWarning(__('No users found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
+        }
+
+        $users = $this->paginate($query);
+
+        $this->set(compact('users', 'search'));
+        $this->set('_serialize', ['users']);
     }
 
     public function view($id = null)
@@ -81,18 +93,22 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
-            $user->role_id = '2';
+            $user->role_id = 3;
+
+            //pr($user); die;
+
             if ($this->Users->save($user)) {
-                $success_message = __('The user Registration is successful.');
+                $success_message = __('The patient Registration is successful.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                return $this->redirect(['action' => 'login']);
+                return $this->redirect(['action' => 'index']);
             } else {
-                $error_message = __('The user could not be saved. Please, try again.');
+                $error_message = __('The patient could not be saved. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+
     }
 
     public function edit($id = null)
@@ -103,11 +119,11 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $success_message = __('The user has been saved.');
+                $success_message = __('The patient has been saved.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                 return $this->redirect(['action' => 'index']);
             } else {
-                $error_message = __('The user could not be saved. Please, try again.');
+                $error_message = __('The patient could not be saved. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
         }
@@ -120,11 +136,11 @@ class UsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {
-            $success_message = __('The user has been deleted.');
+            $success_message = __('The patient has been deleted.');
             $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
 
         } else {
-            $error_message = __('The user could not be deleted. Please, try again.');
+            $error_message = __('The patient could not be deleted. Please, try again.');
             $this->Flash->adminError($error_message, ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
@@ -257,12 +273,9 @@ class UsersController extends AppController
                 //$this->redirect(array('controller' => 'users', 'action' => 'forgotPassword'));
 
             }
-
-
         }
 
         $this->render('forgot_password');
-
     }
 
     public function adminPasswordChangeLinkEmailSend($user){
@@ -342,6 +355,32 @@ class UsersController extends AppController
 
     public function generateToken(){
         return Text::uuid();
+    }
+
+    function __search(){
+        $session = $this->request->session();
+        if($session->check('users_search_query')){
+            $search = $session->read('users_search_query');
+            $where = [
+                'Users.role_id' => 3,
+                'OR' => [
+                    ['Users.first_name LIKE' => '%' . $search . '%'],
+                    ['Users.phone LIKE' => '%' . $search . '%'],
+                    ['Users.email LIKE' => '%' . $search . '%'],
+                    ['Users.age LIKE' => '%' . $search . '%'],
+                    ['Users.created LIKE' => '%' . $search . '%'],
+                ]
+            ];
+        }else{
+            $where = ['Users.role_id' => 3];
+        }
+        return $where;
+    }
+
+    function reset(){
+        $session = $this->request->session();
+        $session->delete('users_search_query');
+        $this->redirect(['action' => 'index']);
     }
 
 }

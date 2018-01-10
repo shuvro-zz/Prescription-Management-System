@@ -36,7 +36,7 @@ class MedicinesController extends AppController
         }
 
         $this->paginate = [
-            'limit' => 25,
+            'limit' => 5,
             'order' => [
                 'Medicines.id' => 'desc'
             ]

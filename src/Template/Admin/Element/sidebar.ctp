@@ -15,6 +15,10 @@
                 <a href="<?php echo $this->Url->build(array( 'controller' => 'Tests','action' => 'index' )); ?>" title="Tests"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Tests</span></a>
             </li>
+            <li class="navigation-item dashboard <?php if($this->name=='Users') echo 'active'?>">
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'index' )); ?>" title="Patients"><span class="nav-icon"><span class="icon"></span>
+                </span><span class="nav-text">Patients</span></a>
+            </li>
             <!--<li class="navigation-item dashboard <?php /*if($this->name=='Events') echo 'active'*/?>">
                 <a href="<?php /*echo $this->Url->build(array( 'controller' => 'events','action' => 'index' ));*/?>" title="Events"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Events</span></a>

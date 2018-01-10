@@ -52,7 +52,7 @@
                     <?php foreach ($medicines as $medicine): ?>
                     <tr>
                         <td><?= h($medicine->name) ?></td>
-                        <td><?= h($medicine->created) ?></td>
+                        <td><?= h($medicine->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                         <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
@@ -86,21 +86,21 @@
             </table>
         </div>
 
-        <!--<div class="bottom-pagination">
+        <div class="bottom-pagination">
             <div class="pagination-area flex-container">
                 <div class="pagination-status-text">
-                    Showing <?php /*echo $this->Paginator->counter() */?> pages
+                    Showing <?php echo $this->Paginator->counter() ?> pages
                 </div>
                 <ul class="pagination">
                     <?php
-/*                    if($this->Paginator->numbers()) {
+                    if($this->Paginator->numbers()) {
                     echo $this->Paginator->prev('< ' . __(''));
                     echo $this->Paginator->numbers();
                     echo $this->Paginator->next(__('') . ' >');
                     }
-                    */?>
+                    ?>
                 </ul>
             </div>
-        </div>-->
+        </div>
     </div>
 </div>
