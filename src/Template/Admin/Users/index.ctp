@@ -1,7 +1,7 @@
 <div class="workspace-dashboard page page-ui-tables">
     <div class="page-heading">
         <div class="flex-container">
-            <div class="flex-item"><h4><?= __('Patient') ?></h4></div>
+            <div class="flex-item"><h4><?= __('Patients') ?></h4></div>
             <div class="flex-item">
                 <?php echo $this->Html->link(
                     '<span class="icon">+</span> Add Patient',
@@ -58,7 +58,7 @@
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->age) ?></td>
-                        <td><?= h($user->created->format('d/m/Y')) ?></td>
+                        <td><?= h($user->created) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >

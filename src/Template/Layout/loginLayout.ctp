@@ -8,7 +8,7 @@
 	<meta name="description" content="WebAlive - Admin Template">
 	<meta name="keywords" content="webalive, webapp, admin, dashboard, template, ui">
 
-    <title>NACCO</title>
+    <title>PMS</title>
     <?php echo $this->Html->meta('icon') ?>
 
 

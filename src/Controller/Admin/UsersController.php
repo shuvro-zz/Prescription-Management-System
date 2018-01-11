@@ -41,6 +41,7 @@ class UsersController extends AppController
 
     public function index()
     {
+
         $session = $this->request->session();
 
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
@@ -61,7 +62,7 @@ class UsersController extends AppController
         }
 
         $this->paginate = [
-            'limit' => 5,
+            'limit' => 30,
             'order' => [
                 'Users.id' => 'desc'
             ]
