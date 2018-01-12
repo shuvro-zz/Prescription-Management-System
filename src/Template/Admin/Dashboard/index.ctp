@@ -13,7 +13,7 @@
     <div class="dashboard-home-faetures flex-container">
         <div class="dash-box">
             <div class="feature-box">
-                <h1>Welcome To Patient Management System </h1>
+                <h1>Welcome to Patient Management System </h1>
             </div>
         </div>
     </div>
