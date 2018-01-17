@@ -25,7 +25,7 @@
             <div class="status-area flex-container">
                 <div class="event-src-box">
                     <?php echo $this->Form->create('Prescriptions',['type' => 'get'],array('id' => 'site-search','url'=>array('action'=>'index'),'method'=>'get'));?>
-                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'label' => false, 'placeholder' => 'Type here for search...')); ?>
+                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'value'=>$search, 'label' => false, 'placeholder' => 'Type here for search...')); ?>
                     <button type="submit"> <i class="fa fa-search"></i></button>
                     <div class="flex-container">
                         <?php
@@ -47,6 +47,7 @@
                 <thead>
                     <tr>
                         <th><?= $this->Paginator->sort('user_id','Patients') ?></th>
+                        <th><?= $this->Paginator->sort('phone','Phone') ?></th>
                         <th><?= $this->Paginator->sort('diagnosis') ?></th>
                         <th><?= $this->Paginator->sort('created') ?></th>
                         <th class="actions"><?= __('Actions') ?></th>
@@ -56,8 +57,9 @@
                     <?php foreach ($prescriptions as $prescription): ?>
                     <tr>
                         <td><?= $prescription->has('user') ? $this->Html->link($prescription->user->first_name.' '.$prescription->user->last_name, ['controller' => 'Users', 'action' => 'view', $prescription->user->id]) : '' ?></td>
+                        <td><?= h($prescription->user->phone) ?></td>
                         <td><?= h($prescription->diagnosis) ?></td>
-                        <td><?= h($prescription->created) ?></td>
+                        <td><?= h($prescription->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">
                                 <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >

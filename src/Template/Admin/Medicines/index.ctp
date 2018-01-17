@@ -52,7 +52,7 @@
                     <?php foreach ($medicines as $medicine): ?>
                     <tr>
                         <td><?= h($medicine->name) ?></td>
-                        <td><?= h($medicine->created) ?></td>
+                        <td><?= h($medicine->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                         <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >

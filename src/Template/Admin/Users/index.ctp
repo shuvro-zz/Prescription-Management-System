@@ -58,7 +58,7 @@
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->age) ?></td>
-                        <td><?= h($user->created) ?></td>
+                        <td><?= h($user->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >

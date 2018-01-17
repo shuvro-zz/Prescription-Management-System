@@ -26,10 +26,8 @@ class UsersController extends AppController
     {
         parent::beforeFilter($event);
         $this->Auth->allow([
-            'logout',
             'login',
             'forgotPassword',
-            'changePassword'
         ]);
     }
 

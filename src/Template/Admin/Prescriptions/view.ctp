@@ -13,7 +13,7 @@
                     <h4>Patient</h4>
                     <p>
                         <b>Name: </b> <span class="patient_info"><?= $prescription->user->first_name." ".$prescription->user->last_name ?>,</span>
-                        <b>Age: </b> <span class="patient_info"><?= $prescription->user->age .'Years' ?>,</span>
+                        <b>Age: </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?>,</span>
                         <b>Mobile: </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
                     </p>
                     <p>

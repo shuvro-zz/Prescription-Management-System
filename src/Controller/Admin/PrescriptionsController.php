@@ -30,7 +30,6 @@ class PrescriptionsController extends AppController
 
         $where = $this->__search();
 
-
         if($where){
             $query = $this->Prescriptions->find('All')->where($where);
         }else{
@@ -39,7 +38,7 @@ class PrescriptionsController extends AppController
 
         $this->paginate = [
             'contain' => ['Users'],
-            'limit' => 5,
+            'limit' => 30,
             'order' => [
                 'Prescriptions.id' => 'desc'
             ]
@@ -165,11 +164,11 @@ class PrescriptionsController extends AppController
         if($session->check('prescriptions_search_query')){
             $search = $session->read('prescriptions_search_query');
             $where = [
-                'OR' => [
-                    ['prescriptions.diagnosis LIKE' => '%' . $search . '%'],
-                    ['users.first_name LIKE' => '%' . $search . '%'],
-                    ['users.last_name LIKE' => '%' . $search . '%']
-                ]
+                'OR' => ["
+                    prescriptions.diagnosis LIKE '%$search%' OR
+                    CONCAT( users.first_name, ' ', users.last_name ) LIKE '%$search%' OR
+                    users.phone LIKE '%$search%'
+                    "]
             ];
 
         }else{
