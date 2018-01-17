@@ -1,0 +1,13 @@
+.cu_con_outer{
+    padding: 20px;
+}
+
+.cu_con_inner{
+    border-radius: 4px;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.prescription span{
+    margin-right: 6px;
+}

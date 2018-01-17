@@ -19,6 +19,7 @@
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
+		'admin_styles/css/style.css',
 		'lib/jquery.datetimepicker.min.css',
 	]);
 
