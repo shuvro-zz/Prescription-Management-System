@@ -28,6 +28,7 @@ class UsersController extends AppController
         $this->Auth->allow([
             'login',
             'forgotPassword',
+            'registration'
         ]);
     }
 
@@ -145,23 +146,48 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function registration(){
+        //$this->viewBuilder()->layout('registrationLayout');
+        $this->viewBuilder()->layout('loginLayout');
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            $user->role_id = 2;
+
+            //pr($user); die;
+
+            if ($this->Users->save($user)) {
+                $success_message = __('The user Registration is successful.');
+                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                $this->login();
+                //return $this->redirect(['action' => 'index']);
+            } else {
+                $error_message = __('The user could not be saved. Please, try again.');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+            }
+        }
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+
+    }
+
+
     public function login()      // Backend login
     {
         //echo json_encode(array(1));die;
         //$hasher = new DefaultPasswordHasher();
         //echo $hasher->hash(123456);die;
-        
+
         $this->viewBuilder()->layout('loginLayout');
         if (!$this->Auth->user()) {
 
             if ($this->request->is('post')) {
-
-
                 $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
                 if($role_check == true){
                     $user = $this->Auth->identify();
 
                     if ($user) {
+
                         $this->Auth->setUser($user);
                         $success_message = __('Successfully logged in');
                         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -185,12 +211,35 @@ class UsersController extends AppController
         }
     }
 
+
+
+
+    public function myProfile( $id = null){
+        $user = $this->Users->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            if ($this->Users->save($user)) {
+                $success_message = __('Profile has been saved.');
+                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $error_message = __('Profile could not be saved. Please, try again.');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+            }
+        }
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+    }
+
     function userRoleCheck($user_data) {     // Checking user is admin or not
         if(!empty($user_data['email'])){
             $user_email = $user_data['email'];
             $userTable = TableRegistry::get('Users');
             $query = $userTable->find('all')->where(['email' => $user_email]);
-            if(!empty($query->first()->role_id) && $query->first()->role_id == 1){
+
+            if(!empty($query->first()->role_id) && $query->first()->role_id == 2){
                 return true;
             } else {
                 return false;

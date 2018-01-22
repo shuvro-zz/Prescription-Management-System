@@ -5,7 +5,7 @@
         <div class="page-heading">
             <ol class="breadcrumb breadcrumb-small">
                 <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Prescription') ?>"> <?= __('Prescription') ?></a></li>
-                <li class="active"><a href="#">Add <?= __('Prescription') ?></a></li>
+                <li class="active"><a href="#">Edit <?= __('Prescription') ?></a></li>
             </ol>
         </div>
         <div class="main-container">

@@ -130,9 +130,18 @@
                          <li>
                              <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
                          </li>
-                         <li>
+
+                        <li>
+                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'my_profile',$user['id'] ])?>" class="view_all_li"><i class="fa fa-user-md" aria-hidden="true"></i> My Profile</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'change_password',$user['id'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i>Change Pass</a>
+                        </li>
+
+                        <li>
                             <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'logout' ])?>" class="view_all_li"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-                           </li>
+                        </li>
 
                         </div>
 

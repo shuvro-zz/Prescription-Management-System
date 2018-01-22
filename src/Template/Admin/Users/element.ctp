@@ -25,8 +25,9 @@
             <label class="name">Age<span class="required" aria-required="true"></span></label>
             <div class="inputs">';
                 echo $this->Form->input('age', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-            echo '</div>
-        </div>
+            echo '</div>';
+
+        echo '</div>
     </div>';
     ?>
 </div>

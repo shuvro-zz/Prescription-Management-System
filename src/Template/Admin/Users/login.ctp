@@ -21,7 +21,13 @@
 			<!--<div class="forget"><a href="<?php /*echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword','prefix'=>false));*/?>">Forgot Password ?</a></div>-->
 		</div>
 		<?php echo $this->Form->end() ?>
-	</div>
+
+        <div class="login_bottom">
+            <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'registration' )); ?>" title="Registration">Registration</a>
+            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'reset_password' )); ?>" title="Reset Password">Reset Password</a>
+
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
