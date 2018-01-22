@@ -213,8 +213,6 @@ class UsersController extends AppController
     }
 
 
-
-
     public function myProfile( $id = null){
         $user = $this->Users->get($id, [
             'contain' => []
