@@ -1,58 +1,65 @@
-<?php $this->layout = 'loginLayout'; ?>
+<?= $this->Form->create($user) ?>
+<section class="workspace">
+    <div class="workspace-body">
+        <div class="page-heading">
+            <ol class="breadcrumb breadcrumb-small">
+                <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Doctor') ?>"> <?= __('Doctor') ?></a></li>
+                <li class="active"><a href="#"><?= __('Chance Password') ?></a></li>
+            </ol>
+        </div>
+        <div class="main-container">
+            <div class="content">
+                <div class="page-wrap">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default panel-hovered panel-stacked">
+                                    <div class="panel-heading"><?= __('Change Password') ?></div>
+                                    <div class="panel-body">
 
-<!-- main-container -->
-<div class="main-container clearfix">
+                                        <?php echo $this->Form->create(null, [
+                                                'url' => ['controller' => 'Users', 'action' => 'changePassword'],
+                                                'class' => 'form-horizontal',
+                                                'id' => 'admin-forgot-password-form'
+                                        ]); ?>
 
-	<!-- content-here -->
-	<div class="content-container">
-		<div class="page page-auth">
+                                        <h3 class="text-center mb20">Change password form</h3>
+                                        <p class="text-center mb20">Enter your new password.</p>
 
-			<div class="auth-container">
-
-				<div class="form-head mb20">
-					<h1 class="site-logo h2 mb5 mt5 text-center text-uppercase text-bold"><a href="/">Ring Creation</a></h1>
-				</div>
-
-				<!-- Show Flash Data -->
-				<?php echo $this->Flash->render('admin_success'); ?>
-				<?php echo $this->Flash->render('admin_error'); ?>
-
-				<div class="form-container">
-
-					<?php echo $this->Form->create(null, [
-							'url' => ['controller' => 'Users', 'action' => 'changePassword'],
-							'class' => 'form-horizontal',
-							'id' => 'admin-forgot-password-form'
-					]); ?>
-
-					<h3 class="small text-center mb20">Reset password form</h3>
-					<p class="small text-center mb20">Enter your new password.</p>
-
-					<input type="hidden" name="token" value="<?php echo $token; ?>">
+                                        <input type="hidden" name="token" value="<?php echo $token; ?>">
 
 
-					<div class="form-group">
-						<label control-label">Password</label>
-						<?php echo $this->Form->input('password',array('default'=>'', 'type'=>'password','class' => 'form-control', 'label' => false)); ?>
-					</div>
+                                        <div class="form-group">
+                                            <label control-label">Password</label>
+                                            <?php echo $this->Form->input('password',array('default'=>'', 'type'=>'password','class' => 'form-control', 'label' => false)); ?>
+                                        </div>
 
-					<div class="form-group">
-						<label control-label">Confirm Password</label>
-						<?php echo $this->Form->input('confirm_password',array('type'=>'password','class' => 'form-control', 'label' => false, 'equalTo'=>"#password")); ?>
-					</div>
+                                        <div class="form-group">
+                                            <label control-label">Confirm Password</label>
+                                            <?php echo $this->Form->input('confirm_password',array('type'=>'password','class' => 'form-control', 'label' => false, 'equalTo'=>"#password")); ?>
+                                            <?php echo $this->Form->input('token',array('type'=>'hidden', 'label' => false)); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <footer class="footer ">
+        <div class="flex-container">
+            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+            <div class="flex-item">
+                <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
+            </div>
+        </div>
+    </footer>
+</section>
 
-					<button type="submit" class="btn btn-primary btn-block text-uppercase btn-lg">Submit</button>
-
-					<?php echo $this->Form->end() ?>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-
-</div>
+<?= $this->Form->end() ?>
 
 <style>
 	.error{

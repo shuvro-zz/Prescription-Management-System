@@ -147,12 +147,13 @@ class UsersController extends AppController
     }
 
     public function registration(){
-        //$this->viewBuilder()->layout('registrationLayout');
         $this->viewBuilder()->layout('loginLayout');
+
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             $user->role_id = 2;
+            $user->token = $this->generateToken();
 
             //pr($user); die;
 
@@ -348,7 +349,7 @@ class UsersController extends AppController
 
     public function changePassword($token = null){
 
-        $this->viewBuilder()->layout('loginLayout');
+        //$this->viewBuilder()->layout('loginLayout');
 
 
         //debug($user_info->toArray());exit;
@@ -382,7 +383,7 @@ class UsersController extends AppController
                         }
 
                     }else{
-                        $message = 'Password must have a mimimum of 8 characters!';
+                        $message = 'Password must have a minimum of 8 characters!';
                         $this->Flash->adminError($message, ['key' => 'admin_error']);
 
                     }
@@ -390,8 +391,6 @@ class UsersController extends AppController
                     $message = 'User does not exist';
                     $this->Flash->adminError($message, ['key' => 'admin_error']);
                 }
-
-
 
             }
 

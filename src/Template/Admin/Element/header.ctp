@@ -136,7 +136,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'change_password',$user['id'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i>Change Pass</a>
+                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'change_password',$user['id'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Change Password</a>
                         </li>
 
                         <li>
