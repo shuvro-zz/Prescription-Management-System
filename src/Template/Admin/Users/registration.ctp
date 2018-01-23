@@ -1,4 +1,4 @@
-
+<?php $this->layout = 'loginLayout'; ?>
 <div class="login-area">
     <div class="login-box v-middle ">
 
@@ -24,8 +24,6 @@
 
         <div class="login_bottom">
             <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'login' )); ?>" title="Login">Login</a>
-            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'reset_password' )); ?>" title="Reset Password">Reset Password</a>
-
         </div>
     </div>
 </div>

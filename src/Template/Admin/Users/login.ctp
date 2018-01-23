@@ -23,15 +23,15 @@
 		<?php echo $this->Form->end() ?>
 
         <div class="login_bottom">
-            <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'registration' )); ?>" title="Registration">Registration</a>
-            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'reset_password' )); ?>" title="Reset Password">Reset Password</a>
+            <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'registration' )); ?>" title="Registration">Registration</a>
+            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword' )); ?>" title="Reset Password">Forgot Password</a>
 
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
-	/*$(document).ready(function(){
+	$(document).ready(function(){
 		$("#admin-login-form").validate({
 			rules:{
 				"email": "required",
@@ -42,5 +42,5 @@
 				"password": "Please enter a Password",
 			}
 		});
-	});*/
+	});
 </script>

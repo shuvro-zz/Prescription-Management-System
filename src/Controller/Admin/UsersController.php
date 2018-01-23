@@ -346,12 +346,6 @@ class UsersController extends AppController
     }
 
     public function changePassword($token = null){
-
-        //$this->viewBuilder()->layout('loginLayout');
-
-
-        //debug($user_info->toArray());exit;
-
             if( $this->request->is('post') ) {
 
                 $token = $this->request->data['token'];
@@ -365,11 +359,11 @@ class UsersController extends AppController
                             $user_info['confirm_password'] = $this->request->data['confirm_password'];
 
                             if( $this->Users->save($user_info) ) {
-                                $this->Flash->adminSuccess('Password has been reset successfully, You may login now', ['key' => 'admin_success']);
-                                //$this->redirect(array('controller' => 'users', 'action' => 'login'));
+                                $this->Flash->adminSuccess('Password has been change successfully, You may login now', ['key' => 'admin_success']);
+                                $this->redirect(array('controller' => 'dashboard', 'action' => 'index'));
 
                             }else{
-                                $message = 'Password could not be reset!, Please try again';
+                                $message = 'Password could not be change!, Please try again';
                                 $this->Flash->adminError($message, ['key' => 'admin_error']);
 
                             }

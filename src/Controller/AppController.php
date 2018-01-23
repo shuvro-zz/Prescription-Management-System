@@ -69,7 +69,7 @@ class AppController extends Controller
         if (!array_key_exists('_serialize', $this->viewVars) && in_array($this->response->type(), ['application/json', 'application/xml'])) {
             $this->set('_serialize', true);
         }
-        if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='admin' && $this->request->params['action']!='login' && $this->request->params['action']!='registration'){
+        if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='admin' && $this->request->params['action']!='login'){
             $this->viewBuilder()->layout('admin');
         }
 

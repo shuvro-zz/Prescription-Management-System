@@ -132,11 +132,11 @@
                          </li>
 
                         <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'my_profile',$user['id'] ])?>" class="view_all_li"><i class="fa fa-user-md" aria-hidden="true"></i> My Profile</a>
+                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'myProfile',$user['id'] ])?>" class="view_all_li"><i class="fa fa-user-md" aria-hidden="true"></i> My Profile</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'change_password',$user['id'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Change Password</a>
+                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changePassword',$user['token'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Change Password</a>
                         </li>
 
                         <li>

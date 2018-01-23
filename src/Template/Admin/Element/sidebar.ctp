@@ -8,19 +8,19 @@
                 </span><span class="nav-text">Dashboard</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Medicines') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'Medicines','action' => 'index' )); ?>" title="Medicines"><span class="nav-icon"><span class="icon"></span>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'medicines','action' => 'index' )); ?>" title="Medicines"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Medicines</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Tests') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'Tests','action' => 'index' )); ?>" title="Tests"><span class="nav-icon"><span class="icon"></span>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'tests','action' => 'index' )); ?>" title="Tests"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Tests</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Users') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'Users','action' => 'index' )); ?>" title="Patients"><span class="nav-icon"><span class="icon"></span>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )); ?>" title="Patients"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Patients</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Prescriptions') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'Prescriptions','action' => 'index' )); ?>" title="Prescriptions"><span class="nav-icon"><span class="icon"></span>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'index' )); ?>" title="Prescriptions"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Prescriptions</span></a>
             </li>
 
