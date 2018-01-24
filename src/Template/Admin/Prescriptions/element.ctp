@@ -29,7 +29,6 @@
                 </div>
             </div>';
 
-
             echo '<div class="col-sm-5">
                 <div class="form-row">
                     <label class="name">Medicines<span class="required" aria-required="true"></span></label>
