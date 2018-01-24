@@ -24,7 +24,7 @@
 
         <div class="login_bottom">
             <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'registration' )); ?>" title="Registration">Registration</a>
-            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword' )); ?>" title="Forgot Password">Forgot Password</a>
+            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword' )); ?>" title="Reset Password">Forgot Password</a>
 
         </div>
     </div>
@@ -39,9 +39,8 @@
 			},
 			messages:{
 				"email": "Please enter a Valid Email Address",
-                "password": "Please enter a Password"
+				"password": "Please enter a Password",
 			}
 		});
 	});
-
 </script>

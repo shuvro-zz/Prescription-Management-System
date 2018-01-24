@@ -68,7 +68,6 @@ class PrescriptionsController extends AppController
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Users', 'Medicines', 'Tests']
         ]);
-
         $this->set('prescription', $prescription);
         $this->set('_serialize', ['prescription']);
     }
