@@ -18,7 +18,6 @@
                                     <div class="panel-heading"><?= __('Add Prescription') ?></div>
                                     <div class="panel-body">
                                         <?php include('element.ctp') ?>
-
                                     </div>
                                 </div>
                             </div>
