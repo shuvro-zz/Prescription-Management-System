@@ -76,15 +76,27 @@
 
                                             <div class="form-row">
                                                 <div class="col-sm-6">
-                                                    <label class="name">Clinic Name<span class="required" aria-required="true"></span></label>
+                                                    <label class="name">Clinic/Hospital Name<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">';
                                                         echo $this->Form->input('clinic_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+                                                    echo '</div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="name">Website<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">';
+                                                        echo $this->Form->input('website', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
                                                     echo '</div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="name">Logo<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">';
                                                         echo $this->Form->input('logo', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+                                                    echo '</div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="name">Signature<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">';
+                                                        echo $this->Form->input('signature', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
                                                     echo '</div>
                                                 </div>
                                             </div>';

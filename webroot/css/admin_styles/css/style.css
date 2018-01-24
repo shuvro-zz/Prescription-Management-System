@@ -7,7 +7,37 @@
     background: #ffffff;
     padding: 20px;
 }
-
+.prescription_head {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
+}
+.prescription_logo {
+    text-align: center;
+}
+.prescription_logo img {
+    height: 90px;
+    width: 90px;
+}
+.prescription_head_con{
+    text-align: center;
+    float: left;
+    margin-bottom: 6px;
+}
+.prescription_head h1 {
+    margin-bottom: 8px;
+}
+.prescription_head p {
+    line-height: 10px;
+}
 .prescription span{
     margin-right: 6px;
+}
+
+.prescription_fotter {
+    border-top: 1px solid #eee;
+    padding-top: 7px;
+    margin-bottom: -24px;
+}
+.date {
+    float: right;
 }

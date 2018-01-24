@@ -22,9 +22,6 @@
                                     <div class="panel-heading"><?= __('Change Password') ?></div>
                                     <div class="panel-body">
                                         <div class="col-sm-12">
-                                            <h3 class="text-center mb20">Change password form</h3>
-                                            <p class="text-center mb20">Enter your new password.</p>
-
                                             <input type="hidden" name="token" value="<?php echo $token; ?>">
                                             <div class="form-group">
                                                 <label control-label">Password</label>

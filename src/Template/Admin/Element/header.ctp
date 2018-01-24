@@ -127,9 +127,6 @@
 
                         <a href="#" data-toggle="dropdown" aria-expanded="true"><span class="user-name"><?php echo ucfirst($user['first_name']) ?> <i class="fa fa-angle-down"></i></span></a>
                         <div class="dropdown-menu  user-dropdown">
-                         <li>
-                             <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
-                         </li>
 
                         <li>
                             <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'myProfile',$user['id'] ])?>" class="view_all_li"><i class="fa fa-user-md" aria-hidden="true"></i> My Profile</a>
@@ -141,6 +138,10 @@
 
                         <li>
                             <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'logout' ])?>" class="view_all_li"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
                         </li>
 
                         </div>
