@@ -17,7 +17,7 @@
                                 <div class="panel panel-default panel-hovered panel-stacked">
                                     <div class="panel-heading"><?= __('Add Prescription') ?></div>
                                     <div class="panel-body">
-                                        <?php include('element.ctp') ?>
+                                        <?php include('element.ctp')?>
                                     </div>
                                 </div>
                             </div>

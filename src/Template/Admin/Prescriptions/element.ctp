@@ -48,7 +48,6 @@
         </div>
     </div>';
 
-
     echo '<div class="col-sm-6">
         <div class="form-row">
             <label class="name">Tests<span class="required" aria-required="true"></span></label>
