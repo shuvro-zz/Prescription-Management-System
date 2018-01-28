@@ -41,3 +41,24 @@
 .date {
     float: right;
 }
+
+.medicines_wrap{
+    position: relative;
+
+}
+
+
+.medicines_wrap #addMoreBtn{
+    width:45px!important;
+    position: absolute;
+    right: 67px;
+    top: 29px;
+}
+.medicines_row .dle_medicine_btn{
+    width:45px!important;
+    margin-top: 27px;
+}
+.medicines_row:nth-child(2) .dle_medicine_btn{
+   display: none;
+}
+
