@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Prescriptions Controller
@@ -80,10 +81,17 @@ class PrescriptionsController extends AppController
     public function add()
     {
         $prescription = $this->Prescriptions->newEntity();
+
         if ($this->request->is('post')) {
+            $medicines = $this->request->data['medicines'];
+            unset($this->request->data['medicines']);
+
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
-            if ($this->Prescriptions->save($prescription)) {
-                //$this->Flash->success(__('The prescription has been saved.'));
+            $prescription = $this->Prescriptions->save($prescription);
+
+            if ($prescription) {
+                $this->savePrescriptionMedicines($medicines, $prescription->id);
+
                 $this->Flash->adminSuccess('The prescription has been saved.', ['key' => 'admin_success']);
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -101,6 +109,36 @@ class PrescriptionsController extends AppController
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
         $this->set(compact('prescription', 'users', 'medicines', 'tests'));
         $this->set('_serialize', ['prescription']);
+    }
+
+    function savePrescriptionMedicines($medicines, $prescription_id){
+        // Start: Prescriptions medicines
+        $this->loadModel('PrescriptionMedicines');
+        $prescriptions_medicines = $this->prepareMedicine($medicines, $prescription_id);
+        if($prescriptions_medicines){
+            foreach($prescriptions_medicines as $prescriptions_medicine){
+                $prescription_medicine = $this->PrescriptionMedicines->newEntity();
+                $prescription_medicine = $this->PrescriptionMedicines->patchEntity($prescription_medicine, $prescriptions_medicine );
+                if(!$this->PrescriptionMedicines->save($prescription_medicine)){
+                    $this->log('PrescriptionMedicines could not save ');
+                }
+            }
+        }
+        // End: Prescriptions medicines
+    }
+
+    function prepareMedicine($medicines,$prescription_id){
+        if($medicines){
+            $new_medicines = [];
+            foreach($medicines['medicine_id'] as $key => $val) {
+                $new_medicines[$key]['prescription_id'] = $prescription_id;
+                $new_medicines[$key]['medicine_id'] = $val;
+                $new_medicines[$key]['rule'] = $medicines['rule'][$key];
+            }
+
+
+            return $new_medicines;
+        }
     }
 
     /**
@@ -133,6 +171,7 @@ class PrescriptionsController extends AppController
         }
 
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
+
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
         $this->set(compact('prescription', 'users', 'medicines', 'tests'));
         $this->set('_serialize', ['prescription']);

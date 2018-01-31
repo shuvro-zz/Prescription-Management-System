@@ -15,7 +15,7 @@
 	echo $this->Html->css([
 		'styles/vendors/bootstrap.min.css',
 		'bootstrap-select/bootstrap-select.min.css',
-		'admin_styles/css/admin_style.css',
+        'admin_styles/css/admin_style.css',
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
@@ -27,7 +27,8 @@
 	echo $this->Html->script([
 		'lib/jquery.min.js',
 		'lib/bootstrap.min.js',
-		'lib/jquery.validate.min.js',
+		'lib/bootstrap-select.js',
+        'lib/jquery.validate.min.js',
 		'lib/jquery-ui.js',
 		'lib/form_builder/form-builder.min.js',
 		'lib/jquery.datetimepicker.min.js',

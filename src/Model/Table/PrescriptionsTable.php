@@ -34,11 +34,17 @@ class PrescriptionsTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+
         $this->belongsToMany('Medicines', [
             'foreignKey' => 'prescription_id',
             'targetForeignKey' => 'medicine_id',
-            'joinTable' => 'prescriptions_medicines'
+            'joinTable' => 'prescription_medicines'
         ]);
+
+        /*$this->hasMany('Medicines', [
+            'foreignKey' => 'medicine_id'
+        ]);*/
+
         $this->belongsToMany('Tests', [
             'foreignKey' => 'prescription_id',
             'targetForeignKey' => 'test_id',

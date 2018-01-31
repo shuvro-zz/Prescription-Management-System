@@ -3,9 +3,9 @@
     echo'<div class="clearfix">
         <div class="col-sm-6">
             <div class="form-row">
-                <label class="name">Patients<span class="required" aria-required="true"></span></label>
+                <label class="name">Patients<span class="required" aria-required="true">*</span></label>
                 <div class="inputs">';
-                    echo $this->Form->input('user_id', ['options' => $users,'class'=>'form-control','label'=>false]);
+                    echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=> true ]);
                 echo '</div>
             </div>
         </div>';
@@ -27,7 +27,7 @@
                 $html .= '<div class="form-row">';
                     $html .= '<label class="name">Medicines<span class="required" aria-required="true"></span></label>';
                         $html .= '<div class="inputs">';
-                            $html .=  $this->Form->input('medicines._ids', ['options' => $medicines,'class'=>'form-control', 'label'=>false]);
+                            $html .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false]);
                     $html .= '</div>';
                 $html .= '</div>';
             $html .= '</div>';
@@ -36,7 +36,7 @@
                 $html .= '<div class="form-row">';
                     $html .= '<label class="name">Rules<span class="required" aria-required="true"></span></label>';
                         $html .= '<div class="inputs">';
-                            $html .=  $this->Form->input('rules', ['class'=>'form-control', 'label'=>false]);
+                            $html .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'placeholder'=>'0-1-0', 'label'=>false]);
                         $html .=  '</div>';
                 $html .= '</div>';
             $html .= '</div>';
@@ -57,9 +57,13 @@
                 echo $this->Form->input('tests._ids', ['options' => $tests,'class'=>'form-control','label'=>false]);
             echo '</div>
         </div>
-    </div>';
+    </div>
+    ';
 
     ?>
+
+
+
 
 
 <script type="text/javascript">
@@ -68,6 +72,7 @@
         $("#addMoreBtn").click(function(){
             $(".dle_medicine_btn").css('display');
             $("#medicinesWrap").append('<?php echo $html ?>');
+            $(".selectpicker").selectpicker('refresh');
         });
 
         // Delete field
