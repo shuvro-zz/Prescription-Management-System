@@ -58,7 +58,6 @@ class PrescriptionsController extends AppController
         $this->set(compact('prescriptions', 'search' ));
         $this->set('_serialize', ['prescriptions']);
 
-        //$this->render('view');
     }
 
     /**
