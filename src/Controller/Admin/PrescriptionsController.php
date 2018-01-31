@@ -1,6 +1,5 @@
 <?php
 namespace App\Controller\Admin;
-
 use App\Controller\AppController;
 use Cake\Routing\Router;
 use Cake\Mailer\Email;
