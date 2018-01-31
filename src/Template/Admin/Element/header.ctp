@@ -1,7 +1,9 @@
+<?php use Cake\Routing\Router;?>
 <header id="header" class="topbar">
     <div class="logo">
         <a href="<?php echo $this->Url->build('/admin/dashboard');?>" title="">
             <h1 style="margin-bottom: 0px">PMS</h1>
+
             <?php /*echo $this->Html->image('/css/admin_styles/images/logo.png', ['alt' => 'Logo']) */?>
         </a>
     </div>
@@ -128,24 +130,22 @@
                         <a href="#" data-toggle="dropdown" aria-expanded="true"><span class="user-name"><?php echo ucfirst($user['first_name']) ?> <i class="fa fa-angle-down"></i></span></a>
                         <div class="dropdown-menu  user-dropdown">
 
-                        <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'myProfile',$user['id'] ])?>" class="view_all_li"><i class="fa fa-user-md" aria-hidden="true"></i> My Profile</a>
-                        </li>
+                            <li>
+                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'myProfile',$user['id'] ])?>" class="view_all_li"><i class="fa fa-user-md" aria-hidden="true"></i> My Profile</a>
+                            </li>
 
-                        <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changePassword',$user['token'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Change Password</a>
-                        </li>
+                            <li>
+                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changePassword',$user['token'] ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Change Password</a>
+                            </li>
 
-                        <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'logout' ])?>" class="view_all_li"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-                        </li>
+                            <li>
+                                <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+                            </li>
 
-                        <li>
-                            <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
-                        </li>
-
+                            <li>
+                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'logout' ])?>" class="view_all_li"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            </li>
                         </div>
-
                     </div>
                 </div>
             </div>

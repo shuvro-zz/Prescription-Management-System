@@ -1,13 +1,31 @@
 <div class="workspace-dashboard page page-ui-tables">
     <div class="workspace-body">
         <div class="page-heading">
-            <ol class="breadcrumb breadcrumb-small">
-                <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Prescription') ?>"> <?= __('Prescription') ?></a></li>
-                <li class="active"><a href="#">View <?= __('Prescription') ?></a></li>
-            </ol>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <ol class="breadcrumb breadcrumb-small">
+                        <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Prescription') ?>"> <?= __('Prescription') ?></a></li>
+                        <li class="active"><a href="#">View <?= __('Prescription') ?></a></li>
+                    </ol>
+                </div>
+                <div class="flex-item">
+                    <div class="flex-container">
+                        <a href="#" class="add-event-btn" title="Print Prescription" onclick="printPrescription();">Print</a>
+                        &nbsp;
+                        &nbsp;
+                        <?php
+                            echo $this->Html->link(
+                            'Send Email',
+                            ['action' => 'sendPrescriptionEmail', $prescription->id],
+                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
+                            )
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="cu_con_outer">
+        <div class="cu_con_outer" id="printable_area">
             <div class="cu_con_inner">
                 <div class="prescription">
                     <div class="prescription_head">
@@ -74,7 +92,7 @@
                             <div class="col-sm-6"></div>
                             <div class="col-sm-3">
                                 <div class="date">
-                                    <p> <?= $prescription->created ?> </p>
+                                    <p><b>Date:</b> <?= $prescription->created->format('d/m/Y'); ?> </p>
                                 </div>
                             </div>
                         </div>

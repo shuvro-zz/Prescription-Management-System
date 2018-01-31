@@ -3,7 +3,6 @@
     'class' => 'form-horizontal',
     'id' => 'admin-forgot-password-form'
 ]); ?>
-
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -12,8 +11,18 @@
                 <li class="active"><a href="#"><?= __('Chance Password') ?></a></li>
             </ol>
         </div>
+
+
+
         <div class="main-container">
             <div class="content">
+
+                <div class="col-md-12">
+                    <?php echo $this->Flash->render('admin_success'); ?>
+                    <?php echo $this->Flash->render('admin_error'); ?>
+                    <?php echo $this->Flash->render('admin_warning'); ?>
+                </div>
+
                 <div class="page-wrap">
                     <div class="col-sm-12 col-md-12">
                         <div class="row">

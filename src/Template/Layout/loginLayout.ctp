@@ -29,29 +29,5 @@
         echo $this->fetch('content');
     ?>
 
-    <footer>
-
-    </footer>
-
-
-
-<script>
-    /*if(typeof autocomplete_off != "function"){
-        var autocomplete_off = function (){
-            var auto_complete_html = "<div id='autocomplete_off' style='height: 0px !important; width: 0px !important; margin-left: -1700px !important; overflow: hidden !important; position: fixed !important;'>" +
-                "<input style='display:none'>" +
-                "<input type='password' style=''>" +
-                "<input type='text'  autocomplete='chrome' />" +
-                "</div>" ;
-            $('form,input,select,textarea').attr("autocomplete", "off");
-            $('form').each(function(){
-                $("#autocomplete_off",$(this)).remove();
-                $(this).prepend(auto_complete_html);
-            });
-        }
-    }
-    autocomplete_off();*/
-</script>
-
 </body>
 </html>

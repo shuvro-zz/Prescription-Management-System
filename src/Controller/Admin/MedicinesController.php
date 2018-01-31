@@ -77,11 +77,13 @@ class MedicinesController extends AppController
         if ($this->request->is('post')) {
             $medicine = $this->Medicines->patchEntity($medicine, $this->request->data);
             if ($this->Medicines->save($medicine)) {
-                $this->Flash->success(__('The medicine has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $success_message = __('The medicine has been saved.');
+                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
-                $this->Flash->error(__('The medicine could not be saved. Please, try again.'));
+                $error_message = __('The medicine could not be saved. Please, try again.');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('medicine'));
         $this->set('_serialize', ['medicine']);
@@ -102,11 +104,13 @@ class MedicinesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $medicine = $this->Medicines->patchEntity($medicine, $this->request->data);
             if ($this->Medicines->save($medicine)) {
-                $this->Flash->success(__('The medicine has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $success_message = __('The medicine has been edited.');
+                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
-                $this->Flash->error(__('The medicine could not be saved. Please, try again.'));
+                $error_message = __('The medicine could not be edited. Please, try again.');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('medicine'));
         $this->set('_serialize', ['medicine']);
@@ -124,9 +128,11 @@ class MedicinesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $medicine = $this->Medicines->get($id);
         if ($this->Medicines->delete($medicine)) {
-            $this->Flash->success(__('The medicine has been deleted.'));
+            $success_message = __('The medicine has been deleted.');
+            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
         } else {
-            $this->Flash->error(__('The medicine could not be deleted. Please, try again.'));
+            $error_message = __('The medicine could not be delete. Please, try again.');
+            $this->Flash->adminError($error_message, ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
     }

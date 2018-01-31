@@ -49,14 +49,12 @@ class SettingsController extends AppController
 
                 $query = $this->Settings->query();
                 $query->update()
-                      ->set(['value' => $val])
-                      ->where(['key_name' => $key])
-                      ->execute();
+                    ->set(['value' => $val])
+                    ->where(['key_name' => $key])
+                    ->execute();
             }
 
-            $this->Flash->adminSuccess('The content has been saved.', [
-                'key' => 'admin_success'
-            ]);
+            $this->Flash->adminSuccess('The setting has been saved.', [ 'key' => 'admin_success' ]);
             return $this->redirect(['action' => 'add']);
         }
 

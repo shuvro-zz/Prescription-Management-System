@@ -28,6 +28,7 @@ class UsersController extends AppController
         $this->Auth->allow([
             'login',
             'forgotPassword',
+            'resetPassword',
             'registration'
         ]);
     }
@@ -69,7 +70,7 @@ class UsersController extends AppController
         $users = $this->paginate($query);
 
         if(count($users)==0){
-            $this->Flash->adminWarning(__('No users found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
+            $this->Flash->adminWarning(__('No patient found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
         }
 
         $users = $this->paginate($query);
@@ -89,22 +90,26 @@ class UsersController extends AppController
 
     public function add()
     {
-
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
+
+            $session = $this->request->session();
+            $doctor_id = $session->read('Auth.User.id');
+
             $user->role_id = 3;
+            $user->doctor_id = $doctor_id;
 
             //pr($user); die;
 
             if ($this->Users->save($user)) {
                 $success_message = __('The patient Registration is successful.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                return $this->redirect(['action' => 'index']);
             } else {
-                $error_message = __('The patient could not be saved. Please, try again.');
+                $error_message = __('The patient could not be Registration. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
@@ -119,13 +124,13 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->data);
             if ($this->Users->save($user)) {
-                $success_message = __('The patient has been saved.');
+                $success_message = __('The patient has been edited.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                return $this->redirect(['action' => 'index']);
             } else {
-                $error_message = __('The patient could not be saved. Please, try again.');
+                $error_message = __('The patient could not be edit. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
@@ -138,9 +143,8 @@ class UsersController extends AppController
         if ($this->Users->delete($user)) {
             $success_message = __('The patient has been deleted.');
             $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-
         } else {
-            $error_message = __('The patient could not be deleted. Please, try again.');
+            $error_message = __('The patient could not be delete. Please, try again.');
             $this->Flash->adminError($error_message, ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
@@ -158,7 +162,7 @@ class UsersController extends AppController
             //pr($user); die;
 
             if ($this->Users->save($user)) {
-                $success_message = __('The user Registration is successful.');
+                $success_message = __('Registration is successful.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                 $this->login();
                 //return $this->redirect(['action' => 'index']);
@@ -175,39 +179,33 @@ class UsersController extends AppController
 
     public function login()      // Backend login
     {
-        //echo json_encode(array(1));die;
-        //$hasher = new DefaultPasswordHasher();
-        //echo $hasher->hash(123456);die;
-
         $this->viewBuilder()->layout('loginLayout');
         if (!$this->Auth->user()) {
-
             if ($this->request->is('post')) {
                 $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
                 if($role_check == true){
                     $user = $this->Auth->identify();
 
                     if ($user) {
-
                         $this->Auth->setUser($user);
                         $success_message = __('Successfully logged in');
                         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                         return $this->redirect('/admin/dashboard');
+
+                    }else{
+                        $error_message = __('Invalid username or password, try again');
+                        $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                        $this->Flash->error($error_message);
                     }
+
                 } else {
-                    $error_message = __('You don\'t have permission to login');
+                    $error_message = __('You don\'t have permission to access');
                     $this->Flash->adminError($error_message, ['key' => 'admin_error']);
-                    return $this->redirect(['controller' => 'dashboard', 'action' => 'index']);
+                    return $this->redirect(['action' => 'login']);
                 }
-
-                $error_message = __('Invalid username or password, try again');
-                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
-                $this->Flash->error($error_message);
-
             }
 
         } else {
-
             return $this->redirect(['controller' => 'dashboard', 'action' => 'index']);
         }
     }
@@ -222,11 +220,26 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $success_message = __('Profile has been saved.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                return $this->redirect(['action' => 'index']);
+
+                $session = $this->request->session();
+                $session->write('Auth.User.first_name', $this->request->data['first_name']);
+                $session->write('Auth.User.last_name', $this->request->data['last_name']);
+                $session->write('Auth.User.address_line1', $this->request->data['address_line1']);
+                $session->write('Auth.User.address_line2', $this->request->data['address_line2']);
+                $session->write('Auth.User.phone', $this->request->data['phone']);
+                $session->write('Auth.User.educational_qualification', $this->request->data['educational_qualification']);
+                $session->write('Auth.User.clinic_name', $this->request->data['clinic_name']);
+                $session->write('Auth.User.website', $this->request->data['website']);
+                $session->write('Auth.User.logo', $this->request->data['logo']);
+                $session->write('Auth.User.signature', $this->request->data['signature']);
+
+                //$this->redirect(array('controller' => 'users', 'action' => 'myProfile'));
+
             } else {
-                $error_message = __('Profile could not be saved. Please, try again.');
+                $error_message = __('Profile could not be changed. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'myProfile/'.$id]);
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
@@ -238,7 +251,7 @@ class UsersController extends AppController
             $userTable = TableRegistry::get('Users');
             $query = $userTable->find('all')->where(['email' => $user_email]);
 
-            if(!empty($query->first()->role_id) && $query->first()->role_id == 2){
+            if(!empty($query->first()->role_id) && $query->first()->role_id == 2){  // Doctor
                 return true;
             } else {
                 return false;
@@ -253,21 +266,30 @@ class UsersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
 
-    function resetPassword($user_id=null) {  // Admin reset password
+    function resetPassword($token = null) {  //  Reset password
+        $this->viewBuilder()->layout('loginLayout');
 
         if ($this->request->is('post')) {
 
             if($this->request->data['password'] == $this->request->data['confirm_password']){
 
-                $user_id = $this->request->data['user_id'];
+                $token = $this->request->data['token'];
                 $userTable = TableRegistry::get('Users');
-                $user_data = $userTable->get($user_id);
-                $user_data->id = $user_id;
+
+                $user_data = $userTable->find('all')
+                    ->where(['Users.token' => $token]);
+
+                $user_data = $user_data->first();
+
+                $user_data->token = $token;
                 $user_data->password = $this->request->data['password'];
 
                 if ($userTable->save($user_data)) {
-                    $this->Flash->adminSuccess('Password changed successfully', ['key' => 'admin_success']);
+                    $this->Flash->adminSuccess('Password reset successful', ['key' => 'admin_success']);
                     $this->redirect(array('controller' => 'users', 'action' => 'index'));
+                }else{
+                    $message = 'Password could not be reset!, Please try again';
+                    $this->Flash->adminError($message, ['key' => 'admin_error']);
                 }
 
             } else {
@@ -275,8 +297,7 @@ class UsersController extends AppController
                 $this->redirect(array('controller' => 'users', 'action' => 'resetPassword'));
             }
         }
-
-        $this->set('user_id',$user_id);
+        $this->set('token',$token);
     }
 
     function forgotPassword() {
@@ -298,51 +319,27 @@ class UsersController extends AppController
                     $user_info['token_generated'] = date("Y-m-d H:i:s");
 
                     if ($this->Users->save($user_info)) {
+                        $site_link = Router::url( '/', true );
 
-                        $this->adminPasswordChangeLinkEmailSend($user_info);
+                        $info = array(
+                            'to'                => $user_info['email'],
+                            'subject'           => 'Password Reset Link',
+                            'template'          => 'reset_password_link',
+                            'data'              => array('User' => $user_info, 'base_url' => $site_link),
+                        );
+                        $this->EmailHandler->sendEmail($info);
 
-                        $this->Flash->adminSuccess('A reset password link has sent to your email address', ['key' => 'admin_success']);
-                        //$this->redirect(array('controller' => 'users', 'action' => 'forgotPassword'));
+                        $this->Flash->adminSuccess('A reset password link has been sent to your email address', ['key' => 'admin_success']);
                     }
-
                 } else {
-                    //echo 'fsef';exit;
                     $this->Flash->adminError('Email does not exist', ['key' => 'admin_error']);
-                    //$this->redirect(array('controller' => 'users', 'action' => 'forgotPassword'));
+
                 }
-
-
             } else{
-
-
                 $error_message = __('Invalid username or password, try again');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
-                //$this->redirect(array('controller' => 'users', 'action' => 'forgotPassword'));
-
             }
         }
-
-        $this->render('forgot_password');
-    }
-
-    public function adminPasswordChangeLinkEmailSend($user){
-
-        $this->EmailHandler->smtpEmailSetting();
-
-        $site_email = $this->Common->getSettingByKey('site_email');
-        $site_name = $this->Common->getSettingByKey('site_name');
-        $to = $user['email'];
-        $subject = 'Password Reset Link';
-        $name = $user['first_name'].' '.$user['last_name'];
-        $site_link = Router::url( '/', true ).'admin/users/change_password/'.$user['token'];
-        $body = 'Hi '.$name.' Please go to this link to change your password '.$site_link;
-
-        $email = new Email('default');
-        $email->from([$site_email => $site_name])
-            ->to($to)
-            ->subject($subject)
-            ->transport('gmail')
-            ->send($body);
     }
 
     public function changePassword($token = null){
@@ -359,31 +356,25 @@ class UsersController extends AppController
                             $user_info['confirm_password'] = $this->request->data['confirm_password'];
 
                             if( $this->Users->save($user_info) ) {
-                                $this->Flash->adminSuccess('Password has been change successfully, You may login now', ['key' => 'admin_success']);
-                                $this->redirect(array('controller' => 'dashboard', 'action' => 'index'));
-
+                                $this->Flash->adminSuccess('Password has been changed successfully', ['key' => 'admin_success']);
+                                $this->redirect(['action' => 'changePassword/'.$token]);
                             }else{
                                 $message = 'Password could not be change!, Please try again';
                                 $this->Flash->adminError($message, ['key' => 'admin_error']);
-
                             }
-
                         }else{
                             $message = 'Password didn\'t match with confirm password!';
                             $this->Flash->adminError($message, ['key' => 'admin_error']);
 
                         }
-
                     }else{
                         $message = 'Password must have a minimum of 8 characters!';
                         $this->Flash->adminError($message, ['key' => 'admin_error']);
-
                     }
-                } else {
+                }else {
                     $message = 'User does not exist';
                     $this->Flash->adminError($message, ['key' => 'admin_error']);
                 }
-
             }
 
         $this->set('token',$token);
@@ -397,11 +388,13 @@ class UsersController extends AppController
     }
 
     function __search(){
+
         $session = $this->request->session();
+        $doctor_id = $session->read('Auth.User.id');
+
         if($session->check('users_search_query')){
             $search = $session->read('users_search_query');
-            $where = [
-                'Users.role_id' => 3,
+            $where = [ 'Users.doctor_id' => $doctor_id,
                 'OR' => [
                     ['Users.first_name LIKE' => '%' . $search . '%'],
                     ['Users.phone LIKE' => '%' . $search . '%'],
@@ -411,7 +404,7 @@ class UsersController extends AppController
                 ]
             ];
         }else{
-            $where = ['Users.role_id' => 3];
+            $where = ['Users.doctor_id' => $doctor_id];
         }
         return $where;
     }

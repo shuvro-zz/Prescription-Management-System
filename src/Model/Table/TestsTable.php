@@ -27,6 +27,7 @@ class TestsTable extends Table
         $this->table('tests');
         $this->displayField('name');
         $this->primaryKey('id');
+        $this->addBehavior('Timestamp');
     }
 
     /**
@@ -38,9 +39,9 @@ class TestsTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')            ->allowEmpty('id', 'create');
+            ->integer('id')->allowEmpty('id', 'create');
         $validator
-            ->requirePresence('name', 'create')            ->notEmpty('name');
+            ->requirePresence('name', 'create')->notEmpty('name');
         return $validator;
     }
 }

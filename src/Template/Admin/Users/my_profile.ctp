@@ -7,8 +7,18 @@
                     <li class="active"><a href="#"><?= __('My Profile') ?></a></li>
                 </ol>
             </div>
+
+
+
             <div class="main-container">
                 <div class="content">
+
+                    <div class="col-md-12">
+                        <?php echo $this->Flash->render('admin_success'); ?>
+                        <?php echo $this->Flash->render('admin_error'); ?>
+                        <?php echo $this->Flash->render('admin_warning'); ?>
+                    </div>
+
                     <div class="page-wrap">
                         <div class="col-sm-12 col-md-12">
                             <div class="row">
@@ -17,8 +27,6 @@
                                         <div class="panel-heading"><?= __('Edit Profile') ?></div>
                                         <div class="panel-body">
                                             <?php
-                                            $user = $this->request->session()->read('Auth.User');
-
                                             echo '<div class="form-row">
                                                 <div class="col-sm-6">
                                                     <label class="name">First Name<span class="required" aria-required="true"></span></label>

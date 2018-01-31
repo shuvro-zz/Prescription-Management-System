@@ -39,7 +39,7 @@
 			},
 			messages:{
 				"email": "Please enter a Valid Email Address",
-				"password": "Please enter a Password",
+				"password": "Please enter a Password"
 			}
 		});
 	});

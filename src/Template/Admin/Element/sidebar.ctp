@@ -20,7 +20,7 @@
                 </span><span class="nav-text">Patients</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Prescriptions') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'index' )); ?>" title="Prescriptions"><span class="nav-icon"><span class="icon"></span>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'patientIdReset' )); ?>" title="Prescriptions"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Prescriptions</span></a>
             </li>
 

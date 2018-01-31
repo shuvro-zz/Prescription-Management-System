@@ -1,5 +1,4 @@
 <div class="workspace-dashboard page page-ui-tables">
-
     <div class="page-heading">
         <div class="flex-container">
             <div class="flex-item"><h4><?= __('Prescriptions') ?></h4></div>
@@ -17,7 +16,6 @@
         <?php echo $this->Flash->render('admin_success'); ?>
         <?php echo $this->Flash->render('admin_error'); ?>
         <?php echo $this->Flash->render('admin_warning'); ?>
-        <?php echo $this->element('flash_message'); ?>
     </div>
 
     <div class="event-listing">
@@ -56,7 +54,7 @@
                 <tbody>
                     <?php foreach ($prescriptions as $prescription): ?>
                     <tr>
-                        <td><?= $prescription->has('user') ? $this->Html->link($prescription->user->first_name.' '.$prescription->user->last_name, ['controller' => 'Users', 'action' => 'view', $prescription->user->id]) : '' ?></td>
+                        <td><?= h($prescription->user->first_name.' '.$prescription->user->last_name) ?></td>
                         <td><?= h($prescription->user->phone) ?></td>
                         <td><?= h($prescription->diagnosis) ?></td>
                         <td><?= h($prescription->created->format('d/m/Y')) ?></td>

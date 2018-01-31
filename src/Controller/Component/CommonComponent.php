@@ -36,12 +36,6 @@ class CommonComponent extends Component
         return strtotime($date);
     }
 
-    function dateConvert(){
-        if( isset($this->controller->request->data['start_date']) ) $this->controller->request->data['start_date'] = $this->strToTime($this->controller->request->data['start_date']);
-        if( isset($this->controller->request->data['end_date']) ) $this->controller->request->data['end_date'] = $this->strToTime($this->controller->request->data['end_date']);
-        if( isset($this->controller->request->data['conference_date']) ) $this->controller->request->data['conference_date'] = $this->strToTime($this->controller->request->data['conference_date']);
-    }
-
     function __addSlug(){
         $this->controller->request->data['slug'] = Inflector::slug($this->controller->request->data['name'] );
     }

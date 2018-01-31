@@ -83,11 +83,13 @@ class TestsController extends AppController
         if ($this->request->is('post')) {
             $test = $this->Tests->patchEntity($test, $this->request->data);
             if ($this->Tests->save($test)) {
-                $this->Flash->success(__('The test has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $success_message = __('The test has been saved.');
+                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
-                $this->Flash->error(__('The test could not be saved. Please, try again.'));
+                $error_message = __('The test could not be save. Please, try again.');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('test'));
         $this->set('_serialize', ['test']);
@@ -108,11 +110,13 @@ class TestsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $test = $this->Tests->patchEntity($test, $this->request->data);
             if ($this->Tests->save($test)) {
-                $this->Flash->success(__('The test has been saved.'));
-                return $this->redirect(['action' => 'index']);
+                $success_message = __('The test has been edited.');
+                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
-                $this->Flash->error(__('The test could not be saved. Please, try again.'));
+                $error_message = __('The test could not be edit. Please, try again.');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('test'));
         $this->set('_serialize', ['test']);
@@ -130,9 +134,11 @@ class TestsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $test = $this->Tests->get($id);
         if ($this->Tests->delete($test)) {
-            $this->Flash->success(__('The test has been deleted.'));
+            $success_message = __('The test has been deleted.');
+            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
         } else {
-            $this->Flash->error(__('The test could not be deleted. Please, try again.'));
+            $error_message = __('The test could not be delete. Please, try again.');
+            $this->Flash->adminError($error_message, ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
     }

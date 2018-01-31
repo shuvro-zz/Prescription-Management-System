@@ -1,15 +1,4 @@
 jQuery(document).ready(function () {
-
-    $(".bulk-delete").change(function() {
-        var id = $(this).val();
-        if(this.checked) {
-            $('#bulk-delete-id-' + id).val(id);
-        }else{
-            $('#bulk-delete-id-' + id).val('');
-        }
-    });
-
-    
     //create slug
     jQuery('#name').keyup(function(){
         jQuery('#slug').val(slug(jQuery('#name').val()));
@@ -60,6 +49,40 @@ function initDatePicker(){
 
     $(".date").readOnly(true);
     $(".time").readOnly(true);
+}
 
+function printPrescription() {
+
+    var toPrint = document.getElementById('printable_area');
+
+    var popupWin = window.open('', '_blank', 'width=1000,height=800,location=no,left=200px');
+
+    popupWin.document.open();
+
+    popupWin.document.write('<html><title>::Preview::</title></head><body onload="window.print()">');
+
+    popupWin.document.write(toPrint.innerHTML);
+
+    popupWin.document.write('</html>');
+
+    popupWin.document.close();
 
 }
+
+/*function printPreviewPrescription() {
+
+    var toPrint = document.getElementById('printable_area');
+
+    var popupWin = window.open('', '_blank', 'width=350,height=150,location=no,left=200px');
+
+    popupWin.document.open();
+
+    popupWin.document.write('<html><title>::Print Preview::</title><link rel="stylesheet" type="text/css" href="Print.css" media="screen"/></head><body">')
+
+    popupWin.document.write(toPrint.innerHTML);
+
+    popupWin.document.write('</html>');
+
+    popupWin.document.close();
+
+}*/

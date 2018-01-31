@@ -46,7 +46,7 @@
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('phone') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('age') ?></th>
+                    <th><?= $this->Paginator->sort('age', 'Age/Years') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -54,7 +54,7 @@
                 <tbody>
                 <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?= h($user->first_name) ?></td>
+                        <td><?= h($user->first_name ).' '.h($user->last_name )  ?></td>
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->age) ?></td>
@@ -65,6 +65,16 @@
                                 <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
                             </span>
                                 <ul class="dropdown-menu action-dropdown">
+                                    <li>
+                                        <?php
+                                        echo $this->Html->link(
+                                            '<span class="fa fa-eye"></span> View Prescription',
+                                            ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
+                                            ['escapeTitle' => false, 'title' => 'View Prescription']
+                                        );
+                                        ?>
+                                    </li>
+
                                     <li>
                                         <?php
                                         echo $this->Html->link(

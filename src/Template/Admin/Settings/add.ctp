@@ -8,8 +8,16 @@
                 <li class="active"><a href="#">Update</a></li>
             </ol>
         </div>
+
         <div class="main-container">
             <div class="content">
+
+                <div class="col-md-12">
+                    <?php echo $this->Flash->render('admin_success'); ?>
+                    <?php echo $this->Flash->render('admin_error'); ?>
+                    <?php echo $this->Flash->render('admin_warning'); ?>
+                </div>
+
                 <div class="page-wrap">
                     <div class="col-sm-12 col-md-12">
                         <div class="row">
