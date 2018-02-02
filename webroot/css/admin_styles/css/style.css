@@ -1,11 +1,20 @@
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    margin: 15px 0!important;
+}
 .cu_con_outer{
-    padding: 20px;
+    width: 100%;
+    background: #ffffff;
+    padding: 35px 0;
 }
 
 .cu_con_inner{
-    border-radius: 4px;
-    background: #ffffff;
-    padding: 20px;
+    padding: 20px 15px;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+
 }
 .prescription_head {
     border-bottom: 1px solid #eee;
@@ -33,7 +42,18 @@
     margin-right: 6px;
 }
 
-.prescription_fotter {
+.prescription_section{
+    margin: 20px 0;
+}
+.prescription_table .prescription_caption{
+    width: 150px;
+}
+
+.prescription_table .prescription_sep{
+    width: 20px;
+}
+
+.prescription_footer{
     border-top: 1px solid #eee;
     padding-top: 7px;
     margin-bottom: -24px;
@@ -41,6 +61,8 @@
 .date {
     float: right;
 }
+
+
 
 /**************Medicine*************/
 
@@ -55,6 +77,7 @@
     right: 67px;
     top: 28px;
 }
+
 
 .medicines_row .dle_medicine_btn{
     width:45px!important;

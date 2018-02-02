@@ -56,32 +56,50 @@
                         <b>Diagnosis: </b><?= $prescription->diagnosis ?>
                     </p>
 
-                    <h4>Tests</h4>
-                    <p>
-                        <?php
-                            foreach ($prescription->tests as $tests){
-                                if ($tests === end($prescription->tests)){
-                                    echo '<span class="test_name">'. $tests->name .' </span>';
-                                }else{
-                                    echo '<span class="test_name">'. $tests->name .', </span>';
-                                }
+                    <div class="prescription_section">
+                        <h4>Tests</h4>
+                        <table class="prescription_table table table-hover">
+                            <tr>
+                                <th class="prescription_caption">Name</th>
+                                <th></th>
+                                <th>Note</th>
+                            </tr>
+                            <?php
+                            foreach ($prescription->tests as $test){
+                                echo '<tr>
+                                        <td class="prescription_caption">'. $test->name .'</td>
+                                        <td class="prescription_sep">:</td>
+                                        <td>'. $test->_joinData->note.'</td>
+                                    </tr>';
                             }
-                        ?>
-                    </p>
+                            ?>
 
-                    <h4>Medicines</h4>
-                    <p>
-                        <?php
-                        foreach ($prescription->medicines as $medicines){
-                            if($medicines === end($prescription->medicines)){
-                                echo '<span class="medicines_name">'. $medicines->name .'</span>';
-                            }else{
-                                echo '<span class="medicines_name">'. $medicines->name .', </span>';
-                            }
-                        }
-                        ?>
-                    </p>
-                    <div class="prescription_fotter">
+                        </table>
+                    </div>
+
+                    <div class="prescription_section">
+                        <h4>Medicines</h4>
+                        <table class="prescription_table table table-hover">
+                            <tr>
+                                <th class="prescription_caption">Name</th>
+                                <th></th>
+                                <th>Rule</th>
+                            </tr>
+                            <?php
+                                foreach ($prescription->medicines as $medicine){
+
+                                    echo '<tr>
+                                        <td>'. $medicine->name .'</td>
+                                        <td class="prescription_sep">:</td>
+                                        <td>'.$medicine->_joinData->rule.'</td>
+                                    </tr>';
+                                }
+                            ?>
+
+                        </table>
+                    </div>
+
+                    <div class="prescription_footer">
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="signature">
