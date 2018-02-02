@@ -21,7 +21,7 @@
     </div>';
 
     echo '<div class="medicines_wrap" id="medicinesWrap">
-        <button type="button" id="addMoreBtn" class="add_more_btn"><span class="fa fa-plus"></span></button>';
+        <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>';
          foreach($prescription_medicines as $prescription_medicine){
         $field_medicine = '<div class="medicines_row clearfix">';
             $field_medicine .= '<div class="col-sm-5">';
@@ -50,7 +50,42 @@
         $field_medicine .= '</div>';
         echo  $field_medicine;
         }
+    echo '</div>';
+
+
+
+    echo '<div class="tests_wrap" id="testsWrap">
+        <button type="button" id="addMoreTest" class="add_more_btn"><span class="fa fa-plus"></span></button>';
+        foreach($prescription_tests as $prescription_test){
+        $field_test = '<div class="medicines_row clearfix">';
+            $field_test .= '<div class="col-sm-5">';
+                $field_test .= '<div class="form-row">';
+                    $field_test .= '<label class="name">Tests<span class="required" aria-required="true"></span></label>';
+                         $field_test .= '<div class="inputs">';
+                             $field_test .=  $this->Form->input('tests.test_id[]', ['options' => $tests, 'default' => (isset($prescription_test->test_id))? $prescription_test->test_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false]);
+                    $field_test .= '</div>';
+                $field_test .= '</div>';
+            $field_test .= '</div>';
+
+            $field_test .= '<div class="col-sm-5">';
+                $field_test .= '<div class="form-row">';
+                    $field_test .= '<label class="name">Notes<span class="required" aria-required="true"></span></label>';
+                        $field_test .= '<div class="inputs">';
+                            $field_test .=  $this->Form->input('tests.note[]', ['class'=>'form-control', 'default' => (isset($prescription_test->note))? $prescription_test->note:'', 'placeholder'=>'Type notes', 'label'=>false]);
+                    $field_test .=  '</div>';
+                $field_test .= '</div>';
+            $field_test .= '</div>';
+
+            $field_test .=  '<div class="col-sm-2">';
+                $field_test .= '<div class="inputs">';
+                    $field_test .= '<button type="button" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
+                $field_test .= '</div>';
+            $field_test .= '</div>';
+        $field_test .= '</div>';
+        echo  $field_test;
+    }
     echo '</div>
+
 
     <div class="col-sm-6">
         <div class="form-row">
@@ -70,10 +105,17 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        // Add field
-        $("#addMoreBtn").click(function(){
+        // Add Medicine field
+        $("#addMoreMedicine").click(function(){
             $(".dle_medicine_btn").css('display');
             $("#medicinesWrap").append('<?php echo $field_medicine ?>');
+            $(".selectpicker").selectpicker('refresh');
+        });
+
+        // Add Test field
+        $("#addMoreTest").click(function(){
+            $(".dle_medicine_btn").css('display');
+            $("#testsWrap").append('<?php echo $field_test ?>');
             $(".selectpicker").selectpicker('refresh');
         });
     });

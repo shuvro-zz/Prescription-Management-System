@@ -42,22 +42,31 @@
     float: right;
 }
 
+/**************Medicine*************/
+
 .medicines_wrap{
     position: relative;
 
 }
 
-.medicines_wrap #addMoreBtn{
+.medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
     width:45px!important;
     position: absolute;
     right: 67px;
-    top: 29px;
+    top: 28px;
 }
+
 .medicines_row .dle_medicine_btn{
     width:45px!important;
     margin-top: 27px;
+    margin-left: -3px;
 }
 .medicines_row:nth-child(2) .dle_medicine_btn{
    display: none;
+}
+/**************Test*************/
+.tests_wrap{
+    position: relative;
+
 }
 

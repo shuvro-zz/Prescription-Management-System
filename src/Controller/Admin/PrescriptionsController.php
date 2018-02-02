@@ -85,7 +85,9 @@ class PrescriptionsController extends AppController
         if ($this->request->is('post')) {
 
             $medicines = $this->request->data['medicines'];
+            $tests = $this->request->data['tests'];
             unset($this->request->data['medicines']);
+            unset($this->request->data['tests']);
 
             $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
@@ -93,6 +95,7 @@ class PrescriptionsController extends AppController
 
             if ($prescription) {
                 $this->savePrescriptionMedicines($medicines, $prescription->id);
+                $this->savePrescriptionTests($tests, $prescription->id);
 
                 $this->Flash->adminSuccess('The prescription has been saved.', ['key' => 'admin_success']);
                 return $this->redirect(['action' => 'index']);
@@ -109,10 +112,43 @@ class PrescriptionsController extends AppController
         }
 
         $prescription_medicines = array('medicine_id'=>'');
+        $prescription_tests = array('test_id'=>'');
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'prescription_medicines', 'medicines', 'tests'));
+        $this->set(compact('prescription', 'users', 'prescription_medicines', 'prescription_tests', 'medicines', 'tests'));
         $this->set('_serialize', ['prescription']);
+    }
+
+    function savePrescriptionTests($tests, $prescription_id){
+        // Start: Prescriptions tests
+        $this->loadModel('PrescriptionsTests');
+        $this->PrescriptionsTests->deleteAll(['PrescriptionsTests.prescription_id' => $prescription_id]);
+
+        $prescriptions_tests = $this->prepareTest($tests, $prescription_id);
+        if($prescriptions_tests){
+            foreach($prescriptions_tests as $prescriptions_test){
+                $prescription_test = $this->PrescriptionsTests->newEntity();
+                $prescription_test = $this->PrescriptionsTests->patchEntity($prescription_test, $prescriptions_test );
+                if(!$this->PrescriptionsTests->save($prescription_test)){
+                    $this->log('PrescriptionsTests could not save ');
+                }
+            }
+        }
+        // End: savePrescription tests
+    }
+
+    function prepareTest($tests,$prescription_id){
+        //pr($tests);
+        if($tests){
+            $new_tests = [];
+            foreach($tests['test_id'] as $key => $val) {
+                $new_tests[$key]['prescription_id'] = $prescription_id;
+                $new_tests[$key]['test_id'] = $val;
+                $new_tests[$key]['note'] = $tests['note'][$key];
+            }
+            //pr($new_tests);die;
+            return $new_tests;
+        }
     }
 
 
@@ -132,12 +168,15 @@ class PrescriptionsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
 
             $medicines = $this->request->data['medicines'];
+            $tests = $this->request->data['tests'];
             unset($this->request->data['medicines']);
+            unset($this->request->data['tests']);
 
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
             if ($this->Prescriptions->save($prescription)) {
 
                 $this->savePrescriptionMedicines($medicines, $id);
+                $this->savePrescriptionTests($tests, $id);
 
                 $success_message = __('The prescription has been edited.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -156,11 +195,12 @@ class PrescriptionsController extends AppController
         }
 
         $prescription_medicines = $this->Prescriptions->PrescriptionMedicines->find('all')->where(['PrescriptionMedicines.prescription_id' => $id ]);
+        $prescription_tests = $this->Prescriptions->PrescriptionsTests->find('all')->where(['PrescriptionsTests.prescription_id' => $id ]);
 
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
 
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'tests'));
+        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests'));
         $this->set('_serialize', ['prescription']);
     }
 
