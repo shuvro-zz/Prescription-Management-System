@@ -22,32 +22,34 @@
 
     echo '<div class="medicines_wrap" id="medicinesWrap">
         <button type="button" id="addMoreBtn" class="add_more_btn"><span class="fa fa-plus"></span></button>';
-        $html = '<div class="medicines_row clearfix" id="medicinesRow">';
-            $html .= '<div class="col-sm-5">';
-                $html .= '<div class="form-row">';
-                    $html .= '<label class="name">Medicines<span class="required" aria-required="true"></span></label>';
-                        $html .= '<div class="inputs">';
-                            $html .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false]);
-                    $html .= '</div>';
-                $html .= '</div>';
-            $html .= '</div>';
+         foreach($prescription_medicines as $prescription_medicine){
+        $field_medicine = '<div class="medicines_row clearfix">';
+            $field_medicine .= '<div class="col-sm-5">';
+                $field_medicine .= '<div class="form-row">';
+                    $field_medicine .= '<label class="name">Medicines<span class="required" aria-required="true"></span></label>';
+                        $field_medicine .= '<div class="inputs">';
+                            $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false]);
+                    $field_medicine .= '</div>';
+                $field_medicine .= '</div>';
+            $field_medicine .= '</div>';
 
-            $html .= '<div class="col-sm-5">';
-                $html .= '<div class="form-row">';
-                    $html .= '<label class="name">Rules<span class="required" aria-required="true"></span></label>';
-                        $html .= '<div class="inputs">';
-                            $html .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'placeholder'=>'0-1-0', 'label'=>false]);
-                        $html .=  '</div>';
-                $html .= '</div>';
-            $html .= '</div>';
+            $field_medicine .= '<div class="col-sm-5">';
+                $field_medicine .= '<div class="form-row">';
+                    $field_medicine .= '<label class="name">Rules<span class="required" aria-required="true"></span></label>';
+                        $field_medicine .= '<div class="inputs">';
+                            $field_medicine .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($prescription_medicine->rule))? $prescription_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
+                        $field_medicine .=  '</div>';
+                $field_medicine .= '</div>';
+            $field_medicine .= '</div>';
 
-            $html .=  '<div class="col-sm-2">';
-                $html .= '<div class="inputs">';
-                    $html .= '<button type="button" class="dle_medicine_btn"><span class="fa fa-minus"></span></button>';
-                $html .= '</div>';
-            $html .= '</div>';
-        $html .= '</div>';
-        echo  $html;
+            $field_medicine .=  '<div class="col-sm-2">';
+                $field_medicine .= '<div class="inputs">';
+                    $field_medicine .= '<button type="button" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
+                $field_medicine .= '</div>';
+            $field_medicine .= '</div>';
+        $field_medicine .= '</div>';
+        echo  $field_medicine;
+        }
     echo '</div>
 
     <div class="col-sm-6">
@@ -71,16 +73,15 @@
         // Add field
         $("#addMoreBtn").click(function(){
             $(".dle_medicine_btn").css('display');
-            $("#medicinesWrap").append('<?php echo $html ?>');
+            $("#medicinesWrap").append('<?php echo $field_medicine ?>');
             $(".selectpicker").selectpicker('refresh');
         });
-
-        // Delete field
-        $(".medicines_wrap").on('click','.dle_medicine_btn',function(){
-            $(this).parents('#medicinesRow').remove();
-        });
-
     });
+
+    // Delete field
+    function removeField(e){
+        $(e).parents('.medicines_row').remove();
+    }
 
 </script>
 

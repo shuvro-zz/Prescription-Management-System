@@ -1,8 +1,6 @@
 <?php
 namespace App\Controller\Admin;
 use App\Controller\AppController;
-use Cake\Routing\Router;
-use Cake\Mailer\Email;
 use Cake\ORM\TableRegistry;
 
 /**
@@ -85,12 +83,11 @@ class PrescriptionsController extends AppController
         $prescription = $this->Prescriptions->newEntity();
 
         if ($this->request->is('post')) {
+
             $medicines = $this->request->data['medicines'];
             unset($this->request->data['medicines']);
-            $session = $this->request->session();
-            $doctor_id = $session->read('Auth.User.id');
 
-            $prescription->doctor_id = $doctor_id;
+            $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
             $prescription = $this->Prescriptions->save($prescription);
 
@@ -111,42 +108,14 @@ class PrescriptionsController extends AppController
             $users[$get_user->id] = $get_user->first_name." ".$get_user->last_name;
         }
 
-
+        $prescription_medicines = array('medicine_id'=>'');
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines', 'tests'));
+        $this->set(compact('prescription', 'users', 'prescription_medicines', 'medicines', 'tests'));
         $this->set('_serialize', ['prescription']);
     }
 
-    function savePrescriptionMedicines($medicines, $prescription_id){
-        // Start: Prescriptions medicines
-        $this->loadModel('PrescriptionMedicines');
-        $prescriptions_medicines = $this->prepareMedicine($medicines, $prescription_id);
-        if($prescriptions_medicines){
-            foreach($prescriptions_medicines as $prescriptions_medicine){
-                $prescription_medicine = $this->PrescriptionMedicines->newEntity();
-                $prescription_medicine = $this->PrescriptionMedicines->patchEntity($prescription_medicine, $prescriptions_medicine );
-                if(!$this->PrescriptionMedicines->save($prescription_medicine)){
-                    $this->log('PrescriptionMedicines could not save ');
-                }
-            }
-        }
-        // End: Prescriptions medicines
-    }
 
-    function prepareMedicine($medicines,$prescription_id){
-        if($medicines){
-            $new_medicines = [];
-            foreach($medicines['medicine_id'] as $key => $val) {
-                $new_medicines[$key]['prescription_id'] = $prescription_id;
-                $new_medicines[$key]['medicine_id'] = $val;
-                $new_medicines[$key]['rule'] = $medicines['rule'][$key];
-            }
-
-
-            return $new_medicines;
-        }
-    }
 
     /**
      * Edit method
@@ -161,8 +130,15 @@ class PrescriptionsController extends AppController
             'contain' => ['Medicines', 'Tests']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+
+            $medicines = $this->request->data['medicines'];
+            unset($this->request->data['medicines']);
+
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
             if ($this->Prescriptions->save($prescription)) {
+
+                $this->savePrescriptionMedicines($medicines, $id);
+
                 $success_message = __('The prescription has been edited.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
@@ -179,9 +155,12 @@ class PrescriptionsController extends AppController
             $users[$get_user->id] = $get_user->first_name." ".$get_user->last_name;
         }
 
+        $prescription_medicines = $this->Prescriptions->PrescriptionMedicines->find('all')->where(['PrescriptionMedicines.prescription_id' => $id ]);
+
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
+
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines', 'tests'));
+        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'tests'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -210,6 +189,7 @@ class PrescriptionsController extends AppController
 
         $session = $this->request->session();
         $session->write('set_patient_id', $this->request->query['user_id']);
+        //$session->delete('prescriptions_search_query');
 
         return $this->redirect(['action' => 'index']);
     }
@@ -217,6 +197,9 @@ class PrescriptionsController extends AppController
     function __search(){
 
         $session = $this->request->session();
+
+        $doctor_id = $session->read('Auth.User.id');
+        //pr($doctor_id);die;
 
         $patients_prescription = '';
         if($session->check('set_patient_id')){
@@ -226,7 +209,7 @@ class PrescriptionsController extends AppController
 
         if($session->check('prescriptions_search_query')){
             $search = $session->read('prescriptions_search_query');
-            $where = [
+            $where = ['prescriptions.doctor_id' => $doctor_id,
                 $patients_prescription,
                 'OR' => ["(
                     prescriptions.diagnosis LIKE '%$search%' OR
@@ -236,7 +219,10 @@ class PrescriptionsController extends AppController
             ];
 
         }else{
-            $where =  $patients_prescription;
+            $where =  [
+                'prescriptions.doctor_id' => $doctor_id,
+                $patients_prescription
+            ];
         }
         return $where;
     }
@@ -277,5 +263,38 @@ class PrescriptionsController extends AppController
         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
 
         $this->redirect(['action' => 'index']);
+    }
+
+
+
+    function savePrescriptionMedicines($medicines, $prescription_id){
+        // Start: Prescriptions medicines
+        $this->loadModel('PrescriptionMedicines');
+        $this->PrescriptionMedicines->deleteAll(['PrescriptionMedicines.prescription_id' => $prescription_id]);
+
+        $prescriptions_medicines = $this->prepareMedicine($medicines, $prescription_id);
+        if($prescriptions_medicines){
+            foreach($prescriptions_medicines as $prescriptions_medicine){
+                $prescription_medicine = $this->PrescriptionMedicines->newEntity();
+                $prescription_medicine = $this->PrescriptionMedicines->patchEntity($prescription_medicine, $prescriptions_medicine );
+                if(!$this->PrescriptionMedicines->save($prescription_medicine)){
+                    $this->log('PrescriptionMedicines could not save ');
+                }
+            }
+        }
+        // End: Prescriptions medicines
+    }
+
+    function prepareMedicine($medicines,$prescription_id){
+
+        if($medicines){
+            $new_medicines = [];
+            foreach($medicines['medicine_id'] as $key => $val) {
+                $new_medicines[$key]['prescription_id'] = $prescription_id;
+                $new_medicines[$key]['medicine_id'] = $val;
+                $new_medicines[$key]['rule'] = $medicines['rule'][$key];
+            }
+            return $new_medicines;
+        }
     }
 }
