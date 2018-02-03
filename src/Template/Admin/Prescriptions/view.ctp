@@ -53,7 +53,7 @@
                         <b>Mobile: </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
                     </p>
                     <p>
-                        <b>Diagnosis: </b><?= $prescription->diagnosis ?>
+                        <b>Diagnosis: </b><span><?= $prescription->diagnosis ?></span>
                     </p>
 
                     <div class="prescription_section">

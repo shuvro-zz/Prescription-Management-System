@@ -197,19 +197,93 @@ background-color: #00ad35;
             }
         }*/
 
+        $html ='
+            <style>
+
+                table{
+                    width:800px;
+                    margin:0 auto;
+
+                }
+                table td{
+                    line-height:23px;
+                }
+                .doctor_info{
+                    font-size: 15px;color: #5d5d5d;font-weight:bold;
+                }
+                .patient_head, .test_head, .medicine_head{
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            </style>
+        '.
+
         $html = '
-                <table>
+             <table style="margin-bottom:30px; border-bottom:1px solid #eee;" cellpadding="0" cellspacing="0"  border="0" >
+                <tr >
+                    <td style="width:25%;"><img height="100px" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png">  </td>
+                    <td style="width:75%;">
+                        <table style="text-align:center;" >
+                            <tr><td style="font-weight:bold; font-size:21px;">Dhaka Medical Collage Hospital</td></tr>
+                            <tr><td class="doctor_info">384/1 , West Nakhalpara, Tejgaon, Mohakhali</td></tr>
+                            <tr><td class="doctor_info">www.dmc.gov.bd</td></tr>
+                            <tr><td class="doctor_info">Call:55165088</td></tr>
+                        </table>
+                    </td>
+                </tr>
+             </table>
+
+            <table cellpadding="0" cellspacing="0"  border="0" >
+                <tr>
+                    <td width="60%">
+                        <tr><td class="patient_head">Patient</td></tr>
+                        <tr><td>Name: Abdullah al mamun , Age:20 , Mobile: 01750800764</td></tr>
+                        <tr><td>Diagnosis: Fevar</td></tr>
+                    </td>
+                    <td width="40%">
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0"  border="0" >
+                            <tr><td class="test_head">Tests</td></tr>
+                            <tr><td>Skin exams (note)</td></tr>
+                            <tr><td>PSA test (note2)</td></tr>
+                            <tr><td>CA-125 test (note3)</td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0"  border="0" >
+                            <tr><td class="medicine_head"> Medicines</td></tr>
+                            <tr><td>Actiq : 	0-1-0</td></tr>
+                            <tr><td>Edex : 0-1-1</td></tr>
+                        </table>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0"  border="0" >
                     <tr>
-                        <td>Logo</td>
-                        <td>
-                            <h2>College Name</h2>
-                        </td>
-                        <td>
-                            &nbsp;
-                        </td>
-                    </tr>
-                </table>
-                ';
+                    <td align="left" style="width:50%;">
+                        Signature: signature
+                    </td>
+                    <td align="right" style="width:50%;">
+                        Date: 3/2/2018
+                    </td>
+                </tr>
+            </table>
+        ';
 
         $html_pdf = $html;
         return array('status'=>true,'message'=>$html_pdf);

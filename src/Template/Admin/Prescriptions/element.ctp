@@ -85,16 +85,6 @@
         echo  $field_test;
     }
     echo '</div>
-
-
-    <div class="col-sm-6">
-        <div class="form-row">
-            <label class="name">Tests<span class="required" aria-required="true"></span></label>
-            <div class="inputs">';
-                echo $this->Form->input('tests._ids', ['options' => $tests,'class'=>'form-control','label'=>false]);
-            echo '</div>
-        </div>
-    </div>
     ';
 
     ?>
