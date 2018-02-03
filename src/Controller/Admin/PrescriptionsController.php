@@ -9,7 +9,7 @@ use Cake\ORM\TableRegistry;
  * @property \App\Model\Table\PrescriptionsTable $Prescriptions */
 class PrescriptionsController extends AppController
 {
-    public $components = ['EmailHandler','Common'];
+    public $components = ['EmailHandler','Common', 'PdfHandler'];
 
     /**
      * Index method
@@ -66,11 +66,15 @@ class PrescriptionsController extends AppController
      */
     public function view($id = null)
     {
+
+
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Users', 'Medicines', 'Tests']
         ]);
         $this->set('prescription', $prescription);
         $this->set('_serialize', ['prescription']);
+
+        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
     }
 
     /**
