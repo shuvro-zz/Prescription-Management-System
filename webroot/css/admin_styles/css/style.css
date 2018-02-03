@@ -46,7 +46,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
     margin: 20px 0;
 }
 .prescription_table .prescription_caption{
-    width: 150px;
+    padding-right: 12px;
 }
 
 .prescription_table .prescription_sep{
@@ -90,6 +90,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 /**************Test*************/
 .tests_wrap{
     position: relative;
+
+}
+
+@media print {
 
 }
 

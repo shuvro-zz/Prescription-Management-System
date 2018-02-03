@@ -10,7 +10,7 @@
                 </div>
                 <div class="flex-item">
                     <div class="flex-container">
-                        <a href="#" class="add-event-btn" title="Print Prescription" onclick="printPrescription();">Print</a>
+                        <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>
                         &nbsp;
                         &nbsp;
                         <?php
@@ -26,7 +26,7 @@
         </div>
 
         <div class="cu_con_outer" id="printable_area">
-            <div class="cu_con_inner">
+            <div class="printableArea cu_con_inner">
                 <div class="prescription">
                     <div class="prescription_head">
                         <div class="row">
@@ -47,29 +47,24 @@
                         </div>
                     </div>
                     <h4>Patient</h4>
-                    <p>
-                        <b>Name: </b> <span class="patient_info"><?= $prescription->user->first_name." ".$prescription->user->last_name ?>,</span>
-                        <b>Age: </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?>,</span>
-                        <b>Mobile: </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
-                    </p>
-                    <p>
-                        <b>Diagnosis: </b><?= $prescription->diagnosis ?>
-                    </p>
+                    <div>
+                        <b>Name : </b> <span class="patient_info"><?= $prescription->user->first_name." ".$prescription->user->last_name ?>,</span>
+                        <b>Age : </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?>,</span>
+                        <b>Mobile : </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
+                    </div>
+                    <div>
+                        <b>Diagnosis : </b><?= $prescription->diagnosis ?>
+                    </div>
 
                     <div class="prescription_section">
                         <h4>Tests</h4>
-                        <table class="prescription_table table table-hover">
-                            <tr>
-                                <th class="prescription_caption">Name</th>
-                                <th></th>
-                                <th>Note</th>
-                            </tr>
+                        <table class="prescription_table">
+
                             <?php
                             foreach ($prescription->tests as $test){
                                 echo '<tr>
                                         <td class="prescription_caption">'. $test->name .'</td>
-                                        <td class="prescription_sep">:</td>
-                                        <td>'. $test->_joinData->note.'</td>
+                                        <td>( '. $test->_joinData->note.' )</td>
                                     </tr>';
                             }
                             ?>
@@ -79,18 +74,13 @@
 
                     <div class="prescription_section">
                         <h4>Medicines</h4>
-                        <table class="prescription_table table table-hover">
-                            <tr>
-                                <th class="prescription_caption">Name</th>
-                                <th></th>
-                                <th>Rule</th>
-                            </tr>
+                        <table class="prescription_table">
+
                             <?php
                                 foreach ($prescription->medicines as $medicine){
 
                                     echo '<tr>
-                                        <td>'. $medicine->name .'</td>
-                                        <td class="prescription_sep">:</td>
+                                        <td class="prescription_caption">'. $medicine->name .' :</td>
                                         <td>'.$medicine->_joinData->rule.'</td>
                                     </tr>';
                                 }
@@ -116,8 +106,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 

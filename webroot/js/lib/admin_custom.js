@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
     //create slug
     jQuery('#name').keyup(function(){
         jQuery('#slug').val(slug(jQuery('#name').val()));
@@ -12,6 +12,14 @@ jQuery(document).ready(function () {
         replace(/^-|-$/g, '');
         return $slug.toLowerCase();
     }
+
+    $("#printButton").click(function(){
+        //alert("asdf adsf asd");
+        //var mode = 'iframe'; //popup
+        var close = mode == "popup";
+        var options = { mode : mode, popClose : close};
+        $("div.printableArea").printArea( options );
+    });
     
 });
 
@@ -47,42 +55,6 @@ function initDatePicker(){
         format:'H:i'
     });
 
-    $(".date").readOnly(true);
-    $(".time").readOnly(true);
+    $(".date").prop('readonly', true);
+    $(".time").prop('readonly', true);
 }
-
-function printPrescription() {
-
-    var toPrint = document.getElementById('printable_area');
-
-    var popupWin = window.open('', '_blank', 'width=1000,height=800,location=no,left=200px');
-
-    popupWin.document.open();
-
-    popupWin.document.write('<html><title>::Preview::</title></head><body onload="window.print()">');
-
-    popupWin.document.write(toPrint.innerHTML);
-
-    popupWin.document.write('</html>');
-
-    popupWin.document.close();
-
-}
-
-/*function printPreviewPrescription() {
-
-    var toPrint = document.getElementById('printable_area');
-
-    var popupWin = window.open('', '_blank', 'width=350,height=150,location=no,left=200px');
-
-    popupWin.document.open();
-
-    popupWin.document.write('<html><title>::Print Preview::</title><link rel="stylesheet" type="text/css" href="Print.css" media="screen"/></head><body">')
-
-    popupWin.document.write(toPrint.innerHTML);
-
-    popupWin.document.write('</html>');
-
-    popupWin.document.close();
-
-}*/

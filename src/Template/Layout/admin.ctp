@@ -30,6 +30,7 @@
 		'lib/bootstrap-select.js',
         'lib/jquery.validate.min.js',
 		'lib/jquery-ui.js',
+		'lib/jquery.printarea.js',
 		'lib/form_builder/form-builder.min.js',
 		'lib/jquery.datetimepicker.min.js',
 		'lib/admin_custom.js',
