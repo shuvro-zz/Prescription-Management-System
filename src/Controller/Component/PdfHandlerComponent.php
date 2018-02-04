@@ -184,7 +184,7 @@ background-color: #00ad35;
     }
 
 
-    function firstPgprepareOrderPdfHtml($attendee)
+    function firstPgprepareOrderPdfHtml($prescription)
     {
         /*$url    =    Router::url('/', true);
         $devider_img = $url . 'img/pdf/divider.png';
@@ -196,6 +196,8 @@ background-color: #00ad35;
                 $devider_img = '';
             }
         }*/
+
+        $user = $this->request->session()->read('Auth.User');
 
         $html ='
             <style>
@@ -225,10 +227,10 @@ background-color: #00ad35;
                     <td style="width:25%;"><img height="100px" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png">  </td>
                     <td style="width:75%;">
                         <table style="text-align:center;" >
-                            <tr><td style="font-weight:bold; font-size:21px;">Dhaka Medical Collage Hospital</td></tr>
-                            <tr><td class="doctor_info">384/1 , West Nakhalpara, Tejgaon, Mohakhali</td></tr>
-                            <tr><td class="doctor_info">www.dmc.gov.bd</td></tr>
-                            <tr><td class="doctor_info">Call:55165088</td></tr>
+                            <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
+                            <tr><td class="doctor_info">'. $user['address_line1'] .'</td></tr>
+                            <tr><td class="doctor_info">'. $user['website'] .'</td></tr>
+                            <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
                         </table>
                     </td>
                 </tr>
@@ -238,9 +240,26 @@ background-color: #00ad35;
                     <td width="60%">
                         <table>
                             <tr><td class="patient_head">Patient</td></tr>
-                            <tr><td>Name: Abdullah al mamun , Age:20 , Mobile: 01750800764</td></tr>
-                            <tr><td>Diagnosis: Fevar</td></tr>
+                            <tr><td>Name: '. $prescription->user->first_name.' '.$prescription->user->last_name .' , Age:'. $prescription->user->age .' Years' .' , Mobile: '. $prescription->user->phone .'</td></tr>
+                            <tr><td>Diagnosis: '. $prescription->diagnosis .'</td></tr>
                         </table>
+                    </td>
+                    <td width="40%">
+                        &nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                   <td width="60%">
+                        <table>
+                            <tr><td class="medicine_head"> Medicines </td></tr>'?>
+                            <?php
+
+                            foreach ($prescription->medicines as $medicine){
+                                $html.= '<tr><td>'.$medicine->name .':'.(($medicine->_joinData->rule)? $medicine->_joinData->rule:'-').'</td></tr>';
+                            }
+
+                        $html.= '</table>
                     </td>
                     <td width="40%">
                         &nbsp;
@@ -250,24 +269,14 @@ background-color: #00ad35;
                 <tr>
                     <td width="60%">
                         <table>
-                            <tr><td class="test_head">Tests</td></tr>
-                            <tr><td>Skin exams (note)</td></tr>
-                            <tr><td>PSA test (note2)</td></tr>
-                            <tr><td>CA-125 test (note3)</td></tr>
-                        </table>
-                    </td>
-                    <td width="40%">
-                        &nbsp;
-                    </td>
-                </tr>
+                            <tr><td class="test_head"> Tests </td></tr>'?>
+                                <?php
 
-                <tr>
-                    <td width="60%">
-                        <table>
-                            <tr><td class="medicine_head"> Medicines</td></tr>
-                            <tr><td>Actiq : 0-1-0</td></tr>
-                            <tr><td>Edex : 0-1-1</td></tr>
-                        </table>
+                                foreach ($prescription->tests as $test){
+                                    $html.= '<tr><td>'.$test->name .':'.(($test->_joinData->note)?  $test->_joinData->note:'-').'</td></tr>';
+                                }
+
+                        $html.= '</table>
                     </td>
                     <td width="40%">
                         &nbsp;
