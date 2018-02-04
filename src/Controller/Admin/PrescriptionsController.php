@@ -75,6 +75,7 @@ class PrescriptionsController extends AppController
         $this->set('_serialize', ['prescription']);
 
         $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
+        $this->PdfHandler->firstPgprepareOrderPdfHtml($prescription);
     }
 
     /**

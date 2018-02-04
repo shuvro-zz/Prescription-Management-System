@@ -203,6 +203,7 @@ background-color: #00ad35;
                 table{
                     width:800px;
                     margin:0 auto;
+                    margin-bottom: 25px;
 
                 }
                 table td{
@@ -219,8 +220,8 @@ background-color: #00ad35;
         '.
 
         $html = '
-             <table style="margin-bottom:30px; border-bottom:1px solid #eee;" cellpadding="0" cellspacing="0"  border="0" >
-                <tr >
+             <table style="margin-bottom:30px; border-bottom:1px solid #eee;" >
+                <tr>
                     <td style="width:25%;"><img height="100px" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png">  </td>
                     <td style="width:75%;">
                         <table style="text-align:center;" >
@@ -232,13 +233,14 @@ background-color: #00ad35;
                     </td>
                 </tr>
              </table>
-
-            <table cellpadding="0" cellspacing="0"  border="0" >
+             <table>
                 <tr>
                     <td width="60%">
-                        <tr><td class="patient_head">Patient</td></tr>
-                        <tr><td>Name: Abdullah al mamun , Age:20 , Mobile: 01750800764</td></tr>
-                        <tr><td>Diagnosis: Fevar</td></tr>
+                        <table>
+                            <tr><td class="patient_head">Patient</td></tr>
+                            <tr><td>Name: Abdullah al mamun , Age:20 , Mobile: 01750800764</td></tr>
+                            <tr><td>Diagnosis: Fevar</td></tr>
+                        </table>
                     </td>
                     <td width="40%">
                         &nbsp;
@@ -246,35 +248,34 @@ background-color: #00ad35;
                 </tr>
 
                 <tr>
-                    <td>
-                        <table cellpadding="0" cellspacing="0"  border="0" >
+                    <td width="60%">
+                        <table>
                             <tr><td class="test_head">Tests</td></tr>
                             <tr><td>Skin exams (note)</td></tr>
                             <tr><td>PSA test (note2)</td></tr>
                             <tr><td>CA-125 test (note3)</td></tr>
                         </table>
                     </td>
-                    <td>
+                    <td width="40%">
                         &nbsp;
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <table cellpadding="0" cellspacing="0"  border="0" >
+                    <td width="60%">
+                        <table>
                             <tr><td class="medicine_head"> Medicines</td></tr>
-                            <tr><td>Actiq : 	0-1-0</td></tr>
+                            <tr><td>Actiq : 0-1-0</td></tr>
                             <tr><td>Edex : 0-1-1</td></tr>
                         </table>
                     </td>
-                    <td>
+                    <td width="40%">
                         &nbsp;
                     </td>
                 </tr>
             </table>
-
-            <table cellpadding="0" cellspacing="0"  border="0" >
-                    <tr>
+            <table>
+                <tr>
                     <td align="left" style="width:50%;">
                         Signature: signature
                     </td>
