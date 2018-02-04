@@ -44,7 +44,7 @@
             <table class="table table-hover  table-striped">
                 <thead>
                     <tr>
-                        <th><?= $this->Paginator->sort('user_id','Patients') ?></th>
+                        <th><?= $this->Paginator->sort('user_id','Patient') ?></th>
                         <th><?= $this->Paginator->sort('phone','Phone') ?></th>
                         <th><?= $this->Paginator->sort('diagnosis') ?></th>
                         <th><?= $this->Paginator->sort('created') ?></th>

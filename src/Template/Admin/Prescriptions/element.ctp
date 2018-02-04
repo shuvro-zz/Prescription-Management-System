@@ -35,7 +35,7 @@
 
             $field_medicine .= '<div class="col-sm-5">';
                 $field_medicine .= '<div class="form-row">';
-                    $field_medicine .= '<label class="name">Rules<span class="required" aria-required="true"></span></label>';
+                    $field_medicine .= '<label class="name">Rule<span class="required" aria-required="true"></span></label>';
                         $field_medicine .= '<div class="inputs">';
                             $field_medicine .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($prescription_medicine->rule))? $prescription_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
                         $field_medicine .=  '</div>';
@@ -69,7 +69,7 @@
 
             $field_test .= '<div class="col-sm-5">';
                 $field_test .= '<div class="form-row">';
-                    $field_test .= '<label class="name">Notes<span class="required" aria-required="true"></span></label>';
+                    $field_test .= '<label class="name">Note<span class="required" aria-required="true"></span></label>';
                         $field_test .= '<div class="inputs">';
                             $field_test .=  $this->Form->input('tests.note[]', ['class'=>'form-control', 'default' => (isset($prescription_test->note))? $prescription_test->note:'', 'placeholder'=>'Type notes', 'label'=>false]);
                     $field_test .=  '</div>';
@@ -88,10 +88,6 @@
     ';
 
     ?>
-
-
-
-
 
 <script type="text/javascript">
     $(document).ready(function(){

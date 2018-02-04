@@ -57,36 +57,28 @@
                     </div>
 
                     <div class="prescription_section">
-                        <h4>Tests</h4>
-                        <table class="prescription_table">
-
+                        <h4>Medicines</h4>
                             <?php
-                            foreach ($prescription->tests as $test){
-                                echo '<tr>
-                                        <td class="prescription_caption">'. $test->name .'</td>
-                                        <td>( '. $test->_joinData->note.' )</td>
-                                    </tr>';
+                            foreach ($prescription->medicines as $medicine){
+                                echo '<div>
+                                        <span class="prescription_caption">'. $medicine->name .' :</span>
+                                        <span>'.(($medicine->_joinData->rule)? '<span>'.$medicine->_joinData->rule.'</span>': "-").'
+                                    </div>';
                             }
                             ?>
-
-                        </table>
                     </div>
 
                     <div class="prescription_section">
-                        <h4>Medicines</h4>
-                        <table class="prescription_table">
+                        <h4>Tests</h4>
+                        <?php
+                        foreach ($prescription->tests as $test){
+                            echo '<div>
+                                    <span class="prescription_caption">'. $test->name .'</span>
+                                    '.(($test->_joinData->note)? '<span>( '. $test->_joinData->note.'<span> )':"-").'
+                                </div>';
+                        }
 
-                            <?php
-                                foreach ($prescription->medicines as $medicine){
-
-                                    echo '<tr>
-                                        <td class="prescription_caption">'. $medicine->name .' :</td>
-                                        <td>'.$medicine->_joinData->rule.'</td>
-                                    </tr>';
-                                }
-                            ?>
-
-                        </table>
+                        ?>
                     </div>
 
                     <div class="prescription_footer">

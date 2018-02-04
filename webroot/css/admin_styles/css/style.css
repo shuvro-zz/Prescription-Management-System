@@ -45,13 +45,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 .prescription_section{
     margin: 20px 0;
 }
-.prescription_table .prescription_caption{
-    padding-right: 12px;
-}
 
-.prescription_table .prescription_sep{
-    width: 20px;
-}
 
 .prescription_footer{
     border-top: 1px solid #eee;
