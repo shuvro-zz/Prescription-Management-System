@@ -52,8 +52,6 @@
         }
     echo '</div>';
 
-
-
     echo '<div class="tests_wrap" id="testsWrap">
         <button type="button" id="addMoreTest" class="add_more_btn"><span class="fa fa-plus"></span></button>';
         foreach($prescription_tests as $prescription_test){
@@ -84,8 +82,40 @@
         $field_test .= '</div>';
         echo  $field_test;
     }
-    echo '</div>
-    ';
+    echo '</div>';
+
+    echo'<div class="clearfix">
+        <div class="col-sm-6">
+            <div class="form-row">
+                <label class="name">Temperature</label>
+                <div class="inputs">';
+                    echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, 'required'=> true ]);
+            echo '</div>
+            </div>
+        </div>';
+
+        echo'<div class="col-sm-6">
+            <div class="form-row">
+                <label class="name">Blood Pressure</label>
+                <div class="inputs">';
+                    echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+                echo '</div>
+            </div>
+        </div>
+    </div>';
+
+    echo'<div class="clearfix">
+        <div class="col-sm-12">
+            <div class="form-row">
+                <label class="name">Doctors Note</label>
+                <div class="inputs">';
+                    echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'label' => false, 'type' =>'textarea']);
+                echo '</div>
+            </div>
+        </div>
+    </div>';
+
+
 
     ?>
 

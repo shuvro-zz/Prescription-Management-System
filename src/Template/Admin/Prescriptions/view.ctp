@@ -62,7 +62,7 @@
                             foreach ($prescription->medicines as $medicine){
                                 echo '<div>
                                         <span class="prescription_caption">'. $medicine->name .' :</span>
-                                        <span>'.(($medicine->_joinData->rule)? '<span>'.$medicine->_joinData->rule.'</span>': "-").'
+                                       '.(($medicine->_joinData->rule)? '<span>'.$medicine->_joinData->rule.'</span>': "-").'
                                     </div>';
                             }
                             ?>
@@ -74,7 +74,7 @@
                         foreach ($prescription->tests as $test){
                             echo '<div>
                                     <span class="prescription_caption">'. $test->name .'</span>
-                                    '.(($test->_joinData->note)? '<span>( '. $test->_joinData->note.'<span> )':"-").'
+                                    '.(($test->_joinData->note)? '<span>( '. $test->_joinData->note.'</span> )':"-").'
                                 </div>';
                         }
 
