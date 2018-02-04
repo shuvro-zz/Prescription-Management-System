@@ -20,6 +20,26 @@
         </div>
     </div>';
 
+    echo'<div class="clearfix">
+        <div class="col-sm-6">
+            <div class="form-row">
+                <label class="name">Temperature</label>
+                <div class="inputs">';
+                    echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, 'required'=> true ]);
+                echo '</div>
+            </div>
+        </div>';
+
+        echo'<div class="col-sm-6">
+            <div class="form-row">
+                <label class="name">Blood Pressure</label>
+                <div class="inputs">';
+                    echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+                echo '</div>
+            </div>
+        </div>
+    </div>';
+
     echo '<div class="medicines_wrap" id="medicinesWrap">
         <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>';
          foreach($prescription_medicines as $prescription_medicine){
@@ -83,26 +103,6 @@
         echo  $field_test;
     }
     echo '</div>';
-
-    echo'<div class="clearfix">
-        <div class="col-sm-6">
-            <div class="form-row">
-                <label class="name">Temperature</label>
-                <div class="inputs">';
-                    echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, 'required'=> true ]);
-            echo '</div>
-            </div>
-        </div>';
-
-        echo'<div class="col-sm-6">
-            <div class="form-row">
-                <label class="name">Blood Pressure</label>
-                <div class="inputs">';
-                    echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                echo '</div>
-            </div>
-        </div>
-    </div>';
 
     echo'<div class="clearfix">
         <div class="col-sm-12">

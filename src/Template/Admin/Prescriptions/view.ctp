@@ -55,6 +55,12 @@
                     <div>
                         <b>Diagnosis : </b><?= $prescription->diagnosis ?>
                     </div>
+                    <div>
+                        <b>Temperature : </b><?= $prescription->temperature ?>
+                    </div>
+                    <div>
+                        <b>Blood Pressure : </b><?= $prescription->blood_pressure ?>
+                    </div>
 
                     <div class="prescription_section">
                         <h4>Medicines</h4>
@@ -79,6 +85,10 @@
                         }
 
                         ?>
+                    </div>
+
+                    <div>
+                        <b>Doctores Note : </b><?= $prescription->doctores_notes ?>
                     </div>
 
                     <div class="prescription_footer">
