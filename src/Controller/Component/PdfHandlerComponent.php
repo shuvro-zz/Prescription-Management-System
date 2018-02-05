@@ -48,7 +48,7 @@ class PdfHandlerComponent extends Component
     }
 
 
-    function writeOrderPdfFile($attendee)
+    function writeOrderPdfFile($prescription)
     {
         /*$url    =    Router::url('/', true);
         $qrcode_img = $url . $qrcode;
@@ -111,48 +111,8 @@ class PdfHandlerComponent extends Component
         $pdf->setJPEGQuality(100);
 
 
-        $html_pdf   ='
-<style>
-*{
-	font-family:Verdana, Geneva, sans-serif;
-}
-.company-logo{
-	width:190px;
-	max-width:66px
-}
-.header-contact{
-	width:150px;
-}
-.header-content td{
-	color:#717171;
-	text-align:left;
-	font-size:11px;
-	line-height:13px;
-}
-.header-contact-last{
-	color:#717171;
-	text-align:left;
-	font-size:11px;
-	line-height:15px;
-}
-.invoice-left-part{
-	color:#8b9090;
-	text-align:left;
-	font-size:11px;
-	line-height:15px;
-}.sponsor {
-    font-size: 8px;
-    color: #000;
-    position: absolute;
-    right: 15px;
-    bottom: 2px;
-    margin: 0;
-    z-index: 99;
-}table.table-img{
-background-color: #00ad35;
-}
-</style>';
-        $first_part = $this->firstPgprepareOrderPdfHtml($attendee);
+        $html_pdf   ='';
+        $first_part = $this->firstPgprepareOrderPdfHtml($prescription);
         $html_pdf .= $first_part['message'];
 
         if(!$first_part['status']){
@@ -225,7 +185,7 @@ background-color: #00ad35;
              <table style="margin-bottom:30px; border-bottom:1px solid #eee;" >
                 <tr>
                     <td style="width:25%;"><img height="100px" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png">  </td>
-                    <td style="width:75%;">
+                    <td style="width:50%;">
                         <table style="text-align:center;" >
                             <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['address_line1'] .'</td></tr>
@@ -233,26 +193,39 @@ background-color: #00ad35;
                             <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
                         </table>
                     </td>
+                    <td style="width:25%;"> <img src="" height="100px" width="100px"/> </td>
                 </tr>
              </table>
+
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
              <table>
                 <tr>
                     <td width="60%">
                         <table>
                             <tr><td class="patient_head">Patient</td></tr>
-                            <tr><td>Name: '. $prescription->user->first_name.' '.$prescription->user->last_name .' , Age:'. $prescription->user->age .' Years' .' , Mobile: '. $prescription->user->phone .'</td></tr>
-                            <tr><td>Diagnosis: '. $prescription->diagnosis .'</td></tr>
+                            <tr><td>Name: '. ucfirst($prescription->user->first_name).' '.$prescription->user->last_name .' , Age:'. $prescription->user->age .' Years' .' , Mobile: '. $prescription->user->phone .'</td></tr>
+                            <tr><td>Diagnosis: '. ucfirst($prescription->diagnosis) .'</td></tr>
+                            <tr><td>Temperature: '. ucfirst($prescription->temperature) .'</td></tr>
+                            <tr><td>Blood Pressure: '. ucfirst($prescription->blood_pressure) .'</td></tr>
                         </table>
                     </td>
                     <td width="40%">
                         &nbsp;
                     </td>
                 </tr>
-
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
                 <tr>
                    <td width="60%">
                         <table>
-                            <tr><td class="medicine_head"> Medicines </td></tr>'?>
+                            <tr><td class="medicine_head">Medicines</td></tr>'?>
                             <?php
 
                             foreach ($prescription->medicines as $medicine){
@@ -267,29 +240,50 @@ background-color: #00ad35;
                 </tr>
 
                 <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
                     <td width="60%">
                         <table>
-                            <tr><td class="test_head"> Tests </td></tr>'?>
+                            <tr><td class="test_head">Tests</td></tr>'?>
                                 <?php
 
                                 foreach ($prescription->tests as $test){
                                     $html.= '<tr><td>'.$test->name .':'.(($test->_joinData->note)?  $test->_joinData->note:'-').'</td></tr>';
                                 }
+                            $html.='<tr><td>&nbsp;</td></tr>
+                                    <tr><td>&nbsp;</td></tr>
 
-                        $html.= '</table>
+                            <tr><td>Doctors Note:'.$prescription->doctores_notes.'</td></tr>
+                        </table>
                     </td>
                     <td width="40%">
                         &nbsp;
                     </td>
                 </tr>
             </table>
+
+            <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
             <table>
                 <tr>
                     <td align="left" style="width:50%;">
                         Signature: signature
                     </td>
                     <td align="right" style="width:50%;">
-                        Date: 3/2/2018
+                        Date: '. $prescription->created->format('d/m/Y') .'
                     </td>
                 </tr>
             </table>

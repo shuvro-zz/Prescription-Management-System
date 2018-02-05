@@ -74,8 +74,7 @@ class PrescriptionsController extends AppController
         $this->set('prescription', $prescription);
         $this->set('_serialize', ['prescription']);
 
-        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
-        $this->PdfHandler->firstPgprepareOrderPdfHtml($prescription);
+        //$order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
     }
 
     /**
@@ -340,6 +339,25 @@ class PrescriptionsController extends AppController
                 $new_medicines[$key]['rule'] = $medicines['rule'][$key];
             }
             return $new_medicines;
+        }
+    }
+
+    function  generatePrescriptionPdf($id = null){
+        $prescription = $this->Prescriptions->get($id, [
+            'contain' => ['Users', 'Medicines', 'Tests']
+        ]);
+        $this->set('prescription', $prescription);
+        $this->set('_serialize', ['prescription']);
+
+        //pr($prescription);die;
+        $this->autoRender = false;
+        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
+
+        if($order_pdf_file){
+            $success_message = __('PDF file has been generated.');
+            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+
+            $this->redirect(['action' => 'view/'.$id]);
         }
     }
 }

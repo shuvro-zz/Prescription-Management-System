@@ -13,6 +13,17 @@
                         <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>
                         &nbsp;
                         &nbsp;
+
+                        <?php
+                        echo $this->Html->link(
+                            'pdf Generate',
+                            ['action' => 'generatePrescriptionPdf', $prescription->id],
+                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'PDF Generate']
+                        )
+                        ?>
+                        &nbsp;
+                        &nbsp;
+
                         <?php
                             echo $this->Html->link(
                             'Send Email',
@@ -23,6 +34,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="col-md-12">
+            <?php echo $this->Flash->render('admin_success'); ?>
+            <?php echo $this->Flash->render('admin_error'); ?>
+            <?php echo $this->Flash->render('admin_warning'); ?>
         </div>
 
         <div class="cu_con_outer" id="printable_area">
@@ -48,18 +65,18 @@
                     </div>
                     <h4>Patient</h4>
                     <div>
-                        <b>Name : </b> <span class="patient_info"><?= $prescription->user->first_name." ".$prescription->user->last_name ?>,</span>
+                        <b>Name : </b> <span class="patient_info"><?= ucfirst($prescription->user->first_name)." ".$prescription->user->last_name ?>,</span>
                         <b>Age : </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?>,</span>
                         <b>Mobile : </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
                     </div>
                     <div>
-                        <b>Diagnosis : </b><?= $prescription->diagnosis ?>
+                        <b>Diagnosis : </b><?= ucfirst($prescription->diagnosis) ?>
                     </div>
                     <div>
                         <b>Temperature : </b><?= $prescription->temperature ?>
                     </div>
                     <div>
-                        <b>Blood Pressure : </b><?= $prescription->blood_pressure ?>
+                        <b>Blood Pressure : </b><?= ucfirst($prescription->blood_pressure) ?>
                     </div>
 
                     <div class="prescription_section">
@@ -67,7 +84,7 @@
                             <?php
                             foreach ($prescription->medicines as $medicine){
                                 echo '<div>
-                                        <span class="prescription_caption">'. $medicine->name .' :</span>
+                                        <span class="prescription_caption">'. ucfirst($medicine->name) .' :</span>
                                        '.(($medicine->_joinData->rule)? '<span>'.$medicine->_joinData->rule.'</span>': "-").'
                                     </div>';
                             }
@@ -79,7 +96,7 @@
                         <?php
                         foreach ($prescription->tests as $test){
                             echo '<div>
-                                    <span class="prescription_caption">'. $test->name .'</span>
+                                    <span class="prescription_caption">'. ucfirst($test->name) .'</span>
                                     '.(($test->_joinData->note)? '<span>( '. $test->_joinData->note.'</span> )':"-").'
                                 </div>';
                         }
@@ -88,7 +105,7 @@
                     </div>
 
                     <div>
-                        <b>Doctores Note : </b><?= $prescription->doctores_notes ?>
+                        <b>Doctores Note : </b><?= ucfirst($prescription->doctores_notes) ?>
                     </div>
 
                     <div class="prescription_footer">
