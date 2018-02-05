@@ -182,10 +182,10 @@ class PdfHandlerComponent extends Component
         '.
 
         $html = '
-             <table style="margin-bottom:30px; border-bottom:1px solid #eee;" >
-                <tr>
-                    <td style="width:25%;"><img height="100px" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png">  </td>
-                    <td style="width:50%;">
+             <table style="margin-bottom:0px; border-bottom:1px solid #eee;" >
+                <tr style="height:135px;">
+                    <td style="width:25%;overflow:hidden;"><img height="100px" width="100px" src="http://hdwallpapersbuzz.com/wp-content/uploads/2017/04/rx-logo-4.png">  </td>
+                    <td style="width:50%; overflow:hidden;">
                         <table style="text-align:center;" >
                             <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['address_line1'] .'</td></tr>
@@ -193,7 +193,7 @@ class PdfHandlerComponent extends Component
                             <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
                         </table>
                     </td>
-                    <td style="width:25%;"> <img src="" height="100px" width="100px"/> </td>
+                    <td style="width:25%; overflow:hidden;">  </td>
                 </tr>
              </table>
 
@@ -277,8 +277,8 @@ class PdfHandlerComponent extends Component
                 </tr>
              </table>
 
-            <table>
-                <tr>
+            <table style="border-top:1px solid #eee; ">
+                <tr style="height:50px;">
                     <td align="left" style="width:50%;">
                         Signature: signature
                     </td>
