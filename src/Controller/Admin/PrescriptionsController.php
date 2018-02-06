@@ -2,6 +2,8 @@
 namespace App\Controller\Admin;
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 
 /**
  * Prescriptions Controller
@@ -352,13 +354,35 @@ class PrescriptionsController extends AppController
         //pr($prescription);die;
         $this->autoRender = false;
         $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
+        $pdf_file = basename($order_pdf_file);
+
 
         if($order_pdf_file){
+            $pdf_file_name = $prescription->pdf_file;
+
+            if(!empty($pdf_file_name)){
+
+                $this->deletePdf($pdf_file_name);
+
+                $prescription->pdf_file = $pdf_file;
+                $this->Prescriptions->save($prescription);
+
+            }else{
+                $prescription->pdf_file = $pdf_file;
+                $this->Prescriptions->save($prescription);
+            }
+
             $success_message = __('PDF file has been generated.');
             $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-
             $this->redirect(['action' => 'view/'.$id]);
+
         }
+    }
+
+    function deletePdf($pdf_file_name){
+
+        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'pdf' .DS. $pdf_file_name);
+        $file->delete();
     }
 }
 

@@ -150,3 +150,9 @@ a{
     vertical-align: bottom;
     padding-right: 5px;
 }
+.registration,.reset_password {
+    color: #7d7d7d;
+}
+.registration:hover,.reset_password:hover{
+    color: #3cc2bb;
+}

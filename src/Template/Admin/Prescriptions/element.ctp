@@ -107,7 +107,7 @@
     echo'<div class="clearfix">
         <div class="col-sm-12">
             <div class="form-row">
-                <label class="name">Doctors Note</label>
+                <label class="name">Doctor\'s Note</label>
                 <div class="inputs">';
                     echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'label' => false, 'type' =>'textarea']);
                 echo '</div>

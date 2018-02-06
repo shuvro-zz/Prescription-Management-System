@@ -23,6 +23,25 @@
                         ?>
                         &nbsp;
                         &nbsp;
+                        <!--<a class='add-event-btn' href='<?php /*echo $this->Url->build(WWW_ROOT.'/uploads/pdf/'.$pdf_file_name,true);*/?>'>Pdf Download</a>';-->
+                        <?php
+
+                        $pdf_file_name = $prescription->pdf_file;
+
+                        if($pdf_file_name = !NULL){
+
+                            echo $this->Html->link(
+                                'pdf Download',
+                                ['action' => WWW_ROOT.DS. 'uploads'.DS. 'pdf' .DS. $pdf_file_name],
+                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'PDF Download']
+                            );
+                            echo'
+                            &nbsp;
+                            &nbsp;';
+                        }
+
+                        ?>
+
 
                         <?php
                             echo $this->Html->link(
@@ -105,7 +124,7 @@
                     </div>
 
                     <div>
-                        <b>Doctores Note : </b><?= ucfirst($prescription->doctores_notes) ?>
+                        <b>Doctor's Note : </b><?= ucfirst($prescription->doctores_notes) ?>
                     </div>
 
                     <div class="prescription_footer">
