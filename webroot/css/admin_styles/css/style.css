@@ -48,6 +48,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
     margin: 20px 0;
 }
 
+.more_prescription {
+    background: #fff;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 13px 45px 12px 35px;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.05);
+    margin-top: 2px;
+}
+
 
 .prescription_footer{
     border-top: 1px solid #eee;

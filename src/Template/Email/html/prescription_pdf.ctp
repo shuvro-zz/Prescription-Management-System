@@ -1,4 +1,4 @@
-<p>Hi <?php echo $data['User']['first_name'].' '.$data['User']['first_name']; ?>,</p>
+<p>Hi <?php echo $data['User']['first_name'].' '.$data['User']['last_name']; ?>,</p>
 
 
 <div>Kind regards,</div>

@@ -48,7 +48,7 @@ class PdfHandlerComponent extends Component
     }
 
 
-    function writeOrderPdfFile($prescription)
+    function writeOrderPdfFile($prescription,$last_patient)
     {
         /*$url    =    Router::url('/', true);
         $qrcode_img = $url . $qrcode;
@@ -112,7 +112,7 @@ class PdfHandlerComponent extends Component
 
 
         $html_pdf   ='';
-        $first_part = $this->firstPgprepareOrderPdfHtml($prescription);
+        $first_part = $this->firstPgprepareOrderPdfHtml($prescription,$last_patient);
         $html_pdf .= $first_part['message'];
 
         if(!$first_part['status']){
@@ -144,7 +144,7 @@ class PdfHandlerComponent extends Component
     }
 
 
-    function firstPgprepareOrderPdfHtml($prescription)
+    function firstPgprepareOrderPdfHtml($prescription,$last_patient)
     {
         /*$url    =    Router::url('/', true);
         $devider_img = $url . 'img/pdf/divider.png';
@@ -184,8 +184,8 @@ class PdfHandlerComponent extends Component
         $html = '
              <table style="margin-bottom:0px; border-bottom:1px solid #eee;" >
                 <tr style="height:135px;">
-                    <td style="width:25%;overflow:hidden;"><img height="100px" width="100px" src="http://hdwallpapersbuzz.com/wp-content/uploads/2017/04/rx-logo-4.png">  </td>
-                    <td style="width:50%; overflow:hidden;">
+
+                    <td style="width:100%; overflow:hidden;">
                         <table style="text-align:center;" >
                             <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['address_line1'] .'</td></tr>
@@ -193,7 +193,7 @@ class PdfHandlerComponent extends Component
                             <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
                         </table>
                     </td>
-                    <td style="width:25%; overflow:hidden;">  </td>
+
                 </tr>
              </table>
 
@@ -214,8 +214,8 @@ class PdfHandlerComponent extends Component
                             <tr><td>Blood Pressure: '. ucfirst($prescription->blood_pressure) .'</td></tr>
                         </table>
                     </td>
-                    <td width="40%">
-                        &nbsp;
+                    <td width="40%" align="right">
+                        Last Visited Date:'.$last_patient->created->format('d F Y').'
                     </td>
                 </tr>
                 <tr>
@@ -283,7 +283,7 @@ class PdfHandlerComponent extends Component
                         Signature: signature
                     </td>
                     <td align="right" style="width:50%;">
-                        Date: '. $prescription->created->format('d/m/Y') .'
+                        Date: '. $prescription->created->format('d F Y') .'
                     </td>
                 </tr>
             </table>

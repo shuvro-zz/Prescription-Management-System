@@ -4,6 +4,7 @@ use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Filesystem\Folder;
 use Cake\Filesystem\File;
+use Cake\Routing\Router;
 
 /**
  * Prescriptions Controller
@@ -69,11 +70,34 @@ class PrescriptionsController extends AppController
     public function view($id = null)
     {
 
-
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Users', 'Medicines', 'Tests']
         ]);
-        $this->set('prescription', $prescription);
+
+        $doctor_id = $this->request->session()->read('Auth.User.id');
+        $patient_id = $prescription->user->id;
+
+        //start all prescription
+        $all_prescriptions = $this->Prescriptions->find('all')
+            ->where([
+                'prescriptions.doctor_id' => $doctor_id,
+                'prescriptions.user_id' => $patient_id
+            ]);
+        //End all prescription
+
+
+        //start last patient
+        $last_patient = $this->Prescriptions->find('all')
+        ->where([
+                'prescriptions.doctor_id' => $doctor_id,
+                'prescriptions.user_id' => $patient_id
+        ])
+        ->order(['prescriptions.id' => 'desc'])->first();
+        //End last patient
+
+        $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
+
+        $this->set(compact('prescription', 'all_prescriptions', 'last_patient', 'pdf_link'));
         $this->set('_serialize', ['prescription']);
 
         //$order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
@@ -292,7 +316,7 @@ class PrescriptionsController extends AppController
         $patient_id = $prescription_info['user_id'];
         $patient_info = $this->Prescriptions->Users->get($patient_id);
 
-        $file_path = 'uploads/pdf/prescription-2345678.pdf';
+        $file_path = 'uploads/pdf/'.$prescription_info->pdf_file;
         $file_name =  substr($file_path, strrpos($file_path, '/') + 1);
 
         $info = array(
@@ -345,19 +369,28 @@ class PrescriptionsController extends AppController
     }
 
     function  generatePrescriptionPdf($id = null){
+        $this->autoRender = false;
+
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Users', 'Medicines', 'Tests']
         ]);
         $this->set('prescription', $prescription);
         $this->set('_serialize', ['prescription']);
 
-        //pr($prescription);die;
-        $this->autoRender = false;
-        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
-        $pdf_file = basename($order_pdf_file);
+        $doctor_id = $this->request->session()->read('Auth.User.id');
+        $patient_id = $prescription->user->id;
 
+        $last_patient = $this->Prescriptions->find('all')
+        ->where([
+            'prescriptions.doctor_id' => $doctor_id,
+            'prescriptions.user_id' => $patient_id
+        ])
+        ->order(['prescriptions.id' => 'desc'])->first();
+
+        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription,$last_patient);
 
         if($order_pdf_file){
+            $pdf_file = basename($order_pdf_file);
             $pdf_file_name = $prescription->pdf_file;
 
             if(!empty($pdf_file_name)){
@@ -384,5 +417,6 @@ class PrescriptionsController extends AppController
         $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'pdf' .DS. $pdf_file_name);
         $file->delete();
     }
+
 }
 
