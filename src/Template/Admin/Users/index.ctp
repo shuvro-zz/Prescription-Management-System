@@ -54,7 +54,7 @@
                 <tbody>
                 <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?= h($user->first_name ).' '.h($user->last_name )  ?></td>
+                        <td><?= ucfirst(h($user->first_name )).' '.h($user->last_name )  ?></td>
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->age) ?></td>

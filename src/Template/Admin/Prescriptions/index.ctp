@@ -54,7 +54,7 @@
                 <tbody>
                     <?php foreach ($prescriptions as $prescription): ?>
                     <tr>
-                        <td><?= h($prescription->user->first_name.' '.$prescription->user->last_name) ?></td>
+                        <td><?= ucfirst(h($prescription->user->first_name).' '.$prescription->user->last_name) ?></td>
                         <td><?= h($prescription->user->phone) ?></td>
                         <td><?= h($prescription->diagnosis) ?></td>
                         <td><?= h($prescription->created->format('d/m/Y')) ?></td>
@@ -105,7 +105,7 @@
         <div class="bottom-pagination">
             <div class="pagination-area flex-container">
                 <div class="pagination-status-text">
-                    Showing <?php echo $this->Paginator->counter() ?> entries
+                    Showing <?php echo $this->Paginator->counter() ?> pages
                 </div>
                 <ul class="pagination">
                     <?php

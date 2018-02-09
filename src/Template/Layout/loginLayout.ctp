@@ -20,6 +20,7 @@
     ]);
     ?>
     <?php echo $this->Html->css('admin_styles/css/login') ?>
+    <?php echo $this->Html->css('admin_styles/css/font-awesome.min.css') ?>
 
 
 </head>

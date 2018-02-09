@@ -30,6 +30,12 @@
 </div>
 
 
+<style>
+    .error{
+        color: red;;
+    }
+</style>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#admin-forgot-password-form").validate({

@@ -9,14 +9,14 @@
                 <?php echo $this->Flash->render('admin_error'); ?>
             </div>
         </div>
-        <?php echo $this->Form->create(); ?>
+        <?php echo $this->Form->create(null, ['id' => 'user-registration-form']); ?>
         <div class="form-area">
 
             <input type="text" name="first_name" class="md-input" id="firstName" placeholder="First Name" required="required">
             <input type="text" name="last_name" class="md-input" id="lastName" placeholder="Last Name" required="required">
             <input type="text" name="email" class="md-input" id="email" placeholder="Email" required="required">
             <input type="password" name="password" class="md-input" id="password" placeholder="Password" required="required" >
-            <input type="password" name="password" class="md-input" id="password" placeholder="Comfarim Password" required="required" >
+            <input type="password" name="confirm_password" class="md-input" id="confirm_password" placeholder="Comfarim Password" required="required" equalTo="#password" >
             <input type="submit" value="Registration">
 
         </div>
@@ -28,19 +28,28 @@
     </div>
 </div>
 
+
+<style>
+    .error{
+        color: red;;
+    }
+</style>
+
 <script type="text/javascript">
-    /*$(document).ready(function(){
-     $("#admin-login-form").validate({
-     rules:{
-     "email": "required",
-     "password": "required"
-     },
-     messages:{
-     "email": "Please enter a Valid Email Address",
-     "password": "Please enter a Password",
-     }
-     });
-     });*/
+    $(document).ready(function(){
+         $("#user-registration-form").validate({
+             rules:{
+                 "email": "required",
+                 "password": "required"
+             },
+             messages:{
+                 "email": "Please enter a Valid Email Address",
+                 "password": "Please enter Password",
+                 "confirm_password":{
+                     equalTo:"Confirm Password didn't match with Password",
+                     required:'Please enter Confirm Password'
+                 }
+             }
+         });
+    });
 </script>
-
-

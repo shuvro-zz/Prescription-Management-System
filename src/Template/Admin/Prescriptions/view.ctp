@@ -117,6 +117,9 @@
                         <b>Mobile : </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
                     </div>
                     <div>
+                        <b>Address : </b> <span> <?= ucfirst($prescription->user->address_line1).", ".ucfirst($prescription->user->address_line2) ?> </span>
+                    </div>
+                    <div>
                         <b>Diagnosis : </b><?= ucfirst($prescription->diagnosis) ?>
                     </div>
                     <div>

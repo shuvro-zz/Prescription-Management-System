@@ -30,6 +30,12 @@
     </div>
 </div>
 
+<style>
+    .error{
+        color: red;;
+    }
+</style>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#admin-login-form").validate({

@@ -12,6 +12,16 @@
                 echo $this->Form->input('last_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
             echo '</div>
 
+            <label class="name">Address1<span aria-required="true"></span></label>
+            <div class="inputs">';
+                echo $this->Form->input('address_line1', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+            echo '</div>
+
+            <label class="name">Address2<span class="required" aria-required="true"></span></label>
+            <div class="inputs">';
+                echo $this->Form->input('address_line2', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+            echo '</div>
+
             <label class="name">Phone<span class="required" aria-required="true"></span></label>
             <div class="inputs">';
                 echo $this->Form->input('phone', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);

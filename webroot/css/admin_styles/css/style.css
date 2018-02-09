@@ -1,6 +1,9 @@
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
     margin: 15px 0!important;
 }
+lavel#password-error {
+    color: red!important;
+}
 .cu_con_outer{
     width: 100%;
     background: #EDF1F5;
@@ -70,23 +73,36 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 
 /**************Medicine*************/
 
+.input.select .bootstrap-select.btn-group button,
+.input.select .bootstrap-select.btn-group .wizard-config .btn-continue,
+.wizard-config .input.select .bootstrap-select.btn-group .btn-continue {
+    width: 100% !important;
+}
+.input.select .bootstrap-select.btn-group {
+    background: transparent;
+    margin: 0 0px;
+    width: 100%!important;
+}
+
 .medicines_wrap{
     position: relative;
 
 }
 
 .medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
-    width:45px!important;
-    position: absolute;
-    right: 67px;
+    width: 8%;
+    right: 14px;
     top: 28px;
+    position: absolute;
 }
 
-
-.medicines_row .dle_medicine_btn{
-    width:45px!important;
+button, .wizard-config .btn-continue{
+    min-width: 7%!important;
+}
+.medicines_row .dle_medicine_btn {
+    width: 80px!important;
     margin-top: 27px;
-    margin-left: -3px;
+    margin-left: -26px;
 }
 .medicines_row:nth-child(2) .dle_medicine_btn{
    display: none;
@@ -100,4 +116,59 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 @media print {
 
 }
+
+/**********Responsive**********/
+
+@media only screen and (max-width: 1199px) {
+
+}
+@media only screen and (max-width: 991px) {
+    .medicines_row .dle_medicine_btn {
+        width: 59px!important;
+        margin-top: 27px;
+        margin-left: -26px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .input.select .bootstrap-select.btn-group button,
+    .input.select .bootstrap-select.btn-group .wizard-config .btn-continue,
+    .wizard-config .input.select .bootstrap-select.btn-group .btn-continue,
+    .bootstrap-select.btn-group .dropdown-menu {
+        width: 95% !important;
+    }
+    .bootstrap-select.btn-group .dropdown-menu{
+        min-width: 10%;
+    }
+    .medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
+        width: 17%;
+        right: 16px;
+        top: 28px;
+        position: absolute;
+    }
+    .medicine_width,.test_width {
+        width: 79%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .medicines_row .dle_medicine_btn {
+        position: absolute;
+        top: -202px!important;
+        right: 12px!important;
+        width: 18%!important;
+    }
+
+}
+@media only screen and (max-width: 555px) {
+    .medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
+        right: -5px;
+    }
+    .medicines_row .dle_medicine_btn {
+        right: -5px!important;
+    }
+}
+@media only screen and (max-width: 320px) {
+
+}
+
+
 

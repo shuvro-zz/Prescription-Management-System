@@ -59,6 +59,7 @@ a{
 
 .login-area .form-area {
     margin-bottom: 10px;
+    position: relative;
 }
 .login-area .form-area input{
     width: 100%;

@@ -136,9 +136,10 @@ class PrescriptionsController extends AppController
             return $this->redirect(['action' => 'index']);
         }
         //$users = $this->Prescriptions->Users->find('list', ['limit' => 200]);
-        $get_users = $this->Prescriptions->Users->find('All')->where(['role_id' => 3]);//role_id =>3 that's mean patient
+        $doctor_id = $this->request->session()->read('Auth.User.id');
+        $get_users = $this->Prescriptions->Users->find('All')->where(['users.role_id' => 3, 'users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
         foreach($get_users as $get_user){
-            $users[$get_user->id] = $get_user->first_name." ".$get_user->last_name;
+            $users[$get_user->id] = $get_user->first_name." ".$get_user->last_name. " - " . "$get_user->phone";
         }
 
         $prescription_medicines = array('medicine_id'=>'');
@@ -259,7 +260,10 @@ class PrescriptionsController extends AppController
 
         $session = $this->request->session();
         $session->write('set_patient_id', $this->request->query['user_id']);
-        //$session->delete('prescriptions_search_query');
+
+        if($$session->check('prescriptions_search_query')){
+            $session->delete('prescriptions_search_query');
+        }
 
         return $this->redirect(['action' => 'index']);
     }

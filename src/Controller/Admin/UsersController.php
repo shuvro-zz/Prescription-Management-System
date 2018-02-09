@@ -274,24 +274,27 @@ class UsersController extends AppController
             if($this->request->data['password'] == $this->request->data['confirm_password']){
 
                 $token = $this->request->data['token'];
-                $userTable = TableRegistry::get('Users');
+                if($token != NULL){
+                    $userTable = TableRegistry::get('Users');
 
-                $user_data = $userTable->find('all')
-                    ->where(['Users.token' => $token]);
+                    $user_data = $userTable->find('all')
+                        ->where(['Users.token' => $token]);
 
-                $user_data = $user_data->first();
+                    $user_data = $user_data->first();
 
-                $user_data->token = $token;
-                $user_data->password = $this->request->data['password'];
+                    $user_data->token = $token;
+                    $user_data->password = $this->request->data['password'];
 
-                if ($userTable->save($user_data)) {
-                    $this->Flash->adminSuccess('Password reset successful', ['key' => 'admin_success']);
-                    $this->redirect(array('controller' => 'users', 'action' => 'index'));
+                    if ($userTable->save($user_data)) {
+                        $this->Flash->adminSuccess('Password reset successful', ['key' => 'admin_success']);
+                        $this->redirect(array('controller' => 'users', 'action' => 'index'));
+                    }else{
+                        $message = 'Password could not be reset!, Please try again';
+                        $this->Flash->adminError($message, ['key' => 'admin_error']);
+                    }
                 }else{
-                    $message = 'Password could not be reset!, Please try again';
-                    $this->Flash->adminError($message, ['key' => 'admin_error']);
+                    $this->redirect(array('controller' => 'users', 'action' => 'login'));
                 }
-
             } else {
                 $this->Flash->adminError('Password and Confirm Password does not match', ['key' => 'admin_error']);
                 $this->redirect(array('controller' => 'users', 'action' => 'resetPassword'));

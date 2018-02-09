@@ -52,7 +52,7 @@
                 <tbody>
                     <?php foreach ($tests as $test): ?>
                     <tr>
-                        <td><?= h($test->name) ?></td>
+                        <td><?= ucfirst(h($test->name)) ?></td>
                         <td><?= h($test->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                         <div class="dropdown action-button">
