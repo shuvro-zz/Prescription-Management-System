@@ -63,13 +63,13 @@
                                 echo $this->Html->link(
                                     $all_prescription->created->format('d F Y').' ',
                                     ['action' => 'view', $all_prescription->id],
-                                    ['escapeTitle' => false, 'title' => 'View Prescriptions']
+                                    ['escapeTitle' => false, 'title' => 'View Prescription']
                                 );
                             }else{
                                 echo $this->Html->link(
                                     $all_prescription->created->format('d F Y').', ',
                                     ['action' => 'view', $all_prescription->id],
-                                    ['escapeTitle' => false, 'title' => 'View Prescriptions']
+                                    ['escapeTitle' => false, 'title' => 'View Prescription']
                                 );
                             }
                             $i++;
