@@ -19,6 +19,11 @@ jQuery(document).ready(function ($) {
         var options = { mode : mode, popClose : close};
         $("div.printableArea").printArea( options );
     });
+
+    $("#new_patient").click(function(){
+        $("#patient_drop_down").toggleClass("hide");
+        $("#patient_field").toggleClass("hide");
+    });
     
 });
 
@@ -56,4 +61,6 @@ function initDatePicker(){
 
     $(".date").prop('readonly', true);
     $(".time").prop('readonly', true);
+
+
 }

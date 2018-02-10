@@ -3,17 +3,24 @@
     <?php if(strtolower($this->name) == 'prescriptions'){ ?>
         <div class="col-sm-4">
             <div class="form-row">
-                <label class="name">Name<span class="required" aria-required="true"></span></label>
-                <div class="inputs">
+                <label class="name">Name<span class="required" aria-required="true"></span>
+                    <?php if(strtolower($this->request->params['action']) == 'add'){
+                        echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
+                    } ?>
+                </label>
+                <div class="inputs"  id = 'patient_drop_down' >
                     <?php
                     if(strtolower($this->request->params['action']) == 'edit'){
                         $read_only = true;
                         echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'disabled' => $read_only, 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=> true ]);
                     }else{
                         $read_only = false;
-                        echo $this->Form->input('first_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+                        echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=> true ]);
                     }
                     ?>
+                </div>
+                <div class="inputs hide" id = 'patient_field'>
+                    <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
