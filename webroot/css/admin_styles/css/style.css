@@ -58,12 +58,16 @@ lavel#password-error {
     box-shadow: 0 5px 15px 0px rgba(0,0,0,0.05);
     margin-top: 2px;
 }
+.more_prescription_inner a {
+    margin-right: 10px;
+}
 
 
 .prescription_footer{
     border-top: 1px solid #eee;
     padding-top: 7px;
     margin-bottom: -24px;
+    margin-top: 180px;
 }
 .date {
     float: right;
@@ -112,7 +116,9 @@ button, .wizard-config .btn-continue{
     position: relative;
 
 }
-
+.prescription_caption {
+    font-weight: bold;
+}
 @media print {
 
 }

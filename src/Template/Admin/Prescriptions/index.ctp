@@ -54,7 +54,7 @@
                 <tbody>
                     <?php foreach ($prescriptions as $prescription): ?>
                     <tr>
-                        <td><?= ucfirst(h($prescription->user->first_name).' '.$prescription->user->last_name) ?></td>
+                        <td><?= ucfirst(h($prescription->user->first_name)) ?></td>
                         <td><?= h($prescription->user->phone) ?></td>
                         <td><?= h($prescription->diagnosis) ?></td>
                         <td><?= h($prescription->created->format('d/m/Y')) ?></td>

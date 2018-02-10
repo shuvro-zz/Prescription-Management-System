@@ -1,45 +1,44 @@
     <?php
-
-    echo'<div class="clearfix">
-        <div class="col-sm-6">
-            <div class="form-row">
-                <label class="name">Patients<span class="required" aria-required="true">*</span></label>
-                <div class="inputs">';
-                    echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=> true ]);
-                echo '</div>
-            </div>
-        </div>';
-
-        echo'<div class="col-sm-6">
-            <div class="form-row">
-                <label class="name">Diagnosis<span class="required" aria-required="true">*</span></label>
-                <div class="inputs">';
-                    echo $this->Form->input('diagnosis', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                echo '</div>
+        echo $this->element('patient_element');
+    ?>
+<div class="panel-body">
+    <h2>Prescription Info</h2>
+   <div class="col-sm-6">
+        <div class="form-row">
+            <label class="name">Diagnosis<span class="required" aria-required="true">*</span></label>
+            <div class="inputs">
+                <?php echo $this->Form->input('diagnosis', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);?>
             </div>
         </div>
-    </div>';
+   </div>
 
-    echo'<div class="clearfix">
-        <div class="col-sm-6">
-            <div class="form-row">
-                <label class="name">Temperature</label>
-                <div class="inputs">';
-                    echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, 'required'=> true ]);
-                echo '</div>
+    <div class="col-sm-6">
+        <div class="form-row">
+            <label class="name">Temperature</label>
+            <div class="inputs">
+                <?php echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, 'required'=> true ]);?>
             </div>
-        </div>';
-
-        echo'<div class="col-sm-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
             <div class="form-row">
                 <label class="name">Blood Pressure</label>
-                <div class="inputs">';
-                    echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                echo '</div>
+                <div class="inputs">
+                    <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);?>
+                </div>
             </div>
         </div>
-    </div>';
+        <div class="col-sm-6">
+            <div class="form-row">
 
+            </div>
+        </div>
+    </div>
+
+
+
+<?php
     echo '<div class="medicines_wrap" id="medicinesWrap">
         <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>';
          foreach($prescription_medicines as $prescription_medicine){
@@ -113,7 +112,8 @@
                 echo '</div>
             </div>
         </div>
-    </div>';
+    </div>
+</div>';
     ?>
 
 <script type="text/javascript">

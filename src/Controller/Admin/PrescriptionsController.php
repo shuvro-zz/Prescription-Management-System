@@ -19,6 +19,7 @@ class PrescriptionsController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
+
     public function index()
     {
         $session = $this->request->session();
@@ -80,19 +81,13 @@ class PrescriptionsController extends AppController
         //start all prescription
         $all_prescriptions = $this->Prescriptions->find('all')
             ->where([
-                'prescriptions.doctor_id' => $doctor_id,
-                'prescriptions.user_id' => $patient_id
+                'Prescriptions.doctor_id' => $doctor_id,
+                'Prescriptions.user_id' => $patient_id
             ]);
         //End all prescription
 
-
         //start last patient
-        $last_patient = $this->Prescriptions->find('all')
-        ->where([
-                'prescriptions.doctor_id' => $doctor_id,
-                'prescriptions.user_id' => $patient_id
-        ])
-        ->order(['prescriptions.id' => 'desc'])->first();
+        $last_patient = $this->getLatestPrescription($patient_id);
         //End last patient
 
         $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
@@ -137,9 +132,9 @@ class PrescriptionsController extends AppController
         }
         //$users = $this->Prescriptions->Users->find('list', ['limit' => 200]);
         $doctor_id = $this->request->session()->read('Auth.User.id');
-        $get_users = $this->Prescriptions->Users->find('All')->where(['users.role_id' => 3, 'users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
+        $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
         foreach($get_users as $get_user){
-            $users[$get_user->id] = $get_user->first_name." ".$get_user->last_name. " - " . "$get_user->phone";
+            $users[$get_user->id] = $get_user->first_name." - " . "$get_user->phone";
         }
 
         $prescription_medicines = array('medicine_id'=>'');
@@ -194,7 +189,7 @@ class PrescriptionsController extends AppController
     public function edit($id = null)
     {
         $prescription = $this->Prescriptions->get($id, [
-            'contain' => ['Medicines', 'Tests']
+            'contain' => ['Medicines', 'Tests', 'Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
 
@@ -222,13 +217,15 @@ class PrescriptionsController extends AppController
 
         $get_users = $this->Prescriptions->Users->find('All');
         foreach($get_users as $get_user){
-            $users[$get_user->id] = $get_user->first_name." ".$get_user->last_name;
+            $users[$get_user->id] = $get_user->first_name. " - " . "$get_user->phone";
         }
 
         $prescription_medicines = $this->Prescriptions->PrescriptionMedicines->find('all')->where(['PrescriptionMedicines.prescription_id' => $id ]);
         $prescription_tests = $this->Prescriptions->PrescriptionsTests->find('all')->where(['PrescriptionsTests.prescription_id' => $id ]);
 
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
+
+        //pr($prescription);die;
 
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
         $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests'));
@@ -261,7 +258,7 @@ class PrescriptionsController extends AppController
         $session = $this->request->session();
         $session->write('set_patient_id', $this->request->query['user_id']);
 
-        if($$session->check('prescriptions_search_query')){
+        if($session->check('prescriptions_search_query')){
             $session->delete('prescriptions_search_query');
         }
 
@@ -278,23 +275,23 @@ class PrescriptionsController extends AppController
         $patients_prescription = '';
         if($session->check('set_patient_id')){
             $patient_id = $session->read('set_patient_id');
-            $patients_prescription = ['prescriptions.user_id' => $patient_id];
+            $patients_prescription = ['Prescriptions.user_id' => $patient_id];
         }
 
         if($session->check('prescriptions_search_query')){
             $search = $session->read('prescriptions_search_query');
-            $where = ['prescriptions.doctor_id' => $doctor_id,
+            $where = ['Prescriptions.doctor_id' => $doctor_id,
                 $patients_prescription,
                 'OR' => ["(
-                    prescriptions.diagnosis LIKE '%$search%' OR
-                    CONCAT( users.first_name, ' ', users.last_name ) LIKE '%$search%' OR
-                    users.phone LIKE '%$search%'
+                    Prescriptions.diagnosis LIKE '%$search%' OR
+                    CONCAT( Users.first_name, ' ', Users.last_name ) LIKE '%$search%' OR
+                    Users.phone LIKE '%$search%'
                     )"]
             ];
 
         }else{
             $where =  [
-                'prescriptions.doctor_id' => $doctor_id,
+                'Prescriptions.doctor_id' => $doctor_id,
                 $patients_prescription
             ];
         }
@@ -316,6 +313,8 @@ class PrescriptionsController extends AppController
     function sendPrescriptionEmail($id = null){
         // data $prescription_id
 
+        $doctor_info = $this->request->session()->read('Auth.User');
+
         $prescription_info = $this->Prescriptions->get($id);
         $patient_id = $prescription_info['user_id'];
         $patient_info = $this->Prescriptions->Users->get($patient_id);
@@ -327,7 +326,7 @@ class PrescriptionsController extends AppController
             'to'                => $patient_info['email'],
             'subject'           => 'Prescription pdf',
             'template'          => 'prescription_pdf',
-            'data'              => array('User' => $patient_info),
+            'data'              => array('User' => $patient_info, 'Doctor' => $doctor_info),
             'attach'            => array('file_name' => $file_name, 'file_path' => $file_path )
         );
         //pr($info);die;
@@ -386,10 +385,10 @@ class PrescriptionsController extends AppController
 
         $last_patient = $this->Prescriptions->find('all')
         ->where([
-            'prescriptions.doctor_id' => $doctor_id,
-            'prescriptions.user_id' => $patient_id
+            'Prescriptions.doctor_id' => $doctor_id,
+            'Prescriptions.user_id' => $patient_id
         ])
-        ->order(['prescriptions.id' => 'desc'])->first();
+        ->order(['Prescriptions.id' => 'desc'])->first();
 
         $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription,$last_patient);
 
@@ -420,6 +419,48 @@ class PrescriptionsController extends AppController
 
         $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'pdf' .DS. $pdf_file_name);
         $file->delete();
+    }
+
+    function searchPatient(){
+       $this->autoRender = false;
+
+        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
+            $search_phone_no = $this->request->query['search'];
+
+            $this->loadModel('Users');
+            $patient_info = $this->Users->find('all')
+                ->where([
+                    'Users.phone' => $search_phone_no
+                ])->first();
+
+            if($patient_info){
+                $patient_id = $patient_info->id;
+
+                $latest_prescription = $this->getLatestPrescription($patient_id);
+
+                if($latest_prescription){
+                    return $this->redirect(['action' => 'edit/'.$latest_prescription->id]);
+                }else{
+                    return $this->redirect(['action' => 'add']);
+                }
+            }else{
+                return $this->redirect(['action' => 'add']);
+            }
+        }
+        $this->set(compact('patient_info'));
+   }
+
+    function getLatestPrescription($patient_id){
+        $doctor_id = $this->request->session()->read('Auth.User.id');
+
+        $latest_prescription = $this->Prescriptions->find('all')
+            ->where([
+                'Prescriptions.doctor_id' => $doctor_id,
+                'Prescriptions.user_id' => $patient_id
+            ])
+            ->order(['Prescriptions.id' => 'desc'])->first();
+
+        return $latest_prescription;
     }
 
 }

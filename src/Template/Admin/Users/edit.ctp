@@ -15,7 +15,7 @@
                             <div class="col-md-12">
                                 <div class="panel panel-default panel-hovered panel-stacked">
                                     <div class="panel-heading"><?= __('Edit Patient') ?></div>
-                                    <?php include('element.ctp') ?>
+                                    <?php echo $this->element('patient_element') ?>
                                 </div>
                             </div>
                         </div>

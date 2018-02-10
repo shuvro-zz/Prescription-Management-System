@@ -17,4 +17,19 @@
             </div>
         </div>
     </div>
+
+
+    <div class="dashboard-home-faetures flex-container">
+        <div class="dash-box">
+            <div class="feature-box">
+                <?php echo $this->Form->create('Prescriptions',[
+                    'url' => ['controller' => 'Prescriptions', 'action' => 'searchPatient'],
+                    'type' => 'get'
+                ]);?>
+                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'label' => false, 'placeholder' => 'Type phone no for search...', 'required' => 'required')); ?>
+                    <button type="submit"> <i class="fa fa-search"></i></button>
+                <?php echo $this->Form->end();?>
+            </div>
+        </div>
+    </div>
 </div>

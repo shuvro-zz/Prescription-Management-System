@@ -188,7 +188,7 @@ class PdfHandlerComponent extends Component
                     <td style="width:100%; overflow:hidden;">
                         <table style="text-align:center;" >
                             <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
-                            <tr><td class="doctor_info">'. $user['address_line1'] .'</td></tr>
+                            <tr><td class="doctor_info">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['website'] .'</td></tr>
                             <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
                         </table>
@@ -208,8 +208,9 @@ class PdfHandlerComponent extends Component
                     <td width="60%">
                         <table>
                             <tr><td class="patient_head">Patient</td></tr>
-                            <tr><td>Name: '. ucfirst($prescription->user->first_name).' '.$prescription->user->last_name .' , Age:'. $prescription->user->age .' Years' .' , Mobile: '. $prescription->user->phone .'</td></tr>
-                            <tr><td>Address: '. ucfirst($prescription->user->address_line1).', '.ucfirst($prescription->user->address_line2) .'</td></tr>
+                            <tr><td>Name: '. ucfirst($prescription->user->first_name).' , Age:'. $prescription->user->age .' Years' .'</td></tr>
+                            <tr><td>Mobile: '. $prescription->user->phone .'</td></tr>
+                            <tr><td>Address: '. ucfirst($prescription->user->address_line1) .'</td></tr>
                             <tr><td>Diagnosis: '. ucfirst($prescription->diagnosis) .'</td></tr>
                             <tr><td>Temperature: '. ucfirst($prescription->temperature) .'</td></tr>
                             <tr><td>Blood Pressure: '. ucfirst($prescription->blood_pressure) .'</td></tr>
@@ -230,7 +231,7 @@ class PdfHandlerComponent extends Component
                             <?php
 
                             foreach ($prescription->medicines as $medicine){
-                                $html.= '<tr><td>'.$medicine->name .':'.(($medicine->_joinData->rule)? $medicine->_joinData->rule:'-').'</td></tr>';
+                                $html.= '<tr><td>'.$medicine->name .': '.(($medicine->_joinData->rule)? $medicine->_joinData->rule:'-').'</td></tr>';
                             }
 
                         $html.= '</table>
@@ -252,12 +253,13 @@ class PdfHandlerComponent extends Component
                                 <?php
 
                                 foreach ($prescription->tests as $test){
-                                    $html.= '<tr><td>'.$test->name .':'.(($test->_joinData->note)?  $test->_joinData->note:'-').'</td></tr>';
+                                    $html.= '<tr><td>'.$test->name .': '.(($test->_joinData->note)?  '('.$test->_joinData->note.')':'-').'</td></tr>';
                                 }
                             $html.='<tr><td>&nbsp;</td></tr>
                                     <tr><td>&nbsp;</td></tr>
 
-                            <tr><td>Doctors Note:'.$prescription->doctores_notes.'</td></tr>
+                            <tr><td class="test_head">Doctors Note:</td></tr>
+                            <tr><td>'.$prescription->doctores_notes.'</td></tr>
                         </table>
                     </td>
                     <td width="40%">
@@ -267,6 +269,40 @@ class PdfHandlerComponent extends Component
             </table>
 
             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+
+             <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>
+             <table>
                 <tr>
                     <td>&nbsp;</td>
                 </tr>

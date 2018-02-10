@@ -26,25 +26,21 @@
                         <!--<a class='add-event-btn' href='<?php /*echo $this->Url->build(WWW_ROOT.'/uploads/pdf/'.$pdf_file_name,true);*/?>'>Pdf Download</a>';-->
                         <?php
 
-                        $pdf_file_name = $prescription->pdf_file;
+                            $pdf_file_name = $prescription->pdf_file;
 
-                        if($pdf_file_name != NULL){
+                            if($pdf_file_name != NULL){
 
-                            echo '<a class="add-event-btn" href='.$pdf_link.' title="PDF Download">Pdf Download</a>';
-                            echo'
-                            &nbsp;
-                            &nbsp;';
-                        }
+                                echo '<a class="add-event-btn" href='.$pdf_link.' title="PDF Download">Pdf Download</a>';
+                                echo'
+                                &nbsp;
+                                &nbsp;';
 
-                        ?>
-
-
-                        <?php
-                            echo $this->Html->link(
-                            'Send Email',
-                            ['action' => 'sendPrescriptionEmail', $prescription->id],
-                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
-                            )
+                                echo $this->Html->link(
+                                'Send Email',
+                                ['action' => 'sendPrescriptionEmail', $prescription->id],
+                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
+                                );
+                            }
                         ?>
                     </div>
                 </div>
@@ -99,7 +95,7 @@
                                 <div class="prescription_head_con">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
                                     <h1> <?php echo ($user['clinic_name']) ?> </h1>
-                                    <b><p> <?php echo ($user['address_line1']) ?> </p></b>
+                                    <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
                                     <a href="#"><b><p> <?php echo ($user['website']) ?> </p></b></a>
                                     <b><p> Call: <?php echo ($user['phone']) ?></p></b>
                                 </div>
@@ -112,12 +108,14 @@
                     </div>
                     <h4>Patient</h4>
                     <div>
-                        <b>Name : </b> <span class="patient_info"><?= ucfirst($prescription->user->first_name)." ".$prescription->user->last_name ?>,</span>
-                        <b>Age : </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?>,</span>
+                        <b>Name : </b> <span class="patient_info"><?= ucfirst($prescription->user->first_name) ?>,</span>
+                        <b>Age : </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?></span>
+                    </div>
+                    <div>
                         <b>Mobile : </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
                     </div>
                     <div>
-                        <b>Address : </b> <span> <?= ucfirst($prescription->user->address_line1).", ".ucfirst($prescription->user->address_line2) ?> </span>
+                        <b>Address : </b> <span> <?= ucfirst($prescription->user->address_line1) ?> </span>
                     </div>
                     <div>
                         <b>Diagnosis : </b><?= ucfirst($prescription->diagnosis) ?>
@@ -155,7 +153,8 @@
                     </div>
 
                     <div>
-                        <b>Doctor's Note : </b><?= ucfirst($prescription->doctores_notes) ?>
+                        <h4>Doctor's Note </h4>
+                        <?= ucfirst($prescription->doctores_notes) ?>
                     </div>
 
                     <div class="prescription_footer">

@@ -48,7 +48,7 @@ class EmailHandlerComponent extends Component
         $email->subject($info['subject']);
         $email->template($info['template']);
         $email->emailFormat('html');
-        $email->transport('gmail');
+        $email->transport('gmail');//gmail for smtp,,,,,NULL for main mail server
         //$email->send($info['body']);
         $email->viewVars(['data' => $info['data'] ]);
 
