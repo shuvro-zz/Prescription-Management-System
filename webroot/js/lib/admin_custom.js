@@ -23,6 +23,13 @@ jQuery(document).ready(function ($) {
     $("#new_patient").click(function(){
         $("#patient_drop_down").toggleClass("hide");
         $("#patient_field").toggleClass("hide");
+
+        /*if($("#patient_field").hasClass("hide")){
+            $("#patient_field input").prop('required',false);
+        }else{
+            $("#patient_field input").prop('required',true);
+        }*/
+
     });
     
 });

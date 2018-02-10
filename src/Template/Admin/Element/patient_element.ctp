@@ -8,20 +8,25 @@
                         echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
                     } ?>
                 </label>
-                <div class="inputs"  id = 'patient_drop_down' >
+                <div class="inputs"  id='patient_drop_down' >
                     <?php
                     if(strtolower($this->request->params['action']) == 'edit'){
                         $read_only = true;
                         echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'disabled' => $read_only, 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=> true ]);
                     }else{
                         $read_only = false;
-                        echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=> true ]);
+                        echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false,  ]);
                     }
                     ?>
                 </div>
-                <div class="inputs hide" id = 'patient_field'>
-                    <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                <?php
+                if(strtolower($this->request->params['action']) == 'add'){
+                ?>
+                <div class="inputs hide" id='patient_field'>
+                    <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'label' => false, 'required' => false, 'type' =>'text']); ?>
                 </div>
+                <?php } ?>
+
             </div>
         </div>
         <div class="col-sm-3">
