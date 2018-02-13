@@ -92,6 +92,7 @@ class UsersController extends AppController
     {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
+
             $user = $this->Users->patchEntity($user, $this->request->data);
 
             $session = $this->request->session();
@@ -416,6 +417,10 @@ class UsersController extends AppController
         $session = $this->request->session();
         $session->delete('users_search_query');
         $this->redirect(['action' => 'index']);
+    }
+
+    function getUser($user_id){
+       echo json_encode($this->Users->get($user_id));die;
     }
 
 }

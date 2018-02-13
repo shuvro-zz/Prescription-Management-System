@@ -69,5 +69,17 @@ function initDatePicker(){
     $(".date").prop('readonly', true);
     $(".time").prop('readonly', true);
 
+}
 
+function getUserInfo(user_id){
+    if(user_id==''){
+        $('.reset_patient').val('');
+    }else{
+        $.post(home_url+'admin/users/get-user/'+user_id,function(response){
+            console.log(response);
+            $('#user-phone').val(response.phone);
+            $('#user-email').val(response.email);
+            $('#user-age').val(response.age);
+        },'json');
+    }
 }

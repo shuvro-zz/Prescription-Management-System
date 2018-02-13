@@ -167,7 +167,7 @@
                             </div>
                             <div class="col-sm-6"></div>
                             <div class="col-sm-3">
-                                <div class="date">
+                                <div class="prescription_date">
                                     <p><b>Date:</b> <?= $prescription->created->format('d F Y'); ?> </p>
                                 </div>
                             </div>

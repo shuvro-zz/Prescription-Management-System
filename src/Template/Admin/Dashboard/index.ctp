@@ -19,14 +19,15 @@
     </div>
 
 
-    <div class="dashboard-home-faetures flex-container">
-        <div class="dash-box">
-            <div class="feature-box">
+    <div class="event-listing">
+        <div class="event-listing-top flex-container status-function">
+            <div class="status-area flex-container">
+                <div class="event-src-box">
                 <?php echo $this->Form->create('Prescriptions',[
                     'url' => ['controller' => 'Prescriptions', 'action' => 'searchPatient'],
                     'type' => 'get'
                 ]);?>
-                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'label' => false, 'placeholder' => 'Type phone no for search...', 'required' => 'required')); ?>
+                    <?php echo $this->Form->input('search',array('class' => 'form-control', 'label' => false, 'placeholder' => 'Type phone no', 'required' => 'required')); ?>
                     <button type="submit"> <i class="fa fa-search"></i></button>
                 <?php echo $this->Form->end();?>
             </div>

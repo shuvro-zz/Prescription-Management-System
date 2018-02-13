@@ -16,7 +16,7 @@
         <div class="form-row">
             <label class="name">Temperature</label>
             <div class="inputs">
-                <?php echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, 'required'=> true ]);?>
+                <?php echo $this->Form->input('temperature', [ 'class'=>'form-control','label'=>false, ]);?>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
             <div class="form-row">
                 <label class="name">Blood Pressure</label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);?>
+                    <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'type' =>'text']);?>
                 </div>
             </div>
         </div>

@@ -48,8 +48,8 @@ class UsersTable extends Table
         $validator->integer('id')->allowEmpty('id', 'create');
         //$validator->email('email')->requirePresence('email', 'create')->notEmpty('email');
         //$validator->requirePresence('password', 'create')->notEmpty('password');
-        $validator->notEmpty('first_name');
-        $validator->notEmpty('last_name');
+        //$validator->notEmpty('first_name');
+        //$validator->notEmpty('last_name');
         $validator->notEmpty('phone');
         return $validator;
     }

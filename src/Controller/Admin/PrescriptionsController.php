@@ -109,10 +109,17 @@ class PrescriptionsController extends AppController
 
         if ($this->request->is('post')) {
 
+            $patient_id = $this->savePatient($this->request->data['patients']);
+
             $medicines = $this->request->data['medicines'];
             $tests = $this->request->data['tests'];
             unset($this->request->data['medicines']);
             unset($this->request->data['tests']);
+            unset($this->request->data['patients']);
+
+            if(empty($this->request->data['user_id'])){
+                $this->request->data['user_id'] = $patient_id;
+            }
 
             $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
@@ -213,9 +220,7 @@ class PrescriptionsController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        //$users = $this->Prescriptions->Users->find('list', ['limit' => 200]);
-
-        $get_users = $this->Prescriptions->Users->find('All');
+        $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' =>  $this->request->session()->read('Auth.User.id')]);//role_id =>3 that's mean patient;
         foreach($get_users as $get_user){
             $users[$get_user->id] = $get_user->first_name. " - " . "$get_user->phone";
         }
@@ -335,10 +340,8 @@ class PrescriptionsController extends AppController
         $success_message = __('A pdf file has been sent to your patient email address.');
         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
 
-        $this->redirect(['action' => 'index']);
+        $this->redirect(['action' => 'view/'.$id]);
     }
-
-
 
     function savePrescriptionMedicines($medicines, $prescription_id){
         // Start: Prescriptions medicines
@@ -351,7 +354,7 @@ class PrescriptionsController extends AppController
                 $prescription_medicine = $this->PrescriptionMedicines->newEntity();
                 $prescription_medicine = $this->PrescriptionMedicines->patchEntity($prescription_medicine, $prescriptions_medicine );
                 if(!$this->PrescriptionMedicines->save($prescription_medicine)){
-                    $this->log('PrescriptionMedicines could not save ');
+                    $this->log('PrescriptionMedicines could not save');
                 }
             }
         }
@@ -430,7 +433,8 @@ class PrescriptionsController extends AppController
             $this->loadModel('Users');
             $patient_info = $this->Users->find('all')
                 ->where([
-                    'Users.phone' => $search_phone_no
+                    'Users.phone' => $search_phone_no,
+                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id')
                 ])->first();
 
             if($patient_info){
@@ -444,6 +448,7 @@ class PrescriptionsController extends AppController
                     return $this->redirect(['action' => 'add']);
                 }
             }else{
+                $this->Flash->admin_warning('Patient could not found, Please select a Patient', ['key' => 'admin_warning']);
                 return $this->redirect(['action' => 'add']);
             }
         }
@@ -461,6 +466,28 @@ class PrescriptionsController extends AppController
             ->order(['Prescriptions.id' => 'desc'])->first();
 
         return $latest_prescription;
+    }
+
+    function savePatient($patients){
+        $this->loadModel('Users');
+
+        if(empty($this->request->data['user_id'])){
+            $user = $this->Users->newEntity();
+        }else{
+            unset($patients['first_name']);
+            unset($patients['address_line1']);
+            $user = $this->Users->get($this->request->data['user_id']);
+        }
+
+        $user->role_id = 3;
+        $user->doctor_id = $this->request->session()->read('Auth.User.id');
+        $user = $this->Users->patchEntity($user, $patients);
+        $user = $this->Users->save($user);
+        if($user) {
+            return $user->id;
+        }else{
+            $this->log('could not save user');
+        }
     }
 
 }
