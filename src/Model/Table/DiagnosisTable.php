@@ -31,12 +31,12 @@ class DiagnosisTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsToMany('Medicines', [
-            'foreignKey' => 'diagnosi_id',
+            'foreignKey' => 'diagnosis_id',
             'targetForeignKey' => 'medicine_id',
             'joinTable' => 'diagnosis_medicines'
         ]);
         $this->belongsToMany('Tests', [
-            'foreignKey' => 'diagnosi_id',
+            'foreignKey' => 'diagnosis_id',
             'targetForeignKey' => 'test_id',
             'joinTable' => 'diagnosis_tests'
         ]);
@@ -51,13 +51,13 @@ class DiagnosisTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')            ->allowEmpty('id', 'create');
+            ->integer('id')->allowEmpty('id', 'create');
         $validator
-            ->requirePresence('name', 'create')            ->notEmpty('name');
+            ->requirePresence('name', 'create')->notEmpty('name');
         $validator
             ->allowEmpty('instructions');
         $validator
-            ->boolean('status')            ->allowEmpty('status');
+            ->boolean('status')->allowEmpty('status');
         return $validator;
     }
 }

@@ -65,7 +65,7 @@
                                     echo $this->Html->link(
                                     '<span class="fa fa-pencil-square"></span> Edit',
                                     ['action' => 'edit', $test->id],
-                                    ['escapeTitle' => false, 'title' => 'Edit Venue']
+                                    ['escapeTitle' => false, 'title' => 'Edit Test']
                                     );
                                     ?>
                                 </li>

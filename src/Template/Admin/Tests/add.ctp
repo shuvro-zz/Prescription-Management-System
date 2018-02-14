@@ -17,16 +17,14 @@
                                 <div class="panel panel-default panel-hovered panel-stacked">
                                     <div class="panel-heading"><?= __('Add Test') ?></div>
                                     <div class="panel-body">
-                                        <?php
-                                         echo'<div class="col-sm-6">
+                                         <div class="col-sm-6">
                                             <div class="form-row">
                                                 <label class="name">Name<span class="required" aria-required="true"></span></label>
-                                                <div class="inputs">';
-                                                    echo $this->Form->input('name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                echo '</div>
+                                                <div class="inputs">
+                                                   <?php echo $this->Form->input('name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                </div>
                                             </div>
-                                        </div>';
-                                         ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

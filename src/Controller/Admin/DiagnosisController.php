@@ -17,9 +17,40 @@ class DiagnosisController extends AppController
      */
     public function index()
     {
-        $diagnosis = $this->paginate($this->Diagnosis);
+        $session = $this->request->session();
 
-        $this->set(compact('diagnosis'));
+        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
+            $session->write('diagnosis_search_query', $this->request->query['search']);
+        }
+        if($session->check('diagnosis_search_query')) {
+            $search = $session->read('diagnosis_search_query');
+        }else{
+            $search = '';
+        }
+
+        $where = $this->__search();
+
+        if($where){
+            $query = $this->Diagnosis->find('All')->where($where);
+        }else{
+            $query = $this->Diagnosis;
+        }
+
+        $this->paginate = [
+            'limit' => 30,
+            'order' => [
+                'Diagnosis.id' => 'desc'
+            ]
+        ];
+        $diagnosis = $this->paginate($query);
+
+        if(count($diagnosis)==0){
+            $this->Flash->adminWarning(__('No Diagnosis found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
+        }
+
+        //$diagnosis = $this->paginate($this->Diagnosis);
+
+        $this->set(compact('diagnosis', 'search'));
         $this->set('_serialize', ['diagnosis']);
     }
 
@@ -50,11 +81,13 @@ class DiagnosisController extends AppController
         $diagnosi = $this->Diagnosis->newEntity();
         if ($this->request->is('post')) {
             $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
+
+            $diagnosi->doctor_id = $this->request->session()->read('Auth.User.id');
             if ($this->Diagnosis->save($diagnosi)) {
-                $this->Flash->adminSuccess(__('The diagnosi has been saved.',  ['key' => 'admin_success'] ));
+                $this->Flash->adminSuccess(__('The diagnosis has been saved.'),  ['key' => 'admin_success'] );
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->adminError(__('The diagnosi could not be saved. Please, try again.', ['key' => 'admin_error']));
+                $this->Flash->adminError(__('The diagnosis could not be saved. Please, try again.'), ['key' => 'admin_error']);
             }
         }
         $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200]);
@@ -78,10 +111,10 @@ class DiagnosisController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
             if ($this->Diagnosis->save($diagnosi)) {
-                $this->Flash->adminSuccess(__('The diagnosi has been saved.', ['key' => 'admin_success']));
+                $this->Flash->adminSuccess(__('The diagnosis has been saved.'), ['key' => 'admin_success']);
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->adminError(__('The diagnosi could not be saved. Please, try again.', ['key' => 'admin_error']));
+                $this->Flash->adminError(__('The diagnosis could not be saved. Please, try again.'), ['key' => 'admin_error']);
             }
         }
         $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200]);
@@ -102,10 +135,35 @@ class DiagnosisController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $diagnosi = $this->Diagnosis->get($id);
         if ($this->Diagnosis->delete($diagnosi)) {
-            $this->Flash->admin_success(__('The diagnosi has been deleted.', ['key' => 'admin_success'] ));
+            $success_message = __('The test has been deleted.');
+            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
         } else {
-            $this->Flash->admin_error(__('The diagnosi could not be deleted. Please, try again.' , ['key' => 'admin_error']));
+            $this->Flash->adminError(__('The diagnosis could not be deleted. Please, try again.') , ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    function __search(){
+        $session = $this->request->session();
+
+        $doctor_id = $session->read('Auth.User.id');
+
+        if($session->check('diagnosis_search_query')){
+            $search = $session->read('diagnosis_search_query');
+            $where = ['Diagnosis.doctor_id' => $doctor_id,
+                'OR' => [
+                    ['Diagnosis.name LIKE' => '%' . $search . '%']
+                ]
+            ];
+        }else{
+            $where = ['Diagnosis.doctor_id' => $doctor_id];
+        }
+        return $where;
+    }
+
+    function reset(){
+        $session = $this->request->session();
+        $session->delete('diagnosis_search_query');
+        $this->redirect(['action' => 'index']);
     }
 }

@@ -49,8 +49,6 @@ class TestsController extends AppController
             $this->Flash->adminWarning(__('No tests found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
         }
 
-        $tests = $this->paginate($query);
-
         $this->set(compact('tests', 'search'));
         $this->set('_serialize', ['tests']);
     }
