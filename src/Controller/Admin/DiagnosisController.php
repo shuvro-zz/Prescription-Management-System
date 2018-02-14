@@ -51,10 +51,10 @@ class DiagnosisController extends AppController
         if ($this->request->is('post')) {
             $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
             if ($this->Diagnosis->save($diagnosi)) {
-                $this->Flash->success(__('The diagnosi has been saved.'));
+                $this->Flash->adminSuccess(__('The diagnosi has been saved.',  ['key' => 'admin_success'] ));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The diagnosi could not be saved. Please, try again.'));
+                $this->Flash->adminError(__('The diagnosi could not be saved. Please, try again.', ['key' => 'admin_error']));
             }
         }
         $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200]);
@@ -78,10 +78,10 @@ class DiagnosisController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
             if ($this->Diagnosis->save($diagnosi)) {
-                $this->Flash->success(__('The diagnosi has been saved.'));
+                $this->Flash->adminSuccess(__('The diagnosi has been saved.', ['key' => 'admin_success']));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The diagnosi could not be saved. Please, try again.'));
+                $this->Flash->adminError(__('The diagnosi could not be saved. Please, try again.', ['key' => 'admin_error']));
             }
         }
         $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200]);
@@ -102,9 +102,9 @@ class DiagnosisController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $diagnosi = $this->Diagnosis->get($id);
         if ($this->Diagnosis->delete($diagnosi)) {
-            $this->Flash->success(__('The diagnosi has been deleted.'));
+            $this->Flash->admin_success(__('The diagnosi has been deleted.', ['key' => 'admin_success'] ));
         } else {
-            $this->Flash->error(__('The diagnosi could not be deleted. Please, try again.'));
+            $this->Flash->admin_error(__('The diagnosi could not be deleted. Please, try again.' , ['key' => 'admin_error']));
         }
         return $this->redirect(['action' => 'index']);
     }

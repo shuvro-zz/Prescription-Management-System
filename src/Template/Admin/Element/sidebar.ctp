@@ -19,6 +19,10 @@
                 <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )); ?>" title="Patients"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Patients</span></a>
             </li>
+            <li class="navigation-item dashboard <?php if($this->name=='Diagnosis') echo 'active'?>">
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosis','action' => 'index' )); ?>" title="Diagnosis Templates"><span class="nav-icon"><span class="icon"></span>
+                </span><span class="nav-text">Diagnosis Templates</span></a>
+            </li>
             <li class="navigation-item dashboard <?php if($this->name=='Prescriptions') echo 'active'?>">
                 <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'patientIdReset' )); ?>" title="Prescriptions"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Prescriptions</span></a>
