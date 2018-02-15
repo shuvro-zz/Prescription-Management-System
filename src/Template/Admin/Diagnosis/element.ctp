@@ -17,14 +17,15 @@
 <div class="col-sm-6">
     <div class="form-row">
         <div class="inputs">
-            <?php echo $this->Form->input('medicines._ids', ['options' => $medicines]); ?>
+            <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'class' => 'tokenize-sortable-demo1']); ?>
         </div>
     </div>
 </div>
 <div class="col-sm-6">
     <div class="form-row">
         <div class="inputs">
-            <?php  echo $this->Form->input('tests._ids', ['options' => $tests]); ?>
+            <?php  echo $this->Form->input('tests._ids', ['options' => $tests,  'class' => 'tokenize-sortable-demo1']); ?>
         </div>
     </div>
 </div>
+

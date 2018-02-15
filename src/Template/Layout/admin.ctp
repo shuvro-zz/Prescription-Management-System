@@ -14,12 +14,14 @@
 	<?php
 	echo $this->Html->css([
 		'styles/vendors/bootstrap.min.css',
-		'bootstrap-select/bootstrap-select.min.css',
+		'font-awesome/css/font-awesome.min.css',
+		//'bootstrap-select/bootstrap-select.min.css',
         'admin_styles/css/admin_style.css',
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
 		'admin_styles/css/style.css',
+		'admin_styles/css/tokenize2.css',
 		'lib/jquery.datetimepicker.min.css',
 	]);
 
@@ -27,13 +29,14 @@
 	echo $this->Html->script([
 		'lib/jquery.min.js',
 		'lib/bootstrap.min.js',
-		'lib/bootstrap-select.js',
+		//'lib/bootstrap-select.js',
         'lib/jquery.validate.min.js',
 		'lib/jquery-ui.js',
 		'lib/jquery.printarea.js',
 		'lib/form_builder/form-builder.min.js',
 		'lib/jquery.datetimepicker.min.js',
 		'lib/admin_custom.js',
+		'lib/tokenize2.js',
 	]);
 	?>
 	

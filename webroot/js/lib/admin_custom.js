@@ -31,7 +31,12 @@ jQuery(document).ready(function ($) {
         }*/
 
     });
-    
+
+    $('.tokenize-sortable-demo1').tokenize2({
+        sortable: true,
+        displayNoResultsMessage: true
+
+    });
 });
 
 function initDatePicker(){
@@ -83,3 +88,6 @@ function getUserInfo(user_id){
         },'json');
     }
 }
+
+
+

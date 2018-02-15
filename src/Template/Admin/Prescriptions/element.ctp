@@ -3,6 +3,22 @@
     ?>
 <div class="panel-body">
     <h2>Prescription Info</h2>
+
+    <div class="col-sm-6">
+        <div class="form-row">
+            <div class="inputs">
+                <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'class' => 'tokenize-sortable-demo1']); ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-row">
+            <div class="inputs">
+                <?php  echo $this->Form->input('tests._ids', ['options' => $tests,  'class' => 'tokenize-sortable-demo1']); ?>
+            </div>
+        </div>
+    </div>
+
    <div class="col-sm-6">
         <div class="form-row">
             <label class="name">Diagnosis<span class="required" aria-required="true">*</span></label>
@@ -12,7 +28,7 @@
         </div>
    </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-3">
         <div class="form-row">
             <label class="name">Temperature</label>
             <div class="inputs">
@@ -20,26 +36,23 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-row">
-                <label class="name">Blood Pressure</label>
-                <div class="inputs">
-                    <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'type' =>'text']);?>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-row">
 
+    <div class="col-sm-3">
+        <div class="form-row">
+            <label class="name">Blood Pressure</label>
+            <div class="inputs">
+                <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control', 'label' => false, 'type' =>'text']);?>
             </div>
         </div>
     </div>
 
 
 
+
+
+
 <?php
-    echo '<div class="medicines_wrap" id="medicinesWrap">
+    /*echo '<div class="medicines_wrap" id="medicinesWrap">
         <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>';
          foreach($prescription_medicines as $prescription_medicine){
         $field_medicine = '<div class="medicines_row clearfix">';
@@ -101,7 +114,7 @@
         $field_test .= '</div>';
         echo  $field_test;
     }
-    echo '</div>';
+    echo '</div>';*/
 
     echo'<div class="clearfix">
         <div class="col-sm-12">
@@ -116,19 +129,19 @@
 </div>';
     ?>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function(){
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
             $(".dle_medicine_btn").css('display');
-            $("#medicinesWrap").append('<?php echo $field_medicine ?>');
+            $("#medicinesWrap").append('<?php /*echo $field_medicine */?>');
             $(".selectpicker").selectpicker('refresh');
         });
 
         // Add Test field
         $("#addMoreTest").click(function(){
             $(".dle_medicine_btn").css('display');
-            $("#testsWrap").append('<?php echo $field_test ?>');
+            $("#testsWrap").append('<?php /*echo $field_test */?>');
             $(".selectpicker").selectpicker('refresh');
         });
     });
@@ -138,7 +151,7 @@
         $(e).parents('.medicines_row').remove();
     }
 
-</script>
+</script>-->
 
 
 

@@ -38,7 +38,7 @@ class PrescriptionsTable extends Table
         $this->belongsToMany('Medicines', [
             'foreignKey' => 'prescription_id',
             'targetForeignKey' => 'medicine_id',
-            'joinTable' => 'prescription_medicines'
+            'joinTable' => 'prescriptions_medicines'
         ]);
 
         /*$this->hasMany('Medicines', [
