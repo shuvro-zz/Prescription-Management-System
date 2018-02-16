@@ -121,8 +121,26 @@ button, .wizard-config .btn-continue{
 .prescription_caption {
     font-weight: bold;
 }
-@media print {
 
+.checkbox{
+    width: auto!important;
+    height: auto!important;
+}
+.form-row{
+ margin-bottom: 0px!important;
+}
+.diagnosis_list ul {
+    width: 100%;
+    float: left;
+    padding-left: 0px;
+}
+.diagnosis_list ul li {
+    list-style: none;
+    float: left;
+}
+.workspace-body input[type=checkbox] {
+    height: 13px;
+    margin-left: -20px;
 }
 
 /**********Responsive**********/

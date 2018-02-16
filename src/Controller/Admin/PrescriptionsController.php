@@ -85,9 +85,7 @@ class PrescriptionsController extends AppController
             ]);
         //End all prescription
 
-        //start last patient
         $last_patient = $this->getLatestPrescription($patient_id);
-        //End last patient
 
         $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
 
@@ -147,7 +145,9 @@ class PrescriptionsController extends AppController
         $prescription_tests = array('test_id'=>'');
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'prescription_medicines', 'prescription_tests', 'medicines', 'tests'));
+        $diagnosis_info = $this->getDiagnosisInfo();
+
+        $this->set(compact('prescription', 'users', 'prescription_medicines', 'prescription_tests', 'medicines', 'tests', 'diagnosis_info'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -194,13 +194,11 @@ class PrescriptionsController extends AppController
 
         $prescription_medicines = $this->Prescriptions->PrescriptionsMedicines->find('all')->where(['PrescriptionsMedicines.prescription_id' => $id ]);
         $prescription_tests = $this->Prescriptions->PrescriptionsTests->find('all')->where(['PrescriptionsTests.prescription_id' => $id ]);
-
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
-
-        //pr($prescription);die;
+        $diagnosis_info = $this->getDiagnosisInfo();
 
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests'));
+        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis_info'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -488,6 +486,18 @@ class PrescriptionsController extends AppController
             return $new_tests;
         }
     }*/
+
+    function getDiagnosisInfo(){
+        $this->loadModel('Diagnosis');
+
+        $diagnosis_info = $this->Diagnosis->find('all')
+            ->where([
+                'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id')
+            ]);
+
+        return $diagnosis_info;
+
+    }
 
 }
 

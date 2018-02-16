@@ -89,5 +89,11 @@ function getUserInfo(user_id){
     }
 }
 
+function getMedicine($diagnosis_id){
+    $.post(home_url+'admin/medicines/get-medicine/'+$diagnosis_id,function(response){
+        console.log(response);
+    },'json');
+}
+
 
 

@@ -1,13 +1,29 @@
     <?php
         echo $this->element('patient_element');
     ?>
-<div class="panel-body">
-    <h2>Prescription Info</h2>
 
+<div class="panel-body">
+
+    <h2>Diagnosis</h2>
+    <div class="col-sm-12">
+        <div class="form-row">
+            <div class="inputs diagnosis_list">
+                <ul>
+                    <?php
+                    foreach($diagnosis_info as $diagnosis_info){
+                        echo '<li>'. $this->Form->input($diagnosis_info->name, ['type' => 'checkbox', 'value'=>$diagnosis_info->id, 'id'=>$diagnosis_info->id, 'onclick'=>'getMedicine(this.value)' ]) .'</li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>Prescription Info</h2>
     <div class="col-sm-6">
         <div class="form-row">
             <div class="inputs">
-                <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'class' => 'tokenize-sortable-demo1']); ?>
+                <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'class' => 'tokenize-sortable-demo1', 'id'=> 'test']); ?>
             </div>
         </div>
     </div>

@@ -173,4 +173,14 @@ class MedicinesController extends AppController
         $session->delete('medicines_search_query');
         $this->redirect(['action' => 'index']);
     }
+
+    function getMedicine($diagnosis_id){
+
+        $this->loadModel('Diagnosis_Medicines');
+
+        echo json_encode($this->Diagnosis_Medicines->find('all')
+            ->where([
+            'Diagnosis_Medicines.diagnosis_id' => $diagnosis_id,
+        ]));die;
+    }
 }
