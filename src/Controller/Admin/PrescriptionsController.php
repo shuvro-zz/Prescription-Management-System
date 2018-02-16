@@ -145,9 +145,9 @@ class PrescriptionsController extends AppController
         $prescription_tests = array('test_id'=>'');
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $diagnosis_info = $this->getDiagnosisInfo();
+        $diagnosis = $this->getDiagnosisInfo();
 
-        $this->set(compact('prescription', 'users', 'prescription_medicines', 'prescription_tests', 'medicines', 'tests', 'diagnosis_info'));
+        $this->set(compact('prescription', 'users', 'prescription_medicines', 'prescription_tests', 'medicines', 'tests', 'diagnosis'));
         $this->set('_serialize', ['prescription']);
     }
 

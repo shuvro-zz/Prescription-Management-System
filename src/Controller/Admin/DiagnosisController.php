@@ -166,4 +166,17 @@ class DiagnosisController extends AppController
         $session->delete('diagnosis_search_query');
         $this->redirect(['action' => 'index']);
     }
+
+
+    function getDiagnosis($ids){
+        $ids = explode("_",$ids);
+        if($ids){
+            $contain = ['contain' =>['Medicines', 'Tests']];
+            $diagnosis = $this->Diagnosis->find('all',$contain)->where([
+                    'Diagnosis.id IN ' => $ids
+                ]);
+        }
+
+        echo json_encode($diagnosis);die;
+    }
 }

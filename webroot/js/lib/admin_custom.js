@@ -89,8 +89,25 @@ function getUserInfo(user_id){
     }
 }
 
-function getMedicine($diagnosis_id){
-    $.post(home_url+'admin/medicines/get-medicine/'+$diagnosis_id,function(response){
+var index = 0;
+var ids = [];
+
+function getDiagnosis(e){
+    if($(e)[0].checked){
+        ids[index] = e.value;
+        index++;
+    }else{
+        ids = ids.filter(function(id) {
+            return id !== e.value;
+        });
+
+        index--;
+    }
+
+    var all_id = ids.toString();
+    all_id = all_id.replace(/,/g , "_");
+
+    $.post(home_url+'admin/diagnosis/get-diagnosis/'+all_id ,function(response){
         console.log(response);
     },'json');
 }

@@ -10,8 +10,8 @@
             <div class="inputs diagnosis_list">
                 <ul>
                     <?php
-                    foreach($diagnosis_info as $diagnosis_info){
-                        echo '<li>'. $this->Form->input($diagnosis_info->name, ['type' => 'checkbox', 'value'=>$diagnosis_info->id, 'id'=>$diagnosis_info->id, 'onclick'=>'getMedicine(this.value)' ]) .'</li>';
+                    foreach($diagnosis as $item){
+                        echo '<li>'. $this->Form->input($item->name, ['type' => 'checkbox', 'value'=>$item->id, 'onclick'=>'getDiagnosis(this)' ]) .'</li>';
                     }
                     ?>
                 </ul>
