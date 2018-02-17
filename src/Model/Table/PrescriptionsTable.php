@@ -35,15 +35,15 @@ class PrescriptionsTable extends Table
             'joinType' => 'INNER'
         ]);
 
+       $this->hasMany('PrescriptionsDiagnosis', [
+            'foreignKey' => 'prescription_id'
+       ]);
+
         $this->belongsToMany('Medicines', [
             'foreignKey' => 'prescription_id',
             'targetForeignKey' => 'medicine_id',
             'joinTable' => 'prescriptions_medicines'
         ]);
-
-        /*$this->hasMany('Medicines', [
-            'foreignKey' => 'medicine_id'
-        ]);*/
 
         $this->belongsToMany('Tests', [
             'foreignKey' => 'prescription_id',
@@ -62,8 +62,7 @@ class PrescriptionsTable extends Table
     {
         $validator
             ->integer('id')->allowEmpty('id', 'create');
-        $validator
-            ->requirePresence('diagnosis', 'create')->notEmpty('diagnosis');
+
         
         return $validator;
     }

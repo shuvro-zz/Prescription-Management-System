@@ -1,5 +1,16 @@
     <?php
         echo $this->element('patient_element');
+
+        function selected($id,$prescription_diagnosis){
+            if(isset($prescription_diagnosis)){
+                foreach($prescription_diagnosis as $item ){
+
+                    if($item->diagnosis_id == $id){
+                     return 'checked';
+                    }
+                }
+            }
+        }
     ?>
 
 <div class="panel-body">
@@ -8,13 +19,19 @@
     <div class="col-sm-12">
         <div class="form-row">
             <div class="inputs diagnosis_list">
-                <ul>
+                <!--<ul>
                     <?php
-                    foreach($diagnosis as $item){
+/*                    foreach($diagnosis as $item){
                         echo '<li>'. $this->Form->input($item->name, ['type' => 'checkbox', 'value'=>$item->id, 'onclick'=>'getDiagnosis(this)' ]) .'</li>';
                     }
-                    ?>
-                </ul>
+                    */?>
+                </ul>-->
+                <?php foreach($diagnosis as $id=>$name){ ?>
+                <div class="checkbox">
+                    <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>
+                </div>
+                <?php } ?>
+
             </div>
         </div>
     </div>
@@ -22,27 +39,18 @@
     <h2>Prescription Info</h2>
     <div class="col-sm-6">
         <div class="form-row">
-            <div class="inputs">
-                <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'class' => 'tokenize-sortable-demo1', 'id'=> 'test']); ?>
+            <div class="inputs medicines">
+                <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); ?>
             </div>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-row">
-            <div class="inputs">
+            <div class="inputs tests">
                 <?php  echo $this->Form->input('tests._ids', ['options' => $tests,  'class' => 'tokenize-sortable-demo1']); ?>
             </div>
         </div>
     </div>
-
-   <div class="col-sm-6">
-        <div class="form-row">
-            <label class="name">Diagnosis<span class="required" aria-required="true">*</span></label>
-            <div class="inputs">
-                <?php echo $this->Form->input('diagnosis', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);?>
-            </div>
-        </div>
-   </div>
 
     <div class="col-sm-3">
         <div class="form-row">

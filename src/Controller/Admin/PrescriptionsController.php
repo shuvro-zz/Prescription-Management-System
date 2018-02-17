@@ -71,7 +71,7 @@ class PrescriptionsController extends AppController
     public function view($id = null)
     {
         $prescription = $this->Prescriptions->get($id, [
-            'contain' => ['Users', 'Medicines', 'Tests']
+            'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
         ]);
 
         $doctor_id = $this->request->session()->read('Auth.User.id');
@@ -108,23 +108,36 @@ class PrescriptionsController extends AppController
 
             $patient_id = $this->savePatient($this->request->data['patients']);
 
-            $medicines = $this->request->data['medicines'];
-            $tests = $this->request->data['tests'];
+            $diagnosis = $this->request->data['diagnosis'];
+
             /*unset($this->request->data['medicines']);
             unset($this->request->data['tests']);
             unset($this->request->data['patients']);*/
+
+            unset($this->request->data['diagnosis']);
 
             if(empty($this->request->data['user_id'])){
                 $this->request->data['user_id'] = $patient_id;
             }
 
+
+
+
             $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
+
+            //pr($prescription);die;
+
             $prescription = $this->Prescriptions->save($prescription);
+
+
 
             if ($prescription) {
                 /*$this->savePrescriptionMedicines($medicines, $prescription->id);
                 $this->savePrescriptionTests($tests, $prescription->id);*/
+
+                $this->savePrescriptionsDiagnosis($diagnosis, $prescription->id);
+
 
                 $this->Flash->adminSuccess('The prescription has been saved.', ['key' => 'admin_success']);
                 return $this->redirect(['action' => 'index']);
@@ -161,22 +174,27 @@ class PrescriptionsController extends AppController
     public function edit($id = null)
     {
         $prescription = $this->Prescriptions->get($id, [
-            'contain' => ['Medicines', 'Tests', 'Users']
+            'contain' => ['PrescriptionsDiagnosis', 'Medicines', 'Tests', 'Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
 
-            $medicines = $this->request->data['medicines'];
-            $tests = $this->request->data['tests'];
+            $diagnosis = $this->request->data['diagnosis'];
 
             /*unset($this->request->data['medicines']);
             unset($this->request->data['tests']);
             unset($this->request->data['patients']);*/
 
+            unset($this->request->data['diagnosis']);
+
+
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
+
             if ($this->Prescriptions->save($prescription)) {
 
                 /*$this->savePrescriptionMedicines($medicines, $id);
                 $this->savePrescriptionTests($tests, $id);*/
+
+                $this->savePrescriptionsDiagnosis($diagnosis, $prescription->id);
 
                 $success_message = __('The prescription has been edited.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -192,13 +210,14 @@ class PrescriptionsController extends AppController
             $users[$get_user->id] = $get_user->first_name. " - " . "$get_user->phone";
         }
 
+        $prescription_diagnosis = $this->Prescriptions->PrescriptionsDiagnosis->find('all')->where(['PrescriptionsDiagnosis.prescription_id' => $id ]);
         $prescription_medicines = $this->Prescriptions->PrescriptionsMedicines->find('all')->where(['PrescriptionsMedicines.prescription_id' => $id ]);
         $prescription_tests = $this->Prescriptions->PrescriptionsTests->find('all')->where(['PrescriptionsTests.prescription_id' => $id ]);
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
-        $diagnosis_info = $this->getDiagnosisInfo();
+        $diagnosis = $this->getDiagnosisInfo();
 
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis_info'));
+        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis','prescription_diagnosis'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -312,7 +331,7 @@ class PrescriptionsController extends AppController
         $this->autoRender = false;
 
         $prescription = $this->Prescriptions->get($id, [
-            'contain' => ['Users', 'Medicines', 'Tests']
+            'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
         ]);
         $this->set('prescription', $prescription);
         $this->set('_serialize', ['prescription']);
@@ -490,13 +509,44 @@ class PrescriptionsController extends AppController
     function getDiagnosisInfo(){
         $this->loadModel('Diagnosis');
 
-        $diagnosis_info = $this->Diagnosis->find('all')
+        $diagnosis_info = $this->Diagnosis->find('list')
             ->where([
                 'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id')
             ]);
-
         return $diagnosis_info;
 
+    }
+
+
+
+    function savePrescriptionsDiagnosis($diagnosis, $prescription_id){
+        // Start: Prescriptions diagnosis
+        $this->loadModel('PrescriptionsDiagnosis');
+        $this->PrescriptionsDiagnosis->deleteAll(['PrescriptionsDiagnosis.prescription_id' => $prescription_id]);
+
+        $prescriptions_diagnosis = $this->prepareDiagnosis($diagnosis, $prescription_id);
+        if($prescriptions_diagnosis){
+            foreach($prescriptions_diagnosis as $item){
+                $prescription_diagnosis = $this->PrescriptionsDiagnosis->newEntity();
+                $prescription_diagnosis = $this->PrescriptionsDiagnosis->patchEntity($prescription_diagnosis, $item );
+                if(!$this->PrescriptionsDiagnosis->save($prescription_diagnosis)){
+                    $this->log('Prescription Diagnosis could not save');
+                }
+            }
+        }
+        // End: Prescriptions medicines
+    }
+
+    function prepareDiagnosis($diagnosis,$prescription_id){
+
+        if($diagnosis){
+            $new_diagnosis = [];
+            foreach($diagnosis as $key => $val) {
+                $new_diagnosis[$key]['prescription_id'] = $prescription_id;
+                $new_diagnosis[$key]['diagnosis_id'] = $val;
+            }
+            return $new_diagnosis;
+        }
     }
 
 }

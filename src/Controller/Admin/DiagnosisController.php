@@ -170,13 +170,44 @@ class DiagnosisController extends AppController
 
     function getDiagnosis($ids){
         $ids = explode("_",$ids);
+
         if($ids){
             $contain = ['contain' =>['Medicines', 'Tests']];
             $diagnosis = $this->Diagnosis->find('all',$contain)->where([
                     'Diagnosis.id IN ' => $ids
                 ]);
+
+            $medicines = $this->prepareMedicines($diagnosis);
+            $tests = $this->prepareTests($diagnosis);
+
+            $this->log($medicines);
+            $this->log($tests);
         }
 
-        echo json_encode($diagnosis);die;
+        echo json_encode(array('medicines' => $medicines, 'tests' => $tests));die;
+    }
+
+    function prepareMedicines($diagnosis){
+        $medicines = [];
+        foreach($diagnosis as $item){
+            if($item->medicines){
+                foreach($item->medicines as $medicine){
+                    $medicines[$medicine->id] = $medicine->name;
+                }
+            }
+        }
+        return $medicines;
+    }
+
+    function prepareTests($diagnosis){
+        $tests = [];
+        foreach($diagnosis as $item){
+            if($item->tests){
+                foreach($item->tests as $test){
+                    $tests[$test->id] = $test->name;
+                }
+            }
+        }
+        return $tests;
     }
 }
