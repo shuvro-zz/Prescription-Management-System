@@ -13,7 +13,7 @@
                     if(strtolower($this->request->params['action']) == 'edit'){
                         echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select',  'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=>true,'onchange'=>'getUserInfo(this.value)'  ]);
                     }else{
-                        echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true,'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
+                        echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true,'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
                     }
                     ?>
                 </div>

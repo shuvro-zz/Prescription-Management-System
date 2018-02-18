@@ -119,7 +119,6 @@ function getDiagnosis(e){
     $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
     if(all_id!=''){
         $.post(home_url+'admin/diagnosis/get-diagnosis/'+all_id ,function(response){
-            console.log(response);
             $.each(response.medicines, function( id, value ) {
                 $('.medicines .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
             });
@@ -127,6 +126,8 @@ function getDiagnosis(e){
             $.each(response.tests, function( id, value ) {
                 $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
             });
+
+            $('#all_instructions').val(response.all_instructions);
 
         },'json');
     }

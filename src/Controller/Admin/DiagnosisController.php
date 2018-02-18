@@ -180,11 +180,15 @@ class DiagnosisController extends AppController
             $medicines = $this->prepareMedicines($diagnosis);
             $tests = $this->prepareTests($diagnosis);
 
-            $this->log($medicines);
-            $this->log($tests);
+            $instructions = array();
+            foreach($diagnosis as $item){
+                $instructions[] = $item->instructions;
+            }
+
+            $all_instructions = nl2br(implode(', ',$instructions));
         }
 
-        echo json_encode(array('medicines' => $medicines, 'tests' => $tests));die;
+        echo json_encode(array('medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions));die;
     }
 
     function prepareMedicines($diagnosis){

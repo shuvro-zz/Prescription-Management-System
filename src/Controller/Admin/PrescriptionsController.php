@@ -100,7 +100,7 @@ class PrescriptionsController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id = null)
     {
         $prescription = $this->Prescriptions->newEntity();
 
@@ -148,13 +148,19 @@ class PrescriptionsController extends AppController
             $users[$get_user->id] = $get_user->first_name." - " . "$get_user->phone";
         }
 
-        $prescription_medicines = array('medicine_id'=>'');
+        //$prescription_medicines = array('medicine_id'=>'');
         $prescription_tests = array('test_id'=>'');
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
         $diagnosis = $this->getDiagnosisInfo();
 
-        $this->set(compact('prescription', 'users', 'prescription_medicines', 'prescription_tests', 'medicines', 'tests', 'diagnosis'));
+        if($id){
+            $patient = $this->Prescriptions->Users->get($id);
+            $prescription->user = $patient->toArray();
+        }
+
+
+        $this->set(compact('prescription', 'users', 'prescription_tests', 'medicines', 'tests', 'diagnosis'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -392,7 +398,7 @@ class PrescriptionsController extends AppController
                 if($latest_prescription){
                     return $this->redirect(['action' => 'edit/'.$latest_prescription->id]);
                 }else{
-                    return $this->redirect(['action' => 'add']);
+                    return $this->redirect(['action' => 'add/'.$patient_id]);
                 }
             }else{
                 $this->Flash->admin_warning('Patient could not found, Please select a Patient', ['key' => 'admin_warning']);
