@@ -120,9 +120,6 @@ class PrescriptionsController extends AppController
                 $this->request->data['user_id'] = $patient_id;
             }
 
-
-
-
             $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
 
@@ -130,14 +127,11 @@ class PrescriptionsController extends AppController
 
             $prescription = $this->Prescriptions->save($prescription);
 
-
-
             if ($prescription) {
                 /*$this->savePrescriptionMedicines($medicines, $prescription->id);
                 $this->savePrescriptionTests($tests, $prescription->id);*/
 
                 $this->savePrescriptionsDiagnosis($diagnosis, $prescription->id);
-
 
                 $this->Flash->adminSuccess('The prescription has been saved.', ['key' => 'admin_success']);
                 return $this->redirect(['action' => 'index']);
