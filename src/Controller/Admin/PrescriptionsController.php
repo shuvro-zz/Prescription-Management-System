@@ -517,8 +517,6 @@ class PrescriptionsController extends AppController
 
     }
 
-
-
     function savePrescriptionsDiagnosis($diagnosis, $prescription_id){
         // Start: Prescriptions diagnosis
         $this->loadModel('PrescriptionsDiagnosis');
@@ -534,7 +532,7 @@ class PrescriptionsController extends AppController
                 }
             }
         }
-        // End: Prescriptions medicines
+        // End: Prescriptions diagnosis
     }
 
     function prepareDiagnosis($diagnosis,$prescription_id){

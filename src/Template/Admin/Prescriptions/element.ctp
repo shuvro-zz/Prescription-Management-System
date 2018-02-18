@@ -18,7 +18,7 @@
     <h2>Diagnosis</h2>
     <div class="col-sm-12">
         <div class="form-row">
-            <div class="inputs diagnosis_list">
+            <div class="inputs ">
                 <!--<ul>
                     <?php
 /*                    foreach($diagnosis as $item){
@@ -27,7 +27,7 @@
                     */?>
                 </ul>-->
                 <?php foreach($diagnosis as $id=>$name){ ?>
-                <div class="checkbox">
+                <div class="checkbox" style="margin-top: 0px">
                     <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>
                 </div>
                 <?php } ?>
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-sm-6">
         <div class="form-row">
             <label class="name">Temperature</label>
             <div class="inputs">
@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-sm-6">
         <div class="form-row">
             <label class="name">Blood Pressure</label>
             <div class="inputs">
