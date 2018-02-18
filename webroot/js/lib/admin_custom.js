@@ -82,11 +82,13 @@ function getUserInfo(user_id){
     if(user_id==''){
         $('.reset_patient').val('');
     }else{
+        $('#loading').removeClass('hide');
         $.post(home_url+'admin/users/get-user/'+user_id,function(response){
             console.log(response);
             $('#user-phone').val(response.phone);
             $('#user-email').val(response.email);
             $('#user-age').val(response.age);
+            $('#loading').addClass('hide');
         },'json');
     }
 }
@@ -118,6 +120,7 @@ function getDiagnosis(e){
     $('.medicines .tokenize-sortable-demo1').trigger('tokenize:clear');
     $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
     if(all_id!=''){
+        $('#loading').removeClass('hide');
         $.post(home_url+'admin/diagnosis/get-diagnosis/'+all_id ,function(response){
             $.each(response.medicines, function( id, value ) {
                 $('.medicines .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
@@ -128,6 +131,7 @@ function getDiagnosis(e){
             });
 
             $('#all_instructions').val(response.all_instructions);
+            $('#loading').addClass('hide');
 
         },'json');
     }

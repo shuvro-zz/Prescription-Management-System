@@ -17,7 +17,8 @@
     <h2>Diagnosis</h2>
     <div class="col-sm-12">
         <div class="form-row">
-            <div class="inputs ">
+            <div style="height: 20px;text-align: center"><div id="loading" class="hide">Loading...</div></div>
+            <div class="inputs">
                 <?php foreach($diagnosis as $id=>$name){ ?>
                 <div class="checkbox" style="margin-top: 0px">
                     <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>
