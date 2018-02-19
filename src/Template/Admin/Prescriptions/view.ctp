@@ -118,7 +118,16 @@
                         <b>Address : </b> <span> <?= ucfirst($prescription->user->address_line1) ?> </span>
                     </div>
                     <div>
-                        <b>Diagnosis : </b><?= ucfirst($prescription->diagnosis) ?>
+                        <b>Diagnosis : </b>
+                        <?php
+                            foreach($prescription->diagnosis as $diagnosis ) {
+                                if($diagnosis === end($prescription->diagnosis) ){
+                                    echo ucfirst($diagnosis->name)."  ";
+                                }else{
+                                    echo ucfirst($diagnosis->name).", ";
+                                }
+                            }
+                        ?>
                     </div>
                     <div>
                         <b>Temperature : </b><?= $prescription->temperature ?>

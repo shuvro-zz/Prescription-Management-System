@@ -42,7 +42,7 @@ class PrescriptionsController extends AppController
         }
 
         $this->paginate = [
-            'contain' => ['Users'],
+            'contain' => ['Users','Diagnosis'],
             'limit' => 30,
             'order' => [
                 'Prescriptions.id' => 'desc'
@@ -73,6 +73,7 @@ class PrescriptionsController extends AppController
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
         ]);
+
 
         $doctor_id = $this->request->session()->read('Auth.User.id');
         $patient_id = $prescription->user->id;
@@ -272,7 +273,6 @@ class PrescriptionsController extends AppController
             $where = ['Prescriptions.doctor_id' => $doctor_id,
                 $patients_prescription,
                 'OR' => ["(
-                    Prescriptions.diagnosis LIKE '%$search%' OR
                     CONCAT( Users.first_name, ' ', Users.last_name ) LIKE '%$search%' OR
                     Users.phone LIKE '%$search%'
                     )"]

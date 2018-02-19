@@ -211,7 +211,15 @@ class PdfHandlerComponent extends Component
                             <tr><td>Name: '. ucfirst($prescription->user->first_name).' , Age:'. $prescription->user->age .' Years' .'</td></tr>
                             <tr><td>Mobile: '. $prescription->user->phone .'</td></tr>
                             <tr><td>Address: '. ucfirst($prescription->user->address_line1) .'</td></tr>
-                            <tr><td>Diagnosis: '. ucfirst($prescription->diagnosis) .'</td></tr>
+                            <tr><td>Diagnosis: ';
+                                foreach($prescription->diagnosis as $diagnosis ) {
+                                    if($diagnosis === end($prescription->diagnosis) ){
+                                        $html .= ucfirst($diagnosis->name)."  ";
+                                    }else{
+                                        $html .= ucfirst($diagnosis->name).", ";
+                                    }
+                                }
+                            $html .= '</td></tr>
                             <tr><td>Temperature: '. ucfirst($prescription->temperature) .'</td></tr>
                             <tr><td>Blood Pressure: '. ucfirst($prescription->blood_pressure) .'</td></tr>
                         </table>

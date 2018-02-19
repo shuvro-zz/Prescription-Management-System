@@ -56,7 +56,17 @@
                     <tr>
                         <td><?= ucfirst(h($prescription->user->first_name)) ?></td>
                         <td><?= h($prescription->user->phone) ?></td>
-                        <td><?= h($prescription->diagnosis) ?></td>
+                        <td>
+                            <?php
+                                foreach($prescription->diagnosis as $diagnosis ) {
+                                    if($diagnosis === end($prescription->diagnosis) ){
+                                        echo ucfirst($diagnosis->name)."  ";
+                                    }else{
+                                        echo ucfirst($diagnosis->name).", ";
+                                    }
+                                }
+                            ?>
+                        </td>
                         <td><?= h($prescription->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">

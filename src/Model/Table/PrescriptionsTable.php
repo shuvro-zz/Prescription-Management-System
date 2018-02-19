@@ -50,6 +50,12 @@ class PrescriptionsTable extends Table
             'targetForeignKey' => 'test_id',
             'joinTable' => 'prescriptions_tests'
         ]);
+
+        $this->belongsToMany('Diagnosis', [
+            'foreignKey' => 'prescription_id',
+            'targetForeignKey' => 'diagnosis_id',
+            'joinTable' => 'prescriptions_diagnosis'
+        ]);
     }
 
     /**
