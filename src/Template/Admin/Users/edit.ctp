@@ -1,4 +1,8 @@
-<?= $this->Form->create($user) ?>
+<?php
+//$this->params['controller'];
+?>
+
+<?= $this->Form->create($user, array('id' => 'userForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -36,3 +40,27 @@
 
 </section>
 <?= $this->Form->end() ?>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        //alert(SITE_URL+'admin/tests/is_test_available');
+
+        jQuery('#userForm').validate({
+            rules:{
+                'phone': {
+                    remote: {
+                        url: SITE_URL+'admin/Users/isUserAvailable',
+                        type: "post",
+                        data: {
+                            phone: function(){ return jQuery("#userPhone").val(); }
+                        }
+                    }
+                }
+            },
+            messages: {
+                'phone': {
+                    remote: 'The Patient already exist.'
+                }
+            }
+        });
+    });
+</script>

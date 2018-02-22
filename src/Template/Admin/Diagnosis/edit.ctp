@@ -1,5 +1,5 @@
 
-<?= $this->Form->create($diagnosi) ?>
+<?= $this->Form->create($diagnosi,array('id'=>'diagnosisForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">

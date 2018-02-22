@@ -1,5 +1,5 @@
 
-<?= $this->Form->create($test) ?>
+<?= $this->Form->create($test,array('id'=>'testForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -21,7 +21,7 @@
                                             <div class="form-row">
                                                 <label class="name">Name<span class="required" aria-required="true"></span></label>
                                                 <div class="inputs">
-                                                   <?php echo $this->Form->input('name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                   <?php echo $this->Form->input('name', ['class' => 'form-control','id'=>'testName', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,3 +47,30 @@
     
 </section>
 <?= $this->Form->end() ?>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+         //alert(SITE_URL+'admin/tests/is_test_available');
+
+        jQuery('#testForm').validate({
+            rules:{
+                'name': {
+                    remote: {
+                        url: SITE_URL+'admin/Tests/isTestAvailable',
+                        type: "post",
+                        data: {
+                            name: function(){ return jQuery("#testName").val(); }
+                        }
+                    }
+                }
+            },
+            messages: {
+                'name': {
+                    remote: 'The Test already exist.'
+                }
+            }
+        });
+
+
+    });
+</script>

@@ -123,7 +123,9 @@ class UsersController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+
             $user = $this->Users->patchEntity($user, $this->request->data);
+
             if ($this->Users->save($user)) {
                 $success_message = __('The patient has been edited.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -423,4 +425,14 @@ class UsersController extends AppController
        echo json_encode($this->Users->get($user_id));die;
     }
 
+    function isUserAvailable(){
+        $this->autoRender = false;
+
+        $phone = $this->Users->findByPhone($this->request->data['phone']);
+        if(empty($phone->toArray())){
+            echo 'true';die;
+        }else{
+            echo 'false';die;
+        }
+    }
 }

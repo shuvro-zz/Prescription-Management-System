@@ -173,4 +173,15 @@ class MedicinesController extends AppController
         $session->delete('medicines_search_query');
         $this->redirect(['action' => 'index']);
     }
+
+    function isMedicineAvailable(){
+        $this->autoRender = false;
+        $medicine = $this->Medicines->findByName($this->request->data['name']);
+        if(empty($medicine->toArray())){
+            echo 'true';die;
+        }else{
+            echo 'false';die;
+        }
+
+    }
 }

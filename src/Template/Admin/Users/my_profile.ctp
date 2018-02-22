@@ -1,4 +1,4 @@
-<?= $this->Form->create($user) ?>
+<?= $this->Form->create($user, array('id' => 'userForm')) ?>
     <section class="workspace">
         <div class="workspace-body">
             <div class="page-heading">
@@ -27,7 +27,7 @@
                                         <div class="panel-heading"><?= __('Edit Profile') ?></div>
                                         <div class="panel-body">
                                             <?php
-                                            echo '<div class="form-row">
+                                            echo '<div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">First Name<span class="required" aria-required="true"></span></label>
                                                         <div class="inputs">';
@@ -42,7 +42,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-row">
+                                            <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Address Line1<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">';
@@ -57,7 +57,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-row">
+                                            <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Email<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">';
@@ -73,7 +73,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-row">
+                                            <div class="form-group">
                                                 <div class="col-sm-12">
                                                     <label class="name">Educational Qualification<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">';
@@ -82,7 +82,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-row">
+                                            <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Clinic/Hospital Name<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">';
@@ -130,3 +130,16 @@
 
     </section>
 <?= $this->Form->end() ?>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        //alert(SITE_URL+'admin/tests/is_test_available');
+
+        jQuery('#userForm').validate({
+            rules:{
+            },
+            messages: {
+            }
+        });
+    });
+</script>

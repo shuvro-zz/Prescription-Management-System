@@ -161,4 +161,16 @@ class TestsController extends AppController
         $session->delete('tests_search_query');
         $this->redirect(['action' => 'index']);
     }
+
+    function isTestAvailable(){
+        $this->autoRender = false;
+        $test = $this->Tests->findByName($this->request->data['name']);
+        if(empty($test->toArray())){
+            echo 'true';die;
+        }else{
+            echo 'false';die;
+        }
+
+    }
+
 }

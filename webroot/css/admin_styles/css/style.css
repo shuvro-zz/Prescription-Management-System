@@ -142,7 +142,9 @@ button, .wizard-config .btn-continue{
     height: 13px;
     margin-left: -20px;
 }
-
+.form-group .required{
+    color: #ff0000;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

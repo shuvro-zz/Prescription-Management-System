@@ -1,4 +1,4 @@
-<?= $this->Form->create($medicine) ?>
+<?= $this->Form->create($medicine,array('id'=>'medicineForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -21,7 +21,7 @@
                                             <div class="form-row">
                                                 <label class="name">Name<span class="required" aria-required="true"></span></label>
                                                 <div class="inputs">';
-                                                    echo $this->Form->input('name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
+                                                    echo $this->Form->input('name', ['class' => 'form-control', 'id' => 'medicineName', 'label' => false, 'required' => true, 'type' =>'text']);
                                                 echo '</div>
                                             </div>
                                          </div>';
@@ -48,3 +48,30 @@
     
 </section>
 <?= $this->Form->end() ?>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        //alert(SITE_URL+'admin/tests/is_test_available');
+
+        jQuery('#medicineForm').validate({
+            rules:{
+                'name': {
+                    remote: {
+                        url: SITE_URL+'admin/Medicines/isMedicineAvailable',
+                        type: "post",
+                        data: {
+                            name: function(){ return jQuery("#medicineName").val(); }
+                        }
+                    }
+                }
+            },
+            messages: {
+                'name': {
+                    remote: 'The Medicine already exist.'
+                }
+            }
+        });
+
+
+    });
+</script>

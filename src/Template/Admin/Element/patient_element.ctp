@@ -2,7 +2,7 @@
     <h2>Patient Info</h2>
     <?php if(strtolower($this->name) == 'prescriptions'){ ?>
         <div class="col-sm-4">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Name<span class="required" aria-required="true"></span>
                     <?php if(strtolower($this->request->params['action']) == 'add'){
                         echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Phone<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
                    <?php echo $this->Form->input('patients.phone', ['class' => 'form-control reset_patient',  'value' => (isset($prescription->user['phone']))? $prescription->user['phone']:'',  'label' => false, 'required' => true, 'type' =>'text', 'id' => 'user-phone']); ?>
@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Email<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
                    <?php echo $this->Form->input('patients.email', ['class' => 'form-control reset_patient',  'value' => (isset($prescription->user['email']))? $prescription->user['email']:'',  'label' => false, 'type' =>'email','id'=>'user-email']); ?>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Age<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
                    <?php echo $this->Form->input('patients.age', ['class' => 'form-control reset_patient',  'value' => (isset($prescription->user['age']))? $prescription->user['age']:'', 'label' => false, 'type' =>'text','id'=>'user-age']); ?>
@@ -53,7 +53,7 @@
         </div>
     <?php }else{ ?>
         <div class="col-sm-6">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Name<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
                     <?php
@@ -63,15 +63,15 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Phone<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('phone', ['class' => 'form-control ',  'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('phone', ['class' => 'form-control ', 'id' => 'userPhone',  'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Email<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
                     <?php echo $this->Form->input('email', ['class' => 'form-control', 'label' => false, 'type' =>'email']); ?>
@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Age<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
                     <?php echo $this->Form->input('age', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="form-row">
+            <div class="form-group">
                 <label class="name">Address<span aria-required="true"></span></label>
                 <div class="inputs">
                     <?php echo $this->Form->input('address_line1', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>

@@ -214,4 +214,17 @@ class DiagnosisController extends AppController
         }
         return $tests;
     }
+
+
+
+    function isDiagnosisAvailable(){
+        $this->autoRender = false;
+        $diagnosis = $this->Diagnosis->findByName($this->request->data['name']);
+        if(empty($diagnosis->toArray())){
+            echo 'true';die;
+        }else{
+            echo 'false';die;
+        }
+
+    }
 }
