@@ -94,5 +94,8 @@
                 </div>
             </div>
         </div>
+
+        <?php echo $this->Form->input('id', ['type' =>'hidden', 'id' => 'patient-id', 'value' => (isset($id)? $id:'') ]); ?>
+
     <?php } ?>
 </div>

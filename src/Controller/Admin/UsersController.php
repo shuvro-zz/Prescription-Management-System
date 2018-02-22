@@ -135,7 +135,8 @@ class UsersController extends AppController
             }
             return $this->redirect(['action' => 'index']);
         }
-        $this->set(compact('user'));
+
+        $this->set(compact('user', 'id'));
         $this->set('_serialize', ['user']);
     }
 
@@ -429,7 +430,9 @@ class UsersController extends AppController
         $this->autoRender = false;
 
         $phone = $this->Users->findByPhone($this->request->data['phone']);
-        if(empty($phone->toArray())){
+
+        $phone = $phone->toArray();
+        if(empty($phone)){
             echo 'true';die;
         }else{
             echo 'false';die;

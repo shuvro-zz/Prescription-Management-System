@@ -11,6 +11,7 @@
                 <li class="active"><a href="#">Edit <?= __('Patient') ?></a></li>
             </ol>
         </div>
+
         <div class="main-container">
             <div class="content">
                 <div class="page-wrap">
