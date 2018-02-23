@@ -59,13 +59,13 @@
                                 echo $this->Html->link(
                                     $all_prescription->created->format('d F Y').' ',
                                     ['action' => 'view', $all_prescription->id],
-                                    ['escapeTitle' => false, 'title' => 'View Prescription']
+                                    ['escapeTitle' => false, 'class' => (($all_prescription->id == $this->request->params['pass'][0])?"current-item":""), 'title' => 'View Prescription']
                                 );
                             }else{
                                 echo $this->Html->link(
                                     $all_prescription->created->format('d F Y').', ',
                                     ['action' => 'view', $all_prescription->id],
-                                    ['escapeTitle' => false, 'title' => 'View Prescription']
+                                    ['escapeTitle' => false, 'class' => (($all_prescription->id == $this->request->params['pass'][0])?"current-item":""), 'title' => 'View Prescription']
                                 );
                             }
                             $i++;
@@ -140,10 +140,11 @@
                         <h4>Medicines</h4>
                             <?php
                             foreach ($prescription->medicines as $medicine){
-                                echo '<div>
-                                        <span class="prescription_caption">'. ucfirst($medicine->name) .' :</span>
-                                       '.(($medicine->_joinData->rule)? '<span>'.$medicine->_joinData->rule.'</span>': "-").'
-                                    </div>';
+                                if($medicine === end($prescription->medicines) ){
+                                    echo ucfirst($medicine->name)."  ";
+                                }else{
+                                    echo ucfirst($medicine->name).", ";
+                                }
                             }
                             ?>
                     </div>
@@ -152,10 +153,11 @@
                         <h4>Tests</h4>
                         <?php
                         foreach ($prescription->tests as $test){
-                            echo '<div>
-                                    <span class="prescription_caption">'. ucfirst($test->name) .'</span>
-                                    '.(($test->_joinData->note)? '<span>( '. $test->_joinData->note .' )</span>':"-").'
-                                </div>';
+                            if($test === end($prescription->tests) ){
+                                echo ucfirst($test->name)."  ";
+                            }else{
+                                echo ucfirst($test->name).", ";
+                            }
                         }
 
                         ?>

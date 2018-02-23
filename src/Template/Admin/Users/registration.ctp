@@ -16,7 +16,7 @@
             <input type="text" name="last_name" class="md-input" id="lastName" placeholder="Last Name" required="required">
             <input type="text" name="email" class="md-input" id="email" placeholder="Email" required="required">
             <input type="password" name="password" class="md-input" id="password" placeholder="Password" required="required" >
-            <input type="password" name="confirm_password" class="md-input" id="confirm_password" placeholder="Comfarim Password" required="required" equalTo="#password" >
+            <input type="password" name="confirm_password" class="md-input" id="confirm_password" placeholder="Confirm Password" required="required" equalTo="#password" >
             <input type="submit" value="Registration">
 
         </div>

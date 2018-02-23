@@ -233,20 +233,20 @@ class PdfHandlerComponent extends Component
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                   <td width="60%">
+                   <td>
                         <table>
-                            <tr><td class="medicine_head">Medicines</td></tr>'?>
+                            <tr><td class="medicine_head">Medicines</td></tr><tr><td>'?>
                             <?php
 
-                            foreach ($prescription->medicines as $medicine){
-                                $html.= '<tr><td>'.$medicine->name .': '.(($medicine->_joinData->rule)? $medicine->_joinData->rule:'-').'</td></tr>';
+                            foreach($prescription->medicines as $medicine ) {
+                                if($medicine === end($prescription->medicines) ){
+                                    $html .= ucfirst($medicine->name)."  ";
+                                }else{
+                                    $html .= ucfirst($medicine->name).", ";
+                                }
                             }
-
-                        $html.= '</table>
-                    </td>
-                    <td width="40%">
-                        &nbsp;
-                    </td>
+                        $html.= '</td></tr></table>
+                   </td>
                 </tr>
 
                 <tr>
@@ -255,23 +255,24 @@ class PdfHandlerComponent extends Component
                 </tr>
 
                 <tr>
-                    <td width="60%">
+                    <td>
                         <table>
-                            <tr><td class="test_head">Tests</td></tr>'?>
+                            <tr><td class="test_head">Tests</td></tr><tr><td>'?>
                                 <?php
 
-                                foreach ($prescription->tests as $test){
-                                    $html.= '<tr><td>'.$test->name .': '.(($test->_joinData->note)?  '('.$test->_joinData->note.')':'-').'</td></tr>';
+                                foreach($prescription->tests as $test ) {
+                                    if($test === end($prescription->tests) ){
+                                        $html .= ucfirst($test->name)."  ";
+                                    }else{
+                                        $html .= ucfirst($test->name).", ";
+                                    }
                                 }
-                            $html.='<tr><td>&nbsp;</td></tr>
+                            $html.='</td></tr><tr><td>&nbsp;</td></tr>
                                     <tr><td>&nbsp;</td></tr>
 
                             <tr><td class="test_head">Doctors Note:</td></tr>
                             <tr><td>'.$prescription->doctores_notes.'</td></tr>
                         </table>
-                    </td>
-                    <td width="40%">
-                        &nbsp;
                     </td>
                 </tr>
             </table>

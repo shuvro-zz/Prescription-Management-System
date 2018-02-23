@@ -13,12 +13,12 @@
         }
     ?>
 
-<div class="panel-body">
+<div class="panel-body diagnosis_section">
     <h2>Diagnosis</h2>
     <div class="col-sm-12">
         <div class="form-row">
-            <div style="height: 20px;text-align: center"><div id="loading" class="hide">Loading...</div></div>
-            <div class="inputs">
+            <div style="height: 20px;text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:36px;"></i> </div></div>
+            <div class="inputs diagnosis_info">
                 <?php foreach($diagnosis as $id=>$name){ ?>
                 <div class="checkbox" style="margin-top: 0px">
                     <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>

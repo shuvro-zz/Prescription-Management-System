@@ -1,20 +1,15 @@
 # --------------------------------------------------------
 # Host:                         127.0.0.1
-# Server version:               5.5.5-10.1.16-MariaDB
+# Server version:               5.5.5-10.1.25-MariaDB
 # Server OS:                    Win32
 # HeidiSQL version:             6.0.0.3603
-# Date/time:                    2018-02-07 15:56:17
+# Date/time:                    2018-02-23 20:45:16
 # --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-# Dumping database structure for pms
-DROP DATABASE IF EXISTS `pms`;
-CREATE DATABASE IF NOT EXISTS `pms` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `pms`;
 
 
 # Dumping structure for table pms.attendees
@@ -360,6 +355,77 @@ REPLACE INTO `countries` (`id`, `name`, `iso_code_2`, `iso_code_3`) VALUES
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 
 
+# Dumping structure for table pms.diagnosis
+DROP TABLE IF EXISTS `diagnosis`;
+CREATE TABLE IF NOT EXISTS `diagnosis` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `doctor_id` int(10) NOT NULL DEFAULT '0',
+  `name` varchar(222) NOT NULL,
+  `instructions` text,
+  `status` tinyint(1) DEFAULT '1',
+  `created` timestamp NULL DEFAULT NULL,
+  `updated` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+# Dumping data for table pms.diagnosis: ~3 rows (approximately)
+/*!40000 ALTER TABLE `diagnosis` DISABLE KEYS */;
+REPLACE INTO `diagnosis` (`id`, `doctor_id`, `name`, `instructions`, `status`, `created`, `updated`) VALUES
+	(2, 101, 'Cervical Cancer', 'instructions goes here', 1, '2018-02-15 11:07:54', NULL),
+	(3, 101, 'fevar', 'instructions goes here', 1, '2018-02-16 08:20:17', NULL),
+	(4, 101, 'Cervical Cancer-1', 'instructions goes here1', 1, '2018-02-16 09:14:52', NULL);
+/*!40000 ALTER TABLE `diagnosis` ENABLE KEYS */;
+
+
+# Dumping structure for table pms.diagnosis_medicines
+DROP TABLE IF EXISTS `diagnosis_medicines`;
+CREATE TABLE IF NOT EXISTS `diagnosis_medicines` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `medicine_id` int(10) NOT NULL,
+  `diagnosis_id` int(10) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+# Dumping data for table pms.diagnosis_medicines: ~6 rows (approximately)
+/*!40000 ALTER TABLE `diagnosis_medicines` DISABLE KEYS */;
+REPLACE INTO `diagnosis_medicines` (`id`, `medicine_id`, `diagnosis_id`, `status`, `created`, `updated`) VALUES
+	(3, 4, 2, 1, '2018-02-15 17:07:54', '0000-00-00 00:00:00'),
+	(4, 13, 2, 1, '2018-02-15 17:07:54', '0000-00-00 00:00:00'),
+	(7, 6, 4, 1, '2018-02-16 15:14:52', '0000-00-00 00:00:00'),
+	(8, 7, 4, 1, '2018-02-16 15:14:52', '0000-00-00 00:00:00'),
+	(9, 15, 3, 1, '2018-02-17 19:25:05', '0000-00-00 00:00:00'),
+	(10, 16, 3, 1, '2018-02-17 19:25:05', '0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `diagnosis_medicines` ENABLE KEYS */;
+
+
+# Dumping structure for table pms.diagnosis_tests
+DROP TABLE IF EXISTS `diagnosis_tests`;
+CREATE TABLE IF NOT EXISTS `diagnosis_tests` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `test_id` int(10) NOT NULL,
+  `diagnosis_id` int(10) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+# Dumping data for table pms.diagnosis_tests: ~7 rows (approximately)
+/*!40000 ALTER TABLE `diagnosis_tests` DISABLE KEYS */;
+REPLACE INTO `diagnosis_tests` (`id`, `test_id`, `diagnosis_id`, `status`, `created`, `updated`) VALUES
+	(2, 4, 2, 1, '2018-02-15 17:07:54', '0000-00-00 00:00:00'),
+	(3, 7, 2, 1, '2018-02-15 17:07:54', '0000-00-00 00:00:00'),
+	(4, 11, 2, 1, '2018-02-15 17:07:54', '0000-00-00 00:00:00'),
+	(6, 11, 3, 1, '2018-02-16 14:20:17', '0000-00-00 00:00:00'),
+	(7, 5, 4, 1, '2018-02-16 15:14:52', '0000-00-00 00:00:00'),
+	(8, 7, 4, 1, '2018-02-16 15:14:52', '0000-00-00 00:00:00'),
+	(9, 9, 3, 1, '2018-02-17 19:25:05', '0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `diagnosis_tests` ENABLE KEYS */;
+
+
 # Dumping structure for table pms.events
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE IF NOT EXISTS `events` (
@@ -392,9 +458,9 @@ CREATE TABLE IF NOT EXISTS `medicines` (
   `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
-# Dumping data for table pms.medicines: ~11 rows (approximately)
+# Dumping data for table pms.medicines: ~13 rows (approximately)
 /*!40000 ALTER TABLE `medicines` DISABLE KEYS */;
 REPLACE INTO `medicines` (`id`, `name`, `status`, `created`, `updated`) VALUES
 	(4, 'Actiq', 1, '2018-01-10 16:57:55', '0000-00-00 00:00:00'),
@@ -407,7 +473,9 @@ REPLACE INTO `medicines` (`id`, `name`, `status`, `created`, `updated`) VALUES
 	(11, 'Lasix', 1, '2018-01-10 17:00:45', '0000-00-00 00:00:00'),
 	(12, 'Lipitor', 1, '2018-01-10 17:01:03', '0000-00-00 00:00:00'),
 	(13, 'Questran', 1, '2018-01-10 17:01:24', '0000-00-00 00:00:00'),
-	(14, 'Abdominal Cramps', 1, '2018-01-15 16:48:15', '0000-00-00 00:00:00');
+	(14, 'Abdominal Cramps', 1, '2018-01-15 16:48:15', '0000-00-00 00:00:00'),
+	(15, 'Napa', 1, '2018-02-17 13:24:14', '0000-00-00 00:00:00'),
+	(16, 'Napa Extra', 1, '2018-02-17 13:24:28', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `medicines` ENABLE KEYS */;
 
 
@@ -417,115 +485,100 @@ CREATE TABLE IF NOT EXISTS `prescriptions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL DEFAULT '0',
   `doctor_id` int(11) NOT NULL DEFAULT '0',
-  `diagnosis` varchar(222) NOT NULL DEFAULT '0',
-  `temperature` varchar(222) NOT NULL DEFAULT '0',
-  `blood_pressure` varchar(222) NOT NULL DEFAULT '0',
-  `doctores_notes` text NOT NULL,
+  `diagnosis` varchar(222) DEFAULT '0',
+  `temperature` varchar(222) DEFAULT '0',
+  `blood_pressure` varchar(222) DEFAULT '0',
+  `doctores_notes` text,
   `pdf_file` varchar(222) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1',
   `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
-# Dumping data for table pms.prescriptions: ~94 rows (approximately)
+# Dumping data for table pms.prescriptions: ~22 rows (approximately)
 /*!40000 ALTER TABLE `prescriptions` DISABLE KEYS */;
 REPLACE INTO `prescriptions` (`id`, `user_id`, `doctor_id`, `diagnosis`, `temperature`, `blood_pressure`, `doctores_notes`, `pdf_file`, `status`, `created`, `updated`) VALUES
-	(1, 6, 0, 'Childhood Obesity', '0', '0', '0', NULL, 1, '2018-01-15 11:47:14', '0000-00-00 00:00:00'),
-	(2, 76, 0, 'Constipation', '0', '0', '0', NULL, 1, '2018-01-15 11:48:03', '0000-00-00 00:00:00'),
-	(3, 77, 0, 'Headache, Migraine', '0', '0', '0', NULL, 1, '2018-01-15 11:49:25', '0000-00-00 00:00:00'),
-	(4, 88, 0, 'Substance Use Disorders', '0', '0', '0', NULL, 1, '2018-01-15 11:52:34', '0000-00-00 00:00:00'),
-	(5, 89, 0, 'Depression', '0', '0', '0', NULL, 1, '2018-01-15 11:53:29', '0000-00-00 00:00:00'),
-	(6, 6, 0, 'Hypertension', '0', '0', '0', NULL, 1, '2018-01-15 11:54:38', '0000-00-00 00:00:00'),
-	(7, 90, 0, 'Food Allergy', '0', '0', '0', NULL, 1, '2018-01-15 11:55:29', '0000-00-00 00:00:00'),
-	(8, 91, 0, 'Speech Defects', '0', '0', '0', NULL, 1, '2018-01-15 11:56:23', '0000-00-00 00:00:00'),
-	(9, 91, 0, 'Autism Spectrum Disorder', '0', '0', '0', NULL, 1, '2018-01-15 11:57:26', '0000-00-00 00:00:00'),
-	(10, 91, 0, 'Headache, Chronic Daily1', '0', '0', '0', NULL, 1, '2018-01-15 11:58:10', '0000-00-00 00:00:00'),
-	(11, 6, 0, 'Abdominoplasty', '0', '0', '0', NULL, 1, '2018-01-16 11:19:30', '0000-00-00 00:00:00'),
-	(12, 92, 0, 'Cerebral Palsy', '0', '0', '0', NULL, 1, '2018-01-16 12:04:02', '0000-00-00 00:00:00'),
-	(13, 77, 0, 'fevar', '0', '0', '0', NULL, 1, '2018-01-24 20:54:49', '0000-00-00 00:00:00'),
-	(14, 90, 0, 'bht', '0', '0', '0', NULL, 1, '2018-01-24 21:04:50', '0000-00-00 00:00:00'),
-	(15, 91, 0, 'fevar', '0', '0', '0', NULL, 1, '2018-01-24 21:21:36', '0000-00-00 00:00:00'),
-	(16, 77, 0, 'Abscessed Tooth Guide', '0', '0', '0', NULL, 1, '2018-01-30 06:08:40', '0000-00-00 00:00:00'),
-	(17, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-30 06:14:33', '0000-00-00 00:00:00'),
-	(18, 6, 0, 'Cancer', '0', '0', '0', NULL, 1, '2018-01-30 06:18:03', '0000-00-00 00:00:00'),
-	(19, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-30 07:19:50', '0000-00-00 00:00:00'),
-	(20, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:35:54', '0000-00-00 00:00:00'),
-	(21, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:44:03', '0000-00-00 00:00:00'),
-	(22, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:45:07', '0000-00-00 00:00:00'),
-	(23, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:45:52', '0000-00-00 00:00:00'),
-	(24, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:46:56', '0000-00-00 00:00:00'),
-	(25, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:51:50', '0000-00-00 00:00:00'),
-	(26, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:56:25', '0000-00-00 00:00:00'),
-	(27, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 07:59:28', '0000-00-00 00:00:00'),
-	(28, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:05:15', '0000-00-00 00:00:00'),
-	(29, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:06:26', '0000-00-00 00:00:00'),
-	(30, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:07:35', '0000-00-00 00:00:00'),
-	(31, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:09:20', '0000-00-00 00:00:00'),
-	(32, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:11:09', '0000-00-00 00:00:00'),
-	(33, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:16:38', '0000-00-00 00:00:00'),
-	(34, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:18:02', '0000-00-00 00:00:00'),
-	(35, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:18:27', '0000-00-00 00:00:00'),
-	(36, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:19:36', '0000-00-00 00:00:00'),
-	(37, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 08:19:36', '0000-00-00 00:00:00'),
-	(38, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:20:20', '0000-00-00 00:00:00'),
-	(39, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 08:20:20', '0000-00-00 00:00:00'),
-	(40, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:24:30', '0000-00-00 00:00:00'),
-	(41, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 08:24:31', '0000-00-00 00:00:00'),
-	(42, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:25:50', '0000-00-00 00:00:00'),
-	(43, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 08:25:51', '0000-00-00 00:00:00'),
-	(44, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:32:58', '0000-00-00 00:00:00'),
-	(45, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 08:32:58', '0000-00-00 00:00:00'),
-	(46, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:35:15', '0000-00-00 00:00:00'),
-	(47, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:36:21', '0000-00-00 00:00:00'),
-	(48, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 08:37:13', '0000-00-00 00:00:00'),
-	(49, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 08:49:21', '0000-00-00 00:00:00'),
-	(50, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 08:50:35', '0000-00-00 00:00:00'),
-	(51, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 08:54:01', '0000-00-00 00:00:00'),
-	(52, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 08:55:07', '0000-00-00 00:00:00'),
-	(53, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 08:57:30', '0000-00-00 00:00:00'),
-	(54, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 08:57:52', '0000-00-00 00:00:00'),
-	(55, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 08:57:53', '0000-00-00 00:00:00'),
-	(56, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 09:05:41', '0000-00-00 00:00:00'),
-	(57, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 09:10:01', '0000-00-00 00:00:00'),
-	(58, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 09:10:01', '0000-00-00 00:00:00'),
-	(59, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 09:10:21', '0000-00-00 00:00:00'),
-	(60, 0, 0, '0', '0', '0', '0', NULL, 1, '2018-01-31 09:10:21', '0000-00-00 00:00:00'),
-	(61, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 09:12:48', '0000-00-00 00:00:00'),
-	(62, 77, 0, 'sd', '0', '0', '0', NULL, 1, '2018-01-31 09:14:16', '0000-00-00 00:00:00'),
-	(63, 6, 0, 'asdf', '0', '0', '0', NULL, 1, '2018-01-31 09:14:47', '0000-00-00 00:00:00'),
-	(64, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 09:15:45', '0000-00-00 00:00:00'),
-	(65, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 09:17:03', '0000-00-00 00:00:00'),
-	(66, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 09:18:15', '0000-00-00 00:00:00'),
-	(67, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 09:19:52', '0000-00-00 00:00:00'),
-	(68, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 09:21:57', '0000-00-00 00:00:00'),
-	(69, 6, 0, 'Blood Pressure', '0', '0', '0', NULL, 1, '2018-01-31 09:28:20', '0000-00-00 00:00:00'),
-	(71, 76, 101, 'ret', '0', '0', '0', NULL, 1, '2018-01-31 17:35:00', '0000-00-00 00:00:00'),
-	(72, 77, 0, 'Faver ', '0', '0', '0', NULL, 1, '2018-01-31 18:38:52', '0000-00-00 00:00:00'),
-	(73, 76, 101, 'Faver', '0', '0', '0', NULL, 1, '2018-01-31 19:01:59', '0000-00-00 00:00:00'),
-	(74, 76, 101, 'Faver', '0', '0', '0', NULL, 1, '2018-01-31 19:02:29', '0000-00-00 00:00:00'),
-	(75, 103, 101, 'cancer', '0', '0', '0', NULL, 1, '2018-02-01 09:19:48', '0000-00-00 00:00:00'),
-	(76, 103, 101, 'pain', '0', '0', '0', NULL, 1, '2018-02-01 09:21:57', '0000-00-00 00:00:00'),
-	(77, 76, 101, 'asdf', '0', '0', '0', NULL, 1, '2018-02-01 16:52:13', '0000-00-00 00:00:00'),
-	(78, 76, 101, 'asdf', '0', '0', '0', NULL, 1, '2018-02-01 16:53:00', '0000-00-00 00:00:00'),
-	(80, 76, 101, 'Faver', '0', '0', '0', NULL, 1, '2018-02-01 17:54:08', '0000-00-00 00:00:00'),
-	(82, 88, 101, 'asiditi', '0', '0', '0', NULL, 1, '2018-02-02 07:06:35', '0000-00-00 00:00:00'),
-	(85, 89, 101, 'asiditi', '0', '0', '0', NULL, 1, '2018-02-02 08:12:20', '0000-00-00 00:00:00'),
-	(88, 88, 101, 'Faver', '0', '0', '0', NULL, 1, '2018-02-02 09:49:32', '0000-00-00 00:00:00'),
-	(93, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:05:48', '0000-00-00 00:00:00'),
-	(94, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:06:58', '0000-00-00 00:00:00'),
-	(95, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:13:54', '0000-00-00 00:00:00'),
-	(96, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:14:59', '0000-00-00 00:00:00'),
-	(97, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:15:03', '0000-00-00 00:00:00'),
-	(98, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:15:15', '0000-00-00 00:00:00'),
-	(99, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:19:45', '0000-00-00 00:00:00'),
-	(100, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:28:13', '0000-00-00 00:00:00'),
-	(101, 76, 101, 'paralicis', '0', '0', '0', NULL, 1, '2018-02-02 10:31:26', '0000-00-00 00:00:00'),
-	(104, 90, 101, 'asiditi', '102', 'A+', 'Notes details.....', NULL, 1, '2018-02-02 11:02:37', '0000-00-00 00:00:00'),
-	(105, 89, 101, 'Blood Pressure', '103', 'O+', 'Doctors noties....', NULL, 1, '2018-02-04 01:24:03', '0000-00-00 00:00:00'),
-	(106, 90, 101, 'Abscessed Tooth Guide', '104', 'B+', 'Doctors noties', NULL, 1, '2018-02-04 16:30:33', '0000-00-00 00:00:00'),
-	(107, 103, 101, 'taifoed', '93', 'normal', 'doctors note goes here.......', 'prescription-1517937608.pdf', 1, '2018-02-05 06:17:43', '0000-00-00 00:00:00');
+	(8, 0, 101, 'Faver', '93', 'high', 'ftgerwge fghtr', NULL, 1, '2018-02-11 15:19:21', '0000-00-00 00:00:00'),
+	(9, 0, 101, '5ty54ey', '34', 'hth', '', NULL, 1, '2018-02-11 16:54:29', '0000-00-00 00:00:00'),
+	(10, 0, 101, 'dfg', '435', 'fbvd', 'vxv', NULL, 1, '2018-02-11 17:06:33', '0000-00-00 00:00:00'),
+	(11, 115, 101, 'gfdg', '654', 'fgfd', 'gd', NULL, 1, '2018-02-11 17:09:47', '0000-00-00 00:00:00'),
+	(12, 116, 101, 'fghfd', '64', 'fsfg', 'vxcvg', NULL, 1, '2018-02-11 17:15:03', '0000-00-00 00:00:00'),
+	(19, 112, 101, 'sdf', '', '', '', NULL, 1, '2018-02-11 18:13:48', '0000-00-00 00:00:00'),
+	(29, 104, 101, '', '', '', '', NULL, 1, '2018-02-17 19:58:46', '0000-00-00 00:00:00'),
+	(30, 105, 101, '0', '', '', '', NULL, 1, '2018-02-18 07:58:34', '0000-00-00 00:00:00'),
+	(31, 105, 101, '0', '100', 'O+', 'instructions goes here, instructions goes here, instructions goes here1', 'prescription-1519054349.pdf', 1, '2018-02-18 15:44:04', '0000-00-00 00:00:00'),
+	(32, 105, 101, '0', '100', 'O+', 'instructions goes here, instructions goes here, instructions goes here1', 'prescription-1519383973.pdf', 1, '2018-02-19 16:07:17', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `prescriptions` ENABLE KEYS */;
+
+
+# Dumping structure for table pms.prescriptions_diagnosis
+DROP TABLE IF EXISTS `prescriptions_diagnosis`;
+CREATE TABLE IF NOT EXISTS `prescriptions_diagnosis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prescription_id` int(11) NOT NULL,
+  `diagnosis_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+# Dumping data for table pms.prescriptions_diagnosis: ~9 rows (approximately)
+/*!40000 ALTER TABLE `prescriptions_diagnosis` DISABLE KEYS */;
+REPLACE INTO `prescriptions_diagnosis` (`id`, `prescription_id`, `diagnosis_id`, `status`, `created`, `updated`) VALUES
+	(3, 29, 4, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(4, 30, 3, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(5, 30, 4, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(10, 31, 2, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(11, 31, 3, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(12, 31, 4, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(16, 32, 2, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(17, 32, 3, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(18, 32, 4, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `prescriptions_diagnosis` ENABLE KEYS */;
+
+
+# Dumping structure for table pms.prescriptions_medicines
+DROP TABLE IF EXISTS `prescriptions_medicines`;
+CREATE TABLE IF NOT EXISTS `prescriptions_medicines` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prescription_id` int(11) NOT NULL,
+  `medicine_id` int(11) NOT NULL,
+  `rule` varchar(222) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+# Dumping data for table pms.prescriptions_medicines: ~40 rows (approximately)
+/*!40000 ALTER TABLE `prescriptions_medicines` DISABLE KEYS */;
+REPLACE INTO `prescriptions_medicines` (`id`, `prescription_id`, `medicine_id`, `rule`, `status`, `created`, `updated`) VALUES
+	(28, 8, 4, '1-1-1', 1, '2018-02-11 15:19:21', '0000-00-00 00:00:00'),
+	(29, 9, 5, '1-1-1', 1, '2018-02-11 16:54:29', '0000-00-00 00:00:00'),
+	(30, 10, 5, '0-0-1', 1, '2018-02-11 17:06:33', '0000-00-00 00:00:00'),
+	(31, 11, 4, '1-1-1', 1, '2018-02-11 17:09:47', '0000-00-00 00:00:00'),
+	(33, 12, 4, '0-0-1', 1, '2018-02-11 17:23:00', '0000-00-00 00:00:00'),
+	(40, 19, 6, '', 1, '2018-02-11 18:13:48', '0000-00-00 00:00:00'),
+	(69, 29, 6, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(70, 30, 6, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(71, 30, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(72, 30, 15, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(73, 30, 16, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(82, 31, 4, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(83, 31, 13, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(84, 31, 6, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(85, 31, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(86, 31, 15, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(87, 31, 16, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(88, 32, 4, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(89, 32, 6, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(90, 32, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(91, 32, 13, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(92, 32, 15, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(93, 32, 16, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `prescriptions_medicines` ENABLE KEYS */;
 
 
 # Dumping structure for table pms.prescriptions_tests
@@ -539,136 +592,34 @@ CREATE TABLE IF NOT EXISTS `prescriptions_tests` (
   `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
-# Dumping data for table pms.prescriptions_tests: ~81 rows (approximately)
+# Dumping data for table pms.prescriptions_tests: ~40 rows (approximately)
 /*!40000 ALTER TABLE `prescriptions_tests` DISABLE KEYS */;
 REPLACE INTO `prescriptions_tests` (`id`, `prescription_id`, `test_id`, `note`, `status`, `created`, `updated`) VALUES
-	(1, 1, 4, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(2, 1, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(3, 2, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(4, 2, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(5, 3, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(6, 3, 8, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(7, 3, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(8, 4, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(9, 4, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(10, 4, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(11, 4, 10, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(12, 5, 8, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(13, 5, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(14, 5, 10, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(15, 6, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(16, 6, 8, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(17, 7, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(18, 7, 10, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(19, 7, 11, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(20, 8, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(21, 8, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(22, 8, 10, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(23, 9, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(24, 9, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(25, 9, 8, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(26, 9, 10, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(27, 10, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(28, 10, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(29, 10, 8, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(31, 12, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(32, 12, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(33, 13, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(34, 14, 4, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(35, 15, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(36, 18, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(37, 18, 10, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(38, 20, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(39, 21, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(40, 22, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(41, 23, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(42, 24, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(43, 25, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(44, 26, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(45, 27, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(46, 28, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(47, 29, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(48, 30, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(49, 31, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(50, 32, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(51, 33, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(52, 34, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(53, 35, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(54, 36, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(55, 38, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(56, 40, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(57, 44, 5, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(58, 46, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(59, 47, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(60, 48, 9, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(61, 49, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(62, 50, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(63, 51, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(64, 52, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(65, 53, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(66, 54, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(67, 56, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(68, 57, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(69, 59, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(70, 61, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(71, 62, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(72, 63, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(73, 64, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(74, 65, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(75, 66, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(76, 67, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(77, 68, 7, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(78, 69, 11, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(79, 80, 6, '0', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(99, 104, 5, 'notes', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(100, 104, 6, 'notes2', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(101, 104, 5, 'notes3', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(104, 107, 5, 'notes1', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-	(105, 107, 9, 'notes2', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+	(27, 8, 4, 'rtgh', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(28, 9, 4, 'rtgh', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(29, 10, 5, 'tert', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(30, 11, 5, 'rtgh', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(32, 12, 5, 'tert', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(39, 19, 0, '', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(60, 29, 5, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(61, 29, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(62, 30, 5, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(63, 30, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(64, 30, 9, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(65, 30, 11, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(73, 31, 4, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(74, 31, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(75, 31, 5, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(76, 31, 9, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(77, 31, 11, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(78, 32, 4, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(79, 32, 5, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(80, 32, 7, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(81, 32, 9, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+	(82, 32, 11, NULL, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `prescriptions_tests` ENABLE KEYS */;
-
-
-# Dumping structure for table pms.prescription_medicines
-DROP TABLE IF EXISTS `prescription_medicines`;
-CREATE TABLE IF NOT EXISTS `prescription_medicines` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `prescription_id` int(11) NOT NULL,
-  `medicine_id` int(11) NOT NULL,
-  `rule` varchar(222) DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
-# Dumping data for table pms.prescription_medicines: ~20 rows (approximately)
-/*!40000 ALTER TABLE `prescription_medicines` DISABLE KEYS */;
-REPLACE INTO `prescription_medicines` (`id`, `prescription_id`, `medicine_id`, `rule`, `status`, `created`, `updated`) VALUES
-	(1, 74, 4, '0-0-1', 1, '2018-02-01 01:02:29', '0000-00-00 00:00:00'),
-	(11, 80, 7, '0-1-0', 1, '2018-02-02 00:11:58', '0000-00-00 00:00:00'),
-	(14, 88, 5, '0-1-0', 1, '2018-02-02 15:49:32', '0000-00-00 00:00:00'),
-	(15, 88, 4, '0-1-1', 1, '2018-02-02 15:49:32', '0000-00-00 00:00:00'),
-	(24, 93, 7, '0-1-0', 1, '2018-02-02 16:05:48', '0000-00-00 00:00:00'),
-	(25, 93, 4, '0-1-1', 1, '2018-02-02 16:05:48', '0000-00-00 00:00:00'),
-	(26, 94, 7, '0-1-0', 1, '2018-02-02 16:06:58', '0000-00-00 00:00:00'),
-	(27, 94, 4, '0-1-1', 1, '2018-02-02 16:06:58', '0000-00-00 00:00:00'),
-	(28, 95, 7, '0-1-0', 1, '2018-02-02 16:13:55', '0000-00-00 00:00:00'),
-	(29, 95, 4, '0-1-1', 1, '2018-02-02 16:13:55', '0000-00-00 00:00:00'),
-	(30, 96, 7, '0-1-0', 1, '2018-02-02 16:14:59', '0000-00-00 00:00:00'),
-	(31, 96, 4, '0-1-1', 1, '2018-02-02 16:14:59', '0000-00-00 00:00:00'),
-	(32, 97, 7, '0-1-0', 1, '2018-02-02 16:15:03', '0000-00-00 00:00:00'),
-	(33, 97, 4, '0-1-1', 1, '2018-02-02 16:15:03', '0000-00-00 00:00:00'),
-	(34, 98, 7, '0-1-0', 1, '2018-02-02 16:15:15', '0000-00-00 00:00:00'),
-	(35, 98, 4, '0-1-1', 1, '2018-02-02 16:15:15', '0000-00-00 00:00:00'),
-	(36, 99, 7, '0-1-0', 1, '2018-02-02 16:19:45', '0000-00-00 00:00:00'),
-	(37, 99, 4, '0-1-1', 1, '2018-02-02 16:19:45', '0000-00-00 00:00:00'),
-	(64, 104, 6, '0-1-0', 1, '2018-02-04 17:33:25', '0000-00-00 00:00:00'),
-	(65, 104, 9, '0-1-1', 1, '2018-02-04 17:33:25', '0000-00-00 00:00:00'),
-	(68, 107, 5, '0-1-0', 1, '2018-02-05 06:17:59', '0000-00-00 00:00:00'),
-	(69, 107, 8, '0-1-1', 1, '2018-02-05 06:17:59', '0000-00-00 00:00:00');
-/*!40000 ALTER TABLE `prescription_medicines` ENABLE KEYS */;
 
 
 # Dumping structure for table pms.roles
@@ -794,9 +745,9 @@ CREATE TABLE IF NOT EXISTS `tests` (
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
-# Dumping data for table pms.tests: ~8 rows (approximately)
+# Dumping data for table pms.tests: ~12 rows (approximately)
 /*!40000 ALTER TABLE `tests` DISABLE KEYS */;
 REPLACE INTO `tests` (`id`, `name`, `status`, `created`) VALUES
 	(4, 'PSA test', 1, '2018-01-09 23:51:57'),
@@ -806,7 +757,11 @@ REPLACE INTO `tests` (`id`, `name`, `status`, `created`) VALUES
 	(8, 'Mammography', 1, '2018-01-09 23:51:57'),
 	(9, 'CA-125 test', 1, '2018-01-09 23:51:57'),
 	(10, 'Cervical Cancer', 1, '2025-01-09 23:51:57'),
-	(11, 'Abdominal Pain', 1, '2025-01-09 23:51:57');
+	(11, 'Abdominal Pain', 1, '2025-01-09 23:51:57'),
+	(12, 'Mammography', 1, '2018-02-20 16:37:11'),
+	(13, 'Math', 1, '2018-02-20 16:38:50'),
+	(14, 'MRI', 1, '2018-02-20 16:39:13'),
+	(15, 'PMS Test2', 1, '2018-02-20 23:29:18');
 /*!40000 ALTER TABLE `tests` ENABLE KEYS */;
 
 
@@ -816,7 +771,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) NOT NULL,
   `doctor_id` int(11) DEFAULT NULL,
-  `first_name` varchar(255) NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) NOT NULL,
   `address_line1` varchar(255) NOT NULL,
   `address_line2` varchar(255) NOT NULL,
@@ -835,9 +790,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `token_generated` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;
 
-# Dumping data for table pms.users: 16 rows
+# Dumping data for table pms.users: 18 rows
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 REPLACE INTO `users` (`id`, `role_id`, `doctor_id`, `first_name`, `last_name`, `address_line1`, `address_line2`, `phone`, `email`, `age`, `password`, `clinic_name`, `website`, `logo`, `signature`, `educational_qualification`, `created`, `modified`, `token`, `token_generated`) VALUES
 	(6, 1, 0, 'Larry', 'Ullman', '', '', '01736 348772', 'admin@pms.com', 25, '$2y$10$rhBgWQ4X71B.f.VTKJ284OvBzvZ4NWW1/fSGB8obI8QLPBL49AXzm', 'Fictionsoft', '', '', '', '', '2016-02-15 11:46:54', '2018-01-23 02:44:17', 'cddddb0f-5ce2-4e93-bf06-6f91f861975a', '2018-01-23 02:44:17'),
@@ -846,16 +801,18 @@ REPLACE INTO `users` (`id`, `role_id`, `doctor_id`, `first_name`, `last_name`, `
 	(88, 3, 0, 'Saiful', 'Islam', '', '', '01736 451256', 'saiful@gmail.com', 21, '', '', '', '', '', '', '2018-01-10 17:16:17', '2018-01-11 16:28:13', '', '0000-00-00 00:00:00'),
 	(89, 3, 0, 'AB', 'Rahaim', '', '', '01756 784521', 'rahaim@gmail.com', 25, '', '', '', '', '', '', '2018-01-11 16:35:48', '2018-01-11 16:35:48', '', '0000-00-00 00:00:00'),
 	(90, 3, 0, 'Abdullah', 'Almamun', '', '', '10945 451245', 'abdullah@gmail.com', 24, '', '', '', '', '', '', '2018-01-11 16:38:59', '2018-01-11 16:38:59', '', '0000-00-00 00:00:00'),
-	(91, 3, 101, 'Sakib', 'Alhasan', '', '', '10978 541245', 'Sakib@gmail.com', 32, '', '', '', '', '', '', '2018-01-11 16:40:49', '2018-01-11 16:40:49', '', '0000-00-00 00:00:00'),
-	(92, 3, 101, 'Rakib', 'Islam', '', '', '01854 452165', 'rakib@gmail.com', 18, '', 'Dhaka Medical Collage Hospital', 'www.fictionsoft.com', 'logo', 'signature', 'Diploma Engineer', '2018-01-11 16:43:27', '2018-01-11 16:43:27', '', '0000-00-00 00:00:00'),
+	(92, 3, 101, 'Rakib', 'Islam', 'pabna', 'hematpur', '01854 452165', 'rakib@gmail.com', 18, '', 'Dhaka Medical Collage Hospital', 'www.fictionsoft.com', 'logo', 'signature', 'Diploma Engineer', '2018-01-11 16:43:27', '2018-02-17 19:33:06', '', '0000-00-00 00:00:00'),
 	(95, 2, 0, 'Nazmul', 'Hasan', '', '', '', '', 0, '$2y$10$GA8RwPHMkKuMvl68977wYuVV/oN/u3WXReG../pICbddQ/TtwrAj6', '', '', '', '', '', '2018-01-19 17:06:07', '2018-01-19 17:06:07', '', '0000-00-00 00:00:00'),
 	(96, 2, 0, 'Khalid', 'Hasan', '', '', '', 'khalid@gmail.com', 0, '$2y$10$l8SPv/l3XHL2PhySGP/7KOoH2BVa.vrSPLgvmEh3XovZBk4aT5AWa', '', '', '', '', '', '2018-01-19 17:16:39', '2018-01-19 17:16:39', '', '0000-00-00 00:00:00'),
 	(98, 2, 0, 'Glenn ', 'Alexandre', '', '', '01745781245', 'glenn@gmail.com', 0, '$2y$10$cU1QaAxZuKpwiCvxSZorYeTBZOb.wl0FswBlQb3jbDgDIuH.flLUK', '', '', '', '', '', '2018-01-20 16:42:51', '2018-01-20 16:43:36', '', '0000-00-00 00:00:00'),
-	(101, 2, 0, 'Arafath', 'Khan', '384/1 , West Nakhalpara, Tejgaon, Mohakhali', 'Pangsha,Rajbari', '55165088', 'doctor@pms.com', 0, '$2y$10$Drrd2B1bJgAsXVnfbMJhgeTNPmQZp9IyHGa8ZitTURnHGrbOz.HrS', 'Dhaka Medical Collage Hospital', 'www.dmc.gov.bd', 'logo', 'signature', 'MBBS; FCPS( Medicine )', '2018-01-22 15:37:56', '2018-01-31 13:43:25', '047cabfb-58d9-451f-9893-d3181340aba8', '2018-01-23 17:15:44'),
+	(101, 2, 0, 'Arafath', 'Khan', '384/1 , West Nakhalpara', 'Tejgaon, Mohakhali', '55165088', 'doctor@pms.com', 0, '$2y$10$Drrd2B1bJgAsXVnfbMJhgeTNPmQZp9IyHGa8ZitTURnHGrbOz.HrS', 'Dhaka Medical Collage Hospital', 'www.dmc.gov.bd', 'logo', 'signature', 'MBBS; FCPS( Medicine )', '2018-01-22 15:37:56', '2018-02-10 10:20:54', '047cabfb-58d9-451f-9893-d3181340aba8', '2018-01-23 17:15:44'),
 	(99, 2, 0, 'Abdullah', 'Al Mamun', '', '', '', 'abdullah@pms.com', 0, '$2y$10$UFIpZGrkJS35p7C/fah13OtpAHmiEklqGXDjuNWAvqRcuGgOrkUDa', '', '', '', '', '', '2018-01-22 02:04:23', '2018-01-22 02:04:23', '', '0000-00-00 00:00:00'),
 	(100, 2, 0, 'asdf', 'asdfasdf', '', '', '', 'arif@gmail.com', 0, '$2y$10$7yjl/17d6dHNSRETnYFJyOAZ8INbaR1G1AsGsnJk3HfKDq1U0fhP.', 'Dhaka Medical Collage Hospital', '', '', '', '', '2018-01-22 02:53:32', '2018-01-22 02:53:32', 'af2e303e-1d3b-4ee0-a04f-0e594ae1e717', '0000-00-00 00:00:00'),
-	(102, 3, 101, 'dd', 'dd', '', '', '44', 'dd@pms.com', 23, '', '', '', '', '', '', '2018-01-31 17:25:29', '2018-01-31 17:25:29', '', '0000-00-00 00:00:00'),
-	(103, 3, 101, 'sobuj', 'hossen', '', '', '234234', 'sobuj@gmail.com', 12, '', '', '', '', '', '', '2018-02-01 09:19:01', '2018-02-01 09:19:01', '', '0000-00-00 00:00:00');
+	(104, 3, 101, 'mintu islam', 'islam', 'shariatpur , sokhipur', 'sokhipur', '121321453', 'aalmamun417@gmail.com', 23, '', '', '', '', '', '', '2018-02-08 17:13:57', '2018-02-17 19:58:46', '', '0000-00-00 00:00:00'),
+	(103, 3, 101, 'sobuj hossen', 'hossen', 'Pangsha, Rajbari', 'rajbari', '234234', 'sobuj@gmail.com', 12, '', '', '', '', '', '', '2018-02-01 09:19:01', '2018-02-17 16:17:50', '', '0000-00-00 00:00:00'),
+	(105, 3, 101, 'khairul islam', ' islam', 'Pangsha, Rajbari', 'rajbari', '12132141', 'khairul@gmail.com', 23, '', '', '', '', '', '', '2018-02-10 08:53:15', '2018-02-18 15:44:04', '', '0000-00-00 00:00:00'),
+	(117, 3, 101, 'Fahim', '', '', '', '456789', 'fahim@gmail.com', 20, '', '', '', '', '', '', '2018-02-15 16:49:40', '2018-02-17 16:09:31', '', '0000-00-00 00:00:00'),
+	(118, 3, 101, 'Silva', '', 'United Kingdom', '', '4324436', 'silva@gmail.com', 25, '', '', '', '', '', '', '2018-02-19 16:05:20', '2018-02-21 17:01:50', '', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

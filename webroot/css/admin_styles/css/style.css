@@ -141,10 +141,23 @@ button, .wizard-config .btn-continue{
 .workspace-body input[type=checkbox] {
     height: 13px;
     margin-left: -20px;
+    margin-top: 6px;
 }
 .form-group .required{
     color: #ff0000;
 }
+.current-item{
+    color: #3cc2bb;
+    text-decoration: underline;
+}
+.diagnosis_info {
+    margin-top: -24px;
+}
+.diagnosis_section {
+    margin-top: -40px;
+}
+
+
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {
