@@ -11,7 +11,6 @@
 
         <div class="main-container">
             <div class="content">
-
                 <div class="col-md-12">
                     <?php echo $this->Flash->render('admin_success'); ?>
                     <?php echo $this->Flash->render('admin_error'); ?>
