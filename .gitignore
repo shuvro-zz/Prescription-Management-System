@@ -1,7 +1,5 @@
 # CakePHP 3
 
-
-
 /tmp/cache/models/*
 !/tmp/cache/models/empty
 /tmp/cache/persistent/*
