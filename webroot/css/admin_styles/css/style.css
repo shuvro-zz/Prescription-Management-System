@@ -158,6 +158,65 @@ button, .wizard-config .btn-continue{
 }
 
 
+.patient_info_section input{
+    height: 23px;
+}
+.patient_info_section h6{
+    color: #fff;
+}
+.patient_info_section label{
+    color: #000;
+    font-size: 12px;
+}
+.single_block {
+    background: #fff;
+    padding: 6px;
+    border-radius: 5px;
+    height: 97px;
+}
+.prescriptions ul {
+    padding: 0px;
+    margin-bottom: 0px;
+}
+.prescriptions ul li {
+    list-style: none;
+    padding: 0px;
+}
+.left_side h6,.right_side h6{
+    color: #fff;
+}
+.left_side textarea,.right_side textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+.left_side {
+    background: #1379AD;
+    padding: 8px;
+    margin-top: 12px;
+    width: 100%;
+    float: left;
+}
+.right_side {
+    background: #119A55;
+    padding: 8px;
+    margin-top: 12px;
+    width: 100%;
+    float: left;
+}
+.button_section {
+    margin-top: 7px;
+}
+.button_section button {
+    background: #fff;
+    color: black;
+    border-radius: 5px;
+    width: 18%;
+    height: 35px;
+    text-transform: capitalize;
+    float: right;
+    margin-left: 10px;
+}
+
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {
