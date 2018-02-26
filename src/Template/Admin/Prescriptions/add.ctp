@@ -10,7 +10,7 @@
         </div>
 
         <div class="main-container" style="background: #E08D2C">
-            <div class="content">
+            <div class="content" style="padding: 0px 38px">
                 <div class="col-md-12">
                     <?php echo $this->Flash->render('admin_success'); ?>
                     <?php echo $this->Flash->render('admin_error'); ?>
@@ -24,16 +24,16 @@
                             <div class="patient_details single_block">
 
                                 <label>Name:</label>
-                                <input type="text" style="width: 275px;"><br>
+                                <input type="text" style="width: 272px;"><br>
 
                                 <label>Mobile:</label>
-                                <input type="text" style="width: 269px;"><br>
+                                <input type="text" style="width: 267px;"><br>
 
                                 <label>Age:</label>
                                 <input type="text" style="width: 53px">
 
                                 <label>Address:</label>
-                                <input type="text" style="width: 180px;">
+                                <input type="text" style="width: 169px;">
 
                             </div>
                         </div>
@@ -43,18 +43,18 @@
                             <h6>Health Data</h6>
                             <div class="health_data single_block">
                                 <label>BP:</label>
-                                <input type="text" style="width: 203px"><br>
+                                <input type="text" style="width: 200px"><br>
 
                                 <label>Temperature:</label>
-                                <input type="text" style="width: 149px">
+                                <input type="text" style="width: 144px">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="patient_info_section">
                             <h6>Doctors Notes</h6>
-                            <div class="doctors_note">
-                                <textarea rows="4" style="border-radius: 5px;width: 100%;height: 97px"></textarea>
+                            <div class="inputs doctors_note">
+                                <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'id' => 'all_instructions', 'label' => false, 'type' =>'textarea']); ?>
                             </div>
                         </div>
                     </div>
@@ -77,12 +77,20 @@
                         <div class="left_side">
                             <div class="diagnosis">
                                 <h6>Diagnosis</h6>
-                                <textarea rows="6"></textarea>
+                                <div class="inputs diagnosis_info">
+                                    <?php foreach($diagnosis as $id=>$name){ ?>
+                                        <div class="checkbox" style="margin-top: 0px">
+                                            <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>
+                                        </div>
+                                    <?php } ?>
+                                </div>
                             </div>
 
                             <div class="examination">
                                 <h6>Examinations</h6>
-                                <textarea rows="6"></textarea>
+                                <div class="inputs tests">
+                                    <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
+                                </div>
                             </div>
                             <div class="button_section">
                                 <button>Save</button>
@@ -95,7 +103,9 @@
 
                             <div class="medicine">
                                 <h6>Medicines</h6>
-                                <textarea rows="6"></textarea>
+                                <div class="inputs medicines">
+                                    <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); ?>
+                                </div>
                             </div>
 
                             <div class="other_instruction">

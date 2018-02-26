@@ -150,9 +150,7 @@ button, .wizard-config .btn-continue{
     color: #3cc2bb;
     text-decoration: underline;
 }
-.diagnosis_info {
-    margin-top: -24px;
-}
+
 .diagnosis_section {
     margin-top: -40px;
 }
@@ -203,6 +201,14 @@ button, .wizard-config .btn-continue{
     width: 100%;
     float: left;
 }
+.diagnosis_info,.tests,.medicines {
+    /* margin-top: -24px; */
+    background: #fff;
+    border-radius: 5px;
+    height: 149px;
+    padding: 5px;
+    overflow: scroll;
+}
 .button_section {
     margin-top: 7px;
 }
@@ -217,6 +223,31 @@ button, .wizard-config .btn-continue{
     margin-left: 10px;
 }
 
+.tokenize > .tokens-container{
+    border: none;
+}
+.doctors_note textarea{
+    height: 97px;
+}
+.tokenize.focus > .tokens-container{
+    outline: 0;
+    border:none ;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.tests .tokenize > .tokens-container > .token {
+    background-color: #1379AD!important;
+    color: #fff;
+    border-radius: 5px!important;
+}
+.medicines .tokenize > .tokens-container > .token {
+    background-color: #119A55!important;
+    color: #fff;
+    border-radius: 5px!important;
+}
+.workspace .footer{
+    height: 55px;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

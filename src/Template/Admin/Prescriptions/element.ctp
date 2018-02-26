@@ -62,19 +62,19 @@
         </div>
     </div>
 
-<?php
-    echo'<div class="clearfix">
+
+    <div class="clearfix">
         <div class="col-sm-12">
             <div class="form-row">
                 <label class="name">Doctor\'s Note</label>
-                <div class="inputs">';
-                    echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'id' => 'all_instructions', 'label' => false, 'type' =>'textarea']);
-                echo '</div>
+                <div class="inputs">
+                   <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'id' => 'all_instructions', 'label' => false, 'type' =>'textarea']); ?>
+                </div>
             </div>
         </div>
     </div>
-</div>';
-    ?>
+</div>
+
 
 
 

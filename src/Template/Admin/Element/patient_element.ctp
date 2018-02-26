@@ -24,7 +24,6 @@
                     <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control', 'label' => false, 'type' =>'text']); ?>
                 </div>
                 <?php } ?>
-
             </div>
         </div>
         <div class="col-sm-3">
