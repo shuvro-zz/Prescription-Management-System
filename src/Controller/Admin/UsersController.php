@@ -73,8 +73,6 @@ class UsersController extends AppController
             $this->Flash->adminWarning(__('No patient found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
         }
 
-        $users = $this->paginate($query);
-
         $this->set(compact('users', 'search'));
         $this->set('_serialize', ['users']);
     }
