@@ -155,8 +155,16 @@ button, .wizard-config .btn-continue{
     margin-top: -40px;
 }
 
+.mobile_width {
+    width: 268px;
+}
+.age_width {
+    width: 50px;
+}
+.address_width{}
 
-.patient_info_section input{
+
+.patient_info_section input,select{
     height: 23px;
 }
 .patient_info_section h6{
@@ -245,8 +253,14 @@ button, .wizard-config .btn-continue{
     color: #fff;
     border-radius: 5px!important;
 }
+select#user-id,.patient_name_width {
+    width: 264px;
+}
 .workspace .footer{
     height: 55px;
+}
+div#patient_drop_down,div#patient_field,.inputs {
+    display: inline-block;
 }
 /**********Responsive**********/
 

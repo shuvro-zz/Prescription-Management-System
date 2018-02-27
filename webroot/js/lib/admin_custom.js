@@ -88,6 +88,7 @@ function getUserInfo(user_id){
             $('#user-phone').val(response.phone);
             $('#user-email').val(response.email);
             $('#user-age').val(response.age);
+            $('#user-address').val(response.address_line1);
             $('#loading').addClass('hide');
         },'json');
     }
