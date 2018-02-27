@@ -104,7 +104,7 @@
                     </div>
 
                     <div style="float:right;">
-                        <b>Last Visited Date: </b><?= $last_patient->created->format('d F Y') ?>
+                        <b>Last Visited Date: </b><?= $latest_prescription->created->format('d F Y') ?>
                     </div>
                     <h4>Patient</h4>
                     <div>

@@ -39,4 +39,18 @@ class CommonComponent extends Component
     function __addSlug(){
         $this->controller->request->data['slug'] = Inflector::slug($this->controller->request->data['name'] );
     }
+
+    function getAllPrescriptions($patient_id){
+
+        $doctor_id = $this->request->session()->read('Auth.User.id');
+        $this->controller->loadModel('Prescriptions');
+        //start all prescription
+        $all_prescriptions = $this->controller->Prescriptions->find('all')
+            ->where([
+                'Prescriptions.doctor_id' => $doctor_id,
+                'Prescriptions.user_id' => $patient_id
+            ]);
+        return $all_prescriptions;
+        //End all prescription
+    }
 }

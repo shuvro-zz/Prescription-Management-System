@@ -74,23 +74,14 @@ class PrescriptionsController extends AppController
             'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
         ]);
 
-
-        $doctor_id = $this->request->session()->read('Auth.User.id');
         $patient_id = $prescription->user->id;
+        $all_prescriptions = $this->Common->getAllPrescriptions($patient_id);
 
-        //start all prescription
-        $all_prescriptions = $this->Prescriptions->find('all')
-            ->where([
-                'Prescriptions.doctor_id' => $doctor_id,
-                'Prescriptions.user_id' => $patient_id
-            ]);
-        //End all prescription
-
-        $last_patient = $this->getLatestPrescription($patient_id);
+        $latest_prescription = $this->getLatestPrescription($patient_id);
 
         $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
 
-        $this->set(compact('prescription', 'all_prescriptions', 'last_patient', 'pdf_link'));
+        $this->set(compact('prescription', 'all_prescriptions', 'latest_prescription', 'pdf_link'));
         $this->set('_serialize', ['prescription']);
 
         //$order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
@@ -336,17 +327,11 @@ class PrescriptionsController extends AppController
         $this->set('prescription', $prescription);
         $this->set('_serialize', ['prescription']);
 
-        $doctor_id = $this->request->session()->read('Auth.User.id');
         $patient_id = $prescription->user->id;
 
-        $last_patient = $this->Prescriptions->find('all')
-        ->where([
-            'Prescriptions.doctor_id' => $doctor_id,
-            'Prescriptions.user_id' => $patient_id
-        ])
-        ->order(['Prescriptions.id' => 'desc'])->first();
+        $latest_prescription = $this->getLatestPrescription($patient_id);
 
-        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription,$last_patient);
+        $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription,$latest_prescription);
 
         if($order_pdf_file){
             $pdf_file = basename($order_pdf_file);

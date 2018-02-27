@@ -162,7 +162,12 @@ button, .wizard-config .btn-continue{
     width: 50px;
 }
 .address_width{}
-
+.temp_width {
+    width: 149px;
+}
+.bp_width {
+    width: 204px;
+}
 
 .patient_info_section input,select{
     height: 23px;
@@ -231,13 +236,22 @@ button, .wizard-config .btn-continue{
     margin-left: 10px;
 }
 
-.tokenize > .tokens-container{
+.examination .tokenize > .tokens-container{
+    border: none;
+}
+.medicines .tokenize > .tokens-container{
     border: none;
 }
 .doctors_note textarea{
     height: 97px;
 }
-.tokenize.focus > .tokens-container{
+.examination .tokenize.focus > .tokens-container{
+    outline: 0;
+    border:none ;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.medicines .tokenize.focus > .tokens-container{
     outline: 0;
     border:none ;
     -webkit-box-shadow: none!important;
@@ -259,7 +273,7 @@ select#user-id,.patient_name_width {
 .workspace .footer{
     height: 55px;
 }
-div#patient_drop_down,div#patient_field,.inputs {
+div#patient_drop_down,div#patient_field,.single_block .inputs {
     display: inline-block;
 }
 /**********Responsive**********/

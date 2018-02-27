@@ -8,11 +8,22 @@
                 <li class="active"><a href="#">Edit <?= __('Prescription') ?></a></li>
             </ol>
         </div>
-        <div class="main-container" style="background: #E08D2C">
-            <div class="content" style="padding: 0px 38px">
-
-                <?php include('element.ctp'); ?>
-
+        <div class="main-container">
+            <div class="content">
+                <div class="page-wrap">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default panel-hovered panel-stacked">
+                                    <div class="panel-heading"><?= __('Edit Prescription') ?></div>
+                                    <div class="panel-body">
+                                        <?php include('element.ctp') ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
