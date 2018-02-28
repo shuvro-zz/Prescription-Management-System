@@ -53,4 +53,18 @@ class CommonComponent extends Component
         return $all_prescriptions;
         //End all prescription
     }
+
+    function getLatestPrescription($patient_id){
+        $doctor_id = $this->request->session()->read('Auth.User.id');
+        $this->controller->loadModel('Prescriptions');
+
+        $latest_prescription = $this->controller->Prescriptions->find('all')
+            ->where([
+                'Prescriptions.doctor_id' => $doctor_id,
+                'Prescriptions.user_id' => $patient_id
+            ])
+            ->order(['Prescriptions.id' => 'desc'])->first();
+
+        return $latest_prescription;
+    }
 }

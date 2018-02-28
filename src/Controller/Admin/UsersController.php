@@ -424,12 +424,16 @@ class UsersController extends AppController
 
     function getUser($user_id){
         $all_prescriptions = $this->Common->getAllPrescriptions($user_id);
-        $prescriptions_link = null;
-        foreach($all_prescriptions as $all_prescription){
-            $prescriptions_link .=  '<li><a href="'. Router::url('/admin/prescriptions/view/'.$all_prescription->id, true ).'">'.$all_prescription->created.'</a></li>';
-        }
 
-        echo json_encode(array('user' => $this->Users->get($user_id), 'prescriptions' => $prescriptions_link));die;
+        if($all_prescriptions){
+            $prescriptions_link = null;
+            foreach($all_prescriptions as $all_prescription){
+                $prescriptions_link .=  '<li><a href="'. Router::url('/admin/prescriptions/view/'.$all_prescription->id, true ).'" target="_blank">'.$all_prescription->created->format('d F Y').'</a></li>';
+            }
+        }
+        $latest_prescription = $this->Common->getLatestPrescription($user_id);
+
+        echo json_encode(array('user' => $this->Users->get($user_id), 'prescriptions' => $prescriptions_link, 'last_visit_date' => $latest_prescription->created->format('d F Y')));die;
 
     }
 

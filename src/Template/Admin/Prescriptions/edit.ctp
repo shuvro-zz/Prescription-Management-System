@@ -1,5 +1,5 @@
 
-<?= $this->Form->create($prescription) ?>
+<?= $this->Form->create($prescription,['id' => 'prescription-form']) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -21,7 +21,10 @@
         <div class="flex-container">
             <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
             <div class="flex-item">
-                <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
+                <?= $this->Form->button(__('Save'), ['class' => 'btn save event-save']) ?>
+            </div>
+            <div class="flex-item">
+                <?= $this->Form->button(__('Save & Print'), ['class' => 'btn save event-save', 'type' => 'button', 'onclick' => 'saveAndPrint()']) ?>
             </div>
         </div>
     </footer>

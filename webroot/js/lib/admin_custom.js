@@ -4,6 +4,8 @@ jQuery(document).ready(function ($) {
         jQuery('#slug').val(slug(jQuery('#name').val()));
     });
 
+
+
     var slug = function(str) {
         var $slug = '';
         var trimmed = jQuery.trim(str);
@@ -19,6 +21,10 @@ jQuery(document).ready(function ($) {
         var options = { mode : mode, popClose : close};
         $("div.printableArea").printArea( options );
     });
+
+    if($('#is_print').val() == 'print'){
+        $( "#printButton" ).trigger( "click" );
+    }
 
     $("#new_patient").click(function(){
         $("#patient_drop_down").toggleClass("hide");
@@ -81,16 +87,18 @@ function initDatePicker(){
 function getUserInfo(user_id){
     if(user_id==''){
         $('.reset_patient').val('');
+        $('.reset_prescriptions').html('');
+        $('#last-visit-date').html('');
     }else{
         $('#loading').removeClass('hide');
         $.post(home_url+'admin/users/get-user/'+user_id,function(response){
-
             $('#user-phone').val(response.user.phone);
             $('#user-email').val(response.user.email);
             $('#user-age').val(response.user.age);
             $('#user-address').val(response.user.address_line1);
             $('#loading').addClass('hide');
             $('#prescriptions_link').html(response.prescriptions);
+            $('#last-visit-date').html(response.last_visit_date);
         },'json');
     }
 }
@@ -119,6 +127,9 @@ function getDiagnosis(e){
 
     var all_id = checkedVals.join("_");
 
+    var test = $('input:checkbox');
+    console.log(test);
+
     $('.medicines .tokenize-sortable-demo1').trigger('tokenize:clear');
     $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
     $('#all_instructions').val('');
@@ -138,6 +149,12 @@ function getDiagnosis(e){
 
         },'json');
     }
+}
+
+
+function saveAndPrint(){
+    $('#is-print').val(1);
+    $( "#prescription-form" ).submit();
 }
 
 

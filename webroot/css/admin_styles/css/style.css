@@ -32,9 +32,11 @@ lavel#password-error {
     height: 90px;
     width: 90px;
 }
+.prescriptions {
+    overflow: scroll;
+}
 .prescription_head_con{
     text-align: center;
-    float: left;
     margin-bottom: 6px;
 }
 .prescription_head h1 {
@@ -76,7 +78,9 @@ select[multiple] {
     width: 100%!important;
 }
 
-
+.prescription_block{
+    padding-bottom: 5px;
+}
 /**************Medicine*************/
 
 .input.select .bootstrap-select.btn-group button,
@@ -199,6 +203,7 @@ button, .wizard-config .btn-continue{
 .left_side textarea,.right_side textarea{
     width: 100%;
     border-radius: 5px;
+    height: 150px;
 }
 .left_side {
     background: #1379AD;
@@ -214,8 +219,7 @@ button, .wizard-config .btn-continue{
     width: 100%;
     float: left;
 }
-.diagnosis_info,.tests,.medicines {
-    /* margin-top: -24px; */
+.diagnosis_info,.examinations,.medicines {
     background: #fff;
     border-radius: 5px;
     height: 149px;
@@ -236,7 +240,7 @@ button, .wizard-config .btn-continue{
     margin-left: 10px;
 }
 
-.examination .tokenize > .tokens-container{
+.examinations .tokenize > .tokens-container{
     border: none;
 }
 .medicines .tokenize > .tokens-container{
@@ -245,7 +249,7 @@ button, .wizard-config .btn-continue{
 .doctors_note textarea{
     height: 97px;
 }
-.examination .tokenize.focus > .tokens-container{
+.examinations .tokenize.focus > .tokens-container{
     outline: 0;
     border:none ;
     -webkit-box-shadow: none!important;
@@ -257,7 +261,7 @@ button, .wizard-config .btn-continue{
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
-.tests .tokenize > .tokens-container > .token {
+.examinations .tokenize > .tokens-container > .token {
     background-color: #1379AD!important;
     color: #fff;
     border-radius: 5px!important;
@@ -268,7 +272,13 @@ button, .wizard-config .btn-continue{
     border-radius: 5px!important;
 }
 select#user-id,.patient_name_width {
-    width: 264px;
+    width: 267px;
+    border: 1px solid #dde3e5;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: none;
+    padding-left: 15px;
 }
 .workspace .footer{
     height: 55px;

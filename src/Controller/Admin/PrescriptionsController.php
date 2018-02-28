@@ -77,11 +77,13 @@ class PrescriptionsController extends AppController
         $patient_id = $prescription->user->id;
         $all_prescriptions = $this->Common->getAllPrescriptions($patient_id);
 
-        $latest_prescription = $this->getLatestPrescription($patient_id);
+        $latest_prescription = $this->Common->getLatestPrescription($patient_id);
 
         $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
 
-        $this->set(compact('prescription', 'all_prescriptions', 'latest_prescription', 'pdf_link'));
+        $is_print = isset($this->request->params['pass'][1])? $this->request->params['pass'][1]:'';
+
+        $this->set(compact('prescription', 'all_prescriptions', 'latest_prescription', 'pdf_link', 'is_print'));
         $this->set('_serialize', ['prescription']);
 
         //$order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
@@ -92,7 +94,7 @@ class PrescriptionsController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function add($id = null)
+    public function add($patient_id = null)
     {
         $prescription = $this->Prescriptions->newEntity();
 
@@ -101,10 +103,6 @@ class PrescriptionsController extends AppController
             $patient_id = $this->savePatient($this->request->data['patients']);
 
             $diagnosis = $this->request->data['diagnosis'];
-
-            /*unset($this->request->data['medicines']);
-            unset($this->request->data['tests']);
-            unset($this->request->data['patients']);*/
 
             unset($this->request->data['diagnosis']);
 
@@ -115,24 +113,26 @@ class PrescriptionsController extends AppController
             $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
 
-            //pr($prescription);die;
 
             $prescription = $this->Prescriptions->save($prescription);
 
             if ($prescription) {
-                /*$this->savePrescriptionMedicines($medicines, $prescription->id);
-                $this->savePrescriptionTests($tests, $prescription->id);*/
 
                 $this->savePrescriptionsDiagnosis($diagnosis, $prescription->id);
 
-                $this->Flash->adminSuccess('The prescription has been saved.', ['key' => 'admin_success']);
-                return $this->redirect(['action' => 'index']);
+                if(($this->request->data('is_print')) == 1){
+                    return $this->redirect(['action' => 'view/'.$prescription->id.'/print']);
+                }else{
+                    $this->Flash->adminSuccess('The prescription has been saved.', ['key' => 'admin_success']);
+                    return $this->redirect(['action' => 'index']);
+                }
             } else {
                 $error_message = __('The prescription could not be save. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
             return $this->redirect(['action' => 'index']);
         }
+
         //$users = $this->Prescriptions->Users->find('list', ['limit' => 200]);
         $doctor_id = $this->request->session()->read('Auth.User.id');
         $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
@@ -146,13 +146,15 @@ class PrescriptionsController extends AppController
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
         $diagnosis = $this->getDiagnosisInfo();
 
-        if($id){
-            $patient = $this->Prescriptions->Users->get($id);
+        if($patient_id){
+            $patient = $this->Prescriptions->Users->get($patient_id);
             $prescription->user = $patient->toArray();
         }
 
 
-        $this->set(compact('prescription', 'users', 'prescription_tests', 'medicines', 'tests', 'diagnosis'));
+        $prescriptions_link = $last_visit_date = '';
+
+        $this->set(compact('prescription', 'users', 'prescription_tests', 'medicines', 'tests', 'diagnosis', 'prescriptions_link', 'last_visit_date'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -170,31 +172,34 @@ class PrescriptionsController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
 
+            $patient_id = $this->savePatient($this->request->data['patients']);
+
             $diagnosis = $this->request->data['diagnosis'];
-
-            /*unset($this->request->data['medicines']);
-            unset($this->request->data['tests']);
-            unset($this->request->data['patients']);*/
-
             unset($this->request->data['diagnosis']);
 
+            if(empty($this->request->data['user_id'])){
+                $this->request->data['user_id'] = $patient_id;
+            }
 
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
 
             if ($this->Prescriptions->save($prescription)) {
-
-                /*$this->savePrescriptionMedicines($medicines, $id);
-                $this->savePrescriptionTests($tests, $id);*/
-
                 $this->savePrescriptionsDiagnosis($diagnosis, $prescription->id);
 
                 $success_message = __('The prescription has been edited.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+
+                if(($this->request->data('is_print')) == 1){
+                    return $this->redirect(['action' => 'view/'.$prescription->id.'/print']);
+                }else{
+                    return $this->redirect(['action' => 'index']);
+                }
             } else {
                 $error_message = __('The prescription could not be edit. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                return $this->redirect(['action' => 'index']);
             }
-            return $this->redirect(['action' => 'index']);
+
         }
 
         $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' =>  $this->request->session()->read('Auth.User.id')]);//role_id =>3 that's mean patient;
@@ -208,8 +213,20 @@ class PrescriptionsController extends AppController
         $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
         $diagnosis = $this->getDiagnosisInfo();
 
+        $patient = $prescription->toArray();
+        $all_prescriptions = $this->Common->getAllPrescriptions($patient['user_id']);
+
+        $prescriptions_link = '';
+        if($all_prescriptions){
+            foreach($all_prescriptions as $all_prescription){
+                $prescriptions_link .=  '<li><a href="'. Router::url('/admin/prescriptions/view/'.$all_prescription->id, true ).'" target="_blank">'.$all_prescription->created->format('d F Y').'</a></li>';
+            }
+        }
+        $latest_prescription = $this->Common->getLatestPrescription($patient['user_id']);
+        $last_visit_date = $latest_prescription->created->format('d F Y');
+
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis','prescription_diagnosis'));
+        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis','prescription_diagnosis', 'prescriptions_link', 'last_visit_date'));
         $this->set('_serialize', ['prescription']);
     }
 
@@ -329,7 +346,7 @@ class PrescriptionsController extends AppController
 
         $patient_id = $prescription->user->id;
 
-        $latest_prescription = $this->getLatestPrescription($patient_id);
+        $latest_prescription = $this->Common->getLatestPrescription($patient_id);
 
         $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription,$latest_prescription);
 
@@ -378,7 +395,7 @@ class PrescriptionsController extends AppController
             if($patient_info){
                 $patient_id = $patient_info->id;
 
-                $latest_prescription = $this->getLatestPrescription($patient_id);
+                $latest_prescription = $this->Common->getLatestPrescription($patient_id);
 
                 if($latest_prescription){
                     return $this->redirect(['action' => 'edit/'.$latest_prescription->id]);
@@ -393,27 +410,14 @@ class PrescriptionsController extends AppController
         $this->set(compact('patient_info'));
    }
 
-    function getLatestPrescription($patient_id){
-        $doctor_id = $this->request->session()->read('Auth.User.id');
-
-        $latest_prescription = $this->Prescriptions->find('all')
-            ->where([
-                'Prescriptions.doctor_id' => $doctor_id,
-                'Prescriptions.user_id' => $patient_id
-            ])
-            ->order(['Prescriptions.id' => 'desc'])->first();
-
-        return $latest_prescription;
-    }
-
     function savePatient($patients){
         $this->loadModel('Users');
 
         if(empty($this->request->data['user_id'])){
             $user = $this->Users->newEntity();
         }else{
-            unset($patients['first_name']);
-            unset($patients['address_line1']);
+            /*unset($patients['first_name']);
+            unset($patients['address_line1']);*/
             $user = $this->Users->get($this->request->data['user_id']);
         }
 

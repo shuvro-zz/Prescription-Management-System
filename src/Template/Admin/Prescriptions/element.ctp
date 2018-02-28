@@ -1,6 +1,4 @@
     <?php
-        //echo $this->element('patient_element');
-
         function selected($id,$prescription_diagnosis){
             if(isset($prescription_diagnosis)){
                 foreach($prescription_diagnosis as $item ){
@@ -53,7 +51,7 @@
 
                     <label>Address:</label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('patients.address_line1', ['class' => 'form-control reset_patient address_width',  'value' => (isset($prescription->user['address_line1']))? $prescription->user['address_line1']:'', 'id'=>'user-address', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                        <?php echo $this->Form->input('patients.address_line1', ['class' => 'form-control reset_patient address_width',  'value' => (isset($prescription->user['address_line1']))? $prescription->user['address_line1']:'', 'id'=>'user-address', 'label' => false, 'type' =>'text']); ?>
                     </div>
 
                 </div>
@@ -72,6 +70,11 @@
                     <div class="inputs">
                         <?php echo $this->Form->input('temperature', [ 'class'=>'form-control temp_width','label'=>false, ]);?>
                     </div>
+
+                    <label>Last Visit Date:</label>
+                    <div class="inputs" id="last-visit-date">
+                        <?php echo $last_visit_date ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,9 +89,9 @@
         <div class="col-sm-2">
             <div class="patient_info_section">
                 <h6>Prescriptions</h6>
-                <div class="prescriptions single_block">
-                    <ul id="prescriptions_link">
-
+                <div class="prescriptions single_block ">
+                    <ul id="prescriptions_link" class="reset_prescriptions">
+                        <?php echo $prescriptions_link ?>
                     </ul>
                 </div>
             </div>
@@ -109,35 +112,30 @@
                     </div>
                 </div>
 
-                <div class="examination">
+                <div class="examinations_section">
                     <h6>Examinations</h6>
-                    <div class=" tests">
+                    <div class="tests examinations">
                         <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
                     </div>
-                </div>
-                <div class="button_section">
-                    <button>Save</button>
-                    <button>Print</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="right_side">
 
-                <div class="medicine">
+                <div class="medicines_section">
                     <h6>Medicines</h6>
                     <div class=" medicines">
                         <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); ?>
                     </div>
                 </div>
 
-                <div class="other_instruction">
+                <div class="other_instruction_section">
                     <h6>Other Instructions</h6>
-                    <textarea rows="6"></textarea>
-                </div>
-                <div class="button_section">
-                    <button>Save</button>
-                    <button>Print</button>
+                    <div class="other_instruction">
+                        <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
+                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control','label'=>false, 'type' =>'textarea' ]);?>
+                    </div>
                 </div>
             </div>
         </div>

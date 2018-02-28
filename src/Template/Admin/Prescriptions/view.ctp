@@ -86,12 +86,7 @@
                 <div class="prescription">
                     <div class="prescription_head">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="prescription_logo">
-                                    <img src="http://hdwallpapersbuzz.com/wp-content/uploads/2017/04/rx-logo-4.png">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12">
                                 <div class="prescription_head_con">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
                                     <h1> <?php echo ($user['clinic_name']) ?> </h1>
@@ -104,7 +99,7 @@
                     </div>
 
                     <div style="float:right;">
-                        <b>Last Visited Date: </b><?= $latest_prescription->created->format('d F Y') ?>
+                        <b>Last Visit Date: </b><?= $latest_prescription->created->format('d F Y') ?>
                     </div>
                     <h4>Patient</h4>
                     <div>
@@ -114,29 +109,40 @@
                     <div>
                         <b>Mobile : </b> <span class="patient_info"><?= $prescription->user->phone ?></span>
                     </div>
-                    <div>
-                        <b>Address : </b> <span> <?= ucfirst($prescription->user->address_line1) ?> </span>
-                    </div>
-                    <div>
-                        <b>Diagnosis : </b>
-                        <?php
-                            foreach($prescription->diagnosis as $diagnosis ) {
-                                if($diagnosis === end($prescription->diagnosis) ){
-                                    echo ucfirst($diagnosis->name)."  ";
-                                }else{
-                                    echo ucfirst($diagnosis->name).", ";
-                                }
-                            }
-                        ?>
-                    </div>
-                    <div>
-                        <b>Temperature : </b><?= $prescription->temperature ?>
-                    </div>
-                    <div>
-                        <b>Blood Pressure : </b><?= ucfirst($prescription->blood_pressure) ?>
-                    </div>
 
-                    <div class="prescription_section">
+                    <?php if($prescription->user->address_line1){?>
+                        <div>
+                            <b>Address : </b> <span> <?= ucfirst($prescription->user->address_line1) ?> </span>
+                        </div>
+                    <?php } ?>
+                    <div>
+                    <b>Diagnosis : </b>
+                    <?php
+                    foreach($prescription->diagnosis as $diagnosis ) {
+                        if($diagnosis === end($prescription->diagnosis) ){
+                            echo ucfirst($diagnosis->name)."  ";
+                        }else{
+                            echo ucfirst($diagnosis->name).", ";
+                        }
+                    }
+                    ?>
+                </div>
+
+                    <?php if($prescription->temperature){?>
+                        <div>
+                            <b>Temperature : </b><?= $prescription->temperature ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php if($prescription->blood_pressure){?>
+                        <div>
+                            <b>Blood Pressure : </b><?= ucfirst($prescription->blood_pressure) ?>
+                        </div>
+                    <?php } ?>
+
+                    <div class="prescription_block">
+                        <?php if($prescription->medicines){?>
+                        <div class="prescription_section">
                         <h4>Medicines</h4>
                             <?php
                             foreach ($prescription->medicines as $medicine){
@@ -148,9 +154,12 @@
                             }
                             ?>
                     </div>
-
-                    <div class="prescription_section">
-                        <h4>Tests</h4>
+                    <?php } ?>
+                    </div>
+                    <div class="prescription_block">
+                        <?php if($prescription->tests){?>
+                        <div class="prescription_section">
+                        <h4>Examinations</h4>
                         <?php
                         foreach ($prescription->tests as $test){
                             if($test === end($prescription->tests) ){
@@ -162,10 +171,15 @@
 
                         ?>
                     </div>
-
-                    <div>
+                    <?php } ?>
+                    </div>
+                    <div class="prescription_block">
+                        <?php if($prescription->doctores_notes){?>
+                        <div>
                         <h4>Doctor's Note </h4>
                         <?= ucfirst($prescription->doctores_notes) ?>
+                    </div>
+                    <?php } ?>
                     </div>
 
                     <div class="prescription_footer">
@@ -187,6 +201,6 @@
                 </div>
             </div>
         </div>
-
+        <input type="hidden" value="<?php echo $is_print ?>" id="is_print" name="is_print" >
     </div>
 </div>
