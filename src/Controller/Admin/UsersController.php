@@ -169,6 +169,18 @@ class UsersController extends AppController
                 $success_message = __('Registration is successful.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                 $this->login();
+
+                $user_info = $this->request->data;
+                $site_link = Router::url( '/', true );
+
+                $info = array(
+                    'to'                => $user_info['email'],
+                    'subject'           => 'Thanks for Registration',
+                    'template'          => 'registration_success',
+                    'data'              => array('User' => $user_info, 'base_url' => $site_link),
+                );
+                $this->EmailHandler->sendEmail($info);
+
                 //return $this->redirect(['action' => 'index']);
             } else {
                 $error_message = __('The user could not be saved. Please, try again.');
@@ -432,9 +444,14 @@ class UsersController extends AppController
             }
         }
         $latest_prescription = $this->Common->getLatestPrescription($user_id);
+        $user = $this->Users->get($user_id);
 
-        echo json_encode(array('user' => $this->Users->get($user_id), 'prescriptions' => $prescriptions_link, 'last_visit_date' => $latest_prescription->created->format('d F Y')));die;
+        $last_visit_date = '';
+        if($latest_prescription){
+            $last_visit_date = $latest_prescription->created->format('d F Y');
+        }
 
+        echo json_encode(array('user' => $user, 'prescriptions' => $prescriptions_link, 'last_visit_date' => $last_visit_date));die;
     }
 
     function isUserAvailable(){

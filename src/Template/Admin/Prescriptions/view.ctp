@@ -116,17 +116,17 @@
                         </div>
                     <?php } ?>
                     <div>
-                    <b>Diagnosis : </b>
-                    <?php
-                    foreach($prescription->diagnosis as $diagnosis ) {
-                        if($diagnosis === end($prescription->diagnosis) ){
-                            echo ucfirst($diagnosis->name)."  ";
-                        }else{
-                            echo ucfirst($diagnosis->name).", ";
+                        <b>Diagnosis : </b>
+                        <?php
+                        foreach($prescription->diagnosis as $diagnosis ) {
+                            if($diagnosis === end($prescription->diagnosis) ){
+                                echo ucfirst($diagnosis->name)."  ";
+                            }else{
+                                echo ucfirst($diagnosis->name).", ";
+                            }
                         }
-                    }
-                    ?>
-                </div>
+                        ?>
+                    </div>
 
                     <?php if($prescription->temperature){?>
                         <div>
@@ -140,47 +140,57 @@
                         </div>
                     <?php } ?>
 
-                    <div class="prescription_block">
-                        <?php if($prescription->medicines){?>
-                        <div class="prescription_section">
-                        <h4>Medicines</h4>
-                            <?php
-                            foreach ($prescription->medicines as $medicine){
-                                if($medicine === end($prescription->medicines) ){
-                                    echo ucfirst($medicine->name)."  ";
-                                }else{
-                                    echo ucfirst($medicine->name).", ";
-                                }
-                            }
-                            ?>
-                    </div>
+                    <?php if($prescription->medicines){?>
+                        <div class="prescription_block">
+                            <div>
+                                <h4>Medicines</h4>
+                                    <?php
+                                        foreach ($prescription->medicines as $medicine){
+                                            if($medicine === end($prescription->medicines) ){
+                                                echo ucfirst($medicine->name)."  ";
+                                            }else{
+                                                echo ucfirst($medicine->name).", ";
+                                            }
+                                        }
+                                    ?>
+                            </div>
+                        </div>
                     <?php } ?>
-                    </div>
-                    <div class="prescription_block">
-                        <?php if($prescription->tests){?>
-                        <div class="prescription_section">
-                        <h4>Examinations</h4>
-                        <?php
-                        foreach ($prescription->tests as $test){
-                            if($test === end($prescription->tests) ){
-                                echo ucfirst($test->name)."  ";
-                            }else{
-                                echo ucfirst($test->name).", ";
-                            }
-                        }
 
-                        ?>
-                    </div>
+                    <?php if($prescription->tests){?>
+                        <div class="prescription_block">
+                            <div>
+                                <h4>Examinations</h4>
+                                <?php
+                                    foreach ($prescription->tests as $test){
+                                        if($test === end($prescription->tests) ){
+                                            echo ucfirst($test->name)."  ";
+                                        }else{
+                                            echo ucfirst($test->name).", ";
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
                     <?php } ?>
-                    </div>
-                    <div class="prescription_block">
-                        <?php if($prescription->doctores_notes){?>
-                        <div>
-                        <h4>Doctor's Note </h4>
-                        <?= ucfirst($prescription->doctores_notes) ?>
-                    </div>
+
+                    <?php if($prescription->doctores_notes){?>
+                        <div class="prescription_block">
+                            <div>
+                                <h4>Doctor's Note </h4>
+                                <?= ucfirst($prescription->doctores_notes) ?>
+                            </div>
+                        </div>
                     <?php } ?>
-                    </div>
+
+                    <?php if($prescription->other_instructions){?>
+                        <div class="prescription_block">
+                            <div>
+                                <h4>Other Instructions </h4>
+                                <?= ucfirst($prescription->other_instructions) ?>
+                            </div>
+                        </div>
+                    <?php } ?>
 
                     <div class="prescription_footer">
                         <div class="row">
@@ -198,7 +208,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> <!--end prescription-->
             </div>
         </div>
         <input type="hidden" value="<?php echo $is_print ?>" id="is_print" name="is_print" >

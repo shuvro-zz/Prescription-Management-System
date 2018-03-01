@@ -85,19 +85,21 @@ function initDatePicker(){
 }
 
 function getUserInfo(user_id){
+    $('.reset_prescriptions').html('');
     if(user_id==''){
         $('.reset_patient').val('');
-        $('.reset_prescriptions').html('');
         $('#last-visit-date').html('');
     }else{
         $('#loading').removeClass('hide');
         $.post(home_url+'admin/users/get-user/'+user_id,function(response){
+            console.log(response);
+
             $('#user-phone').val(response.user.phone);
             $('#user-email').val(response.user.email);
             $('#user-age').val(response.user.age);
             $('#user-address').val(response.user.address_line1);
             $('#loading').addClass('hide');
-            $('#prescriptions_link').html(response.prescriptions);
+            $('#prescriptions-link').html(response.prescriptions);
             $('#last-visit-date').html(response.last_visit_date);
         },'json');
     }

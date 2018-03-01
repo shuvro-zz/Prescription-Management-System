@@ -1,26 +1,17 @@
-2018-02-28 17:18:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
+2018-03-01 15:53:11 Error: Fatal Error (1): Call to a member function format() on null in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 448]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
 
 
-2018-02-28 17:18:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+
+2018-03-01 15:53:12 Error: [Cake\Error\FatalErrorException] Call to a member function format() on null
+Request URL: /pms/admin/users/get-user/126
+Referer URL: http://localhost/pms/admin/prescriptions/add
 Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 448)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
 
 

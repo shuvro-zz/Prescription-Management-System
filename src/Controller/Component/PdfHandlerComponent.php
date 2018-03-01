@@ -209,9 +209,13 @@ class PdfHandlerComponent extends Component
                         <table>
                             <tr><td class="patient_head">Patient</td></tr>
                             <tr><td>Name: '. ucfirst($prescription->user->first_name).' , Age:'. $prescription->user->age .' Years' .'</td></tr>
-                            <tr><td>Mobile: '. $prescription->user->phone .'</td></tr>
-                            <tr><td>Address: '. ucfirst($prescription->user->address_line1) .'</td></tr>
-                            <tr><td>Diagnosis: ';
+                            <tr><td>Mobile: '. $prescription->user->phone .'</td></tr>';
+
+                            if($prescription->user->address_line1){
+                                $html .= '<tr><td>Address: '. ucfirst($prescription->user->address_line1) .'</td></tr>';
+                            }
+
+                            $html .='<tr><td>Diagnosis: ';
                                 foreach($prescription->diagnosis as $diagnosis ) {
                                     if($diagnosis === end($prescription->diagnosis) ){
                                         $html .= ucfirst($diagnosis->name)."  ";
@@ -219,10 +223,15 @@ class PdfHandlerComponent extends Component
                                         $html .= ucfirst($diagnosis->name).", ";
                                     }
                                 }
-                            $html .= '</td></tr>
-                            <tr><td>Temperature: '. ucfirst($prescription->temperature) .'</td></tr>
-                            <tr><td>Blood Pressure: '. ucfirst($prescription->blood_pressure) .'</td></tr>
-                        </table>
+                            $html .= '</td></tr>';
+
+                            if($prescription->user->temperature){
+                                $html .= '<tr><td>Temperature: '. ucfirst($prescription->temperature) .'</td></tr>';
+                            }
+                            if($prescription->user->blood_pressure){
+                                $html .= '<tr><td>Blood Pressure: '. ucfirst($prescription->blood_pressure) .'</td></tr>';
+                            }
+                        $html .=  '</table>
                     </td>
                     <td width="40%" align="right">
                         Last Visited Date:'.$last_patient->created->format('d F Y').'
@@ -231,48 +240,56 @@ class PdfHandlerComponent extends Component
                 <tr>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                </tr>
-                <tr>
-                   <td>
-                        <table>
-                            <tr><td class="medicine_head">Medicines</td></tr><tr><td>'?>
-                            <?php
-
-                            foreach($prescription->medicines as $medicine ) {
-                                if($medicine === end($prescription->medicines) ){
-                                    $html .= ucfirst($medicine->name)."  ";
-                                }else{
-                                    $html .= ucfirst($medicine->name).", ";
+                </tr>';
+                if($prescription->medicines){
+                    $html.= '<tr>
+                       <td>
+                            <table>
+                                <tr><td class="medicine_head">Medicines</td></tr><tr><td>'?>
+                                <?php
+                                foreach($prescription->medicines as $medicine ) {
+                                    if($medicine === end($prescription->medicines) ){
+                                        $html .= ucfirst($medicine->name)."  ";
+                                    }else{
+                                        $html .= ucfirst($medicine->name).", ";
+                                    }
                                 }
-                            }
-                        $html.= '</td></tr></table>
-                   </td>
-                </tr>
+                            $html.= '</td></tr></table>
+                       </td>
+                    </tr>';
+                }
 
-                <tr>
+                $html.= '<tr>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
 
                 <tr>
                     <td>
-                        <table>
-                            <tr><td class="test_head">Tests</td></tr><tr><td>'?>
-                                <?php
-
-                                foreach($prescription->tests as $test ) {
-                                    if($test === end($prescription->tests) ){
-                                        $html .= ucfirst($test->name)."  ";
-                                    }else{
-                                        $html .= ucfirst($test->name).", ";
+                        <table>';
+                            if($prescription->tests){
+                                $html.= '<tr><td class="test_head">Examination</td></tr><tr><td>'?>
+                                    <?php
+                                    foreach($prescription->tests as $test ) {
+                                        if($test === end($prescription->tests) ){
+                                            $html .= ucfirst($test->name)."  ";
+                                        }else{
+                                            $html .= ucfirst($test->name).", ";
+                                        }
                                     }
-                                }
-                            $html.='</td></tr><tr><td>&nbsp;</td></tr>
-                                    <tr><td>&nbsp;</td></tr>
+                                $html.= '</td></tr><tr><td>&nbsp;</td></tr>';
+                            }
 
-                            <tr><td class="test_head">Doctors Note:</td></tr>
-                            <tr><td>'.$prescription->doctores_notes.'</td></tr>
-                        </table>
+                            if($prescription->doctores_notes){
+                                $html.= '<tr><td class="test_head">Doctors Note:</td></tr>
+                                <tr><td>'.$prescription->doctores_notes.'</td></tr>
+                                <tr><td>&nbsp;</td></tr>';
+                            }
+                            if($prescription->other_instructions){
+                                $html.= '<tr><td class="test_head">Other Instructions:</td></tr>
+                                <tr><td>'.$prescription->other_instructions.'</td></tr>';
+                            }
+                        $html.= '</table>
                     </td>
                 </tr>
             </table>

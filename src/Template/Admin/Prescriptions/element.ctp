@@ -31,13 +31,10 @@
                         }
                         ?>
                     </div>
-                    <?php
-                    if(strtolower($this->request->params['action']) == 'add'){
-                        ?>
-                        <div class="inputs hide" id='patient_field'>
-                            <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']); ?>
-                        </div>
-                    <?php } ?><br>
+
+                    <div class="inputs hide" id='patient_field'>
+                        <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']); ?>
+                    </div> <br>
 
                     <label>Mobile:</label>
                     <div class="inputs">
@@ -90,7 +87,7 @@
             <div class="patient_info_section">
                 <h6>Prescriptions</h6>
                 <div class="prescriptions single_block ">
-                    <ul id="prescriptions_link" class="reset_prescriptions">
+                    <ul id="prescriptions-link" class="reset_prescriptions">
                         <?php echo $prescriptions_link ?>
                     </ul>
                 </div>

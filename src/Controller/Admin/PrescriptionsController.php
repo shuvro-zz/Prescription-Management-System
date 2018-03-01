@@ -151,7 +151,6 @@ class PrescriptionsController extends AppController
             $prescription->user = $patient->toArray();
         }
 
-
         $prescriptions_link = $last_visit_date = '';
 
         $this->set(compact('prescription', 'users', 'prescription_tests', 'medicines', 'tests', 'diagnosis', 'prescriptions_link', 'last_visit_date'));
@@ -222,6 +221,7 @@ class PrescriptionsController extends AppController
                 $prescriptions_link .=  '<li><a href="'. Router::url('/admin/prescriptions/view/'.$all_prescription->id, true ).'" target="_blank">'.$all_prescription->created->format('d F Y').'</a></li>';
             }
         }
+
         $latest_prescription = $this->Common->getLatestPrescription($patient['user_id']);
         $last_visit_date = $latest_prescription->created->format('d F Y');
 
@@ -403,7 +403,7 @@ class PrescriptionsController extends AppController
                     return $this->redirect(['action' => 'add/'.$patient_id]);
                 }
             }else{
-                $this->Flash->admin_warning('Patient could not found, Please select a Patient', ['key' => 'admin_warning']);
+                $this->Flash->admin_warning('Patient not found, Please select a Patient', ['key' => 'admin_warning']);
                 return $this->redirect(['action' => 'add']);
             }
         }
@@ -416,8 +416,8 @@ class PrescriptionsController extends AppController
         if(empty($this->request->data['user_id'])){
             $user = $this->Users->newEntity();
         }else{
-            /*unset($patients['first_name']);
-            unset($patients['address_line1']);*/
+            unset($patients['first_name']);
+            /*unset($patients['address_line1']);*/
             $user = $this->Users->get($this->request->data['user_id']);
         }
 

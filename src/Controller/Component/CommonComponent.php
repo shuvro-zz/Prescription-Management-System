@@ -50,6 +50,7 @@ class CommonComponent extends Component
                 'Prescriptions.doctor_id' => $doctor_id,
                 'Prescriptions.user_id' => $patient_id
             ]);
+
         return $all_prescriptions;
         //End all prescription
     }
