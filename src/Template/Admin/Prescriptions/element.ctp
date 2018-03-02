@@ -18,16 +18,25 @@
                 <div class="patient_details single_block">
 
                     <label class="name" >Name<span class="required" aria-required="true"></span>
-                        <?php if(strtolower($this->request->params['action']) == 'add'){
+                        <?php if((strtolower($this->request->params['action']) == 'add') AND $users != ''){
                             echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
                         } ?>
                     </label>
                     <div class="inputs"  id='patient_drop_down' >
                         <?php
                         if(strtolower($this->request->params['action']) == 'edit'){
-                            echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=>true,'onchange'=>'getUserInfo(this.value)'  ]);
+                            if($users != ''){
+                                echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=>true,'onchange'=>'getUserInfo(this.value)'  ]);
+                            }else{
+                                echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
+                            }
                         }else{
-                            echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=>' selectpicker', 'data-live-search'=>true,'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
+                            if($users != ''){
+                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=>' selectpicker', 'data-live-search'=>true,'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
+                            }else{
+                                echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
+                            }
+
                         }
                         ?>
                     </div>
@@ -94,6 +103,8 @@
             </div>
         </div>
     </div>
+
+    <div style="height: 20px; color:#fff; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: 4px"></i> </div></div>
 
     <div class="row">
         <div class="col-sm-6">

@@ -1,17 +1,209 @@
-2018-03-01 15:53:11 Error: Fatal Error (1): Call to a member function format() on null in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 448]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
+2018-03-02 17:04:33 Error: Array
+(
+    [user_id] => 
+    [patients] => Array
+        (
+            [first_name] => rrr
+            [phone] => 345
+            [age] => re
+            [address_line1] => 
+        )
 
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
 
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
 
-2018-03-01 15:53:12 Error: [Cake\Error\FatalErrorException] Call to a member function format() on null
-Request URL: /pms/admin/users/get-user/126
-Referer URL: http://localhost/pms/admin/prescriptions/add
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:05:44 Error: Array
+(
+    [user_id] => 129
+    [patients] => Array
+        (
+            [first_name] => 
+            [phone] => 324
+            [age] => 43
+            [address_line1] => 
+        )
+
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
+
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
+
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:06:52 Error: Array
+(
+    [user_id] => 128
+    [patients] => Array
+        (
+            [first_name] => 
+            [phone] => 312313
+            [age] => 32
+            [address_line1] => dhaka
+        )
+
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
+
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
+
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:07:18 Error: Array
+(
+    [user_id] => 130
+    [patients] => Array
+        (
+            [first_name] => 
+            [phone] => 345
+            [age] => 0
+            [address_line1] => 
+        )
+
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
+
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
+
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:10:10 Error: Array
+(
+    [user_id] => 130
+    [patients] => Array
+        (
+            [first_name] => 
+            [phone] => 345
+            [age] => 0
+            [address_line1] => dhaka
+        )
+
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
+
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
+
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:12:30 Error: Array
+(
+    [user_id] => 130
+    [patients] => Array
+        (
+            [first_name] => 
+            [phone] => 345
+            [age] => 0
+            [address_line1] => dhaka
+        )
+
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
+
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
+
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:13:12 Error: Array
+(
+    [user_id] => 129
+    [patients] => Array
+        (
+            [first_name] => 
+            [phone] => 324
+            [age] => 43
+            [address_line1] => pabna
+        )
+
+    [blood_pressure] => 
+    [temperature] => 
+    [doctores_notes] => 
+    [tests] => Array
+        (
+            [_ids] => 
+        )
+
+    [medicines] => Array
+        (
+            [_ids] => 
+        )
+
+    [is_print] => 0
+    [other_instructions] => 
+)
+
+2018-03-02 17:28:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
 Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 448)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
 
 

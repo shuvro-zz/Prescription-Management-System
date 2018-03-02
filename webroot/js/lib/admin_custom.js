@@ -92,7 +92,7 @@ function getUserInfo(user_id){
     }else{
         $('#loading').removeClass('hide');
         $.post(home_url+'admin/users/get-user/'+user_id,function(response){
-            console.log(response);
+            //console.log(response);
 
             $('#user-phone').val(response.user.phone);
             $('#user-email').val(response.user.email);
@@ -128,9 +128,6 @@ function getDiagnosis(e){
     }).get();
 
     var all_id = checkedVals.join("_");
-
-    var test = $('input:checkbox');
-    console.log(test);
 
     $('.medicines .tokenize-sortable-demo1').trigger('tokenize:clear');
     $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');

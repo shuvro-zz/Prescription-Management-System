@@ -136,9 +136,14 @@ class PrescriptionsController extends AppController
         //$users = $this->Prescriptions->Users->find('list', ['limit' => 200]);
         $doctor_id = $this->request->session()->read('Auth.User.id');
         $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
-        foreach($get_users as $get_user){
-            $users[$get_user->id] = $get_user->first_name." - " . "$get_user->phone";
+
+        $users = '';
+        if($get_users){
+            foreach($get_users as $get_user){
+                $users[$get_user->id] = $get_user->first_name." - " . "$get_user->phone";
+            }
         }
+
 
         //$prescription_medicines = array('medicine_id'=>'');
         $prescription_tests = array('test_id'=>'');

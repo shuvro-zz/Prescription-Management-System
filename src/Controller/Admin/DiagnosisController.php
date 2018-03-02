@@ -219,8 +219,13 @@ class DiagnosisController extends AppController
 
     function isDiagnosisAvailable(){
         $this->autoRender = false;
-        $diagnosis = $this->Diagnosis->findByName($this->request->data['name']);
-        if(empty($diagnosis->toArray())){
+        $diagnosis = $this->Diagnosis->findByName($this->request->data['name'])
+            ->where([
+                'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id')
+            ]);
+
+        $diagnosis = $diagnosis->toArray();
+        if(empty($diagnosis)){
             echo 'true';die;
         }else{
             echo 'false';die;

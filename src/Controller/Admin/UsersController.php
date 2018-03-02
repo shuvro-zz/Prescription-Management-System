@@ -457,7 +457,10 @@ class UsersController extends AppController
     function isUserAvailable(){
         $this->autoRender = false;
 
-        $phone = $this->Users->findByPhone($this->request->data['phone']);
+        $phone = $this->Users->findByPhone($this->request->data['phone'])
+            ->where([
+                'Users.doctor_id' => $this->request->session()->read('Auth.User.id')
+            ]);;
 
         $phone = $phone->toArray();
         if(empty($phone)){
