@@ -372,7 +372,6 @@ class PrescriptionsController extends AppController
             $success_message = __('PDF file has been generated.');
             $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             $this->redirect(['action' => 'view/'.$id]);
-
         }
     }
 
