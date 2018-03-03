@@ -346,8 +346,6 @@ class PrescriptionsController extends AppController
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
         ]);
-        $this->set('prescription', $prescription);
-        $this->set('_serialize', ['prescription']);
 
         $patient_id = $prescription->user->id;
 
@@ -356,18 +354,18 @@ class PrescriptionsController extends AppController
         $order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription,$latest_prescription);
 
         if($order_pdf_file){
-            $pdf_file = basename($order_pdf_file);
-            $pdf_file_name = $prescription->pdf_file;
+            $new_pdf_file_name = basename($order_pdf_file);
+            $exit_pdf_file_name = $prescription->pdf_file;
 
-            if(!empty($pdf_file_name)){
+            if(!empty($exit_pdf_file_name)){
 
-                $this->deletePdf($pdf_file_name);
+                $this->deletePdf($exit_pdf_file_name);
 
-                $prescription->pdf_file = $pdf_file;
+                $prescription->pdf_file = $new_pdf_file_name;
                 $this->Prescriptions->save($prescription);
 
             }else{
-                $prescription->pdf_file = $pdf_file;
+                $prescription->pdf_file = $new_pdf_file_name;
                 $this->Prescriptions->save($prescription);
             }
 
@@ -378,9 +376,9 @@ class PrescriptionsController extends AppController
         }
     }
 
-    function deletePdf($pdf_file_name){
+    function deletePdf($exit_pdf_file_name){
 
-        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'pdf' .DS. $pdf_file_name);
+        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'pdf' .DS. $exit_pdf_file_name);
         $file->delete();
     }
 

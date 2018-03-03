@@ -48,7 +48,7 @@ class PdfHandlerComponent extends Component
     }
 
 
-    function writeOrderPdfFile($prescription,$last_patient)
+    function writeOrderPdfFile($prescription,$latest_prescription)
     {
         /*$url    =    Router::url('/', true);
         $qrcode_img = $url . $qrcode;
@@ -112,7 +112,7 @@ class PdfHandlerComponent extends Component
 
 
         $html_pdf   ='';
-        $first_part = $this->firstPgprepareOrderPdfHtml($prescription,$last_patient);
+        $first_part = $this->firstPgprepareOrderPdfHtml($prescription,$latest_prescription);
         $html_pdf .= $first_part['message'];
 
         if(!$first_part['status']){
@@ -144,7 +144,7 @@ class PdfHandlerComponent extends Component
     }
 
 
-    function firstPgprepareOrderPdfHtml($prescription,$last_patient)
+    function firstPgprepareOrderPdfHtml($prescription,$latest_prescription)
     {
         /*$url    =    Router::url('/', true);
         $devider_img = $url . 'img/pdf/divider.png';
@@ -234,7 +234,7 @@ class PdfHandlerComponent extends Component
                         $html .=  '</table>
                     </td>
                     <td width="40%" align="right">
-                        Last Visited Date:'.$last_patient->created->format('d F Y').'
+                        Last Visited Date:'.$latest_prescription->created->format('d F Y').'
                     </td>
                 </tr>
                 <tr>
