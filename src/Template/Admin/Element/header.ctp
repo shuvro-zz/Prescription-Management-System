@@ -11,8 +11,8 @@
         <div class="flex-container">
             <div class="flex-item">
                 <div class="flex-container">
-                    <!--<div class="toggle-menu">
-                        <a href=""> <span class="toggle-menu-bar"><i class="fa fa-bars"></i></span></a>
+                    <!-- <div class="toggle-menu">
+                        <span class="toggle-menu-bar"><i class="fa fa-bars"></i></span>
                     </div>
                     <a href="<?php /*echo $this->Url->build('/');*/?>" target="_blank"> <span class="nav-text">Visit Site</span></a>-->
                 </div>

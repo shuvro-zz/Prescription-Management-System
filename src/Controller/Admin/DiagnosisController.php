@@ -185,7 +185,7 @@ class DiagnosisController extends AppController
                 $instructions[] = $item->instructions;
             }
 
-            $all_instructions = nl2br(implode(', ',$instructions));
+            $all_instructions = implode(",\n",$instructions);
         }
 
         echo json_encode(array('medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions));die;

@@ -113,10 +113,7 @@ class PrescriptionsController extends AppController
             $prescription->doctor_id = $this->request->session()->read('Auth.User.id');
             $prescription = $this->Prescriptions->patchEntity($prescription, $this->request->data);
 
-
-            $prescription = $this->Prescriptions->save($prescription);
-
-            if ($prescription) {
+            if ($this->Prescriptions->save($prescription)) {
 
                 $this->savePrescriptionsDiagnosis($diagnosis, $prescription->id);
 
@@ -143,7 +140,6 @@ class PrescriptionsController extends AppController
                 $users[$get_user->id] = $get_user->first_name." - " . "$get_user->phone";
             }
         }
-
 
         //$prescription_medicines = array('medicine_id'=>'');
         $prescription_tests = array('test_id'=>'');
@@ -535,8 +531,8 @@ class PrescriptionsController extends AppController
                 $new_diagnosis[$key]['diagnosis_id'] = $val;
             }
             return $new_diagnosis;
+
         }
     }
-
 }
 

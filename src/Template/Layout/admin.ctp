@@ -15,7 +15,7 @@
 	echo $this->Html->css([
 		'styles/vendors/bootstrap.min.css',
 		'font-awesome/css/font-awesome.min.css',
-		//'bootstrap-select/bootstrap-select.min.css',
+		'bootstrap-select/bootstrap-select.min.css',
         'admin_styles/css/admin_style.css',
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
@@ -30,7 +30,7 @@
 	echo $this->Html->script([
 		'lib/jquery.min.js',
 		'lib/bootstrap.min.js',
-		//'lib/bootstrap-select.js',
+		'lib/bootstrap-select.js',
         'lib/jquery.validate.min.js',
 		'lib/jquery-ui.js',
 		'lib/jquery.printarea.js',
@@ -54,7 +54,13 @@
 <body id="app" class="app off-canvas theme-four nav-expand">
 <?php
 	echo $this->element('header');
-	echo $this->element('sidebar');
+
+    if(($this->name == 'Prescriptions') AND ($this->template == 'add' OR $this->template == 'edit')){
+        echo '';
+    }else{
+        echo $this->element('sidebar');
+    }
+
 	echo $this->fetch('content');
 	echo $this->element('footer');
 ?>

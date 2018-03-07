@@ -41,11 +41,6 @@ class SettingsController extends AppController
             //debug($post_data);exit;
 
             foreach($post_data as $key=>$val){
-                $setting = $this->Settings->newEntity();
-                $setting = $this->Settings->patchEntity($setting, $this->request->data);
-
-                $setting->key_name = $key;
-                $setting->value = $val;
 
                 $query = $this->Settings->query();
                 $query->update()

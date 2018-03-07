@@ -1,3 +1,12 @@
+<style>
+    .workspace{
+        margin-left: 0px;
+        height: auto;
+    }
+    .workspace .workspace-body .main-container{
+        height: auto;
+    }
+</style>
     <?php
         function selected($id,$prescription_diagnosis){
             if(isset($prescription_diagnosis)){
@@ -12,7 +21,7 @@
     ?>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="patient_info_section">
                 <h6>Patient Details</h6>
                 <div class="patient_details single_block">
@@ -32,7 +41,7 @@
                             }
                         }else{
                             if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=>' selectpicker', 'data-live-search'=>true,'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
+                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
                             }else{
                                 echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
                             }
@@ -84,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <div class="patient_info_section">
                 <h6>Doctors Notes</h6>
                 <div class=" doctors_note">
@@ -104,7 +113,7 @@
         </div>
     </div>
 
-    <div style="height: 20px; color:#fff; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: 4px"></i> </div></div>
+    <div style="height: 12px; color:#fff; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: 4px"></i> </div></div>
 
     <div class="row">
         <div class="col-sm-6">
@@ -145,6 +154,18 @@
                         <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control','label'=>false, 'type' =>'textarea' ]);?>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="prescription_button_section">
+            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+            <div class="flex-item">
+                <?= $this->Form->button(__('Save'), ['class' => 'btn save event-save']) ?>
+            </div>
+            <div class="flex-item">
+                <?= $this->Form->button(__('Save & Print'), ['class' => 'btn save event-save', 'type' => 'button', 'onclick' => 'saveAndPrint()']) ?>
             </div>
         </div>
     </div>

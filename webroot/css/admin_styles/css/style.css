@@ -86,7 +86,11 @@ select[multiple] {
 .input.select .bootstrap-select.btn-group button,
 .input.select .bootstrap-select.btn-group .wizard-config .btn-continue,
 .wizard-config .input.select .bootstrap-select.btn-group .btn-continue {
-    width: 100% !important;
+    height: 25px;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+    margin-top: -4px;
 }
 .input.select .bootstrap-select.btn-group {
     background: transparent;
@@ -160,17 +164,27 @@ button, .wizard-config .btn-continue{
 }
 
 .mobile_width {
-    width: 268px;
+    width: 240px;
 }
+
 .age_width {
     width: 50px;
 }
-.address_width{}
+.address_width {
+    width: 154px;
+}
 .temp_width {
-    width: 149px;
+    width: 208px;
 }
 .bp_width {
-    width: 204px;
+    width: 262px;
+}
+.tokenize > .tokens-container {
+    position: relative;
+    list-style: none;
+    padding: 0 0 0px 0px;
+    cursor: text;
+    height: 23px;
 }
 
 .patient_info_section input,select{
@@ -182,6 +196,21 @@ button, .wizard-config .btn-continue{
 .patient_info_section label{
     color: #000;
     font-size: 12px;
+}
+.patient_details span.bs-caret {
+    /* margin-top: 18px; */
+    position: absolute;
+    top: 2px;
+}
+.patient_details .input.select .bootstrap-select.btn-group button,
+.input.select .bootstrap-select.btn-group
+.wizard-config .btn-continue, .wizard-config
+.input.select .bootstrap-select.btn-group .btn-continue{
+    width: 236px !important;
+    margin-bottom: 2px;
+}
+.patient_details .dropdown-menu{
+    padding: 0px;
 }
 .single_block {
     background: #fff;
@@ -203,7 +232,7 @@ button, .wizard-config .btn-continue{
 .left_side textarea,.right_side textarea{
     width: 100%;
     border-radius: 5px;
-    height: 150px;
+    height: 125px;
 }
 .left_side {
     background: #1379AD;
@@ -222,22 +251,22 @@ button, .wizard-config .btn-continue{
 .diagnosis_info,.examinations,.medicines {
     background: #fff;
     border-radius: 5px;
-    height: 149px;
+    height: 125px;
     padding: 5px;
     overflow: scroll;
 }
-.button_section {
-    margin-top: 7px;
+.prescription_button_section {
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-bottom: 60px;
 }
-.button_section button {
-    background: #fff;
-    color: black;
-    border-radius: 5px;
-    width: 18%;
-    height: 35px;
-    text-transform: capitalize;
-    float: right;
-    margin-left: 10px;
+.prescription_button_section button{
+    width: auto;
+    margin-right: 21px;
+}
+
+.prescription_button_section .btn{
+    float: left;
 }
 
 .examinations .tokenize > .tokens-container{
@@ -272,7 +301,7 @@ button, .wizard-config .btn-continue{
     border-radius: 5px!important;
 }
 select#user-id,.patient_name_width {
-    width: 267px;
+    width: 236px;
     border: 1px solid #dde3e5;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;

@@ -40,35 +40,28 @@
                                                 </div>
                                             <?php } ?>
 
-
-
                                             <?php if($val['key_name'] == 'site_name'){ ?>
-
-                                            <div class="col-sm-6">
-                                                <div class="form-row">
-                                                    <label class="name">Site Name<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">
-                                                        <input name="site_name" type="text" class="form-control" value="<?php echo $val['value']; ?>" required="required">
+                                                <div class="col-sm-6">
+                                                    <div class="form-row">
+                                                        <label class="name">Site Name<span class="required" aria-required="true"></span></label>
+                                                        <div class="inputs">
+                                                            <input name="site_name" type="text" class="form-control" value="<?php echo $val['value']; ?>" required="required">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
                                             <?php } ?>
 
                                             <?php if($val['key_name'] == 'site_email'){ ?>
-                                             <div class="col-sm-6">
-                                                <div class="form-row">
-                                                    <label class="name">Site Email<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">
-                                                        <input name="site_email" type="text" class="form-control" value="<?php echo $val['value'] ?>" required="required">
+                                                 <div class="col-sm-6">
+                                                    <div class="form-row">
+                                                        <label class="name">Site Email<span class="required" aria-required="true"></span></label>
+                                                        <div class="inputs">
+                                                            <input name="site_email" type="text" class="form-control" value="<?php echo $val['value'] ?>" required="required">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
+                                                 </div>
                                             <?php } ?>
-
                                         <?php } ?>
-
                                     </div>
                                 </div>
                             </div>
