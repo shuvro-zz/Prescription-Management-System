@@ -79,8 +79,8 @@ function initDatePicker(){
         format:'H:i'
     });
 
-    $(".date").prop('readonly', true);
-    $(".time").prop('readonly', true);
+    $(".date").prop('readonly', false);
+    $(".time").prop('readonly', false);
 
 }
 
@@ -105,50 +105,7 @@ function getUserInfo(user_id){
     }
 }
 
-/*var index = 0;
-var ids = [];*/
 
-function getDiagnosis(e){
-    /*if($(e)[0].checked){
-        ids[index] = e.value;
-        index++;
-    }else{
-        ids = ids.filter(function(id) {
-            return id !== e.value;
-        });
-
-        index--;
-    }
-
-    var all_id = ids.toString();
-    all_id = all_id.replace(/,/g , "_");*/
-
-    var checkedVals = $('input:checkbox:checked').map(function() {
-        return this.value;
-    }).get();
-
-    var all_id = checkedVals.join("_");
-
-    $('.medicines .tokenize-sortable-demo1').trigger('tokenize:clear');
-    $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
-    $('#all_instructions').val('');
-    if(all_id!=''){
-        $('#loading').removeClass('hide');
-        $.post(home_url+'admin/diagnosis/get-diagnosis/'+all_id ,function(response){
-            $.each(response.medicines, function( id, value ) {
-                $('.medicines .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
-            });
-
-            $.each(response.tests, function( id, value ) {
-                $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
-            });
-
-            $('#all_instructions').val(response.all_instructions);
-            $('#loading').addClass('hide');
-
-        },'json');
-    }
-}
 
 
 function saveAndPrint(){

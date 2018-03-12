@@ -113,7 +113,7 @@
         </div>
     </div>
 
-    <div style="height: 12px; color:#fff; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: 4px"></i> </div></div>
+    <div style="height: 12px; color:#fff; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: -5px"></i> </div></div>
 
     <div class="row">
         <div class="col-sm-6">
@@ -141,9 +141,46 @@
             <div class="right_side">
 
                 <div class="medicines_section">
+                    <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>
                     <h6>Medicines</h6>
+
                     <div class=" medicines">
-                        <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); ?>
+                        <?php /*echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); */?>
+
+                        <?php
+                            echo '<div class="medicines_wrap" id="medicinesWrap">';
+                                foreach($prescription_medicines as $prescription_medicine){
+                                    $field_medicine = '<div class="medicines_row ">';
+                                    $field_medicine .= '<div class="col-sm-3 medicine_width" style="    margin-right: 4px; padding:0px; width: 100px;">';
+                                    $field_medicine .= '<div class="form-row">';
+                                    $field_medicine .= '<div class="inputs">';
+                                    $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker ', 'data-live-search'=>true, 'label'=>false]);
+                                    $field_medicine .= '</div>';
+                                    $field_medicine .= '</div>';
+                                    $field_medicine .= '</div>';
+
+                                    $field_medicine .= '<div class="col-sm-2" style="padding: 0px; width: 66px">';
+                                    $field_medicine .= '<div class="form-row">';
+                                    $field_medicine .= '<div class="inputs">';
+                                    $field_medicine .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($prescription_medicine->rule))? $prescription_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
+                                    $field_medicine .=  '</div>';
+                                    $field_medicine .= '</div>';
+                                    $field_medicine .= '</div>';
+
+                                    $field_medicine .=  '<div class="col-sm-1">';
+                                    $field_medicine .= '<div class="inputs">';
+                                    $field_medicine .= '<button type="button" id="dle_medicine_btn" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
+                                    $field_medicine .= '</div>';
+                                    $field_medicine .= '</div>';
+                                    $field_medicine .= '</div>';
+
+                                    if(strtolower($this->request->params['action']) == 'edit'){
+                                        echo  $field_medicine;
+                                    }
+
+                                }
+                            echo '</div>';
+                        ?>
                     </div>
                 </div>
 
@@ -171,4 +208,86 @@
     </div>
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Add Medicine field
+        $("#addMoreMedicine").click(function(){
+            $(".dle_medicine_btn").css('display');
+            $("#medicinesWrap").append('<?php echo $field_medicine ?>');
+            $('.selectpicker').selectpicker('refresh');
+        });
 
+    });
+
+    // Delete field
+    function removeField(e){
+        $(e).parents('.medicines_row').remove();
+    }
+
+    function getDiagnosis(e){
+        var checkedVals = $('input:checkbox:checked').map(function() {
+            return this.value;
+        }).get();
+
+        var all_id = checkedVals.join("_");
+
+        //$('.medicines .tokenize-sortable-demo1').trigger('tokenize:clear');
+        $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
+        $('#all_instructions').val('');
+        $('#medicinesWrap').html('');
+
+        if(all_id!=''){
+            $('#loading').removeClass('hide');
+
+            var prescription_id = $('#prescription-id').val();
+            if (typeof prescription_id == 'undefined'){
+                prescription_id = 'undefined';
+            }
+
+            $.post(home_url+'admin/diagnosis/get-diagnosis/'+all_id+'/'+prescription_id ,function(response){
+                <?php $field_medicine_edit = ''; ?>
+                $.each(response.medicines, function( id, value ) {
+                    var medicine = value.name;
+                    var medicine_id = value.id;
+                    <?php
+                        $field_medicine_edit .= '<div class="medicines_row ">';
+                        $field_medicine_edit .= '<div class="col-sm-3 medicine_width" style="    margin-right: 4px; padding:0px; width: 100px;">';
+                        $field_medicine_edit .= '<div class="form-row">';
+                        $field_medicine_edit .= '<div class="inputs">';
+                        $field_medicine_edit .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' =>$medicine_id , 'empty' => 'Select', 'class'=>'form-control selectpicker ', 'data-live-search'=>true, 'label'=>false]);
+                        $field_medicine_edit .= '</div>';
+                        $field_medicine_edit .= '</div>';
+                        $field_medicine_edit .= '</div>';
+
+                        $field_medicine_edit .= '<div class="col-sm-2" style="padding: 0px; width: 66px">';
+                        $field_medicine_edit .= '<div class="form-row">';
+                        $field_medicine_edit .= '<div class="inputs">';
+                        $field_medicine_edit .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($prescription_medicine->rule))? $prescription_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
+                        $field_medicine_edit .=  '</div>';
+                        $field_medicine_edit .= '</div>';
+                        $field_medicine_edit .= '</div>';
+
+                        $field_medicine_edit .=  '<div class="col-sm-1">';
+                        $field_medicine_edit .= '<div class="inputs">';
+                        $field_medicine_edit .= '<button type="button" id="dle_medicine_btn" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
+                        $field_medicine_edit .= '</div>';
+                        $field_medicine_edit .= '</div>';
+                        $field_medicine_edit .= '</div>';
+                    ?>
+                });
+
+                $('#medicinesWrap').append('<?php echo $field_medicine_edit ?>');
+                $('.selectpicker').selectpicker('refresh');
+
+                $.each(response.tests, function( id, value ) {
+                    $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
+                });
+
+                $('#all_instructions').val(response.all_instructions);
+                $('#loading').addClass('hide');
+
+            },'json');
+        }
+    }
+
+</script>

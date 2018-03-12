@@ -86,11 +86,11 @@ select[multiple] {
 .input.select .bootstrap-select.btn-group button,
 .input.select .bootstrap-select.btn-group .wizard-config .btn-continue,
 .wizard-config .input.select .bootstrap-select.btn-group .btn-continue {
-    height: 25px;
+    height: 23px;
 }
 
 .bootstrap-select.btn-group .dropdown-toggle .filter-option {
-    margin-top: -4px;
+    margin-top: -5px;
 }
 .input.select .bootstrap-select.btn-group {
     background: transparent;
@@ -98,9 +98,10 @@ select[multiple] {
     width: 100%!important;
 }
 
-.medicines_wrap{
+.medicines_wrap {
     position: relative;
-
+    float: left;
+    width: 100%;
 }
 
 .medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
@@ -114,13 +115,24 @@ button, .wizard-config .btn-continue{
     min-width: 7%!important;
 }
 .medicines_row .dle_medicine_btn {
-    width: 80px!important;
-    margin-top: 27px;
-    margin-left: -26px;
+    background: no-repeat;
+    border: none;
+    color: #000;
+    position: absolute;
+    left: 59px;
+    top: -17px;
+    height: auto;
 }
-.medicines_row:nth-child(2) .dle_medicine_btn{
+.medicines_row {
+    position: relative;
+    float: left;
+    width: 33%;
+    height: 38px;
+}
+
+/*.medicines_row:nth-child(1) .dle_medicine_btn{
    display: none;
-}
+}*/
 /**************Test*************/
 .tests_wrap{
     position: relative;
@@ -187,7 +199,7 @@ button, .wizard-config .btn-continue{
     height: 23px;
 }
 
-.patient_info_section input,select{
+.patient_info_section input, .medicines input, select{
     height: 23px;
 }
 .patient_info_section h6{
@@ -197,19 +209,32 @@ button, .wizard-config .btn-continue{
     color: #000;
     font-size: 12px;
 }
-.patient_details span.bs-caret {
+.patient_details span.bs-caret, .medicines span.bs-caret {
     /* margin-top: 18px; */
     position: absolute;
-    top: 2px;
+    top: 1px;
 }
 .patient_details .input.select .bootstrap-select.btn-group button,
 .input.select .bootstrap-select.btn-group
 .wizard-config .btn-continue, .wizard-config
 .input.select .bootstrap-select.btn-group .btn-continue{
     width: 236px !important;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
-.patient_details .dropdown-menu{
+.medicines .dropdown-menu{
+    position: static!important;
+    float: none;
+}
+.medicines_section #addMoreMedicine {
+    width: 12px;
+    position: absolute;
+    right: 23px;
+    top: 22px;
+    background: no-repeat;
+    border: none;
+    font-size: 27px;
+}
+.dropdown-menu{
     padding: 0px;
 }
 .single_block {
@@ -299,6 +324,13 @@ button, .wizard-config .btn-continue{
     background-color: #119A55!important;
     color: #fff;
     border-radius: 5px!important;
+}
+
+.medicines .input.select .bootstrap-select.btn-group button,
+.input.select .bootstrap-select.btn-group
+.wizard-config .btn-continue, .wizard-config
+.input.select .bootstrap-select.btn-group .btn-continue{
+    width: 100%!important;
 }
 select#user-id,.patient_name_width {
     width: 236px;

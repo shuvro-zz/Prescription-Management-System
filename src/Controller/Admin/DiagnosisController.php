@@ -168,17 +168,23 @@ class DiagnosisController extends AppController
     }
 
 
-    function getDiagnosis($ids){
-        $ids = explode("_",$ids);
+    function getDiagnosis($ids,$prescription_id = null){
+        $this->viewBuilder()->layout('ajax');
+        $this->autoRender = false;
 
+
+
+        $ids = explode("_",$ids);
         if($ids){
             $contain = ['contain' =>['Medicines', 'Tests']];
             $diagnosis = $this->Diagnosis->find('all',$contain)->where([
                     'Diagnosis.id IN ' => $ids
                 ]);
 
-            $medicines = $this->prepareMedicines($diagnosis);
+            $medicines = $this->prepareMedicines($diagnosis,$prescription_id);
+
             $tests = $this->prepareTests($diagnosis);
+
 
             $instructions = array();
             foreach($diagnosis as $item){
@@ -191,15 +197,18 @@ class DiagnosisController extends AppController
         echo json_encode(array('medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions));die;
     }
 
-    function prepareMedicines($diagnosis){
+    function prepareMedicines($diagnosis,$prescription_id){
+
         $medicines = [];
         foreach($diagnosis as $item){
             if($item->medicines){
                 foreach($item->medicines as $medicine){
-                    $medicines[$medicine->id] = $medicine->name;
+                    $rule = $this->getMedicineRule($prescription_id, $medicine->id);
+                    $medicines[] = array('id' => $medicine->id, 'name' => $medicine->name, 'rule' =>$rule  );
                 }
             }
         }
+
         return $medicines;
     }
 
@@ -213,6 +222,19 @@ class DiagnosisController extends AppController
             }
         }
         return $tests;
+    }
+
+    function getMedicineRule($prescription_id, $medicine_id){
+        if(is_numeric($prescription_id)){
+            $this->loadModel('PrescriptionsMedicines');
+            $prescriptions_medicines = $this->PrescriptionsMedicines->find('all')
+                ->where(['PrescriptionsMedicines.prescription_id' => $prescription_id,
+                    'PrescriptionsMedicines.medicine_id' => $medicine_id])->first();
+
+            if(!empty($prescriptions_medicines->rule)) {
+                return $prescriptions_medicines->rule;
+            }
+        }
     }
 
 
