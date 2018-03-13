@@ -358,6 +358,13 @@ select#user-id,.patient_name_width {
 div#patient_drop_down,div#patient_field,.single_block .inputs {
     display: inline-block;
 }
+
+.drop_down_overlap{
+    z-index: 999;
+}
+.medicine-box{
+    min-height: 288px;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

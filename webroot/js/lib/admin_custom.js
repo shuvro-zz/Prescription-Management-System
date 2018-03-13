@@ -41,7 +41,6 @@ jQuery(document).ready(function ($) {
     $('.tokenize-sortable-demo1').tokenize2({
         sortable: true,
         displayNoResultsMessage: true
-
     });
 
 
@@ -105,12 +104,16 @@ function getUserInfo(user_id){
     }
 }
 
-
-
-
 function saveAndPrint(){
     $('#is-print').val(1);
     $( "#prescription-form" ).submit();
+}
+
+function setzIndex(e){
+    $(e).addClass('drop_down_overlap');
+}
+function unsetzIndex(e){
+    $(e).removeClass('drop_down_overlap');
 }
 
 

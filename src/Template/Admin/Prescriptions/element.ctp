@@ -135,6 +135,14 @@
                         <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
                     </div>
                 </div>
+
+                <div class="other_instruction_section">
+                    <h6>Other Instructions</h6>
+                    <div class="other_instruction">
+                        <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
+                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control','label'=>false, 'type' =>'textarea' ]);?>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -144,13 +152,13 @@
                     <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>
                     <h6>Medicines</h6>
 
-                    <div class=" medicines">
+                    <div class="medicines medicine-box">
                         <?php /*echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); */?>
 
                         <?php
                             echo '<div class="medicines_wrap" id="medicinesWrap">';
                                 foreach($prescription_medicines as $prescription_medicine){
-                                    $field_medicine = '<div class="medicines_row" id="medicines-row">';
+                                    $field_medicine = '<div class="medicines_row" onmouseover="setzIndex(this)" onmouseout="unsetzIndex(this)">';
                                     $field_medicine .= '<div class="col-sm-3 medicine_name">';
                                     $field_medicine .= '<div class="inputs">';
                                     $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker ', 'data-live-search'=>true, 'label'=>false]);
@@ -179,14 +187,6 @@
                         ?>
                     </div>
                 </div>
-
-                <div class="other_instruction_section">
-                    <h6>Other Instructions</h6>
-                    <div class="other_instruction">
-                        <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
-                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control','label'=>false, 'type' =>'textarea' ]);?>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -208,8 +208,9 @@
     $(document).ready(function(){
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
-            $("#medicinesWrap").append('<?php echo $field_medicine ?>');
+            $("#medicinesWrap").append('<?php echo $field_medicine ?>').find('select').last().val('');
             $('.selectpicker').selectpicker('refresh');
+
         });
     });
 
@@ -239,39 +240,17 @@
             }
 
             $.post(home_url+'admin/diagnosis/get-diagnosis/'+all_id+'/'+prescription_id ,function(response){
-                <?php $field_medicine_edit = ''; ?>
-                $.each(response.medicines, function( id, value ) {
-                    var medicine = value.name;
-                    var medicine_id = value.id;
-                    <?php
-                        /*$field_medicine_edit .= '<div class="medicines_row ">';
-                        $field_medicine_edit .= '<div class="col-sm-3 medicine_width" style="    margin-right: 4px; padding:0px; width: 100px;">';
-                        $field_medicine_edit .= '<div class="form-row">';
-                        $field_medicine_edit .= '<div class="inputs">';
-                        $field_medicine_edit .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' =>$medicine_id , 'empty' => 'Select', 'class'=>'form-control selectpicker ', 'data-live-search'=>true, 'label'=>false]);
-                        $field_medicine_edit .= '</div>';
-                        $field_medicine_edit .= '</div>';
-                        $field_medicine_edit .= '</div>';
-
-                        $field_medicine_edit .= '<div class="col-sm-2" style="padding: 0px; width: 66px">';
-                        $field_medicine_edit .= '<div class="form-row">';
-                        $field_medicine_edit .= '<div class="inputs">';
-                        $field_medicine_edit .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($prescription_medicine->rule))? $prescription_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
-                        $field_medicine_edit .=  '</div>';
-                        $field_medicine_edit .= '</div>';
-                        $field_medicine_edit .= '</div>';
-
-                        $field_medicine_edit .=  '<div class="col-sm-1">';
-                        $field_medicine_edit .= '<div class="inputs">';
-                        $field_medicine_edit .= '<button type="button" id="dle_medicine_btn" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
-                        $field_medicine_edit .= '</div>';
-                        $field_medicine_edit .= '</div>';
-                        $field_medicine_edit .= '</div>';*/
-                    ?>
+                $.each(response.medicines, function( index, value ) {
+                    $("#medicinesWrap").append('<?php echo $field_medicine ?>');
                 });
 
-                $('#medicinesWrap').append('<?php echo $field_medicine_edit ?>');
+                $( ".medicines_row" ).each(function( index, element ) {
+                    $(element).find('input').val(response.medicines[index].rule);
+                    $(element).find('select').val(response.medicines[index].id);
+                });
+
                 $('.selectpicker').selectpicker('refresh');
+
 
                 $.each(response.tests, function( id, value ) {
                     $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
