@@ -172,8 +172,6 @@ class DiagnosisController extends AppController
         $this->viewBuilder()->layout('ajax');
         $this->autoRender = false;
 
-
-
         $ids = explode("_",$ids);
         if($ids){
             $contain = ['contain' =>['Medicines', 'Tests']];
@@ -184,7 +182,6 @@ class DiagnosisController extends AppController
             $medicines = $this->prepareMedicines($diagnosis,$prescription_id);
 
             $tests = $this->prepareTests($diagnosis);
-
 
             $instructions = array();
             foreach($diagnosis as $item){
@@ -204,7 +201,7 @@ class DiagnosisController extends AppController
             if($item->medicines){
                 foreach($item->medicines as $medicine){
                     $rule = $this->getMedicineRule($prescription_id, $medicine->id);
-                    $medicines[] = array('id' => $medicine->id, 'name' => $medicine->name, 'rule' =>$rule  );
+                    $medicines[] = array('id' => $medicine->id, 'name' => $medicine->name, 'rule' => $rule  );
                 }
             }
         }

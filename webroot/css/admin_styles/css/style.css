@@ -110,7 +110,9 @@ select[multiple] {
     top: 28px;
     position: absolute;
 }
-
+.increase_zindex{
+    z-index: 999999;
+}
 button, .wizard-config .btn-continue{
     min-width: 7%!important;
 }
@@ -119,14 +121,23 @@ button, .wizard-config .btn-continue{
     border: none;
     color: #000;
     position: absolute;
-    left: 59px;
-    top: -17px;
+    top: 5px;
+    left: -5px;
     height: auto;
+}
+.medicine_name{
+    margin-right: 4px;
+    padding:0px;
+    width: 170px;
+}
+.medicine_rule{
+    padding: 0px;
+    width: 80px;
 }
 .medicines_row {
     position: relative;
     float: left;
-    width: 33%;
+    width: 50%;
     height: 38px;
 }
 

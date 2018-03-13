@@ -150,20 +150,16 @@
                         <?php
                             echo '<div class="medicines_wrap" id="medicinesWrap">';
                                 foreach($prescription_medicines as $prescription_medicine){
-                                    $field_medicine = '<div class="medicines_row ">';
-                                    $field_medicine .= '<div class="col-sm-3 medicine_width" style="    margin-right: 4px; padding:0px; width: 100px;">';
-                                    $field_medicine .= '<div class="form-row">';
+                                    $field_medicine = '<div class="medicines_row" id="medicines-row">';
+                                    $field_medicine .= '<div class="col-sm-3 medicine_name">';
                                     $field_medicine .= '<div class="inputs">';
                                     $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker ', 'data-live-search'=>true, 'label'=>false]);
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
-                                    $field_medicine .= '</div>';
 
-                                    $field_medicine .= '<div class="col-sm-2" style="padding: 0px; width: 66px">';
-                                    $field_medicine .= '<div class="form-row">';
+                                    $field_medicine .= '<div class="col-sm-2 medicine_rule">';
                                     $field_medicine .= '<div class="inputs">';
                                     $field_medicine .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($prescription_medicine->rule))? $prescription_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
-                                    $field_medicine .=  '</div>';
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
 
@@ -212,11 +208,9 @@
     $(document).ready(function(){
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
-            $(".dle_medicine_btn").css('display');
             $("#medicinesWrap").append('<?php echo $field_medicine ?>');
             $('.selectpicker').selectpicker('refresh');
         });
-
     });
 
     // Delete field
@@ -250,7 +244,7 @@
                     var medicine = value.name;
                     var medicine_id = value.id;
                     <?php
-                        $field_medicine_edit .= '<div class="medicines_row ">';
+                        /*$field_medicine_edit .= '<div class="medicines_row ">';
                         $field_medicine_edit .= '<div class="col-sm-3 medicine_width" style="    margin-right: 4px; padding:0px; width: 100px;">';
                         $field_medicine_edit .= '<div class="form-row">';
                         $field_medicine_edit .= '<div class="inputs">';
@@ -272,7 +266,7 @@
                         $field_medicine_edit .= '<button type="button" id="dle_medicine_btn" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
                         $field_medicine_edit .= '</div>';
                         $field_medicine_edit .= '</div>';
-                        $field_medicine_edit .= '</div>';
+                        $field_medicine_edit .= '</div>';*/
                     ?>
                 });
 
