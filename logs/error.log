@@ -1,4 +1,488 @@
-2018-03-13 16:11:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 10:27:59 Error: Array
+(
+    [0] => App\Model\Entity\Medicine Object
+        (
+            [id] => 4
+            [name] => Actiq
+            [status] => 1
+            [created] => Cake\I18n\Time Object
+                (
+                    [time] => 2018-01-10T16:57:55+00:00
+                    [timezone] => UTC
+                    [fixedNowTime] => 
+                )
+
+            [updated] => 
+            [_joinData] => Cake\ORM\Entity Object
+                (
+                    [medicine_id] => 4
+                    [id] => 210
+                    [prescription_id] => 56
+                    [rule] => 1-1-1
+                    [status] => 1
+                    [created] => 
+                    [updated] => 
+                    [[new]] => 
+                    [[accessible]] => Array
+                        (
+                            [*] => 1
+                        )
+
+                    [[dirty]] => Array
+                        (
+                        )
+
+                    [[original]] => Array
+                        (
+                        )
+
+                    [[virtual]] => Array
+                        (
+                        )
+
+                    [[errors]] => Array
+                        (
+                        )
+
+                    [[invalid]] => Array
+                        (
+                        )
+
+                    [[repository]] => PrescriptionsMedicines
+                )
+
+            [[new]] => 
+            [[accessible]] => Array
+                (
+                    [*] => 1
+                )
+
+            [[dirty]] => Array
+                (
+                )
+
+            [[original]] => Array
+                (
+                )
+
+            [[virtual]] => Array
+                (
+                )
+
+            [[errors]] => Array
+                (
+                )
+
+            [[invalid]] => Array
+                (
+                )
+
+            [[repository]] => Medicines
+        )
+
+    [1] => App\Model\Entity\Medicine Object
+        (
+            [id] => 13
+            [name] => Questran
+            [status] => 1
+            [created] => Cake\I18n\Time Object
+                (
+                    [time] => 2018-01-10T17:01:24+00:00
+                    [timezone] => UTC
+                    [fixedNowTime] => 
+                )
+
+            [updated] => 
+            [_joinData] => Cake\ORM\Entity Object
+                (
+                    [medicine_id] => 13
+                    [id] => 211
+                    [prescription_id] => 56
+                    [rule] => 1-1-1
+                    [status] => 1
+                    [created] => 
+                    [updated] => 
+                    [[new]] => 
+                    [[accessible]] => Array
+                        (
+                            [*] => 1
+                        )
+
+                    [[dirty]] => Array
+                        (
+                        )
+
+                    [[original]] => Array
+                        (
+                        )
+
+                    [[virtual]] => Array
+                        (
+                        )
+
+                    [[errors]] => Array
+                        (
+                        )
+
+                    [[invalid]] => Array
+                        (
+                        )
+
+                    [[repository]] => PrescriptionsMedicines
+                )
+
+            [[new]] => 
+            [[accessible]] => Array
+                (
+                    [*] => 1
+                )
+
+            [[dirty]] => Array
+                (
+                )
+
+            [[original]] => Array
+                (
+                )
+
+            [[virtual]] => Array
+                (
+                )
+
+            [[errors]] => Array
+                (
+                )
+
+            [[invalid]] => Array
+                (
+                )
+
+            [[repository]] => Medicines
+        )
+
+    [2] => App\Model\Entity\Medicine Object
+        (
+            [id] => 15
+            [name] => Napa
+            [status] => 1
+            [created] => Cake\I18n\Time Object
+                (
+                    [time] => 2018-02-17T13:24:14+00:00
+                    [timezone] => UTC
+                    [fixedNowTime] => 
+                )
+
+            [updated] => 
+            [_joinData] => Cake\ORM\Entity Object
+                (
+                    [medicine_id] => 15
+                    [id] => 212
+                    [prescription_id] => 56
+                    [rule] => 1-1-1
+                    [status] => 1
+                    [created] => 
+                    [updated] => 
+                    [[new]] => 
+                    [[accessible]] => Array
+                        (
+                            [*] => 1
+                        )
+
+                    [[dirty]] => Array
+                        (
+                        )
+
+                    [[original]] => Array
+                        (
+                        )
+
+                    [[virtual]] => Array
+                        (
+                        )
+
+                    [[errors]] => Array
+                        (
+                        )
+
+                    [[invalid]] => Array
+                        (
+                        )
+
+                    [[repository]] => PrescriptionsMedicines
+                )
+
+            [[new]] => 
+            [[accessible]] => Array
+                (
+                    [*] => 1
+                )
+
+            [[dirty]] => Array
+                (
+                )
+
+            [[original]] => Array
+                (
+                )
+
+            [[virtual]] => Array
+                (
+                )
+
+            [[errors]] => Array
+                (
+                )
+
+            [[invalid]] => Array
+                (
+                )
+
+            [[repository]] => Medicines
+        )
+
+    [3] => App\Model\Entity\Medicine Object
+        (
+            [id] => 16
+            [name] => Napa Extra
+            [status] => 1
+            [created] => Cake\I18n\Time Object
+                (
+                    [time] => 2018-02-17T13:24:28+00:00
+                    [timezone] => UTC
+                    [fixedNowTime] => 
+                )
+
+            [updated] => 
+            [_joinData] => Cake\ORM\Entity Object
+                (
+                    [medicine_id] => 16
+                    [id] => 213
+                    [prescription_id] => 56
+                    [rule] => 1-1-1
+                    [status] => 1
+                    [created] => 
+                    [updated] => 
+                    [[new]] => 
+                    [[accessible]] => Array
+                        (
+                            [*] => 1
+                        )
+
+                    [[dirty]] => Array
+                        (
+                        )
+
+                    [[original]] => Array
+                        (
+                        )
+
+                    [[virtual]] => Array
+                        (
+                        )
+
+                    [[errors]] => Array
+                        (
+                        )
+
+                    [[invalid]] => Array
+                        (
+                        )
+
+                    [[repository]] => PrescriptionsMedicines
+                )
+
+            [[new]] => 
+            [[accessible]] => Array
+                (
+                    [*] => 1
+                )
+
+            [[dirty]] => Array
+                (
+                )
+
+            [[original]] => Array
+                (
+                )
+
+            [[virtual]] => Array
+                (
+                )
+
+            [[errors]] => Array
+                (
+                )
+
+            [[invalid]] => Array
+                (
+                )
+
+            [[repository]] => Medicines
+        )
+
+    [4] => App\Model\Entity\Medicine Object
+        (
+            [id] => 6
+            [name] => Dacogen
+            [status] => 1
+            [created] => Cake\I18n\Time Object
+                (
+                    [time] => 2018-01-10T16:59:16+00:00
+                    [timezone] => UTC
+                    [fixedNowTime] => 
+                )
+
+            [updated] => 
+            [_joinData] => Cake\ORM\Entity Object
+                (
+                    [medicine_id] => 6
+                    [id] => 214
+                    [prescription_id] => 56
+                    [rule] => 1-1-1
+                    [status] => 1
+                    [created] => 
+                    [updated] => 
+                    [[new]] => 
+                    [[accessible]] => Array
+                        (
+                            [*] => 1
+                        )
+
+                    [[dirty]] => Array
+                        (
+                        )
+
+                    [[original]] => Array
+                        (
+                        )
+
+                    [[virtual]] => Array
+                        (
+                        )
+
+                    [[errors]] => Array
+                        (
+                        )
+
+                    [[invalid]] => Array
+                        (
+                        )
+
+                    [[repository]] => PrescriptionsMedicines
+                )
+
+            [[new]] => 
+            [[accessible]] => Array
+                (
+                    [*] => 1
+                )
+
+            [[dirty]] => Array
+                (
+                )
+
+            [[original]] => Array
+                (
+                )
+
+            [[virtual]] => Array
+                (
+                )
+
+            [[errors]] => Array
+                (
+                )
+
+            [[invalid]] => Array
+                (
+                )
+
+            [[repository]] => Medicines
+        )
+
+    [5] => App\Model\Entity\Medicine Object
+        (
+            [id] => 7
+            [name] => Daypro
+            [status] => 1
+            [created] => Cake\I18n\Time Object
+                (
+                    [time] => 2018-01-10T16:59:32+00:00
+                    [timezone] => UTC
+                    [fixedNowTime] => 
+                )
+
+            [updated] => 
+            [_joinData] => Cake\ORM\Entity Object
+                (
+                    [medicine_id] => 7
+                    [id] => 215
+                    [prescription_id] => 56
+                    [rule] => 1-1-1
+                    [status] => 1
+                    [created] => 
+                    [updated] => 
+                    [[new]] => 
+                    [[accessible]] => Array
+                        (
+                            [*] => 1
+                        )
+
+                    [[dirty]] => Array
+                        (
+                        )
+
+                    [[original]] => Array
+                        (
+                        )
+
+                    [[virtual]] => Array
+                        (
+                        )
+
+                    [[errors]] => Array
+                        (
+                        )
+
+                    [[invalid]] => Array
+                        (
+                        )
+
+                    [[repository]] => PrescriptionsMedicines
+                )
+
+            [[new]] => 
+            [[accessible]] => Array
+                (
+                    [*] => 1
+                )
+
+            [[dirty]] => Array
+                (
+                )
+
+            [[original]] => Array
+                (
+                )
+
+            [[virtual]] => Array
+                (
+                )
+
+            [[errors]] => Array
+                (
+                )
+
+            [[invalid]] => Array
+                (
+                )
+
+            [[repository]] => Medicines
+        )
+
+)
+
+2018-03-14 10:45:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -11,7 +495,33 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:11:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 10:46:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 10:46:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 10:46:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -24,7 +534,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:13:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 10:47:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -37,7 +547,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:13:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 10:47:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -50,7 +560,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:13:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 10:48:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 10:48:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -63,7 +586,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:13:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:16:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -76,20 +599,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:19:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:19:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:17:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -102,7 +612,33 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:19:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:17:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:24:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:24:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -115,33 +651,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:19:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:22:06 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:22:06 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:24:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -154,7 +664,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:24:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:24:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:27:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -167,7 +690,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:24:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:27:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -180,20 +703,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:25:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:25:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:29:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -206,7 +716,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:26:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:29:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:29:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -219,7 +742,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:26:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:29:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -232,7 +755,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:27:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:30:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -245,7 +768,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:27:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:30:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -258,7 +781,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:27:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:32:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -271,7 +794,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:27:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:32:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -284,7 +807,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:35:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:33:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:33:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -297,7 +833,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:35:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:33:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -310,20 +846,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:40:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:40:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:33:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -336,7 +859,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:49:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:33:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -349,7 +872,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:49:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:33:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -362,20 +885,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:49:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:49:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:33:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -388,7 +898,33 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:50:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:33:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:34:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:34:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -401,7 +937,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:50:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:34:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -414,20 +950,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:53:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:54:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:34:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -440,20 +963,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:54:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:57:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:35:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -466,7 +976,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:57:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:35:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -479,7 +989,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:59:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:36:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -492,7 +1002,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:59:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:36:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -505,20 +1015,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 16:59:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 16:59:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:36:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -531,7 +1028,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:08:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:36:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -544,20 +1041,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:08:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 17:17:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:38:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -570,7 +1054,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:17:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:38:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -583,7 +1067,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:22:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:38:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:38:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -596,20 +1093,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:22:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 17:34:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:38:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -622,7 +1106,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:34:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:38:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -635,7 +1119,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:34:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:39:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -648,7 +1132,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:35:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:39:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -661,7 +1145,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:35:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:42:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -674,7 +1158,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:35:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:42:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -687,7 +1171,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:35:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:42:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -700,7 +1184,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:35:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:42:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -713,7 +1197,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:36:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:43:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -726,7 +1210,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:36:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:43:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -739,7 +1223,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:36:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:45:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -752,7 +1236,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:36:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:45:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -765,7 +1249,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:37:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:45:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -778,7 +1262,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:37:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:45:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -791,7 +1275,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:37:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:46:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -804,7 +1288,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 17:37:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:46:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -817,7 +1301,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 18:18:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:48:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -830,7 +1314,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 18:18:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:48:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -843,7 +1327,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 18:27:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:48:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -856,7 +1340,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 18:27:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-14 12:48:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -869,7 +1353,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-13 18:42:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-14 12:48:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-14 12:48:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -877,45 +1374,6 @@ Exception Attributes: array (
   '_ext' => NULL,
 )
 Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 18:42:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 18:46:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-13 18:46:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}

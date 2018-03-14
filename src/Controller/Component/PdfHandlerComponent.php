@@ -245,16 +245,15 @@ class PdfHandlerComponent extends Component
                     $html.= '<tr>
                        <td>
                             <table>
-                                <tr><td class="medicine_head">Medicines</td></tr><tr><td>'?>
+                                <tr><td class="medicine_head">Medicines</td></tr>'?>
                                 <?php
                                 foreach($prescription->medicines as $medicine ) {
-                                    if($medicine === end($prescription->medicines) ){
-                                        $html .= ucfirst($medicine->name)."  ";
-                                    }else{
-                                        $html .= ucfirst($medicine->name).", ";
-                                    }
+                                    $html.= '<tr>
+                                        <td class="prescription_caption">'. ucfirst($medicine->name) .' :
+                                       '.(($medicine->_joinData->rule)? '( '.$medicine->_joinData->rule.' )': "-").'</td>
+                                    </tr>';
                                 }
-                            $html.= '</td></tr></table>
+                            $html.= '</table>
                        </td>
                     </tr>';
                 }

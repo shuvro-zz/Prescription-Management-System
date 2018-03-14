@@ -43,7 +43,6 @@ jQuery(document).ready(function ($) {
         displayNoResultsMessage: true
     });
 
-
 });
 
 function initDatePicker(){
@@ -108,13 +107,15 @@ function saveAndPrint(){
     $('#is-print').val(1);
     $( "#prescription-form" ).submit();
 }
-
 function setzIndex(e){
-    $(e).addClass('drop_down_overlap');
+    if($(e).find('input[type=text]').focusin(function(){
+        $(e).addClass('drop_down_overlap');
+    }));
 }
 function unsetzIndex(e){
-    $(e).removeClass('drop_down_overlap');
+    if($(e).find('input[type=text]').focusout(function(){
+        $(e).removeClass('drop_down_overlap');
+    }));
 }
-
 
 

@@ -146,11 +146,10 @@
                                 <h4>Medicines</h4>
                                     <?php
                                         foreach ($prescription->medicines as $medicine){
-                                            if($medicine === end($prescription->medicines) ){
-                                                echo ucfirst($medicine->name)."  ";
-                                            }else{
-                                                echo ucfirst($medicine->name).", ";
-                                            }
+                                            echo '<div>
+                                                <span class="prescription_caption">'. ucfirst($medicine->name) .' :</span>
+                                               '.(($medicine->_joinData->rule)? '<span>( '.$medicine->_joinData->rule.' )</span>': "-").'
+                                            </div>';
                                         }
                                     ?>
                             </div>

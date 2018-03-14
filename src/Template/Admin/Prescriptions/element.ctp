@@ -120,19 +120,12 @@
             <div class="left_side">
                 <div class="diagnosis">
                     <h6>Diagnosis</h6>
-                    <div class=" diagnosis_info">
+                    <div class=" diagnosis_info diagnosis_box">
                         <?php foreach($diagnosis as $id=>$name){ ?>
                             <div class="checkbox" style="margin-top: 0px">
                                 <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>
                             </div>
                         <?php } ?>
-                    </div>
-                </div>
-
-                <div class="examinations_section">
-                    <h6>Examinations</h6>
-                    <div class="tests examinations">
-                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
                     </div>
                 </div>
 
@@ -152,16 +145,16 @@
                     <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>
                     <h6>Medicines</h6>
 
-                    <div class="medicines medicine-box">
+                    <div class="medicines medicine_box">
                         <?php /*echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); */?>
 
                         <?php
                             echo '<div class="medicines_wrap" id="medicinesWrap">';
                                 foreach($prescription_medicines as $prescription_medicine){
-                                    $field_medicine = '<div class="medicines_row" onmouseover="setzIndex(this)" onmouseout="unsetzIndex(this)">';
-                                    $field_medicine .= '<div class="col-sm-3 medicine_name">';
+                                    $field_medicine = '<div class="medicines_row">';
+                                    $field_medicine .= '<div class="col-sm-3 medicine_name" onmouseover="setzIndex(this)"  onmouseout="unsetzIndex(this)">';
                                     $field_medicine .= '<div class="inputs">';
-                                    $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker ', 'data-live-search'=>true, 'label'=>false]);
+                                    $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false]);
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
 
@@ -187,6 +180,14 @@
                         ?>
                     </div>
                 </div>
+
+                <div class="examinations_section">
+                    <h6>Examinations</h6>
+                    <div class="tests examinations">
+                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -245,12 +246,11 @@
                 });
 
                 $( ".medicines_row" ).each(function( index, element ) {
-                    $(element).find('input').val(response.medicines[index].rule);
                     $(element).find('select').val(response.medicines[index].id);
+                    $(element).find('input').val(response.medicines[index].rule);
                 });
 
                 $('.selectpicker').selectpicker('refresh');
-
 
                 $.each(response.tests, function( id, value ) {
                     $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
