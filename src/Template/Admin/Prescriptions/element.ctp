@@ -183,7 +183,7 @@
 
                 <div class="examinations_section">
                     <h6>Examinations</h6>
-                    <div class="tests examinations">
+                    <div class="examinations">
                         <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
                     </div>
                 </div>
