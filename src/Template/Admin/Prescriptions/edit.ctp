@@ -1,10 +1,10 @@
 
 <?= $this->Form->create($prescription,['id' => 'prescription-form']); ?>
-<section class="workspace">
-    <div class="workspace-body">
+<section class="workspace work_section">
+    <div class="workspace-body work_body_section">
 
-        <div class="main-container" style="background: #E08D2C">
-            <div class="content" style="padding: 0px 38px">
+        <div class="main-container main_container_section">
+            <div class="content prescription_content">
 
                 <?php include('element.ctp'); ?>
                 <input type="hidden" id="prescription-id" value="<?php echo $prescription['id']; ?>" >

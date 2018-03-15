@@ -1,12 +1,3 @@
-<style>
-    .workspace{
-        margin-left: 0px;
-        height: auto;
-    }
-    .workspace .workspace-body .main-container{
-        height: auto;
-    }
-</style>
     <?php
         function selected($id,$prescription_diagnosis){
             if(isset($prescription_diagnosis)){

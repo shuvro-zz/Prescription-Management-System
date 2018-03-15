@@ -3,11 +3,20 @@
         <div class="flex-container">
             <div class="flex-item"><h4><?= __('Medicines') ?></h4></div>
             <div class="flex-item">
-                <?php echo $this->Html->link(
-                    '<span class="icon">+</span> Add Medicine',
-                    ['action' => 'add'],
-                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Medicine']
-                ) ?>
+                <div class="flex-container">
+                    <?php echo $this->Html->link(
+                        '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Medicine',
+                        ['action' => 'import_medicine'],
+                        ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Medicine']
+                        );
+
+                        echo $this->Html->link(
+                        '<span class="icon">+</span> Add Medicine',
+                        ['action' => 'add'],
+                        ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Medicine']
+                    );
+                    ?>
+                </div>
             </div>
         </div>
     </div>

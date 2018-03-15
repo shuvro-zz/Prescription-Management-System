@@ -1,488 +1,277 @@
-2018-03-14 10:27:59 Error: Array
-(
-    [0] => App\Model\Entity\Medicine Object
-        (
-            [id] => 4
-            [name] => Actiq
-            [status] => 1
-            [created] => Cake\I18n\Time Object
-                (
-                    [time] => 2018-01-10T16:57:55+00:00
-                    [timezone] => UTC
-                    [fixedNowTime] => 
-                )
-
-            [updated] => 
-            [_joinData] => Cake\ORM\Entity Object
-                (
-                    [medicine_id] => 4
-                    [id] => 210
-                    [prescription_id] => 56
-                    [rule] => 1-1-1
-                    [status] => 1
-                    [created] => 
-                    [updated] => 
-                    [[new]] => 
-                    [[accessible]] => Array
-                        (
-                            [*] => 1
-                        )
-
-                    [[dirty]] => Array
-                        (
-                        )
-
-                    [[original]] => Array
-                        (
-                        )
-
-                    [[virtual]] => Array
-                        (
-                        )
-
-                    [[errors]] => Array
-                        (
-                        )
-
-                    [[invalid]] => Array
-                        (
-                        )
-
-                    [[repository]] => PrescriptionsMedicines
-                )
-
-            [[new]] => 
-            [[accessible]] => Array
-                (
-                    [*] => 1
-                )
-
-            [[dirty]] => Array
-                (
-                )
-
-            [[original]] => Array
-                (
-                )
-
-            [[virtual]] => Array
-                (
-                )
-
-            [[errors]] => Array
-                (
-                )
-
-            [[invalid]] => Array
-                (
-                )
-
-            [[repository]] => Medicines
-        )
-
-    [1] => App\Model\Entity\Medicine Object
-        (
-            [id] => 13
-            [name] => Questran
-            [status] => 1
-            [created] => Cake\I18n\Time Object
-                (
-                    [time] => 2018-01-10T17:01:24+00:00
-                    [timezone] => UTC
-                    [fixedNowTime] => 
-                )
-
-            [updated] => 
-            [_joinData] => Cake\ORM\Entity Object
-                (
-                    [medicine_id] => 13
-                    [id] => 211
-                    [prescription_id] => 56
-                    [rule] => 1-1-1
-                    [status] => 1
-                    [created] => 
-                    [updated] => 
-                    [[new]] => 
-                    [[accessible]] => Array
-                        (
-                            [*] => 1
-                        )
-
-                    [[dirty]] => Array
-                        (
-                        )
-
-                    [[original]] => Array
-                        (
-                        )
-
-                    [[virtual]] => Array
-                        (
-                        )
-
-                    [[errors]] => Array
-                        (
-                        )
-
-                    [[invalid]] => Array
-                        (
-                        )
-
-                    [[repository]] => PrescriptionsMedicines
-                )
-
-            [[new]] => 
-            [[accessible]] => Array
-                (
-                    [*] => 1
-                )
-
-            [[dirty]] => Array
-                (
-                )
-
-            [[original]] => Array
-                (
-                )
-
-            [[virtual]] => Array
-                (
-                )
-
-            [[errors]] => Array
-                (
-                )
-
-            [[invalid]] => Array
-                (
-                )
-
-            [[repository]] => Medicines
-        )
-
-    [2] => App\Model\Entity\Medicine Object
-        (
-            [id] => 15
-            [name] => Napa
-            [status] => 1
-            [created] => Cake\I18n\Time Object
-                (
-                    [time] => 2018-02-17T13:24:14+00:00
-                    [timezone] => UTC
-                    [fixedNowTime] => 
-                )
-
-            [updated] => 
-            [_joinData] => Cake\ORM\Entity Object
-                (
-                    [medicine_id] => 15
-                    [id] => 212
-                    [prescription_id] => 56
-                    [rule] => 1-1-1
-                    [status] => 1
-                    [created] => 
-                    [updated] => 
-                    [[new]] => 
-                    [[accessible]] => Array
-                        (
-                            [*] => 1
-                        )
-
-                    [[dirty]] => Array
-                        (
-                        )
-
-                    [[original]] => Array
-                        (
-                        )
-
-                    [[virtual]] => Array
-                        (
-                        )
-
-                    [[errors]] => Array
-                        (
-                        )
-
-                    [[invalid]] => Array
-                        (
-                        )
-
-                    [[repository]] => PrescriptionsMedicines
-                )
-
-            [[new]] => 
-            [[accessible]] => Array
-                (
-                    [*] => 1
-                )
-
-            [[dirty]] => Array
-                (
-                )
-
-            [[original]] => Array
-                (
-                )
-
-            [[virtual]] => Array
-                (
-                )
-
-            [[errors]] => Array
-                (
-                )
-
-            [[invalid]] => Array
-                (
-                )
-
-            [[repository]] => Medicines
-        )
-
-    [3] => App\Model\Entity\Medicine Object
-        (
-            [id] => 16
-            [name] => Napa Extra
-            [status] => 1
-            [created] => Cake\I18n\Time Object
-                (
-                    [time] => 2018-02-17T13:24:28+00:00
-                    [timezone] => UTC
-                    [fixedNowTime] => 
-                )
-
-            [updated] => 
-            [_joinData] => Cake\ORM\Entity Object
-                (
-                    [medicine_id] => 16
-                    [id] => 213
-                    [prescription_id] => 56
-                    [rule] => 1-1-1
-                    [status] => 1
-                    [created] => 
-                    [updated] => 
-                    [[new]] => 
-                    [[accessible]] => Array
-                        (
-                            [*] => 1
-                        )
-
-                    [[dirty]] => Array
-                        (
-                        )
-
-                    [[original]] => Array
-                        (
-                        )
-
-                    [[virtual]] => Array
-                        (
-                        )
-
-                    [[errors]] => Array
-                        (
-                        )
-
-                    [[invalid]] => Array
-                        (
-                        )
-
-                    [[repository]] => PrescriptionsMedicines
-                )
-
-            [[new]] => 
-            [[accessible]] => Array
-                (
-                    [*] => 1
-                )
-
-            [[dirty]] => Array
-                (
-                )
-
-            [[original]] => Array
-                (
-                )
-
-            [[virtual]] => Array
-                (
-                )
-
-            [[errors]] => Array
-                (
-                )
-
-            [[invalid]] => Array
-                (
-                )
-
-            [[repository]] => Medicines
-        )
-
-    [4] => App\Model\Entity\Medicine Object
-        (
-            [id] => 6
-            [name] => Dacogen
-            [status] => 1
-            [created] => Cake\I18n\Time Object
-                (
-                    [time] => 2018-01-10T16:59:16+00:00
-                    [timezone] => UTC
-                    [fixedNowTime] => 
-                )
-
-            [updated] => 
-            [_joinData] => Cake\ORM\Entity Object
-                (
-                    [medicine_id] => 6
-                    [id] => 214
-                    [prescription_id] => 56
-                    [rule] => 1-1-1
-                    [status] => 1
-                    [created] => 
-                    [updated] => 
-                    [[new]] => 
-                    [[accessible]] => Array
-                        (
-                            [*] => 1
-                        )
-
-                    [[dirty]] => Array
-                        (
-                        )
-
-                    [[original]] => Array
-                        (
-                        )
-
-                    [[virtual]] => Array
-                        (
-                        )
-
-                    [[errors]] => Array
-                        (
-                        )
-
-                    [[invalid]] => Array
-                        (
-                        )
-
-                    [[repository]] => PrescriptionsMedicines
-                )
-
-            [[new]] => 
-            [[accessible]] => Array
-                (
-                    [*] => 1
-                )
-
-            [[dirty]] => Array
-                (
-                )
-
-            [[original]] => Array
-                (
-                )
-
-            [[virtual]] => Array
-                (
-                )
-
-            [[errors]] => Array
-                (
-                )
-
-            [[invalid]] => Array
-                (
-                )
-
-            [[repository]] => Medicines
-        )
-
-    [5] => App\Model\Entity\Medicine Object
-        (
-            [id] => 7
-            [name] => Daypro
-            [status] => 1
-            [created] => Cake\I18n\Time Object
-                (
-                    [time] => 2018-01-10T16:59:32+00:00
-                    [timezone] => UTC
-                    [fixedNowTime] => 
-                )
-
-            [updated] => 
-            [_joinData] => Cake\ORM\Entity Object
-                (
-                    [medicine_id] => 7
-                    [id] => 215
-                    [prescription_id] => 56
-                    [rule] => 1-1-1
-                    [status] => 1
-                    [created] => 
-                    [updated] => 
-                    [[new]] => 
-                    [[accessible]] => Array
-                        (
-                            [*] => 1
-                        )
-
-                    [[dirty]] => Array
-                        (
-                        )
-
-                    [[original]] => Array
-                        (
-                        )
-
-                    [[virtual]] => Array
-                        (
-                        )
-
-                    [[errors]] => Array
-                        (
-                        )
-
-                    [[invalid]] => Array
-                        (
-                        )
-
-                    [[repository]] => PrescriptionsMedicines
-                )
-
-            [[new]] => 
-            [[accessible]] => Array
-                (
-                    [*] => 1
-                )
-
-            [[dirty]] => Array
-                (
-                )
-
-            [[original]] => Array
-                (
-                )
-
-            [[virtual]] => Array
-                (
-                )
-
-            [[errors]] => Array
-                (
-                )
-
-            [[invalid]] => Array
-                (
-                )
-
-            [[repository]] => Medicines
-        )
-
+2018-03-15 03:09:26 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:09:26 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 194]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 194
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:10:44 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:11:04 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:11:08 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:12:22 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:20:55 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:22:38 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:22:40 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:22:45 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:22:45 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 193]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 193
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:22:45 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 194]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 194
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:26:29 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:26:33 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:33:17 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:33:17 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 119]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 119
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:33:17 Warning: Warning (2): Illegal string offset 'tmp_name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 122]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 122
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:33:18 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found.
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
 )
+Request URL: /pms/admin/medicines/import-medicine
+Referer URL: http://localhost/pms/admin/medicines/import-medicine
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(155): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(123): Cake\Controller\Component->__get('Session')
+#3 E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php(195): App\Controller\Component\FileHandlerComponent->uploadfile('Book1.xlsx')
+#4 [internal function]: App\Controller\Admin\MedicinesController->importMedicine()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\MedicinesController))
+#8 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
 
-2018-03-14 10:45:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+
+2018-03-15 03:34:16 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 03:34:19 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:13:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -495,33 +284,21 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 10:46:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
+2018-03-15 06:15:15 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
 
 
-2018-03-14 10:46:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
 
-
-2018-03-14 10:46:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 06:15:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -534,7 +311,457 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 10:47:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 06:15:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-15 06:15:21 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:15:33 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:15:39 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:16:07 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:16:13 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:16:14 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:16:17 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:16:49 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:17:37 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:17:48 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:18:03 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:20:40 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:20:40 Warning: Warning (2): strtolower() expects parameter 1 to be string, object given in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 109]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+strtolower - [internal], line ??
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 109
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:20:55 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:21:20 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:21:54 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:21:54 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 119]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 119
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:21:54 Warning: Warning (2): Illegal string offset 'tmp_name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 122]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 122
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:21:55 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found.
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/medicines/import-medicine
+Referer URL: http://localhost/pms/admin/medicines/import-medicine
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(155): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(123): Cake\Controller\Component->__get('Session')
+#3 E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php(195): App\Controller\Component\FileHandlerComponent->uploadfile('Book1.xlsx')
+#4 [internal function]: App\Controller\Admin\MedicinesController->importMedicine()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\MedicinesController))
+#8 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2018-03-15 06:25:05 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:25:05 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 118]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 118
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:25:05 Warning: Warning (2): Illegal string offset 'tmp_name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 121]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 121
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:26:32 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:26:32 Warning: Warning (2): Illegal string offset 'tmp_name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 121]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 121
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:26:55 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:26:55 Warning: Warning (2): Illegal string offset 'tmp_name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 121]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 121
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:27:39 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:27:39 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 118]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 118
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:27:44 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:27:44 Warning: Warning (2): Illegal string offset 'name' in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 118]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 118
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:28:03 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:28:07 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:37:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -547,7 +774,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 10:47:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 06:37:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -560,7 +787,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 10:48:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 06:38:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -573,7 +800,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 10:48:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 06:38:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -586,7 +813,469 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:16:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 06:45:16 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:45:18 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:45:30 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:45:55 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:47:57 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:50:50 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:51:35 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:51:38 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:51:44 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:52:13 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:52:49 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:53:26 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:54:48 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:56:10 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:56:43 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 06:59:57 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:01:14 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:05:54 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:06:02 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:06:05 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:06:27 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:06:29 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:06:57 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:07:14 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:07:16 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:07:20 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:07:58 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:08:02 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:08:05 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:08:24 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:08:27 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:08:48 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:09:32 Warning: Warning (4096): Argument 1 passed to App\Controller\Component\FileHandlerComponent::startup() must be an instance of App\Controller\Component\Controller, instance of Cake\Event\Event given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php on line 385 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 33]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::startup() - APP/Controller\Component\FileHandlerComponent.php, line 33
+Cake\Event\EventManager::_callListener() - CORE\src\Event\EventManager.php, line 385
+Cake\Event\EventManager::dispatch() - CORE\src\Event\EventManager.php, line 355
+Cake\Controller\Controller::dispatchEvent() - CORE\src\Event\EventDispatcherTrait.php, line 78
+Cake\Controller\Controller::startupProcess() - CORE\src\Controller\Controller.php, line 496
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 109
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-15 07:12:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -599,7 +1288,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:17:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:13:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -612,7 +1301,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:17:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:13:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -625,20 +1314,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:24:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:24:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:20:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -651,20 +1327,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:24:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:24:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:20:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -677,7 +1340,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:27:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:20:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -690,7 +1353,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:27:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:20:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -703,7 +1366,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:29:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:21:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -716,7 +1379,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:29:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:21:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -729,7 +1392,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:29:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:36:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-15 07:37:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -742,7 +1418,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:29:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:37:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -755,7 +1431,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:30:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:39:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -768,7 +1444,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:30:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:39:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -781,7 +1457,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:32:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:40:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-15 07:40:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -794,33 +1483,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:32:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:33:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:33:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:40:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -833,7 +1496,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:33:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:40:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -846,7 +1509,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:33:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:41:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -859,20 +1522,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:33:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:33:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:41:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -885,20 +1535,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:33:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:33:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:41:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -911,20 +1548,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:34:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:34:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:41:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -937,7 +1561,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:34:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:42:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -950,7 +1574,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:34:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:42:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -963,20 +1587,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:35:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:35:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:45:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -989,20 +1600,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:36:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:36:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:50:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1015,7 +1613,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:36:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:50:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1028,7 +1626,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:36:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:54:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1041,20 +1639,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:38:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:38:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:54:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1067,20 +1652,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:38:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:38:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:55:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1093,20 +1665,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:38:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:38:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:55:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1119,20 +1678,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:39:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:39:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:55:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1145,20 +1691,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:42:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:42:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:55:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1171,20 +1704,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:42:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:42:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:55:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1197,20 +1717,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:43:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:43:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:55:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1223,20 +1730,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:45:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:45:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:55:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1249,20 +1743,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:45:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:45:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:55:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1275,20 +1756,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:46:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:46:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:55:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1301,20 +1769,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:48:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:48:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:55:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1327,7 +1782,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:48:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:56:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1340,7 +1795,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:48:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:56:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1353,20 +1808,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-14 12:48:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-14 12:48:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:56:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1379,20 +1821,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:14:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:14:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:56:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1405,20 +1834,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:15:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:15:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:56:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1431,7 +1847,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:24:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:56:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1444,20 +1860,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:24:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:27:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:56:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1470,7 +1873,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:27:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:56:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1483,7 +1886,20 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:28:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:57:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/lib/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-03-15 07:57:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1496,7 +1912,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:28:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+2018-03-15 07:57:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
 Exception Attributes: array (
   'class' => 'Js',
   'plugin' => NULL,
@@ -1509,7 +1925,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:31:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:57:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1522,20 +1938,7 @@ Stack Trace:
 #1 {main}
 
 
-2018-03-15 01:31:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:31:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+2018-03-15 07:59:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
 Exception Attributes: array (
   'class' => 'Css',
   'plugin' => NULL,
@@ -1543,97 +1946,6 @@ Exception Attributes: array (
   '_ext' => NULL,
 )
 Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:31:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:37:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:37:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:38:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:38:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:41:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/styles/vendors/bootstrap.min.css.map
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-03-15 01:41:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/lib/jquery.min.map
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
 #1 {main}

@@ -143,7 +143,12 @@ button, .wizard-config .btn-continue{
     width: 50%;
     height: 38px;
 }
-
+.import_btn_padding{
+    margin-right: 10px;
+}
+.import_icon{
+    font-size: 12px!important;
+}
 /*.medicines_row:nth-child(1) .dle_medicine_btn{
    display: none;
 }*/
@@ -372,6 +377,20 @@ div#patient_drop_down,div#patient_field,.single_block .inputs {
 }
 .medicine_box,.diagnosis_box{
     min-height: 250px;
+}
+
+.work_section{
+    margin-left: 0px;
+    height: auto;
+}
+.work_section .work_body_section .main_container_section{
+    height: auto;
+}
+.main_container_section{
+    background: #E08D2C
+}
+.prescription_content{
+    padding: 0px 38px!important;
 }
 /**********Responsive**********/
 

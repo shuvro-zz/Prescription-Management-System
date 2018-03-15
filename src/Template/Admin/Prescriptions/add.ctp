@@ -1,11 +1,11 @@
 
 <?= $this->Form->create($prescription,['id' => 'prescription-form']) ?>
-<section class="workspace">
-    <div class="workspace-body">
+<section class="workspace work_section">
+    <div class="workspace-body work_body_section">
 
         <?php /*pr($this->name); die; */?>
-        <div class="main-container" style="background: #E08D2C">
-            <div class="content" style="padding: 0px 38px">
+        <div class="main-container main_container_section">
+            <div class="content prescription_content    ">
                 <div class="col-md-12">
                     <?php echo $this->Flash->render('admin_success'); ?>
                     <?php echo $this->Flash->render('admin_error'); ?>
