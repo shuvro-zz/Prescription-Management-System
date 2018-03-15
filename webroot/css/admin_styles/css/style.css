@@ -323,6 +323,11 @@ button, .wizard-config .btn-continue{
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover{
+    background: #119A55;
+    margin-top: -5px;
+}
 .medicines .tokenize.focus > .tokens-container{
     outline: 0;
     border:none ;
