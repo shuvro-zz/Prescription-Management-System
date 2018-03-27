@@ -1,5 +1,5 @@
 
-<?= $this->Form->create() ?>
+<?= $this->Form->create('medicines', ['type' => 'file']); ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -18,6 +18,9 @@
                 </div>
 
                 <div class="page-wrap">
+
+                    <?php  //pr($this->request->action); die;
+                    ?>
                     <div class="col-sm-12 col-md-12">
                         <div class="row">
                             <div class="col-md-12">
@@ -32,6 +35,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>

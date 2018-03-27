@@ -187,12 +187,13 @@ class MedicinesController extends AppController
     }
 
     function importMedicine(){
-        /*if( isset($this->request->data['medicine_file']) ){
+        if( isset($this->request->data['medicine_file']) ){
             // start resume  up
             $import_medicine = $this->request->data['medicine_file'];
 
             if ($import_medicine) {
                 $result = $this->FileHandler->uploadfile($import_medicine);
+                //pr($import_medicine); die;
                 if ($result) {
                     $import_medicine= $this->FileHandler->_uploadimgname;
                 }else {
@@ -204,6 +205,6 @@ class MedicinesController extends AppController
 
             $this->request->data['medicine_file'] = $import_medicine;
             // end resume up
-        }*/
+        }
     }
 }

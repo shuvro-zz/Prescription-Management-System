@@ -16885,3 +16885,686 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2018-03-24 01:41:15 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:20 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 420]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 420
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:20 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 421]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 421
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:21 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 422]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 422
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:21 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 423]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 423
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:21 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 424]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 424
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:40 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 420]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 420
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:40 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 421]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 421
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:40 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 422]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 422
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:40 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 423]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 423
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:50:40 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 424]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 424
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:51:47 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 420]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 420
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:51:47 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 421]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 421
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:51:47 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 422]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 422
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:51:47 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 423]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 423
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:51:47 Notice: Notice (8): Array to string conversion in [C:\xampp\htdocs\pms\src\Controller\Admin\UsersController.php, line 424]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::__search() - APP/Controller\Admin\UsersController.php, line 424
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 58
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 01:51:55 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 17:06:21 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-24 17:06:50 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 15:34:35 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 15:37:47 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 15:38:15 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 15:39:03 Notice: Notice (8): Undefined offset: 0 in [C:\xampp\htdocs\pms\src\Template\Admin\Users\index.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\index.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:36:28 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1178]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1178
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:36:28 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1179
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:37:49 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1178]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1178
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:37:49 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1179
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:41:20 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1178]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1178
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:41:20 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1179
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:46:55 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1178]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1178
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-25 16:46:55 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::param() - CORE\src\Network\Request.php, line 1179
+include - APP/Template\Admin\Element\sidebar.ctp, line 11
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 02:09:08 Notice: Notice (8): Undefined index: role in [C:\xampp\htdocs\pms\src\Template\Admin\Element\sidebar.ctp, line 13]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\sidebar.ctp, line 13
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 02:17:15 Notice: Notice (8): Undefined variable: name in [C:\xampp\htdocs\pms\vendor\cakephp\cakephp\src\Network\Request.php, line 1124]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Network\Request::query() - CORE\src\Network\Request.php, line 1124
+include - APP/Template\Admin\Element\sidebar.ctp, line 13
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 61
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:30:40 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 110]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 110
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:33:26 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 110]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 110
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:35:31 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 109]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 109
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:35:31 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 110]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 110
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:35:58 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 109]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 109
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:35:58 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 110]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 110
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 05:37:51 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:04:47 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:05:44 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:06:21 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:07:25 Notice: Notice (8): Undefined variable: medicines in [C:\xampp\htdocs\pms\src\Template\Admin\Medicines\import_medicine.ctp, line 2]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Medicines\import_medicine.ctp, line 2
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:07:41 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:09:56 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 06:39:46 Notice: Notice (8): Trying to get property of non-object in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 108]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 108
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-03-26 07:26:30 Notice: Notice (8): Undefined variable: controller_info in [C:\xampp\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 117]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadfile() - APP/Controller\Component\FileHandlerComponent.php, line 117
+App\Controller\Admin\MedicinesController::importMedicine() - APP/Controller\Admin\MedicinesController.php, line 195
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+

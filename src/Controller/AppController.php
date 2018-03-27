@@ -34,12 +34,11 @@ class AppController extends Controller
         //$this->Auth->allow(['display']);
     }
 
-    public function isAuthorized()       // Checking is admin or not
+    public function isAuthorized($auth)       // Checking is admin or not
     {
-        $auth = $this->Auth->user();
 
-        if(!empty($this->request->params['prefix']) && !empty($auth ) ) {
-            if ($this->request->params['prefix'] == 'admin' && $this->Auth->user('role_id') == 2) {
+        if(!empty($this->request->params['prefix']) && !empty($auth) ) {
+            if ($this->request->params['prefix'] == 'admin' and ($this->Auth->user('role_id') == 2 or $this->Auth->user('role_id') == 1)) {
                 return true;
             } else {
                 $this->redirect('/');
@@ -59,11 +58,12 @@ class AppController extends Controller
     {
         parent::beforeRender($event);
         $this->loadComponent('Auth');
-        $this->isAuthorized();
+        $auth = $this->Auth->user();
+        $this->isAuthorized($auth);
 
         $this->set('loadjQueryUIScript',false);
         $this->set('loadEditorScript',false);
-        $this->set('authUser', $this->Auth->user());
+        $this->set('authUser', $auth);
         
 
         if (!array_key_exists('_serialize', $this->viewVars) && in_array($this->response->type(), ['application/json', 'application/xml'])) {

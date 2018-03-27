@@ -41,21 +41,21 @@ class UsersController extends AppController
         //$this->loadComponent('Common');
     }
 
-    public function index()
+    public function index( $role_id = null )
     {
 
         $session = $this->request->session();
 
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
-            $session->write('users_search_query', $this->request->query['search']);
+            $session->write('users_search_query_'.$role_id, $this->request->query['search']);
         }
-        if($session->check('users_search_query')) {
-            $search = $session->read('users_search_query');
+        if($session->check('users_search_query_'.$role_id)) {
+            $search = $session->read('users_search_query_'.$role_id);
         }else{
             $search = '';
         }
 
-        $where = $this->__search();
+        $where = $this->__search($role_id);
 
         if($where){
             $query = $this->Users->find('All')->where($where);
@@ -266,8 +266,7 @@ class UsersController extends AppController
             $user_email = $user_data['email'];
             $userTable = TableRegistry::get('Users');
             $query = $userTable->find('all')->where(['email' => $user_email]);
-
-            if(!empty($query->first()->role_id) && $query->first()->role_id == 2){  // Doctor
+            if(!empty($query->first()->role_id) and ($query->first()->role_id == 2 or $query->first()->role_id == 1) ){  // Doctor = 2 and Admin = 1
                 return true;
             } else {
                 return false;
@@ -406,14 +405,14 @@ class UsersController extends AppController
         return Text::uuid();
     }
 
-    function __search(){
+    function __search($role_id){
 
         $session = $this->request->session();
-        $doctor_id = $session->read('Auth.User.id');
+        $user_id = $session->read('Auth.User.id');
 
-        if($session->check('users_search_query')){
-            $search = $session->read('users_search_query');
-            $where = [ 'Users.doctor_id' => $doctor_id,
+        if($session->check('users_search_query_'.$role_id)){
+            $search = $session->read('users_search_query_'.$role_id);
+            $where = ['Users.doctor_id' => $user_id,'Users.role_id' => $role_id,
                 'OR' => [
                     ['Users.first_name LIKE' => '%' . $search . '%'],
                     ['Users.phone LIKE' => '%' . $search . '%'],
@@ -423,15 +422,15 @@ class UsersController extends AppController
                 ]
             ];
         }else{
-            $where = ['Users.doctor_id' => $doctor_id];
+            $where = ['Users.doctor_id' => $user_id];
         }
         return $where;
     }
 
-    function reset(){
+    function reset($role_id){
         $session = $this->request->session();
-        $session->delete('users_search_query');
-        $this->redirect(['action' => 'index']);
+        $session->delete('users_search_query_'.$role_id);
+        $this->redirect(['action' => 'index',$role_id]);
     }
 
     function getUser($user_id){

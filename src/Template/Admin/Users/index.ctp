@@ -27,9 +27,16 @@
                     <button type="submit"> <i class="fa fa-search"></i></button>
                     <div class="flex-container">
                         <?php
+                        // Get the role id from url\
+                        if(isset($this->request->pass[0])){
+                            $role_id = $this->request->pass[0];
+                        }else{
+                            $role_id = null;
+                        }
+
                         echo $this->Html->link(
                             'Reset',
-                            ['action' => 'reset'],
+                            ['action' => 'reset',$role_id],
                             ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
                         );
                         ?>

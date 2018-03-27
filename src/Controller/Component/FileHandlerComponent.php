@@ -29,12 +29,11 @@ class FileHandlerComponent extends Component
 	var $_errorMsg = null;
 	var $_uploadimgname = null;
 
-
-	/*function startup(Controller $controller)
-	{
-		$this->controller = $controller;
-
-	}*/
+    public function initialize(array $config = [])
+    {
+        parent::initialize($config);
+        $this->controller = $this->_registry->getController();
+    }
 
 	function uploadImage($file, $filepath = null )
 	{
@@ -43,11 +42,8 @@ class FileHandlerComponent extends Component
 			if(!$filepath) {
 				$controller_name = strtolower($this->controller->name);
 				$filepath = WWW_ROOT.'uploads' . DS . $controller_name;
-                //echo $filepath;
-                $this->log($filepath,'debug');
-
-
             }
+
 			if (!is_dir($filepath) && !is_file($filepath)) {
 				$this->createFolder($filepath, '0777');
 			}
@@ -59,7 +55,6 @@ class FileHandlerComponent extends Component
 
 			//set image name
 			$this->setUniqueName($filepath, $file['name']);
-
 			$filepath = $filepath . DS . $this->_uploadimgname;
 			if (!$this->upload($file['tmp_name'], $filepath)) {
 				$this->Session->setFlash(__('Error. Unable to upload file', true), 'default', array('class' => 'error'));
@@ -103,9 +98,7 @@ class FileHandlerComponent extends Component
 
 	function uploadfile( $file, $filepath = null )
 	{
-
 		if (isset($file['name'])) {
-
 			if(!$filepath) {
 				$controller_name = strtolower($this->controller->name);
 				$filepath = WWW_ROOT.'uploads'.DS.$controller_name;
@@ -235,7 +228,6 @@ class FileHandlerComponent extends Component
 
         //$this->log($folder,'debug');
 
-
 		if (strlen($folder) > 0) {
 			if (!is_dir($folder) && !is_file($folder)) {
 
@@ -286,7 +278,6 @@ class FileHandlerComponent extends Component
 			fclose($fp);
 		}
 	}
-
 
 	function getExt($file) {
 		$ext = trim(substr($file,strrpos($file,".")+1,strlen($file)));
