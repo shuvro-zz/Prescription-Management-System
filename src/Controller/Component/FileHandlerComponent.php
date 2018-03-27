@@ -95,7 +95,6 @@ class FileHandlerComponent extends Component
 		return true;
 	}
 
-
 	function uploadfile( $file, $filepath = null )
 	{
 		if (isset($file['name'])) {
