@@ -4,8 +4,13 @@
     <div class="workspace-body">
         <div class="page-heading">
             <ol class="breadcrumb breadcrumb-small">
-                <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Patient') ?>"> <?= __('Patient') ?></a></li>
-                <li class="active"><a href="#">Add <?= __('Patient') ?></a></li>
+                <?php if($this->request->session()->read('Auth.User.role_id') == 1){ ?>
+                    <li><a href="<?=$this->Url->build(array('action' => 'index/2' )) ?>" title="<?= __('Doctor') ?>"> <?= __('Doctor') ?></a></li>
+                    <li class="active"><a href="#">Add <?= __('Doctor') ?></a></li>
+                <?php }else{ ?>
+                    <li><a href="<?=$this->Url->build(array('action' => 'index/3' )) ?>" title="<?= __('Patient') ?>"> <?= __('Patient') ?></a></li>
+                    <li class="active"><a href="#">Add <?= __('Patient') ?></a></li>
+                <?php } ?>
             </ol>
         </div>
         <div class="main-container">

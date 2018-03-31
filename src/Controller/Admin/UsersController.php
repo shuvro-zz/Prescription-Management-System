@@ -12,7 +12,7 @@ use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\Auth;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Text;
-
+use Cake\I18n\Time;
 
 
 
@@ -41,24 +41,24 @@ class UsersController extends AppController
         //$this->loadComponent('Common');
     }
 
-    public function index( $role_id = null )
+    public function index()
     {
-
         $session = $this->request->session();
 
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
-            $session->write('users_search_query_'.$role_id, $this->request->query['search']);
+            $session->write('users_search_query', $this->request->query['search']);
         }
-        if($session->check('users_search_query_'.$role_id)) {
-            $search = $session->read('users_search_query_'.$role_id);
+        if($session->check('users_search_query')) {
+            $search = $session->read('users_search_query');
         }else{
             $search = '';
         }
 
-        $where = $this->__search($role_id);
+        $where = $this->__search();
 
         if($where){
             $query = $this->Users->find('All')->where($where);
+            //$this->log($query);
         }else{
             $query = $this->Users;
         }
@@ -101,8 +101,6 @@ class UsersController extends AppController
             $user->role_id = 3;
             $user->doctor_id = $doctor_id;
 
-            //pr($user); die;
-
             if ($this->Users->save($user)) {
                 $success_message = __('The patient Registration is successful.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -110,6 +108,7 @@ class UsersController extends AppController
                 $error_message = __('The patient could not be Registration. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+
             return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('user'));
@@ -133,6 +132,7 @@ class UsersController extends AppController
                 $error_message = __('The patient could not be edit. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
+
             return $this->redirect(['action' => 'index']);
         }
 
@@ -151,6 +151,7 @@ class UsersController extends AppController
             $error_message = __('The patient could not be delete. Please, try again.');
             $this->Flash->adminError($error_message, ['key' => 'admin_error']);
         }
+
         return $this->redirect(['action' => 'index']);
     }
 
@@ -160,10 +161,9 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
+            $user->expire_date = Time::now()->addMonth(12);
             $user->role_id = 2;
             $user->token = $this->generateToken();
-
-            //pr($user); die;
 
             if ($this->Users->save($user)) {
                 $success_message = __('Registration is successful.');
@@ -196,32 +196,39 @@ class UsersController extends AppController
     public function login()      // Backend login
     {
         $this->viewBuilder()->layout('loginLayout');
+
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
-                $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
-                if($role_check == true){
-                    $user = $this->Auth->identify();
+                $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
+                if($doctorInfo['expire_date'] > Time::now() OR $doctorInfo['role_id'] == 1){
+                    $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
+                    if($role_check == true){
+                        $user = $this->Auth->identify();
 
-                    if ($user) {
-                        $this->Auth->setUser($user);
-                        $success_message = __('Successfully logged in');
-                        $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                        return $this->redirect('/admin/dashboard');
+                        if ($user) {
+                            $this->Auth->setUser($user);
+                            $success_message = __('Successfully logged in');
+                            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                            return $this->redirect('/admin/dashboard');
+                        }else{
+                            $error_message = __('Invalid username or password, try again');
+                            $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                            $this->Flash->error($error_message);
+                        }
 
-                    }else{
-                        $error_message = __('Invalid username or password, try again');
+                    }else {
+                        $error_message = __('You don\'t have permission to access');
                         $this->Flash->adminError($error_message, ['key' => 'admin_error']);
-                        $this->Flash->error($error_message);
+                        return $this->redirect(['action' => 'login']);
                     }
 
-                } else {
-                    $error_message = __('You don\'t have permission to access');
+                }else{
+                    $error_message = __('Expire Date, Please contact with Admin');
                     $this->Flash->adminError($error_message, ['key' => 'admin_error']);
                     return $this->redirect(['action' => 'login']);
                 }
             }
-
-        } else {
+        }else{
             return $this->redirect(['controller' => 'dashboard', 'action' => 'index']);
         }
     }
@@ -383,7 +390,6 @@ class UsersController extends AppController
                         }else{
                             $message = 'Password didn\'t match with confirm password!';
                             $this->Flash->adminError($message, ['key' => 'admin_error']);
-
                         }
                     }else{
                         $message = 'Password must have a minimum of 8 characters!';
@@ -396,23 +402,20 @@ class UsersController extends AppController
             }
 
         $this->set('token',$token);
-
-        $this->render('change_password');
-
     }
 
     public function generateToken(){
         return Text::uuid();
     }
 
-    function __search($role_id){
+    function __search(){
 
         $session = $this->request->session();
         $user_id = $session->read('Auth.User.id');
 
-        if($session->check('users_search_query_'.$role_id)){
-            $search = $session->read('users_search_query_'.$role_id);
-            $where = ['Users.doctor_id' => $user_id,'Users.role_id' => $role_id,
+        if($session->check('users_search_query')){
+            $search = $session->read('users_search_query');
+            $where = [$this->checkById($user_id),
                 'OR' => [
                     ['Users.first_name LIKE' => '%' . $search . '%'],
                     ['Users.phone LIKE' => '%' . $search . '%'],
@@ -422,15 +425,16 @@ class UsersController extends AppController
                 ]
             ];
         }else{
-            $where = ['Users.doctor_id' => $user_id];
+            $where = $this->checkById($user_id);
         }
+        $this->log($where);
         return $where;
     }
 
-    function reset($role_id){
+    function reset(){
         $session = $this->request->session();
-        $session->delete('users_search_query_'.$role_id);
-        $this->redirect(['action' => 'index',$role_id]);
+        $session->delete('users_search_query');
+        $this->redirect(['action' => 'index']);
     }
 
     function getUser($user_id){
@@ -467,5 +471,14 @@ class UsersController extends AppController
         }else{
             echo 'false';die;
         }
+    }
+
+    function checkById($user_id){
+        if($this->request->session()->read('Auth.User.role_id') == 1){ //Admin role_id
+            $checkBy = ['Users.role_id' => 2]; //Doctor role_id
+        }else{
+            $checkBy = ['Users.doctor_id' => $user_id];
+        }
+        return $checkBy;
     }
 }

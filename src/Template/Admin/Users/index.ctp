@@ -1,13 +1,34 @@
+<?php
+
+    $file_path = 'uploads/csv/ACI.csv';
+
+    function readCSV($csvFile){
+        $file_handle = fopen($csvFile, 'r');
+        while (!feof($file_handle) ) {
+            $line_of_text[] = fgetcsv($file_handle, 1024);
+        }
+        fclose($file_handle);
+        return $line_of_text;
+    }
+
+    // Set path to CSV file
+    $csv = readCSV($file_path);
+    pr($csv); die;
+?>
 <div class="workspace-dashboard page page-ui-tables">
     <div class="page-heading">
         <div class="flex-container">
-            <div class="flex-item"><h4><?= __('Patients') ?></h4></div>
+            <div class="flex-item"><h4><?php if( $this->request->session()->read('Auth.User.role_id') == 1){echo 'Doctors';}else{ echo 'Patients';} ?></h4></div>
             <div class="flex-item">
-                <?php echo $this->Html->link(
-                    '<span class="icon">+</span> Add Patient',
-                    ['action' => 'add'],
-                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Patient']
-                ) ?>
+                <?php
+                    if( $this->request->session()->read('Auth.User.role_id') != 1){
+                        echo $this->Html->link(
+                            '<span class="icon">+</span> Add Patient',
+                            ['action' => 'add'],
+                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Patient']
+                        );
+                    }
+                 ?>
             </div>
         </div>
     </div>
@@ -27,18 +48,11 @@
                     <button type="submit"> <i class="fa fa-search"></i></button>
                     <div class="flex-container">
                         <?php
-                        // Get the role id from url\
-                        if(isset($this->request->pass[0])){
-                            $role_id = $this->request->pass[0];
-                        }else{
-                            $role_id = null;
-                        }
-
-                        echo $this->Html->link(
-                            'Reset',
-                            ['action' => 'reset',$role_id],
-                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
-                        );
+                            echo $this->Html->link(
+                                'Reset',
+                                ['action' => 'reset'],
+                                ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
+                            );
                         ?>
                     </div>
                     <?php echo $this->Form->end();?>
@@ -74,11 +88,13 @@
                                 <ul class="dropdown-menu action-dropdown">
                                     <li>
                                         <?php
-                                        echo $this->Html->link(
-                                            '<span class="fa fa-eye"></span> View Prescription',
-                                            ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
-                                            ['escapeTitle' => false, 'title' => 'View Prescription']
-                                        );
+                                            if($this->request->session()->read('Auth.User.role_id') != 1){
+                                                echo $this->Html->link(
+                                                    '<span class="fa fa-eye"></span> View Prescription',
+                                                    ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
+                                                    ['escapeTitle' => false, 'title' => 'View Prescription']
+                                                );
+                                            }
                                         ?>
                                     </li>
 
@@ -93,11 +109,13 @@
                                     </li>
                                     <li>
                                         <?php
-                                        echo $this->Form->postLink(
-                                            '<span class="fa fa-trash"></span> Delete',
-                                            ['action' => 'delete', $user->id],
-                                            ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
-                                        );
+                                            if( $this->request->session()->read('Auth.User.role_id') != 1){
+                                                echo $this->Form->postLink(
+                                                    '<span class="fa fa-trash"></span> Delete',
+                                                    ['action' => 'delete', $user->id],
+                                                    ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+                                                );
+                                            }
                                         ?>
                                     </li>
                                 </ul>

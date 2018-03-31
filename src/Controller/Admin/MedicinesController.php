@@ -8,7 +8,7 @@ use App\Controller\AppController;
  * @property \App\Model\Table\MedicinesTable $Medicines */
 class MedicinesController extends AppController
 {
-    public $components = ['FileHandler'];
+    public $components = ['FileHandler', 'ExcelHandler'];
 
     /**
      * Index method
@@ -202,9 +202,9 @@ class MedicinesController extends AppController
             }else{
                 $import_medicine = $this->request->data['medicine_file'];
             }
-
-            $this->request->data['medicine_file'] = $import_medicine;
             // end resume up
+
+            $records = $this->ExcelHandler->readExcel('uploads/csv/'.$import_medicine);
         }
     }
 }

@@ -4,16 +4,18 @@
             <div class="flex-item"><h4><?= __('Medicines') ?></h4></div>
             <div class="flex-item">
                 <div class="flex-container">
-                    <?php echo $this->Html->link(
+                    <?php
+                    if($this->request->session()->read('Auth.User.role_id') == 1){
+                        echo $this->Html->link(
                         '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Medicine',
                         ['action' => 'import_medicine'],
                         ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Medicine']
                         );
-
-                        echo $this->Html->link(
-                        '<span class="icon">+</span> Add Medicine',
-                        ['action' => 'add'],
-                        ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Medicine']
+                    }
+                    echo $this->Html->link(
+                    '<span class="icon">+</span> Add Medicine',
+                    ['action' => 'add'],
+                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Medicine']
                     );
                     ?>
                 </div>

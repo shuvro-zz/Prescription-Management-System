@@ -7,8 +7,13 @@
     <div class="workspace-body">
         <div class="page-heading">
             <ol class="breadcrumb breadcrumb-small">
-                <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Patient') ?>"> <?= __('Patient') ?></a></li>
-                <li class="active"><a href="#">Edit <?= __('Patient') ?></a></li>
+                <?php if($this->request->session()->read('Auth.User.role_id') == 1){ ?>
+                    <li><a href="<?=$this->Url->build(array('action' => 'index/2' )) ?>" title="<?= __('Doctor') ?>"> <?= __('Doctor') ?></a></li>
+                    <li class="active"><a href="#">Edit <?= __('Doctor') ?></a></li>
+                <?php }else{ ?>
+                    <li><a href="<?=$this->Url->build(array('action' => 'index/3' )) ?>" title="<?= __('Patient') ?>"> <?= __('Patient') ?></a></li>
+                    <li class="active"><a href="#">Edit <?= __('Patient') ?></a></li>
+                <?php } ?>
             </ol>
         </div>
 
@@ -19,7 +24,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default panel-hovered panel-stacked">
-                                    <div class="panel-heading"><?= __('Edit Patient') ?></div>
+                                    <div class="panel-heading">
+                                        <?php if($this->request->session()->read('Auth.User.role_id') == 1){ ?>
+                                            Edit Doctor
+                                        <?php }else{ ?>
+                                            Edit Patient
+                                        <?php } ?>
+                                    </div>
                                     <?php echo $this->element('patient_element') ?>
                                 </div>
                             </div>
