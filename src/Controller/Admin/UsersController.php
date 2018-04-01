@@ -58,7 +58,6 @@ class UsersController extends AppController
 
         if($where){
             $query = $this->Users->find('All')->where($where);
-            //$this->log($query);
         }else{
             $query = $this->Users;
         }
@@ -419,15 +418,12 @@ class UsersController extends AppController
                 'OR' => [
                     ['Users.first_name LIKE' => '%' . $search . '%'],
                     ['Users.phone LIKE' => '%' . $search . '%'],
-                    ['Users.email LIKE' => '%' . $search . '%'],
-                    ['Users.age LIKE' => '%' . $search . '%'],
-                    ['Users.created LIKE' => '%' . $search . '%'],
+                    ['Users.email LIKE' => '%' . $search . '%']
                 ]
             ];
         }else{
             $where = $this->checkById($user_id);
         }
-        $this->log($where);
         return $where;
     }
 
@@ -463,7 +459,7 @@ class UsersController extends AppController
         $phone = $this->Users->findByPhone($this->request->data['phone'])
             ->where([
                 'Users.doctor_id' => $this->request->session()->read('Auth.User.id')
-            ]);;
+            ]);
 
         $phone = $phone->toArray();
         if(empty($phone)){
@@ -475,10 +471,10 @@ class UsersController extends AppController
 
     function checkById($user_id){
         if($this->request->session()->read('Auth.User.role_id') == 1){ //Admin role_id
-            $checkBy = ['Users.role_id' => 2]; //Doctor role_id
+            $checkById = ['Users.role_id' => 2]; //Doctor role_id
         }else{
-            $checkBy = ['Users.doctor_id' => $user_id];
+            $checkById = ['Users.doctor_id' => $user_id];
         }
-        return $checkBy;
+        return $checkById;
     }
 }

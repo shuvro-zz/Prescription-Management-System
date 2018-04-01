@@ -2,6 +2,8 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use App\Model\Entity\Medicine;
+use Cake\Filesystem\File;
 
 /**
  * Tests Controller
@@ -9,6 +11,7 @@ use App\Controller\AppController;
  * @property \App\Model\Table\TestsTable $Tests */
 class TestsController extends AppController
 {
+    public $components = ['FileHandler'];
 
     /**
      * Index method
@@ -164,13 +167,73 @@ class TestsController extends AppController
 
     function isTestAvailable(){
         $this->autoRender = false;
-        $test = $this->Tests->findByName($this->request->data['name']);
-        if(empty($test->toArray())){
+        $test = $this->Tests->findByName($this->request->data['name'])->toArray;
+        if(empty($test)){
             echo 'true';die;
         }else{
             echo 'false';die;
         }
 
+    }
+
+    function importCsv(){
+        if( isset($this->request->data['csv_file']) ){
+            // start resume  up
+            $import_test = $this->request->data['csv_file'];
+            $getExtension = pathinfo($import_test['name']);
+
+            if($getExtension['extension'] == 'csv'){
+                if ($import_test) {
+                    $result = $this->FileHandler->uploadfile($import_test);
+                    if ($result) {
+                        $import_test= $this->FileHandler->_uploadimgname;
+
+                        // Set path to CSV file
+                        $csv = $this->readCSV('uploads/tests/'.$import_test);
+
+                        foreach($csv as $values){
+                            if(!empty($values)){
+                                foreach($values as $value){
+                                    $isExit = $this->Tests->findByName($value)->toArray();
+                                    if(empty($isExit)){
+                                        $test = $this->Tests->newEntity();
+                                        $test = $this->Tests->patchEntity($test, $this->makeSaveRecordPattern(trim($value)));
+                                        $this->Tests->save($test);
+                                    }
+                                }
+                            }
+                        }
+                        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'tests' .DS. $import_test);
+                        $file->delete();
+
+                        $success_message = __('Tests import successfully.');
+                        $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                    }else {
+                        $error_message = __('There was a problem. Please, try again.');
+                        $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                    }
+                }
+            }else{
+                $error_message = __('Please upload a csv File');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+            }
+            return $this->redirect(['action' => 'import_csv']);
+        }
+    }
+
+    function readCSV($csvFile){
+        $file_handle = fopen($csvFile, 'r');
+        while (!feof($file_handle) ) {
+            $line_of_text[] = fgetcsv($file_handle, 1024);
+        }
+        fclose($file_handle);
+        return $line_of_text;
+    }
+
+    function makeSaveRecordPattern($value){
+        $medicine = [];
+        $medicine['name'] = $value;
+        return $medicine;
     }
 
 }

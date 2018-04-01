@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller\Admin;
 use App\Controller\AppController;
+use Cake\Filesystem\File;
 
 /**
  * Medicines Controller
@@ -186,25 +187,61 @@ class MedicinesController extends AppController
 
     }
 
-    function importMedicine(){
-        if( isset($this->request->data['medicine_file']) ){
-            // start resume  up
-            $import_medicine = $this->request->data['medicine_file'];
+    function importCsv(){
+        if( isset($this->request->data['csv_file']) ){
+            $import_medicine = $this->request->data['csv_file'];
+            $getExtension = pathinfo($import_medicine['name']);
 
-            if ($import_medicine) {
-                $result = $this->FileHandler->uploadfile($import_medicine);
-                //pr($import_medicine); die;
-                if ($result) {
-                    $import_medicine= $this->FileHandler->_uploadimgname;
-                }else {
-                    $import_medicine = '';
+            if($getExtension['extension'] == 'csv'){
+                if ($import_medicine) {
+                    $result = $this->FileHandler->uploadfile($import_medicine);
+                    if ($result) {
+                        $import_medicine= $this->FileHandler->_uploadimgname;
+                        // Set path to CSV file
+                        $csv = $this->readCSV('uploads/medicines/'.$import_medicine);
+
+                        foreach($csv as $values){
+                            if(!empty($values)){
+                                foreach($values as $value){
+                                    $isExit = $this->Medicines->findByName($value)->toArray();
+                                    if(empty($isExit)){
+                                        $medicine = $this->Medicines->newEntity();
+                                        $medicine = $this->Medicines->patchEntity($medicine, $this->makeSaveRecordPattern(trim($value)));
+                                        $this->Medicines->save($medicine);
+                                    }
+                                }
+                            }
+                        }
+                        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'medicines' .DS. $import_medicine);
+                        $file->delete();
+
+                        $success_message = __('Medicines import successfully.');
+                        $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                    }else {
+                        $error_message = __('There was a problem. Please, try again.');
+                        $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                    }
                 }
             }else{
-                $import_medicine = $this->request->data['medicine_file'];
+                $error_message = __('Please upload a csv File');
+                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
-            // end resume up
-
-            $records = $this->ExcelHandler->readExcel('uploads/csv/'.$import_medicine);
+            return $this->redirect(['action' => 'import_csv']);
         }
+    }
+
+    function readCSV($csvFile){
+        $file_handle = fopen($csvFile, 'r');
+        while (!feof($file_handle) ) {
+            $line_of_text[] = fgetcsv($file_handle, 1024);
+        }
+        fclose($file_handle);
+        return $line_of_text;
+    }
+
+    function makeSaveRecordPattern($value){
+        $medicine = [];
+        $medicine['name'] = $value;
+        return $medicine;
     }
 }

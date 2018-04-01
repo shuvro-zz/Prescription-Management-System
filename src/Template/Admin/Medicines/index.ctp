@@ -5,18 +5,18 @@
             <div class="flex-item">
                 <div class="flex-container">
                     <?php
-                    if($this->request->session()->read('Auth.User.role_id') == 1){
+                        if($this->request->session()->read('Auth.User.role_id') == 1){
+                            echo $this->Html->link(
+                                '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Medicines',
+                                ['action' => 'import_csv'],
+                                ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Medicines']
+                            );
+                        }
                         echo $this->Html->link(
-                        '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Medicine',
-                        ['action' => 'import_medicine'],
-                        ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Medicine']
+                            '<span class="icon">+</span> Add Medicine',
+                            ['action' => 'add'],
+                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Medicine']
                         );
-                    }
-                    echo $this->Html->link(
-                    '<span class="icon">+</span> Add Medicine',
-                    ['action' => 'add'],
-                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Medicine']
-                    );
                     ?>
                 </div>
             </div>
