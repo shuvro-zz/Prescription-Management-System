@@ -1,5 +1,5 @@
 
-<?= $this->Form->create($test,array('id'=>'testForm')) ?>
+<?= $this->Form->create($test, array('id'=>'testForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -44,7 +44,7 @@
             </div>
         </div>
     </footer>
-    
+
 </section>
 <?= $this->Form->end() ?>
 

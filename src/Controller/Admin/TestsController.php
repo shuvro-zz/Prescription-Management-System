@@ -167,7 +167,7 @@ class TestsController extends AppController
 
     function isTestAvailable(){
         $this->autoRender = false;
-        $test = $this->Tests->findByName($this->request->data['name'])->toArray;
+        $test = $this->Tests->findByName($this->request->data['name'])->toArray();
         if(empty($test)){
             echo 'true';die;
         }else{
