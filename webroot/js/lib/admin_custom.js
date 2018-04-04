@@ -50,7 +50,7 @@ function initDatePicker(){
     $(".datetime").each(function(){
         var format = $(this).attr('format')
         if(!format || $.trim(format)==""){
-            format = 'Y/m/d g:i A'
+            format = 'Y/m/d h:m A'
         }
         var formatTime = $(this).attr('formatTime')
         if(!formatTime || $.trim(formatTime)==""){
@@ -58,7 +58,7 @@ function initDatePicker(){
         }
 
         $('.datetime').datetimepicker({
-            format:'Y/m/d g:i A',
+            format:'Y/m/d h:m A',
             formatTime:formatTime
         });
 
