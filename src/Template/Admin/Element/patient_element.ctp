@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label class="name">Expire Date<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('expire_date', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('expire_date', ['class' => 'form-control datetime', 'id' => 'datetimepicker', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
