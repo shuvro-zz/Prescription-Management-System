@@ -10,22 +10,8 @@ class EmailHandlerComponent extends Component
 
     public function smtpEmailSetting()
     {
-        $smtp_username = $this->Common->getSettingByKey('smtp_username');
-        $smtp_password = $this->Common->getSettingByKey('smtp_password');
-
-        if(empty($smtp_username) || empty($smtp_password)){
-
-            $smtp_username = 'mizan92cse@gmail.com';
-            $smtp_password = 'Password0022';
-
-
-            /*$smtp_username = 'car.webalive@gmail.com';
-            $smtp_password = 'mascot123';*/
-
-            /*$smtp_username = 'leanhealthatstanford@gmail.com';
-            $smtp_password = 'stanford@123';*/
-
-        }
+        $smtp_username = 'fictionsoft50@gmail.com';
+        $smtp_password = 'Fsakabaka002';
 
         Email::configTransport('gmail', [
             'host' => 'ssl://smtp.gmail.com',

@@ -392,6 +392,17 @@ div#patient_drop_down,div#patient_field,.single_block .inputs {
 .prescription_content{
     padding: 0px 38px!important;
 }
+label.error {
+    top: auto;
+    right: auto;
+    bottom: -20px;
+    left: auto;
+    position: absolute;
+    font-size: 12px !important;
+    line-height: 1;
+    margin-bottom: 0;
+    color: red;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

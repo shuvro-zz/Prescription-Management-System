@@ -1,5 +1,5 @@
 
-<?= $this->Form->create($test) ?>
+<?= $this->Form->create() ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -19,14 +19,14 @@
                                     <div class="panel-body">
                                         <?php
                                          echo'<div class="col-sm-6">
-                                                    <div class="form-row">
-                                                        <label class="name">Name<span class="required" aria-required="true"></span></label>
-                                                        <div class="inputs">';
-                                                            echo $this->Form->input('name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                        echo '</div>
-                                                    </div>
-                                                </div>';
-                                                 ?>
+                                            <div class="form-row">
+                                                <label class="name">Name<span class="required" aria-required="true"></span></label>
+                                                <div class="inputs">';
+                                                    echo $this->Form->input('name', ['class' => 'form-control', 'value' => $test->name, 'label' => false, 'required' => true, 'type' =>'text']);
+                                                echo '</div>
+                                            </div>
+                                        </div>';
+                                         ?>
                                     </div>
                                 </div>
                             </div>

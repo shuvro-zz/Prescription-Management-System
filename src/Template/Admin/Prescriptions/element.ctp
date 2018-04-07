@@ -26,13 +26,13 @@
                         <?php
                         if(strtolower($this->request->params['action']) == 'edit'){
                             if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=>true,'onchange'=>'getUserInfo(this.value)'  ]);
+                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=>true,'onchange'=>'getUserInfo(this.value)'  ]);
                             }else{
                                 echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
                             }
                         }else{
                             if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
+                                echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
                             }else{
                                 echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
                             }
@@ -69,12 +69,12 @@
                 <div class="health_data single_block">
                     <label>BP:</label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control bp_width', 'label' => false, 'type' =>'text']);?>
+                        <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control bp_width', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'type' =>'text']);?>
                     </div>
 
                     <label>Temperature:</label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('temperature', [ 'class'=>'form-control temp_width','label'=>false, ]);?>
+                        <?php echo $this->Form->input('temperature', [ 'class'=>'form-control temp_width', 'value' => (isset($prescription['temperature']))? $prescription['temperature']:'', 'label'=>false, ]);?>
                     </div>
 
                     <label>Last Visit Date:</label>
@@ -88,7 +88,7 @@
             <div class="patient_info_section">
                 <h6>Doctors Notes</h6>
                 <div class=" doctors_note">
-                    <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control ', 'id' => 'all_instructions', 'label' => false, 'type' =>'textarea']); ?>
+                    <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'value' => (isset($prescription['doctores_notes']))? $prescription['doctores_notes']:'', 'id' => 'all_instructions', 'label' => false, 'type' =>'textarea']); ?>
                 </div>
             </div>
         </div>
@@ -114,7 +114,7 @@
                     <div class=" diagnosis_info diagnosis_box">
                         <?php foreach($diagnosis as $id=>$name){ ?>
                             <div class="checkbox" style="margin-top: 0px">
-                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" ><?php echo $name ?></label>
+                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" required><?php echo $name ?></label>
                             </div>
                         <?php } ?>
                     </div>
@@ -124,7 +124,7 @@
                     <h6>Other Instructions</h6>
                     <div class="other_instruction">
                         <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
-                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control','label'=>false, 'type' =>'textarea' ]);?>
+                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea' ]);?>
                     </div>
                 </div>
             </div>
@@ -137,8 +137,6 @@
                     <h6>Medicines</h6>
 
                     <div class="medicines medicine_box">
-                        <?php /*echo $this->Form->input('medicines._ids', ['options' => $medicines, 'label' => false, 'class' => 'tokenize-sortable-demo1', 'id'=> 'prescription_medicines']); */?>
-
                         <?php
                             echo '<div class="medicines_wrap" id="medicinesWrap">';
                                 foreach($prescription_medicines as $prescription_medicine){
@@ -162,7 +160,7 @@
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
 
-                                    if(strtolower($this->request->params['action']) == 'edit'){
+                                    if(strtolower($this->request->params['action']) == 'edit' && isset($prescription_medicine->medicine_id) ){
                                         echo  $field_medicine;
                                     }
 
@@ -175,7 +173,7 @@
                 <div class="examinations_section">
                     <h6>Examinations</h6>
                     <div class="tests examinations">
-                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
+                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
                     </div>
                 </div>
 
@@ -198,6 +196,11 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
+        jQuery('#prescription-form').validate({
+
+        });
+
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
             $("#medicinesWrap").append('<?php echo $field_medicine ?>').find('select').last().val('');

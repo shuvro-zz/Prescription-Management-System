@@ -24648,3 +24648,507 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2018-04-06 08:32:19 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 106]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 106
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:32:23 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 203]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 203
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:32:23 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 236]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 236
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:36:16 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 203]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 203
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:36:16 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 236]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 236
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:36:22 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 203]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 203
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:36:22 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 236]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 236
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:36:25 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 203]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 203
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:36:25 Notice: Notice (8): Undefined variable: field_medicine in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 236]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 236
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:42:11 Notice: Notice (8): Undefined index: diagnosis in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 105]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 105
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:42:22 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:42:22 Notice: Notice (8): Undefined index: diagnosis in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 180]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 180
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:42:25 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 165]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 165
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 9
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:44:37 Notice: Notice (8): Undefined index: diagnosis in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 180]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 180
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:45:06 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 08:45:25 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:02:44 Notice: Notice (8): Use of undefined constant _ids - assumed '_ids' in [E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\element.ctp, line 20]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Diagnosis\element.ctp, line 20
+include - APP/Template\Admin\Diagnosis\edit.ctp, line 20
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:46:20 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:46:41 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:46:49 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:47:05 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:50:11 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:52:53 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:53:24 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:56:05 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-06 09:58:36 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 06:21:44 Notice: Notice (8): A non well formed numeric value encountered in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 46]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+date - [internal], line ??
+App\Controller\Admin\UsersController::index() - APP/Controller\Admin\UsersController.php, line 46
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 06:32:11 Notice: Notice (8): Object of class Cake\I18n\Time could not be converted to int in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 203]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\UsersController::login() - APP/Controller\Admin\UsersController.php, line 203
+App\Controller\Admin\UsersController::registration() - APP/Controller\Admin\UsersController.php, line 171
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:13:24 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:16:14 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:17:57 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:34:05 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:37:20 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:37:34 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:37:40 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:37:40 Notice: Notice (8): Undefined index: diagnosis in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 180]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 180
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:38:44 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:38:44 Notice: Notice (8): Undefined index: diagnosis in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 180]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 180
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 16:54:51 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 16:54:51 Notice: Notice (8): Undefined index: diagnosis in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 180]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 180
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 16:55:08 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 16:55:18 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 179]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 179
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+

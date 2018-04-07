@@ -133,7 +133,7 @@ class PrescriptionsController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        //$users = $this->Prescriptions->Users->find('list', ['limit' => 200]);
+        //$users = $this->Prescriptions->Users->find('list', ['limit' => 90000]);
         $doctor_id = $this->request->session()->read('Auth.User.id');
         $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
 
@@ -146,8 +146,8 @@ class PrescriptionsController extends AppController
 
         $prescription_medicines = array('medicine_id'=>'');
         $prescription_tests = array('test_id'=>'');
-        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
-        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
+        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 90000]);
+        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 90000]);
         $diagnosis = $this->getDiagnosisInfo();
 
         if($patient_id){
@@ -176,7 +176,7 @@ class PrescriptionsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
 
             $patient_id = $this->savePatient($this->request->data['patients']);
-            $medicines = $this->request->data['medicines'];
+            $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
             $diagnosis = $this->request->data['diagnosis'];
 
             unset($this->request->data['medicines']);
@@ -217,7 +217,7 @@ class PrescriptionsController extends AppController
         $prescription_diagnosis = $this->Prescriptions->PrescriptionsDiagnosis->find('all')->where(['PrescriptionsDiagnosis.prescription_id' => $id ]);
         $prescription_medicines = $this->Prescriptions->PrescriptionsMedicines->find('all')->where(['PrescriptionsMedicines.prescription_id' => $id ]);
         $prescription_tests = $this->Prescriptions->PrescriptionsTests->find('all')->where(['PrescriptionsTests.prescription_id' => $id ]);
-        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200]);
+        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 90000]);
         $diagnosis = $this->getDiagnosisInfo();
 
         $patient = $prescription->toArray();
@@ -233,8 +233,21 @@ class PrescriptionsController extends AppController
         $latest_prescription = $this->Common->getLatestPrescription($patient['user_id']);
         $last_visit_date = $latest_prescription->created->format('d F Y');
 
-        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis','prescription_diagnosis', 'prescriptions_link', 'last_visit_date'));
+
+        if(count($prescription_medicines->toArray())==0){
+            $prescription_medicines = array('medicine_id'=>'');
+        }
+
+        //pr($prescription_tests->toArray());die;
+        $default_tests = [];
+        if($prescription_tests){
+            foreach($prescription_tests as $prescription_test){
+                $default_tests[] = $prescription_test['test_id'];
+            }
+        }
+
+        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 90000]);
+        $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis','prescription_diagnosis', 'prescriptions_link', 'last_visit_date', 'default_tests'));
         $this->set('_serialize', ['prescription']);
     }
 

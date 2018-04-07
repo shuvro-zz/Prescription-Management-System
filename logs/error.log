@@ -1,0 +1,323 @@
+2018-04-07 06:24:57 Error: 07/04/2019
+2018-04-07 06:32:12 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\Debugger.php:744) in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Network\Session.php, line 573]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+setcookie - [internal], line ??
+Cake\Network\Session::renew() - CORE\src\Network\Session.php, line 573
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 101
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\Admin\UsersController::login() - APP/Controller\Admin\UsersController.php, line 209
+App\Controller\Admin\UsersController::registration() - APP/Controller\Admin\UsersController.php, line 171
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 06:32:12 Warning: Warning (2): session_regenerate_id() [<a href='http://php.net/function.session-regenerate-id'>function.session-regenerate-id</a>]: Cannot regenerate session id - headers already sent in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Network\Session.php, line 576]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+session_regenerate_id - [internal], line ??
+Cake\Network\Session::renew() - CORE\src\Network\Session.php, line 576
+Cake\Auth\Storage\SessionStorage::write() - CORE\src\Auth\Storage\SessionStorage.php, line 101
+Cake\Controller\Component\AuthComponent::setUser() - CORE\src\Controller\Component\AuthComponent.php, line 631
+App\Controller\Admin\UsersController::login() - APP/Controller\Admin\UsersController.php, line 209
+App\Controller\Admin\UsersController::registration() - APP/Controller\Admin\UsersController.php, line 171
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 13:59:01 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 241]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-07 13:59:01 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /pms/admin/prescriptions/edit/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 241)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-07 13:59:22 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 241]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-07 13:59:22 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /pms/admin/prescriptions/edit/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 241)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-07 14:09:44 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\view.ctp, line 23]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-07 14:09:44 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /pms/admin/prescriptions/view/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'E:\\xampp_5\\htdo...', 23)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-07 14:12:14 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::editPrescription() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'editPrescription',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/edit-prescription/58
+Referer URL: http://localhost/pms/admin/prescriptions/view/58
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-04-07 14:14:48 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 476]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 476
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 459
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 194
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:15:01 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 476]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 476
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 459
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 194
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 14:19:39 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 476]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 476
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 459
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 194
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-07 17:43:05 Error: [InvalidArgumentException] Transport config "gmail" is missing.
+Request URL: /pms/admin/prescriptions/send-prescription-email/58
+Referer URL: http://localhost/pms/admin/prescriptions/view/58
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Mailer\Email.php(969): Cake\Mailer\Email->_constructTransport('gmail')
+#1 E:\xampp_5\htdocs\pms\src\Controller\Component\EmailHandlerComponent.php(37): Cake\Mailer\Email->transport('gmail')
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(352): App\Controller\Component\EmailHandlerComponent->sendEmail(Array)
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->sendPrescriptionEmail('58')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-04-07 20:18:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:19:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:21:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:21:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:22:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-07 20:23:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

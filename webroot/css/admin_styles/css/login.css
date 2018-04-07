@@ -144,6 +144,14 @@ a{
     margin-bottom: 15px;
     font-size: 14px;
 }
+.alert.alert-warning {
+    background: #f4c470;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
 .login-box .alert a{
     color: #fff;
     font-size: 20px;

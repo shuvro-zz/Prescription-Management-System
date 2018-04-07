@@ -78,6 +78,7 @@ function initDatePicker(){
     });
 
     $(".date").prop('readonly', false);
+
     $(".time").prop('readonly', false);
 
 }

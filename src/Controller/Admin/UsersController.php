@@ -44,7 +44,6 @@ class UsersController extends AppController
     public function index()
     {
         $session = $this->request->session();
-
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
             $session->write('users_search_query', $this->request->query['search']);
         }
@@ -101,10 +100,10 @@ class UsersController extends AppController
             $user->doctor_id = $doctor_id;
 
             if ($this->Users->save($user)) {
-                $success_message = __('The patient Registration is successful.');
+                $success_message = __('The patient has been saved.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
-                $error_message = __('The patient could not be Registration. Please, try again.');
+                $error_message = __('The patient could not be saved. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
 
@@ -160,7 +159,8 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
-            $user->expire_date = Time::now()->addMonth(12);
+            $month=strtotime("+12 Months");
+            $user->expire_date = date('d/m/Y', $month);
             $user->role_id = 2;
             $user->token = $this->generateToken();
 
@@ -199,7 +199,7 @@ class UsersController extends AppController
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
                 $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
-                if($doctorInfo['expire_date'] > Time::now() OR $doctorInfo['role_id'] == 1){
+                if(strtotime($doctorInfo['expire_date']) > strtotime('now') OR $doctorInfo['role_id'] == 1){
                     $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
                     if($role_check == true){
                         $user = $this->Auth->identify();
@@ -222,8 +222,8 @@ class UsersController extends AppController
                     }
 
                 }else{
-                    $error_message = __('Expire Date, Please contact with Admin');
-                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                    $error_message = __('Your registration has been expired, Please contact with Admin');
+                    $this->Flash->adminWarning($error_message, ['key' => 'admin_error']);
                     return $this->redirect(['action' => 'login']);
                 }
             }

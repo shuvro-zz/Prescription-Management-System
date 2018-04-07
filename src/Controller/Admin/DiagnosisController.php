@@ -90,8 +90,8 @@ class DiagnosisController extends AppController
                 $this->Flash->adminError(__('The diagnosis could not be saved. Please, try again.'), ['key' => 'admin_error']);
             }
         }
-        $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200]);
-        $tests = $this->Diagnosis->Tests->find('list', ['limit' => 200]);
+        $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 90000]);
+        $tests = $this->Diagnosis->Tests->find('list', ['limit' => 90000]);
         $this->set(compact('diagnosi', 'medicines', 'tests'));
         $this->set('_serialize', ['diagnosi']);
     }
@@ -117,9 +117,24 @@ class DiagnosisController extends AppController
                 $this->Flash->adminError(__('The diagnosis could not be saved. Please, try again.'), ['key' => 'admin_error']);
             }
         }
-        $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200]);
-        $tests = $this->Diagnosis->Tests->find('list', ['limit' => 200]);
-        $this->set(compact('diagnosi', 'medicines', 'tests'));
+        $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 90000]);
+        $tests = $this->Diagnosis->Tests->find('list', ['limit' => 90000]);
+
+        $default_medicines = [];
+        if($diagnosi['medicines']){
+            foreach($diagnosi['medicines'] as $medicine){
+                $default_medicines[] = $medicine['id'];
+            }
+        }
+
+        $default_tests = [];
+        if($diagnosi['tests']){
+            foreach($diagnosi['tests'] as $test){
+                $default_tests[] = $test['id'];
+            }
+        }
+
+        $this->set(compact('diagnosi', 'medicines', 'tests', 'default_medicines', 'default_tests'));
         $this->set('_serialize', ['diagnosi']);
     }
 

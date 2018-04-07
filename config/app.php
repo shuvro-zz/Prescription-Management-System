@@ -214,15 +214,23 @@ return [
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
 
+            //Local
             'host' => 'localhost',
             'username' => 'root',
             'password' => '',
             'database' => 'pms',
 
+            //Demo
             /*'host' => 'fictionsoft.com',
             'username' => 'fictions_pmsuser',
             'password' => 'lf=eZa01r5Yw',
             'database' => 'fictions_pms',*/
+
+            //online
+            /*'host' => 'localhost',
+            'username' => 'ranklwxg_pms_user',
+            'password' => 'DAN07Pe5tDd~',
+            'database' => 'ranklwxg_pms',*/
 
             //'port' => 'non_standard_port_number',
             //'database' => 'leanhealthatstanfordform',

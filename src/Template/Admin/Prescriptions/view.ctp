@@ -15,26 +15,30 @@
                         &nbsp;
 
                         <?php
-                        echo $this->Html->link(
-                            'pdf Generate',
-                            ['action' => 'generatePrescriptionPdf', $prescription->id],
-                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'PDF Generate']
-                        )
+                            echo $this->Html->link(
+                                'Generate pdf',
+                                ['action' => 'generatePrescriptionPdf', $prescription->id],
+                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Generate PDF ']
+                            );
                         ?>
                         &nbsp;
                         &nbsp;
-                        <!--<a class='add-event-btn' href='<?php /*echo $this->Url->build(WWW_ROOT.'/uploads/pdf/'.$pdf_file_name,true);*/?>'>Pdf Download</a>';-->
                         <?php
-
+                            echo $this->Html->link(
+                                'edit prescription',
+                                ['action' => 'edit', $prescription->id],
+                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'edit pdf']
+                            );
+                        ?>
+                        &nbsp;
+                        &nbsp;
+                        <?php
                             $pdf_file_name = $prescription->pdf_file;
-
                             if($pdf_file_name != NULL){
-
-                                echo '<a class="add-event-btn" href='.$pdf_link.' title="PDF Download">Pdf Download</a>';
+                                echo '<a class="add-event-btn" href='.$pdf_link.' title="Download PDF"> Download Pdf </a>';
                                 echo'
                                 &nbsp;
                                 &nbsp;';
-
                                 echo $this->Html->link(
                                 'Send Email',
                                 ['action' => 'sendPrescriptionEmail', $prescription->id],
@@ -49,7 +53,6 @@
 
         <?php
             $all_prescriptions=$all_prescriptions->toArray();
-
             if(count($all_prescriptions) > 1){
                 echo'<div class="more_prescription">
                     <div class="more_prescription_inner"><b>Prescriptions: </b>';

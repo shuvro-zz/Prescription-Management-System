@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label class="name">Expire Date<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('expire_date', ['class' => 'form-control datetime', 'id' => 'datetimepicker', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('expire_date', ['class' => 'form-control date', 'value' =>  (isset($user->expire_date))? $user->expire_date:'', 'label' => false, 'required' => true, 'placeholder' => 'DD/MM/YY', 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label class="name">Name<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'value' => (isset($user->first_name))? $user->first_name:'', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="form-group">
                 <label class="name">Phone<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('phone', ['class' => 'form-control ', 'id' => 'userPhone',  'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('phone', ['class' => 'form-control ','value' => (isset($user->phone))? $user->phone:'', 'id' => 'userPhone',  'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label class="name">Email<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('email', ['class' => 'form-control', 'label' => false, 'type' =>'email']); ?>
+                    <?php echo $this->Form->input('email', ['class' => 'form-control','value' => (isset($user->email))? $user->email:'',  'label' => false, 'type' =>'email']); ?>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
             <div class="form-group">
                 <label class="name">Age<span class="required" aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('age', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('age', ['class' => 'form-control','value' => (isset($user->age))? $user->age:'',  'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label class="name">Address<span aria-required="true"></span></label>
                 <div class="inputs">
-                    <?php echo $this->Form->input('address_line1', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                    <?php echo $this->Form->input('address_line1', ['class' => 'form-control','value' => (isset($user->address_line1))? $user->address_line1:'', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<?= $this->Form->create($user, array('id' => 'userForm')) ?>
+<?= $this->Form->create('', array('id' => 'userForm')) ?>
     <section class="workspace">
         <div class="workspace-body">
             <div class="page-heading">
@@ -26,89 +26,89 @@
                                     <div class="panel panel-default panel-hovered panel-stacked">
                                         <div class="panel-heading"><?= __('Edit Profile') ?></div>
                                         <div class="panel-body">
-                                            <?php
-                                            echo '<div class="form-group">
+                                            <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">First Name<span class="required" aria-required="true"></span></label>
-                                                        <div class="inputs">';
-                                                    echo $this->Form->input('first_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'value' => $user->first_name, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                   </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="name">Last Name<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('last_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('last_name', ['class' => 'form-control', 'value' => $user->last_name, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Address Line1<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('address_line1', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('address_line1', ['class' => 'form-control', 'value' => $user->address_line1, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="name">Address Line2<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('address_line2', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('address_line2', ['class' => 'form-control', 'value' => $user->address_line2, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Email<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('email', ['class' => 'form-control','disabled' => 'disabled', 'label' => false, 'type' =>'email']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('email', ['class' => 'form-control', 'value' => $user->email, 'disabled' => 'disabled', 'label' => false, 'type' =>'email']); ?>
+                                                    </div>
                                                 </div>
 
                                                 <div class="col-sm-6">
                                                     <label class="name">Phone<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('phone', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('phone', ['class' => 'form-control', 'value' => $user->phone, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="col-sm-12">
                                                     <label class="name">Educational Qualification<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('educational_qualification', ['class' => 'form-control', 'label' => false]);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('educational_qualification', ['class' => 'form-control', 'value' => $user->educational_qualification, 'label' => false]); ?>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Clinic/Hospital Name<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('clinic_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('clinic_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="name">Website<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('website', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('website', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
+                                            </div>
+                                            <div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Logo<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('logo', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('logo', ['class' => 'form-control', 'label' => false, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="name">Signature<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">';
-                                                        echo $this->Form->input('signature', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                    echo '</div>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('signature', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
                                                 </div>
-                                            </div>';
-                                            ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -133,13 +133,7 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-        //alert(SITE_URL+'admin/tests/is_test_available');
-
         jQuery('#userForm').validate({
-            rules:{
-            },
-            messages: {
-            }
         });
     });
 </script>

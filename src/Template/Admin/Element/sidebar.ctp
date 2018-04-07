@@ -62,10 +62,12 @@
                 <a href="#" title="Reports"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Reports</span></a>
             </li>-->
-            <li class="navigation-item dashboard <?php if($this->name=='Settings') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'Settings','action' => 'add' )) ?>" title="Settings"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Settings</span></a>
-            </li>
+            <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ // Admin role id ?>
+                <li class="navigation-item dashboard <?php if($this->name=='Settings') echo 'active'?>">
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'Settings','action' => 'add' )) ?>" title="Settings"><span class="nav-icon"><span class="icon"></span>
+                    </span><span class="nav-text">Settings</span></a>
+                </li>
+            <?php } ?>
 
             <!--<li class="navigation-item ecommerce <?php /*if (in_array($this->name, array('customers', 'orders', 'order-tickets'))) echo 'active' */?> ">
                 <a href="#" class="sub-navigation ecommerce-nav <?php /*if (in_array($this->name, array('customers', 'orders', 'order-tickets'))) echo 'active' */?>">

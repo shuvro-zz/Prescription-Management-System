@@ -1,8 +1,5 @@
-<?php
-//$this->params['controller'];
-?>
 
-<?= $this->Form->create($user, array('id' => 'userForm')) ?>
+<?= $this->Form->create('', array('id' => 'userForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
@@ -52,3 +49,11 @@
 
 </section>
 <?= $this->Form->end() ?>
+<?php if($this->request->session()->read('Auth.User.role_id') != 1){ ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery('#userForm').validate({
+            });
+        });
+    </script>
+<?php } ?>
