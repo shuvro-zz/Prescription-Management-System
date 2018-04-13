@@ -37,6 +37,7 @@ class DiagnosisController extends AppController
         }
 
         $this->paginate = [
+            'contain' => ['DiagnosisLists'],
             'limit' => 30,
             'order' => [
                 'Diagnosis.id' => 'desc'
@@ -45,10 +46,8 @@ class DiagnosisController extends AppController
         $diagnosis = $this->paginate($query);
 
         if(count($diagnosis)==0){
-            $this->Flash->adminWarning(__('No Diagnosis found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
+            $this->Flash->adminWarning(__('No diagnosis template  found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
         }
-
-        //$diagnosis = $this->paginate($this->Diagnosis);
 
         $this->set(compact('diagnosis', 'search'));
         $this->set('_serialize', ['diagnosis']);
@@ -80,19 +79,43 @@ class DiagnosisController extends AppController
     {
         $diagnosi = $this->Diagnosis->newEntity();
         if ($this->request->is('post')) {
-            $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
 
-            $diagnosi->doctor_id = $this->request->session()->read('Auth.User.id');
-            if ($this->Diagnosis->save($diagnosi)) {
-                $this->Flash->adminSuccess(__('The diagnosis has been saved.'),  ['key' => 'admin_success'] );
+            $diagnosis_template = $this->Diagnosis->find('all')
+                ->where([
+                    'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                    'Diagnosis.diagnosis_list_id' => $this->request->data['diagnosis_list_id'],
+                ])
+                ->first();
+
+            if(empty($diagnosis_template)){
+                $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
+
+                $diagnosi->doctor_id = $this->request->session()->read('Auth.User.id');
+                if ($this->Diagnosis->save($diagnosi)) {
+                    $this->Flash->adminSuccess(__('The diagnosis template has been saved.'),  ['key' => 'admin_success'] );
+                } else {
+                    $this->Flash->adminError(__('The diagnosis template could not be saved. Please, try again.'), ['key' => 'admin_error']);
+                }
                 return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->adminError(__('The diagnosis could not be saved. Please, try again.'), ['key' => 'admin_error']);
+            }else{
+                $this->Flash->adminWarning(__('The diagnosis template already created for this diagnosis'), ['key' => 'admin_warning']);
+                return $this->redirect(['action' => 'add']);
             }
         }
+
+        $this->loadModel('DiagnosisLists');
+        $get_diagnosis = $this->DiagnosisLists->find('all');
+
+        $diagnosis_list = '';
+        if($get_diagnosis){
+            foreach($get_diagnosis as $item){
+                $diagnosis_list[$item->id] = $item->name;
+            }
+        }
+
         $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 90000]);
         $tests = $this->Diagnosis->Tests->find('list', ['limit' => 90000]);
-        $this->set(compact('diagnosi', 'medicines', 'tests'));
+        $this->set(compact('diagnosi', 'medicines', 'tests', 'diagnosis_list'));
         $this->set('_serialize', ['diagnosi']);
     }
 
@@ -109,12 +132,26 @@ class DiagnosisController extends AppController
             'contain' => ['Medicines', 'Tests']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
-            if ($this->Diagnosis->save($diagnosi)) {
-                $this->Flash->adminSuccess(__('The diagnosis has been saved.'), ['key' => 'admin_success']);
+
+            $diagnosis_template = $this->Diagnosis->find('all')
+                ->where([
+                    'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                    'Diagnosis.diagnosis_list_id' => trim($this->request->data['diagnosis_list_id']),
+                    'Diagnosis.id !=' => $id
+                ])
+                ->first();
+
+            if(empty($diagnosis_template)){
+                $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
+                if ($this->Diagnosis->save($diagnosi)) {
+                    $this->Flash->adminSuccess(__('The diagnosis template has been saved.'), ['key' => 'admin_success']);
+                } else {
+                    $this->Flash->adminError(__('The diagnosis template could not be saved. Please, try again.'), ['key' => 'admin_error']);
+                }
                 return $this->redirect(['action' => 'index']);
-            } else {
-                $this->Flash->adminError(__('The diagnosis could not be saved. Please, try again.'), ['key' => 'admin_error']);
+            }else{
+                $this->Flash->adminWarning(__('The diagnosis template already created for this diagnosis'), ['key' => 'admin_warning']);
+                return $this->redirect(['action' => 'edit/'.$id]);
             }
         }
         $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 90000]);
@@ -134,7 +171,17 @@ class DiagnosisController extends AppController
             }
         }
 
-        $this->set(compact('diagnosi', 'medicines', 'tests', 'default_medicines', 'default_tests'));
+        $this->loadModel('DiagnosisLists');
+        $get_diagnosis = $this->DiagnosisLists->find('all');
+
+        $diagnosis_list = '';
+        if($get_diagnosis){
+            foreach($get_diagnosis as $item){
+                $diagnosis_list[$item->id] = $item->name;
+            }
+        }
+
+        $this->set(compact('diagnosi', 'medicines', 'tests', 'default_medicines', 'default_tests', 'diagnosis_list'));
         $this->set('_serialize', ['diagnosi']);
     }
 
@@ -150,10 +197,10 @@ class DiagnosisController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $diagnosi = $this->Diagnosis->get($id);
         if ($this->Diagnosis->delete($diagnosi)) {
-            $success_message = __('The test has been deleted.');
+            $success_message = __('The diagnosis template  has been deleted.');
             $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
         } else {
-            $this->Flash->adminError(__('The diagnosis could not be deleted. Please, try again.') , ['key' => 'admin_error']);
+            $this->Flash->adminError(__('The diagnosis template could not be deleted. Please, try again.') , ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
     }

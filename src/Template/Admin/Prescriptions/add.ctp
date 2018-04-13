@@ -20,3 +20,25 @@
 
 </section>
 <?= $this->Form->end() ?>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('#prescription-form').validate({
+            rules:{
+                "patients[phone]": {
+                    remote: {
+                        url: SITE_URL+'admin/Prescriptions/isMobileAvailable',
+                        type: "post",
+                        data: {
+                            phone: function(){ return jQuery("#user-phone").val(); }
+                        }
+                    }
+                }
+            },
+            messages: {
+                "patients[phone]": {
+                    remote: 'The mobile number already exist.'
+                }
+            }
+        });
+    });
+</script>

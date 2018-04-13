@@ -1,8 +1,8 @@
 <div class="col-sm-6">
     <div class="form-group">
-        <label class="name">Name<span class="required" aria-required="true"></span></label>
-        <div class="inputs">
-            <?php echo $this->Form->input('name', ['class' => 'form-control', 'value' => $diagnosi->name, 'id' => 'diagnosisName', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+        <label class="name">Diagnosis Name<span class="required" aria-required="true"></span></label>
+        <div class="inputs diagnosis_area">
+            <?php echo $this->Form->input('diagnosis_list_id', ['options' => $diagnosis_list, 'default'=>(isset($diagnosi['diagnosis_list_id']))? $diagnosi['diagnosis_list_id']:'', 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'label'=>false, 'onchange' => 'getDiagnosisInfo(this.value)' ]); ?>
         </div>
     </div>
 </div>

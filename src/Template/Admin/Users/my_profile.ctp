@@ -91,24 +91,24 @@
                                                 <div class="col-sm-6">
                                                     <label class="name">Website<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
-                                                        <?php echo $this->Form->input('website', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                        <?php echo $this->Form->input('website', ['class' => 'form-control', 'label' => false, 'type' =>'text']); ?>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                                 <div class="col-sm-6">
                                                     <label class="name">Logo<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
-                                                        <?php echo $this->Form->input('logo', ['class' => 'form-control', 'label' => false, 'type' =>'text']); ?>
+                                                        <?php /*echo $this->Form->input('logo', ['class' => 'form-control', 'label' => false, 'type' =>'text']); */?>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="name">Signature<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
-                                                        <?php echo $this->Form->input('signature', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                        <?php /*echo $this->Form->input('signature', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); */?>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                 </div>

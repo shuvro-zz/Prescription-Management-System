@@ -1,4 +1,8 @@
     <?php
+        if((strtolower($this->request->params['action']) == 'edit')){
+            $edit = 'disabled';
+        }
+
         function selected($id,$prescription_diagnosis){
             if(isset($prescription_diagnosis)){
                 foreach($prescription_diagnosis as $item ){
@@ -25,18 +29,13 @@
                     <div class="inputs"  id='patient_drop_down' >
                         <?php
                         if(strtolower($this->request->params['action']) == 'edit'){
-                            if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'required'=>true,'onchange'=>'getUserInfo(this.value)'  ]);
-                            }else{
-                                echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
-                            }
+                            echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'onchange'=>'getUserInfo(this.value)'  ]);
                         }else{
                             if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)','label'=>false,  ]);
+                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)','label'=>false ]);
                             }else{
                                 echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
                             }
-
                         }
                         ?>
                     </div>
@@ -47,7 +46,7 @@
 
                     <label>Mobile:</label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('patients.phone', ['class' => 'form-control reset_patient mobile_width',  'value' => (isset($prescription->user['phone']))? $prescription->user['phone']:'',  'label' => false, 'required' => true, 'type' =>'text', 'id' => 'user-phone']); ?>
+                        <?php echo $this->Form->input('patients.phone', ['class' => 'form-control reset_patient mobile_width', 'disabled' => isset($edit), 'value' => (isset($prescription->user['phone']))? $prescription->user['phone']:'',  'label' => false, 'required' => true, 'type' =>'text', 'id' => 'user-phone']); ?>
                     </div><br>
 
                     <label>Age:</label>
@@ -69,7 +68,7 @@
                 <div class="health_data single_block">
                     <label>BP:</label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control bp_width', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'type' =>'text']);?>
+                        <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control bp_width', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'id' => 'blood-pressure', 'type' =>'text']);?>
                     </div>
 
                     <label>Temperature:</label>
@@ -114,7 +113,7 @@
                     <div class=" diagnosis_info diagnosis_box">
                         <?php foreach($diagnosis as $id=>$name){ ?>
                             <div class="checkbox" style="margin-top: 0px">
-                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" required><?php echo $name ?></label>
+                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)"  required id="test"><?php echo ucfirst($name) ?></label>
                             </div>
                         <?php } ?>
                     </div>
@@ -131,7 +130,6 @@
         </div>
         <div class="col-sm-6">
             <div class="right_side">
-
                 <div class="medicines_section">
                     <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>
                     <h6>Medicines</h6>
@@ -197,9 +195,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        jQuery('#prescription-form').validate({
+        /*jQuery('#prescription-form').validate({
 
-        });
+        });*/
 
         // Add Medicine field
         $("#addMoreMedicine").click(function(){

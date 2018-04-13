@@ -109,15 +109,27 @@ class TestsController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $test = $this->Tests->patchEntity($test, $this->request->data);
-            if ($this->Tests->save($test)) {
-                $success_message = __('The test has been edited.');
-                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-            } else {
-                $error_message = __('The test could not be edit. Please, try again.');
-                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+            $test_exit = $this->Tests->find('all')
+                ->where([
+                    'Tests.name' => trim($this->request->data['name']),
+                    'Tests.id !=' => $id
+                ])
+                ->first();
+
+            if(empty($test_exit)){
+                $test = $this->Tests->patchEntity($test, $this->request->data);
+                if ($this->Tests->save($test)) {
+                    $success_message = __('The test has been edited.');
+                    $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                } else {
+                    $error_message = __('The test could not be edit. Please, try again.');
+                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                }
+                return $this->redirect(['action' => 'index']);
+            }else{
+                $this->Flash->adminWarning(__('The test already exit'), ['key' => 'admin_warning']);
+                return $this->redirect(['action' => 'edit/'.$id]);
             }
-            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('test'));
         $this->set('_serialize', ['test']);

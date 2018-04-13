@@ -40,6 +40,10 @@ class DiagnosisTable extends Table
             'targetForeignKey' => 'test_id',
             'joinTable' => 'diagnosis_tests'
         ]);
+
+        $this->belongsTo('DiagnosisLists', [
+            'foreignKey' => 'diagnosis_list_id'
+        ]);
     }
 
     /**
@@ -53,7 +57,7 @@ class DiagnosisTable extends Table
         $validator
             ->integer('id')->allowEmpty('id', 'create');
         $validator
-            ->requirePresence('name', 'create')->notEmpty('name');
+            ->requirePresence('diagnosis_list_id', 'create')->notEmpty('diagnosis_list_id');
         $validator
             ->allowEmpty('instructions');
         $validator

@@ -120,18 +120,29 @@ class UsersController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            $user_phone = $this->Users->find('all')
+                ->where([
+                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                    'Users.phone' => trim($this->request->data['phone']),
+                    'Users.id !=' => $id
+                ])
+                ->first();
 
-            $user = $this->Users->patchEntity($user, $this->request->data);
+            if(empty($user_phone)){
+                $user = $this->Users->patchEntity($user, $this->request->data);
+                if ($this->Users->save($user)) {
+                    $success_message = __('The patient has been edited.');
+                    $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                } else {
+                    $error_message = __('The patient could not be edit. Please, try again.');
+                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                }
 
-            if ($this->Users->save($user)) {
-                $success_message = __('The patient has been edited.');
-                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-            } else {
-                $error_message = __('The patient could not be edit. Please, try again.');
-                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                return $this->redirect(['action' => 'index']);
+            }else{
+                $this->Flash->adminWarning(__('The phone number already exit'), ['key' => 'admin_warning']);
+                return $this->redirect(['action' => 'edit/'.$id]);
             }
-
-            return $this->redirect(['action' => 'index']);
         }
 
         $this->set(compact('user', 'id'));
@@ -252,11 +263,6 @@ class UsersController extends AppController
                 $session->write('Auth.User.educational_qualification', $this->request->data['educational_qualification']);
                 $session->write('Auth.User.clinic_name', $this->request->data['clinic_name']);
                 $session->write('Auth.User.website', $this->request->data['website']);
-                $session->write('Auth.User.logo', $this->request->data['logo']);
-                $session->write('Auth.User.signature', $this->request->data['signature']);
-
-                //$this->redirect(array('controller' => 'users', 'action' => 'myProfile'));
-
             } else {
                 $error_message = __('Profile could not be changed. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);

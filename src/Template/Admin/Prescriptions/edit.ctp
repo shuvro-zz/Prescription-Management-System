@@ -13,3 +13,10 @@
     
 </section>
 <?= $this->Form->end() ?>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery('#prescription-form').validate({
+
+        });
+    });
+</script>

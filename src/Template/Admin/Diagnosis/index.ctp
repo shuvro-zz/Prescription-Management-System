@@ -1,12 +1,12 @@
 <div class="workspace-dashboard page page-ui-tables">
     <div class="page-heading">
         <div class="flex-container">
-            <div class="flex-item"><h4><?= __('Diagnosis') ?></h4></div>
+            <div class="flex-item"><h4><?= __('Diagnosis Templates') ?></h4></div>
             <div class="flex-item">
                 <?php echo $this->Html->link(
-                    '<span class="icon">+</span> Add Diagnosis',
+                    '<span class="icon">+</span> Add Diagnosis Templates',
                     ['action' => 'add'],
-                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Diagnosis']
+                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Diagnosis Templates']
                 ) ?>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <tbody>
                 <?php foreach ($diagnosis as $diagnosi): ?>
                     <tr>
-                        <td><?= ucfirst(h($diagnosi->name)) ?></td>
+                        <td><?= ucfirst(h($diagnosi['diagnosis_list']['name'])) ?></td>
                         <td><?= h($diagnosi->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">

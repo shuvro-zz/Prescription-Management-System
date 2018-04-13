@@ -393,15 +393,27 @@ div#patient_drop_down,div#patient_field,.single_block .inputs {
     padding: 0px 38px!important;
 }
 label.error {
-    top: auto;
-    right: auto;
-    bottom: -20px;
-    left: auto;
-    position: absolute;
     font-size: 12px !important;
     line-height: 1;
     margin-bottom: 0;
     color: red;
+}
+
+.diagnosis_area .input.select .bootstrap-select.btn-group button{
+    height: 43px;
+    width: 100%!important;
+}
+.diagnosis_area .bootstrap-select.btn-group .dropdown-toggle .filter-option{
+    margin-top: 0px;
+}
+
+.patient_details label.error{
+    margin-bottom: 8px;
+}
+.diagnosis_info label.error{
+    width: 279px!important;
+    max-width: none;
+    padding-left: 0px;
 }
 /**********Responsive**********/
 

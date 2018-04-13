@@ -189,7 +189,6 @@ class PdfHandlerComponent extends Component
                         <table style="text-align:center;" >
                             <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
-                            <tr><td class="doctor_info">'. $user['website'] .'</td></tr>
                             <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
                         </table>
                     </td>
@@ -342,8 +341,8 @@ class PdfHandlerComponent extends Component
             <table style="border-top:1px solid #eee; ">
                 <tr style="height:50px;">
                     <td align="left" style="width:50%;">
-                        Signature: signature
-                    </td>
+                        Signature: '  .$user['first_name'].' '.$user['last_name'].
+                    '</td>
                     <td align="right" style="width:50%;">
                         Date: '. $prescription->created->format('d F Y') .'
                     </td>

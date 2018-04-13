@@ -50,8 +50,6 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-         //alert(SITE_URL+'admin/tests/is_test_available');
-
         jQuery('#testForm').validate({
             rules:{
                 'name': {
@@ -70,7 +68,5 @@
                 }
             }
         });
-
-
     });
 </script>

@@ -23,15 +23,7 @@
                         ?>
                         &nbsp;
                         &nbsp;
-                        <?php
-                            echo $this->Html->link(
-                                'edit prescription',
-                                ['action' => 'edit', $prescription->id],
-                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'edit pdf']
-                            );
-                        ?>
-                        &nbsp;
-                        &nbsp;
+
                         <?php
                             $pdf_file_name = $prescription->pdf_file;
                             if($pdf_file_name != NULL){
@@ -46,6 +38,17 @@
                                 );
                             }
                         ?>
+                        &nbsp;
+                        &nbsp;
+
+                        <?php
+                        echo $this->Html->link(
+                            'edit prescription',
+                            ['action' => 'edit', $prescription->id],
+                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Edit Prescription']
+                        );
+                        ?>
+
                     </div>
                 </div>
             </div>
@@ -94,7 +97,7 @@
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
                                     <h1> <?php echo ($user['clinic_name']) ?> </h1>
                                     <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
-                                    <a href="#"><b><p> <?php echo ($user['website']) ?> </p></b></a>
+                                    <!--<a href="#"><b><p> <?php /*echo ($user['website']) */?> </p></b></a>-->
                                     <b><p> Call: <?php echo ($user['phone']) ?></p></b>
                                 </div>
                             </div>
@@ -196,13 +199,13 @@
 
                     <div class="prescription_footer">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-5">
                                 <div class="signature">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
-                                    <p><b>Signature:</b> <?php echo ($user['signature']) ?> </p>
+                                    <p><b>Signature:</b> <?php echo $user['first_name'].' '.$user['last_name'] ?> </p>
                                 </div>
                             </div>
-                            <div class="col-sm-6"></div>
+                            <div class="col-sm-4"></div>
                             <div class="col-sm-3">
                                 <div class="prescription_date">
                                     <p><b>Date:</b> <?= $prescription->created->format('d F Y'); ?> </p>

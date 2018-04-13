@@ -238,7 +238,6 @@ class PrescriptionsController extends AppController
             $prescription_medicines = array('medicine_id'=>'');
         }
 
-        //pr($prescription_tests->toArray());die;
         $default_tests = [];
         if($prescription_tests){
             foreach($prescription_tests as $prescription_test){
@@ -418,6 +417,7 @@ class PrescriptionsController extends AppController
                 if($latest_prescription){
                     return $this->redirect(['action' => 'edit/'.$latest_prescription->id]);
                 }else{
+                    $this->Flash->admin_success('Patient found, You can create prescription for this patient', ['key' => 'admin_success']);
                     return $this->redirect(['action' => 'add/'.$patient_id]);
                 }
             }else{
@@ -469,7 +469,6 @@ class PrescriptionsController extends AppController
     }
 
     function prepareMedicine($medicines,$prescription_id){
-
         if($medicines){
             $new_medicines = [];
             foreach($medicines['medicine_id'] as $key => $val) {
@@ -516,12 +515,19 @@ class PrescriptionsController extends AppController
     function getDiagnosisInfo(){
         $this->loadModel('Diagnosis');
 
-        $diagnosis_info = $this->Diagnosis->find('list')
+        $diagnosis_info = $this->Diagnosis->find('all', ['contain' => ['DiagnosisLists']])
             ->where([
                 'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id')
             ]);
-        return $diagnosis_info;
 
+        $diagnosis_list = [];
+        if($diagnosis_info){
+            foreach($diagnosis_info as $diagnosis){
+                $diagnosis_list[$diagnosis->id] = $diagnosis->diagnosis_list['name'];
+            }
+        }
+
+        return $diagnosis_list;
     }
 
     function savePrescriptionsDiagnosis($diagnosis, $prescription_id){
@@ -543,7 +549,6 @@ class PrescriptionsController extends AppController
     }
 
     function prepareDiagnosis($diagnosis,$prescription_id){
-
         if($diagnosis){
             $new_diagnosis = [];
             foreach($diagnosis as $key => $val) {
@@ -551,7 +556,17 @@ class PrescriptionsController extends AppController
                 $new_diagnosis[$key]['diagnosis_id'] = $val;
             }
             return $new_diagnosis;
+        }
+    }
 
+    function isMobileAvailable(){
+        $this->autoRender = false;
+        $this->loadModel('Users');
+        $User = $this->Users->findByPhone($this->request->data['phone'])->toArray();
+        if(empty($User)){
+            echo 'true';die;
+        }else{
+            echo 'false';die;
         }
     }
 }

@@ -104,15 +104,27 @@ class MedicinesController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $medicine = $this->Medicines->patchEntity($medicine, $this->request->data);
-            if ($this->Medicines->save($medicine)) {
-                $success_message = __('The medicine has been edited.');
-                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-            } else {
-                $error_message = __('The medicine could not be edited. Please, try again.');
-                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+            $medicine_exit = $this->Medicines->find('all')
+                ->where([
+                    'Medicines.name' => trim($this->request->data['name']),
+                    'Medicines.id !=' => $id
+                ])
+                ->first();
+
+            if(empty($medicine_exit)){
+                $medicine = $this->Medicines->patchEntity($medicine, $this->request->data);
+                if ($this->Medicines->save($medicine)) {
+                    $success_message = __('The medicine has been edited.');
+                    $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                } else {
+                    $error_message = __('The medicine could not be edited. Please, try again.');
+                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                }
+                return $this->redirect(['action' => 'index']);
+            }else{
+                $this->Flash->adminWarning(__('The medicine  already exit'), ['key' => 'admin_warning']);
+                return $this->redirect(['action' => 'edit/'.$id]);
             }
-            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('medicine'));
         $this->set('_serialize', ['medicine']);
