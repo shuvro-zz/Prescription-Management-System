@@ -74,6 +74,8 @@ class PrescriptionsController extends AppController
             'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
         ]);
 
+        pr($prescription);die;
+
         $patient_id = $prescription->user->id;
         $all_prescriptions = $this->Common->getAllPrescriptions($patient_id);
 

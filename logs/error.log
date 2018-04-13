@@ -10,3 +10,119 @@
     [2] => 20
 )
 
+2018-04-13 22:34:32 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Prescriptions.diagnosis_list_id' in 'on clause'
+Request URL: /pms/admin/prescriptions/view/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(395): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(406): Cake\ORM\Query->first()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#11 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('58', Array)
+#12 [internal function]: App\Controller\Admin\PrescriptionsController->view('58')
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#16 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#17 {main}
+
+
+2018-04-13 22:38:26 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Prescriptions.diagnosis_id' in 'on clause'
+Request URL: /pms/admin/prescriptions/view/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(395): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(406): Cake\ORM\Query->first()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#11 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('58', Array)
+#12 [internal function]: App\Controller\Admin\PrescriptionsController->view('58')
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#16 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#17 {main}
+
+
+2018-04-13 22:43:42 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/view/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('58', Array)
+#2 [internal function]: App\Controller\Admin\PrescriptionsController->view('58')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-04-13 22:44:36 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/view/57
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('57', Array)
+#2 [internal function]: App\Controller\Admin\PrescriptionsController->view('57')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-04-13 22:45:06 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/view/57
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('57', Array)
+#2 [internal function]: App\Controller\Admin\PrescriptionsController->view('57')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-04-13 22:56:39 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pms.diagnosis_lists_prescriptions' doesn't exist
+Request URL: /pms/admin/prescriptions/view/57
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'diagnosis_lists...', Array, Object(Cake\Database\Schema\Table))
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(64): Cake\Database\Schema\Collection->describe('diagnosis_lists...', Array)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(423): Cake\Database\Schema\CachedCollection->describe('diagnosis_lists...')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(211): Cake\ORM\Table->schema()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Association\BelongsToMany.php(1200): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Association\SelectableAssociationTrait.php(46): Cake\ORM\Association\BelongsToMany->_buildQuery(Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(586): Cake\ORM\Association\BelongsToMany->eagerLoader(Array)
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\ORM\EagerLoader->loadExternal(Object(Cake\ORM\Query), Object(Cake\Database\Statement\CallbackStatement))
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(395): Cake\ORM\Query->all()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(406): Cake\ORM\Query->first()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#13 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('57', Array)
+#14 [internal function]: App\Controller\Admin\PrescriptionsController->view('57')
+#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#18 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#19 {main}
+
+
