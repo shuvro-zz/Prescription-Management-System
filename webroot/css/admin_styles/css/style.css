@@ -409,6 +409,11 @@ label.error {
 
 .patient_details label.error{
     margin-bottom: 8px;
+    width: 300px;
+    position: absolute;
+    left: 0px;
+    top: 19px;
+    z-index: 999;
 }
 .diagnosis_info label.error{
     width: 279px!important;
