@@ -29,19 +29,19 @@
                     <div class="inputs"  id='patient_drop_down' >
                         <?php
                         if(strtolower($this->request->params['action']) == 'edit'){
-                            echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select',  'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'onchange'=>'getUserInfo(this.value)'  ]);
+                            echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'required' => true, 'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'onchange'=>'getUserInfo(this.value)'  ]);
                         }else{
                             if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)','label'=>false ]);
+                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'required' => true, 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)', 'required' => true, 'label'=>false ]);
                             }else{
-                                echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']);
+                                echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'required' => true, 'type' =>'text']);
                             }
                         }
                         ?>
                     </div>
 
                     <div class="inputs hide" id='patient_field'>
-                        <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'type' =>'text']); ?>
+                        <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'required' => true, 'label' => false, 'type' =>'text']); ?>
                     </div> <br>
 
                     <label>Mobile:</label>
@@ -195,9 +195,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        /*jQuery('#prescription-form').validate({
+        jQuery('#prescription-form').validate({
 
-        });*/
+        });
 
         // Add Medicine field
         $("#addMoreMedicine").click(function(){

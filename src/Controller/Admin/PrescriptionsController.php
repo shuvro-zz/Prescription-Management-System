@@ -558,16 +558,5 @@ class PrescriptionsController extends AppController
             return $new_diagnosis;
         }
     }
-
-    function isMobileAvailable(){
-        $this->autoRender = false;
-        $this->loadModel('Users');
-        $User = $this->Users->findByPhone($this->request->data['phone'])->toArray();
-        if(empty($User)){
-            echo 'true';die;
-        }else{
-            echo 'false';die;
-        }
-    }
 }
 
