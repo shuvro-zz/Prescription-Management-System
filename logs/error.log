@@ -126,3 +126,58 @@ Stack Trace:
 #19 {main}
 
 
+2018-04-14 12:07:46 Error: [InvalidArgumentException] Prescriptions is not associated with PrescriptionsDiagnosis
+Request URL: /pms/admin/prescriptions/edit/58
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(252): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\PrescriptionsTable), 'PrescriptionsDi...', Array, Array)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(377): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\PrescriptionsTable))
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(348): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\PrescriptionsTable))
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(947): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\PrescriptionsTable), true)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(901): Cake\ORM\Query->_transformQuery()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(121): Cake\ORM\Query->sql()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(395): Cake\ORM\Query->all()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(406): Cake\ORM\Query->first()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#15 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(177): Cake\ORM\Table->get('58', Array)
+#16 [internal function]: App\Controller\Admin\PrescriptionsController->edit('58')
+#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#19 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#20 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#21 {main}
+
+
+2018-04-14 12:08:58 Error: [InvalidArgumentException] Prescriptions is not associated with Diagnosis
+Request URL: /pms/admin/prescriptions
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(252): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\PrescriptionsTable), 'Diagnosis', Array, Array)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(377): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\PrescriptionsTable))
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(348): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\PrescriptionsTable))
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(947): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\PrescriptionsTable), true)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(901): Cake\ORM\Query->_transformQuery()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(121): Cake\ORM\Query->sql()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#14 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(53): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#15 [internal function]: App\Controller\Admin\PrescriptionsController->index()
+#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#19 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#20 {main}
+
+

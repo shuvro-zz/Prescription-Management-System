@@ -126,9 +126,9 @@
                         <?php
                         foreach($prescription->diagnosis as $diagnosis ) {
                             if($diagnosis === end($prescription->diagnosis) ){
-                                echo ucfirst($diagnosis->name)."  ";
+                                echo ucfirst($diagnosis['diagnosis_list']['name'])."  ";
                             }else{
-                                echo ucfirst($diagnosis->name).", ";
+                                echo ucfirst($diagnosis['diagnosis_list']['name']).", ";
                             }
                         }
                         ?>

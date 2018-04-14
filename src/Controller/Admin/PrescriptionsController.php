@@ -42,7 +42,7 @@ class PrescriptionsController extends AppController
         }
 
         $this->paginate = [
-            'contain' => ['Users','Diagnosis'],
+            'contain' => ['Users','Diagnosis.DiagnosisLists'],
             'limit' => 30,
             'order' => [
                 'Prescriptions.id' => 'desc'
@@ -71,10 +71,8 @@ class PrescriptionsController extends AppController
     public function view($id = null)
     {
         $prescription = $this->Prescriptions->get($id, [
-            'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
+            'contain' => ['Diagnosis.DiagnosisLists', 'Medicines', 'Tests', 'Users']
         ]);
-
-        pr($prescription);die;
 
         $patient_id = $prescription->user->id;
         $all_prescriptions = $this->Common->getAllPrescriptions($patient_id);
