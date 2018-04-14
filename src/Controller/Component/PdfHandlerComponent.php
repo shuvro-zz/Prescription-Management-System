@@ -217,9 +217,9 @@ class PdfHandlerComponent extends Component
                             $html .='<tr><td>Diagnosis: ';
                                 foreach($prescription->diagnosis as $diagnosis ) {
                                     if($diagnosis === end($prescription->diagnosis) ){
-                                        $html .= ucfirst($diagnosis->name)."  ";
+                                        $html .= ucfirst($diagnosis['diagnosis_list']['name'])."  ";
                                     }else{
-                                        $html .= ucfirst($diagnosis->name).", ";
+                                        $html .= ucfirst($diagnosis['diagnosis_list']['name']).", ";
                                     }
                                 }
                             $html .= '</td></tr>';

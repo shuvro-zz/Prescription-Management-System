@@ -359,7 +359,7 @@ class PrescriptionsController extends AppController
         $this->autoRender = false;
 
         $prescription = $this->Prescriptions->get($id, [
-            'contain' => ['Diagnosis', 'Medicines', 'Tests', 'Users']
+            'contain' => ['Diagnosis.DiagnosisLists', 'Medicines', 'Tests', 'Users']
         ]);
 
         $patient_id = $prescription->user->id;

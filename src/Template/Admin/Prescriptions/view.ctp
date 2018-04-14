@@ -36,10 +36,12 @@
                                 ['action' => 'sendPrescriptionEmail', $prescription->id],
                                 ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
                                 );
+                                echo'
+                                &nbsp;
+                                &nbsp;';
                             }
                         ?>
-                        &nbsp;
-                        &nbsp;
+
 
                         <?php
                         echo $this->Html->link(
