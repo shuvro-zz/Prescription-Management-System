@@ -113,9 +113,8 @@ class DiagnosisController extends AppController
             }
         }
 
-        $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 90000]);
-        $tests = $this->Diagnosis->Tests->find('list', ['limit' => 90000]);
-        $this->set(compact('diagnosi', 'medicines', 'tests', 'diagnosis_list'));
+        $medicines = $tests = [];
+        $this->set(compact('diagnosi', 'diagnosis_list', 'medicines', 'tests'));
         $this->set('_serialize', ['diagnosi']);
     }
 
@@ -154,9 +153,8 @@ class DiagnosisController extends AppController
                 return $this->redirect(['action' => 'edit/'.$id]);
             }
         }
-        $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 90000]);
-        $tests = $this->Diagnosis->Tests->find('list', ['limit' => 90000]);
 
+        // get existing medicines
         $default_medicines = [];
         if($diagnosi['medicines']){
             foreach($diagnosi['medicines'] as $medicine){
@@ -164,12 +162,31 @@ class DiagnosisController extends AppController
             }
         }
 
+        // get existing tests
         $default_tests = [];
         if($diagnosi['tests']){
             foreach($diagnosi['tests'] as $test){
                 $default_tests[] = $test['id'];
             }
         }
+
+        // populate selected medicines only if medicines are available
+        $medicines = '';
+        if($default_medicines){
+            $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 100])->where([
+                'Medicines.id IN ' => $default_medicines
+            ]);
+        }
+
+        // populate selected tests only if tests are available
+        $tests = '';
+        if($default_tests){
+            $tests = $this->Diagnosis->Tests->find('list', ['limit' => 200])->where([
+                'Tests.id IN ' => $default_tests
+            ]);
+        }
+
+
 
         $this->loadModel('DiagnosisLists');
         $get_diagnosis = $this->DiagnosisLists->find('all');
@@ -231,7 +248,6 @@ class DiagnosisController extends AppController
 
 
     function getDiagnosis($ids,$prescription_id = null){
-        $this->viewBuilder()->layout('ajax');
         $this->autoRender = false;
 
         $ids = explode("_",$ids);

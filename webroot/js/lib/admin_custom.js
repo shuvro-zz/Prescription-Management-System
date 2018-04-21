@@ -38,7 +38,42 @@ jQuery(document).ready(function ($) {
 
     });
 
-    $('.tokenize-sortable-demo1').tokenize2({
+    $('.medicine').tokenize2({
+        dataSource: function(search, object){
+            $.ajax(home_url+'admin/medicines/medicine-list/'+search, {
+                dataType: 'json',
+                success: function(data){
+                    object.trigger('tokenize:dropdown:fill', [data]);
+                }
+            });
+        },
+        sortable: true,
+        displayNoResultsMessage: true
+    });
+
+    $('.prescription_medicine').tokenize2({
+        dataSource: function(search, object){
+            $.ajax(home_url+'admin/medicines/medicine-list/'+search, {
+                dataType: 'json',
+                success: function(data){
+                    object.trigger('tokenize:dropdown:fill', [data]);
+                }
+            });
+        },
+        sortable: true,
+        displayNoResultsMessage: true,
+        tokensMaxItems: 1
+    });
+
+    $('.test').tokenize2({
+        dataSource: function(search, object){
+            $.ajax(home_url+'admin/tests/test-list/'+search, {
+                dataType: 'json',
+                success: function(data){
+                    object.trigger('tokenize:dropdown:fill', [data]);
+                }
+            });
+        },
         sortable: true,
         displayNoResultsMessage: true
     });

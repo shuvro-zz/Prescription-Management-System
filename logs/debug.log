@@ -25776,3 +25776,142 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2018-04-21 12:08:16 Notice: Notice (8): Undefined variable: search in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 263]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\MedicinesController::medicineList() - APP/Controller\Admin\MedicinesController.php, line 263
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 20:45:36 Notice: Notice (8): Undefined variable: tests in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 174]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 174
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 22:42:11 Notice: Notice (8): Undefined offset: 2 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 492]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 492
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 473
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 121
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 22:42:11 Notice: Notice (8): Undefined offset: 3 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 492]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 492
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 473
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 121
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 22:58:47 Notice: Notice (8): Undefined offset: 2 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 494]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 494
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 475
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 121
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 22:58:47 Notice: Notice (8): Undefined offset: 3 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 494]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 494
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 475
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 121
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 23:09:49 Notice: Notice (8): Undefined index: medicines in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 103]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 103
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 23:22:40 Notice: Notice (8): Undefined offset: 2 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 503]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 503
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 484
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 204
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 23:22:40 Notice: Notice (8): Undefined offset: 3 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 503]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 503
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 484
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 204
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 23:51:17 Notice: Notice (8): Undefined offset: 1 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 169]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::removeBlankArray() - APP/Controller\Admin\PrescriptionsController.php, line 169
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 102
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-21 23:51:17 Notice: Notice (8): Undefined offset: 3 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 169]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::removeBlankArray() - APP/Controller\Admin\PrescriptionsController.php, line 169
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 102
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+

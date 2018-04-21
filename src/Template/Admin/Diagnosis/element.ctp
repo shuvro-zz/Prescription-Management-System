@@ -17,14 +17,14 @@
 <div class="col-sm-6">
     <div class="form-group">
         <div class="inputs">
-            <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'default' => isset($default_medicines)?$default_medicines:'', 'class' => 'tokenize-sortable-demo1']); ?>
+            <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'default' => isset($default_medicines)?$default_medicines:'', 'class' => 'tokenize-sortable-demo1 medicine']); ?>
         </div>
     </div>
 </div>
 <div class="col-sm-6">
     <div class="form-group">
         <div class="inputs">
-            <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'class' => 'tokenize-sortable-demo1']); ?>
+            <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'class' => 'tokenize-sortable-demo1 test']); ?>
         </div>
     </div>
 </div>

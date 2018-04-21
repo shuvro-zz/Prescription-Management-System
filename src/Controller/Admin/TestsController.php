@@ -215,8 +215,8 @@ class TestsController extends AppController
                                 }
                             }
                         }
-                        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'tests' .DS. $import_test);
-                        $file->delete();
+                        /*$file = new File(WWW_ROOT.DS. 'uploads'.DS. 'tests' .DS. $import_test);
+                        $file->delete();*/
 
                         $success_message = __('Tests import successfully.');
                         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -246,6 +246,22 @@ class TestsController extends AppController
         $medicine = [];
         $medicine['name'] = $value;
         return $medicine;
+    }
+
+    function testList($search = null){
+        $this->autoRender = false;
+
+        $tests_new = [];
+        if($search){
+            $tests = $this->Tests->find('list')->where(['Tests.name LIKE' => '%' . $search . '%']);
+            if($tests){
+                foreach($tests as $k => $v){
+                    $tests_new[] = ['value'=> $k, 'text'=> $v];
+                }
+            }
+        }
+
+        echo json_encode($tests_new); die;
     }
 
 }

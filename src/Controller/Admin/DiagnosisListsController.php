@@ -216,8 +216,8 @@ class DiagnosisListsController extends AppController
                                 }
                             }
                         }
-                        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'diagnosislists' .DS. $import_diagnosis);
-                        $file->delete();
+                        /*$file = new File(WWW_ROOT.DS. 'uploads'.DS. 'diagnosislists' .DS. $import_diagnosis);
+                        $file->delete();*/
 
                         $success_message = __('Diagnosis import successfully.');
                         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);

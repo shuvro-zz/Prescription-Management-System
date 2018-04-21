@@ -397,6 +397,7 @@ label.error {
     line-height: 1;
     margin-bottom: 0;
     color: red;
+    position: static;
 }
 
 .diagnosis_area .input.select .bootstrap-select.btn-group button{

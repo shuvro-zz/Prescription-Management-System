@@ -133,7 +133,6 @@
                 <div class="medicines_section">
                     <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>
                     <h6>Medicines</h6>
-
                     <div class="medicines medicine_box">
                         <?php
                             echo '<div class="medicines_wrap" id="medicinesWrap">';
@@ -141,7 +140,7 @@
                                     $field_medicine = '<div class="medicines_row">';
                                     $field_medicine .= '<div class="col-sm-3 medicine_name" onmouseover="setzIndex(this)"  onmouseout="unsetzIndex(this)">';
                                     $field_medicine .= '<div class="inputs">';
-                                    $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'empty' => 'Select', 'class'=>'form-control selectpicker', 'data-live-search'=>true, 'label'=>false]);
+                                    $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($prescription_medicine->medicine_id))? $prescription_medicine->medicine_id:'', 'class' => 'tokenize-sortable-demo1 prescription_medicine', 'label'=>false, 'multiple'=>true]);
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
 
@@ -171,7 +170,7 @@
                 <div class="examinations_section">
                     <h6>Examinations</h6>
                     <div class="tests examinations">
-                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'label' => false, 'class' => 'tokenize-sortable-demo1']); ?>
+                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'label' => false, 'class' => 'tokenize-sortable-demo1 test']); ?>
                     </div>
                 </div>
 
@@ -202,7 +201,21 @@
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
             $("#medicinesWrap").append('<?php echo $field_medicine ?>').find('select').last().val('');
-            $('.selectpicker').selectpicker('refresh');
+
+            $('.prescription_medicine').tokenize2({
+                dataSource: function(search, object){
+                    $.ajax(home_url+'admin/medicines/medicine-list/'+search, {
+                        dataType: 'json',
+                        success: function(data){
+                            object.trigger('tokenize:dropdown:fill', [data]);
+                        }
+                    });
+                },
+                sortable: true,
+                displayNoResultsMessage: true,
+                tokensMaxItems: 1
+            });
+            //$('.selectpicker').selectpicker('refresh');
 
         });
     });
@@ -219,8 +232,8 @@
 
         var all_id = checkedVals.join("_");
 
-        //$('.medicines .tokenize-sortable-demo1').trigger('tokenize:clear');
         $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
+        $('.prescription_medicine .tokenize-sortable-demo1').trigger('tokenize:clear');
         $('#all_instructions').val('');
         $('#medicinesWrap').html('');
 
@@ -237,12 +250,30 @@
                     $("#medicinesWrap").append('<?php echo $field_medicine ?>');
                 });
 
-                $( ".medicines_row" ).each(function( index, element ) {
-                    $(element).find('select').val(response.medicines[index].id);
-                    $(element).find('input').val(response.medicines[index].rule);
+
+                $('.prescription_medicine').tokenize2({
+                    dataSource: function(search, object){
+                        $.ajax(home_url+'admin/medicines/medicine-list/'+search, {
+                            dataType: 'json',
+                            success: function(data){
+                                object.trigger('tokenize:dropdown:fill', [data]);
+                            }
+                        });
+                    },
+                    sortable: true,
+                    displayNoResultsMessage: true,
+                    tokensMaxItems: 1
                 });
 
-                $('.selectpicker').selectpicker('refresh');
+
+                console.log(response);
+
+                $( ".medicines_row" ).each(function( index, element ) {
+                    $(element).closest('select').trigger('tokenize:tokens:add', [response.medicines[index].id, response.medicines[index].name, true]);
+                    $(element).closest('input').val(response.medicines[index].rule);
+                });
+
+                //$('.selectpicker').selectpicker('refresh');
 
                 $.each(response.tests, function( id, value ) {
                     $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);

@@ -224,8 +224,8 @@ class MedicinesController extends AppController
                                 }
                             }
                         }
-                        $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'medicines' .DS. $import_medicine);
-                        $file->delete();
+                       /* $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'medicines' .DS. $import_medicine);
+                        $file->delete();*/
 
                         $success_message = __('Medicines import successfully.');
                         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -255,5 +255,22 @@ class MedicinesController extends AppController
         $medicine = [];
         $medicine['name'] = $value;
         return $medicine;
+    }
+
+
+    function medicineList($search = null){
+        $this->autoRender = false;
+
+        $medicines_new = [];
+        if($search){
+            $medicines = $this->Medicines->find('list')->where(['Medicines.name LIKE' => '%' . $search . '%']);
+            if($medicines){
+                foreach($medicines as $k => $v){
+                    $medicines_new[] = ['value'=> $k, 'text'=> $v];
+                }
+            }
+        }
+
+        echo json_encode($medicines_new); die;
     }
 }

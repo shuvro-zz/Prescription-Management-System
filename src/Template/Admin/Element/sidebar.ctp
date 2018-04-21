@@ -13,7 +13,7 @@
                     </span><span class="nav-text">Doctors</span></a>
                 </li>
             <?php } ?>
-            <li class="navigation-item dashboard <?php if($this->name=='DiagnosisList') echo 'active'?>">
+            <li class="navigation-item dashboard <?php if($this->name=='DiagnosisLists') echo 'active'?>">
                 <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosisLists','action' => 'index' )); ?>" title="Diagnosis"><span class="nav-icon"><span class="icon"></span>
                 </span><span class="nav-text">Diagnosis</span></a>
             </li>

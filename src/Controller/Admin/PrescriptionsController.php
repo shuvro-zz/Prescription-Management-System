@@ -99,7 +99,7 @@ class PrescriptionsController extends AppController
         $prescription = $this->Prescriptions->newEntity();
 
         if ($this->request->is('post')) {
-
+            $this->removeBlankArray();
             $patient_id = $this->savePatient($this->request->data['patients']);
 
             $diagnosis = $this->request->data['diagnosis'];
@@ -133,7 +133,6 @@ class PrescriptionsController extends AppController
             return $this->redirect(['action' => 'index']);
         }
 
-        //$users = $this->Prescriptions->Users->find('list', ['limit' => 90000]);
         $doctor_id = $this->request->session()->read('Auth.User.id');
         $get_users = $this->Prescriptions->Users->find('All')->where(['Users.role_id' => 3, 'Users.doctor_id' => $doctor_id]);//role_id =>3 that's mean patient
 
@@ -146,8 +145,8 @@ class PrescriptionsController extends AppController
 
         $prescription_medicines = array('medicine_id'=>'');
         $prescription_tests = array('test_id'=>'');
-        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 90000]);
-        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 90000]);
+        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 1]);
+        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 1]);
         $diagnosis = $this->getDiagnosisInfo();
 
         if($patient_id){
@@ -159,6 +158,18 @@ class PrescriptionsController extends AppController
 
         $this->set(compact('prescription', 'users', 'prescription_tests', 'prescription_medicines', 'medicines', 'tests', 'diagnosis', 'prescriptions_link', 'last_visit_date'));
         $this->set('_serialize', ['prescription']);
+    }
+
+    public function removeBlankArray(){
+        if($this->request->data['medicines']['medicine_id']){
+            $medicine_ids = [];
+            foreach($this->request->data['medicines']['medicine_id'] as $key => $value){
+                if(!empty($value) and $value!=''){
+                    $medicine_ids[] = $value[0];
+                }
+            }
+            $this->request->data['medicines']['medicine_id'] = $medicine_ids;
+        }
     }
 
     /**
@@ -174,6 +185,8 @@ class PrescriptionsController extends AppController
             'contain' => ['PrescriptionsDiagnosis', 'Medicines', 'Tests', 'Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+
+            $this->removeBlankArray();
 
             $patient_id = $this->savePatient($this->request->data['patients']);
             $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
@@ -217,7 +230,6 @@ class PrescriptionsController extends AppController
         $prescription_diagnosis = $this->Prescriptions->PrescriptionsDiagnosis->find('all')->where(['PrescriptionsDiagnosis.prescription_id' => $id ]);
         $prescription_medicines = $this->Prescriptions->PrescriptionsMedicines->find('all')->where(['PrescriptionsMedicines.prescription_id' => $id ]);
         $prescription_tests = $this->Prescriptions->PrescriptionsTests->find('all')->where(['PrescriptionsTests.prescription_id' => $id ]);
-        $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 90000]);
         $diagnosis = $this->getDiagnosisInfo();
 
         $patient = $prescription->toArray();
@@ -236,7 +248,19 @@ class PrescriptionsController extends AppController
 
         if(count($prescription_medicines->toArray())==0){
             $prescription_medicines = array('medicine_id'=>'');
+        }else{
+            $default_medicines = [];
+            foreach($prescription_medicines as $prescription_medicine){
+                $default_medicines[] = $prescription_medicine->medicine_id;
+            }
+
+            $medicines = $this->Prescriptions->Medicines->find('list', ['limit' => 200])->where(
+                ['Medicines.id IN' => $default_medicines]
+            );
         }
+
+
+
 
         $default_tests = [];
         if($prescription_tests){
@@ -245,7 +269,12 @@ class PrescriptionsController extends AppController
             }
         }
 
-        $tests = $this->Prescriptions->Tests->find('list', ['limit' => 90000]);
+        if($default_tests){
+            $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200])->where(
+                ['Tests.id IN' => $default_tests]
+            );
+        }
+
         $this->set(compact('prescription', 'users', 'medicines','prescription_medicines', 'prescription_tests', 'tests' ,'diagnosis','prescription_diagnosis', 'prescriptions_link', 'last_visit_date', 'default_tests'));
         $this->set('_serialize', ['prescription']);
     }
@@ -288,7 +317,6 @@ class PrescriptionsController extends AppController
         $session = $this->request->session();
 
         $doctor_id = $session->read('Auth.User.id');
-        //pr($doctor_id);die;
 
         $patients_prescription = '';
         if($session->check('set_patient_id')){
@@ -479,38 +507,6 @@ class PrescriptionsController extends AppController
             return $new_medicines;
         }
     }
-
-    /*function savePrescriptionTests($tests, $prescription_id){
-        // Start: Prescriptions tests
-        $this->loadModel('PrescriptionsTests');
-        $this->PrescriptionsTests->deleteAll(['PrescriptionsTests.prescription_id' => $prescription_id]);
-
-        $prescriptions_tests = $this->prepareTest($tests, $prescription_id);
-        if($prescriptions_tests){
-            foreach($prescriptions_tests as $prescriptions_test){
-                $prescription_test = $this->PrescriptionsTests->newEntity();
-                $prescription_test = $this->PrescriptionsTests->patchEntity($prescription_test, $prescriptions_test );
-                if(!$this->PrescriptionsTests->save($prescription_test)){
-                    $this->log('PrescriptionsTests could not save ');
-                }
-            }
-        }
-        // End: savePrescription tests
-    }
-
-    function prepareTest($tests,$prescription_id){
-        //pr($tests);
-        if($tests){
-            $new_tests = [];
-            foreach($tests['test_id'] as $key => $val) {
-                $new_tests[$key]['prescription_id'] = $prescription_id;
-                $new_tests[$key]['test_id'] = $val;
-                $new_tests[$key]['note'] = $tests['note'][$key];
-            }
-            //pr($new_tests);die;
-            return $new_tests;
-        }
-    }*/
 
     function getDiagnosisInfo(){
         $this->loadModel('Diagnosis');

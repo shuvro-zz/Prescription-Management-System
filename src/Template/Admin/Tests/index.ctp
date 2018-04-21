@@ -6,11 +6,11 @@
                 <div class="flex-container">
                     <?php
                         if($this->request->session()->read('Auth.User.role_id') == 1){
-                            echo $this->Html->link(
+                           /* echo $this->Html->link(
                                 '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Tests',
                                 ['action' => 'import_csv'],
                                 ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Tests']
-                            );
+                            );*/
                         }
                         echo $this->Html->link(
                             '<span class="icon">+</span> Add Test',
