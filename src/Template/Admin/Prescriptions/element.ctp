@@ -152,7 +152,7 @@
 
                                     $field_medicine .=  '<div class="col-sm-1">';
                                     $field_medicine .= '<div class="inputs">';
-                                    $field_medicine .= '<button type="button" id="dle_medicine_btn" class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
+                                    $field_medicine .= '<button type="button"  class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
@@ -268,8 +268,8 @@
                 console.log(response);
 
                 $( ".medicines_row" ).each(function( index, element ) {
-                    $(element).closest('select').trigger('tokenize:tokens:add', [response.medicines[index].id, response.medicines[index].name, true]);
-                    $(element).closest('input').val(response.medicines[index].rule);
+                    $(element).find('select').trigger('tokenize:tokens:add', [response.medicines[index].id, response.medicines[index].name, true]);
+                    $(element).find('input').val(response.medicines[index].rule);
                 });
 
                 //$('.selectpicker').selectpicker('refresh');
