@@ -80,6 +80,7 @@ jQuery(document).ready(function ($) {
 
 });
 
+
 function initDatePicker(){
 
     $(".datetime").each(function(){
