@@ -259,9 +259,6 @@ class PrescriptionsController extends AppController
             );
         }
 
-
-
-
         $default_tests = [];
         if($prescription_tests){
             foreach($prescription_tests as $prescription_test){

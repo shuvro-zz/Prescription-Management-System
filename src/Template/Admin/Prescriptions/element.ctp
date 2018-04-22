@@ -265,7 +265,6 @@
                     tokensMaxItems: 1
                 });
 
-
                 console.log(response);
 
                 $( ".medicines_row" ).each(function( index, element ) {
