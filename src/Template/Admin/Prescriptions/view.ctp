@@ -10,9 +10,7 @@
                 </div>
                 <div class="flex-item">
                     <div class="flex-container">
-                        <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>
-                        &nbsp;
-                        &nbsp;
+                        <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>&nbsp;
 
                         <?php
                             echo $this->Html->link(
@@ -20,9 +18,7 @@
                                 ['action' => 'generatePrescriptionPdf', $prescription->id],
                                 ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Generate PDF ']
                             );
-                        ?>
-                        &nbsp;
-                        &nbsp;
+                        ?>&nbsp;&nbsp;
 
                         <?php
                             $pdf_file_name = $prescription->pdf_file;
@@ -42,7 +38,6 @@
                             }
                         ?>
 
-
                         <?php
                         echo $this->Html->link(
                             'edit prescription',
@@ -50,7 +45,6 @@
                             ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Edit Prescription']
                         );
                         ?>
-
                     </div>
                 </div>
             </div>

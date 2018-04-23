@@ -218,7 +218,7 @@ class MedicinesController extends AppController
                                     $isExit = $this->Medicines->findByName($value)->toArray();
                                     if(empty($isExit)){
                                         $medicine = $this->Medicines->newEntity();
-                                        $medicine = $this->Medicines->patchEntity($medicine, $this->makeSaveRecordPattern(trim($value)));
+                                        $medicine = $this->Medicines->patchEntity($medicine, $this->makeSaveRecordPattern(preg_replace('/\s+/', ' ', $value)));
                                         $this->Medicines->save($medicine);
                                     }
                                 }
@@ -263,7 +263,7 @@ class MedicinesController extends AppController
 
         $medicines_new = [];
         if($search){
-            $medicines = $this->Medicines->find('list')->where(['Medicines.name LIKE' => '%' . $search . '%']);
+            $medicines = $this->Medicines->find('list')->where(['Medicines.name LIKE' => $search . '%']);
             if($medicines){
                 foreach($medicines as $k => $v){
                     $medicines_new[] = ['value'=> $k, 'text'=> $v];

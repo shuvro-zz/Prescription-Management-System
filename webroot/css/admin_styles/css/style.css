@@ -124,7 +124,7 @@ button, .wizard-config .btn-continue{
     border: none;
     color: #000;
     position: absolute;
-    top: 5px;
+    top: 14px;
     left: -5px;
     height: auto;
 }
@@ -136,12 +136,17 @@ button, .wizard-config .btn-continue{
 .medicine_rule{
     padding: 0px;
     width: 80px;
+    margin-top: 6px;
 }
 .medicines_row {
     position: relative;
     float: left;
     width: 50%;
     height: 38px;
+    margin-bottom: 20px;
+}
+.medicines_row .tokenize > .tokens-container > .token-search{
+    margin: 0px 5px 0 0;
 }
 .import_btn_padding{
     margin-right: 10px;
@@ -211,15 +216,19 @@ button, .wizard-config .btn-continue{
     width: 262px;
 }
 .tokenize > .tokens-container {
-    position: relative;
-    list-style: none;
-    padding: 0 0 0px 0px;
-    cursor: text;
     height: 88px;
+    overflow: auto;
+}
+.medicines_row .tokenize > .tokens-container {
+    height: 43px;
+    overflow: auto;
 }
 
-.patient_info_section input, .medicines input, select{
+.patient_info_section input, select{
     height: 23px;
+}
+.medicines input{
+    height: 28px;
 }
 .patient_info_section h6{
     color: #fff;
@@ -319,6 +328,9 @@ button, .wizard-config .btn-continue{
 .medicines .tokenize > .tokens-container{
     border: none;
 }
+.medicines_row .tokenize > .tokens-container{
+    border: 1px solid #dde3e5;
+}
 .doctors_note textarea{
     height: 97px;
 }
@@ -334,10 +346,6 @@ button, .wizard-config .btn-continue{
     margin-top: -5px;
 }
 .medicines .tokenize.focus > .tokens-container{
-    outline: 0;
-    border:none ;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
 }
 .examinations .tokenize > .tokens-container > .token {
     background-color: #119A55!important;

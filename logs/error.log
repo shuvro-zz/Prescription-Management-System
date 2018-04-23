@@ -303,3 +303,320 @@ Stack Trace:
 #2 {main}
 
 
+2018-04-23 21:07:56 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
+Request URL: /pms/admin/diagnosis?search=Redoy
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:08:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
+Request URL: /pms/admin/diagnosis
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:08:09 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
+Request URL: /pms/admin/diagnosis
+Referer URL: http://localhost/pms/admin/diagnosis/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:08:27 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
+Request URL: /pms/admin/diagnosis?search=Redoy
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:09:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
+Request URL: /pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:14:42 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\index.ctp, line 58]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Diagnosis\index.ctp, line 58
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 21:16:34 Warning: Warning (2): end() expects parameter 1 to be array, null given in [E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\index.ctp, line 59]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+end - [internal], line ??
+include - APP/Template\Admin\Diagnosis\index.ctp, line 59
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 21:25:34 Error: [InvalidArgumentException] Diagnosis is not associated with DiagnosisMedicines
+Request URL: /pms/admin/diagnosis
+Referer URL: http://localhost/pms/admin/diagnosis/edit/21
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(252): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\DiagnosisTable), 'DiagnosisMedici...', Array, Array)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(377): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\DiagnosisTable))
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(348): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\DiagnosisTable))
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(947): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\DiagnosisTable), true)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(901): Cake\ORM\Query->_transformQuery()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(121): Cake\ORM\Query->sql()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#14 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#15 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#19 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#20 {main}
+
+
+2018-04-23 21:28:26 Error: Fatal Error (1): Cannot use object of type Cake\ORM\ResultSet as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 52]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-23 21:28:26 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\ResultSet as array
+Request URL: /pms/admin/diagnosis
+Referer URL: http://localhost/pms/admin/diagnosis/edit/21
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 52)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-23 21:29:30 Error: Fatal Error (1): Cannot use object of type Cake\ORM\ResultSet as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 52]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-23 21:29:31 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\ResultSet as array
+Request URL: /pms/admin/diagnosis
+Referer URL: http://localhost/pms/admin/diagnosis/edit/21
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 52)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-23 21:39:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
+Request URL: /pms/admin/diagnosis?search=Dermasim+VT+500+Vaginal+Tablet
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:40:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
+Request URL: /pms/admin/diagnosis
+Referer URL: http://localhost/pms/admin/diagnosis?search=Dermasim+VT+500+Vaginal+Tablet
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:40:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
+Request URL: /pms/admin/diagnosis?search=Redoy
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:40:42 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
+Request URL: /pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-04-23 21:42:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.medicines_id' in 'on clause'
+Request URL: /pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+

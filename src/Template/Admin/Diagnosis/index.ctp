@@ -44,6 +44,7 @@
                 <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('name') ?></th>
+                    <!--<th><?/*= $this->Paginator->sort('medicines') */?></th>-->
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -52,6 +53,17 @@
                 <?php foreach ($diagnosis as $diagnosi): ?>
                     <tr>
                         <td><?= ucfirst(h($diagnosi['diagnosis_list']['name'])) ?></td>
+                        <!--<td>
+                            <?php
+                            /*foreach($diagnosi['medicines'] as $medicine ) {
+                                if($medicine === end($diagnosi['medicines']) ){
+                                    echo ucfirst($medicine['name'])."  ";
+                                }else{
+                                    echo ucfirst($medicine['name']).", ";
+                                }
+                            }
+                            */?>
+                        </td>-->
                         <td><?= h($diagnosi->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">

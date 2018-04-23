@@ -210,7 +210,7 @@ class DiagnosisListsController extends AppController
                                     $isExit = $this->DiagnosisLists->findByName($value)->toArray();
                                     if(empty($isExit)){
                                         $diagnosis = $this->DiagnosisLists->newEntity();
-                                        $diagnosis = $this->DiagnosisLists->patchEntity($diagnosis, $this->makeSaveRecordPattern(trim($value)));
+                                        $diagnosis = $this->DiagnosisLists->patchEntity($diagnosis, $this->makeSaveRecordPattern(preg_replace('/\s+/', ' ', $value)));
                                         $this->DiagnosisLists->save($diagnosis);
                                     }
                                 }

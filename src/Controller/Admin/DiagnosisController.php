@@ -37,7 +37,7 @@ class DiagnosisController extends AppController
         }
 
         $this->paginate = [
-            'contain' => ['DiagnosisLists'],
+            'contain' => ['DiagnosisLists', 'Medicines'],
             'limit' => 30,
             'order' => [
                 'Diagnosis.id' => 'desc'
@@ -231,7 +231,7 @@ class DiagnosisController extends AppController
             $search = $session->read('diagnosis_search_query');
             $where = ['Diagnosis.doctor_id' => $doctor_id,
                 'OR' => [
-                    ['Diagnosis.name LIKE' => '%' . $search . '%']
+                    ['DiagnosisLists.name LIKE' => '%' . $search . '%']
                 ]
             ];
         }else{

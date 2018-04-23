@@ -209,7 +209,7 @@ class TestsController extends AppController
                                     $isExit = $this->Tests->findByName($value)->toArray();
                                     if(empty($isExit)){
                                         $test = $this->Tests->newEntity();
-                                        $test = $this->Tests->patchEntity($test, $this->makeSaveRecordPattern(trim($value)));
+                                        $test = $this->Tests->patchEntity($test, $this->makeSaveRecordPattern(preg_replace('/\s+/', ' ', $value)));
                                         $this->Tests->save($test);
                                     }
                                 }
@@ -253,7 +253,7 @@ class TestsController extends AppController
 
         $tests_new = [];
         if($search){
-            $tests = $this->Tests->find('list')->where(['Tests.name LIKE' => '%' . $search . '%']);
+            $tests = $this->Tests->find('list')->where(['Tests.name LIKE' => $search . '%']);
             if($tests){
                 foreach($tests as $k => $v){
                     $tests_new[] = ['value'=> $k, 'text'=> $v];
