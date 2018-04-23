@@ -25915,3 +25915,141 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2018-04-23 14:28:56 Notice: Notice (8): Undefined offset: 2 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 502]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 502
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 483
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 207
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 15:26:45 Notice: Notice (8): Use of undefined constant s - assumed 's' in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 221]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\MedicinesController::importCsv() - APP/Controller\Admin\MedicinesController.php, line 221
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 18:53:10 Notice: Notice (8): Undefined offset: 5 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 502]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 502
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 483
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 207
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 18:53:10 Notice: Notice (8): Undefined offset: 6 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 502]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 502
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 483
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 207
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 18:58:53 Notice: Notice (8): Undefined variable: medicines in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 143]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 143
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 18:59:05 Notice: Notice (8): Undefined variable: medicines in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 143]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 143
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 18:59:51 Notice: Notice (8): Undefined variable: medicines in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 143]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 143
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 19:00:17 Notice: Notice (8): Undefined offset: 2 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 503]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 503
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 483
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 207
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 19:01:47 Notice: Notice (8): Undefined variable: medicines in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 143]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 143
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-04-23 19:29:51 Notice: Notice (8): Undefined variable: medicines in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp, line 143]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Prescriptions\element.ctp, line 143
+include - APP/Template\Admin\Prescriptions\edit.ctp, line 8
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+

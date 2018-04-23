@@ -201,6 +201,7 @@
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
             $("#medicinesWrap").append('<?php echo $field_medicine ?>').find('select').last().val('');
+            $("#medicinesWrap").find('input').last().val('');
 
             $('.prescription_medicine').tokenize2({
                 dataSource: function(search, object){
@@ -233,7 +234,6 @@
         var all_id = checkedVals.join("_");
 
         $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
-        $('.prescription_medicine .tokenize-sortable-demo1').trigger('tokenize:clear');
         $('#all_instructions').val('');
         $('#medicinesWrap').html('');
 
@@ -265,9 +265,8 @@
                     tokensMaxItems: 1
                 });
 
-                console.log(response);
-
                 $( ".medicines_row" ).each(function( index, element ) {
+                    $(element).find('select').trigger('tokenize:clear');
                     $(element).find('select').trigger('tokenize:tokens:add', [response.medicines[index].id, response.medicines[index].name, true]);
                     $(element).find('input').val(response.medicines[index].rule);
                 });

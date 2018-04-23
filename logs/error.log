@@ -113,3 +113,193 @@ Stack Trace:
 #2 {main}
 
 
+2018-04-23 14:52:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Reset could not be found.
+Exception Attributes: array (
+  'class' => 'Reset',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/reset
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/reset
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/reset
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/reset
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/navheader.gif
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-04-23 15:10:55 Error: Fatal Error (1): Cannot redeclare App\Controller\Admin\rtrim() (previously declared in E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php:222) in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 222]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-23 15:10:55 Error: [Cake\Error\FatalErrorException] Cannot redeclare App\Controller\Admin\rtrim() (previously declared in E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php:222)
+Request URL: /pms/admin/medicines/import-csv
+Referer URL: http://localhost/pms/admin/medicines/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot redeclar...', 'E:\\xampp_5\\htdo...', 222)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-23 15:26:45 Error: Fatal Error (1): Call to undefined function App\Controller\Admin\replaceAll() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 221]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-23 15:26:45 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\Admin\replaceAll()
+Request URL: /pms/admin/medicines/import-csv
+Referer URL: http://localhost/pms/admin/medicines/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 221)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-04-23 15:28:08 Error: Fatal Error (1): Call to undefined function App\Controller\Admin\replaceAll() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 221]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-04-23 15:28:09 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\Admin\replaceAll()
+Request URL: /pms/admin/medicines/import-csv
+Referer URL: http://localhost/pms/admin/medicines/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 221)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

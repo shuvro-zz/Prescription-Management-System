@@ -164,7 +164,7 @@ class PrescriptionsController extends AppController
         if($this->request->data['medicines']['medicine_id']){
             $medicine_ids = [];
             foreach($this->request->data['medicines']['medicine_id'] as $key => $value){
-                if(!empty($value) and $value!=''){
+                if(!empty($value) and $value!='' and is_array($value)){
                     $medicine_ids[] = $value[0];
                 }
             }
@@ -185,9 +185,7 @@ class PrescriptionsController extends AppController
             'contain' => ['PrescriptionsDiagnosis', 'Medicines', 'Tests', 'Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-
             $this->removeBlankArray();
-
             $patient_id = $this->savePatient($this->request->data['patients']);
             $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
             $diagnosis = $this->request->data['diagnosis'];
@@ -245,7 +243,7 @@ class PrescriptionsController extends AppController
         $latest_prescription = $this->Common->getLatestPrescription($patient['user_id']);
         $last_visit_date = $latest_prescription->created->format('d F Y');
 
-
+        $medicines = [];
         if(count($prescription_medicines->toArray())==0){
             $prescription_medicines = array('medicine_id'=>'');
         }else{
@@ -494,6 +492,7 @@ class PrescriptionsController extends AppController
     }
 
     function prepareMedicine($medicines,$prescription_id){
+        //pr($medicines);
         if($medicines){
             $new_medicines = [];
             foreach($medicines['medicine_id'] as $key => $val) {
@@ -501,6 +500,7 @@ class PrescriptionsController extends AppController
                 $new_medicines[$key]['medicine_id'] = $val;
                 $new_medicines[$key]['rule'] = $medicines['rule'][$key];
             }
+            //pr($new_medicines);die;
             return $new_medicines;
         }
     }
