@@ -135,8 +135,9 @@ button, .wizard-config .btn-continue{
 }
 .medicine_rule{
     padding: 0px;
-    width: 80px;
+    width: 76px;
     margin-top: 6px;
+    margin-left: 9px;
 }
 .medicines_row {
     position: relative;
@@ -222,6 +223,7 @@ button, .wizard-config .btn-continue{
 .medicines_row .tokenize > .tokens-container {
     height: 43px;
     overflow: auto;
+    width: 180px;
 }
 
 .patient_info_section input, select{
@@ -407,7 +409,9 @@ label.error {
     color: red;
     position: static;
 }
-
+.diagnosis_info label.error{
+    position: absolute;
+}
 .diagnosis_area .input.select .bootstrap-select.btn-group button{
     height: 43px;
     width: 100%!important;

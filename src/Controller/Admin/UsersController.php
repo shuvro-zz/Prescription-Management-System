@@ -189,7 +189,7 @@ class UsersController extends AppController
                     'template'          => 'registration_success',
                     'data'              => array('User' => $user_info, 'base_url' => $site_link),
                 );
-                $this->EmailHandler->sendEmail($info);
+                //$this->EmailHandler->sendEmail($info);
 
                 //return $this->redirect(['action' => 'index']);
             } else {
