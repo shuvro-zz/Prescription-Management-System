@@ -119,13 +119,13 @@
                     </div>
                 </div>
 
-                <div class="other_instruction_section">
-                    <h6>Other Instructions</h6>
-                    <div class="other_instruction">
-                        <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
-                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea' ]);?>
+                <div class="examinations_section">
+                    <h6>Examinations</h6>
+                    <div class="tests examinations">
+                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'label' => false, 'class' => 'tokenize-sortable-demo1 test']); ?>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="col-sm-6">
@@ -167,10 +167,11 @@
                     </div>
                 </div>
 
-                <div class="examinations_section">
-                    <h6>Examinations</h6>
-                    <div class="tests examinations">
-                        <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'label' => false, 'class' => 'tokenize-sortable-demo1 test']); ?>
+                <div class="other_instruction_section">
+                    <h6>Other Instructions</h6>
+                    <div class="other_instruction">
+                        <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
+                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea' ]);?>
                     </div>
                 </div>
 

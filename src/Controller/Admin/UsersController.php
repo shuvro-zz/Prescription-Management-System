@@ -12,8 +12,6 @@ use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\Auth;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Text;
-use Cake\I18n\Time;
-
 
 
 class UsersController extends AppController
@@ -119,6 +117,7 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user_phone = $this->Users->find('all')
                 ->where([
@@ -191,7 +190,7 @@ class UsersController extends AppController
                 );
                 //$this->EmailHandler->sendEmail($info);
 
-                //return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'index']);
             } else {
                 $error_message = __('The user could not be saved. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
@@ -210,7 +209,8 @@ class UsersController extends AppController
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
                 $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
-                if(strtotime($doctorInfo['expire_date']) > strtotime('now') OR $doctorInfo['role_id'] == 1){
+                $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
+                if(strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') OR $doctorInfo['role_id'] == 1){
                     $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
                     if($role_check == true){
                         $user = $this->Auth->identify();

@@ -22,9 +22,6 @@ class DashboardController extends AppController
         $this->set('loadDashboardScript', false);
     }
 
-    function searchPatient(){
-
-    }
     public function index() {}
 
     public function listView(){}

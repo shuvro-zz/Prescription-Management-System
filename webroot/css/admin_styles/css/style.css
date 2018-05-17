@@ -295,6 +295,7 @@ button, .wizard-config .btn-continue{
     margin-top: 12px;
     width: 100%;
     float: left;
+    border-radius: 5px;
 }
 .right_side {
     background: #119A55;
@@ -302,6 +303,7 @@ button, .wizard-config .btn-continue{
     margin-top: 12px;
     width: 100%;
     float: left;
+    border-radius: 5px;
 }
 .diagnosis_info,.examinations,.medicines {
     background: #fff;
@@ -350,7 +352,7 @@ button, .wizard-config .btn-continue{
 .medicines .tokenize.focus > .tokens-container{
 }
 .examinations .tokenize > .tokens-container > .token {
-    background-color: #119A55!important;
+    background-color:#1379AD!important;
     color: #fff;
     border-radius: 5px!important;
 }
