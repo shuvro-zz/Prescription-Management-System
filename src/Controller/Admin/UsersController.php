@@ -210,7 +210,7 @@ class UsersController extends AppController
             if ($this->request->is('post')) {
                 $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
                 $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
-                if(strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') OR $doctorInfo['role_id'] == 1){
+                if($doctorInfo['role_id'] == 1 OR strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') ){
                     $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
                     if($role_check == true){
                         $user = $this->Auth->identify();

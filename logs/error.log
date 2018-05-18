@@ -1,311 +1,8 @@
-2018-04-21 13:14:23 Error: 2
-2018-04-21 13:14:36 Error: 1
-2018-04-21 14:03:36 Error: [Cake\Database\Exception] Impossible to generate condition with empty list of values for field (Medicines.id)
-Request URL: /pms/admin/diagnosis/edit/21
-Referer URL: http://localhost/pms/admin/diagnosis
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\Comparison.php(133): Cake\Database\Expression\Comparison->_stringExpression(Object(Cake\Database\ValueBinder))
-#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\QueryExpression.php(463): Cake\Database\Expression\Comparison->sql(Object(Cake\Database\ValueBinder))
-#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(119): Cake\Database\Expression\QueryExpression->sql(Object(Cake\Database\ValueBinder))
-#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(247): Cake\Database\QueryCompiler->Cake\Database\{closure}(Object(Cake\Database\Expression\QueryExpression), 'where')
-#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(99): Cake\Database\Query->traverse(Object(Closure), Array)
-#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver.php(321): Cake\Database\QueryCompiler->compile(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(256): Cake\Database\Driver->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(902): Cake\Database\Query->sql(NULL)
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(1887): Cake\ORM\Query->sql()
-#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(1092): Cake\Database\Query->__debugInfo()
-#11 E:\xampp_5\htdocs\pms\vendor\cakephp\debug_kit\src\Panel\VariablesPanel.php(80): Cake\ORM\Query->__debugInfo()
-#12 [internal function]: DebugKit\Panel\VariablesPanel->DebugKit\Panel\{closure}(Object(Cake\ORM\Query), 'medicines')
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\debug_kit\src\Panel\VariablesPanel.php(106): array_walk_recursive(Array, Object(Closure))
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(385): DebugKit\Panel\VariablesPanel->shutdown(Object(Cake\Event\Event))
-#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(355): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
-#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
-#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(513): Cake\Controller\Controller->dispatchEvent('Controller.shut...')
-#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(125): Cake\Controller\Controller->shutdownProcess()
-#19 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#20 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#21 {main}
-
-
-2018-04-21 14:04:10 Error: [Cake\Database\Exception] Impossible to generate condition with empty list of values for field (Medicines.id)
-Request URL: /pms/admin/diagnosis/edit/20
-Referer URL: http://localhost/pms/admin/diagnosis
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\Comparison.php(133): Cake\Database\Expression\Comparison->_stringExpression(Object(Cake\Database\ValueBinder))
-#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\QueryExpression.php(463): Cake\Database\Expression\Comparison->sql(Object(Cake\Database\ValueBinder))
-#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(119): Cake\Database\Expression\QueryExpression->sql(Object(Cake\Database\ValueBinder))
-#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(247): Cake\Database\QueryCompiler->Cake\Database\{closure}(Object(Cake\Database\Expression\QueryExpression), 'where')
-#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(99): Cake\Database\Query->traverse(Object(Closure), Array)
-#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver.php(321): Cake\Database\QueryCompiler->compile(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(256): Cake\Database\Driver->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(902): Cake\Database\Query->sql(NULL)
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(1887): Cake\ORM\Query->sql()
-#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(1092): Cake\Database\Query->__debugInfo()
-#11 E:\xampp_5\htdocs\pms\vendor\cakephp\debug_kit\src\Panel\VariablesPanel.php(80): Cake\ORM\Query->__debugInfo()
-#12 [internal function]: DebugKit\Panel\VariablesPanel->DebugKit\Panel\{closure}(Object(Cake\ORM\Query), 'medicines')
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\debug_kit\src\Panel\VariablesPanel.php(106): array_walk_recursive(Array, Object(Closure))
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(385): DebugKit\Panel\VariablesPanel->shutdown(Object(Cake\Event\Event))
-#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(355): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
-#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
-#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(513): Cake\Controller\Controller->dispatchEvent('Controller.shut...')
-#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(125): Cake\Controller\Controller->shutdownProcess()
-#19 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#20 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#21 {main}
-
-
-2018-04-21 14:12:46 Error: [Cake\Database\Exception] Impossible to generate condition with empty list of values for field (Medicines.id)
-Request URL: /pms/admin/diagnosis/edit/21
-Referer URL: http://localhost/pms/admin/diagnosis
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\Comparison.php(133): Cake\Database\Expression\Comparison->_stringExpression(Object(Cake\Database\ValueBinder))
-#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\QueryExpression.php(463): Cake\Database\Expression\Comparison->sql(Object(Cake\Database\ValueBinder))
-#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(119): Cake\Database\Expression\QueryExpression->sql(Object(Cake\Database\ValueBinder))
-#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(247): Cake\Database\QueryCompiler->Cake\Database\{closure}(Object(Cake\Database\Expression\QueryExpression), 'where')
-#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(99): Cake\Database\Query->traverse(Object(Closure), Array)
-#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver.php(321): Cake\Database\QueryCompiler->compile(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(256): Cake\Database\Driver->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(902): Cake\Database\Query->sql(NULL)
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(121): Cake\ORM\Query->sql()
-#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
-#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
-#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(131): Cake\ORM\Query->all()
-#17 [internal function]: Cake\ORM\Query->getIterator()
-#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(148): iterator_to_array(Object(Cake\ORM\Query))
-#19 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
-#20 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2552): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\NullContext))
-#21 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1884): Cake\View\Helper\FormHelper->widget('select', Array)
-#22 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1103): Cake\View\Helper\FormHelper->select('medicines._ids', Object(Cake\ORM\Query), Array)
-#23 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1024): Cake\View\Helper\FormHelper->_getInput('medicines._ids', Array)
-#24 E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\element.ctp(20): Cake\View\Helper\FormHelper->input('medicines._ids', Array)
-#25 E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\edit.ctp(25): include('E:\\xampp_5\\htdo...')
-#26 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
-#27 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
-#28 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
-#29 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
-#30 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
-#31 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#32 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#33 {main}
-
-
-2018-04-21 23:27:13 Error: Fatal Error (1): Call to a member function toArray() on array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 261]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
-
-
-
-2018-04-21 23:27:13 Error: [Cake\Error\FatalErrorException] Call to a member function toArray() on array
-Request URL: /pms/admin/prescriptions/edit/66
-Referer URL: http://localhost/pms/admin/prescriptions
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 261)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2018-04-23 14:52:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Reset could not be found.
-Exception Attributes: array (
-  'class' => 'Reset',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/reset
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/custom/registration.js?v=3.0
-Referer URL: http://localhost/pms/reset
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
-Exception Attributes: array (
-  'class' => 'Img',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
-Referer URL: http://localhost/pms/reset
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/top_bg.jpg
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/logo_water.jpg
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
-Exception Attributes: array (
-  'class' => 'Img',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/img/old_img/walogo.jpg
-Referer URL: http://localhost/pms/reset
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/dot.png
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
-Exception Attributes: array (
-  'class' => 'Img',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/img/bg_lean.jpg
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/banner.jpg
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 14:52:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/navheader.gif
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-04-23 15:10:55 Error: Fatal Error (1): Cannot redeclare App\Controller\Admin\rtrim() (previously declared in E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php:222) in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 222]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
-
-
-
-2018-04-23 15:10:55 Error: [Cake\Error\FatalErrorException] Cannot redeclare App\Controller\Admin\rtrim() (previously declared in E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php:222)
-Request URL: /pms/admin/medicines/import-csv
-Referer URL: http://localhost/pms/admin/medicines/import-csv
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot redeclar...', 'E:\\xampp_5\\htdo...', 222)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2018-04-23 15:26:45 Error: Fatal Error (1): Call to undefined function App\Controller\Admin\replaceAll() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 221]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
-
-
-
-2018-04-23 15:26:45 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\Admin\replaceAll()
-Request URL: /pms/admin/medicines/import-csv
-Referer URL: http://localhost/pms/admin/medicines/import-csv
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 221)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2018-04-23 15:28:08 Error: Fatal Error (1): Call to undefined function App\Controller\Admin\replaceAll() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\MedicinesController.php, line 221]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
-
-
-
-2018-04-23 15:28:09 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\Admin\replaceAll()
-Request URL: /pms/admin/medicines/import-csv
-Referer URL: http://localhost/pms/admin/medicines/import-csv
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 221)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2018-04-23 21:07:56 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
-Request URL: /pms/admin/diagnosis?search=Redoy
-Referer URL: http://localhost/pms/admin/diagnosis
+2018-05-18 11:38:07 Error: Gla-Gle . Glo . Glu . Gly
+2018-05-18 11:38:07 Error: Gla-Gle , Glo , Glu , Gly
+2018-05-18 11:52:39 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -315,20 +12,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:08:06 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
-Request URL: /pms/admin/diagnosis
-Referer URL: http://localhost/pms/admin/diagnosis
+2018-05-18 11:57:12 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -338,20 +34,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:08:09 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
-Request URL: /pms/admin/diagnosis
-Referer URL: http://localhost/pms/admin/diagnosis/add
+2018-05-18 11:58:41 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -361,20 +56,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:08:27 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
-Request URL: /pms/admin/diagnosis?search=Redoy
-Referer URL: http://localhost/pms/admin/diagnosis
+2018-05-18 12:02:19 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -384,19 +78,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:09:14 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.name' in 'where clause'
-Request URL: /pms/admin/diagnosis
+2018-05-18 12:05:35 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -406,110 +100,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:14:42 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\index.ctp, line 58]
-Trace:
-Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
-include - APP/Template\Admin\Diagnosis\index.ctp, line 58
-Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
-Cake\View\View::_render() - CORE\src\View\View.php, line 952
-Cake\View\View::render() - CORE\src\View\View.php, line 587
-Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
-Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
-Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
-[main] - ROOT\webroot\index.php, line 37
-
-
-
-2018-04-23 21:16:34 Warning: Warning (2): end() expects parameter 1 to be array, null given in [E:\xampp_5\htdocs\pms\src\Template\Admin\Diagnosis\index.ctp, line 59]
-Trace:
-Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
-end - [internal], line ??
-include - APP/Template\Admin\Diagnosis\index.ctp, line 59
-Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
-Cake\View\View::_render() - CORE\src\View\View.php, line 952
-Cake\View\View::render() - CORE\src\View\View.php, line 587
-Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
-Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
-Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
-[main] - ROOT\webroot\index.php, line 37
-
-
-
-2018-04-23 21:25:34 Error: [InvalidArgumentException] Diagnosis is not associated with DiagnosisMedicines
-Request URL: /pms/admin/diagnosis
-Referer URL: http://localhost/pms/admin/diagnosis/edit/21
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(252): Cake\ORM\EagerLoader->_normalizeContain(Object(App\Model\Table\DiagnosisTable), 'DiagnosisMedici...', Array, Array)
-#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(377): Cake\ORM\EagerLoader->normalized(Object(App\Model\Table\DiagnosisTable))
-#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\EagerLoader.php(348): Cake\ORM\EagerLoader->attachableAssociations(Object(App\Model\Table\DiagnosisTable))
-#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(947): Cake\ORM\EagerLoader->attachAssociations(Object(Cake\ORM\Query), Object(App\Model\Table\DiagnosisTable), true)
-#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(901): Cake\ORM\Query->_transformQuery()
-#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(121): Cake\ORM\Query->sql()
-#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
-#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
-#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
-#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#14 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#15 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#19 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#20 {main}
-
-
-2018-04-23 21:28:26 Error: Fatal Error (1): Cannot use object of type Cake\ORM\ResultSet as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 52]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
-
-
-
-2018-04-23 21:28:26 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\ResultSet as array
-Request URL: /pms/admin/diagnosis
-Referer URL: http://localhost/pms/admin/diagnosis/edit/21
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 52)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2018-04-23 21:29:30 Error: Fatal Error (1): Cannot use object of type Cake\ORM\ResultSet as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 52]
-Trace:
-Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
-Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
-[main] - [internal], line ??
-
-
-
-2018-04-23 21:29:31 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\ResultSet as array
-Request URL: /pms/admin/diagnosis
-Referer URL: http://localhost/pms/admin/diagnosis/edit/21
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 52)
-#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
-#2 {main}
-
-
-2018-04-23 21:39:20 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
-Request URL: /pms/admin/diagnosis?search=Dermasim+VT+500+Vaginal+Tablet
-Referer URL: http://localhost/pms/admin/diagnosis
+2018-05-18 12:08:21 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -519,20 +122,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:40:29 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
-Request URL: /pms/admin/diagnosis
-Referer URL: http://localhost/pms/admin/diagnosis?search=Dermasim+VT+500+Vaginal+Tablet
+2018-05-18 12:10:35 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -542,20 +144,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:40:38 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
-Request URL: /pms/admin/diagnosis?search=Redoy
-Referer URL: http://localhost/pms/admin/diagnosis
+2018-05-18 12:16:55 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -565,19 +166,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:40:42 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Medicines.name' in 'where clause'
-Request URL: /pms/admin/diagnosis
+2018-05-18 12:20:42 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -587,19 +188,19 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
-2018-04-23 21:42:15 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Diagnosis.medicines_id' in 'on clause'
-Request URL: /pms/admin/diagnosis
+2018-05-18 12:24:12 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
 Stack Trace:
 #0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
 #1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
@@ -609,14 +210,101 @@ Stack Trace:
 #5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
 #6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
 #7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
-#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
-#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
-#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php(46): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
-#11 [internal function]: App\Controller\Admin\DiagnosisController->index()
-#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
-#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
-#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisController))
-#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#16 {main}
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
+
+
+2018-05-18 12:28:45 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
+
+
+2018-05-18 12:34:33 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
+
+
+2018-05-18 12:42:57 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
+
+
+2018-05-18 12:51:29 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+Request URL: /pms/admin/diagnosis-lists/import-csv
+Referer URL: http://localhost/pms/admin/diagnosis-lists/import-csv
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(288): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisListsController.php(210): Cake\ORM\Query->toArray()
+#10 [internal function]: App\Controller\Admin\DiagnosisListsController->importCsv()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\DiagnosisListsController))
+#14 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#15 {main}
 
 
