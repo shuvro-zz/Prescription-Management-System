@@ -435,6 +435,21 @@ label.error {
     max-width: none;
     padding-left: 0px;
 }
+.diagnosis_area .tokens-container{
+    height: 43px!important;
+    margin-bottom: 0px!important;
+}
+.profile_picture{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+.preview_profile_picture{
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+}
+
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

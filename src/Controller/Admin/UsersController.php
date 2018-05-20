@@ -12,11 +12,12 @@ use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\Auth;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Text;
+use Cake\Filesystem\File;
 
 
 class UsersController extends AppController
 {
-    public $components = ['EmailHandler','Common'];
+    public $components = ['EmailHandler','Common', 'FileHandler'];
 
     public $paginate = [
         'limit' => 20
@@ -209,32 +210,39 @@ class UsersController extends AppController
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
                 $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
-                $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
-                if($doctorInfo['role_id'] == 1 OR strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') ){
-                    $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
-                    if($role_check == true){
-                        $user = $this->Auth->identify();
 
-                        if ($user) {
-                            $this->Auth->setUser($user);
-                            $success_message = __('Successfully logged in');
-                            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                            return $this->redirect('/admin/dashboard');
-                        }else{
-                            $error_message = __('Invalid username or password, try again');
+                if ($doctorInfo){
+                    $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
+                    if($doctorInfo['role_id'] == 1 OR strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') ){
+                        $role_check = $this->userRoleCheck($this->request->data);   // Checking user is admin or not
+                        if($role_check == true){
+                            $user = $this->Auth->identify();
+
+                            if ($user) {
+                                $this->Auth->setUser($user);
+                                $success_message = __('Successfully logged in');
+                                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                                return $this->redirect('/admin/dashboard');
+                            }else{
+                                $error_message = __('Invalid username or password, try again');
+                                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                                $this->Flash->error($error_message);
+                            }
+
+                        }else {
+                            $error_message = __('You don\'t have permission to access');
                             $this->Flash->adminError($error_message, ['key' => 'admin_error']);
-                            $this->Flash->error($error_message);
+                            return $this->redirect(['action' => 'login']);
                         }
 
-                    }else {
-                        $error_message = __('You don\'t have permission to access');
-                        $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                    }else{
+                        $error_message = __('Your registration has been expired, Please contact with Admin');
+                        $this->Flash->adminWarning($error_message, ['key' => 'admin_error']);
                         return $this->redirect(['action' => 'login']);
                     }
-
                 }else{
-                    $error_message = __('Your registration has been expired, Please contact with Admin');
-                    $this->Flash->adminWarning($error_message, ['key' => 'admin_error']);
+                    $error_message = __('Email not found');
+                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
                     return $this->redirect(['action' => 'login']);
                 }
             }
@@ -482,5 +490,48 @@ class UsersController extends AppController
             $checkById = ['Users.doctor_id' => $user_id];
         }
         return $checkById;
+    }
+
+    function changeProfilePicture($id = null){
+        $user = $this->Users->get($id, [
+            'contain' => []
+        ]);
+
+        if( $this->request->is(['patch', 'post', 'put']) ) {
+            $uploaded_profile_pic_name = $this->uploadProfilePicture($this->request->data['profile_picture']);
+
+            if ($user->profile_picture){
+                $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'users' .DS. $user->profile_picture);
+                $file->delete();
+            }
+
+            if ($uploaded_profile_pic_name){
+                $user['profile_picture'] = $uploaded_profile_pic_name;
+
+                if ($this->Users->save($user)){
+                    $session = $this->request->session();
+                    $session->write('Auth.User.profile_picture', $uploaded_profile_pic_name);
+                    $this->Flash->adminSuccess('Profile picture upload successfully', ['key' => 'admin_success']);
+                }else{
+                    $this->Flash->adminError('Profile picture could not be upload', ['key' => 'admin_error']);
+                }
+            }
+            return $this->redirect(['action' => 'change_profile_picture/'.$id]);
+        }
+
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+    }
+
+    function uploadProfilePicture($profile_pic){
+        if( isset($profile_pic) ){
+            if ($profile_pic) {
+                $result = $this->FileHandler->uploadImage($profile_pic);
+                if ($result) {
+                    $profile_pic_name= $this->FileHandler->_uploadimgname;
+                }
+            }
+        }
+        return $profile_pic_name;
     }
 }

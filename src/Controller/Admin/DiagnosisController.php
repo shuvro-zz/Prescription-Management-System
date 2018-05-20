@@ -80,6 +80,8 @@ class DiagnosisController extends AppController
         $diagnosi = $this->Diagnosis->newEntity();
         if ($this->request->is('post')) {
 
+            $this->request->data['diagnosis_list_id'] = $this->request->data['diagnosis_list_id'][0];
+
             $diagnosis_template = $this->Diagnosis->find('all')
                 ->where([
                     'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
@@ -104,14 +106,7 @@ class DiagnosisController extends AppController
         }
 
         $this->loadModel('DiagnosisLists');
-        $get_diagnosis = $this->DiagnosisLists->find('all');
-
-        $diagnosis_list = '';
-        if($get_diagnosis){
-            foreach($get_diagnosis as $item){
-                $diagnosis_list[$item->id] = $item->name;
-            }
-        }
+        $diagnosis_list = $this->DiagnosisLists->find('list', ['limit' => 1]);
 
         $medicines = $tests = [];
         $this->set(compact('diagnosi', 'diagnosis_list', 'medicines', 'tests'));
@@ -131,6 +126,8 @@ class DiagnosisController extends AppController
             'contain' => ['Medicines', 'Tests']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+
+            $this->request->data['diagnosis_list_id'] = $this->request->data['diagnosis_list_id'][0];
 
             $diagnosis_template = $this->Diagnosis->find('all')
                 ->where([
@@ -186,17 +183,11 @@ class DiagnosisController extends AppController
             ]);
         }
 
-
-
         $this->loadModel('DiagnosisLists');
-        $get_diagnosis = $this->DiagnosisLists->find('all');
+        $get_diagnosis = $this->DiagnosisLists->findById($diagnosi->diagnosis_list_id)->first();
 
-        $diagnosis_list = '';
-        if($get_diagnosis){
-            foreach($get_diagnosis as $item){
-                $diagnosis_list[$item->id] = $item->name;
-            }
-        }
+        $diagnosis_list = [];
+        $diagnosis_list[$get_diagnosis->id] = $get_diagnosis['name'];
 
         $this->set(compact('diagnosi', 'medicines', 'tests', 'default_medicines', 'default_tests', 'diagnosis_list'));
         $this->set('_serialize', ['diagnosi']);
@@ -310,23 +301,5 @@ class DiagnosisController extends AppController
                 return $prescriptions_medicines->rule;
             }
         }
-    }
-
-
-
-    function isDiagnosisAvailable(){
-        $this->autoRender = false;
-        $diagnosis = $this->Diagnosis->findByName($this->request->data['name'])
-            ->where([
-                'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id')
-            ]);
-
-        $diagnosis = $diagnosis->toArray();
-        if(empty($diagnosis)){
-            echo 'true';die;
-        }else{
-            echo 'false';die;
-        }
-
     }
 }

@@ -65,6 +65,20 @@ jQuery(document).ready(function ($) {
         tokensMaxItems: 1
     });
 
+    $('.diagnosis_list').tokenize2({
+        dataSource: function(search, object){
+            $.ajax(home_url+'admin/DiagnosisLists/diagnosis-list/'+search, {
+                dataType: 'json',
+                success: function(data){
+                    object.trigger('tokenize:dropdown:fill', [data]);
+                }
+            });
+        },
+        sortable: true,
+        displayNoResultsMessage: true,
+        tokensMaxItems: 1
+    });
+
     $('.test').tokenize2({
         dataSource: function(search, object){
             $.ajax(home_url+'admin/tests/test-list/'+search, {

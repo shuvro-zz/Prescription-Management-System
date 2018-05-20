@@ -24,7 +24,7 @@ class FileHandlerComponent extends Component
 {
 	var $controller;
 
-    public $components = array('Session');
+    public $components = ['Session'];
 
 	var $_errorMsg = null;
 	var $_uploadimgname = null;
@@ -38,7 +38,6 @@ class FileHandlerComponent extends Component
 	function uploadImage($file, $filepath = null )
 	{
         if (isset($file['name'])) {
-
 			if(!$filepath) {
 				$controller_name = strtolower($this->controller->name);
 				$filepath = WWW_ROOT.'uploads' . DS . $controller_name;
@@ -120,14 +119,13 @@ class FileHandlerComponent extends Component
 	}
 
 	function upload($src, $dest){
-
 		$ret = false;
 
 		$dest = $this->clean($dest);
 		$baseDir = dirname($dest);
 
 		if (is_writeable($baseDir) && move_uploaded_file($src, $dest)) {
-            $ret = true;
+		    $ret = true;
 			/*if ($this->setPermissions($dest)) {
 				$ret = true;
 			}
@@ -138,7 +136,6 @@ class FileHandlerComponent extends Component
 		else {
 			//JError::raiseWarning(21, JText::_('WARNFS_ERR02'));
 		}
-
 		return $ret;
 
 	}

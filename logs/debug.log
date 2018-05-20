@@ -26092,3 +26092,902 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2018-05-19 16:48:04 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:08:15 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 205]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::edit() - APP/Controller\Admin\DiagnosisController.php, line 205
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:08:15 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 205]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::edit() - APP/Controller\Admin\DiagnosisController.php, line 205
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:08:56 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 205]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::edit() - APP/Controller\Admin\DiagnosisController.php, line 205
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:08:56 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 205]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::edit() - APP/Controller\Admin\DiagnosisController.php, line 205
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:30:46 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:33:55 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:34:00 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:35:03 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 17:44:02 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 19:12:58 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-19 19:13:09 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 83]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\DiagnosisController::add() - APP/Controller\Admin\DiagnosisController.php, line 83
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 13:31:46 Notice: Notice (8): Array to string conversion in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 307]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::isImage() - APP/Controller\Component\FileHandlerComponent.php, line 307
+App\Controller\Component\FileHandlerComponent::uploadImage() - APP/Controller\Component\FileHandlerComponent.php, line 51
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 500
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 13:38:52 Notice: Notice (8): Undefined index: tmp_name in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 59]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadImage() - APP/Controller\Component\FileHandlerComponent.php, line 59
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 500
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 13:42:49 Notice: Notice (8): Undefined index: tmp_name in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 58]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadImage() - APP/Controller\Component\FileHandlerComponent.php, line 58
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 500
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 13:43:04 Notice: Notice (8): Undefined index: tmp_name in [E:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 61]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Component\FileHandlerComponent::uploadImage() - APP/Controller\Component\FileHandlerComponent.php, line 61
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 500
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 14:17:01 Notice: Notice (8): Undefined index: extension in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TestsController.php, line 197]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\TestsController::importCsv() - APP/Controller\Admin\TestsController.php, line 197
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 14:18:48 Notice: Notice (8): Undefined index: extension in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TestsController.php, line 197]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\TestsController::importCsv() - APP/Controller\Admin\TestsController.php, line 197
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 14:18:59 Notice: Notice (8): Undefined index: extension in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TestsController.php, line 197]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\TestsController::importCsv() - APP/Controller\Admin\TestsController.php, line 197
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:15:29 Notice: Notice (8): Undefined variable: user in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\change_profile_picture.ctp, line 1]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\change_profile_picture.ctp, line 1
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:52:03 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:52:40 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:53:02 Notice: Notice (8): Array to string conversion in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:53:25 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:53:25 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:53:36 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:54:24 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:54:57 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 127]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 127
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:54:57 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:56:16 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 15:59:34 Notice: Notice (8): Uninitialized string offset: 0 in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\UrlHelper.php, line 66]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\View\Helper\UrlHelper::assetUrl() - CORE\src\View\Helper\UrlHelper.php, line 66
+Cake\View\Helper\HtmlHelper::image() - CORE\src\View\Helper\HtmlHelper.php, line 811
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:01:28 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:05:30 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:11:33 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:13:34 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:13:49 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:27:35 Notice: Notice (8): Use of undefined constant WEBROOT_DIR - assumed 'WEBROOT_DIR' in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 128
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:55:27 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 129
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:55:27 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 129
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE\src\Error\ExceptionRenderer.php, line 322
+Cake\Error\ExceptionRenderer::render() - CORE\src\Error\ExceptionRenderer.php, line 194
+Cake\Error\ErrorHandler::_displayException() - CORE\src\Error\ErrorHandler.php, line 144
+Cake\Error\BaseErrorHandler::handleException() - CORE\src\Error\BaseErrorHandler.php, line 180
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE\src\Error\BaseErrorHandler.php, line 164
+[main] - [internal], line ??
+
+
+
+2018-05-20 16:55:47 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 129
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:55:47 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 129
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE\src\Error\ExceptionRenderer.php, line 322
+Cake\Error\ExceptionRenderer::render() - CORE\src\Error\ExceptionRenderer.php, line 194
+Cake\Error\ErrorHandler::_displayException() - CORE\src\Error\ErrorHandler.php, line 144
+Cake\Error\BaseErrorHandler::handleException() - CORE\src\Error\BaseErrorHandler.php, line 180
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE\src\Error\BaseErrorHandler.php, line 164
+[main] - [internal], line ??
+
+
+
+2018-05-20 16:56:01 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 129
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:56:01 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 129
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Error\ExceptionRenderer::_outputMessage() - CORE\src\Error\ExceptionRenderer.php, line 322
+Cake\Error\ExceptionRenderer::render() - CORE\src\Error\ExceptionRenderer.php, line 194
+Cake\Error\ErrorHandler::_displayException() - CORE\src\Error\ErrorHandler.php, line 144
+Cake\Error\BaseErrorHandler::handleException() - CORE\src\Error\BaseErrorHandler.php, line 180
+Cake\Error\BaseErrorHandler::wrapAndHandleException() - CORE\src\Error\BaseErrorHandler.php, line 164
+[main] - [internal], line ??
+
+
+
+2018-05-20 16:56:17 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:56:28 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:56:45 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:56:48 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:56:57 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:57:24 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 16:57:26 Notice: Notice (8): Undefined variable: test in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 126
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 20:16:16 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 130]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 130
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 20:16:44 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 130]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 130
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-05-20 20:17:37 Notice: Notice (8): Trying to get property of non-object in [E:\xampp_5\htdocs\pms\src\Template\Admin\Element\header.ctp, line 130]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Element\header.ctp, line 130
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1329
+Cake\View\View::element() - CORE\src\View\View.php, line 493
+include - APP/Template\Layout\admin.ctp, line 56
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::renderLayout() - CORE\src\View\View.php, line 633
+Cake\View\View::render() - CORE\src\View\View.php, line 592
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+

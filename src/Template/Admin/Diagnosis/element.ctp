@@ -2,15 +2,15 @@
     <div class="form-group">
         <label class="name">Diagnosis Name<span class="required" aria-required="true"></span></label>
         <div class="inputs diagnosis_area">
-            <?php echo $this->Form->input('diagnosis_list_id', ['options' => $diagnosis_list, 'default'=>(isset($diagnosi['diagnosis_list_id']))? $diagnosi['diagnosis_list_id']:'', 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'label'=>false, 'onchange' => 'getDiagnosisInfo(this.value)' ]); ?>
+            <?php echo $this->Form->input('diagnosis_list_id', ['options' => $diagnosis_list, 'default'=>(isset($diagnosi['diagnosis_list_id']))? $diagnosi['diagnosis_list_id']:'', 'class'=> 'tokenize-sortable-demo1 diagnosis_list',  'label'=>false, 'multiple'=>true ]); ?>
         </div>
     </div>
 </div>
 <div class="col-sm-6">
     <div class="form-group">
-        <label class="name">Instructions<span class="required" aria-required="true"></span></label>
+        <label class="name">Instructions<span class="" aria-required="true"></span></label>
         <div class="inputs">
-            <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => $diagnosi->instructions, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+            <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => $diagnosi->instructions, 'label' => false, 'type' =>'text']); ?>
         </div>
     </div>
 </div>
@@ -28,7 +28,3 @@
         </div>
     </div>
 </div>
-
-
-
-

@@ -46,29 +46,5 @@
 </section>
 <?= $this->Form->end() ?>
 
-<script type="text/javascript">
-    jQuery(document).ready(function(){
-        //alert(SITE_URL+'admin/tests/is_test_available');
-        jQuery('#diagnosisForm').validate({
-            rules:{
-                'name': {
-                    remote: {
-                        url: SITE_URL+'admin/Diagnosis/isDiagnosisAvailable',
-                        type: "post",
-                        data: {
-                            name: function(){ return jQuery("#diagnosisName").val(); }
-                        }
-                    }
-                }
-            },
-            messages: {
-                'name': {
-                    remote: 'The Diagnosis already exist.'
-                }
-            }
-        });
 
-
-    });
-</script>
 

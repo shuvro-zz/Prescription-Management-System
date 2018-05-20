@@ -97,17 +97,17 @@
                                         );
                                         ?>
                                     </li>
-                                    <li>
+                                    <!--<li>
                                         <?php
-                                            if( $this->request->session()->read('Auth.User.role_id') != 1){
+/*                                            if( $this->request->session()->read('Auth.User.role_id') != 1){
                                                 echo $this->Form->postLink(
                                                     '<span class="fa fa-trash"></span> Delete',
                                                     ['action' => 'delete', $user->id],
                                                     ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
                                                 );
                                             }
-                                        ?>
-                                    </li>
+                                        */?>
+                                    </li>-->
                                 </ul>
                             </div>
                         </td>

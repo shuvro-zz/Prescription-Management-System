@@ -186,7 +186,6 @@ class DiagnosisListsController extends AppController
         }else{
             echo 'false';die;
         }
-
     }
 
     function importCsv(){
@@ -247,6 +246,22 @@ class DiagnosisListsController extends AppController
         $medicine = [];
         $medicine['name'] = $value;
         return $medicine;
+    }
+
+    function diagnosisList($search = null){
+        $this->autoRender = false;
+
+        $diagnosis_new = [];
+        if($search){
+            $diagnosis = $this->DiagnosisLists->find('list')->where(['DiagnosisLists.name LIKE' => $search . '%']);
+            if($diagnosis){
+                foreach($diagnosis as $k => $v){
+                    $diagnosis_new[] = ['value'=> $k, 'text'=> $v];
+                }
+            }
+        }
+
+        echo json_encode($diagnosis_new); die;
     }
 
 }
