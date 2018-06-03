@@ -108,7 +108,6 @@
                         </div>
                     </div>
 
-
                     <div style="float:right;">
                         <b>Last Visit Date: </b><?= $latest_prescription->created->format('d F Y') ?>
                     </div>
