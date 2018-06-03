@@ -130,13 +130,13 @@
                             if (($user['profile_picture'])){
                                 $profile_pic = $this->request->webroot.'uploads/users/'.$user['profile_picture'];
                             }else{
-                                $profile_pic = $this->request->webroot.'/css/admin_styles/images/dashboard-students.png';
+                                $profile_pic = $this->request->webroot.'css/admin_styles/images/dashboard-students.png';
                             }
                         ?>
 
                         <img src="<?php echo $profile_pic ?>" alt="User" class="profile_picture" >
 
-                        <a href="#" data-toggle="dropdown" aria-expanded="true"><span class="user-name"><?php echo ucfirst($user['first_name']) ?> <i class="fa fa-angle-down"></i></span></a>
+                        <a href="#" data-toggle="dropdown" aria-expanded="true"><span class="user-name"><?php echo ucfirst($user['first_name']).' '.ucfirst($user['last_name']) ?> <i class="fa fa-angle-down"></i></span></a>
                         <div class="dropdown-menu  user-dropdown">
 
                             <li>

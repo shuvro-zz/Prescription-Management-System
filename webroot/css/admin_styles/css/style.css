@@ -33,7 +33,7 @@ lavel#password-error {
     width: 90px;
 }
 .prescriptions {
-    overflow: scroll;
+    overflow: auto;
 }
 .prescription_head_con{
     text-align: center;
@@ -310,7 +310,7 @@ button, .wizard-config .btn-continue{
     border-radius: 5px;
     height: 125px;
     padding: 5px;
-    overflow: scroll;
+    overflow: auto;
 }
 .prescription_button_section {
     margin-top: 8px;

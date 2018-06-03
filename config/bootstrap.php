@@ -211,3 +211,7 @@ Type::build('date')
 Type::build('datetime')
     ->useImmutable()
     ->useLocaleParser();
+
+Configure::write('is_localhost', false); // generate pdf, download pdf, send pdf email
+Configure::write('import_allow', true); // diagnosis list, medicine, test
+Configure::write('email_send_allow', true); // registration, send pdf email

@@ -48,8 +48,8 @@ class FileHandlerComponent extends Component
 			}
 
 			if (!$this->isImage($file['name'])) {
-				$this->Session->setFlash(__('Sample could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
-				return false;
+			    $this->Session->setFlash(__('Sample could not be saved. Please, try again.', true), 'default', array('class' => 'error'));
+                return false;
 			}
 
 			//set image name

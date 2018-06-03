@@ -110,9 +110,16 @@ class PdfHandlerComponent extends Component
         // $pdf->AddPage('P', $page_format);
         $pdf->setJPEGQuality(100);
 
+        //$fontname = $pdf->addTTFfont(WWW_ROOT.'SolaimanLipi_20-04-07.ttf', 'TrueTypeUnicode', '', 32);
+
+        // set font
+       //$pdf->SetFont('solaimanlipi_200407', '', 12);
+
+        $pdf->SetFont('solaimanlipi_200407', '', 12, '', false);
 
         $html_pdf   ='';
         $first_part = $this->firstPgprepareOrderPdfHtml($prescription,$latest_prescription);
+
         $html_pdf .= $first_part['message'];
 
         if(!$first_part['status']){
@@ -351,6 +358,7 @@ class PdfHandlerComponent extends Component
         ';
 
         $html_pdf = $html;
+
         return array('status'=>true,'message'=>$html_pdf);
     }
 

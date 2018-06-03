@@ -192,9 +192,9 @@ class DiagnosisListsController extends AppController
         if( isset($this->request->data['csv_file']) ){
             // start resume  up
             $import_diagnosis = $this->request->data['csv_file'];
-            $getExtension = pathinfo($import_diagnosis['name']);
+            $fileInfo = pathinfo($import_diagnosis['name']);
 
-            if($getExtension['extension'] == 'csv'){
+            if($fileInfo['extension'] == 'csv'){
                 if ($import_diagnosis) {
                     $result = $this->FileHandler->uploadfile($import_diagnosis);
                     if ($result) {
@@ -206,7 +206,7 @@ class DiagnosisListsController extends AppController
                         foreach($csv as $values){
                             if(!empty($values)){
                                 foreach($values as $value){
-                                    $isExit = $this->DiagnosisLists->findByName($value)->toArray();
+                                    $isExit = $this->DiagnosisLists->findByName(preg_replace('/\s+/', ' ', $value))->toArray();
                                     if(empty($isExit)){
                                         $diagnosis = $this->DiagnosisLists->newEntity();
                                         $diagnosis = $this->DiagnosisLists->patchEntity($diagnosis, $this->makeSaveRecordPattern(preg_replace('/\s+/', ' ', $value)));

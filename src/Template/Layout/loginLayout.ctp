@@ -5,13 +5,12 @@
     <?php echo $this->Html->charset() ?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="WebAlive - Admin Template">
-	<meta name="keywords" content="webalive, webapp, admin, dashboard, template, ui">
+	<meta name="description" content="You can easily manage your Patients">
+	<meta name="keywords" content="Healthtechbd">
+    <meta property="og:title" content="Healthtechbd">
 
     <title>PMS</title>
     <?php echo $this->Html->meta('icon') ?>
-
-
 
     <?php
     echo $this->Html->script([

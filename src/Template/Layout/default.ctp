@@ -2,6 +2,7 @@
 <html>
     <head>
         <?php echo $this->Html->charset() ?>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="title" content="PMS"/>
         <meta name="description" content="Patient Management System"/>

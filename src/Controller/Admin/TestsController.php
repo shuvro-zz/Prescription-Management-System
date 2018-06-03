@@ -192,9 +192,9 @@ class TestsController extends AppController
         if( isset($this->request->data['csv_file']) ){
             // start resume  up
             $import_test = $this->request->data['csv_file'];
-            $getExtension = pathinfo($import_test['name']);
+            $fileInfo = pathinfo($import_test['name']);
 
-            if($getExtension['extension'] == 'csv'){
+            if($fileInfo['extension'] == 'csv'){
                 if ($import_test) {
                     $result = $this->FileHandler->uploadfile($import_test);
                     if ($result) {
@@ -206,7 +206,7 @@ class TestsController extends AppController
                         foreach($csv as $values){
                             if(!empty($values)){
                                 foreach($values as $value){
-                                    $isExit = $this->Tests->findByName($value)->toArray();
+                                    $isExit = $this->Tests->findByName(preg_replace('/\s+/', ' ', $value))->toArray();
                                     if(empty($isExit)){
                                         $test = $this->Tests->newEntity();
                                         $test = $this->Tests->patchEntity($test, $this->makeSaveRecordPattern(preg_replace('/\s+/', ' ', $value)));

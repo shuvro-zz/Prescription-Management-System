@@ -85,7 +85,7 @@
                                                 <div class="col-sm-6">
                                                     <label class="name">Clinic/Hospital Name<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
-                                                        <?php echo $this->Form->input('clinic_name', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                        <?php echo $this->Form->input('clinic_name', ['class' => 'form-control', 'label' => false, 'type' =>'text']); ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">

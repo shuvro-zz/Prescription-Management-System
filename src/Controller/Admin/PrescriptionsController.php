@@ -385,6 +385,8 @@ class PrescriptionsController extends AppController
             'contain' => ['Diagnosis.DiagnosisLists', 'Medicines', 'Tests', 'Users']
         ]);
 
+        //pr($prescription->user);die;
+
         $patient_id = $prescription->user->id;
 
         $latest_prescription = $this->Common->getLatestPrescription($patient_id);

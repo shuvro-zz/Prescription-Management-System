@@ -202,9 +202,9 @@ class MedicinesController extends AppController
     function importCsv(){
         if( isset($this->request->data['csv_file']) ){
             $import_medicine = $this->request->data['csv_file'];
-            $getExtension = pathinfo($import_medicine['name']);
+            $fileInfo = pathinfo($import_medicine['name']);
 
-            if($getExtension['extension'] == 'csv'){
+            if($fileInfo['extension'] == 'csv'){
                 if ($import_medicine) {
                     $result = $this->FileHandler->uploadfile($import_medicine);
                     if ($result) {
@@ -215,7 +215,7 @@ class MedicinesController extends AppController
                         foreach($csv as $values){
                             if(!empty($values)){
                                 foreach($values as $value){
-                                    $isExit = $this->Medicines->findByName($value)->toArray();
+                                    $isExit = $this->Medicines->findByName(preg_replace('/\s+/', ' ', $value))->toArray();
                                     if(empty($isExit)){
                                         $medicine = $this->Medicines->newEntity();
                                         $medicine = $this->Medicines->patchEntity($medicine, $this->makeSaveRecordPattern(preg_replace('/\s+/', ' ', $value)));

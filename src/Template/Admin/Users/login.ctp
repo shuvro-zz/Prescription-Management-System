@@ -1,3 +1,4 @@
+<?php use \Cake\Core\Configure; ?>
 <div class="login-area">
 	<div class="login-box v-middle ">
 
@@ -24,8 +25,9 @@
 
         <div class="login_bottom">
             <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'registration' )); ?>" title="Registration">Registration</a>
-            <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword' )); ?>" title="Reset Password">Forgot Password</a>
-
+            <?php if (Configure::read('email_send_allow')) { ?>
+                <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword' )); ?>" title="Reset Password">Forgot Password</a>
+            <?php } ?>
         </div>
     </div>
 </div>

@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Core\Configure;
 use Cake\Event\Event;
 use Cake\Utility\Security;
 use Cake\Routing\Router;
@@ -183,13 +184,15 @@ class UsersController extends AppController
                 $user_info = $this->request->data;
                 $site_link = Router::url( '/', true );
 
-                $info = array(
-                    'to'                => $user_info['email'],
-                    'subject'           => 'Thanks for Registration',
-                    'template'          => 'registration_success',
-                    'data'              => array('User' => $user_info, 'base_url' => $site_link),
-                );
-                //$this->EmailHandler->sendEmail($info);
+                if(Configure::read('email_send_allow')) {
+                    $info = array(
+                        'to' => $user_info['email'],
+                        'subject' => 'Thanks for Registration',
+                        'template' => 'registration_success',
+                        'data' => array('User' => $user_info, 'base_url' => $site_link),
+                    );
+                    $this->EmailHandler->sendEmail($info);
+                }
 
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -498,23 +501,30 @@ class UsersController extends AppController
         ]);
 
         if( $this->request->is(['patch', 'post', 'put']) ) {
-            $uploaded_profile_pic_name = $this->uploadProfilePicture($this->request->data['profile_picture']);
+            $picture = $this->request->data['profile_picture'];
+            $fileInfo = pathinfo($picture['name']);
 
-            if ($user->profile_picture){
-                $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'users' .DS. $user->profile_picture);
-                $file->delete();
-            }
+            if ($fileInfo['extension'] == 'jpg' or $fileInfo['extension'] == 'png'){
+                $uploaded_profile_pic_name = $this->uploadProfilePicture($picture);
 
-            if ($uploaded_profile_pic_name){
-                $user['profile_picture'] = $uploaded_profile_pic_name;
-
-                if ($this->Users->save($user)){
-                    $session = $this->request->session();
-                    $session->write('Auth.User.profile_picture', $uploaded_profile_pic_name);
-                    $this->Flash->adminSuccess('Profile picture upload successfully', ['key' => 'admin_success']);
-                }else{
-                    $this->Flash->adminError('Profile picture could not be upload', ['key' => 'admin_error']);
+                if ($user->profile_picture){
+                    $file = new File(WWW_ROOT.DS. 'uploads'.DS. 'users' .DS. $user->profile_picture);
+                    $file->delete();
                 }
+
+                if ($uploaded_profile_pic_name){
+                    $user['profile_picture'] = $uploaded_profile_pic_name;
+
+                    if ($this->Users->save($user)){
+                        $session = $this->request->session();
+                        $session->write('Auth.User.profile_picture', $uploaded_profile_pic_name);
+                        $this->Flash->adminSuccess('Profile picture upload successfully', ['key' => 'admin_success']);
+                    }else{
+                        $this->Flash->adminError('Profile picture could not be upload', ['key' => 'admin_error']);
+                    }
+                }
+            }else{
+                $this->Flash->adminError('Please upload jpg or png file', ['key' => 'admin_error']);
             }
             return $this->redirect(['action' => 'change_profile_picture/'.$id]);
         }

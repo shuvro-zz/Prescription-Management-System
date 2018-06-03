@@ -1,3 +1,4 @@
+<?php use \Cake\Core\Configure; ?>
 <div class="workspace-dashboard page page-ui-tables">
     <div class="workspace-body">
         <div class="page-heading">
@@ -10,32 +11,37 @@
                 </div>
                 <div class="flex-item">
                     <div class="flex-container">
-                        <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>&nbsp;
+                        <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>&nbsp;&nbsp;&nbsp;
 
                         <?php
+                        if(!Configure::read('is_localhost')) {
                             echo $this->Html->link(
                                 'Generate pdf',
                                 ['action' => 'generatePrescriptionPdf', $prescription->id],
                                 ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Generate PDF ']
                             );
-                        ?>&nbsp;&nbsp;
+                            echo '
+                                &nbsp;
+                                &nbsp;';
 
-                        <?php
                             $pdf_file_name = $prescription->pdf_file;
-                            if($pdf_file_name != NULL){
-                                echo '<a class="add-event-btn" href='.$pdf_link.' title="Download PDF"> Download Pdf </a>';
-                                echo'
+                            if ($pdf_file_name != NULL) {
+                                echo '<a class="add-event-btn" href=' . $pdf_link . ' title="Download PDF"> Download Pdf </a>';
+                                echo '
                                 &nbsp;
                                 &nbsp;';
-                                echo $this->Html->link(
-                                'Send Email',
-                                ['action' => 'sendPrescriptionEmail', $prescription->id],
-                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
-                                );
-                                echo'
+                                if(Configure::read('email_send_allow')) {
+                                    echo $this->Html->link(
+                                        'Send Email',
+                                        ['action' => 'sendPrescriptionEmail', $prescription->id],
+                                        ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
+                                    );
+                                    echo '
                                 &nbsp;
                                 &nbsp;';
+                                }
                             }
+                        }
                         ?>
 
                         <?php
@@ -92,6 +98,8 @@
                                 <div class="prescription_head_con">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
                                     <h1> <?php echo ($user['clinic_name']) ?> </h1>
+                                    <b><p> <?php echo ($user['first_name']).' '.($user['last_name']) ?> </p></b>
+                                    <b><p> <?php echo ($user['educational_qualification']) ?> </p></b>
                                     <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
                                     <!--<a href="#"><b><p> <?php /*echo ($user['website']) */?> </p></b></a>-->
                                     <b><p> Call: <?php echo ($user['phone']) ?></p></b>
