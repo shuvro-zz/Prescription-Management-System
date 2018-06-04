@@ -6,6 +6,8 @@
 	<title>PMS</title>
 	<?php echo $this->Html->meta('icon'); ?>
 
+    <link rel="stylesheet"  href="/pms/css/admin_styles/css/test.css" media="print" />
+
 	<script type="text/javascript">var SITE_URL="<?php echo $this->Url->build('/',true);?>"</script>
 	<script type="text/javascript">var home_url="<?php echo $this->Url->build('/',true);?>"</script>
 	<script type="text/javascript">var current_controller="<?php echo $this->name;?>"</script>

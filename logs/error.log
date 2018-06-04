@@ -79,3 +79,294 @@ Stack Trace:
 #1 {main}
 
 
+2018-06-03 22:31:55 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation 'like'
+Request URL: /pms/admin/users?search=%E0%A6%B9%E0%A6%BE
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(70): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\UsersController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-06-03 22:32:41 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation 'like'
+Request URL: /pms/admin/users/
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(70): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\UsersController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-06-03 22:32:54 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation 'like'
+Request URL: /pms/admin/users?search=%E0%A6%B9%E0%A6%BE%E0%A6%AC%E0%A6%BF%E0%A6%AC
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(70): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\UsersController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-06-03 22:33:38 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation 'like'
+Request URL: /pms/admin/users?search=%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%A8+%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%BE%E0%A6%AE
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(70): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\UsersController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-06-03 22:40:31 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation 'like'
+Request URL: /pms/admin/users?search=%E0%A6%B9%E0%A6%BE%E0%A6%AC%E0%A6%BF%E0%A6%AC
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(70): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\UsersController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-06-03 22:49:39 Error: [PDOException] SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation 'like'
+Request URL: /pms/admin/users?search=%E0%A6%B9%E0%A6%BE%E0%A6%AC%E0%A6%BF%E0%A6%AC
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(171): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(56): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(270): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component\PaginatorComponent.php(171): Cake\ORM\Query->all()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(689): Cake\Controller\Component\PaginatorComponent->paginate(Object(Cake\ORM\Query), Array)
+#10 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(70): Cake\Controller\Controller->paginate(Object(Cake\ORM\Query))
+#11 [internal function]: App\Controller\Admin\UsersController->index()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#15 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#16 {main}
+
+
+2018-06-04 22:09:25 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "users"
+Request URL: /pms/admin/users/my-profile/admin_styles/css/admin_style.css
+Referer URL: http://localhost/pms/admin/users/my-profile/101
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(261): Cake\ORM\Table->get('admin_styles', Array)
+#2 [internal function]: App\Controller\Admin\UsersController->myProfile('admin_styles', 'css', 'admin_style.css')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-06-04 22:09:32 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "users"
+Request URL: /pms/admin/users/my-profile/admin_styles/css/admin_style.css
+Referer URL: http://localhost/pms/admin/users/my-profile/101
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(261): Cake\ORM\Table->get('admin_styles', Array)
+#2 [internal function]: App\Controller\Admin\UsersController->myProfile('admin_styles', 'css', 'admin_style.css')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-06-04 22:11:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Admin_styles could not be found.
+Exception Attributes: array (
+  'class' => 'Admin_styles',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/admin_styles/css/admin_style.css
+Referer URL: http://localhost/pms/admin/users/my-profile/101
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/admin_styles/css/admin_style.css
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/admin_styles/css/admin_style.css
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/admin_styles/css/admin_style.css
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-06-04 22:11:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

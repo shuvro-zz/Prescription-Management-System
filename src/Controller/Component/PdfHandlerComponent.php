@@ -180,6 +180,7 @@ class PdfHandlerComponent extends Component
                 }
                 .doctor_info{
                     font-size: 15px;color: #5d5d5d;font-weight:bold;
+                    color: #5d5d5;
                 }
                 .patient_head, .test_head, .medicine_head{
                     font-weight: bold;
@@ -194,9 +195,12 @@ class PdfHandlerComponent extends Component
 
                     <td style="width:100%; overflow:hidden;">
                         <table style="text-align:center;" >
-                            <tr><td style="font-weight:bold; font-size:21px;">'. $user['clinic_name'] .'</td></tr>
+                            <tr><td style="font-weight:bold; font-size:21px; color: #5d5d5d;">'. $user['clinic_name'] .'</td></tr>
+                            <tr><td class="doctor_info">'. $user['first_name']. ' ' .$user['last_name'] .'</td></tr>
+                            <tr><td class="doctor_info">'. $user['educational_qualification'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
                             <tr><td class="doctor_info">Call:'. $user['phone'] .'</td></tr>
+                            <tr><td class="doctor_info">' .$user['website']. '</td></tr>
                         </table>
                     </td>
 
@@ -209,7 +213,7 @@ class PdfHandlerComponent extends Component
                 </tr>
              </table>
 
-             <table>
+             <table style="color: #5d5d5d;">
                 <tr>
                     <td width="60%">
                         <table>
@@ -345,7 +349,7 @@ class PdfHandlerComponent extends Component
                 </tr>
              </table>
 
-            <table style="border-top:1px solid #eee; ">
+            <table style="border-top:1px solid #eee; color: #5d5d5d; ">
                 <tr style="height:50px;">
                     <td align="left" style="width:50%;">
                         Signature: '  .$user['first_name'].' '.$user['last_name'].

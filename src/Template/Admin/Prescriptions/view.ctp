@@ -97,16 +97,18 @@
                             <div class="col-sm-12">
                                 <div class="prescription_head_con">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
-                                    <h1> <?php echo ($user['clinic_name']) ?> </h1>
+                                    <h1 style="color: #5d5d5d"> <?php echo ($user['clinic_name']) ?> </h1>
                                     <b><p> <?php echo ($user['first_name']).' '.($user['last_name']) ?> </p></b>
                                     <b><p> <?php echo ($user['educational_qualification']) ?> </p></b>
                                     <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
                                     <!--<a href="#"><b><p> <?php /*echo ($user['website']) */?> </p></b></a>-->
                                     <b><p> Call: <?php echo ($user['phone']) ?></p></b>
+                                    <b><p> <?php echo ($user['website']) ?></p></b>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                     <div style="float:right;">
                         <b>Last Visit Date: </b><?= $latest_prescription->created->format('d F Y') ?>
