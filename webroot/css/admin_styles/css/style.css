@@ -222,13 +222,13 @@ button, .wizard-config .btn-continue{
     width: 50px;
 }
 .address_width {
-    width: 154px;
+    width: 150px;
 }
 .temp_width {
-    width: 208px;
+    width: 207px;
 }
 .bp_width {
-    width: 262px;
+    width: 260px;
 }
 .tokenize > .tokens-container {
     height: 88px;
@@ -262,7 +262,7 @@ button, .wizard-config .btn-continue{
 .input.select .bootstrap-select.btn-group
 .wizard-config .btn-continue, .wizard-config
 .input.select .bootstrap-select.btn-group .btn-continue{
-    width: 236px !important;
+    width: 234px !important;
     margin-bottom: 4px;
 }
 .medicines .dropdown-menu{
@@ -350,7 +350,8 @@ button, .wizard-config .btn-continue{
     border: 1px solid #dde3e5;
 }
 .doctors_note textarea{
-    height: 97px;
+    max-height: 97px!important;
+    max-width: 405px!important;
 }
 .examinations .tokenize.focus > .tokens-container{
     outline: 0;

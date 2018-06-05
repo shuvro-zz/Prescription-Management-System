@@ -97,7 +97,7 @@
                             <div class="col-sm-12">
                                 <div class="prescription_head_con">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
-                                    <h1 style="color: #5d5d5d"> <?php echo ($user['clinic_name']) ?> </h1>
+                                    <h1 class="clinic_name" style="color: #5d5d5d"> <?php echo ($user['clinic_name']) ?> </h1>
                                     <b><p> <?php echo ($user['first_name']).' '.($user['last_name']) ?> </p></b>
                                     <b><p> <?php echo ($user['educational_qualification']) ?> </p></b>
                                     <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
@@ -132,9 +132,9 @@
                         <?php
                         foreach($prescription->diagnosis as $diagnosis ) {
                             if($diagnosis === end($prescription->diagnosis) ){
-                                echo ucfirst($diagnosis['diagnosis_list']['name'])."  ";
+                                echo "<span>".ucfirst($diagnosis['diagnosis_list']['name'])."</span>".".";
                             }else{
-                                echo ucfirst($diagnosis['diagnosis_list']['name']).", ";
+                                echo "<span>".ucfirst($diagnosis['diagnosis_list']['name'])."</span>".", ";
                             }
                         }
                         ?>
@@ -142,13 +142,13 @@
 
                     <?php if($prescription->temperature){?>
                         <div>
-                            <b>Temperature : </b><?= $prescription->temperature ?>
+                            <b>Temperature : </b><span><?= $prescription->temperature ?></span>
                         </div>
                     <?php } ?>
 
                     <?php if($prescription->blood_pressure){?>
                         <div>
-                            <b>Blood Pressure : </b><?= ucfirst($prescription->blood_pressure) ?>
+                            <b>Blood Pressure : </b><span><?= ucfirst($prescription->blood_pressure) ?></span>
                         </div>
                     <?php } ?>
 
@@ -175,9 +175,9 @@
                                 <?php
                                     foreach ($prescription->tests as $test){
                                         if($test === end($prescription->tests) ){
-                                            echo ucfirst($test->name)."  ";
+                                            echo "<span>".ucfirst($test->name)."</span>".".";
                                         }else{
-                                            echo ucfirst($test->name).", ";
+                                            echo "<span>".ucfirst($test->name)."</span>".", ";
                                         }
                                     }
                                 ?>
@@ -189,7 +189,7 @@
                         <div class="prescription_block">
                             <div>
                                 <h4>Doctor's Note </h4>
-                                <?= ucfirst($prescription->doctores_notes) ?>
+                                <p><?= ucfirst($prescription->doctores_notes) ?></p>
                             </div>
                         </div>
                     <?php } ?>
@@ -198,7 +198,7 @@
                         <div class="prescription_block">
                             <div>
                                 <h4>Other Instructions </h4>
-                                <?= ucfirst($prescription->other_instructions) ?>
+                                <p><?= ucfirst($prescription->other_instructions) ?></p>
                             </div>
                         </div>
                     <?php } ?>

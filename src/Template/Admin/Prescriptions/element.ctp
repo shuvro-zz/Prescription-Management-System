@@ -16,7 +16,7 @@
     ?>
 
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <div class="patient_info_section">
                 <h6>Patient Details</h6>
                 <div class="patient_details single_block">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <div class="patient_info_section">
                 <h6>Health Data</h6>
                 <div class="health_data single_block">

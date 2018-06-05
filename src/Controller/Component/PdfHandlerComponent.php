@@ -179,12 +179,12 @@ class PdfHandlerComponent extends Component
                     line-height:23px;
                 }
                 .doctor_info{
-                    font-size: 15px;color: #5d5d5d;font-weight:bold;
-                    color: #5d5d5;
+                    font-size: 15px;color: #5d5d5d;font-weight:bold;    
                 }
                 .patient_head, .test_head, .medicine_head{
                     font-weight: bold;
                     font-size: 20px;
+                    color: #000;
                 }
             </style>
         '.
@@ -195,7 +195,7 @@ class PdfHandlerComponent extends Component
 
                     <td style="width:100%; overflow:hidden;">
                         <table style="text-align:center;" >
-                            <tr><td style="font-weight:bold; font-size:21px; color: #5d5d5d;">'. $user['clinic_name'] .'</td></tr>
+                            <tr><td class="doctor_info" style="font-size:21px;">'. $user['clinic_name'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['first_name']. ' ' .$user['last_name'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['educational_qualification'] .'</td></tr>
                             <tr><td class="doctor_info">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>

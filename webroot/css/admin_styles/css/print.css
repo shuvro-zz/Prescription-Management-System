@@ -1,0 +1,13 @@
+
+.prescription span {
+    margin-right: 6px;
+}
+p,b,.prescription span{
+    color: #5d5d5d!important;
+}
+.clinic_name{
+    color: #5d5d5d!important;
+}
+b{
+    font-weight: 900!important;
+}
