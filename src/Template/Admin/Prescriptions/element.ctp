@@ -62,6 +62,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-sm-2">
             <div class="patient_info_section">
                 <h6>Health Data</h6>
