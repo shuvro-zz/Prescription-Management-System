@@ -214,22 +214,22 @@ button, .wizard-config .btn-continue{
     margin-top: -40px;
 }
 
-.mobile_width {
-    width: 240px;
+/*.mobile_width {
+    width: 184%;
 }
 
 .age_width {
-    width: 50px;
+    width: 18%;
 }
 .address_width {
-    width: 150px;
+    width: 124%;
 }
 .temp_width {
-    width: 207px;
+    width: 56%;
 }
 .bp_width {
-    width: 260px;
-}
+    width: 86%;
+}*/
 .tokenize > .tokens-container {
     height: 88px;
     overflow: auto;
@@ -242,6 +242,7 @@ button, .wizard-config .btn-continue{
 
 .patient_info_section input, select{
     height: 23px;
+    padding-top: 6px!important;
 }
 .medicines input{
     height: 28px;
@@ -262,7 +263,7 @@ button, .wizard-config .btn-continue{
 .input.select .bootstrap-select.btn-group
 .wizard-config .btn-continue, .wizard-config
 .input.select .bootstrap-select.btn-group .btn-continue{
-    width: 234px !important;
+    /*width: 353% !important;*/
     margin-bottom: 4px;
 }
 .medicines .dropdown-menu{
@@ -281,11 +282,14 @@ button, .wizard-config .btn-continue{
 .dropdown-menu{
     padding: 0px;
 }
+.inputs,.input.select .bootstrap-select.btn-group button{
+    width: 100%!important;
+}
 .single_block {
     background: #fff;
     padding: 6px;
     border-radius: 5px;
-    height: 97px;
+    min-height: 128px;
 }
 .prescriptions ul {
     padding: 0px;
@@ -350,8 +354,9 @@ button, .wizard-config .btn-continue{
     border: 1px solid #dde3e5;
 }
 .doctors_note textarea{
-    max-height: 97px!important;
+    max-height: 128px!important;
     max-width: 405px!important;
+    height: 128px;
 }
 .examinations .tokenize.focus > .tokens-container{
     outline: 0;
@@ -384,7 +389,7 @@ button, .wizard-config .btn-continue{
     width: 100%!important;
 }
 select#user-id,.patient_name_width {
-    width: 236px;
+   /* width: 236px;*/
     border: 1px solid #dde3e5;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;

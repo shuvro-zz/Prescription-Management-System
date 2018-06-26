@@ -21,43 +21,72 @@
                 <h6>Patient Details</h6>
                 <div class="patient_details single_block">
 
-                    <label class="name" >Name<span class="required" aria-required="true"></span>
-                        <?php if((strtolower($this->request->params['action']) == 'add') AND $users != ''){
-                            echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
-                        } ?>
-                    </label>
-                    <div class="inputs"  id='patient_drop_down' >
-                        <?php
-                        if(strtolower($this->request->params['action']) == 'edit'){
-                            echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'empty' => 'Select', 'required' => true, 'class'=>' selectpicker', 'data-live-search'=>true, 'label'=>false, 'onchange'=>'getUserInfo(this.value)'  ]);
-                        }else{
-                            if($users != ''){
-                                echo $this->Form->input('user_id', ['options' => $users, 'default'=>(isset($prescription->user['id']))? $prescription->user['id']:'', 'required' => true, 'empty' => 'Select', 'class'=> 'selectpicker', 'data-live-search' => true, 'onchange'=>'getUserInfo(this.value)', 'required' => true, 'label'=>false ]);
-                            }else{
-                                echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'required' => true, 'type' =>'text']);
-                            }
-                        }
-                        ?>
+                    <div class="row">
+                        <div class="col-sm-2" style="padding-right: 0px">
+                            <label class="name">Name
+                                <?php if ((strtolower($this->request->params['action']) == 'add') AND $users != '') {
+                                    echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
+                                } ?>
+                            </label>
+                        </div>
+
+                        <div class="col-sm-10" >
+                            <div class="inputs" id='patient_drop_down'>
+                                <?php
+                                if (strtolower($this->request->params['action']) == 'edit') {
+                                    echo $this->Form->input('user_id', ['options' => $users, 'default' => (isset($prescription->user['id'])) ? $prescription->user['id'] : '', 'empty' => 'Select', 'required' => true, 'class' => ' selectpicker', 'data-live-search' => true, 'label' => false, 'onchange' => 'getUserInfo(this.value)']);
+                                } else {
+                                    if ($users != '') {
+                                        echo $this->Form->input('user_id', ['options' => $users, 'default' => (isset($prescription->user['id'])) ? $prescription->user['id'] : '', 'required' => true, 'empty' => 'Select', 'class' => 'selectpicker', 'data-live-search' => true, 'onchange' => 'getUserInfo(this.value)', 'required' => true, 'label' => false]);
+                                    } else {
+                                        echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'label' => false, 'required' => true, 'type' => 'text']);
+                                    }
+                                }
+                                ?>
+                            </div>
+
+                            <div class="inputs hide" id='patient_field'>
+                                <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'required' => true, 'label' => false, 'type' => 'text']); ?>
+                            </div>
+                            <br>
+                        </div>
                     </div>
 
-                    <div class="inputs hide" id='patient_field'>
-                        <?php echo $this->Form->input('patients.first_name', ['class' => 'form-control patient_name_width', 'required' => true, 'label' => false, 'type' =>'text']); ?>
-                    </div> <br>
 
-                    <label>Mobile:</label>
-                    <div class="inputs">
-                        <?php echo $this->Form->input('patients.phone', ['class' => 'form-control reset_patient mobile_width', 'disabled' => isset($edit), 'value' => (isset($prescription->user['phone']))? $prescription->user['phone']:'',  'label' => false, 'required' => true, 'type' =>'text', 'id' => 'user-phone']); ?>
-                    </div><br>
-
-                    <label>Age:</label>
-                    <div class="inputs">
-                        <?php echo $this->Form->input('patients.age', ['class' => 'form-control reset_patient age_width',  'value' => (isset($prescription->user['age']))? $prescription->user['age']:'', 'label' => false, 'type' =>'text', 'id'=>'user-age']); ?>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>Mobile:</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="inputs">
+                                <?php echo $this->Form->input('patients.phone', ['class' => 'form-control reset_patient mobile_width', 'disabled' => isset($edit), 'value' => (isset($prescription->user['phone']))? $prescription->user['phone']:'',  'label' => false, 'required' => true, 'type' =>'text', 'id' => 'user-phone']); ?>
+                            </div><br>
+                        </div>
                     </div>
 
-                    <label>Address:</label>
-                    <div class="inputs">
-                        <?php echo $this->Form->input('patients.address_line1', ['class' => 'form-control reset_patient address_width',  'value' => (isset($prescription->user['address_line1']))? $prescription->user['address_line1']:'', 'id'=>'user-address', 'label' => false, 'type' =>'text']); ?>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>Address:</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="inputs">
+                                <?php echo $this->Form->input('patients.address_line1', ['class' => 'form-control reset_patient address_width',  'value' => (isset($prescription->user['address_line1']))? $prescription->user['address_line1']:'', 'id'=>'user-address', 'label' => false, 'type' =>'text']); ?>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>Age:</label>
+                        </div>
+
+                        <div class="col-sm-10">
+                            <div class="inputs age_width">
+                                <?php echo $this->Form->input('patients.age', ['class' => 'form-control reset_patient ',  'value' => (isset($prescription->user['age']))? $prescription->user['age']:'', 'label' => false, 'type' =>'text', 'id'=>'user-age']); ?>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -67,14 +96,27 @@
             <div class="patient_info_section">
                 <h6>Health Data</h6>
                 <div class="health_data single_block">
-                    <label>BP:</label>
-                    <div class="inputs">
-                        <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control bp_width', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'id' => 'blood-pressure', 'type' =>'text']);?>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>BP:</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="inputs bp_width">
+                                <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control ', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'id' => 'blood-pressure', 'type' =>'text']);?>
+                            </div>
+                        </div>
                     </div>
 
-                    <label>Temperature:</label>
-                    <div class="inputs">
-                        <?php echo $this->Form->input('temperature', [ 'class'=>'form-control temp_width', 'value' => (isset($prescription['temperature']))? $prescription['temperature']:'', 'label'=>false, ]);?>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <label>Temperature:</label>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="inputs temp_width">
+                                <?php echo $this->Form->input('temperature', [ 'class'=>'form-control ', 'value' => (isset($prescription['temperature']))? $prescription['temperature']:'', 'label'=>false, ]);?>
+                            </div>
+                        </div>
                     </div>
 
                     <label>Last Visit Date:</label>
