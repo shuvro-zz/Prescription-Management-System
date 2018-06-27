@@ -99,11 +99,15 @@ class PrescriptionsController extends AppController
         $prescription = $this->Prescriptions->newEntity();
 
         if ($this->request->is('post')) {
-            $this->removeBlankArray();
+
+            if (isset($this->request->data['medicines']['medicine_id'])){
+                $this->removeBlankArray();
+            }
+
             $patient_id = $this->savePatient($this->request->data['patients']);
 
-            $diagnosis = $this->request->data['diagnosis'];
-            $medicines = $this->request->data['medicines'];
+            $diagnosis = isset($this->request->data['diagnosis'])?$this->request->data['diagnosis']:'';
+            $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
 
             unset($this->request->data['medicines']);
             unset($this->request->data['diagnosis']);
@@ -185,10 +189,14 @@ class PrescriptionsController extends AppController
             'contain' => ['PrescriptionsDiagnosis', 'Medicines', 'Tests', 'Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $this->removeBlankArray();
+
+            if (isset($this->request->data['medicines']['medicine_id'])){
+                $this->removeBlankArray();
+            }
+
             $patient_id = $this->savePatient($this->request->data['patients']);
             $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
-            $diagnosis = $this->request->data['diagnosis'];
+            $diagnosis = isset($this->request->data['diagnosis'])?$this->request->data['diagnosis']:'';
 
             unset($this->request->data['medicines']);
             unset($this->request->data['diagnosis']);
@@ -264,6 +272,7 @@ class PrescriptionsController extends AppController
             }
         }
 
+        $tests = '';
         if($default_tests){
             $tests = $this->Prescriptions->Tests->find('list', ['limit' => 200])->where(
                 ['Tests.id IN' => $default_tests]
@@ -422,7 +431,7 @@ class PrescriptionsController extends AppController
     }
 
     function searchPatient(){
-       $this->autoRender = false;
+        $this->autoRender = false;
 
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
             $search_phone_no = $this->request->query['search'];
@@ -451,7 +460,7 @@ class PrescriptionsController extends AppController
             }
         }
         $this->set(compact('patient_info'));
-   }
+    }
 
     function savePatient($patients){
         $this->loadModel('Users');

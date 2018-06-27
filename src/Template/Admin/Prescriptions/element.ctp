@@ -98,10 +98,10 @@
                 <div class="health_data single_block">
 
                     <div class="row">
-                        <div class="col-sm-2">
-                            <label>BP:</label>
+                        <div class="col-sm-6 padding_right_remove">
+                            <label>Blood Pressure:</label>
                         </div>
-                        <div class="col-sm-10">
+                        <div class="col-sm-6 padding_left_remove">
                             <div class="inputs bp_width">
                                 <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control ', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'id' => 'blood-pressure', 'type' =>'text']);?>
                             </div>
@@ -109,19 +109,26 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-6 padding_right_remove">
                             <label>Temperature:</label>
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-6 padding_left_remove">
                             <div class="inputs temp_width">
                                 <?php echo $this->Form->input('temperature', [ 'class'=>'form-control ', 'value' => (isset($prescription['temperature']))? $prescription['temperature']:'', 'label'=>false, ]);?>
                             </div>
                         </div>
                     </div>
 
-                    <label>Last Visit Date:</label>
-                    <div class="inputs" id="last-visit-date">
-                        <?php echo $last_visit_date ?>
+                    <div class="row">
+                        <div class="col-sm-6 last_visit_date_level">
+                            <label>Last Visit Date:</label>
+                        </div>
+
+                        <div class="col-sm-6 last_visit_date">
+                            <div class="inputs " id="last-visit-date">
+                                <?php echo $last_visit_date ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,7 +163,7 @@
                     <div class=" diagnosis_info diagnosis_box">
                         <?php foreach($diagnosis as $id=>$name){ ?>
                             <div class="checkbox" style="margin-top: 0px">
-                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)"  required id="test"><?php echo ucfirst($name) ?></label>
+                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" id="test"><?php echo ucfirst($name) ?></label>
                             </div>
                         <?php } ?>
                     </div>

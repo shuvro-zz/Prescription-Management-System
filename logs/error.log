@@ -416,3 +416,242 @@ Stack Trace:
 #16 {main}
 
 
+2018-06-26 22:42:31 Error: [Cake\Database\Exception] Impossible to generate condition with empty list of values for field (Tests.id)
+Request URL: /pms/admin/prescriptions/edit/90
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\Comparison.php(133): Cake\Database\Expression\Comparison->_stringExpression(Object(Cake\Database\ValueBinder))
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Expression\QueryExpression.php(463): Cake\Database\Expression\Comparison->sql(Object(Cake\Database\ValueBinder))
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(119): Cake\Database\Expression\QueryExpression->sql(Object(Cake\Database\ValueBinder))
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(247): Cake\Database\QueryCompiler->Cake\Database\{closure}(Object(Cake\Database\Expression\QueryExpression), 'where')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\QueryCompiler.php(99): Cake\Database\Query->traverse(Object(Closure), Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver.php(321): Cake\Database\QueryCompiler->compile(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(256): Cake\Database\Driver->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->compileQuery(Object(Cake\ORM\Query), Object(Cake\Database\ValueBinder))
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(902): Cake\Database\Query->sql(NULL)
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(121): Cake\ORM\Query->sql()
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(216): Cake\Database\Driver\Mysql->prepare(Object(Cake\ORM\Query))
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(268): Cake\Database\Connection->prepare(Object(Cake\ORM\Query))
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Query.php(182): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#13 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(921): Cake\Database\Query->execute()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(272): Cake\ORM\Query->_execute()
+#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(871): Cake\ORM\Query->_all()
+#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(131): Cake\ORM\Query->all()
+#17 [internal function]: Cake\ORM\Query->getIterator()
+#18 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(148): iterator_to_array(Object(Cake\ORM\Query))
+#19 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Widget\SelectBoxWidget.php(116): Cake\View\Widget\SelectBoxWidget->_renderContent(Array)
+#20 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(2552): Cake\View\Widget\SelectBoxWidget->render(Array, Object(Cake\View\Form\NullContext))
+#21 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1884): Cake\View\Helper\FormHelper->widget('select', Array)
+#22 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1103): Cake\View\Helper\FormHelper->select('tests._ids', Object(Cake\ORM\Query), Array)
+#23 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FormHelper.php(1024): Cake\View\Helper\FormHelper->_getInput('tests._ids', Array)
+#24 E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\element.ctp(168): Cake\View\Helper\FormHelper->input('tests._ids', Array)
+#25 E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\edit.ctp(8): include('E:\\xampp_5\\htdo...')
+#26 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#27 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#28 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#29 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#30 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#31 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#32 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#33 {main}
+
+
+2018-06-26 22:44:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 560]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 560
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 544
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:44:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 511]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 511
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 494
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 127
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:46:19 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 560]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 560
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 544
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:46:45 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 560]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 560
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 544
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:46:45 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 511]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 511
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 494
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 127
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:50:04 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 560]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 560
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 544
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:50:04 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 511]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 511
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 494
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 127
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:54:41 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 553
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 537
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 124
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 22:54:41 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 504]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareMedicine() - APP/Controller\Admin\PrescriptionsController.php, line 504
+App\Controller\Admin\PrescriptionsController::savePrescriptionsMedicines() - APP/Controller\Admin\PrescriptionsController.php, line 487
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 125
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 23:05:32 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 558]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 558
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 542
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 124
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 23:05:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 558]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 558
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 542
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 212
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 23:06:24 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 558]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 558
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 542
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 124
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 23:06:56 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 558]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 558
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 542
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 124
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-06-26 23:07:57 Error: Fatal Error (4): syntax error, unexpected 'medicines' (T_STRING), expecting ']' in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 201]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-06-26 23:07:57 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'medicines' (T_STRING), expecting ']'
+Request URL: /pms/admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'E:\\xampp_5\\htdo...', 201)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-06-26 23:10:17 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 558]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::prepareDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 558
+App\Controller\Admin\PrescriptionsController::savePrescriptionsDiagnosis() - APP/Controller\Admin\PrescriptionsController.php, line 542
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 124
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
