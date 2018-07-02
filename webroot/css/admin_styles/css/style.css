@@ -48,6 +48,7 @@ lavel#password-error {
 }
 .prescriptions {
     overflow: auto;
+    height: 128px;
 }
 .prescription_head_con{
     text-align: center;
@@ -143,7 +144,7 @@ button, .wizard-config .btn-continue{
     height: auto;
 }
 .medicine_name{
-    margin-right: 4px;
+    margin-right: -3px;
     padding:0px;
     width: 170px;
 }
@@ -156,9 +157,6 @@ button, .wizard-config .btn-continue{
 .medicines_row {
     position: relative;
     float: left;
-    width: 50%;
-    height: 38px;
-    margin-bottom: 20px;
 }
 .medicines_row .tokenize > .tokens-container > .token-search{
     margin: 0px 5px 0 0;
@@ -169,9 +167,7 @@ button, .wizard-config .btn-continue{
 .import_icon{
     font-size: 12px!important;
 }
-/*.medicines_row:nth-child(1) .dle_medicine_btn{
-   display: none;
-}*/
+
 /**************Test*************/
 .tests_wrap{
     position: relative;
@@ -221,7 +217,7 @@ button, .wizard-config .btn-continue{
 .medicines_row .tokenize > .tokens-container {
     height: 43px;
     overflow: auto;
-    width: 180px;
+    width: 173px;
 }
 
 .patient_info_section input, select{
@@ -231,9 +227,7 @@ button, .wizard-config .btn-continue{
 .medicines input{
     height: 28px;
 }
-.patient_info_section h6{
-    color: #fff;
-}
+
 .patient_info_section label{
     color: #000;
     font-size: 12px;
@@ -262,18 +256,24 @@ button, .wizard-config .btn-continue{
 .input.select .bootstrap-select.btn-group .btn-continue{
     margin-bottom: 4px;
 }
+.medicines_section{
+    position: relative;
+}
 .medicines .dropdown-menu{
     position: static!important;
     float: none;
 }
+.add_more_btn{
+    padding:0px;
+}
 .medicines_section #addMoreMedicine {
     width: 12px;
     position: absolute;
-    right: 23px;
-    top: 22px;
+    right: 0px;
     background: no-repeat;
     border: none;
-    font-size: 27px;
+    font-size: 25px;
+    color: #333;
 }
 .dropdown-menu{
     padding: 0px;
@@ -281,19 +281,39 @@ button, .wizard-config .btn-continue{
 .inputs,.input.select .bootstrap-select.btn-group button{
     width: 100%!important;
 }
+::placeholder{
+    color: #CCCCCC!important;
+}
 .single_block {
-    background: #fff;
-    padding: 6px;
+    background: #EBEBEB;
+    padding: 8px 8px;
     border-radius: 5px;
-    height: 128px;
+    min-height: 128px;
 }
 .prescriptions ul {
     padding: 0px;
     margin-bottom: 0px;
+    background: #fff;
+    height: 112px;
+    padding-left: 5px;
+    overflow: auto;
 }
 .prescriptions ul li {
     list-style: none;
     padding: 0px;
+}
+.pescription_panel_heading{
+    font-weight: bold;
+    padding: 10px 2px;
+}
+.add_prescription_heading{
+    background: #EBEBEB!important;
+}
+.leftside-navigation .navigation-item:hover {
+    background: #0DC3B9;
+}
+.diagnosis{
+    color: #333;
 }
 .left_side h6,.right_side h6{
     color: #fff;
@@ -302,22 +322,28 @@ button, .wizard-config .btn-continue{
     width: 100%;
     border-radius: 5px;
     height: 125px;
+    border: none;
 }
 .left_side {
-    background: #1379AD;
+    background: #EBEBEB;
     padding: 8px;
     margin-top: 12px;
     width: 100%;
     float: left;
     border-radius: 5px;
+    color: #333!important;
+}
+.examinations ul{
+    height: 105px!important;
 }
 .right_side {
-    background: #119A55;
+    background: #EBEBEB;
     padding: 8px;
     margin-top: 12px;
     width: 100%;
     float: left;
     border-radius: 5px;
+    color: #333!important;
 }
 .diagnosis_info,.examinations,.medicines {
     background: #fff;
@@ -327,9 +353,8 @@ button, .wizard-config .btn-continue{
     overflow: auto;
 }
 .prescription_button_section {
-    margin-top: 8px;
+    margin-top: 15px;
     margin-left: 15px;
-    margin-bottom: 60px;
 }
 .prescription_button_section button{
     width: auto;
@@ -350,8 +375,8 @@ button, .wizard-config .btn-continue{
     border: 1px solid #dde3e5;
 }
 .doctors_note textarea{
-    width: 405px;
-    height: 128px;
+    min-width: 100%!important;
+    border: none;
 }
 .examinations .tokenize.focus > .tokens-container{
     outline: 0;
@@ -359,21 +384,17 @@ button, .wizard-config .btn-continue{
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
 }
-.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus,
-.dropdown-menu>.active>a:hover{
-    background: #119A55;
-    margin-top: -5px;
+.navigation-item.dashboard.active{
+    background: #0DC3B9!important;
 }
-.medicines .tokenize.focus > .tokens-container{
-}
+
 .examinations .tokenize > .tokens-container > .token {
-    background-color:#1379AD!important;
-    color: #fff;
+    background-color:#F5F5F5!important;
     border-radius: 5px!important;
 }
 .medicines .tokenize > .tokens-container > .token {
-    background-color: #119A55!important;
-    color: #fff;
+    background-color: #F5F5F5!important;
+    color: #333;
     border-radius: 5px!important;
 }
 
@@ -413,12 +434,7 @@ div#patient_drop_down,div#patient_field,.single_block .inputs {
 .work_section .work_body_section .main_container_section{
     height: auto;
 }
-.main_container_section{
-    background: #E08D2C
-}
-.prescription_content{
-    padding: 0px 38px!important;
-}
+
 label.error {
     font-size: 12px !important;
     line-height: 1;
@@ -465,9 +481,6 @@ label.error {
     border-radius: 100%;
 }
 
-.padding_left_remove{
-    padding-left:0px ;
-}
 .padding_right_remove{
     padding-right:0px ;
 }
@@ -485,7 +498,7 @@ label.error {
 
 .left-sidebar{
     width: 266px;
-    background: linear-gradient(#06cabf, #042522);
+    background: linear-gradient(#0ECFC5, #042321);
     margin-top: -94px;
     overflow-y: hidden;
     height: calc(106vh);
@@ -511,6 +524,12 @@ label.error {
     background: none;
     margin-left: 17px;
 }
+.dropdown-menu.user-dropdown i {
+    font-size: 15px;
+}
+.prescription_content{
+    padding: 40px 21px!important;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {
@@ -518,57 +537,13 @@ label.error {
 }
 @media only screen and (max-width: 991px) {
 
-/*    .doctors_note textarea{
-        height: auto;
-        width: auto;
-    }
-    .single_block{
-        height: auto;
-        width: auto;
-    }*/
-
-    .medicines_row .dle_medicine_btn {
-        width: 59px!important;
-        margin-top: 27px;
-        margin-left: -26px;
-    }
 }
 @media only screen and (max-width: 767px) {
-    .input.select .bootstrap-select.btn-group button,
-    .input.select .bootstrap-select.btn-group .wizard-config .btn-continue,
-    .wizard-config .input.select .bootstrap-select.btn-group .btn-continue,
-    .bootstrap-select.btn-group .dropdown-menu {
-        width: 95% !important;
-    }
-    .bootstrap-select.btn-group .dropdown-menu{
-        min-width: 10%;
-    }
-    .medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
-        width: 17%;
-        right: 16px;
-        top: 28px;
-        position: absolute;
-    }
-    .medicine_width,.test_width {
-        width: 79%;
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-    .medicines_row .dle_medicine_btn {
-        position: absolute;
-        top: -202px!important;
-        right: 12px!important;
-        width: 18%!important;
-    }
+
 
 }
 @media only screen and (max-width: 555px) {
-    .medicines_wrap #addMoreMedicine, .tests_wrap #addMoreTest {
-        right: -5px;
-    }
-    .medicines_row .dle_medicine_btn {
-        right: -5px!important;
-    }
+
 }
 @media only screen and (max-width: 320px) {
 

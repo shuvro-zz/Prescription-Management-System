@@ -115,7 +115,7 @@
                     </div>
                     <h4>Patient</h4>
                     <div>
-                        <b>Name : </b> <span class="patient_info"><?= ucfirst($prescription->user->first_name) ?>,</span>
+                        <b>Name : </b> <span class="patient_info"><?= ucfirst($prescription->user->first_name) ?></span>
                         <b>Age : </b> <span class="patient_info"><?= $prescription->user->age .' Years' ?></span>
                     </div>
                     <div>

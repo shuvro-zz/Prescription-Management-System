@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
             });
         },
         sortable: true,
-        displayNoResultsMessage: true
+        displayNoResultsMessage: true,
     });
 
     $('.prescription_medicine').tokenize2({

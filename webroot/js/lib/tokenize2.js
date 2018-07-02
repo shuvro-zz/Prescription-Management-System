@@ -81,7 +81,7 @@
         delimiter: ',',
         dataSource: 'select',
         debounce: 0,
-        placeholder: false,
+        placeholder: "Type here....",
         sortable: false,
         zIndexMargin: 500,
         tabIndex: 0
