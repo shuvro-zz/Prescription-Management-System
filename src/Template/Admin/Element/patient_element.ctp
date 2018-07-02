@@ -58,7 +58,7 @@
                 <div class="form-group">
                     <label class="name">Address<span aria-required="true"></span></label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('address_line1', ['class' => 'form-control','value' => (isset($user->address_line1))? $user->address_line1:'', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                        <?php echo $this->Form->input('address_line1', ['class' => 'form-control','value' => (isset($user->address_line1))? $user->address_line1:'', 'label' => false, 'type' =>'text']); ?>
                     </div>
                 </div>
             </div>

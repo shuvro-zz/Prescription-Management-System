@@ -218,7 +218,7 @@ class PdfHandlerComponent extends Component
                     <td width="60%">
                         <table>
                             <tr><td class="patient_head">Patient</td></tr>
-                            <tr><td>Name: '. ucfirst($prescription->user->first_name).' , Age:'. $prescription->user->age .' Years' .'</td></tr>
+                            <tr><td>Name: '. ucfirst($prescription->user->first_name).'  Age:'. $prescription->user->age .' Years' .'</td></tr>
                             <tr><td>Mobile: '. $prescription->user->phone .'</td></tr>';
 
                             if($prescription->user->address_line1){
