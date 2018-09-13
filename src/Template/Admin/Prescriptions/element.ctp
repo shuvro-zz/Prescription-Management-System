@@ -153,7 +153,7 @@
         </div>
     </div>
 
-    <div style="height: 12px; color:#fff; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: -5px"></i> </div></div>
+    <div style="height: 12px; color:#000; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: -5px"></i> </div></div>
 
     <div class="row">
         <div class="col-sm-6">

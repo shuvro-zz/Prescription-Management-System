@@ -18,6 +18,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 lavel#password-error {
     color: red!important;
 }
+
+.workspace{
+    margin-left: 266px;
+}
+
 .cu_con_outer{
     width: 100%;
     background: #EDF1F5;

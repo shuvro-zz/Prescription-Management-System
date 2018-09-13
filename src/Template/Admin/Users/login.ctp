@@ -11,7 +11,7 @@
 		</div>
 		<?php echo $this->Form->create(null, ['id' => 'admin-login-form']); ?>
 		<div class="form-area">
-			<input type="text" name="email" class="md-input" id="email" placeholder="Username" required="required">
+			<input type="text" name="email" class="md-input" id="email" placeholder="Email Address" required="required">
 			<input type="password" name="password" class="md-input" id="password" placeholder="Password" required="required" >
 			<input type="submit" value="Login">
 			
