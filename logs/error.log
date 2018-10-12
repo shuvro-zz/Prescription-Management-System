@@ -675,3 +675,21 @@ Stack Trace:
 #13 {main}
 
 
+2018-10-12 16:29:45 Error: [Cake\View\Exception\MissingTemplateException] Template file "Admin\Prescriptions\Prescriptions\view1.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Admin\\Prescriptions\\Prescriptions\\view1.ctp',
+)
+Request URL: /pms/admin/prescriptions/view/90
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(584): Cake\View\View->_getViewFileName('Prescriptions/v...')
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render('Prescriptions/v...', NULL)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(90): Cake\Controller\Controller->render('Prescriptions/v...')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->view('90')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+

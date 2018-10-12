@@ -40,9 +40,29 @@ lavel#password-error {
     background: #fff;
 
 }
+
+.cu_con_inner_view1{
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+
+}
+.view1_prescription{
+    padding: 0px 15px;
+}
+.patient_info_area{
+    border-bottom: 2px solid #000;
+}
 .prescription_head {
     border-bottom: 1px solid #eee;
     margin-bottom: 16px;
+}
+.prescription_view1_head{
+    background: #00A8DC;
+    border-bottom: 1px solid #000;
 }
 .prescription_logo {
     text-align: center;
@@ -59,6 +79,21 @@ lavel#password-error {
     text-align: center;
     margin-bottom: 6px;
 }
+
+.prescription_head_con_view1{
+    margin-bottom: 6px;
+    padding: 10px 15px;
+}
+
+.prescription_head_con_view1 p, h2, h5{
+    color: #fff;
+}
+.view1_education{
+    border: 1px solid;
+    padding: 8px;
+    width: 35%;
+    line-height: 24px!important;
+}
 .prescription_head h1 {
     margin-bottom: 8px;
 }
@@ -72,7 +107,12 @@ lavel#password-error {
 .prescription_section{
     margin: 20px 0;
 }
-
+.doctor_note {
+    border-top: 2px solid #00A8DC;
+}
+.patient_info_bottom{
+    padding: 15px 0px;
+}
 .more_prescription {
     background: #fff;
     border-bottom: 1px solid #e4e4e4;
@@ -90,6 +130,14 @@ lavel#password-error {
     padding-top: 7px;
     margin-bottom: -24px;
     margin-top: 160px;
+}
+.view1_cember_info p, .view1_show_time p {
+    color: #000;
+    line-height: 5px;
+}
+.view1_prescription_footer{
+    margin-top: 160px;
+    background: #00A8DC;
 }
 .signature {
     float: left;
