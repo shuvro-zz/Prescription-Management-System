@@ -544,4 +544,17 @@ class UsersController extends AppController
         }
         return $profile_pic_name;
     }
+
+   function prescriptionTemplate(){
+
+
+       $this ->render('prescription_template');
+
+       $prescription_templates = $this->PrescriptionTemplates->find('all');
+
+       pr($prescription_templates);die;
+
+       $this->set(compact('prescription_templates'));
+       $this->set('_serialize', ['prescription_templates']);
+    }
 }

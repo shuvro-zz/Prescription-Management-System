@@ -87,7 +87,11 @@ class PrescriptionsController extends AppController
         $this->set('_serialize', ['prescription']);
 
         //$order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
-        $this -> render('view1');
+        if ($prescription->user->prescription_template_id == 1){
+            $this -> render('standard');
+        }else{
+            $this -> render('classic');
+        }
     }
 
     /**

@@ -38,7 +38,6 @@ class SettingsController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $post_data = $this->request->data;
-            //debug($post_data);exit;
 
             foreach($post_data as $key=>$val){
 

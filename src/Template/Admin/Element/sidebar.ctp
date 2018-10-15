@@ -46,6 +46,11 @@
                     <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'patientIdReset' )); ?>" title="Prescriptions"><span class="nav-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i>
                     </span><span class="nav-text">Prescriptions</span></a>
                 </li>
+
+                <!--<li class="navigation-item dashboard <?php /*if($this->name=='Templatesettings') echo 'active'*/?>">
+                    <a href="<?php /*echo $this->Url->build(array( 'controller' => 'templatesettings','action' => 'add' )); */?>" title="Prescriptions"><span class="nav-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+                    </span><span class="nav-text">Templates Settings</span></a>
+                </li>-->
             <?php } ?>
 
             <!--<li class="navigation-item dashboard <?php /*if($this->name=='Events') echo 'active'*/?>">

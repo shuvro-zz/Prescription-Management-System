@@ -148,12 +148,18 @@
                             </li>
 
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changePassword',$user['token'] ])?>" class="view_all_li"><i class="fa fa-shield" aria-hidden="true"></i> Change Password</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'prescriptionTemplate'])?>" class="view_all_li"><i class="fa fa-picture-o" aria-hidden="true"></i> Prescription Template</a>
                             </li>
 
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changePassword',$user['token'] ])?>" class="view_all_li"><i class="fa fa-shield" aria-hidden="true"></i> Change Password</a>
                             </li>
+
+                            <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ // Admin role id ?>
+                                <li>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'settings','action' => 'add' ])?>" class="view_all_li"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+                                </li>
+                            <?php } ?>
 
                             <li>
                                 <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'logout' ])?>" class="view_all_li"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>

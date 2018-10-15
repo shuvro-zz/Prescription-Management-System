@@ -693,3 +693,781 @@ Stack Trace:
 #8 {main}
 
 
+2018-10-14 17:22:38 Error: Fatal Error (1): Call to a member function toArray() on array in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\view1.ctp, line 183]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-14 17:22:38 Error: [Cake\Error\FatalErrorException] Call to a member function toArray() on array
+Request URL: /pms/admin/prescriptions/view/67/
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 183)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-14 17:27:43 Error: Fatal Error (4): syntax error, unexpected '/' in [E:\xampp_5\htdocs\pms\src\Template\Admin\Prescriptions\view1.ctp, line 207]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-14 17:27:43 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '/'
+Request URL: /pms/admin/prescriptions/view/67/
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'E:\\xampp_5\\htdo...', 207)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:28:01 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 55]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:28:02 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 55)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:30:29 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 55]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:30:29 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 55)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:34:38 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:34:38 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:35:08 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:35:08 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:36:15 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:36:15 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:36:31 Error: [Cake\View\Exception\MissingTemplateException] Template file "Admin\Templatessettings\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Admin\\Templatessettings\\index.ctp',
+)
+Request URL: /pms/admin/templatessettings
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(584): Cake\View\View->_getViewFileName(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\TemplatesSettingsController))
+#4 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2018-10-15 21:36:52 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:36:52 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:37:28 Error: Fatal Error (1): Call to a member function toArray() on null in [E:\xampp_5\htdocs\pms\src\Template\Admin\TemplatesSettings\add.ctp, line 1]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:37:28 Error: [Cake\Error\FatalErrorException] Call to a member function toArray() on null
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 1)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:38:14 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplatesSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:38:14 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:38:24 Error: Fatal Error (1): Call to a member function toArray() on null in [E:\xampp_5\htdocs\pms\src\Template\Admin\TemplatesSettings\add.ctp, line 1]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:38:24 Error: [Cake\Error\FatalErrorException] Call to a member function toArray() on null
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 1)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:40:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatessuettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatessuettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatessuettings
+Referer URL: http://localhost/pms/admin/templatessettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:40:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatessuettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatessuettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatessuettings
+Referer URL: http://localhost/pms/admin/templatessettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:40:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatessuettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatessuettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatessuettings
+Referer URL: http://localhost/pms/admin/templatessuettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:40:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatessuettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatessuettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatessuettings
+Referer URL: http://localhost/pms/admin/templatessuettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:42:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatessettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatessettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatessettings/add
+Referer URL: http://localhost/pms/admin/templatessuettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:42:46 Error: [Cake\View\Exception\MissingTemplateException] Template file "Admin\Templatesettings\add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Admin\\Templatesettings\\add.ctp',
+)
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatessettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(584): Cake\View\View->_getViewFileName(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\TemplateSettingsController))
+#4 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2018-10-15 21:46:57 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplateSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:46:57 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatesettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:49:02 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplateSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:49:02 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatesettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:50:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatesettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:50:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class TemplateSettings could not be found.
+Exception Attributes: array (
+  'class' => 'TemplateSettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/template-settings
+Referer URL: http://localhost/pms/admin/templatesettings/add
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:50:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class TemplateSettings could not be found.
+Exception Attributes: array (
+  'class' => 'TemplateSettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/template-settings
+Referer URL: http://localhost/pms/admin/template-settings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:50:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class TemplateSettings could not be found.
+Exception Attributes: array (
+  'class' => 'TemplateSettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/template-settings
+Referer URL: http://localhost/pms/admin/template-settings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class TemplateSettings could not be found.
+Exception Attributes: array (
+  'class' => 'TemplateSettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/template-settings
+Referer URL: http://localhost/pms/admin/template-settings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/template-settings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:03 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:51:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 21:52:11 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplateSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:52:12 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 21:52:43 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\TemplateSettingsController.php, line 54]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 21:52:43 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/templatesettings/add
+Referer URL: http://localhost/pms/admin/templatesettings
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 54)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 22:31:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Templatesettings could not be found.
+Exception Attributes: array (
+  'class' => 'Templatesettings',
+  'plugin' => NULL,
+  'prefix' => 'admin',
+  '_ext' => NULL,
+)
+Request URL: /pms/admin/templatesettings
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-15 23:13:25 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "users" with primary key [NULL]
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(551): Cake\ORM\Table->get(NULL, Array)
+#1 [internal function]: App\Controller\Admin\UsersController->prescriptionTemplate()
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#5 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2018-10-15 23:19:32 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:19:33 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:23:27 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:23:27 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:23:36 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:23:37 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:24:07 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:24:07 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:24:31 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:24:32 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:24:34 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:24:34 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:26:18 Error: Fatal Error (1): Call to a member function get() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:26:18 Error: [Cake\Error\FatalErrorException] Call to a member function get() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:26:49 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:26:49 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:29:14 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:29:14 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:29:16 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:29:16 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:32:07 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:32:08 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:32:09 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:32:10 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

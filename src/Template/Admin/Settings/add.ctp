@@ -31,7 +31,7 @@
                                                     <div class="form-row">
                                                         <label class="name">Site Mode<span class="required" aria-required="true"></span></label>
                                                         <div class="inputs">
-                                                            <select name="site_mode" class="form-control" required="required">
+                                                            <select name="mode" class="form-control" required="required">
                                                                 <option value="live" <?php if($val['value'] == 'live'){ echo 'selected'; } ?> >Live</option>
                                                                 <option value="dev" <?php if($val['value'] == 'dev'){ echo 'selected'; } ?>>Dev</option>
                                                             </select>
