@@ -25,6 +25,7 @@
 		'admin_styles/css/style.css',
 		'admin_styles/css/tokenize2.css',
 		'lib/jquery.datetimepicker.min.css',
+        'admin_styles/css/jquery.imageview.css',
 	]);
 
 
@@ -40,6 +41,8 @@
 		'lib/jquery.datetimepicker.min.js',
 		'lib/admin_custom.js',
 		'lib/tokenize2.js',
+		'lib/jquery.imageview.js',
+		'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',
 	]);
 	?>
 

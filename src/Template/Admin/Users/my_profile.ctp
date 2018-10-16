@@ -3,12 +3,9 @@
         <div class="workspace-body">
             <div class="page-heading">
                 <ol class="breadcrumb breadcrumb-small">
-                    <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Doctor') ?>"> <?= __('Doctor') ?></a></li>
                     <li class="active"><a href="#"><?= __('My Profile') ?></a></li>
                 </ol>
             </div>
-
-
 
             <div class="main-container">
                 <div class="content">

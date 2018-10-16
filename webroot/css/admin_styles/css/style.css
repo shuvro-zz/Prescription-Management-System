@@ -18,7 +18,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
 lavel#password-error {
     color: red!important;
 }
-
+h5:before, .h5:before{
+    background: none!important;
+}
 .workspace{
     margin-left: 266px;
 }
@@ -582,6 +584,25 @@ label.error {
 }
 .prescription_content{
     padding: 40px 21px!important;
+}
+.prescription_template{
+    border: 2px dashed #eee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+.prescription_img{
+    width: 100%;
+    max-height: 273px;
+    min-height: 150px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.imageview .hide{
+    display: block!important;
+}
+.imageview .title{
+    left: 20%!important;
 }
 /**********Responsive**********/
 

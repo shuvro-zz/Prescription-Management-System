@@ -14,6 +14,7 @@ use Cake\Auth\Auth;
 use Cake\ORM\TableRegistry;
 use Cake\Utility\Text;
 use Cake\Filesystem\File;
+use App\Model\Entity\Medicine;
 
 
 class UsersController extends AppController
@@ -547,14 +548,33 @@ class UsersController extends AppController
 
    function prescriptionTemplate(){
 
+       $session = $this->request->session();
+       $userId = $session->read('Auth.User')['id'];
+
+       $user = $this->Users->get($userId, [
+           'contain' => []
+       ]);
+
+       $this->loadModel('PrescriptionTemplates');
+       $prescription_templates = $this->PrescriptionTemplates->find('all')->toArray();
+
+       if( $this->request->is(['patch', 'post', 'put']) ) {
+
+           $user = $this->Users->patchEntity($user, $this->request->data);
+
+           if ($this->Users->save($user)) {
+
+               $session->write('Auth.User.prescription_template_id', $this->request->data['prescription_template_id']);
+
+               $this->Flash->adminSuccess('Prescription template changed successfully', ['key' => 'admin_success']);
+           } else {
+               $this->Flash->adminError('Prescription template could not be changed', ['key' => 'admin_error']);
+           }
+       }
+
+       $this->set(compact('prescription_templates', 'user'));
+       $this->set('_serialize', ['prescription_templates']);
 
        $this ->render('prescription_template');
-
-       $prescription_templates = $this->PrescriptionTemplates->find('all');
-
-       pr($prescription_templates);die;
-
-       $this->set(compact('prescription_templates'));
-       $this->set('_serialize', ['prescription_templates']);
     }
 }

@@ -1,17 +1,13 @@
-<?php echo $this->Form->create($user, [
-    'url' => ['controller' => 'Users', 'action' => 'changeProfilePicture'],
-    'class' => 'form-horizontal',
-]); ?>
+<?= $this->Form->create('', array('id' => 'prescriptionTemplateForm')) ?>
 <section class="workspace">
     <div class="workspace-body">
         <div class="page-heading">
             <ol class="breadcrumb breadcrumb-small">
-                <li><a href="<?=$this->Url->build(array('controller' => 'dashboard', 'action' => 'index' )) ?>" title="<?= __('Dashboard') ?>"> <?= __('Dashboard') ?></a></li>
-                <li class="active"><a href="#"><?= __('Chance Profile Picture') ?></a></li>
+                <li class="active"><a href="#"><?= __('Change Prescription Template') ?></a></li>
             </ol>
         </div>
 
-        <div class="main-container">
+        <div class="main-container" style="height: calc(100vh - 155px);">
             <div class="content">
 
                 <div class="col-md-12">
@@ -20,14 +16,36 @@
                     <?php echo $this->Flash->render('admin_warning'); ?>
                 </div>
 
+
+
                 <div class="page-wrap">
                     <div class="col-sm-12 col-md-12">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default panel-hovered panel-stacked">
-                                    <div class="panel-heading"><?= __('Change Profile Picture') ?></div>
+                                    <div class="panel-heading"><?= __('Select Template') ?></div>
                                     <div class="panel-body">
-                                        <h2>Prescription Template</h2>
+
+                                        <div id="prescription_template_area">
+                                            <?php foreach ($prescription_templates as $prescription_template) { ?>
+                                                <div class="col-sm-4">
+                                                    <div class="prescription_template">
+
+                                                        <h5 style="margin-top: 0px!important;">
+                                                            <input id="templateRadioBtn" style="margin-right: 5px;height: 20px; width: 20px;" type="radio"
+                                                                   name="prescription_template_id" value="<?php echo $prescription_template['id'] ?>"
+                                                                <?php echo ($user['prescription_template_id']==$prescription_template['id'])?'checked':'' ?>>
+
+                                                            <span style="position: absolute;top: 2px;"><?php echo $prescription_template['name'] ?></span>
+                                                        </h5>
+
+                                                        <a title="<?php echo ucfirst($prescription_template['name']) ?>" href="<?php echo $this->request->webroot.'uploads/prescription_templates/'.$prescription_template['image']; ?>"><img class="prescription_img" src="<?php echo $this->request->webroot.'uploads/prescription_templates/'.$prescription_template['image']; ?>" alt="" /></a>
+
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -38,36 +56,19 @@
         </div>
     </div>
 
-    <footer class="footer ">
-        <div class="flex-container">
-            <a href="<?php echo $this->Url->build(array('controller' => 'dashboard', 'action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
-            <div class="flex-item">
-                <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
-            </div>
-        </div>
-    </footer>
 </section>
-
 <?= $this->Form->end() ?>
 
-<script type="text/javascript">
-    function showMyImage(fileInput) {
-        $("#thumbnil").removeClass('hidden');
-        var files = fileInput.files;
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            var img=document.getElementById("thumbnil");
-            img.file = file;
-            var reader = new FileReader();
-            reader.onload = (function(aImg) {
-                return function(e) {
-                    aImg.src = e.target.result;
-                };
-            })(img);
-            reader.readAsDataURL(file);
-        }
-    }
-</script>
+<script src="<?php echo $this->request->webroot.'js/lib/jquery.imageview.js'; ?>"></script>
+<script>
 
+    $(document).ready(function(){
+        $(document).on('click', '#templateRadioBtn', function (e) {
+            $(this).closest("#prescriptionTemplateForm").submit();
+        });
+    });
+
+    $('#prescription_template_area').imageview();
+</script>
 
 

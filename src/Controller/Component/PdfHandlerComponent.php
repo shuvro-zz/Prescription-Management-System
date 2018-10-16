@@ -166,8 +166,8 @@ class PdfHandlerComponent extends Component
 
         $user = $this->request->session()->read('Auth.User');
 
-        /*View*/
-        if ($user['prescription_template_id'] == 1) {//Standard Template
+        /*Standard Template*/
+        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1) {//Standard Template
             $html = '
                 <style>
     
@@ -361,8 +361,8 @@ class PdfHandlerComponent extends Component
                 </table>
             ';
         }
-        /*View_1*/
-      if ($user['prescription_template_id'] == 2){//Classic Template
+        /*Classic Template*/
+      if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 2){//Classic Template
             $html = '
                 <style>
     

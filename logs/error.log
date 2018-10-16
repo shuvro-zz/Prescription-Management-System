@@ -1471,3 +1471,1129 @@ Stack Trace:
 #2 {main}
 
 
+2018-10-15 23:33:21 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:33:21 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:33:23 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:33:23 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-15 23:33:33 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-15 23:33:33 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:27:38 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:27:38 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:27:58 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:27:59 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:28:24 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 553]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:28:24 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 553)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:29:47 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:29:47 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:30:37 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:30:37 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:32:23 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:32:24 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:34:06 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:34:06 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:34:08 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:34:09 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:35:31 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:35:31 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:35:34 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:35:34 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:35:44 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:35:44 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:36:39 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:36:39 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:36:54 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:36:55 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:42:17 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:42:17 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:42:20 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:42:20 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:43:22 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 25587712 bytes) in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\functions.php, line 142]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:43:22 Error: [Cake\Error\FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 25587712 bytes)
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Allowed memory ...', 'E:\\xampp_5\\htdo...', 142)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:44:01 Error: Fatal Error (1): Cannot use [] for reading in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 557]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:44:01 Error: [Cake\Error\FatalErrorException] Cannot use [] for reading
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use [] f...', 'E:\\xampp_5\\htdo...', 557)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:44:25 Error: Fatal Error (1): Allowed memory size of 134217728 bytes exhausted (tried to allocate 25587712 bytes) in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\functions.php, line 142]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:44:25 Error: [Cake\Error\FatalErrorException] Allowed memory size of 134217728 bytes exhausted (tried to allocate 25587712 bytes)
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Allowed memory ...', 'E:\\xampp_5\\htdo...', 142)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:47:22 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pms.prescription_settings' doesn't exist
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(96): Cake\Database\Schema\Collection->_reflect('Column', 'prescription_se...', Array, Object(Cake\Database\Schema\Table))
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(64): Cake\Database\Schema\Collection->describe('prescription_se...', Array)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(423): Cake\Database\Schema\CachedCollection->describe('prescription_se...')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(211): Cake\ORM\Table->schema()
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(169): Cake\ORM\Query->addDefaultTypes(Object(Cake\ORM\Table))
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1232): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(Cake\ORM\Table))
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(935): Cake\ORM\Table->query()
+#7 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(555): Cake\ORM\Table->find('all')
+#8 [internal function]: App\Controller\Admin\UsersController->prescriptionTemplate()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#12 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#13 {main}
+
+
+2018-10-16 14:48:26 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 555]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:48:26 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 555)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:48:59 Error: Fatal Error (1): Cannot use object of type Cake\ORM\Query as array in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 557]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 14:49:00 Error: [Cake\Error\FatalErrorException] Cannot use object of type Cake\ORM\Query as array
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Cannot use obje...', 'E:\\xampp_5\\htdo...', 557)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 14:52:15 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 14:53:10 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 14:53:13 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 14:57:21 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 14:57:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:00:16 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:02:57 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:02:57 Error: [BadMethodCallException] Unknown method "where"
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/tests
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(554): Cake\ORM\Table->__call('where', Array)
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(554): Cake\ORM\Table->where(Array)
+#2 [internal function]: App\Controller\Admin\UsersController->prescriptionTemplate()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-10-16 15:03:09 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:03:09 Error: [BadMethodCallException] Unknown method "Where"
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/tests
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(554): Cake\ORM\Table->__call('Where', Array)
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(554): Cake\ORM\Table->Where(Array)
+#2 [internal function]: App\Controller\Admin\UsersController->prescriptionTemplate()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-10-16 15:04:57 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:05:17 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:06:01 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:10:30 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:10:30 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 554]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 15:10:30 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 554)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 15:10:43 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:13:19 Error: Fatal Error (1): Call to a member function find() on boolean in [E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 564]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-16 15:13:19 Error: [Cake\Error\FatalErrorException] Call to a member function find() on boolean
+Request URL: /pms/admin/users/prescription-template
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'E:\\xampp_5\\htdo...', 564)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-10-16 15:13:34 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:13:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:14:08 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:14:40 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:14:47 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:15:10 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:15:29 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:16:11 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:16:58 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 31]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 31
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:20:40 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 63]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 63
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:23:11 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 28]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 28
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:24:00 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 28]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 28
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 567
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:24:33 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 28]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 28
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 15:26:39 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp_5\htdocs\pms\src\Template\Admin\Users\prescription_template.ctp, line 28]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+include - APP/Template\Admin\Users\prescription_template.ctp, line 28
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 992
+Cake\View\View::_render() - CORE\src\View\View.php, line 952
+Cake\View\View::render() - CORE\src\View\View.php, line 587
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 612
+App\Controller\Admin\UsersController::prescriptionTemplate() - APP/Controller\Admin\UsersController.php, line 551
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-10-16 20:43:38 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::js() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/users/js/jquery.imageview.js
+Referer URL: http://localhost/pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-10-16 20:43:46 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::js() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/users/js/jquery.imageview.js
+Referer URL: http://localhost/pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-10-16 20:43:51 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::js() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/users/js/jquery.imageview.js
+Referer URL: http://localhost/pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-10-16 22:17:43 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::js() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/users/js/jquery.imageview.js
+Referer URL: http://localhost/pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-10-16 22:17:45 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::js() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'js',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/users/js/jquery.imageview.js
+Referer URL: http://localhost/pms/admin/users/prescription-template
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-10-16 22:20:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Lib could not be found.
+Exception Attributes: array (
+  'class' => 'Lib',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/lib/jquery.imageview.js
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/lib/jquery.imageview.js
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/lib/jquery.imageview.js
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/lib/jquery.imageview.js
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-10-16 22:20:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
