@@ -191,7 +191,7 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="view2_cember_info" style="text-align: center">
-                                <h4>Cember:</h4>
+                                <h4 style="color: #000;">Cember:</h4>
                                 <p>Islamic Bank Hospital</p>
                                 <p>Lokkhipur Mour, Rajshahi</p>
                             </div>
@@ -201,7 +201,7 @@
 
                         <div class="col-sm-5">
                             <div class="view2_show_time" style="text-align: center">
-                                <h4>Patient Show Time:</h4>
+                                <h4 style="color: #000;">Patient Show Time:</h4>
                                 <p>Everyday Midday 2.30PM - Night 8PM</p>
                                 <p>( Friday Off )</p>
                             </div>

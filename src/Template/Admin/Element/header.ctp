@@ -148,7 +148,7 @@
                             </li>
 
                             <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'prescriptionTemplate'])?>" class="view_all_li"><i class="fa fa-picture-o" aria-hidden="true"></i> Prescription Template</a>
+                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'prescriptionTemplate'])?>" class="view_all_li"><i class="fa fa-file-text" aria-hidden="true"></i> Prescription Template</a>
                             </li>
 
                             <li>
