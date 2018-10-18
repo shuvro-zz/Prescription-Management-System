@@ -28,7 +28,7 @@
 
                                         <div id="prescription_template_area">
                                             <?php foreach ($prescription_templates as $prescription_template) { ?>
-                                                <div class="col-sm-4">
+                                                <div class="col-sm-3">
                                                     <div class="prescription_template">
 
                                                         <h5 style="margin-top: 0px!important;">
@@ -39,7 +39,7 @@
                                                             <span style="position: absolute;top: 2px;"><?php echo $prescription_template['name'] ?></span>
                                                         </h5>
 
-                                                        <a title="<?php echo ucfirst($prescription_template['name']) ?>" href="<?php echo $this->request->webroot.'uploads/prescription_templates/'.$prescription_template['image']; ?>"><img class="prescription_img" src="<?php echo $this->request->webroot.'uploads/prescription_templates/'.$prescription_template['image']; ?>" alt="" /></a>
+                                                        <a title="<?php echo ucfirst($prescription_template['name']) ?> Template" href="<?php echo $this->request->webroot.'uploads/prescription_templates/'.$prescription_template['image']; ?>"><img class="prescription_img" src="<?php echo $this->request->webroot.'uploads/prescription_templates/'.$prescription_template['image']; ?>" alt="" /></a>
 
                                                     </div>
                                                 </div>

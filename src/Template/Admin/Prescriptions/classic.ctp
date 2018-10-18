@@ -108,10 +108,10 @@
 
                                 <b><p style="color: #000"   > <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
                                 <!--<a href="#"><b><p> <?php /*echo ($user['website']) */?> </p></b></a>-->
-                                <b><p> Call: <?php echo ($user['phone']) ?></p></b>
+                                <p> Call: <?php echo ($user['phone']) ?></p>
 
                                 <?php if($user['website']){?>
-                                    <b><p> <?php echo ($user['website']) ?></p></b>
+                                    <p> <?php echo ($user['website']) ?></p>
                                 <?php } ?>
                             </div>
                         </div>
@@ -178,7 +178,7 @@
                         </div>
                     </div>
 
-                    <div class="doctor_note">
+                    <div class="classic_doctor_note">
                         <div class="row">
                             <div class="col-sm-12">
                                 <p><?= ucfirst($prescription->doctores_notes) ?></p>
@@ -187,7 +187,7 @@
                     </div>
                 </div>
 
-                <div class="view2_prescription_footer">
+                <div class="view2_prescription_footer prescription_footer">
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="view2_cember_info" style="text-align: center">

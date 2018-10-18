@@ -56,15 +56,16 @@ h5:before, .h5:before{
     padding: 0px 15px;
 }
 .patient_info_area{
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid;
 }
 .prescription_head {
-    border-bottom: 1px solid #eee;
     margin-bottom: 16px;
 }
 .prescription_view2_head{
     background: #00A8DC;
-    border-bottom: 1px solid #000;
+}
+.prescription_general_head {
+    background: #BCA48C;
 }
 .prescription_logo {
     text-align: center;
@@ -84,7 +85,7 @@ h5:before, .h5:before{
 
 .prescription_head_con_view2{
     margin-bottom: 6px;
-    padding: 10px 15px;
+    padding: 0px 15px;
 }
 
 .prescription_head_con_view2 p, .prescription_head_con_view2 h2, .prescription_head_con_view2 h5{
@@ -109,11 +110,27 @@ h5:before, .h5:before{
 .prescription_section{
     margin: 20px 0;
 }
-.doctor_note {
+.general_doctor_note {
+    border-top: 2px solid #BCA48C;
+}
+.custom_doctor_note {
+    border-top: 2px solid #DB3F44;
+}
+.classic_doctor_note {
     border-top: 2px solid #00A8DC;
 }
-.patient_info_bottom{
+.patient_info_bottom, .custom_patient_info_bottom{
     padding: 15px 0px;
+    overflow: hidden;
+}
+.prescription_custom_head{
+    background-image: linear-gradient(to right, #DA413B , #DE3078 , #EFAA80);
+}
+.custom_prescription_footer{
+    background-image: linear-gradient(to right, #DA413B , #DE3078 , #EFAA80);
+}
+.prescription_footer{
+    margin-top: 70px;
 }
 .more_prescription {
     background: #fff;
@@ -128,17 +145,17 @@ h5:before, .h5:before{
 
 
 .prescription_footer{
-    border-top: 1px solid #eee;
-    padding-top: 7px;
     margin-bottom: -24px;
-    margin-top: 160px;
+    margin-top: 70px;
 }
 .view2_cember_info p, .view2_show_time p {
     color: #000;
     line-height: 5px;
 }
+.general_prescription_footer{
+    background: #BCA48C;
+}
 .view2_prescription_footer{
-    margin-top: 160px;
     background: #00A8DC;
 }
 .signature {
@@ -593,8 +610,8 @@ label.error {
 }
 .prescription_img{
     width: 100%;
-    max-height: 273px;
-    min-height: 150px;
+    max-height: 200px;
+    min-height: 200px;
     border: 1px solid #eee;
     border-radius: 5px;
 }
@@ -602,7 +619,7 @@ label.error {
     display: block!important;
 }
 .imageview .title{
-    left: 20%!important;
+    left: 15%!important;
 }
 /**********Responsive**********/
 

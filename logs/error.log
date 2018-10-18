@@ -2597,3 +2597,20 @@ Stack Trace:
 #1 {main}
 
 
+2018-10-18 13:27:16 Error: Fatal Error (4): syntax error, unexpected 'public' (T_PUBLIC) in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 106]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-10-18 13:27:17 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /pms/admin/prescriptions/view/78
+Referer URL: http://localhost/pms/admin/prescriptions/view/78
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'E:\\xampp_5\\htdo...', 106)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

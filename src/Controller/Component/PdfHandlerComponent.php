@@ -361,11 +361,11 @@ class PdfHandlerComponent extends Component
                 </table>
             ';
         }
+
         /*Classic Template*/
-      if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 2){//Classic Template
+        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 2){//Classic Template
             $html = '
                 <style>
-    
                     table{
                         width:800px;
                         margin:0 auto;
@@ -381,8 +381,7 @@ class PdfHandlerComponent extends Component
                         font-weight: bold;
                         font-size: 20px;
                         color: #000;
-                    }
-                                                            
+                    }                                             
                 </style>
     
                  <table class="test" style="margin-bottom:0px; border-bottom:1px solid #000; background-color: #00A8DC" >
@@ -393,7 +392,7 @@ class PdfHandlerComponent extends Component
 
                                 if ($user['educational_qualification']){
                                     $html .=  '
-                                        <table style="border: 1px solid #000; width: 300px; margin: 0;padding-left: 8px">
+                                        <table style="border: 1px solid #fff; width: 300px; margin: 0;padding-left: 8px">
                                             <tr><td class="doctor_info" style="color: #fff;">'. $user['educational_qualification'] .'</td></tr>
                                         </table>';
                                 }
@@ -417,29 +416,37 @@ class PdfHandlerComponent extends Component
                     <tr>
                         <td><b>Name: </b>'. ucfirst($prescription->user->first_name).' </td>
                         <td><b>Mobile: </b>'. $prescription->user->phone.' </td>
-                        <td><b>Address: </b>'. ucfirst($prescription->user->address_line1).' </td>
-                        <td><b>Age: </b>'. $prescription->user->age .' Years'.' </td>
+                        <td align="right"><b>Address: </b>'. ucfirst($prescription->user->address_line1).' </td>
+                        <td align="right"><b>Age: </b>'. $prescription->user->age .' Years'.' </td>
                     </tr>
                  </table>
     
-                  <table style="border-bottom: 1px solid #000;margin-top: -5px;">
+                  <table style="border-bottom: 2px solid #000;margin-top: -5px;">
                     <tr>
                         <td>&nbsp;</td>
                     </tr>
                  </table>
     
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
                  <table style="margin-top: 20px;margin-bottom: 20px;">
                     <tr>
-                        <td  style="border-right: 1px solid #000;">
+                        <td  style="border-right: 2px solid #000;">
                             <table style="width: 100%;">
-                                <tr><td style="font-size: 22px;"><b>Diagnosis</b></td></tr>';
+                                <tr><td style="font-size: 22px;"><b>Diagnosis:</b></td></tr>';
 
+                                $i =1;
                                 foreach($prescription->diagnosis as $diagnosis ) {
                                     if($diagnosis === end($prescription->diagnosis) ){
-                                        $html .= '<tr><td class="doctor_info" style="color: #000">'. ucfirst($diagnosis['diagnosis_list']['name']).". ".'</td></tr>';
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).". ".'</td></tr>';
                                     }else{
-                                        $html .= '<tr><td class="doctor_info" style="color: #000">'. ucfirst($diagnosis['diagnosis_list']['name']).", ".'</td></tr>';
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).", ".'</td></tr>';
                                     }
+                                    $i++;
                                 }
 
                                 $html .= '
@@ -452,44 +459,60 @@ class PdfHandlerComponent extends Component
                              </table>
                              
                             <table style="width:100%;">
-                                <tr><td style="font-size: 22px"><b>Tests</b></td></tr>';
+                                <tr><td style="font-size: 22px"><b>Tests:</b></td></tr>';
 
+                                $i =1;
                                 foreach($prescription->tests as $test ) {
                                     if($test === end($prescription->tests) ){
-                                        $html .= '<tr><td class="doctor_info" style="color: #000">'. ucfirst($test->name).". ".'</td></tr>';
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($test->name).". ".'</td></tr>';
                                     }else{
-                                        $html .= '<tr><td class="doctor_info" style="color: #000">'. ucfirst($test->name).", ".'</td></tr>';
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($test->name).", ".'</td></tr>';
                                     }
+                                    $i++;
                                 }
                                 $html .= '
                             </table>
                         </td>
-                    
+                                        
                         <td>
                             <table style="width:100%;">
-                                <tr><td style="font-size: 22px"><b>Medicines</b></td></tr>';
+                                <tr><td style="font-size: 22px"><b>Medicines:</b></td></tr>';
 
+                                $i =1;
                                 foreach($prescription->medicines as $medicine ) {
                                     $html.= '<tr>
-                                        <td class="doctor_info" style="color: #000">'. ucfirst($medicine->name) .' :
+                                        <td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($medicine->name) .' :
                                             '.(($medicine->_joinData->rule)? '( '.$medicine->_joinData->rule.' )': "-").'                                        
                                         </td>
                                     </tr>';
+                                    $i++;
                                 }
                             $html .= '</table>
                         </td>
                     
-                        <td style="vertical-align: top;">
+                        <td align="right">
                             <b>Date: </b>'.$prescription->created->format('d F Y').'
                         </td>
                     </tr>
                  </table>
-    
-                  <table style="border-top: 1px solid #00A8DC;">
-                      <tr>
-                          <td>'.$prescription->doctores_notes.'</td>
-                      </tr>
-                  </table>';
+                 
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+                 
+              <table style="border-top: 2px solid #00A8DC;">
+                  <tr>
+                      <td>'.$prescription->doctores_notes.'</td>
+                  </tr>
+              </table>
+              
+              <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>';
 
                 $html.= '
                 <table>
@@ -510,7 +533,7 @@ class PdfHandlerComponent extends Component
                     </tr>
                  </table>
     
-                <table style="border-top:1px solid #000; color: #000;text-align: center;background-color: #00A8DC;">
+                <table style="color: #000;text-align: center;background-color: #00A8DC;padding: 5px 0px">
                     <tr >
                         <td style="width:35%;">
                             <table style="width: 100%">
@@ -520,14 +543,14 @@ class PdfHandlerComponent extends Component
                             </table>
                         </td>
     
-                        <td style="width:30%;">
+                        <td style="width:20%;">
                              <table style="width: 100%">
                                     <tr><td></td></tr>
                                     <tr><td></td></tr>
                              </table>
                          </td>
     
-                        <td style="width:35%;">
+                        <td style="width:45%;">
                              <table style="width: 100%">
                                     <tr><td><b>Patient Show Time:</b></td></tr>
                                     <tr><td>Everyday Midday 2.30PM - Night 8PM</td></tr>
@@ -540,6 +563,431 @@ class PdfHandlerComponent extends Component
             ';
       }
 
+        /*Custom Template*/
+        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 3){//Custom Template
+            $html = '
+                <style>
+    
+                    table{
+                        width:800px;
+                        margin:0 auto;
+                        background: rgb(240,183,161);  
+                    }
+                    table td{
+                        line-height:23px;
+                        padding: 0px 15px;
+                    }
+                    .doctor_info{
+                        font-size: 15px;color: #5d5d5d;font-weight:bold;
+                    }
+                    .patient_head, .test_head, .medicine_head{
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: #000;
+                    }
+                                                            
+                </style>
+                 <table style="background-color: #DE346C" >
+                    <tr>
+                        <td style="width:100%; overflow:hidden;">
+                            <table>
+                                <tr><td class="doctor_info" style="font-size:21px;color: #000">'. ($user['first_name']).' '.($user['last_name']) .'</td></tr>';
+
+                                if ($user['educational_qualification']){
+                                    $html .=  '<tr><td class="doctor_info" style="color: #fff;">'. $user['educational_qualification'] .'</td></tr>';
+                                }
+
+                                $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #000">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #fff;">Call:'. $user['phone'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #fff;">' .$user['website']. '</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td><b>Name: </b>'. ucfirst($prescription->user->first_name).' </td>
+                        <td><b>Mobile: </b>'. $prescription->user->phone.' </td>
+                        <td align="right"><b>Address: </b>'. ucfirst($prescription->user->address_line1).' </td>
+                        <td align="right"><b>Age: </b>'. $prescription->user->age .' Years'.' </td>
+                    </tr>
+                 </table>
+    
+                  <table style="border-bottom: 2px solid #000;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                  <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                  <table>
+                    <tr>
+                        <td style="font-size: 22px;width: 30%"><b>Diagnosis:</b></td>
+                        <td style="width: 70%;">
+                            <table>';
+                                $i=1;
+                                foreach($prescription->diagnosis as $diagnosis ) {
+                                            if($diagnosis === end($prescription->diagnosis) ){
+                                                $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).". ".'</td></tr>';
+                                            }else{
+                                                $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).", ".'</td></tr>';
+                                            }
+                                    $i++;
+                                }
+                            $html .= '</table>
+                        </td>
+                    </tr>
+                 </table>
+                 
+                 <table style="border-bottom: 1.8px solid #000;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                 <table>
+                    <tr>
+                        <td style="font-size: 22px;width: 30%"><b>Tests:</b></td>
+                        <td style="width: 70%;">
+                            <table>';
+                                $i = 1;
+                                foreach($prescription->tests as $test ) {
+                                    if($test === end($prescription->tests) ){
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($test->name).". ".'</td></tr>';
+                                    }else{
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($test->name).", ".'</td></tr>';
+                                    }
+                                    $i++;
+                                }
+                            $html .= '</table>
+                        </td>
+                    </tr>
+                 </table>
+                 
+                  <table style="border-bottom: 2px solid #000;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                 <table>
+                    <tr>
+                        <td style="font-size: 22px;width: 30%"><b>Medicines:</b></td>
+                        <td style="width: 50%;">
+                            <table>';
+                                $i = 1;
+                                foreach($prescription->medicines as $medicine ) {
+                                    $html.= '<tr>
+                                                <td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($medicine->name) .' :
+                                                    '.(($medicine->_joinData->rule)? '( '.$medicine->_joinData->rule.' )': "-").'                                        
+                                                </td>
+                                            </tr>';
+                                    $i++;
+                                }
+                            $html .= '</table>
+                        </td>
+                        
+                        <td >
+                            <b>Date: </b>'.$prescription->created->format('d F Y').'
+                        </td>
+                        
+                    </tr>
+                 </table>                                                                   
+                 
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                  <table style="border-top: 2px solid #DE346C;">
+                      <tr><td>Notes: </td></tr>
+                      <tr>
+                          <td>'.$prescription->doctores_notes.'</td>
+                      </tr>
+                  </table>';
+
+            $html.= '
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                <table style="color: #000;text-align: center;background-color: #DE346C;padding: 5px 0px">
+                    <tr >
+                        <td style="width:35%;">
+                            <table style="width: 100%">
+                                <tr><td><b>Cember:</b></td></tr>
+                                <tr><td>Islamic Bank Hospital</td></tr>
+                                <tr><td>Lokkhipur Mour, Rajshahi</td></tr>
+                            </table>
+                        </td>
+    
+                        <td style="width:20%;">
+                             <table style="width: 100%">
+                                    <tr><td></td></tr>
+                                    <tr><td></td></tr>
+                             </table>
+                         </td>
+    
+                        <td style="width:45%;">
+                             <table style="width: 100%">
+                                    <tr><td><b>Patient Show Time:</b></td></tr>
+                                    <tr><td>Everyday Midday 2.30PM - Night 8PM</td></tr>
+                                    <tr><td>Friday Off</td></tr>
+                             </table>
+                         </td>
+    
+                    </tr>
+                </table>            
+            ';
+        }
+
+        /*General Template*/
+        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 4){//Classic Template
+            $html = '
+                <style>
+                    table{
+                        width:800px;
+                        margin:0 auto;
+                    }
+                    table td{
+                        line-height:23px;
+                        padding: 0px 15px;
+                    }
+                    .doctor_info{
+                        font-size: 15px;color: #5d5d5d;font-weight:bold;
+                    }
+                    .patient_head, .test_head, .medicine_head{
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: #000;
+                    }                                             
+                </style>
+    
+                 <table class="test" style="margin-bottom:0px; border-bottom:1px solid #000; background-color: #BCA48C" >
+                    <tr>
+                        <td style="width:100%; overflow:hidden;">
+                            <table>
+                                <tr><td class="doctor_info" style="font-size:21px;color: #000">'. ($user['first_name']).' '.($user['last_name']) .'</td></tr>';
+
+                                if ($user['educational_qualification']){
+                                    $html .=  '<tr><td class="doctor_info" style="color: #fff;">'. $user['educational_qualification'] .'</td></tr>';
+                                }
+
+                                $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #000">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #fff;">Call:'. $user['phone'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #fff;">' .$user['website']. '</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td><b>Name: </b>'. ucfirst($prescription->user->first_name).' </td>
+                        <td><b>Mobile: </b>'. $prescription->user->phone.' </td>
+                        <td align="right"><b>Address: </b>'. ucfirst($prescription->user->address_line1).' </td>
+                        <td align="right"><b>Age: </b>'. $prescription->user->age .' Years'.' </td>
+                    </tr>
+                 </table>
+    
+                  <table style="border-bottom: 2px solid #000;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                 <table style="margin-top: 20px;margin-bottom: 20px;">
+                    <tr>
+                        <td style="border-right: 2px solid #000;">
+                            <table style="width: 100%;">
+                                <tr><td style="font-size: 22px;"><b>Diagnosis:</b></td></tr>';
+
+                                $i =1;
+                                foreach($prescription->diagnosis as $diagnosis ) {
+                                    if($diagnosis === end($prescription->diagnosis) ){
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).". ".'</td></tr>';
+                                    }else{
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).", ".'</td></tr>';
+                                    }
+                                    $i++;
+                                }
+                             $html .= '</table>                                                                                                                                                                                                      
+                        </td>                                                
+                        
+                        <td>                                                    
+                            <table style="width:100%;">
+                                <tr><td style="font-size: 22px"><b>Tests:</b></td></tr>';
+
+                                $i =1;
+                                foreach($prescription->tests as $test ) {
+                                    if($test === end($prescription->tests) ){
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($test->name).". ".'</td></tr>';
+                                    }else{
+                                        $html .= '<tr><td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($test->name).", ".'</td></tr>';
+                                    }
+                                    $i++;
+                                }
+                            $html .= '</table>
+                        </td>
+                    </tr>
+                 </table>
+                 
+                 <table style="border-bottom: 2px solid #000;">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+                 
+                 <table>
+                    <tr> 
+                        <td></td>   
+                        <td>   
+                            <table style="width:100%;">
+                                <tr><td style="font-size: 22px"><b>Medicines:</b></td></tr>';
+
+                                $i =1;
+                                foreach($prescription->medicines as $medicine ) {
+                                    $html.= '<tr>
+                                                <td class="doctor_info" style="color: #000">'.$i.'. '. ucfirst($medicine->name) .' :
+                                                    '.(($medicine->_joinData->rule)? '( '.$medicine->_joinData->rule.' )': "-").'                                        
+                                                </td>
+                                            </tr>';
+                                    $i++;
+                                }
+                            $html .= '</table>
+                        </td>
+                        
+                        <td align="right">
+                            <b>Date: </b>'.$prescription->created->format('d F Y').'
+                        </td>
+                    </tr>
+                 </table>
+                 
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+                 
+              <table style="border-top: 2px solid #BCA48C;">
+                  <tr>
+                      <td>'.$prescription->doctores_notes.'</td>
+                  </tr>
+              </table>
+              
+              <table>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+             </table>';
+
+            $html.= '
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                <table style="color: #000;text-align: center;background-color: #BCA48C;padding: 5px 0px">
+                    <tr >
+                        <td style="width:35%;">
+                            <table style="width: 100%">
+                                <tr><td><b>Cember:</b></td></tr>
+                                <tr><td style="color: #fff;">Islamic Bank Hospital</td></tr>
+                                <tr><td style="color: #fff;">Lokkhipur Mour, Rajshahi</td></tr>
+                            </table>
+                        </td>
+    
+                        <td style="width:20%;">
+                             <table style="width: 100%">
+                                    <tr><td></td></tr>
+                                    <tr><td></td></tr>
+                             </table>
+                         </td>
+    
+                        <td style="width:45%;">
+                             <table style="width: 100%">
+                                    <tr><td><b>Patient Show Time:</b></td></tr>
+                                    <tr><td style="color: #fff;">Everyday Midday 2.30PM - Night 8PM</td></tr>
+                                    <tr><td style="color: #fff;">Friday Off</td></tr>
+                             </table>
+                         </td>
+    
+                    </tr>
+                </table>            
+            ';
+        }
         $html_pdf = $html;
 
         return array('status'=>true,'message'=>$html_pdf);

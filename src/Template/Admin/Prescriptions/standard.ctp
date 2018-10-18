@@ -101,7 +101,6 @@
                                     <b><p> <?php echo ($user['first_name']).' '.($user['last_name']) ?> </p></b>
                                     <b><p> <?php echo ($user['educational_qualification']) ?> </p></b>
                                     <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
-                                    <!--<a href="#"><b><p> <?php /*echo ($user['website']) */?> </p></b></a>-->
                                     <b><p> Call: <?php echo ($user['phone']) ?></p></b>
                                     <b><p> <?php echo ($user['website']) ?></p></b>
                                 </div>
