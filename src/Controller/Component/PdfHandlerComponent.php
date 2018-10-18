@@ -899,7 +899,6 @@ class PdfHandlerComponent extends Component
                  
                  <table>
                     <tr> 
-                        <td></td>   
                         <td>   
                             <table style="width:100%;">
                                 <tr><td style="font-size: 22px"><b>Medicines:</b></td></tr>';
