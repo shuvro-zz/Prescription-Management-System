@@ -197,6 +197,7 @@ class PdfHandlerComponent extends Component
                             <table style="text-align:center;" >
                                 <tr><td class="doctor_info" style="font-size:21px;">' . $user['clinic_name'] . '</td></tr>
                                 <tr><td class="doctor_info">' . $user['first_name'] . ' ' . $user['last_name'] . '</td></tr>
+                                <tr><td class="doctor_info">' . $user['specialist'] . '</td></tr>
                                 <tr><td class="doctor_info">' . $user['educational_qualification'] . '</td></tr>
                                 <tr><td class="doctor_info">' . $user['address_line1'] . $user['address_line2'] . '</td></tr>
                                 <tr><td class="doctor_info">Call:' . $user['phone'] . '</td></tr>
@@ -397,7 +398,8 @@ class PdfHandlerComponent extends Component
                                         </table>';
                                 }
 
-                                    $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
+                                    $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['specialist'] .'</td></tr>
+                                            <tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
                                             <tr><td class="doctor_info" style="color: #000">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
                                             <tr><td class="doctor_info" style="color: #fff;">Call:'. $user['phone'] .'</td></tr>
                                             <tr><td class="doctor_info" style="color: #fff;">' .$user['website']. '</td></tr>
@@ -537,9 +539,9 @@ class PdfHandlerComponent extends Component
                     <tr >
                         <td style="width:35%;">
                             <table style="width: 100%">
-                                <tr><td><b>Cember:</b></td></tr>
-                                <tr><td>Islamic Bank Hospital</td></tr>
-                                <tr><td>Lokkhipur Mour, Rajshahi</td></tr>
+                                <tr><td><b>Chamber:</b></td></tr>
+                                <tr><td>'.$user['cember_name'].'</td></tr>
+                                <tr><td>'.$user['cember_address'].'</td></tr>
                             </table>
                         </td>
     
@@ -552,9 +554,9 @@ class PdfHandlerComponent extends Component
     
                         <td style="width:45%;">
                              <table style="width: 100%">
-                                    <tr><td><b>Patient Show Time:</b></td></tr>
-                                    <tr><td>Everyday Midday 2.30PM - Night 8PM</td></tr>
-                                    <tr><td>Friday Off</td></tr>
+                                    <tr><td><b>Visiting Time:</b></td></tr>
+                                    <tr><td>'.$user['visiting_time'].'</td></tr>
+                                    <tr><td>'.$user['off_day'].'</td></tr>
                              </table>
                          </td>
     
@@ -597,7 +599,8 @@ class PdfHandlerComponent extends Component
                                     $html .=  '<tr><td class="doctor_info" style="color: #fff;">'. $user['educational_qualification'] .'</td></tr>';
                                 }
 
-                                $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
+                                $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['specialist'] .'</td></tr>
+                                         <tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
                                         <tr><td class="doctor_info" style="color: #000">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
                                         <tr><td class="doctor_info" style="color: #fff;">Call:'. $user['phone'] .'</td></tr>
                                         <tr><td class="doctor_info" style="color: #fff;">' .$user['website']. '</td></tr>
@@ -755,9 +758,9 @@ class PdfHandlerComponent extends Component
                     <tr >
                         <td style="width:35%;">
                             <table style="width: 100%">
-                                <tr><td><b>Cember:</b></td></tr>
-                                <tr><td>Islamic Bank Hospital</td></tr>
-                                <tr><td>Lokkhipur Mour, Rajshahi</td></tr>
+                                <tr><td><b>Chamber:</b></td></tr>
+                                <tr><td>'.$user['cember_name'].'</td></tr>
+                                <tr><td>'.$user['cember_address'].'</td></tr>
                             </table>
                         </td>
     
@@ -770,9 +773,9 @@ class PdfHandlerComponent extends Component
     
                         <td style="width:45%;">
                              <table style="width: 100%">
-                                    <tr><td><b>Patient Show Time:</b></td></tr>
-                                    <tr><td>Everyday Midday 2.30PM - Night 8PM</td></tr>
-                                    <tr><td>Friday Off</td></tr>
+                                    <tr><td><b>Visiting Time:</b></td></tr>
+                                    <tr><td>'.$user['visiting_time'].'</td></tr>
+                                    <tr><td>'.$user['off_day'].'</td></tr>
                              </table>
                          </td>
     
@@ -813,7 +816,8 @@ class PdfHandlerComponent extends Component
                                     $html .=  '<tr><td class="doctor_info" style="color: #fff;">'. $user['educational_qualification'] .'</td></tr>';
                                 }
 
-                                $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
+                                $html .= '<tr><td class="doctor_info" style="color: #000">'. $user['specialist'] .'</td></tr>
+                                        <tr><td class="doctor_info" style="color: #000">'. $user['clinic_name'] .'</td></tr>
                                         <tr><td class="doctor_info" style="color: #000">'. $user['address_line1'] .$user['address_line2'] .'</td></tr>
                                         <tr><td class="doctor_info" style="color: #fff;">Call:'. $user['phone'] .'</td></tr>
                                         <tr><td class="doctor_info" style="color: #fff;">' .$user['website']. '</td></tr>
@@ -962,9 +966,9 @@ class PdfHandlerComponent extends Component
                     <tr >
                         <td style="width:35%;">
                             <table style="width: 100%">
-                                <tr><td><b>Cember:</b></td></tr>
-                                <tr><td style="color: #fff;">Islamic Bank Hospital</td></tr>
-                                <tr><td style="color: #fff;">Lokkhipur Mour, Rajshahi</td></tr>
+                                <tr><td><b>Chamber:</b></td></tr>
+                                <tr><td>'.$user['cember_name'].'</td></tr>
+                                <tr><td>'.$user['cember_address'].'</td></tr>
                             </table>
                         </td>
     
@@ -977,9 +981,9 @@ class PdfHandlerComponent extends Component
     
                         <td style="width:45%;">
                              <table style="width: 100%">
-                                    <tr><td><b>Patient Show Time:</b></td></tr>
-                                    <tr><td style="color: #fff;">Everyday Midday 2.30PM - Night 8PM</td></tr>
-                                    <tr><td style="color: #fff;">Friday Off</td></tr>
+                                    <tr><td><b>Visiting Time:</b></td></tr>
+                                    <tr><td>'.$user['visiting_time'].'</td></tr>
+                                    <tr><td>'.$user['off_day'].'</td></tr>
                              </table>
                          </td>
     

@@ -102,6 +102,10 @@
                                     <p class="view2_education"> <?php echo ($user['educational_qualification']) ?> </p>
                                 <?php } ?>
 
+                                <?php if($user['specialist']){?>
+                                    <b><p class="clinic_name" style="color: #000"> <?php echo ($user['specialist']) ?> </p></b>
+                                <?php } ?>
+
                                 <?php if($user['clinic_name']){?>
                                     <b><p class="clinic_name" style="color: #000"> <?php echo ($user['clinic_name']) ?> </p></b>
                                 <?php } ?>
@@ -189,11 +193,11 @@
 
                 <div class="view2_prescription_footer prescription_footer">
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 offset-sm-2">
                             <div class="view2_cember_info" style="text-align: center">
-                                <h4 style="color: #000;">Cember:</h4>
-                                <p>Islamic Bank Hospital</p>
-                                <p>Lokkhipur Mour, Rajshahi</p>
+                                <h4 style="color: #000;">Chamber:</h4>
+                                <p style="color: #fff;"><?php echo $user['cember_name'] ?></p>
+                                <p style="color: #fff"><?php echo $user['cember_address'] ?></p>
                             </div>
                         </div>
 
@@ -201,9 +205,9 @@
 
                         <div class="col-sm-5">
                             <div class="view2_show_time" style="text-align: center">
-                                <h4 style="color: #000;">Patient Show Time:</h4>
-                                <p>Everyday Midday 2.30PM - Night 8PM</p>
-                                <p>( Friday Off )</p>
+                                <h4 style="color: #000;">Visiting Time:</h4>
+                                <p style="color: #fff; flex-wrap: wrap"><?php echo $user['visiting_time'] ?></p>
+                                <p style="color: #fff"><?php echo $user['off_day'] ?></p>
                             </div>
                         </div>
                     </div>

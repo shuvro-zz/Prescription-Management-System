@@ -275,6 +275,11 @@ class UsersController extends AppController
                 $session->write('Auth.User.educational_qualification', $this->request->data['educational_qualification']);
                 $session->write('Auth.User.clinic_name', $this->request->data['clinic_name']);
                 $session->write('Auth.User.website', $this->request->data['website']);
+                $session->write('Auth.User.cember_name', $this->request->data['cember_name']);
+                $session->write('Auth.User.cember_address', $this->request->data['cember_address']);
+                $session->write('Auth.User.visiting_time', $this->request->data['visiting_time']);
+                $session->write('Auth.User.specialist', $this->request->data['specialist']);
+                $session->write('Auth.User.off_day', $this->request->data['off_day']);
             } else {
                 $error_message = __('Profile could not be changed. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);

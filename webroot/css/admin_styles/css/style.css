@@ -91,6 +91,9 @@ h5:before, .h5:before{
 .prescription_head_con_view2 p, .prescription_head_con_view2 h2, .prescription_head_con_view2 h5{
     color: #fff;
 }
+.prescription_footer p{
+    line-height: 15px!important;
+}
 .view2_education{
     border: 1px solid;
     padding: 8px;
@@ -101,7 +104,7 @@ h5:before, .h5:before{
     margin-bottom: 8px;
 }
 .prescription_head p {
-    line-height: 10px;
+    line-height: 15px;
 }
 .prescription span{
     margin-right: 6px;

@@ -70,10 +70,50 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <div class="col-sm-12">
+                                                <div class="col-sm-6">
                                                     <label class="name">Educational Qualification<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
                                                         <?php echo $this->Form->input('educational_qualification', ['class' => 'form-control', 'value' => $user->educational_qualification, 'label' => false]); ?>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="name">Specialist<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('specialist', ['class' => 'form-control', 'value' => $user->specialist, 'label' => false]); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-6">
+                                                    <label class="name">Chamber Name<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('cember_name', ['class' => 'form-control', 'value' => $user->cember_name, 'label' => false]); ?>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="name">Chamber Address<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('cember_address', ['class' => 'form-control', 'value' => $user->cember_address, 'label' => false]); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="col-sm-6">
+                                                    <label class="name">Off Day<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('off_day', ['class' => 'form-control', 'value' => $user->off_day, 'label' => false]); ?>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label class="name">Visiting Time<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('visiting_time', ['class' => 'form-control', 'value' => $user->visiting_time, 'label' => false]); ?>
                                                     </div>
                                                 </div>
                                             </div>
