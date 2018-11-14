@@ -636,8 +636,6 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
 
             $user = $this->Users->patchEntity($user, $this->request->data);
-            $month=strtotime("+12 Months");
-            $user->expire_date = date('d/m/Y', $month);
             $user->role_id = 2;
             $user->is_localhost = 1;
             $user->is_sync = 1;
