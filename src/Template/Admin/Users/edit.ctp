@@ -47,7 +47,15 @@
         <div class="flex-container">
             <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
             <div class="flex-item">
-                <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
+
+                <?php if($this->request->session()->read('Auth.User.role_id') == 1){ ?>
+                    <?= $this->Form->button(__('Generate Token'), ['class' => 'btn save event-save']) ?>
+                <?php } ?>
+
+                <?php if($this->request->session()->read('Auth.User.role_id') != 1){ ?>
+                    <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
+                <?php } ?>
+
             </div>
         </div>
     </footer>

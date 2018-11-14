@@ -6,14 +6,17 @@
     <?php } ?>
 
     <?php if($this->request->session()->read('Auth.User.role_id') == 1){ ?>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label class="name">Expire Date<span class="required" aria-required="true"></span></label>
-                <div class="inputs">
-                    <?php echo $this->Form->input('expire_date', ['class' => 'form-control date', 'value' =>  (isset($user->expire_date))? $user->expire_date:'', 'label' => false, 'required' => true, 'placeholder' => 'DD/MM/YY', 'type' =>'text']); ?>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="name">Expire Date<span class="required" aria-required="true"></span></label>
+                    <div class="inputs">
+                        <?php echo $this->Form->input('expire_date', ['class' => 'form-control date', 'value' =>  (isset($user->expire_date))? $user->expire_date:'', 'label' => false, 'required' => true, 'placeholder' => 'DD/MM/YY', 'type' =>'text']); ?>
+                    </div>
                 </div>
             </div>
         </div>
+
     <?php }else{ ?>
         <div class="row">
             <div class="col-sm-6">

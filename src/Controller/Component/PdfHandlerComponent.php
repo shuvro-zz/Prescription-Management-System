@@ -437,7 +437,7 @@ class PdfHandlerComponent extends Component
                  
                  <table style="margin-top: 20px;margin-bottom: 20px;">
                     <tr>
-                        <td  style="border-right: 2px solid #000;">
+                        <td  style="border-right: 1.8px solid #000;">
                             <table style="width: 100%;">
                                 <tr><td style="font-size: 22px;"><b>Diagnosis:</b></td></tr>';
 
@@ -624,7 +624,7 @@ class PdfHandlerComponent extends Component
                     </tr>
                  </table>
     
-                  <table style="border-bottom: 2px solid #000;">
+                  <table style="border-bottom: 1.8px solid #000;">
                     <tr>
                         <td>&nbsp;</td>
                     </tr>
@@ -841,7 +841,7 @@ class PdfHandlerComponent extends Component
                     </tr>
                  </table>
     
-                  <table style="border-bottom: 2px solid #000;">
+                  <table style="border-bottom: 1.8px solid #000;">
                     <tr>
                         <td>&nbsp;</td>
                     </tr>

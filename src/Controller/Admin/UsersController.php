@@ -32,7 +32,8 @@ class UsersController extends AppController
             'login',
             'forgotPassword',
             'resetPassword',
-            'registration'
+            'registration',
+            'apiRegistration'
         ]);
     }
 
@@ -133,7 +134,15 @@ class UsersController extends AppController
             if(empty($user_phone)){
                 $user = $this->Users->patchEntity($user, $this->request->data);
                 if ($this->Users->save($user)) {
-                    $success_message = __('The patient has been edited.');
+
+                    if ($this->request->session()->read('Auth.User.role_id') == 1 AND $user['is_localhost'] == 1){
+                        $token = $this->generateExpireDateToken($user);
+                        $token_msg = " Your token is " .$token. " has been send this doctors email address.";
+                    }else{
+                        $token_msg = "";
+                    }
+
+                    $success_message = __('The patient has been edited.'.$token_msg );
                     $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                 } else {
                     $error_message = __('The patient could not be edit. Please, try again.');
@@ -214,7 +223,6 @@ class UsersController extends AppController
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
                 $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
-
                 if ($doctorInfo){
                     $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
                     if($doctorInfo['role_id'] == 1 OR strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') ){
@@ -581,5 +589,65 @@ class UsersController extends AppController
        $this->set('_serialize', ['prescription_templates']);
 
        $this ->render('prescription_template');
+    }
+
+    function generateExpireDateToken($user){
+
+        $date_convert = date_create_from_format('d/m/Y', $user['expire_date']);
+        $date = date_format($date_convert, 'd/m/Y');
+
+        $token = base64_encode($user['email'] ."|". $date);
+
+        /*$decode = base64_decode($token);
+        echo $token . '<br>'. $decode;die;*/
+
+        $session = $this->request->session();
+        $doctor = $session->read('Auth.User');
+
+        $info = array(
+            'to'                => $user['email'],
+            'subject'           => 'Application active token',
+            'template'          => 'activation_token',
+            'data'              => array('User' => $user, 'Doctor' => $doctor, 'Token' => $token)
+        );
+        //pr($info);die;
+        $this->EmailHandler->sendEmail($info);
+
+        return $token;
+    }
+
+    function apiRegistration(){
+
+        $this->autoRender = false;
+
+        $exit_user = $this->Users->find('all')
+            ->where([
+                'Users.email' => trim($this->request->data['email'])
+            ])->first();
+
+        $this->log($exit_user);
+
+        if ($exit_user == null){
+            $user = $this->Users->newEntity();
+        }else{
+            $user = $exit_user;
+        }
+
+        if ($this->request->is('post')) {
+
+            $user = $this->Users->patchEntity($user, $this->request->data);
+            $month=strtotime("+12 Months");
+            $user->expire_date = date('d/m/Y', $month);
+            $user->role_id = 2;
+            $user->is_localhost = 1;
+            $user->is_sync = 1;
+            $user->token = $this->generateToken();
+
+            if ($this->Users->save($user)) {
+                echo json_encode(array('success'));die;
+            } else {
+                echo json_encode(array('fail'));die;
+            }
+        }
     }
 }
