@@ -123,13 +123,16 @@ class UsersController extends AppController
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $user_phone = $this->Users->find('all')
-                ->where([
-                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
-                    'Users.phone' => trim($this->request->data['phone']),
-                    'Users.id !=' => $id
-                ])
-                ->first();
+
+            if ($user['is_localhost'] == 0){ // online user
+                $user_phone = $this->Users->find('all')
+                    ->where([
+                        'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                        'Users.phone' => trim($this->request->data['phone']),
+                        'Users.id !=' => $id
+                    ])
+                    ->first();
+            }
 
             if(empty($user_phone)){
                 $user = $this->Users->patchEntity($user, $this->request->data);
@@ -222,7 +225,10 @@ class UsersController extends AppController
 
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
-                $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
+                $doctorInfo = $this->Users->find('all')->where([
+                                                            'Users.email' => $this->request->data['email'],
+                                                            'Users.is_localhost' => 0
+                                                        ])->first();
                 if ($doctorInfo){
                     $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
                     if($doctorInfo['role_id'] == 1 OR strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') ){
@@ -610,8 +616,10 @@ class UsersController extends AppController
             'template'          => 'activation_token',
             'data'              => array('User' => $user, 'Doctor' => $doctor, 'Token' => $token)
         );
-        //pr($info);die;
-        $this->EmailHandler->sendEmail($info);
+
+        if(!Configure::read('is_localhost')) {
+            $this->EmailHandler->sendEmail($info);
+        }
 
         return $token;
     }
