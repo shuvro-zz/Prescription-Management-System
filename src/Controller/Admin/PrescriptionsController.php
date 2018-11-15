@@ -86,14 +86,16 @@ class PrescriptionsController extends AppController
         $this->set(compact('prescription', 'all_prescriptions', 'latest_prescription', 'pdf_link', 'is_print'));
         $this->set('_serialize', ['prescription']);
 
-        //$order_pdf_file = $this->PdfHandler->writeOrderPdfFile($prescription);
-        //$this -> render('general');
+        //$this -> render('default');
 
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){
+            $this -> render('default');
+        }
+        elseif($this->request->session()->read('Auth.User')['prescription_template_id'] == 2){
             $this -> render('standard');
-        }elseif($this->request->session()->read('Auth.User')['prescription_template_id'] == 2){
-            $this -> render('classic');
         }elseif($this->request->session()->read('Auth.User')['prescription_template_id'] == 3){
+            $this -> render('classic');
+        }elseif($this->request->session()->read('Auth.User')['prescription_template_id'] == 4){
             $this -> render('custom');
         }else{
             $this->render('general');
