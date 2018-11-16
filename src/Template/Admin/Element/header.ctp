@@ -147,9 +147,11 @@
                                 <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changeProfilePicture',$user['id'] ])?>" class="view_all_li"><i class="fa fa-picture-o" aria-hidden="true"></i> Change Profile Picture</a>
                             </li>
 
-                            <li>
-                                <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'prescriptionTemplate'])?>" class="view_all_li"><i class="fa fa-file-text" aria-hidden="true"></i> Prescription Template</a>
-                            </li>
+                            <?php if (($user['role_id']) != 1) { ?>
+                                <li>
+                                    <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'prescriptionTemplate'])?>" class="view_all_li"><i class="fa fa-file-text" aria-hidden="true"></i> Prescription Template</a>
+                                </li>
+                            <?php } ?>
 
                             <li>
                                 <a href="<?php echo $this->Url->build(['controller' => 'users','action' => 'changePassword',$user['token'] ])?>" class="view_all_li"><i class="fa fa-shield" aria-hidden="true"></i> Change Password</a>
