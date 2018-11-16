@@ -213,11 +213,11 @@ Type::build('datetime')
     ->useLocaleParser();
 
 //Develop
-/*Configure::write('is_localhost', false); // generate pdf, download pdf, send pdf email
+Configure::write('is_localhost', false); // generate pdf, download pdf, send pdf email
 Configure::write('import_allow', true); // diagnosis list, medicine, test
-Configure::write('email_send_allow', true); // registration, send pdf email*/
+Configure::write('email_send_allow', true); // registration, send pdf email
 
 //For Build...........
-Configure::write('is_localhost', true); // generate pdf, download pdf, send pdf email
+/*Configure::write('is_localhost', true); // generate pdf, download pdf, send pdf email
 Configure::write('import_allow', false); // diagnosis list, medicine, test
-Configure::write('email_send_allow', false); // registration, send pdf email
+Configure::write('email_send_allow', false); // registration, send pdf email*/

@@ -1241,3 +1241,20 @@ Stack Trace:
 #19 {main}
 
 
+2018-11-16 12:10:10 Error: Fatal Error (4): syntax error, unexpected 's' (T_STRING) in [E:\xampp_5\htdocs\pms\src\Controller\Component\PdfHandlerComponent.php, line 170]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-11-16 12:10:12 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 's' (T_STRING)
+Request URL: /pms/admin/prescriptions/view/73
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'E:\\xampp_5\\htdo...', 170)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

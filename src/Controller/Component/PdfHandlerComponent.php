@@ -166,6 +166,177 @@ class PdfHandlerComponent extends Component
 
         $user = $this->request->session()->read('Auth.User');
 
+        /*Default Template*/
+        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){//Classic Template
+
+            if (($user['profile_picture'])){
+                $profile_pic = $this->request->webroot.'uploads/users/'.$user['profile_picture'];
+            }else{
+                $profile_pic = $this->request->webroot.'css/admin_styles/images/dashboard-students.png';
+            }
+
+            $html = '
+                <style>                    
+                    table td{
+                        line-height:25px;
+                    }
+                    .doctor_info{
+                        font-size: 15px;color: #5d5d5d;font-weight:bold;
+                    }                              
+                    .single_table{
+                        border: 2px solid #0000FE;
+                        padding: 5px 10px;
+                    }                    
+                    .table_head{
+                        background-color: #0000FE;
+                        color: #fff;
+                    }    
+                                                                     
+                </style>
+    
+                 <table>
+                    <tr>
+                        <td>
+                            <table class="single_table" align="center">
+                                <tr><td style="font-size:30px;color: #000">'. $user['first_name'].' '.$user['last_name'] .'</td></tr>';
+
+                                if ($user['educational_qualification']){
+                                    $html .= '<tr><td class="">'. $user['educational_qualification'] .'</td></tr>';
+                                }
+
+                                $html .= '<tr><td class="">'. $user['clinic_name'] .'</td></tr>
+                                        <tr><td class="">Chamber - '.$user['cember_name'].', '. $user['cember_address'] .'</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                 </table>  
+    
+                 <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                 </table>
+    
+                 <table>
+                    <tr>
+                        <td>
+                            <table class="single_table">
+                                <tr align="center" class="table_head"><td>Patient</td></tr>
+                                <tr><td>'.ucfirst($prescription->user->first_name).'</td></tr>
+                                <tr><td>'.$prescription->user->age . 'Years</td></tr>
+                                <tr><td>'.$prescription->user->phone.'</td></tr>
+                                <tr><td>'.ucfirst($prescription->user->address_line1).'</td></tr>
+                            </table>
+                            
+                            <table>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                </tr>
+                             </table>
+                             
+                            <table class="single_table">
+                                <tr align="center" class="table_head"><td>DIAGNOSIS</td></tr>';
+
+
+                                $i =1;
+                                foreach($prescription->diagnosis as $diagnosis ) {
+                                    $html .= '<tr><td>'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).". ".'</td></tr>';
+                                    $i++;
+                                }
+
+
+                                $html .= '<tr><td>BP: ' .ucfirst($prescription->blood_pressure). '</td></tr>
+                                <tr><td>Tem: ' .ucfirst($prescription->temperature). '</td></tr>
+                            </table>
+                        </td>
+                        <td colspan="2">
+                            <table class="single_table">
+                                <tr align="center" class="table_head"><td>MEDICINES</td></tr>';
+
+
+                                $i =1;
+                                foreach($prescription->medicines as $medicine ) {
+                                    $html.= '<tr>
+                                                <td>'.$i.'. '. ucfirst($medicine->name) .'</td>
+                                             </tr>'
+
+                                             .(($medicine->_joinData->rule)? '<tr>
+                                                <td>( '. $medicine->_joinData->rule .' )</td>
+                                             </tr>': "");
+                                    $i++;
+                                }
+
+                            $html .= '</table>
+                        </td>
+                    </tr>
+                 </table>
+    
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+    
+                 <table>
+                    <tr>
+                        <td>
+                            <table class="single_table">
+                                <tr align="center" class="table_head"><td>EXAMINATIONS</td></tr>';
+
+                                $i =1;
+                                foreach($prescription->tests as $test ) {
+                                        $html .= '<tr><td>'.$i.'. '. ucfirst($test->name).". ".'</td></tr>';
+                                    $i++;
+                                }
+
+                            $html .= '</table>
+                        </td>
+                        <td>
+                            <table class="single_table">
+                                <tr align="center" class="table_head"><td>OTHERS INSTRUCTIONS</td></tr>
+                                <tr>
+                                    <td>'.
+                                        $prescription->doctores_notes
+                                    .'</td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                 </table>
+    
+                  <table>
+                    <tr>
+                        <td>
+                          <table style="border-bottom: 2px solid #0000FE;">
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                          </table>
+                        </td>
+                    </tr>
+                  </table>
+    
+                  <table style="padding-top: 5px;">
+                      <tr>
+                          <td>
+                            Address:'. $user['address_line1'] .", ".$user['address_line2']
+                          .'</td>
+                      </tr>
+                       <tr>
+                          <td>
+                            For Booking Call:' . $user['phone'] .
+                         '</td>
+                      </tr>
+                       <tr>
+                          <td>
+                           Must make booking before visiting the doctor.
+                          </td>
+                      </tr>
+                  </table>                                          
+            ';
+        }
+
         /*Standard Template*/
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 2) {//Standard Template
             $html = '
@@ -393,7 +564,7 @@ class PdfHandlerComponent extends Component
 
                                 if ($user['educational_qualification']){
                                     $html .=  '
-                                        <table style="border: 1px solid #fff; width: 300px; margin: 0;padding-left: 8px">
+                                        <table style="border: 1px solid #fff; width: 300px;padding-left: 8px">
                                             <tr><td class="doctor_info" style="color: #fff;">'. $user['educational_qualification'] .'</td></tr>
                                         </table>';
                                 }
@@ -992,6 +1163,8 @@ class PdfHandlerComponent extends Component
             ';
         }
         $html_pdf = $html;
+
+        //echo $html_pdf;die;
 
         return array('status'=>true,'message'=>$html_pdf);
     }

@@ -104,13 +104,13 @@
                     <div class="row">
 
                         <div class="col-sm-12">
-                            <div class="col-sm-3" style="padding-right: 0px">
+                            <div class="col-sm-3">
                                 <div class="doctor_image">
                                     <img src="<?php echo $profile_pic; ?>">
                                 </div>
                             </div>
 
-                            <div class="col-sm-9" style="padding-left: 0px">
+                            <div class="col-sm-9">
                                 <div class="doctor_info single_section">
                                     <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
                                     <p><?php echo ($user['educational_qualification']) ?></p>
@@ -200,7 +200,7 @@
 
                             <div class="col-sm-9">
                                 <div class="instruction_default_prescription single_section">
-                                    <h2>INSTRUCTIONS</h2>
+                                    <h2>OTHERS INSTRUCTIONS</h2>
                                     <div class="info">
                                         <p><?= ucfirst($prescription->doctores_notes) ?></p>
                                     </div>
