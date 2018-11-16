@@ -235,8 +235,8 @@ class PdfHandlerComponent extends Component
                              </table>
                              
                             <table class="single_table">
-                                <tr align="center" class="table_head"><td>DIAGNOSIS</td></tr>';
-
+                                <tr align="center" class="table_head"><td>DIAGNOSIS</td></tr>
+                                <tr><td>Date: ' .$prescription->created->format('d F Y'). '</td></tr>';
 
                                 $i =1;
                                 foreach($prescription->diagnosis as $diagnosis ) {
