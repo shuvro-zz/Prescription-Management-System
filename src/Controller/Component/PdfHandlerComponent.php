@@ -35,10 +35,7 @@ class PdfHandlerComponent extends Component
     function __fileExistCheck($altname='',$file) {
 
         if ($data =  getimagesize($file)) {
-            $imagepath='<img alt="'.$altname.'"  src="'.$file.'" /> ';
-            if($altname=='logo'){
-                $imagepath='<img alt="'.$altname.'"  src="'.$file.'" style="max-width:66px" /> ';
-            }
+            $imagepath='<img alt="'.$altname.'"  src="'.$file.'"style="height:123px;width:150px;"/> ';
 
             return $imagepath;
         } else {
@@ -169,10 +166,19 @@ class PdfHandlerComponent extends Component
         /*Default Template*/
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){//Classic Template
 
+            $url    =    Router::url('/', true);
             if (($user['profile_picture'])){
-                $profile_pic = $this->request->webroot.'uploads/users/'.$user['profile_picture'];
+                $profile_pic = $url.'uploads/users/'.$user['profile_picture'];
             }else{
-                $profile_pic = $this->request->webroot.'css/admin_styles/images/dashboard-students.png';
+                $profile_pic = $url.'css/admin_styles/images/dashboard-students.png';
+            }
+
+            try {
+                $profile_pic = $this->__fileExistCheck('Image',$profile_pic);
+            }catch(Exception $e) {
+                if($e->getMessage()=='yes') {
+                    $profile_pic = '';
+                }
             }
 
             $html = '
@@ -196,9 +202,17 @@ class PdfHandlerComponent extends Component
     
                  <table>
                     <tr>
-                        <td>
+                        <td >
                             <table class="single_table" align="center">
-                                <tr><td style="font-size:30px;color: #000">'. $user['first_name'].' '.$user['last_name'] .'</td></tr>';
+                                 <tr>
+                                    <td>'.$profile_pic.'</td>
+                                 </tr>
+                            </table>
+                        </td>
+                            
+                        <td colspan="2">                                                                                                   
+                            <table class="single_table" align="center">
+                                <tr><td style="font-size:30px;color: #000">'.$user['first_name'].' '.$user['last_name'] .'</td></tr>';
 
                                 if ($user['educational_qualification']){
                                     $html .= '<tr><td class="">'. $user['educational_qualification'] .'</td></tr>';
@@ -252,7 +266,6 @@ class PdfHandlerComponent extends Component
                         <td colspan="2">
                             <table class="single_table">
                                 <tr align="center" class="table_head"><td>MEDICINES</td></tr>';
-
 
                                 $i =1;
                                 foreach($prescription->medicines as $medicine ) {
