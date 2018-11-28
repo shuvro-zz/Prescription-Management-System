@@ -156,8 +156,8 @@
                                             }
                                         ?>
 
-                                        <p>BP: <?= ucfirst($prescription->blood_pressure) ?></p>
-                                        <p>Tem: <?= $prescription->temperature ?></p>
+                                        <p><b>BP:</b> <?= ucfirst($prescription->blood_pressure) ?></p>
+                                        <p><b>Tem:</b><?= $prescription->temperature ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -204,6 +204,21 @@
                             <div class="col-sm-9">
                                 <div class="instruction_default_prescription single_section">
                                     <h2>OTHERS INSTRUCTIONS</h2>
+                                    <div class="info">
+                                        <p><?= ucfirst($prescription->other_instructions) ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctors_note_default_prescription">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12">
+                                <div class="single_section">
+                                    <h2>DOCTORS NOTE</h2>
                                     <div class="info">
                                         <p><?= ucfirst($prescription->doctores_notes) ?></p>
                                     </div>
