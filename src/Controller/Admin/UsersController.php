@@ -140,7 +140,7 @@ class UsersController extends AppController
 
                     if ($this->request->session()->read('Auth.User.role_id') == 1 AND $user['is_localhost'] == 1){
                         $token = $this->generateExpireDateToken($user);
-                        $token_msg = " Your token is " .$token. " has been send this doctors email address.";
+                        $token_msg = " Your key is " .$token. " has been send this doctors email address.";
                     }else{
                         $token_msg = "";
                     }

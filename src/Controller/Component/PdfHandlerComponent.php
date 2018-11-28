@@ -35,7 +35,7 @@ class PdfHandlerComponent extends Component
     function __fileExistCheck($altname='',$file) {
 
         if ($data =  getimagesize($file)) {
-            $imagepath='<img alt="'.$altname.'"  src="'.$file.'"style="height:123px;width:150px;"/> ';
+            $imagepath='<img alt="'.$altname.'"  src="'.$file.'"style="height:157px;width:150px;"/> ';
 
             return $imagepath;
         } else {
@@ -81,7 +81,6 @@ class PdfHandlerComponent extends Component
 // set image scale factor
         $pdf->setCellPaddings(0, 0, 0, 0);
         $pdf->setImageScale(1.53);
-
 
         // set header and footer fonts
         $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', 6));
@@ -164,7 +163,7 @@ class PdfHandlerComponent extends Component
         $user = $this->request->session()->read('Auth.User');
 
         /*Default Template*/
-        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){//Classic Template
+        if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){
 
             $url    =    Router::url('/', true);
             if (($user['profile_picture'])){
@@ -191,12 +190,15 @@ class PdfHandlerComponent extends Component
                     }                              
                     .single_table{
                         border: 2px solid #0000FE;
-                        padding: 5px 10px;
+                        padding: 5px;
                     }                    
                     .table_head{
                         background-color: #0000FE;
                         color: #fff;
-                    }    
+                    }  
+                    table{
+                        font-size: 14px;
+                    }  
                                                                      
                 </style>
     
@@ -212,10 +214,14 @@ class PdfHandlerComponent extends Component
                             
                         <td colspan="2">                                                                                                   
                             <table class="single_table" align="center">
-                                <tr><td style="font-size:30px;color: #000">'.$user['first_name'].' '.$user['last_name'] .'</td></tr>';
+                                <tr><td style="font-size:25px;color: #000">'.$user['first_name'].' '.$user['last_name'] .'</td></tr>';
 
                                 if ($user['educational_qualification']){
                                     $html .= '<tr><td class="">'. $user['educational_qualification'] .'</td></tr>';
+                                }
+
+                                if ($user['specialist']){
+                                    $html .= '<tr><td class="">'. $user['specialist'] .'</td></tr>';
                                 }
 
                                 $html .= '<tr><td class="">'. $user['clinic_name'] .'</td></tr>
@@ -235,11 +241,11 @@ class PdfHandlerComponent extends Component
                     <tr>
                         <td>
                             <table class="single_table">
-                                <tr align="center" class="table_head"><td>Patient</td></tr>
-                                <tr><td>'.ucfirst($prescription->user->first_name).'</td></tr>
-                                <tr><td>'.$prescription->user->age . 'Years</td></tr>
-                                <tr><td>'.$prescription->user->phone.'</td></tr>
-                                <tr><td>'.ucfirst($prescription->user->address_line1).'</td></tr>
+                                <tr align="center" class="table_head"><td>PATIENT</td></tr>
+                                <tr><td>Name: '.ucfirst($prescription->user->first_name).'</td></tr>
+                                <tr><td>Age: '.$prescription->user->age . 'Years</td></tr>
+                                <tr><td>Phone: '.$prescription->user->phone.'</td></tr>
+                                <tr><td>Address: '.ucfirst($prescription->user->address_line1).'</td></tr>
                             </table>
                             
                             <table>
@@ -330,23 +336,47 @@ class PdfHandlerComponent extends Component
                     </tr>
                   </table>
     
-                  <table style="padding-top: 5px;">
-                      <tr>
-                          <td>
-                            Address:'. $user['address_line1'] .", ".$user['address_line2']
-                          .'</td>
-                      </tr>
-                       <tr>
-                          <td>
-                            For Booking Call:' . $user['phone'] .
-                         '</td>
-                      </tr>
-                       <tr>
-                          <td>
-                           Must make booking before visiting the doctor.
-                          </td>
-                      </tr>
-                  </table>                                          
+                  <table>
+                    <tr>
+                        <td>
+                            <table style="padding-top: 5px;">
+                              <tr>
+                                  <td>
+                                    Address: '. $user['address_line1'] .", ".$user['address_line2']
+                                  .'</td>
+                              </tr>
+                               <tr>
+                                  <td>
+                                    For Booking Call: ' . $user['phone'] .
+                                  '</td>
+                              </tr>
+                               <tr>
+                                  <td>
+                                      Must make booking before visiting the doctor.
+                                  </td>
+                              </tr>
+                            </table>
+                        </td>
+                        <td>
+                          <tr>
+                              <td>
+                                Visiting Time: '. $user['visiting_time'].
+                              '</td>
+                          </tr>
+                           <tr>
+                              <td>
+                                Off Day: ' . $user['off_day'].
+                            '</td>
+                          </tr>
+                           <tr>
+                              <td>
+                                 Website: ' . $user['website'].
+                              '</td>
+                          </tr>
+                        </td>
+                    </tr>
+                  </table>
+                                                            
             ';
         }
 

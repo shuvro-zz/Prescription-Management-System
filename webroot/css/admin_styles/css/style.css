@@ -632,8 +632,8 @@ label.error {
     padding-top: 20px;
 }
 .doctor_image img {
-    width: 148px;
-    height: 148px;
+    width: 178px;
+    height: 178px;
     border-radius: 100px;
     border: 5px solid #0000FE;
 }
@@ -672,7 +672,7 @@ label.error {
     margin-bottom: 12px;
 }
 .medicines_default_prescription{
-    min-height: 480px;
+    min-height: 504px;
 }
 .medicines_default_prescription p{
     margin: 0px!important;

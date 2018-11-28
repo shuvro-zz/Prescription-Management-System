@@ -115,6 +115,9 @@
                                     <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
                                     <p><?php echo ($user['educational_qualification']) ?></p>
                                     <?php if($user['clinic_name']){?>
+                                        <p> <?php echo ($user['specialist']) ?> </p>
+                                    <?php } ?>
+                                    <?php if($user['clinic_name']){?>
                                         <p> <?php echo ($user['clinic_name']) ?> </p>
                                     <?php } ?>
                                     <p>Chamber - <?php echo $user['cember_name'] .", ".$user['cember_address'] ?>
@@ -133,10 +136,10 @@
                                 <div class="patient_details_default_prescription single_section">
                                     <h2>PATIENT</h2>
                                     <div class="info">
-                                        <p><?= ucfirst($prescription->user->first_name) ?></p>
-                                        <p><?= $prescription->user->age .' Years' ?></p>
-                                        <p><?= $prescription->user->phone ?></p>
-                                        <p><?= ucfirst($prescription->user->address_line1) ?></p>
+                                        <p><b>Name:</b> <?= ucfirst($prescription->user->first_name) ?></p>
+                                        <p><b>Age:</b> <?= $prescription->user->age .' Years' ?></p>
+                                        <p><b>Phone:</b> <?= $prescription->user->phone ?></p>
+                                        <p><b>Address:</b> <?= ucfirst($prescription->user->address_line1) ?></p>
                                     </div>
                                 </div>
 
@@ -211,9 +214,21 @@
                 </div>
 
                 <div class="footer_default_prescription">
-                    <p>Address: <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p>
-                    <p>For Booking Call:  <?php echo ($user['phone']) ?></p>
-                    <p>Must make booking before visiting the doctor.</p>
+                    <div class="row">
+                          <div class="col-sm-12">
+                              <div class="col-sm-6">
+                                  <p><b>Address:</b> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p>
+                                  <p><b>For Booking Call:</b>  <?php echo ($user['phone']) ?></p>
+                                  <p>Must make booking before visiting the doctor.</p>
+                              </div>
+
+                              <div class="col-sm-6">
+                                  <p><b>Visiting Time:</b>  <?php echo ($user['visiting_time']) ?></p>
+                                  <p><b>Off Day:</b> <?php echo ($user['off_day']) ?></p>
+                                  <p><b>Website:</b> <?php echo ($user['website']) ?></p>
+                              </div>
+                          </div>
+                    </div>
                 </div>
 
             </div>

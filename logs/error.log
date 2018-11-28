@@ -1258,3 +1258,37 @@ Stack Trace:
 #2 {main}
 
 
+2018-11-27 23:14:17 Error: Fatal Error (1): Call to undefined method App\Controller\Component\MYPDF::addFormat() in [E:\xampp_5\htdocs\pms\src\Controller\Component\PdfHandlerComponent.php, line 84]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-11-27 23:14:17 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\Component\MYPDF::addFormat()
+Request URL: /pms/admin/prescriptions/generate-prescription-pdf/73
+Referer URL: http://localhost/pms/admin/prescriptions/view/73
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 84)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-11-27 23:14:29 Error: Fatal Error (1): Call to undefined method App\Controller\Component\MYPDF::addFormat() in [E:\xampp_5\htdocs\pms\src\Controller\Component\PdfHandlerComponent.php, line 84]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-11-27 23:14:29 Error: [Cake\Error\FatalErrorException] Call to undefined method App\Controller\Component\MYPDF::addFormat()
+Request URL: /pms/admin/prescriptions/generate-prescription-pdf/73
+Referer URL: http://localhost/pms/admin/prescriptions/view/73
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 84)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
