@@ -1292,3 +1292,84 @@ Stack Trace:
 #2 {main}
 
 
+2018-11-30 23:04:37 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'ranklwxg_pms_user'@'localhost' (using password: YES)
+Request URL: /pms/admin
+Referer URL: http://localhost/pms/admin
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'ranklwxg_pms_us...', 'DAN07Pe5tDd~', Array)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(90): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(43): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(422): Cake\Database\Connection->schemaCollection()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(211): Cake\ORM\Table->schema()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(169): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\UsersTable))
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1232): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\UsersTable))
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(935): Cake\ORM\Table->query()
+#12 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(228): Cake\ORM\Table->find('all')
+#13 [internal function]: App\Controller\Admin\UsersController->login()
+#14 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#17 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#18 {main}
+
+
+2018-11-30 23:04:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/admin
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-11-30 23:04:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/admin
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-11-30 23:04:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/admin
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-11-30 23:04:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-11-30 23:04:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-11-30 23:04:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-11-30 23:04:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

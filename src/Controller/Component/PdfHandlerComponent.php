@@ -329,15 +329,20 @@ class PdfHandlerComponent extends Component
                     </tr>
                 </table>
                 
-                 <table class="single_table">
-                    <tr align="center" class="table_head"><td>DOCTORS NOTE</td></tr>
-                    <tr>
-                        <td>'.
-                            $prescription->doctores_notes
-                        .'</td>
-                    </tr>
-                </table>
-                 
+                <table>
+                <tr>
+                    <td>
+                        <table class="single_table">
+                            <tr align="center" class="table_head"><td>DOCTORS NOTE</td></tr>
+                            <tr>
+                                <td>'.
+                                    $prescription->doctores_notes
+                                .'</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </table>                                  
     
                   <table>
                     <tr>
