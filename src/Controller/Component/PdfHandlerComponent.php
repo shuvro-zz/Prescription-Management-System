@@ -378,21 +378,24 @@ class PdfHandlerComponent extends Component
                             </table>
                         </td>
                         <td>
-                          <tr>
-                              <td>
-                                Visiting Time: '. $user['visiting_time'].
-                              '</td>
-                          </tr>
-                           <tr>
-                              <td>
-                                Off Day: ' . $user['off_day'].
-                            '</td>
-                          </tr>
-                           <tr>
-                              <td>
-                                 Website: ' . $user['website'].
-                              '</td>
-                          </tr>
+                            <table>
+                            
+                              <tr>
+                                  <td>
+                                    Visiting Time: '. $user['visiting_time'].
+                                  '</td>
+                              </tr>
+                               <tr>
+                                  <td>
+                                    Off Day: ' . $user['off_day'].
+                                '</td>
+                              </tr>
+                               <tr>
+                                  <td>
+                                     Website: ' . $user['website'].
+                                  '</td>
+                              </tr>
+                              </table>                          
                         </td>
                     </tr>
                   </table>

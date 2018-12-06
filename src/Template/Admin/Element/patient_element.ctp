@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label class="name">Name<span class="required" aria-required="true"></span></label>
+                    <label class="name">Name*<span class="required" aria-required="true"></span></label>
                     <div class="inputs">
                         <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'value' => (isset($user->first_name))? $user->first_name:'', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                     </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label class="name">Phone<span class="required" aria-required="true"></span></label>
+                    <label class="name">Phone*<span class="required" aria-required="true"></span></label>
                     <div class="inputs">
                         <?php echo $this->Form->input('phone', ['class' => 'form-control ','value' => (isset($user->phone))? $user->phone:'', 'id' => 'userPhone',  'label' => false, 'required' => true, 'type' =>'text']); ?>
                     </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label class="name">Age<span class="required" aria-required="true"></span></label>
+                    <label class="name">Age*<span class="required" aria-required="true"></span></label>
                     <div class="inputs">
                         <?php echo $this->Form->input('age', ['class' => 'form-control','value' => (isset($user->age))? $user->age:'',  'label' => false, 'required' => true, 'type' =>'text']); ?>
                     </div>

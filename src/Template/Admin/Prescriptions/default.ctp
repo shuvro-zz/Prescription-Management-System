@@ -1,60 +1,7 @@
-<?php use \Cake\Core\Configure; ?>
 <div class="workspace-dashboard page page-ui-tables">
     <div class="workspace-body">
-        <div class="page-heading">
-            <div class="flex-container">
-                <div class="flex-item">
-                    <ol class="breadcrumb breadcrumb-small">
-                        <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Prescription') ?>"> <?= __('Prescription') ?></a></li>
-                        <li class="active"><a  href="#">View <?= __('Prescription') ?></a></li>
-                    </ol>
-                </div>
-                <div class="flex-item">
-                    <div class="flex-container">
-                        <a href="#" class="add-event-btn" id="printButton" title="Print Prescription">Print</a>&nbsp;&nbsp;&nbsp;
 
-                        <?php
-                        if(!Configure::read('is_localhost')) {
-                            echo $this->Html->link(
-                                'Generate pdf',
-                                ['action' => 'generatePrescriptionPdf', $prescription->id],
-                                ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Generate PDF ']
-                            );
-                            echo '
-                                &nbsp;
-                                &nbsp;';
-
-                            $pdf_file_name = $prescription->pdf_file;
-                            if ($pdf_file_name != NULL) {
-                                echo '<a class="add-event-btn" href=' . $pdf_link . ' title="Download PDF"> Download Pdf </a>';
-                                echo '
-                                &nbsp;
-                                &nbsp;';
-                                if(Configure::read('email_send_allow')) {
-                                    echo $this->Html->link(
-                                        'Send Email',
-                                        ['action' => 'sendPrescriptionEmail', $prescription->id],
-                                        ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Send Email']
-                                    );
-                                    echo '
-                                &nbsp;
-                                &nbsp;';
-                                }
-                            }
-                        }
-                        ?>
-
-                        <?php
-                        echo $this->Html->link(
-                            'edit prescription',
-                            ['action' => 'edit', $prescription->id],
-                            ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Edit Prescription']
-                        );
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include('heading.ctp'); ?>
 
         <?php
             $all_prescriptions=$all_prescriptions->toArray();

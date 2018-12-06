@@ -183,39 +183,50 @@ class UsersController extends AppController
 
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            $month=strtotime("+12 Months");
-            $user->expire_date = date('d/m/Y', $month);
-            $user->role_id = 2;
-            $user->token = $this->generateToken();
 
-            if ($this->Users->save($user)) {
-                $success_message = __('Registration is successful.');
-                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-                $this->login();
+            $haveEmail = $this->Users->find('all')->where([
+                            'Users.email' => $this->request->data['email'],
+                        ])->first();
 
-                $user_info = $this->request->data;
-                $site_link = Router::url( '/', true );
+            if (empty($haveEmail)){
 
-                if(Configure::read('email_send_allow')) {
-                    $info = array(
-                        'to' => $user_info['email'],
-                        'subject' => 'Thanks for Registration',
-                        'template' => 'registration_success',
-                        'data' => array('User' => $user_info, 'base_url' => $site_link),
-                    );
-                    $this->EmailHandler->sendEmail($info);
+                $user = $this->Users->patchEntity($user, $this->request->data);
+                $month=strtotime("+12 Months");
+                $user->expire_date = date('d/m/Y', $month);
+                $user->role_id = 2;
+                $user->token = $this->generateToken();
+
+                if ($this->Users->save($user)) {
+                    $success_message = __('Registration is successful.');
+                    $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                    $this->login();
+
+                    $user_info = $this->request->data;
+                    $site_link = Router::url( '/', true );
+
+                    if(Configure::read('email_send_allow')) {
+                        $info = array(
+                            'to' => $user_info['email'],
+                            'subject' => 'Thanks for Registration',
+                            'template' => 'registration_success',
+                            'data' => array('User' => $user_info, 'base_url' => $site_link),
+                        );
+                        $this->EmailHandler->sendEmail($info);
+                    }
+
+                    return $this->redirect(['action' => 'index']);
+                } else {
+                    $error_message = __('The user could not be saved. Please, try again.');
+                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
                 }
-
-                return $this->redirect(['action' => 'index']);
-            } else {
-                $error_message = __('The user could not be saved. Please, try again.');
-                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+            }
+            else{
+                $error_message = __('The email address already exit, Please use another email address.');
+                $this->Flash->adminWarning($error_message, ['key' => 'admin_error']);
             }
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
-
     }
 
 
@@ -603,9 +614,6 @@ class UsersController extends AppController
         $date = date_format($date_convert, 'd/m/Y');
 
         $token = base64_encode($user['email'] ."|". $date);
-
-        /*$decode = base64_decode($token);
-        echo $token . '<br>'. $decode;die;*/
 
         $session = $this->request->session();
         $doctor = $session->read('Auth.User');

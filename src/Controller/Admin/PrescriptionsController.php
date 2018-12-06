@@ -373,41 +373,63 @@ class PrescriptionsController extends AppController
     }
 
     function sendPrescriptionEmail($id = null){
-        // data $prescription_id
-
         $doctor_info = $this->request->session()->read('Auth.User');
 
         $prescription_info = $this->Prescriptions->get($id);
         $patient_id = $prescription_info['user_id'];
         $patient_info = $this->Prescriptions->Users->get($patient_id);
 
-        $file_path = 'uploads/pdf/'.$prescription_info->pdf_file;
-        $file_name =  substr($file_path, strrpos($file_path, '/') + 1);
+        if ($patient_info->email){
+            $file_path = 'uploads/pdf/'.$prescription_info->pdf_file;
+            $file_name =  substr($file_path, strrpos($file_path, '/') + 1);
 
-        $info = array(
-            'to'                => $patient_info['email'],
-            'subject'           => 'Prescription pdf',
-            'template'          => 'prescription_pdf',
-            'data'              => array('User' => $patient_info, 'Doctor' => $doctor_info),
-            'attach'            => array('file_name' => $file_name, 'file_path' => $file_path )
-        );
-        //pr($info);die;
-        $this->EmailHandler->sendEmail($info);
+            $info = array(
+                'to'                => $patient_info['email'],
+                'subject'           => 'Prescription pdf',
+                'template'          => 'prescription_pdf',
+                'data'              => array('User' => $patient_info, 'Doctor' => $doctor_info),
+                'attach'            => array('file_name' => $file_name, 'file_path' => $file_path )
+            );
+            $this->EmailHandler->sendEmail($info);
 
-        $success_message = __('A pdf file has been sent to your patient email address.');
-        $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+            $success_message = __('A pdf file has been sent to your patient email address.');
+            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+        }else{
+            $success_message = __('Patient email not found.');
+            $this->Flash->adminWarning($success_message, ['key' => 'admin_error']);
+        }
 
         $this->redirect(['action' => 'view/'.$id]);
     }
 
     function generatePrescriptionPdf($id = null){
-        $this->autoRender = false;
+        $this->generatePdf($id);
+
+        $success_message = __('PDF file has been generated.');
+        $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+        $this->redirect(['action' => 'view/'.$id]);
+    }
+
+    function printAndDownload($id = null){
+        $this->generatePdf($id);
 
         $prescription = $this->Prescriptions->get($id, [
             'contain' => ['Diagnosis.DiagnosisLists', 'Medicines', 'Tests', 'Users']
         ]);
 
-        //pr($prescription->user);die;
+        $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
+
+        echo "<script type='text/javascript'>   
+                  window.location.replace('$pdf_link');
+        </script>";
+    }
+
+    function generatePdf($id){
+        $this->autoRender = false;
+
+        $prescription = $this->Prescriptions->get($id, [
+            'contain' => ['Diagnosis.DiagnosisLists', 'Medicines', 'Tests', 'Users']
+        ]);
 
         $patient_id = $prescription->user->id;
 
@@ -430,10 +452,6 @@ class PrescriptionsController extends AppController
                 $prescription->pdf_file = $new_pdf_file_name;
                 $this->Prescriptions->save($prescription);
             }
-
-            $success_message = __('PDF file has been generated.');
-            $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-            $this->redirect(['action' => 'view/'.$id]);
         }
     }
 

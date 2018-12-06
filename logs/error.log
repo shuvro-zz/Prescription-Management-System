@@ -1373,3 +1373,1725 @@ Stack Trace:
 #1 {main}
 
 
+2018-12-05 22:27:06 Error: [PDOException] SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Request URL: /pms/admin/prescriptions/view/90
+Referer URL: http://localhost/pms/admin/prescriptions
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(90): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(43): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Database\Connection.php(315): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(422): Cake\Database\Connection->schemaCollection()
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(211): Cake\ORM\Table->schema()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Query.php(169): Cake\ORM\Query->addDefaultTypes(Object(App\Model\Table\PrescriptionsTable))
+#10 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1232): Cake\ORM\Query->__construct(Object(Cake\Database\Connection), Object(App\Model\Table\PrescriptionsTable))
+#11 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(935): Cake\ORM\Table->query()
+#12 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1178): Cake\ORM\Table->find('all', Array)
+#13 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(75): Cake\ORM\Table->get('90', Array)
+#14 [internal function]: App\Controller\Admin\PrescriptionsController->view('90')
+#15 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#16 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#17 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#18 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#19 {main}
+
+
+2018-12-06 12:05:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/uploads/pdf/
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/uploads/pdf/
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/uploads/pdf/
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/uploads/pdf/
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 12:05:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:05:56 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544079955.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:06:50 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080009.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:08:21 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080009.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:08:39 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080118.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:09:41 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080180.pdf?target=_blank
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:10:14 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080213.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:10:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/uploads/pdf/prescription-1544079985.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:10:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544079985.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544079985.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544079985.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 13:11:37 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080296.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:21:03 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080863.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:21:17 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080876.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:21:41 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080876.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:21:47 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080907.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:22:24 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080944.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:24:59 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544081099.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:25:11 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544081111.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:37:49 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544081868.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:38:31 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544081910.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:43:11 Error: [LogicException] Controller action can only return an instance of Response
+Request URL: /pms/admin/prescriptions/print-and-download/123
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#1 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 {main}
+
+
+2018-12-06 13:44:01 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080876.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:44:07 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544082246.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:44:18 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544082257.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:51:06 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080876.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:51:11 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::http:() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'http:',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/prescriptions/http:/localhost/pms/uploads/pdf/prescription-1544080876.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/view/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 13:51:15 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(433): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 13:52:39 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(434): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 13:52:56 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(434): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 13:53:19 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(434): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:05:27 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:06:36 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:06:42 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/www.example.com
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('www.example.com', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('www.example.com')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('www.example.com')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:07:16 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/www.example.com
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('www.example.com', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('www.example.com')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('www.example.com')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:07:29 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/www.example.com
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('www.example.com', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('www.example.com')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('www.example.com')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:08:19 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/www.example.com
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('www.example.com', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('www.example.com')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('www.example.com')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:09:02 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/www.example.com
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/123
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(437): Cake\ORM\Table->get('www.example.com', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('www.example.com')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('www.example.com')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:09:28 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/www.example.com
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(435): Cake\ORM\Table->get('www.example.com', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('www.example.com')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('www.example.com')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:19:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/uploads/pdf/prescription-1544084319.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084319.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:19:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/uploads/pdf/prescription-1544084390.pdf
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084390.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084390.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544084390.pdf
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:20:59 Error: [Cake\View\Exception\MissingTemplateException] Template file "Admin\Prescriptions\print_and_download.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Admin\\Prescriptions\\print_and_download.ctp',
+)
+Request URL: /pms/admin/prescriptions/print-and-download/90
+Referer URL: http://localhost/pms/admin/prescriptions/view/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(584): Cake\View\View->_getViewFileName(NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#4 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 {main}
+
+
+2018-12-06 14:23:10 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24pdf_link_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(434): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:25:53 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_%24str_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(437): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:26:43 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/[object%20Undefined]
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(437): Cake\ORM\Table->get('[object Undefin...', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('[object Undefin...')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('[object Undefin...')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:38:44 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544085523_pdf_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:39:11 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544085550_pdf%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:39:53 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544085577_pdf%3B_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:39:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/uploads/pdf/prescription-1544085577.pdf;
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:39:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544085577.pdf;
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:39:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/old_img/walogo.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544085577.pdf;
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:39:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/SIHC_2017_Final_Branding_Banner.jpg
+Referer URL: http://localhost/pms/uploads/pdf/prescription-1544085577.pdf;
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:39:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:40:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/banner.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:40:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/top_bg.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:40:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/logo_water.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:40:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 14:40:39 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544085637_pdf_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:43:31 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544085806_pdf_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:48:54 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544086131_pdf_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:50:14 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544086207_pdf_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 14:50:26 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions"
+Request URL: /pms/admin/prescriptions/print-and-download/%3C?php_echo_http%3A%2F%2Flocalhost%2Fpms%2Fuploads%2Fpdf%2Fprescription-1544086224_pdf_%3F%3E=
+Referer URL: http://localhost/pms/admin/prescriptions/print-and-download/90
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(436): Cake\ORM\Table->get('<', Array)
+#2 E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(412): App\Controller\Admin\PrescriptionsController->generatePdf('<')
+#3 [internal function]: App\Controller\Admin\PrescriptionsController->printAndDownload('<')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#7 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#8 {main}
+
+
+2018-12-06 15:31:28 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "users"
+Request URL: /pms/admin/users/registration
+Referer URL: http://localhost/pms/admin/users/registration
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1191): Cake\ORM\Query->firstOrFail()
+#1 E:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(189): Cake\ORM\Table->get('admin@pms.com', Array)
+#2 [internal function]: App\Controller\Admin\UsersController->registration()
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(430): call_user_func_array(Array, Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#6 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#7 {main}
+
+
+2018-12-06 15:35:28 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::users() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'users',
+  'prefix' => 'admin',
+  'plugin' => NULL,
+)
+Request URL: /pms/admin/users/users/registration
+Referer URL: http://localhost/pms/admin/users/registration
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#2 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2018-12-06 15:39:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/jquery.min.map
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-06 15:48:40 Error: [Cake\View\Exception\MissingElementException] Element\Flash\admin_wraning.ctp
+Request URL: /pms/admin/users/registration
+Referer URL: http://localhost/pms/admin/users/registration
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\Helper\FlashHelper.php(89): Cake\View\View->element('Flash/admin_wra...', Array)
+#1 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\registration.ctp(9): Cake\View\Helper\FlashHelper->render('admin_error')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#3 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 {main}
+
+
+2018-12-06 23:38:40 Warning: Warning (4096): Argument 1 passed to App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() must be an instance of App\Controller\Admin\RouteBuilder, instance of Cake\Routing\RouteBuilder given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 426]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 426
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:38:40 Warning: Warning (2): Missing argument 2 for App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}(), called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 426]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 426
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:38:40 Warning: Warning (4096): Argument 2 passed to Cake\Routing\RouteBuilder::connect() must be of the type array, null given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 542 and defined in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php, line 429]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Routing\RouteBuilder::connect() - CORE\src\Routing\RouteBuilder.php, line 429
+Cake\Routing\RouteBuilder::redirect() - CORE\src\Routing\RouteBuilder.php, line 542
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 427
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:38:40 Error: Fatal Error (1): Unsupported operand types in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php, line 432]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-12-06 23:38:41 Error: [Cake\Error\FatalErrorException] Unsupported operand types
+Request URL: /pms/admin/prescriptions/print-and-download/124
+Referer URL: http://localhost/pms/admin/prescriptions/view/124
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Unsupported ope...', 'E:\\xampp_5\\htdo...', 432)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-12-06 23:39:14 Warning: Warning (4096): Argument 1 passed to App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() must be an instance of App\Controller\Admin\RouteBuilder, instance of Cake\Routing\RouteBuilder given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 426]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 426
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:39:14 Warning: Warning (2): Missing argument 2 for App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}(), called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 426]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 426
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:39:14 Warning: Warning (4096): Argument 2 passed to Cake\Routing\RouteBuilder::connect() must be of the type array, null given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 542 and defined in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php, line 429]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+Cake\Routing\RouteBuilder::connect() - CORE\src\Routing\RouteBuilder.php, line 429
+Cake\Routing\RouteBuilder::redirect() - CORE\src\Routing\RouteBuilder.php, line 542
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 427
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:39:14 Error: Fatal Error (1): Unsupported operand types in [E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php, line 432]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-12-06 23:39:14 Error: [Cake\Error\FatalErrorException] Unsupported operand types
+Request URL: /pms/admin/prescriptions/print-and-download/124
+Referer URL: http://localhost/pms/admin/prescriptions/view/124
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Unsupported ope...', 'E:\\xampp_5\\htdo...', 432)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-12-06 23:40:43 Warning: Warning (4096): Argument 1 passed to App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() must be an instance of App\Controller\Admin\RouteBuilder, instance of Cake\Routing\RouteBuilder given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 426]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 426
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:40:43 Warning: Warning (2): Missing argument 2 for App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}(), called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 426]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 426
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 428
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:41:45 Warning: Warning (4096): Argument 1 passed to App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() must be an instance of App\Controller\Admin\RouteBuilder, instance of Cake\Routing\RouteBuilder given, called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 427]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 427
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 429
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2018-12-06 23:41:45 Warning: Warning (2): Missing argument 2 for App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}(), called in E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\RouteBuilder.php on line 645 and defined in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 427]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 147
+App\Controller\Admin\PrescriptionsController::App\Controller\Admin\{closure}() - APP/Controller\Admin\PrescriptionsController.php, line 427
+Cake\Routing\RouteBuilder::scope() - CORE\src\Routing\RouteBuilder.php, line 645
+Cake\Routing\Router::scope() - CORE\src\Routing\Router.php, line 884
+App\Controller\Admin\PrescriptionsController::printAndDownload() - APP/Controller\Admin\PrescriptionsController.php, line 429
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 430
+Cake\Routing\Dispatcher::_invoke() - CORE\src\Routing\Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
+[main] - ROOT\webroot\index.php, line 37
+
+
+
