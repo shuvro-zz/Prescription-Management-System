@@ -232,6 +232,10 @@ button, .wizard-config .btn-continue{
 .medicines_row {
     position: relative;
     float: left;
+    height: 46px;
+}
+.examinations{
+    height: 100px!important;
 }
 .medicines_row .tokenize > .tokens-container > .token-search{
     margin: 0px 5px 0 0;
@@ -349,6 +353,7 @@ button, .wizard-config .btn-continue{
     border: none;
     font-size: 25px;
     color: #333;
+    top: -13px;
 }
 .dropdown-menu{
     padding: 0px;
@@ -379,7 +384,7 @@ button, .wizard-config .btn-continue{
 }
 .pescription_panel_heading{
     font-weight: bold;
-    padding: 10px 2px;
+    padding: 0px 2px;
 }
 .add_prescription_heading{
     background: #EBEBEB!important;
@@ -396,25 +401,23 @@ button, .wizard-config .btn-continue{
 .left_side textarea,.right_side textarea{
     width: 100%;
     border-radius: 5px;
-    height: 125px;
+    height: 100px;
     border: none;
 }
 .left_side {
     background: #EBEBEB;
     padding: 8px;
-    margin-top: 12px;
     width: 100%;
     float: left;
     border-radius: 5px;
     color: #333!important;
 }
 .examinations ul{
-    height: 105px!important;
+    height: 80px!important;
 }
 .right_side {
     background: #EBEBEB;
     padding: 8px;
-    margin-top: 12px;
     width: 100%;
     float: left;
     border-radius: 5px;
@@ -423,14 +426,15 @@ button, .wizard-config .btn-continue{
 .diagnosis_info,.examinations,.medicines {
     background: #fff;
     border-radius: 5px;
-    height: 125px;
+    height: 150px;
     padding: 5px;
     overflow: auto;
 }
 .prescription_button_section {
-    margin-top: 15px;
+    margin-top: 5px;
     margin-left: 15px;
 }
+
 .prescription_button_section button{
     width: auto;
     margin-right: 21px;
@@ -438,6 +442,8 @@ button, .wizard-config .btn-continue{
 
 .prescription_button_section .btn{
     float: left;
+    padding: 3px 15px!important;
+    height: 30px;
 }
 
 .examinations .tokenize > .tokens-container{
@@ -497,9 +503,6 @@ div#patient_drop_down,div#patient_field,.single_block .inputs {
 
 .drop_down_overlap{
     z-index: 999;
-}
-.medicine_box,.diagnosis_box{
-    min-height: 250px;
 }
 
 .work_section{
@@ -574,9 +577,10 @@ label.error {
 .left-sidebar{
     width: 266px;
     background: linear-gradient(#0ECFC5, #042321);
-    margin-top: -94px;
+    /* margin-top: 0px; */
     overflow-y: hidden;
     height: calc(106vh);
+    padding: 0px;
 }
 .logo{
     text-align: center;
@@ -603,7 +607,14 @@ label.error {
     font-size: 15px;
 }
 .prescription_content{
-    padding: 40px 21px!important;
+    padding: 5px 21px!important;
+}
+.patient_info_section h6{
+    margin: 5px!important;
+}
+.prescription_body{
+    padding-top: 2px;
+    padding-bottom: 6px;
 }
 .prescription_template{
     border: 2px dashed #eee;
@@ -692,6 +703,57 @@ label.error {
 .footer_default_prescription p{
     color: #000;
     line-height: 10px;
+}
+
+.prescription_page_head{
+    height: 35px!important;
+    padding: 0px!important;
+    padding-left: 35px!important;
+}
+.fs_dashboard_area h1{
+    font-size: 25px;
+}
+.search_area{
+    padding: 25px;
+    text-align: -webkit-center;
+}
+/* Style the search field */
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #3CC2BB;
+    width: 40%;
+}
+/* Style the submit button */
+form.example button {
+    width: 28%;
+    background: linear-gradient(40deg,#2096ff,#05ffa3)!important;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 10em;
+    margin-top: 12px;
+    height: 100%;
+    padding: 5px 3px 3px 3px;
+}
+.fs_dashboard_area{
+    padding: 35px;
+}
+form.example button:hover {
+    background: linear-gradient(40deg,#2096ff,#05ffa3)!important;
+}
+
+/* Clear floats */
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.logo img {
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
+    margin-top: -1px;
 }
 /**********Responsive**********/
 

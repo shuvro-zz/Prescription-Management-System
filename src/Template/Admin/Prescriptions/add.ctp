@@ -3,7 +3,7 @@
 <section class="workspace work_section">
     <div class="workspace-body work_body_section">
 
-        <div class="page-heading">
+        <div class="page-heading prescription_page_head">
             <ol class="breadcrumb breadcrumb-small">
                 <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Prescription') ?>">  <?= __('Prescription') ?></a></li>
                 <li class="active"><a href="#">Add <?= __('Prescription') ?></a></li>
@@ -23,8 +23,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default panel-hovered panel-stacked">
-                                    <div class="panel-heading add_prescription_heading"><?= __('Add Prescription') ?></div>
-                                    <div class="panel-body">
+                                    <div class="panel-body prescription_body">
                                         <?php include('element.ctp'); ?>
                                     </div>
                                 </div>

@@ -77,7 +77,7 @@
 
                     <div class="row">
                         <div class="col-sm-2">
-                            <label>Age:</label>
+                            <label style="margin-bottom: 0px">Age:</label>
                         </div>
 
                         <div class="col-sm-10">
@@ -153,7 +153,7 @@
         </div>
     </div>
 
-    <div style="height: 12px; color:#000; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: -5px"></i> </div></div>
+    <div style="height: 6px; color:#000; text-align: center"><div id="loading" class="hide"> <i class="fa fa-spinner fa-spin" style="font-size:32px; margin-top: -5px"></i> </div></div>
 
     <div class="row">
         <div class="col-sm-6">

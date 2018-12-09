@@ -1,11 +1,11 @@
 <aside class="left-sidebar">
-    <div class="logo">
-        <a href="<?php echo $this->Url->build('/admin/dashboard');?>" title="">
+    <!--<div class="logo">
+        <a href="<?php /*echo $this->Url->build('/admin/dashboard');*/?>" title="">
             <h1 style="margin-bottom: 0px">HEALTHTECHBD</h1>
 
-            <?php /*echo $this->Html->image('/css/admin_styles/images/logo.png', ['alt' => 'Logo']) */?>
+            <?php /*echo $this->Html->image('/css/admin_styles/images/logo.jpg', ['alt' => 'Logo']) */?>
         </a>
-    </div>
+    </div>-->
     <nav class="leftside-navigation">
         <ul>
             <li class="navigation-item dashboard <?php if($this->name=='Dashboard') echo 'active'?>">
