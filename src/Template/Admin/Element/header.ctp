@@ -4,7 +4,7 @@
         <a href="<?php echo $this->Url->build('/admin/dashboard');?>" title="">
             <!--<h1 style="margin-bottom: 0px">HEALTHTECHBD</h1>-->
 
-            <?php echo $this->Html->image('/css/admin_styles/images/logo.jpg', ['alt' => 'Logo']) ?>
+            <?php echo $this->Html->image('/css/admin_styles/images/logo.png', ['alt' => 'Logo']) ?>
         </a>
     </div>
     <div class="topbar-inner">

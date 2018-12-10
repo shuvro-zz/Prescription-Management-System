@@ -12,8 +12,7 @@
 
     <div class="dashboard-home-faetures flex-container text-center">
         <div class="dash-box fs_dashboard_area">
-                <h1>Welcome to Patient Management System </h1>
-                <span style="color: #000">You can manage your patient easily</span>
+                <h1>Search Patient</h1>
 
             <!-- The form -->
             <div class="search_area">
@@ -22,8 +21,8 @@
                     'type' => 'get',
                     'class' => 'example'
                 ]);?>
-                <?php echo $this->Form->input('search',array('class' => 'form-control main-search', 'label' => false, 'placeholder' => 'Type your patient phone number', 'required' => 'required')); ?>
-                <button type="submit">SEARCH PATIENT PRESCRIPTION</button>
+                <?php echo $this->Form->input('search',array('class' => 'form-control main-search', 'label' => false, 'placeholder' => 'Phone number', 'required' => 'required')); ?>
+                <button type="submit" class="add-event-btn">SEARCH</button>
                 <?php echo $this->Form->end();?>
             </div>
 

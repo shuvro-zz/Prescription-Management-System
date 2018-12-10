@@ -1,7 +1,7 @@
 <div class="workspace-dashboard page page-ui-tables">
     <div class="workspace-body">
 
-        <?php include('heading.ctp'); ?>
+        <?php include('page_heading.ctp'); ?>
 
         <?php
             $all_prescriptions=$all_prescriptions->toArray();

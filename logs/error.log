@@ -3095,3 +3095,35 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 87
 
 
 
+2018-12-09 23:23:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/admin_styles/images/dashboard-settings-sm.png
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-09 23:23:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/admin_styles/images/dashboard-settings-sm.png
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-09 23:23:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/admin_styles/images/dashboard-settings-sm.png
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-09 23:23:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Request URL: /pms/css/admin_styles/images/dashboard-settings-sm.png
+Referer URL: http://localhost/pms/admin/diagnosis
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

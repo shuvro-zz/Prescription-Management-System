@@ -601,7 +601,6 @@ label.error {
 }
 .topbar .logo{
     background: none;
-    margin-left: 17px;
 }
 .dropdown-menu.user-dropdown i {
     font-size: 15px;
@@ -714,33 +713,24 @@ label.error {
     font-size: 25px;
 }
 .search_area{
-    padding: 25px;
     text-align: -webkit-center;
 }
 /* Style the search field */
 form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid #3CC2BB;
     width: 40%;
-}
-/* Style the submit button */
-form.example button {
-    width: 28%;
-    background: linear-gradient(40deg,#2096ff,#05ffa3)!important;
-    color: white;
-    font-size: 13px;
-    cursor: pointer;
-    border-radius: 10em;
-    margin-top: 12px;
-    height: 100%;
-    padding: 5px 3px 3px 3px;
 }
 .fs_dashboard_area{
     padding: 35px;
 }
-form.example button:hover {
-    background: linear-gradient(40deg,#2096ff,#05ffa3)!important;
+
+.fs_dashboard_area button{
+    font-size: 12px;
+    height: 35px;
+    border: 0;
+    width: 10%;
+    margin-top: 15px;
 }
 
 /* Clear floats */
@@ -751,9 +741,8 @@ form.example::after {
 }
 .logo img {
     width: 100%;
-    height: 55px;
-    border-radius: 5px;
-    margin-top: -1px;
+    height: 100px;
+    margin-top: -1.5px;
 }
 /**********Responsive**********/
 
