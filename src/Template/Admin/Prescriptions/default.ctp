@@ -117,8 +117,7 @@
                                             <?php
                                             foreach ($prescription->medicines as $medicine){
                                                 echo '<li>
-                                                <p class="">'. ucfirst($medicine->name) .'</p>
-                                                <p>' .$medicine->_joinData->rule. '</p>
+                                                <p class="">'. ucfirst($medicine->name) .'  : '.(($medicine->_joinData->rule)? '( '.$medicine->_joinData->rule.' )': "").'</p>                                               
                                             </li>';
                                             }
                                             ?>
@@ -195,6 +194,5 @@
 
             </div>
         </div>
-        <input type="hidden" value="<?php echo $is_print ?>" id="is_print" name="is_print" >
     </div>
 </div>

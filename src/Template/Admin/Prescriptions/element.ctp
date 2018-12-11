@@ -23,7 +23,7 @@
 
                     <div class="row">
                         <div class="col-sm-2" style="padding-right: 0px">
-                            <label class="name">Name
+                            <label class="name">Name:
                                 <?php if ((strtolower($this->request->params['action']) == 'add') AND $users != '') {
                                     echo '<span class="fa fa-pencil-square" id="new_patient" title="New Patient"></span>';
                                 } ?>

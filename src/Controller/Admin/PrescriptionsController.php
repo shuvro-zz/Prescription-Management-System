@@ -79,14 +79,11 @@ class PrescriptionsController extends AppController
 
         $latest_prescription = $this->Common->getLatestPrescription($patient_id);
 
-        $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
-
         $is_print = isset($this->request->params['pass'][1])? $this->request->params['pass'][1]:'';
+        $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
 
         $this->set(compact('prescription', 'all_prescriptions', 'latest_prescription', 'pdf_link', 'is_print'));
         $this->set('_serialize', ['prescription']);
-
-        //$this -> render('default');
 
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){
             $this -> render('default');
@@ -100,6 +97,11 @@ class PrescriptionsController extends AppController
         }else{
             $this->render('general');
         }
+
+
+
+
+
     }
 
     /**

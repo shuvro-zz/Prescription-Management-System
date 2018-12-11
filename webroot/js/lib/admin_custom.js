@@ -15,16 +15,7 @@ jQuery(document).ready(function ($) {
         return $slug.toLowerCase();
     }
 
-    $("#printButton").click(function(){
-        var mode = 'iframe'; //popup
-        var close = mode == "popup";
-        var options = { mode : mode, popClose : close, retainAttr : ["id","class","style"]};
-        $("div.printableArea").printArea( options );
-    });
 
-    if($('#is_print').val() == 'print'){
-        $( "#printButton" ).trigger( "click" );
-    }
 
     $("#new_patient").click(function(){
         $("#patient_drop_down").toggleClass("hide");

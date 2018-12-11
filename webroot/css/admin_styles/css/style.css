@@ -442,8 +442,6 @@ button, .wizard-config .btn-continue{
 
 .prescription_button_section .btn{
     float: left;
-    padding: 3px 15px!important;
-    height: 30px;
 }
 
 .examinations .tokenize > .tokens-container{
@@ -458,6 +456,7 @@ button, .wizard-config .btn-continue{
 .doctors_note textarea{
     min-width: 100%!important;
     border: none;
+    height: 113px;
 }
 .examinations .tokenize.focus > .tokens-container{
     outline: 0;
@@ -711,10 +710,10 @@ label.error {
 }
 .fs_dashboard_area h1{
     font-size: 25px;
+    margin: 0px!important;
+    margin-bottom: 30px!important;
 }
-.search_area{
-    text-align: -webkit-center;
-}
+
 /* Style the search field */
 form.example input[type=text] {
     padding: 10px;
@@ -727,10 +726,8 @@ form.example input[type=text] {
 
 .fs_dashboard_area button{
     font-size: 12px;
-    height: 35px;
+    height: 43px;
     border: 0;
-    width: 10%;
-    margin-top: 15px;
 }
 
 /* Clear floats */

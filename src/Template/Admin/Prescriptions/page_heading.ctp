@@ -14,9 +14,9 @@ use Cake\Routing\Router;
                 <?php
 
                 echo $this->Html->link(
-                    'Print and Download',
+                    'Print or Download',
                     ['action' => 'printAndDownload', $prescription->id],
-                    ['target' => '_blank', 'class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Print and Download']
+                    ['target' => '_blank', 'class' => 'add-event-btn', 'id' => 'printOrDownload', 'escapeTitle' => false, 'title' => 'Print or Download']
                 );
                 echo '&nbsp;&nbsp;';
 
@@ -59,3 +59,11 @@ use Cake\Routing\Router;
         </div>
     </div>
 </div>
+
+<?php if ($is_print == "print"){ ?>
+    <script type='text/javascript'>
+        $( document ).ready(function() {
+            document.getElementById('printOrDownload').click();
+        });
+    </script>
+<?php } ?>

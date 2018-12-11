@@ -2,14 +2,6 @@
 <?= $this->Form->create($prescription,['id' => 'prescription-form']) ?>
 <section class="workspace work_section">
     <div class="workspace-body work_body_section">
-
-        <div class="page-heading prescription_page_head">
-            <ol class="breadcrumb breadcrumb-small">
-                <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('Prescription') ?>">  <?= __('Prescription') ?></a></li>
-                <li class="active"><a href="#">Add <?= __('Prescription') ?></a></li>
-            </ol>
-        </div>
-
         <div class="main-container main_container_section">
             <div class="content prescription_content">
                 <div class="col-md-12">
