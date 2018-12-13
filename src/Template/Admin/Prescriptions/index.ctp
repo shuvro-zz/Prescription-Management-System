@@ -84,15 +84,16 @@
                                         ?>
                                     </li>
 
-                                    <li>
+                                    <!--<li>
                                         <?php
-                                        echo $this->Html->link(
+/*                                        echo $this->Html->link(
                                         '<span class="fa fa-pencil-square"></span> Edit',
                                         ['action' => 'edit', $prescription->id],
                                         ['escapeTitle' => false, 'title' => 'Edit Prescriptions']
                                         );
-                                        ?>
-                                    </li>
+                                        */?>
+                                    </li>-->
+
                                     <li>
                                         <?php
                                         echo $this->Form->postLink(

@@ -14,9 +14,9 @@
 
             <input type="text" name="first_name" class="md-input" id="firstName" placeholder="First Name" required="required">
             <input type="text" name="last_name" class="md-input" id="lastName" placeholder="Last Name" required="required">
+            <input type="text" name="phone" class="md-input" id="phone" placeholder="Phone Number" required="required">
             <input type="text" name="email" class="md-input" id="email" placeholder="Email" required="required">
             <input type="password" name="password" class="md-input" id="password" placeholder="Password" required="required" >
-            <input type="password" name="confirm_password" class="md-input" id="confirm_password" placeholder="Confirm Password" required="required" equalTo="#password" >
             <input type="submit" value="Registration">
 
         </div>
@@ -45,10 +45,6 @@
              messages:{
                  "email": "Please enter a Valid Email Address",
                  "password": "Please enter Password",
-                 "confirm_password":{
-                     equalTo:"Confirm Password didn't match with Password",
-                     required:'Please enter Confirm Password'
-                 }
              }
          });
     });

@@ -93,27 +93,40 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
 
-            $user = $this->Users->patchEntity($user, $this->request->data);
+            $exit_patient = $this->Users->find('all')
+                ->where([
+                    'Users.phone' => $this->request->data['phone'],
+                    'Users.first_name' => $this->request->data['first_name'],
+                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id')
+                ])->first();
 
-            $session = $this->request->session();
-            $doctor_id = $session->read('Auth.User.id');
+            if (empty($exit_patient)){
+                $user = $this->Users->patchEntity($user, $this->request->data);
 
-            $user->role_id = 3;
-            $user->doctor_id = $doctor_id;
+                $session = $this->request->session();
+                $doctor_id = $session->read('Auth.User.id');
 
-            if ($this->Users->save($user)) {
-                $success_message = __('The patient has been saved.');
-                $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
-            } else {
-                $error_message = __('The patient could not be saved. Please, try again.');
-                $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                $user->role_id = 3;
+                $user->doctor_id = $doctor_id;
+
+                if ($this->Users->save($user)) {
+                    $success_message = __('The patient has been saved.');
+                    $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
+                } else {
+                    $error_message = __('The patient could not be saved. Please, try again.');
+                    $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                }
+
+                return $this->redirect(['action' => 'index']);
+            }else{
+                $warning_message = __('The patient already exit.');
+                $this->Flash->adminWarning($warning_message, ['key' => 'admin_warning']);
+
+                return $this->redirect(['action' => 'add']);
             }
-
-            return $this->redirect(['action' => 'index']);
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
-
     }
 
     public function edit($id = null)
@@ -124,15 +137,13 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
 
-            if ($user['is_localhost'] == 0){ // online user
-                $user_phone = $this->Users->find('all')
-                    ->where([
-                        'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
-                        'Users.phone' => trim($this->request->data['phone']),
-                        'Users.id !=' => $id
-                    ])
-                    ->first();
-            }
+            $user_phone = $this->Users->find('all')
+                ->where([
+                    'Users.phone' => $this->request->data['phone'],
+                    'Users.first_name' => $this->request->data['first_name'],
+                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                    'Users.id !=' => $id
+                ])->first();
 
             if(empty($user_phone)){
                 $user = $this->Users->patchEntity($user, $this->request->data);
@@ -154,7 +165,7 @@ class UsersController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }else{
-                $this->Flash->adminWarning(__('The phone number already exit'), ['key' => 'admin_warning']);
+                $this->Flash->adminWarning(__('The patient already exit'), ['key' => 'admin_warning']);
                 return $this->redirect(['action' => 'edit/'.$id]);
             }
         }

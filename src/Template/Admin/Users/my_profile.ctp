@@ -25,13 +25,13 @@
                                         <div class="panel-body">
                                             <div class="form-group">
                                                 <div class="col-sm-6">
-                                                    <label class="name">First Name<span class="required" aria-required="true"></span></label>
+                                                    <label class="name">First Name*<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
                                                         <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'value' => $user->first_name, 'label' => false, 'required' => true, 'type' =>'text']); ?>
                                                    </div>
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <label class="name">Last Name<span class="required" aria-required="true"></span></label>
+                                                    <label class="name">Last Name*<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
                                                         <?php echo $this->Form->input('last_name', ['class' => 'form-control', 'value' => $user->last_name, 'label' => false, 'required' => true, 'type' =>'text']); ?>
                                                     </div>
@@ -40,31 +40,31 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-6">
-                                                    <label class="name">Address Line1<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">
-                                                        <?php echo $this->Form->input('address_line1', ['class' => 'form-control', 'value' => $user->address_line1, 'label' => false, 'required' => true, 'type' =>'text']); ?>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <label class="name">Address Line2<span class="required" aria-required="true"></span></label>
-                                                    <div class="inputs">
-                                                        <?php echo $this->Form->input('address_line2', ['class' => 'form-control', 'value' => $user->address_line2, 'label' => false, 'required' => true, 'type' =>'text']); ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="col-sm-6">
-                                                    <label class="name">Email<span class="required" aria-required="true"></span></label>
+                                                    <label class="name">Email*<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
                                                         <?php echo $this->Form->input('email', ['class' => 'form-control', 'value' => $user->email, 'disabled' => 'disabled', 'label' => false, 'type' =>'email']); ?>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-6">
-                                                    <label class="name">Phone<span class="required" aria-required="true"></span></label>
+                                                    <label class="name">Phone*<span class="required" aria-required="true"></span></label>
                                                     <div class="inputs">
                                                         <?php echo $this->Form->input('phone', ['class' => 'form-control', 'value' => $user->phone, 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-6">
+                                                    <label class="name">Address Line1<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('address_line1', ['class' => 'form-control', 'value' => $user->address_line1, 'label' => false, 'type' =>'text']); ?>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label class="name">Address Line2<span class="required" aria-required="true"></span></label>
+                                                    <div class="inputs">
+                                                        <?php echo $this->Form->input('address_line2', ['class' => 'form-control', 'value' => $user->address_line2, 'label' => false, 'type' =>'text']); ?>
                                                     </div>
                                                 </div>
                                             </div>

@@ -84,6 +84,7 @@ class PrescriptionsController extends AppController
 
         $this->set(compact('prescription', 'all_prescriptions', 'latest_prescription', 'pdf_link', 'is_print'));
         $this->set('_serialize', ['prescription']);
+        $this->set('_serialize', ['prescription']);
 
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){
             $this -> render('default');
@@ -477,19 +478,21 @@ class PrescriptionsController extends AppController
                 ])->first();
 
             if($patient_info){
-                $patient_id = $patient_info->id;
+                $this->request->session()->write('users_search_query', $patient_info->phone);
 
-                $latest_prescription = $this->Common->getLatestPrescription($patient_id);
+                return $this->redirect(['controller' => 'users', 'action' => '']);
+
+                /*$latest_prescription = $this->Common->getLatestPrescription($patient_id);
 
                 if($latest_prescription){
                     return $this->redirect(['action' => 'edit/'.$latest_prescription->id]);
                 }else{
                     $this->Flash->admin_success('Patient found, You can create prescription for this patient', ['key' => 'admin_success']);
                     return $this->redirect(['action' => 'add/'.$patient_id]);
-                }
+                }*/
             }else{
-                $this->Flash->admin_warning('Patient not found, Please select a Patient', ['key' => 'admin_warning']);
-                return $this->redirect(['action' => 'add']);
+                $this->Flash->admin_warning('Patient not found, Please create a Patient', ['key' => 'admin_warning']);
+                return $this->redirect(['controller' => 'users', 'action' => 'add']);
             }
         }
         $this->set(compact('patient_info'));

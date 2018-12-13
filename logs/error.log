@@ -1,0 +1,178 @@
+    2018-12-12 14:28:56 Error: rerere
+2018-12-12 14:28:58 Error: 
+2018-12-12 15:22:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class User could not be found.
+Request URL: /pms/admin/user
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-12 15:22:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class User could not be found.
+Request URL: /pms/admin/user
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-12 15:24:21 Error: Fatal Error (1): Call to undefined function App\Controller\Admin\print_f() in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 480]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-12-12 15:24:21 Error: [Cake\Error\FatalErrorException] Call to undefined function App\Controller\Admin\print_f()
+Request URL: /pms/admin/prescriptions/search-patient?search=555
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to undefin...', 'E:\\xampp_5\\htdo...', 480)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2018-12-13 14:30:10 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/dashboard
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:30:13 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:30:28 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:30:39 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:30:41 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:30:51 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:32:13 Error: [Cake\View\Exception\MissingHelperException] Helper class PrescriptionsHelper could not be found.
+Request URL: /pms/admin/users
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\View\HelperRegistry->_throwMissingClassError('Prescriptions', NULL)
+#1 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\HelperRegistry.php(66): Cake\Core\ObjectRegistry->load('Prescriptions')
+#2 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(888): Cake\View\HelperRegistry->__isset('Prescriptions')
+#3 E:\xampp_5\htdocs\pms\src\Template\Admin\Users\index.ctp(92): Cake\View\View->__get('Prescriptions')
+#4 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(992): include('E:\\xampp_5\\htdo...')
+#5 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(952): Cake\View\View->_evaluate('E:\\xampp_5\\htdo...', Array)
+#6 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\View\View.php(587): Cake\View\View->_render('E:\\xampp_5\\htdo...')
+#7 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(612): Cake\View\View->render(NULL, NULL)
+#8 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(120): Cake\Controller\Controller->render()
+#9 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#10 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2018-12-13 14:38:00 Error: Fatal Error (4): syntax error, unexpected '$where' (T_VARIABLE) in [E:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 352]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 216
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 99
+[main] - [internal], line ??
+
+
+
+2018-12-13 14:38:01 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '$where' (T_VARIABLE)
+Request URL: /pms/admin/prescriptions/set-patient?user_id=243
+Referer URL: http://localhost/pms/admin/users
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(99): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'E:\\xampp_5\\htdo...', 352)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+

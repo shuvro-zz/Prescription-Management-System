@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label class="name">Name*<span class="required" aria-required="true"></span></label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'value' => (isset($user->first_name))? $user->first_name:'', 'label' => false, 'required' => true, 'type' =>'text']); ?>
+                        <?php echo $this->Form->input('first_name', ['class' => 'form-control', 'id' => 'userName', 'value' => (isset($user->first_name))? $user->first_name:'', 'label' => false, 'required' => true, 'type' =>'text']); ?>
                     </div>
                 </div>
             </div>

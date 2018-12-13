@@ -80,11 +80,23 @@
                                         <?php
                                             if($this->request->session()->read('Auth.User.role_id') != 1){
                                                 echo $this->Html->link(
-                                                    '<span class="fa fa-eye"></span> View Prescription',
-                                                    ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
-                                                    ['escapeTitle' => false, 'title' => 'View Prescription']
+                                                    '<span class="fa fa-plus"></span> Create Prescription',
+                                                    ['controller' => 'prescriptions', 'action' => 'add/'.$user->id],
+                                                    ['escapeTitle' => false, 'title' => 'Create Prescription']
                                                 );
                                             }
+                                        ?>
+                                    </li>
+
+                                    <li>
+                                        <?php
+                                        if($this->request->session()->read('Auth.User.role_id') != 1){
+                                            echo $this->Html->link(
+                                                '<span class="fa fa-eye"></span> View Prescription',
+                                                ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
+                                                ['escapeTitle' => false, 'title' => 'View Prescription']
+                                            );
+                                        }
                                         ?>
                                     </li>
 

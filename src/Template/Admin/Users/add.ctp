@@ -19,6 +19,7 @@
                     <div class="col-sm-12 col-md-12">
                         <?php echo $this->Flash->render('admin_success'); ?>
                         <?php echo $this->Flash->render('admin_error'); ?>
+                        <?php echo $this->Flash->render('admin_warning'); ?>
                     </div>
                     <div class="col-sm-12 col-md-12">
                         <div class="row">
@@ -50,26 +51,7 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-
         jQuery('#userForm').validate({
-            rules:{
-                'phone': {
-                    remote: {
-                        url: SITE_URL+'admin/Users/isUserAvailable',
-                        type: "post",
-                        data: {
-                            phone: function(){ return jQuery("#userPhone").val(); }
-                        }
-                    }
-                }
-            },
-            messages: {
-                'phone': {
-                    remote: 'The Patient already exist.'
-                }
-            }
         });
-
-
     });
 </script>
