@@ -9,7 +9,7 @@
 }
 
 body{
-    font-family: "SolaimanLipi","Times New Roman"!important;
+    /*font-family: "SolaimanLipi","Times New Roman"!important;*/
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
@@ -681,7 +681,7 @@ label.error {
     margin-bottom: 12px;
 }
 .medicines_default_prescription{
-    min-height: 504px;
+    min-height: 456px;
 }
 .medicines_default_prescription p{
     margin: 0px!important;
@@ -712,6 +712,7 @@ label.error {
     font-size: 25px;
     margin: 0px!important;
     margin-bottom: 30px!important;
+    font-weight: normal;
 }
 
 /* Style the search field */

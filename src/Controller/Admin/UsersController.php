@@ -33,13 +33,17 @@ class UsersController extends AppController
             'forgotPassword',
             'resetPassword',
             'registration',
-            'apiRegistration'
+            'apiRegister',
+            'getOnlinePatients',
+            'getLocalPatients',
+            'saveLocalPatientsToOnline'
         ]);
     }
 
     public function initialize()
     {
         parent::initialize();
+        $this->loadComponent('RequestHandler');
         //$this->loadComponent('Common');
     }
 
@@ -247,10 +251,7 @@ class UsersController extends AppController
 
         if (!$this->Auth->user()) {
             if ($this->request->is('post')) {
-                $doctorInfo = $this->Users->find('all')->where([
-                                                            'Users.email' => $this->request->data['email'],
-                                                            'Users.is_localhost' => 0
-                                                        ])->first();
+                $doctorInfo = $this->Users->find('all')->where(['Users.email' => $this->request->data['email']])->first();
                 if ($doctorInfo){
                     $date_convert = date_create_from_format('d/m/Y', $doctorInfo['expire_date']);
                     if($doctorInfo['role_id'] == 1 OR strtotime(date_format($date_convert, 'd-m-Y')) > strtotime('now') ){
@@ -643,36 +644,114 @@ class UsersController extends AppController
         return $token;
     }
 
-    function apiRegistration(){
+/************************************************
+///////////////////Api///////////////////////////
+*************************************************/
 
+    function apiRegister(){
+        $exit_doctor = $this->Users->find('all')
+             ->where([
+                 'Users.email' => trim($this->request->data['email'])
+             ])->first();
+
+         if ($exit_doctor == null){
+             $doctor = $this->Users->newEntity();
+         }else{
+             $doctor = $exit_doctor;
+         }
+
+         if ($this->request->is('post')) {
+             $doctor = $this->Users->patchEntity($doctor, $this->request->data);
+             $doctor->role_id = 2;
+             $doctor->is_localhost = 1;
+             $doctor->is_sync = 1;
+             $doctor->expire_date = $this->request->data['expire_date'];
+             $doctor->token = $this->generateToken();
+
+             if ($this->Users->save($doctor)) {
+                 echo json_encode(['status' => 'success']);die;
+             } else {
+                 echo json_encode(['fail']);die;
+             }
+         }
+    }
+
+    function getOnlinePatients(){
         $this->autoRender = false;
+        header('Content-Type: application/json');
 
-        $exit_user = $this->Users->find('all')
-            ->where([
-                'Users.email' => trim($this->request->data['email'])
-            ])->first();
+        if ($this->request->is('get')){
+            //Local Doctor id
+            $local_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2])
+                ->select('id')->first();
 
-        $this->log($exit_user);
+            $online_patients = $this->Users->find('all', ['limit' => 100])->where(['Users.doctor_id' => $local_doctor_id['id'],
+                'Users.role_id' => 3,
+                'Users.is_sync' => 0
+            ])->toArray();
 
-        if ($exit_user == null){
-            $user = $this->Users->newEntity();
-        }else{
-            $user = $exit_user;
+            //$online_patients = ['apiPatients' => $online_patients];
+
+            echo json_encode($online_patients);die;
+
+        }elseif($this->request->is('post')){
+            $local_patients = $this->request->data;
+            $this->changeIsSyncOnlinePatients($local_patients);
         }
+    }
 
-        if ($this->request->is('post')) {
+    function changeIsSyncOnlinePatients($local_patients){
+        foreach ($local_patients as $local_patient){
+            $patient = $this->Users->get($local_patient['id']);
+            $patient->is_sync = 1;
+            $this->Users->save($patient);
+        }
+    }
 
-            $user = $this->Users->patchEntity($user, $this->request->data);
-            $user->role_id = 2;
-            $user->is_localhost = 1;
-            $user->is_sync = 1;
-            $user->token = $this->generateToken();
+    function getLocalPatients(){
+        $this->autoRender = false;
+        header('Content-Type: application/json');
 
-            if ($this->Users->save($user)) {
-                echo json_encode(array('success'));die;
-            } else {
-                echo json_encode(array('fail'));die;
+        $local_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2]) // doctor
+            ->select('id')->first();
+
+        $save_report = $this->saveLocalPatientsToOnline($this->request->data, $local_doctor_id['id']);
+        if ($save_report){
+            echo json_encode([
+                'status' => 'success',
+                'online_total' => $save_report[0]['online_total'],
+                'online_success' => $save_report[0]['online_success'],
+                'online_duplicate' => $save_report[0]['online_duplicate'],
+            ]);die;
+        }
+    }
+
+    function saveLocalPatientsToOnline($local_patients, $local_doctor_id){
+        $online_total = $online_success = $online_duplicate = 0;
+
+        $online_total = count($local_patients);
+        foreach($local_patients as $local_patient){
+            $have_patient = $this->Users->find()->where(['Users.first_name' => $local_patient['first_name'], 'Users.phone' => $local_patient['phone'], 'Users.doctor_id' => $local_patient['doctor_id']])->first();
+
+            if ($have_patient){
+                $have_patient->is_sync = 1;
+                $this->Users->save($have_patient);
+
+                $online_duplicate++;
+            }else{
+                $user = $this->Users->newEntity();
+                $user = $this->Users->patchEntity($user, $local_patient);
+                $user->doctor_id = $local_doctor_id;
+                $user->is_sync = 1;
+                $this->Users->save($user);
+
+                $online_success++;
             }
         }
+
+        if ($online_duplicate > 0 OR $online_success > 0){
+            return Array(['online_total' => $online_total, 'online_success' => $online_success, 'online_duplicate' => $online_duplicate]);
+        }
+        return false;
     }
 }

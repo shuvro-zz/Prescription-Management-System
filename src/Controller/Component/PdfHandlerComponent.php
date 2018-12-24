@@ -85,11 +85,11 @@ class PdfHandlerComponent extends Component
         // set header and footer fonts
         $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', 6));
         $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP+5, PDF_MARGIN_RIGHT);
+        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 
 
 // remove default header/footer
-        $pdf->setPrintHeader(true);
+        $pdf->setPrintHeader(false);
         $pdf->setPrintFooter(false);
 
 // set auto page breaks
@@ -165,7 +165,7 @@ class PdfHandlerComponent extends Component
         /*Default Template*/
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){
 
-            $url    =    Router::url('/', true);
+            $url = Router::url('/', true);
             if (($user['profile_picture'])){
                 $profile_pic = $url.'uploads/users/'.$user['profile_picture'];
             }else{
@@ -186,15 +186,16 @@ class PdfHandlerComponent extends Component
                         line-height:25px;
                     }
                     .doctor_info{
-                        font-size: 15px;color: #5d5d5d;font-weight:bold;
+                        font-size: 15px;color: #5d5d5d;
                     }                              
                     .single_table{
                         border: 2px solid #0000FE;
-                        padding: 5px;
+                        padding: 5px 10px;
                     }                    
                     .table_head{
                         background-color: #0000FE;
                         color: #fff;
+                        font-size: 18px;
                     }  
                     table{
                         font-size: 14px;
@@ -202,19 +203,19 @@ class PdfHandlerComponent extends Component
                                                                      
                 </style>
     
-                 <table>
+                 <table cellspacing="12">
                     <tr>
-                        <td >
+                        <td>
                             <table class="single_table" align="center">
                                  <tr>
                                     <td>'.$profile_pic.'</td>
                                  </tr>
                             </table>
                         </td>
-                            
+                        
                         <td colspan="2">                                                                                                   
                             <table class="single_table" align="center">
-                                <tr><td style="font-size:25px;color: #000">'.$user['first_name'].' '.$user['last_name'] .'</td></tr>';
+                                <tr><td style="font-size:23px;color: #000">'.$user['first_name'].' '.$user['last_name'] .'</td></tr>';
 
                                 if ($user['educational_qualification']){
                                     $html .= '<tr><td class="">'. $user['educational_qualification'] .'</td></tr>';
@@ -229,23 +230,17 @@ class PdfHandlerComponent extends Component
                             </table>
                         </td>
                     </tr>
-                 </table>  
+                 </table>                     
     
-                 <table>
-                    <tr>
-                        <td>&nbsp;</td>
-                    </tr>
-                 </table>
-    
-                 <table>
+                 <table cellspacing="12">
                     <tr>
                         <td>
                             <table class="single_table">
                                 <tr align="center" class="table_head"><td>PATIENT</td></tr>
-                                <tr><td>Name: '.ucfirst($prescription->user->first_name).'</td></tr>
-                                <tr><td>Age: '.$prescription->user->age . 'Years</td></tr>
-                                <tr><td>Phone: '.$prescription->user->phone.'</td></tr>
-                                <tr><td>Address: '.ucfirst($prescription->user->address_line1).'</td></tr>
+                                <tr><td>Name : '.ucfirst($prescription->user->first_name).'</td></tr>
+                                <tr><td>Age : '.$prescription->user->age . 'Years</td></tr>
+                                <tr><td>Phone : '.$prescription->user->phone.'</td></tr>
+                                <tr><td>Address : '.ucfirst($prescription->user->address_line1).'</td></tr>
                             </table>
                             
                             <table>
@@ -256,47 +251,43 @@ class PdfHandlerComponent extends Component
                              
                             <table class="single_table">
                                 <tr align="center" class="table_head"><td>DIAGNOSIS</td></tr>
-                                <tr><td>Date: ' .$prescription->created->format('d F Y'). '</td></tr>';
+                                <tr><td>Date : ' .$prescription->created->format('d F Y'). '</td></tr>';
 
                                 $i =1;
                                 foreach($prescription->diagnosis as $diagnosis ) {
-                                    $html .= '<tr><td>'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).". ".'</td></tr>';
+                                    $html .= '<tr><td>'.$i.'. '. ucfirst($diagnosis['diagnosis_list']['name']).'</td></tr>';
                                     $i++;
                                 }
 
 
-                                $html .= '<tr><td>BP: ' .ucfirst($prescription->blood_pressure). '</td></tr>
-                                <tr><td>Tem: ' .ucfirst($prescription->temperature). '</td></tr>
+                                $html .= '<tr><td>BP : ' .ucfirst($prescription->blood_pressure). '</td></tr>
+                                <tr><td>Tem : ' .ucfirst($prescription->temperature). '</td></tr>
                             </table>
                         </td>
-                        <td colspan="2">
+                        <td colspan="2"> 
                             <table class="single_table">
                                 <tr align="center" class="table_head"><td>MEDICINES</td></tr>';
 
                                 $i =1;
                                 foreach($prescription->medicines as $medicine ) {
                                     $html.= '<tr>
-                                                <td>'.$i.'. '. ucfirst($medicine->name) .'</td>
-                                             </tr>'
-
-                                             .(($medicine->_joinData->rule)? '<tr>
-                                                <td>( '. $medicine->_joinData->rule .' )</td>
-                                             </tr>': "");
+                                                <td>'.$i.'. '. ucfirst($medicine->name) ." : " . (($medicine->_joinData->rule)? '( '. $medicine->_joinData->rule .' )': "").'</td>
+                                             </tr>';
                                     $i++;
+                                }
+
+                                //Create blank tr.....
+                                $blank_tr = 9-count($prescription->medicines);
+                                for($i=1; $i<=$blank_tr; $i++) {
+                                    $html .= '<tr><td></td></tr>';
                                 }
 
                             $html .= '</table>
                         </td>
                     </tr>
-                 </table>
+                 </table>                 
     
-                <table>
-                    <tr>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
-    
-                 <table>
+                 <table cellspacing="12">
                     <tr>
                         <td>
                             <table class="single_table">
@@ -304,47 +295,57 @@ class PdfHandlerComponent extends Component
 
                                 $i =1;
                                 foreach($prescription->tests as $test ) {
-                                        $html .= '<tr><td>'.$i.'. '. ucfirst($test->name).". ".'</td></tr>';
+                                        $html .= '<tr><td>'.$i.'. '. ucfirst($test->name).'</td></tr>';
                                     $i++;
                                 }
 
+                            //Create blank tr.....
+                            $blank_tr = 2-count($prescription->tests);
+                            for($i=1; $i<=$blank_tr; $i++) {
+                                $html .= '<tr><td></td></tr>';
+                            }
+
                             $html .= '</table>
                         </td>
-                        <td>
+                        <td colspan="2">
                             <table class="single_table">
                                 <tr align="center" class="table_head"><td>OTHERS INSTRUCTIONS</td></tr>
                                 <tr>
                                     <td>'.
                                         $prescription->other_instructions
                                     .'</td>
-                                </tr>
-                            </table>                            
+                                </tr>';
+
+                            if (str_word_count($prescription->other_instructions) < 30){
+                                $html .= '<tr><td></td></tr>';
+                            }
+
+                            $html.='</table>                            
                         </td>
                     </tr>
-                 </table>
-    
-                <table>
-                    <tr>
-                        <td>&nbsp;</td>
-                    </tr>
-                </table>
+                 </table>                 
                 
-                <table>
-                <tr>
-                    <td>
-                        <table class="single_table">
-                            <tr align="center" class="table_head"><td>DOCTORS NOTE</td></tr>
-                            <tr>
-                                <td>'.
-                                    $prescription->doctores_notes
-                                .'</td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
+                <table cellspacing="12">
+                    <tr>
+                        <td>
+                            <table class="single_table">
+                                <tr align="center" class="table_head"><td>DOCTORS NOTE</td></tr>
+                                <tr>
+                                    <td>'.
+                                        $prescription->doctores_notes
+                                    .'</td>
+                                </tr>';
+
+                                if (str_word_count($prescription->doctores_notes) < 15){
+                                    $html .= '<tr><td></td></tr>';
+                                }
+
+                            $html.='</table>
+                        </td>
+                    </tr>
                 </table>                                  
     
-                  <table>
+                  <table cellspacing="12" style="padding-top: -24px">
                     <tr>
                         <td>
                           <table style="border-bottom: 2px solid #0000FE;">
@@ -359,15 +360,15 @@ class PdfHandlerComponent extends Component
                   <table>
                     <tr>
                         <td>
-                            <table style="padding-top: 5px;">
+                            <table style="padding: 0px 10px">
                               <tr>
                                   <td>
-                                    Address: '. $user['address_line1'] .", ".$user['address_line2']
+                                    Address : '. $user['address_line1'] .", ".$user['address_line2']
                                   .'</td>
                               </tr>
                                <tr>
                                   <td>
-                                    For Booking Call: ' . $user['phone'] .
+                                    For Booking Call : ' . $user['phone'] .
                                   '</td>
                               </tr>
                                <tr>
@@ -382,17 +383,17 @@ class PdfHandlerComponent extends Component
                             
                               <tr>
                                   <td>
-                                    Visiting Time: '. $user['visiting_time'].
+                                    Visiting Time : '. $user['visiting_time'].
                                   '</td>
                               </tr>
                                <tr>
                                   <td>
-                                    Off Day: ' . $user['off_day'].
+                                    Off Day : ' . $user['off_day'].
                                 '</td>
                               </tr>
                                <tr>
                                   <td>
-                                     Website: ' . $user['website'].
+                                     Website : ' . $user['website'].
                                   '</td>
                               </tr>
                               </table>                          

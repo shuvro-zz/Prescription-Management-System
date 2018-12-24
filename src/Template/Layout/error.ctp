@@ -1,7 +1,4 @@
-<?php
 
-$cakeDescription = 'LeanHealth';
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,18 +26,11 @@ $cakeDescription = 'LeanHealth';
 
     <body>
         <div id="container">
-
-            <?php echo $this->element('default_header');?>
-
             <div class="error-page">
                 <h1>O<span>ops</span>!</h1>
                 <h2>404 Error </h2>
                 <p>Oh Dear! We can't find the page you were looking for. Isn't that annoying? Sorry for the inconvenience.</p>
             </div>
-
-            <?php echo $this->element('default_footer');?>
-
-
         </div>
     
     </body>

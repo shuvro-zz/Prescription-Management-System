@@ -4,7 +4,7 @@
         <?php echo $this->Html->charset() ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Lean Health</title>
+        <title>Title</title>
         
 
         <?php //echo $this->Html->meta('icon') ?>
@@ -17,10 +17,6 @@
 
     </head>
     <body class="home">
-
-        <?php echo $this->element('home_header');?>
-
         <?php echo $this->fetch('content') ?>
-
     </body>
 </html>

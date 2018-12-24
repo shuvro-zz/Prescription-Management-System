@@ -49,12 +49,12 @@ use Cake\Routing\Router;
                 ?>
 
                 <?php
-                echo $this->Html->link(
+/*                echo $this->Html->link(
                     'edit prescription',
                     ['action' => 'edit', $prescription->id],
                     ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Edit Prescription']
                 );
-                ?>
+                */?>
             </div>
         </div>
     </div>
