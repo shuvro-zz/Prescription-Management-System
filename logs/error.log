@@ -10,3 +10,62 @@
 (
 )
 
+2018-12-26 00:26:33 Error: Array
+(
+)
+
+2018-12-26 00:45:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Pms could not be found.
+Exception Attributes: array (
+  'class' => 'Pms',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms//pms/css/admin_styles/images/dashboard-settings-sm.png
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-26 00:45:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/js/custom/registration.js?v=3.0
+Referer URL: http://localhost/pms//pms/css/admin_styles/images/dashboard-settings-sm.png
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-26 00:45:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/css/dot.png
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2018-12-26 00:45:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /pms/img/bg_lean.jpg
+Referer URL: http://localhost/pms/css/style.css?v=3.0
+Stack Trace:
+#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

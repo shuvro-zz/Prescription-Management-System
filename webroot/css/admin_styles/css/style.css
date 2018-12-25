@@ -24,6 +24,28 @@ h5:before, .h5:before{
 .workspace{
     margin-left: 266px;
 }
+.workspace-dashboard .event-listing .table tr td,
+.table tr th, table a,
+.pagination-status-text,
+.pagination li a,
+.status-area a.btn.btn-default.waves-effect.btn-cancel,
+.user-dropdown li a{
+    color: #000!important;
+}
+.status-area a.btn.btn-default.waves-effect.btn-cancel{
+    font-size: 13px!important;
+}
+.workspace-dashboard .event-listing .event-listing-top.status-function .status-area .event-src-box input[type="text"]{
+    border: 1px solid #ccc!important;
+}
+.workspace-dashboard .event-listing .event-listing-top.status-function .status-area .event-src-box button{
+    color: #000!important;
+    border: 1px solid #ccc!important;
+}
+
+.form-control::placeholder{
+    color: #7d7d7d!important;
+}
 
 .cu_con_outer{
     width: 100%;
