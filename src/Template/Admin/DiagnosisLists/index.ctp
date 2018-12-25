@@ -68,31 +68,36 @@
                         <td><?= ucfirst(h($diagnosi->name)) ?></td>
                         <td><?= h($diagnosi->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
-                        <div class="dropdown action-button">
-                            <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
-                                <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
-                            </span>
-                            <ul class="dropdown-menu action-dropdown">
-                                <li>
-                                    <?php
-                                    echo $this->Html->link(
-                                    '<span class="fa fa-pencil-square"></span> Edit',
-                                    ['action' => 'edit', $diagnosi->id],
-                                    ['escapeTitle' => false, 'title' => 'Edit Diagnosis']
-                                    );
-                                    ?>
-                                </li>
-                                <li>
-                                    <?php
-                                    echo $this->Form->postLink(
-                                    '<span class="fa fa-trash"></span> Delete',
-                                    ['action' => 'delete', $diagnosi->id],
-                                    ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $diagnosi->id)]
-                                    );
-                                    ?>
-                                </li>
-                            </ul>
-                        </div>
+
+                            <?php  if ($this->request->session()->read('Auth.User.role_id') == 1) { ?>
+
+                                <div class="dropdown action-button">
+                                    <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
+                                        <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
+                                    </span>
+                                    <ul class="dropdown-menu action-dropdown">
+                                        <li>
+                                            <?php
+                                            echo $this->Html->link(
+                                            '<span class="fa fa-pencil-square"></span> Edit',
+                                            ['action' => 'edit', $diagnosi->id],
+                                            ['escapeTitle' => false, 'title' => 'Edit Diagnosis']
+                                            );
+                                            ?>
+                                        </li>
+                                        <li>
+                                            <?php
+                                            echo $this->Form->postLink(
+                                            '<span class="fa fa-trash"></span> Delete',
+                                            ['action' => 'delete', $diagnosi->id],
+                                            ['escapeTitle' => false, 'title' => 'Delete Coupon','confirm' => __('Are you sure you want to delete # {0}?', $diagnosi->id)]
+                                            );
+                                            ?>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            <?php }else { echo "N/A"; } ?>
                         </td>
                     </tr>
                     <?php endforeach; ?>

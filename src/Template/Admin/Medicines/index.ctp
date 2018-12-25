@@ -68,6 +68,9 @@
                         <td><?= ucfirst(h($medicine->name)) ?></td>
                         <td><?= h($medicine->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
+
+                            <?php  if ($this->request->session()->read('Auth.User.role_id') == 1) { ?>
+
                             <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown">
                                 <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
@@ -93,6 +96,8 @@
                                     </li>
                                 </ul>
                             </div>
+
+                            <?php }else { echo "N/A"; } ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

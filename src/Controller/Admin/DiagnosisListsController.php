@@ -43,7 +43,7 @@ class DiagnosisListsController extends AppController
         $this->paginate = [
             'limit' => 30,
             'order' => [
-                'Diagnosis.id' => 'desc'
+                'DiagnosisLists.id' => 'desc'
             ]
         ];
         $diagnosis = $this->paginate($query);
