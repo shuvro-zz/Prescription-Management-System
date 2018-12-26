@@ -1,71 +1,374 @@
-2018-12-25 23:58:46 Error: Array
+2018-12-27 01:22:13 Error: Array
 (
+    [0] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Ectode
+            [medicines] => Array
+                (
+                )
+
+            [tests] => Array
+                (
+                    [0] => Endoscopy 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [1] => Array
+        (
+            [instructions] => bgfdghfh
+            [diagnosis] => Talipes equinovarus
+            [medicines] => Array
+                (
+                    [0] => Reversair 10 Tablet
+                    [1] => Tenocab 5/50 Tablet
+                )
+
+            [tests] => Array
+                (
+                    [0] => SGPT 
+                    [1] => Evaluation of ectopic Pregnancy 
+                    [2] => SingleLimb U/L 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [2] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Sociophobia
+            [medicines] => Array
+                (
+                    [0] => Analac Nasal Spray
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Upper Abdomen 
+                )
+
+            [created] => 2018-12-26T23:54:27+06:00
+            [is_sync] => 0
+        )
+
+    [3] => Array
+        (
+            [instructions] => rtete
+            [diagnosis] => Attenuated FAP
+            [medicines] => Array
+                (
+                    [0] => Hexisol Hand Rub
+                    [1] => Gabarol 75 Capsule
+                )
+
+            [tests] => Array
+                (
+                    [0] => Evaluation of adnexal mass 
+                    [1] => FT4 
+                )
+
+            [created] => 2018-12-26T19:46:38+06:00
+            [is_sync] => 1
+        )
+
 )
 
-2018-12-26 00:03:16 Error: Array
+2018-12-27 01:23:29 Error: Array
 (
+    [0] => Array
+        (
+            [instructions] => asdf
+            [diagnosis] => Smallpox
+            [medicines] => Array
+                (
+                    [0] => Z-Lidocaine Injection
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Pelvic Organ 
+                )
+
+            [created] => 2018-12-27T01:23:24+06:00
+            [is_sync] => 0
+        )
+
+    [1] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Ectode
+            [medicines] => Array
+                (
+                )
+
+            [tests] => Array
+                (
+                    [0] => Endoscopy 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [2] => Array
+        (
+            [instructions] => bgfdghfh
+            [diagnosis] => Talipes equinovarus
+            [medicines] => Array
+                (
+                    [0] => Reversair 10 Tablet
+                    [1] => Tenocab 5/50 Tablet
+                )
+
+            [tests] => Array
+                (
+                    [0] => SGPT 
+                    [1] => Evaluation of ectopic Pregnancy 
+                    [2] => SingleLimb U/L 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [3] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Sociophobia
+            [medicines] => Array
+                (
+                    [0] => Analac Nasal Spray
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Upper Abdomen 
+                )
+
+            [created] => 2018-12-26T23:54:27+06:00
+            [is_sync] => 1
+        )
+
+    [4] => Array
+        (
+            [instructions] => rtete
+            [diagnosis] => Attenuated FAP
+            [medicines] => Array
+                (
+                    [0] => Hexisol Hand Rub
+                    [1] => Gabarol 75 Capsule
+                )
+
+            [tests] => Array
+                (
+                    [0] => Evaluation of adnexal mass 
+                    [1] => FT4 
+                )
+
+            [created] => 2018-12-26T19:46:38+06:00
+            [is_sync] => 1
+        )
+
 )
 
-2018-12-26 00:04:30 Error: Array
+2018-12-27 01:24:00 Error: Array
 (
+    [0] => Array
+        (
+            [instructions] => asdf
+            [diagnosis] => Smallpox
+            [medicines] => Array
+                (
+                    [0] => Z-Lidocaine Injection
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Pelvic Organ 
+                )
+
+            [created] => 2018-12-27T01:23:24+06:00
+            [is_sync] => 0
+        )
+
+    [1] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Ectode
+            [medicines] => Array
+                (
+                )
+
+            [tests] => Array
+                (
+                    [0] => Endoscopy 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [2] => Array
+        (
+            [instructions] => bgfdghfh
+            [diagnosis] => Talipes equinovarus
+            [medicines] => Array
+                (
+                    [0] => Reversair 10 Tablet
+                    [1] => Tenocab 5/50 Tablet
+                )
+
+            [tests] => Array
+                (
+                    [0] => SGPT 
+                    [1] => Evaluation of ectopic Pregnancy 
+                    [2] => SingleLimb U/L 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [3] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Sociophobia
+            [medicines] => Array
+                (
+                    [0] => Analac Nasal Spray
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Upper Abdomen 
+                )
+
+            [created] => 2018-12-26T23:54:27+06:00
+            [is_sync] => 1
+        )
+
+    [4] => Array
+        (
+            [instructions] => rtete
+            [diagnosis] => Attenuated FAP
+            [medicines] => Array
+                (
+                    [0] => Hexisol Hand Rub
+                    [1] => Gabarol 75 Capsule
+                )
+
+            [tests] => Array
+                (
+                    [0] => Evaluation of adnexal mass 
+                    [1] => FT4 
+                )
+
+            [created] => 2018-12-26T19:46:38+06:00
+            [is_sync] => 1
+        )
+
 )
 
-2018-12-26 00:26:33 Error: Array
+2018-12-27 01:25:50 Error: Array
 (
+    [0] => Array
+        (
+            [instructions] => asdf
+            [diagnosis] => Smallpox
+            [medicines] => Array
+                (
+                    [0] => Z-Lidocaine Injection
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Pelvic Organ 
+                )
+
+            [created] => 2018-12-27T01:23:24+06:00
+            [is_sync] => 0
+        )
+
+    [1] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Ectode
+            [medicines] => Array
+                (
+                )
+
+            [tests] => Array
+                (
+                    [0] => Endoscopy 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [2] => Array
+        (
+            [instructions] => bgfdghfh
+            [diagnosis] => Talipes equinovarus
+            [medicines] => Array
+                (
+                    [0] => Reversair 10 Tablet
+                    [1] => Tenocab 5/50 Tablet
+                )
+
+            [tests] => Array
+                (
+                    [0] => SGPT 
+                    [1] => Evaluation of ectopic Pregnancy 
+                    [2] => SingleLimb U/L 
+                )
+
+            [created] => 2018-12-27T00:26:21+06:00
+            [is_sync] => 1
+        )
+
+    [3] => Array
+        (
+            [instructions] => 
+            [diagnosis] => Sociophobia
+            [medicines] => Array
+                (
+                    [0] => Analac Nasal Spray
+                )
+
+            [tests] => Array
+                (
+                    [0] => USG Of Upper Abdomen 
+                )
+
+            [created] => 2018-12-26T23:54:27+06:00
+            [is_sync] => 1
+        )
+
+    [4] => Array
+        (
+            [instructions] => rtete
+            [diagnosis] => Attenuated FAP
+            [medicines] => Array
+                (
+                    [0] => Hexisol Hand Rub
+                    [1] => Gabarol 75 Capsule
+                )
+
+            [tests] => Array
+                (
+                    [0] => Evaluation of adnexal mass 
+                    [1] => FT4 
+                )
+
+            [created] => 2018-12-26T19:46:38+06:00
+            [is_sync] => 1
+        )
+
 )
-
-2018-12-26 00:45:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Pms could not be found.
-Exception Attributes: array (
-  'class' => 'Pms',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms//pms/css/admin_styles/images/dashboard-settings-sm.png
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-12-26 00:45:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
-Exception Attributes: array (
-  'class' => 'Js',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/js/custom/registration.js?v=3.0
-Referer URL: http://localhost/pms//pms/css/admin_styles/images/dashboard-settings-sm.png
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-12-26 00:45:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
-Exception Attributes: array (
-  'class' => 'Css',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/css/dot.png
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
-
-2018-12-26 00:45:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
-Exception Attributes: array (
-  'class' => 'Img',
-  'plugin' => NULL,
-  'prefix' => NULL,
-  '_ext' => NULL,
-)
-Request URL: /pms/img/bg_lean.jpg
-Referer URL: http://localhost/pms/css/style.css?v=3.0
-Stack Trace:
-#0 E:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
-#1 {main}
-
 

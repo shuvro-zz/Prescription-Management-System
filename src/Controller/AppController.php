@@ -16,7 +16,7 @@ class AppController extends Controller
 
         $this->loadComponent('Flash');
         $this->loadComponent('Cookie');
-        //$this->loadComponent('RequestHandler');
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [
@@ -37,7 +37,6 @@ class AppController extends Controller
 
     public function isAuthorized($auth)       // Checking is admin or not
     {
-
         if(!empty($this->request->params['prefix']) && !empty($auth) ) {
             if ($this->request->params['prefix'] == 'admin' and ($this->Auth->user('role_id') == 2 or $this->Auth->user('role_id') == 1)) {
                 return true;
