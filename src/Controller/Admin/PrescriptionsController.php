@@ -625,9 +625,6 @@ class PrescriptionsController extends AppController
 
             $this->log($online_prescriptions);
 
-            echo "<pre>";
-            pr($online_prescriptions);
-
             echo json_encode($online_prescriptions);die;
         }
     }

@@ -686,10 +686,13 @@ label.error {
     border-radius: 20px;
 }
 .single_section .info{
-    padding: 14px;
+    padding: 10px;
 }
 .single_section .info p{
     color: #000;
+}
+.default_prescription_info{
+    min-height: 178px;
 }
 .single_section h2 {
     margin: 0px!important;

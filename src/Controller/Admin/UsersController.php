@@ -707,7 +707,6 @@ class UsersController extends AppController
         $this->autoRender = false;
         header('Content-Type: application/json');
 
-        $this->log($this->request->data);
         $local_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2]) // doctor
             ->select('id')->first();
 

@@ -343,8 +343,8 @@ class DiagnosisController extends AppController
             $online_diagnosis_templates = $this->Diagnosis->find('all', ['contain' => ['DiagnosisLists','Medicines','Tests']],['limit' => 100])
                                                 ->order(['Diagnosis.id' => 'desc'])
                                                 ->where([
-                                                    'Diagnosis.doctor_id' => $local_doctor_id['id'],
-                                                    'Diagnosis.is_sync' == 0
+                                                        'Diagnosis.doctor_id' => $local_doctor_id['id'],
+                                                        'Diagnosis.is_sync' == 0
                                                 ])->toArray();
 
             echo json_encode($online_diagnosis_templates);die;

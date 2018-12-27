@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="col-sm-9">
-                                <div class="doctor_info single_section">
+                                <div class="doctor_info single_section default_prescription_info">
                                     <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
                                     <p><?php echo ($user['educational_qualification']) ?></p>
                                     <?php if($user['clinic_name']){?>
@@ -83,17 +83,17 @@
                                 <div class="patient_details_default_prescription single_section">
                                     <h2>PATIENT</h2>
                                     <div class="info">
-                                        <p><b>Name:</b> <?= ucfirst($prescription->user->first_name) ?></p>
-                                        <p><b>Age:</b> <?= $prescription->user->age .' Years' ?></p>
-                                        <p><b>Phone:</b> <?= $prescription->user->phone ?></p>
-                                        <p><b>Address:</b> <?= ucfirst($prescription->user->address_line1) ?></p>
+                                        <p><b>Name :</b> <?= ucfirst($prescription->user->first_name) ?></p>
+                                        <p><b>Age :</b> <?= $prescription->user->age .' Years' ?></p>
+                                        <p><b>Phone :</b> <?= $prescription->user->phone ?></p>
+                                        <p><b>Address :</b> <?= ucfirst($prescription->user->address_line1) ?></p>
                                     </div>
                                 </div>
 
                                 <div class="diagnosis_default_prescription single_section">
                                     <h2>DIAGNOSIS</h2>
                                     <div class="info">
-                                        <p><b>Date:</b> <?= $prescription->created->format('d F Y'); ?></p>
+                                        <p><b>Date :</b> <?= $prescription->created->format('d F Y'); ?></p>
 
                                         <?php
                                             $i = 1;
@@ -103,8 +103,8 @@
                                             }
                                         ?>
 
-                                        <p><b>BP:</b> <?= ucfirst($prescription->blood_pressure) ?></p>
-                                        <p><b>Tem:</b><?= $prescription->temperature ?></p>
+                                        <p><b>BP :</b> <?= ucfirst($prescription->blood_pressure) ?></p>
+                                        <p><b>Tem :</b><?= $prescription->temperature ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -178,15 +178,15 @@
                     <div class="row">
                           <div class="col-sm-12">
                               <div class="col-sm-6">
-                                  <p><b>Address:</b> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p>
-                                  <p><b>For Booking Call:</b>  <?php echo ($user['phone']) ?></p>
+                                  <p><b>Address :</b> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p>
+                                  <p><b>For Booking Call :</b>  <?php echo ($user['phone']) ?></p>
                                   <p>Must make booking before visiting the doctor.</p>
                               </div>
 
                               <div class="col-sm-6">
-                                  <p><b>Visiting Time:</b>  <?php echo ($user['visiting_time']) ?></p>
-                                  <p><b>Off Day:</b> <?php echo ($user['off_day']) ?></p>
-                                  <p><b>Website:</b> <?php echo ($user['website']) ?></p>
+                                  <p><b>Visiting Time :</b>  <?php echo ($user['visiting_time']) ?></p>
+                                  <p><b>Off Day :</b> <?php echo ($user['off_day']) ?></p>
+                                  <p><b>Website :</b> <?php echo ($user['website']) ?></p>
                               </div>
                           </div>
                     </div>
