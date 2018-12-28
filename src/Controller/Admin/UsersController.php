@@ -678,11 +678,9 @@ class UsersController extends AppController
         header('Content-Type: application/json');
 
         if ($this->request->is('get')){
-            //Local Doctor id
-            $local_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2])
-                ->select('id')->first();
+            $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
 
-            $online_patients = $this->Users->find('all', ['limit' => 100])->where(['Users.doctor_id' => $local_doctor_id['id'],
+            $online_patients = $this->Users->find('all', ['limit' => 100])->where(['Users.doctor_id' => $online_doctor_id,
                 'Users.role_id' => 3,
                 'Users.is_sync' => 0
             ])->toArray();
@@ -707,10 +705,10 @@ class UsersController extends AppController
         $this->autoRender = false;
         header('Content-Type: application/json');
 
-        $local_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2]) // doctor
+        $online_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2]) // doctor
             ->select('id')->first();
 
-        $save_report = $this->saveLocalPatientsToOnline($this->request->data, $local_doctor_id['id']);
+        $save_report = $this->saveLocalPatientsToOnline($this->request->data, $online_doctor_id['id']);
         if ($save_report){
             echo json_encode([
                 'status' => 'success',
@@ -721,7 +719,7 @@ class UsersController extends AppController
         }
     }
 
-    function saveLocalPatientsToOnline($local_patients, $local_doctor_id){
+    function saveLocalPatientsToOnline($local_patients, $online_doctor_id){
         $online_total = $online_success = $online_duplicate = 0;
 
         $online_total = count($local_patients);
@@ -736,7 +734,7 @@ class UsersController extends AppController
             }else{
                 $user = $this->Users->newEntity();
                 $user = $this->Users->patchEntity($user, $local_patient);
-                $user->doctor_id = $local_doctor_id;
+                $user->doctor_id = $online_doctor_id;
                 $user->is_sync = 1;
                 $this->Users->save($user);
 

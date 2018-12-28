@@ -14,7 +14,6 @@ class CommonComponent extends Component
     {
         parent::initialize($config);
         $this->controller = $this->_registry->getController();
-
     }
     
     
@@ -67,5 +66,14 @@ class CommonComponent extends Component
             ->order(['Prescriptions.id' => 'desc'])->first();
 
         return $latest_prescription;
+    }
+
+    function getOnlineDoctorId($local_doctor_email){
+        $this->controller->loadModel('Users');
+
+        $online_doctor_id = $this->controller->Users->find()->where(['Users.email' => $local_doctor_email])
+                            ->select('id')->first();
+
+        return $online_doctor_id['id'];
     }
 }
