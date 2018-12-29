@@ -60,7 +60,7 @@
 
                                 <b><p style="color: #000"   > <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
                                 <!--<a href="#"><b><p> <?php /*echo ($user['website']) */?> </p></b></a>-->
-                                <p> Call: <?php echo ($user['phone']) ?></p>
+                                <p> Call : <?php echo ($user['phone']) ?></p>
 
                                 <?php if($user['website']){?>
                                     <p> <?php echo ($user['website']) ?></p>
@@ -117,15 +117,15 @@
                                     <?php
                                     foreach ($prescription->medicines as $medicine){
                                         echo '<li>
-                                                <span class="">'. ucfirst($medicine->name) .' :</span>
-                                               '.(($medicine->_joinData->rule)? '<span>( '.$medicine->_joinData->rule.' )</span>': "-").'
+                                                <span class="">'. ucfirst($medicine->name) .'</span>
+                                               '.(($medicine->_joinData->rule)? '<span> : ( '.$medicine->_joinData->rule.' )</span>': "-").'
                                             </li>';
                                     }
                                     ?>
                                 </ul>
                             </div>
                             <div class="col-sm-3">
-                                <p style="text-align: right"><b>Date:</b> <?= $prescription->created->format('d F Y'); ?> </p>
+                                <p style="text-align: right"><b>Date : </b> <?= $prescription->created->format('d F Y'); ?> </p>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                     <div class="row">
                         <div class="col-sm-5 offset-sm-2">
                             <div class="view2_cember_info" style="text-align: center">
-                                <h4 style="color: #000;">Chamber:</h4>
+                                <h4 style="color: #000;">Chamber : </h4>
                                 <p style="color: #fff;"><?php echo $user['cember_name'] ?></p>
                                 <p style="color: #fff"><?php echo $user['cember_address'] ?></p>
                             </div>
@@ -153,7 +153,7 @@
 
                         <div class="col-sm-5">
                             <div class="view2_show_time" style="text-align: center">
-                                <h4 style="color: #000;">Visiting Time:</h4>
+                                <h4 style="color: #000;">Visiting Time : </h4>
                                 <p style="color: #fff; flex-wrap: wrap"><?php echo $user['visiting_time'] ?></p>
                                 <p style="color: #fff"><?php echo $user['off_day'] ?></p>
                             </div>

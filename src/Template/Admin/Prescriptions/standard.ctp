@@ -50,7 +50,7 @@
                                     <b><p> <?php echo ($user['specialist']) ?> </p></b>
                                     <b><p> <?php echo ($user['educational_qualification']) ?> </p></b>
                                     <b><p> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p></b>
-                                    <b><p> Call: <?php echo ($user['phone']) ?></p></b>
+                                    <b><p> Call : <?php echo ($user['phone']) ?></p></b>
                                     <b><p> <?php echo ($user['website']) ?></p></b>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
 
 
                     <div style="float:right;">
-                        <b>Last Visit Date: </b><?= $latest_prescription->created->format('d F Y') ?>
+                        <b>Last Visit Date : </b><?= $latest_prescription->created->format('d F Y') ?>
                     </div>
                     <h4>Patient</h4>
                     <div>
@@ -107,8 +107,8 @@
                                     <?php
                                         foreach ($prescription->medicines as $medicine){
                                             echo '<div>
-                                                <span class="prescription_caption">'. ucfirst($medicine->name) .' :</span>
-                                               '.(($medicine->_joinData->rule)? '<span>( '.$medicine->_joinData->rule.' )</span>': "-").'
+                                                <span class="prescription_caption">'. ucfirst($medicine->name) .'</span>
+                                               '.(($medicine->_joinData->rule)? '<span> : ( '.$medicine->_joinData->rule.' )</span>': "-").'
                                             </div>';
                                         }
                                     ?>
@@ -156,13 +156,13 @@
                             <div class="col-sm-5">
                                 <div class="signature">
                                     <?php $user = $this->request->session()->read('Auth.User'); ?>
-                                    <p><b>Signature:</b> <?php echo $user['first_name'].' '.$user['last_name'] ?> </p>
+                                    <p><b>Signature : </b> <?php echo $user['first_name'].' '.$user['last_name'] ?> </p>
                                 </div>
                             </div>
                             <div class="col-sm-4"></div>
                             <div class="col-sm-3">
                                 <div class="prescription_date">
-                                    <p><b>Date:</b> <?= $prescription->created->format('d F Y'); ?> </p>
+                                    <p><b>Date : </b> <?= $prescription->created->format('d F Y'); ?> </p>
                                 </div>
                             </div>
                         </div>

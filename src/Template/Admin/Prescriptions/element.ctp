@@ -231,12 +231,12 @@
 
     <div class="row">
         <div class="prescription_button_section">
-            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default btn-cancel prescription_btn" title="Cancel">Cancel</a>
             <div class="flex-item">
-                <?= $this->Form->button(__('Save'), ['class' => 'btn save event-save']) ?>
+                <?= $this->Form->button(__('Save'), ['class' => 'btn save event-save prescription_btn']) ?>
             </div>
             <div class="flex-item">
-                <?= $this->Form->button(__('Save & Print'), ['class' => 'btn save event-save', 'type' => 'button', 'onclick' => 'saveAndPrint()']) ?>
+                <?= $this->Form->button(__('Save & Print'), ['class' => 'btn save event-save prescription_btn', 'type' => 'button', 'onclick' => 'saveAndPrint()']) ?>
             </div>
         </div>
     </div>

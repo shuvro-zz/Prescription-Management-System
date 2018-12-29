@@ -257,7 +257,7 @@ button, .wizard-config .btn-continue{
     height: 46px;
 }
 .examinations{
-    height: 100px!important;
+    height: 108px!important;
 }
 .medicines_row .tokenize > .tokens-container > .token-search{
     margin: 0px 5px 0 0;
@@ -423,7 +423,7 @@ button, .wizard-config .btn-continue{
 .left_side textarea,.right_side textarea{
     width: 100%;
     border-radius: 5px;
-    height: 100px;
+    height: 108px;
     border: none;
 }
 .left_side {
@@ -732,6 +732,10 @@ label.error {
     height: 35px!important;
     padding: 0px!important;
     padding-left: 35px!important;
+}
+.prescription_btn {
+    height: 35px!important;
+    padding: 6px 12px!important;
 }
 .fs_dashboard_area h1{
     font-size: 25px;

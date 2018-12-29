@@ -343,13 +343,11 @@ class DiagnosisController extends AppController
                                 ->select('id')->first();
 
             $online_diagnosis_templates = $this->Diagnosis->find('all', ['contain' => ['DiagnosisLists','Medicines','Tests']],['limit' => 100])
-                                                ->order(['Diagnosis.id' => 'desc'])
+                                                ->order(['Diagnosis.id' => 'asc'])
                                                 ->where([
                                                         'Diagnosis.doctor_id' => $online_doctor_id['id'],
                                                         'Diagnosis.is_sync' => 0
                                                 ])->toArray();
-
-            $this->log($online_diagnosis_templates);
 
             echo json_encode($online_diagnosis_templates);die;
 
@@ -376,9 +374,12 @@ class DiagnosisController extends AppController
         header('Content-Type: application/json');
 
         $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
-
         $local_diagnosis_templates = json_decode($this->request->data[0]);
 
+        $online_total = $online_success = $online_duplicate = 0;
+        $will_sync_true_diagnosis_template_ids = [];
+
+        $online_total = count($local_diagnosis_templates);
         foreach ($local_diagnosis_templates as $local_diagnosis_template){
             $diagnosis_list_id = $this->DiagnosisLists->findByName($local_diagnosis_template->diagnosis->name)
                                 ->select('DiagnosisLists.id')->first();
@@ -390,6 +391,8 @@ class DiagnosisController extends AppController
 
             if ($diagnosis_list_id And empty($have_diagnosis_template)){
 
+                $will_sync_true_diagnosis_template_ids[] = $local_diagnosis_template->id;
+
                 $instructions = $local_diagnosis_template->instructions;
 
                 $medicines = $this->collectLocalDiagnosisMedicine($local_diagnosis_template->diagnosis_medicine);
@@ -397,9 +400,28 @@ class DiagnosisController extends AppController
                 $tests = $this->collectLocalDiagnosisTest($local_diagnosis_template->diagnosis_test);
 
                 $this->saveLocalDiagnosisTemplateToOnline($diagnosis_list_id['id'], $instructions, $medicines, $tests, $online_doctor_id);
+
+                $online_success++;
+            }elseif($diagnosis_list_id And $have_diagnosis_template){
+
+                $have_diagnosis_template->is_sync = 1;
+                $this->Diagnosis->save($have_diagnosis_template);
+
+                $will_sync_true_diagnosis_template_ids[] = $local_diagnosis_template->id;
+                $online_duplicate++;
             }
         }
-        echo json_encode(['status'=>'success']);die;
+
+        if ($will_sync_true_diagnosis_template_ids){
+            echo json_encode([
+                'status'=>'success',
+                'will_sync_ids' => $will_sync_true_diagnosis_template_ids,
+                'online_total' => $online_total,
+                'online_success' => $online_success,
+                'online_duplicate' => $online_duplicate
+            ]);die;
+        }
+        echo json_encode(['status'=>'fail']);die;
     }
 
     function collectLocalDiagnosisMedicine($diagnosis_medicines){
@@ -413,7 +435,6 @@ class DiagnosisController extends AppController
                 $medicines['_ids'][] = $medicine_id['id'];
             }
         }
-
         return $medicines;
     }
 
@@ -439,12 +460,10 @@ class DiagnosisController extends AppController
         $store_able_data['tests'] = $tests;
 
         $diagnosi = $this->Diagnosis->newEntity();
-
         $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $store_able_data);
 
         $diagnosi->doctor_id = $online_doctor_id;
-        if ($this->Diagnosis->save($diagnosi)) {
-
-        }
+        $diagnosi->is_sync = 1;
+        $this->Diagnosis->save($diagnosi);
     }
 }

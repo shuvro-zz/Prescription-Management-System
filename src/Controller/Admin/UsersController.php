@@ -680,10 +680,12 @@ class UsersController extends AppController
         if ($this->request->is('get')){
             $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
 
-            $online_patients = $this->Users->find('all', ['limit' => 100])->where(['Users.doctor_id' => $online_doctor_id,
-                'Users.role_id' => 3,
-                'Users.is_sync' => 0
-            ])->toArray();
+            $online_patients = $this->Users->find('all', ['limit' => 100])->order(['Users.id' => 'asc'])
+                                ->where([
+                                    'Users.doctor_id' => $online_doctor_id,
+                                    'Users.role_id' => 3,
+                                    'Users.is_sync' => 0
+                                ])->toArray();
 
             echo json_encode($online_patients);die;
 
@@ -717,6 +719,7 @@ class UsersController extends AppController
                 'online_duplicate' => $save_report[0]['online_duplicate'],
             ]);die;
         }
+        echo json_encode([  'status' => 'fail']);die;
     }
 
     function saveLocalPatientsToOnline($local_patients, $online_doctor_id){

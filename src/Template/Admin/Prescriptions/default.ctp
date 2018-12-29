@@ -67,7 +67,9 @@
                                     <?php if($user['clinic_name']){?>
                                         <p> <?php echo ($user['clinic_name']) ?> </p>
                                     <?php } ?>
-                                    <p>Chamber - <?php echo $user['cember_name'] .", ".$user['cember_address'] ?>
+                                    <?php if($user['cember_name']){?>
+                                        <p>Chamber - <?php echo $user['cember_name'] .", ".$user['cember_address'] ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -117,8 +119,8 @@
                                             <?php
                                             foreach ($prescription->medicines as $medicine){
                                                 echo '<li>
-                                                <p class="">'. ucfirst($medicine->name) .'  : '.(($medicine->_joinData->rule)? '( '.$medicine->_joinData->rule.' )': "").'</p>                                               
-                                            </li>';
+                                                    <p class="">'. ucfirst($medicine->name).(($medicine->_joinData->rule)? ' : ( '.$medicine->_joinData->rule.' )': "").'</p>                                               
+                                                </li>';
                                             }
                                             ?>
                                         </ul>

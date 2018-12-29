@@ -149,17 +149,6 @@ class PdfHandlerComponent extends Component
 
     function firstPgprepareOrderPdfHtml($prescription,$latest_prescription)
     {
-        /*$url    =    Router::url('/', true);
-        $devider_img = $url . 'img/pdf/divider.png';
-
-        try {
-            $devider_img = $this->__fileExistCheck('devider',$devider_img);
-        }catch(Exception $e) {
-            if($e->getMessage()=='yes') {
-                $devider_img = '';
-            }
-        }*/
-
         $user = $this->request->session()->read('Auth.User');
 
         /*Default Template*/
@@ -225,9 +214,11 @@ class PdfHandlerComponent extends Component
                                     $html .= '<tr><td class="">'. $user['specialist'] .'</td></tr>';
                                 }
 
-                                $html .= '<tr><td class="">'. $user['clinic_name'] .'</td></tr>
-                                        <tr><td class="">Chamber - '.$user['cember_name'].', '. $user['cember_address'] .'</td></tr>
-                            </table>
+                                if ($user['clinic_name']){
+                                    $html .= '<tr><td class="">'. $user['clinic_name'] .'</td></tr>
+                                        <tr><td class="">Chamber - '.$user['cember_name'].', '. $user['cember_address'] .'</td></tr>';
+                                }
+                            $html .= '</table>
                         </td>
                     </tr>
                  </table>                     
@@ -271,7 +262,7 @@ class PdfHandlerComponent extends Component
                                 $i =1;
                                 foreach($prescription->medicines as $medicine ) {
                                     $html.= '<tr>
-                                                <td>'.$i.'. '. ucfirst($medicine->name) ." : " . (($medicine->_joinData->rule)? '( '. $medicine->_joinData->rule .' )': "").'</td>
+                                                <td>'.$i.'. '. ucfirst($medicine->name).(($medicine->_joinData->rule)? ' : ( '. $medicine->_joinData->rule .' )': "").'</td>
                                              </tr>';
                                     $i++;
                                 }
