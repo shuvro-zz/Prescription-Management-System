@@ -715,8 +715,8 @@ label.error {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.instruction_default_prescription {
-    min-height: 216px;
+.instruction_default_prescription, .examination_default_prescription  {
+    min-height: 115px;
 }
 .footer_default_prescription {
     padding: 10px;

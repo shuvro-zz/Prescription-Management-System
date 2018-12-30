@@ -339,13 +339,12 @@ class DiagnosisController extends AppController
 
         if ($this->request->is('get')){
 
-            $online_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email']])
-                                ->select('id')->first();
+            $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
 
             $online_diagnosis_templates = $this->Diagnosis->find('all', ['contain' => ['DiagnosisLists','Medicines','Tests']],['limit' => 100])
                                                 ->order(['Diagnosis.id' => 'asc'])
                                                 ->where([
-                                                        'Diagnosis.doctor_id' => $online_doctor_id['id'],
+                                                        'Diagnosis.doctor_id' => $online_doctor_id,
                                                         'Diagnosis.is_sync' => 0
                                                 ])->toArray();
 
@@ -380,7 +379,9 @@ class DiagnosisController extends AppController
         $will_sync_true_diagnosis_template_ids = [];
 
         $online_total = count($local_diagnosis_templates);
+
         foreach ($local_diagnosis_templates as $local_diagnosis_template){
+
             $diagnosis_list_id = $this->DiagnosisLists->findByName($local_diagnosis_template->diagnosis->name)
                                 ->select('DiagnosisLists.id')->first();
 
@@ -402,6 +403,7 @@ class DiagnosisController extends AppController
                 $this->saveLocalDiagnosisTemplateToOnline($diagnosis_list_id['id'], $instructions, $medicines, $tests, $online_doctor_id);
 
                 $online_success++;
+
             }elseif($diagnosis_list_id And $have_diagnosis_template){
 
                 $have_diagnosis_template->is_sync = 1;
@@ -416,7 +418,6 @@ class DiagnosisController extends AppController
             echo json_encode([
                 'status'=>'success',
                 'will_sync_ids' => $will_sync_true_diagnosis_template_ids,
-                'online_total' => $online_total,
                 'online_success' => $online_success,
                 'online_duplicate' => $online_duplicate
             ]);die;

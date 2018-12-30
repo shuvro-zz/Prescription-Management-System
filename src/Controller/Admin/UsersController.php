@@ -707,10 +707,9 @@ class UsersController extends AppController
         $this->autoRender = false;
         header('Content-Type: application/json');
 
-        $online_doctor_id = $this->Users->find()->where(['Users.email' => $this->request->query['doctor_email'], 'Users.role_id' => 2]) // doctor
-            ->select('id')->first();
+        $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
 
-        $save_report = $this->saveLocalPatientsToOnline($this->request->data, $online_doctor_id['id']);
+        $save_report = $this->saveLocalPatientsToOnline($this->request->data, $online_doctor_id);
         if ($save_report){
             echo json_encode([
                 'status' => 'success',
@@ -751,3 +750,4 @@ class UsersController extends AppController
         return false;
     }
 }
+
