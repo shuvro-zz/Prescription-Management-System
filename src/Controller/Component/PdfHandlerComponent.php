@@ -106,12 +106,14 @@ class PdfHandlerComponent extends Component
         // $pdf->AddPage('P', $page_format);
         $pdf->setJPEGQuality(100);
 
+        //install font
         //$fontname = $pdf->addTTFfont(WWW_ROOT.'SolaimanLipi_20-04-07.ttf', 'TrueTypeUnicode', '', 32);
 
         // set font
        //$pdf->SetFont('solaimanlipi_200407', '', 12);
 
-        $pdf->SetFont('solaimanlipi_200407', '', 12, '', false);
+        // use the font
+        $pdf->SetFont("SiyamRupali", '', 14, '', false);
 
         $html_pdf   ='';
         $first_part = $this->firstPgprepareOrderPdfHtml($prescription,$latest_prescription);

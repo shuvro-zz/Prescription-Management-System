@@ -420,7 +420,7 @@ class PrescriptionsController extends AppController
         $this->redirect(['action' => 'view/'.$id]);
     }
 
-    function printAndDownload($id = null){
+    function printOrDownload($id = null){
         $this->generatePdf($id);
 
         $prescription = $this->Prescriptions->get($id, [
@@ -429,7 +429,7 @@ class PrescriptionsController extends AppController
 
         $pdf_link = Router::url( '/uploads/pdf/'.$prescription->pdf_file, true );
 
-        echo "<script type='text/javascript'>   
+        echo "<script type='text/javascript'>                      
                   window.location.replace('$pdf_link');
         </script>";
     }
@@ -512,12 +512,13 @@ class PrescriptionsController extends AppController
             $user = $this->Users->newEntity();
         }else{
             unset($patients['first_name']);
-            /*unset($patients['address_line1']);*/
             $user = $this->Users->get($this->request->data['user_id']);
         }
 
         $user->role_id = 3;
         $user->doctor_id = $this->request->session()->read('Auth.User.id');
+        $user->appointment_date = null;
+        $user->is_visited = 1;
         $user = $this->Users->patchEntity($user, $patients);
         $user = $this->Users->save($user);
         if($user) {
@@ -546,7 +547,6 @@ class PrescriptionsController extends AppController
     }
 
     function prepareMedicine($medicines,$prescription_id){
-        //pr($medicines);
         if($medicines){
             $new_medicines = [];
             foreach($medicines['medicine_id'] as $key => $val) {
@@ -554,7 +554,6 @@ class PrescriptionsController extends AppController
                 $new_medicines[$key]['medicine_id'] = $val;
                 $new_medicines[$key]['rule'] = $medicines['rule'][$key];
             }
-            //pr($new_medicines);die;
             return $new_medicines;
         }
     }
@@ -648,11 +647,124 @@ class PrescriptionsController extends AppController
         $this->loadModel('Users');
         $this->loadModel('Medicines');
         $this->loadModel('Tests');
+        $this->loadModel('Diagnosis');
+        $this->loadModel('DiagnosisLists');
+        $this->loadModel('PrescriptionsDiagnosis');
+        $this->loadModel('PrescriptionsMedicines');
         header('Content-Type: application/json');
 
         $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
 
-        $this->log(json_decode($this->request->data[0]));
+        if ($online_doctor_id){
+            $prescriptions = $this->request->data;
+
+            $online_success = 0;
+            $will_sync_true_prescription_ids = [];
+
+            foreach ($prescriptions as $prescription){
+                $patient_first_name = $prescription['user']['first_name'];
+                $patient_phone = $prescription['user']['phone'];
+
+                $have_patient = $this->Users->find()->where(['Users.first_name' => $patient_first_name,
+                                                            'Users.phone' => $patient_phone,
+                                                            'Users.doctor_id' => $online_doctor_id
+                                                        ])->first();
+
+                if ($have_patient){
+                    $will_sync_true_prescription_ids[] = $prescription['id'];
+
+                    //Save local prescription and test to online
+                    $prescription_id = $this->saveLocalPrescriptionAndTestToOnline($prescription, $prescription['tests'], $have_patient, $online_doctor_id);
+
+                    //Save local prescription diagnosis to online
+                    if ($prescription['formated_diagnosis']){
+                        $this->saveLocalPrescriptionDiagnosisToOnline($prescription['formated_diagnosis'], $prescription_id, $online_doctor_id);
+                    }
+
+                    //Save local prescription medicine to online
+                    if ($prescription['formated_medicines']){
+                        $this->saveLocalPrescriptionMedicineToOnline($prescription['formated_medicines'], $prescription_id);
+                    }
+                    $online_success++;
+                }
+            }
+
+            if ($will_sync_true_prescription_ids){
+                echo json_encode([
+                    'status'=>'success',
+                    'will_sync_ids' => $will_sync_true_prescription_ids,
+                    'online_success' => $online_success,
+                ]);die;
+            }
+        }
+        echo json_encode(['status'=>'fail']);die;
+    }
+
+    public function saveLocalPrescriptionAndTestToOnline($prescription, $prescription_tests, $have_patient, $online_doctor_id){
+        $prescription_and_test = [];
+        $tests = [];
+
+        foreach ($prescription_tests as $prescription_test){
+            $test_id = $this->Tests->findByName($prescription_test['name'])->select('Tests.id')->first();
+
+            if ($test_id){
+                $tests['_ids'][] = $test_id['id'];
+            }
+        }
+
+        $prescription_and_test['user_id'] = $have_patient['id'];
+        $prescription_and_test['blood_pressure'] = $prescription['blood_pressure'];
+        $prescription_and_test['temperature'] = $prescription['temperature'];
+        $prescription_and_test['doctores_notes'] = $prescription['doctores_notes'];
+        $prescription_and_test['tests'] = $tests;
+        $prescription_and_test['other_instructions'] = $prescription['other_instructions'];
+
+        $prescription = $this->Prescriptions->newEntity();
+        $prescription->doctor_id = $online_doctor_id;
+        $prescription->is_sync = 1;
+
+        $prescription = $this->Prescriptions->patchEntity($prescription, $prescription_and_test);
+        $result = $this->Prescriptions->save($prescription);
+
+        return $result->id;
+    }
+
+    public function saveLocalPrescriptionDiagnosisToOnline($prescription_diagnosis, $prescription_id, $online_doctor_id){
+
+        foreach ($prescription_diagnosis as $prescription_diagnosi){
+            $have_diagnosis_list_id = $this->DiagnosisLists->findByName($prescription_diagnosi['name'])->select('DiagnosisLists.id')->first();
+
+            $have_diagnosis_template_id = $this->Diagnosis->find()->where(['Diagnosis.diagnosis_list_id' => $have_diagnosis_list_id['id'],
+                                                                        'Diagnosis.doctor_id' => $online_doctor_id,
+                                                                    ])->select('Diagnosis.id')->first();
+
+            if ($have_diagnosis_list_id And $have_diagnosis_template_id){
+                $item = [];
+                $item['prescription_id'] = $prescription_id;
+                $item['diagnosis_id'] = $have_diagnosis_template_id['id'];
+
+                $prescription_diagnosis = $this->PrescriptionsDiagnosis->newEntity();
+                $prescription_diagnosis = $this->PrescriptionsDiagnosis->patchEntity($prescription_diagnosis, $item);
+                $this->PrescriptionsDiagnosis->save($prescription_diagnosis);
+            }
+        }
+    }
+
+    public function saveLocalPrescriptionMedicineToOnline($prescription_medicines, $prescription_id){
+        foreach ($prescription_medicines as $prescription_medicine){
+            $medicine_id = $this->Medicines->findByName($prescription_medicine['name'])->select('Medicines.id')->first();
+
+            if ($medicine_id){
+                $prescriptions_medicine = [];
+
+                $prescriptions_medicine['prescription_id'] = $prescription_id;
+                $prescriptions_medicine['medicine_id'] = $medicine_id['id'];
+                $prescriptions_medicine['rule'] = $prescription_medicine['rule'];
+
+                $prescription_medicine = $this->PrescriptionsMedicines->newEntity();
+                $prescription_medicine = $this->PrescriptionsMedicines->patchEntity($prescription_medicine, $prescriptions_medicine);
+                $this->PrescriptionsMedicines->save($prescription_medicine);
+            }
+        }
     }
 }
-

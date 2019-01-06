@@ -1,20 +1,16 @@
-@font-face {
-    font-family: 'SolaimanLipi';
-    src: url('../fonts/SolaimanLipiNormal.eot');
-    src: local('SolaimanLipi'), local('SolaimanLipi'),
-    url('../fonts/SolaimanLipiNormal.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/SolaimanLipiNormal.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 body{
-    /*font-family: "SolaimanLipi","Times New Roman"!important;*/
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
     margin: 15px 0!important;
 }
+
+.form-control{
+    padding: 6px 10px;
+}
+
 lavel#password-error {
     color: red!important;
 }
@@ -294,11 +290,27 @@ button, .wizard-config .btn-continue{
     list-style: none;
     float: left;
 }
+
 .workspace-body input[type=checkbox] {
     height: 13px;
     margin-left: -20px;
     margin-top: 6px;
 }
+
+.dashboard_table_head{
+    padding: 0px 25px!important;
+}
+
+.today_appointment input[type=checkbox] {
+    margin-left: 0px;
+}
+
+.today_appointment_level{
+    position: absolute;
+    top: 0px;
+    left: 35px;
+}
+
 .form-group .required{
     color: #ff0000;
 }
@@ -737,10 +749,11 @@ label.error {
     height: 35px!important;
     padding: 6px 12px!important;
 }
+
 .fs_dashboard_area h1{
     font-size: 25px;
     margin: 0px!important;
-    margin-bottom: 30px!important;
+    margin-bottom: 15px!important;
     font-weight: normal;
 }
 
@@ -750,8 +763,12 @@ form.example input[type=text] {
     font-size: 17px;
     width: 40%;
 }
+.fs_dashboard {
+    padding-bottom: 0px!important;
+}
 .fs_dashboard_area{
-    padding: 35px;
+    padding: 30px;
+    margin-bottom: 0px!important;
 }
 
 .fs_dashboard_area button{

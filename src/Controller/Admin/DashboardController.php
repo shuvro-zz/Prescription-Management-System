@@ -22,7 +22,29 @@ class DashboardController extends AppController
         $this->set('loadDashboardScript', false);
     }
 
-    public function index() {}
+    public function index() {
+
+        $this->loadModel("Users");
+        $session = $this->request->session();
+        $doctor_id = $session->read('Auth.User.id');
+
+        $users = $this->Users->find('all')->where(['Users.doctor_id' => $doctor_id,
+                                                    'Users.role_id' => 3,  // patient = role_id 3
+                                                    'Users.appointment_date' => date('Y/m/d'),
+                                                    'Users.is_visited' => 0
+                                                  ]);
+
+        $this->paginate = [
+            'limit' => 30,
+            'order' => [
+                'Users.modified' => 'desc'
+            ]
+        ];
+        $users = $this->paginate($users);
+
+        $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
+    }
 
     public function listView(){}
 

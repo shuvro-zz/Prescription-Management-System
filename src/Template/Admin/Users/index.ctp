@@ -76,39 +76,44 @@
                                 <?php echo $this->Html->image('/css/admin_styles/images/dashboard-settings-sm.png', ['alt' => 'Settings']) ?>
                             </span>
                                 <ul class="dropdown-menu action-dropdown">
-                                    <li>
-                                        <?php
-                                            if($this->request->session()->read('Auth.User.role_id') != 1){
+                                    <?php
+                                        if($this->request->session()->read('Auth.User.role_id') != 1){
+                                            echo "<li>";
+                                            echo $this->Html->link(
+                                                '<span class="fa fa-calendar"></span> Today\'s Appointment',
+                                                ['action' => 'add-today-appointment/'.$user->id],
+                                                ['escapeTitle' => false, 'title' => 'Today\'s Appointment']
+                                            );
+                                            echo "</li>";
+
+                                            echo "<li>";
                                                 echo $this->Html->link(
                                                     '<span class="fa fa-plus"></span> Create Prescription',
                                                     ['controller' => 'prescriptions', 'action' => 'add/'.$user->id],
                                                     ['escapeTitle' => false, 'title' => 'Create Prescription']
                                                 );
-                                            }
-                                        ?>
-                                    </li>
+                                            echo "</li>";
 
-                                    <li>
-                                        <?php
-                                        if($this->request->session()->read('Auth.User.role_id') != 1){
-                                            echo $this->Html->link(
-                                                '<span class="fa fa-eye"></span> View Prescription',
-                                                ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
-                                                ['escapeTitle' => false, 'title' => 'View Prescription']
-                                            );
+                                            echo "<li>";
+                                                echo $this->Html->link(
+                                                    '<span class="fa fa-eye"></span> View Prescription',
+                                                    ['controller' => 'prescriptions', 'action' => 'setPatient','user_id' => $user->id],
+                                                    ['escapeTitle' => false, 'title' => 'View Prescription']
+                                                );
+                                            echo "</li>";
                                         }
-                                        ?>
-                                    </li>
+                                    ?>
 
-                                    <li>
-                                        <?php
-                                        echo $this->Html->link(
-                                            '<span class="fa fa-pencil-square"></span> Edit',
-                                            ['action' => 'edit', $user->id],
-                                            ['escapeTitle' => false, 'title' => 'Edit User']
-                                        );
-                                        ?>
-                                    </li>
+                                    <?php
+                                        echo "<li>";
+                                            echo $this->Html->link(
+                                                '<span class="fa fa-pencil-square"></span> Edit',
+                                                ['action' => 'edit', $user->id],
+                                                ['escapeTitle' => false, 'title' => 'Edit User']
+                                            );
+                                        echo "</li>";
+                                    ?>
+
                                     <!--<li>
                                         <?php
 /*                                            if( $this->request->session()->read('Auth.User.role_id') != 1){

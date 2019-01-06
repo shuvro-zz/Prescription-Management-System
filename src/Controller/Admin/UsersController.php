@@ -33,7 +33,7 @@ class UsersController extends AppController
             'forgotPassword',
             'resetPassword',
             'registration',
-            'apiRegister',
+            'apiRegistration',
             'getOnlinePatients',
             'getLocalPatients',
             'saveLocalPatientsToOnline'
@@ -106,6 +106,10 @@ class UsersController extends AppController
                 $user->role_id = 3;
                 $user->doctor_id = $doctor_id;
 
+                if (isset($this->request->data['today_appointment'])){
+                    $user->appointment_date = date('Y/m/d');
+                }
+
                 if ($this->Users->save($user)) {
                     $success_message = __('The patient has been saved.');
                     $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
@@ -134,16 +138,26 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
 
-            $user_phone = $this->Users->find('all')
-                ->where([
-                    'Users.phone' => $this->request->data['phone'],
-                    'Users.first_name' => $this->request->data['first_name'],
-                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
-                    'Users.id !=' => $id
-                ])->first();
+            if ($user['role_id'] != 2){
+                $user_phone = $this->Users->find('all')
+                    ->where([
+                        'Users.phone' => $this->request->data['phone'],
+                        'Users.first_name' => $this->request->data['first_name'],
+                        'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                        'Users.id !=' => $id
+                    ])->first();
+            }
 
             if(empty($user_phone)){
                 $user = $this->Users->patchEntity($user, $this->request->data);
+
+                if (isset($this->request->data['today_appointment'])){
+                    $user->appointment_date = date('Y/m/d');
+                    $user->is_visited = 0;
+                }else{
+                    $user->appointment_date = null;
+                }
+
                 if ($this->Users->save($user)) {
 
                     if ($this->request->session()->read('Auth.User.role_id') == 1 AND $user['is_localhost'] == 1){
@@ -194,6 +208,7 @@ class UsersController extends AppController
 
             $haveEmail = $this->Users->find('all')->where([
                             'Users.email' => $this->request->data['email'],
+                            'Users.role_id' => 2 // doctor
                         ])->first();
 
             if (empty($haveEmail)){
@@ -637,7 +652,21 @@ class UsersController extends AppController
         return $token;
     }
 
+    function addTodayAppointment($id = null){
+        $this->autoRender = false;
 
+        $patient = $this->Users->get($id);
+        $patient->appointment_date = date('Y/m/d ');
+        $patient->is_visited = 0;
+
+        if ( $this->Users->save($patient)){
+            $this->Flash->adminSuccess('Patient has been added for today\'s appointment', ['key' => 'admin_success']);
+        }else{
+            $this->Flash->adminError('Patient could not be added for today\'s appointment ', ['key' => 'admin_error']);
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
 
 
 
@@ -645,11 +674,12 @@ class UsersController extends AppController
 ///////////////////Api///////////////////////////
 *************************************************/
 
-    function apiRegister(){
-        $exit_doctor = $this->Users->find('all')
-             ->where([
-                 'Users.email' => trim($this->request->data['email'])
-             ])->first();
+    function apiRegistration(){
+         $exit_doctor = $this->Users->find('all')
+                             ->where([
+                                 'Users.email' => trim($this->request->data['email']),
+                                 'Users.role_id' => 2 // doctor
+                             ])->first();
 
          if ($exit_doctor == null){
              $doctor = $this->Users->newEntity();
@@ -709,14 +739,16 @@ class UsersController extends AppController
 
         $online_doctor_id = $this->Common->getOnlineDoctorId($this->request->query['doctor_email']);
 
-        $save_report = $this->saveLocalPatientsToOnline($this->request->data, $online_doctor_id);
-        if ($save_report){
-            echo json_encode([
-                'status' => 'success',
-                'online_total' => $save_report[0]['online_total'],
-                'online_success' => $save_report[0]['online_success'],
-                'online_duplicate' => $save_report[0]['online_duplicate'],
-            ]);die;
+        if ($online_doctor_id){
+            $save_report = $this->saveLocalPatientsToOnline($this->request->data, $online_doctor_id);
+            if ($save_report){
+                echo json_encode([
+                    'status' => 'success',
+                    'online_total' => $save_report[0]['online_total'],
+                    'online_success' => $save_report[0]['online_success'],
+                    'online_duplicate' => $save_report[0]['online_duplicate'],
+                ]);die;
+            }
         }
         echo json_encode([  'status' => 'fail']);die;
     }
@@ -726,7 +758,7 @@ class UsersController extends AppController
 
         $online_total = count($local_patients);
         foreach($local_patients as $local_patient){
-            $have_patient = $this->Users->find()->where(['Users.first_name' => $local_patient['first_name'], 'Users.phone' => $local_patient['phone'], 'Users.doctor_id' => $local_patient['doctor_id']])->first();
+            $have_patient = $this->Users->find()->where(['Users.first_name' => $local_patient['first_name'], 'Users.phone' => $local_patient['phone'], 'Users.doctor_id' => $online_doctor_id])->first();
 
             if ($have_patient){
                 $have_patient->is_sync = 1;

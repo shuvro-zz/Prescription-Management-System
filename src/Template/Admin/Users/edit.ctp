@@ -49,7 +49,7 @@
             <div class="flex-item">
 
                 <?php if($this->request->session()->read('Auth.User.role_id') == 1 && $user->is_localhost == 1){ ?>
-                    <?= $this->Form->button(__('Generate Token'), ['class' => 'btn save event-save']) ?>
+                    <?= $this->Form->button(__('Generate Key'), ['class' => 'btn save event-save']) ?>
                 <?php } else { ?>
                     <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
                 <?php } ?>

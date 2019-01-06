@@ -65,8 +65,18 @@
                     </div>
                 </div>
             </div>
-        </div>
 
+            <div class="col-sm-6">
+                <div class="form-group">
+
+                    <label class="name today_appointment">
+                        <?php echo $this->Form->control('today_appointment', ['type' => 'checkbox', 'checked' => (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y/m/d') == date('Y/m/d'))? true:false):'', 'id' => 'today-appointment']); ?>
+                        <span aria-required="true" class="today_appointment_level">Today's appointment</span>
+                    </label>
+
+                </div>
+            </div>
+        </div>
     <?php }?>
 
     <?php echo $this->Form->input('id', ['type' =>'hidden', 'id' => 'patient-id', 'value' => (isset($id)? $id:'') ]); ?>

@@ -61,7 +61,7 @@
                                 <div class="doctor_info single_section default_prescription_info">
                                     <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
                                     <p><?php echo ($user['educational_qualification']) ?></p>
-                                    <?php if($user['clinic_name']){?>
+                                    <?php if($user['specialist']){?>
                                         <p> <?php echo ($user['specialist']) ?> </p>
                                     <?php } ?>
                                     <?php if($user['clinic_name']){?>
@@ -185,7 +185,9 @@
                                   <p>Must make booking before visiting the doctor.</p>
                               </div>
 
-                              <div class="col-sm-6">
+                              <div class="col-sm-2"></div>
+
+                              <div class="col-sm-4">
                                   <p><b>Visiting Time :</b>  <?php echo ($user['visiting_time']) ?></p>
                                   <p><b>Off Day :</b> <?php echo ($user['off_day']) ?></p>
                                   <p><b>Website :</b> <?php echo ($user['website']) ?></p>

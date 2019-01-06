@@ -1,6 +1,6 @@
 <div class="col-sm-6">
     <div class="form-group">
-        <label class="name">Diagnosis Name<span class="required" aria-required="true"></span></label>
+        <label class="name">Diagnosis Name *<span class="required" aria-required="true"></span></label>
         <div class="inputs diagnosis_area">
             <?php echo $this->Form->input('diagnosis_list_id', ['options' => $diagnosis_list, 'default'=>(isset($diagnosi['diagnosis_list_id']))? $diagnosi['diagnosis_list_id']:'', 'class'=> 'tokenize-sortable-demo1 diagnosis_list', 'label'=>false, 'multiple'=>true ]); ?>
         </div>
