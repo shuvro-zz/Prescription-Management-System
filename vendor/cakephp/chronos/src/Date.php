@@ -20,6 +20,32 @@ use DateTimeZone;
  * This class is useful when you want to represent a calendar date and ignore times.
  * This means that timezone changes take no effect as a calendar date exists in all timezones
  * in each respective date.
+ *
+ * @property-read int $year
+ * @property-read int $yearIso
+ * @property-read int $month
+ * @property-read int $day
+ * @property-read int $hour
+ * @property-read int $minute
+ * @property-read int $second
+ * @property-read int $timestamp seconds since the Unix Epoch
+ * @property-read DateTimeZone $timezone the current timezone
+ * @property-read DateTimeZone $tz alias of timezone
+ * @property-read int $micro
+ * @property-read int $dayOfWeek 1 (for Monday) through 7 (for Sunday)
+ * @property-read int $dayOfYear 0 through 365
+ * @property-read int $weekOfMonth 1 through 5
+ * @property-read int $weekOfYear ISO-8601 week number of year, weeks starting on Monday
+ * @property-read int $daysInMonth number of days in the given month
+ * @property-read int $age does a diffInYears() with default parameters
+ * @property-read int $quarter the quarter of this instance, 1 - 4
+ * @property-read int $offset the timezone offset in seconds from UTC
+ * @property-read int $offsetHours the timezone offset in hours from UTC
+ * @property-read bool $dst daylight savings time indicator, true if DST, false otherwise
+ * @property-read bool $local checks if the timezone is local, true if local, false otherwise
+ * @property-read bool $utc checks if the timezone is UTC, true if UTC, false otherwise
+ * @property-read string  $timezoneName
+ * @property-read string  $tzName
  */
 class Date extends DateTimeImmutable implements ChronosInterface
 {
@@ -27,9 +53,9 @@ class Date extends DateTimeImmutable implements ChronosInterface
     use Traits\DifferenceTrait;
     use Traits\FactoryTrait;
     use Traits\FormattingTrait;
+    use Traits\FrozenTimeTrait;
     use Traits\MagicPropertyTrait;
     use Traits\ModifierTrait;
-    use Traits\RelativeKeywordTrait;
     use Traits\TestingAidTrait;
 
     /**
@@ -51,20 +77,25 @@ class Date extends DateTimeImmutable implements ChronosInterface
      * subtraction/addition to have deterministic results.
      *
      * @param string|null $time Fixed or relative time
-     * @param DateTimeZone|string|null $tz The timezone for the instance
      */
-    public function __construct($time = 'now', $tz = null)
+    public function __construct($time = 'now')
     {
         $tz = new DateTimeZone('UTC');
         if (static::$testNow === null) {
             $time = $this->stripTime($time);
-            return parent::__construct($time, $tz);
+
+            parent::__construct($time, $tz);
+
+            return;
         }
 
         $relative = static::hasRelativeKeywords($time);
         if (!empty($time) && $time !== 'now' && !$relative) {
             $time = $this->stripTime($time);
-            return parent::__construct($time, $tz);
+
+            parent::__construct($time, $tz);
+
+            return;
         }
 
         $testInstance = static::getTestNow();
@@ -81,153 +112,6 @@ class Date extends DateTimeImmutable implements ChronosInterface
     }
 
     /**
-     * Removes the time components from an input string.
-     *
-     * Used to ensure constructed objects always lack time.
-     *
-     * @param string|int $time The input time. Integer values will be assumed
-     *   to be in UTC. The 'now' and '' values will use the current local time.
-     * @return string The date component of $time.
-     */
-    protected function stripTime($time)
-    {
-        if (substr($time, 0, 1) === '@') {
-            return gmdate('Y-m-d 00:00:00', substr($time, 1));
-        }
-        if (is_int($time) || ctype_digit($time)) {
-            return gmdate('Y-m-d 00:00:00', $time);
-        }
-        if ($time === null || $time === 'now' || $time === '') {
-            return date('Y-m-d 00:00:00');
-        }
-        return preg_replace('/\d{1,2}:\d{1,2}:\d{1,2}/', '00:00:00', $time);
-    }
-
-    /**
-     * Modify the time on the Date.
-     *
-     * This method ignores all inputs and forces all inputs to 0.
-     *
-     * @param int $hours The hours to set (ignored)
-     * @param int $minutes The hours to set (ignored)
-     * @param int $seconds The hours to set (ignored)
-     * @return static A modified Date instance.
-     */
-    public function setTime($hours, $minutes, $seconds = 0)
-    {
-        return parent::setTime(0, 0, 0);
-    }
-
-    /**
-     * Add an Interval to a Date
-     *
-     * Any changes to the time will be ignored and reset to 00:00:00
-     *
-     * @param \DateInterval $interval The interval to modify this date by.
-     * @return static A modified Date instance
-     */
-    public function add($interval)
-    {
-        $date = parent::add($interval);
-        if ($date->format('H:i:s') !== '00:00:00') {
-            return $date->setTime(0, 0, 0);
-        }
-        return $date;
-    }
-
-    /**
-     * Subtract an Interval from a Date.
-     *
-     * Any changes to the time will be ignored and reset to 00:00:00
-     *
-     * @param \DateInterval $interval The interval to modify this date by.
-     * @return static A modified Date instance
-     */
-    public function sub($interval)
-    {
-        $date = parent::sub($interval);
-        if ($date->format('H:i:s') !== '00:00:00') {
-            return $date->setTime(0, 0, 0);
-        }
-        return $date;
-    }
-
-    /**
-     * No-op method.
-     *
-     * Timezones have no effect on calendar dates.
-     *
-     * @param DateTimeZone|string $value The DateTimeZone object or timezone name to use.
-     * @return $this
-     */
-    public function timezone($value)
-    {
-        return $this;
-    }
-
-    /**
-     * No-op method.
-     *
-     * Timezones have no effect on calendar dates.
-     *
-     * @param DateTimeZone|string $value The DateTimeZone object or timezone name to use.
-     * @return $this
-     */
-    public function tz($value)
-    {
-        return $this;
-    }
-
-    /**
-     * No-op method.
-     *
-     * Timezones have no effect on calendar dates.
-     *
-     * @param DateTimeZone|string $value The DateTimeZone object or timezone name to use.
-     * @return $this
-     */
-    public function setTimezone($value)
-    {
-        return $this;
-    }
-
-    /**
-     * Set the timestamp value and get a new object back.
-     *
-     * This method will discard the time aspects of the timestamp
-     * and only apply the date portions
-     *
-     * @param int $value The timestamp value to set.
-     * @return static
-     */
-    public function setTimestamp($value)
-    {
-        $date = date('Y-m-d 00:00:00', $value);
-        return parent::setTimestamp(strtotime($date));
-    }
-
-    /**
-     * Overloaded to ignore time changes.
-     *
-     * Changing any aspect of the time will be ignored, and the resulting object
-     * will have its time frozen to 00:00:00.
-     *
-     * @param string $relative The relative change to make.
-     * @return static A new date with the applied date changes.
-     */
-    public function modify($relative)
-    {
-        if (preg_match('/hour|minute|second/', $relative)) {
-            return $this;
-        }
-        $new = parent::modify($relative);
-        if ($new->format('H:i:s') !== '00:00:00') {
-            return $new->setTime(0, 0, 0);
-        }
-        return $new;
-    }
-
-    /**
      * Create a new mutable instance from current immutable instance.
      *
      * @return \Cake\Chronos\MutableDate
@@ -235,5 +119,20 @@ class Date extends DateTimeImmutable implements ChronosInterface
     public function toMutable()
     {
         return MutableDate::instance($this);
+    }
+
+    /**
+     * Return properties for debugging.
+     *
+     * @return array
+     */
+    public function __debugInfo()
+    {
+        $properties = [
+            'date' => $this->format('Y-m-d'),
+            'hasFixedNow' => isset(self::$testNow)
+        ];
+
+        return $properties;
     }
 }

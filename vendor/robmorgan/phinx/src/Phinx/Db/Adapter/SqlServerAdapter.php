@@ -32,7 +32,6 @@ use Phinx\Db\Table;
 use Phinx\Db\Table\Column;
 use Phinx\Db\Table\Index;
 use Phinx\Db\Table\ForeignKey;
-use Phinx\Migration\MigrationInterface;
 
 /**
  * Phinx SqlServer Adapter.
@@ -53,7 +52,8 @@ class SqlServerAdapter extends PdoAdapter implements AdapterInterface
         if (null === $this->connection) {
             if (!class_exists('PDO') || !in_array('sqlsrv', \PDO::getAvailableDrivers(), true)) {
                 // try our connection via freetds (Mac/Linux)
-                return $this->connectDblib();
+                $this->connectDblib();
+                return;
             }
 
             $db = null;
@@ -344,6 +344,19 @@ class SqlServerAdapter extends PdoAdapter implements AdapterInterface
         $this->endCommandTimer();
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function truncateTable($tableName)
+    {
+        $sql = sprintf(
+            'TRUNCATE TABLE %s',
+            $this->quoteTableName($tableName)
+        );
+
+        $this->execute($sql);
+    }
+
     public function getColumnComment($tableName, $columnName)
     {
         $sql = sprintf("SELECT cast(extended_properties.[value] as nvarchar(4000)) comment
@@ -420,7 +433,7 @@ class SqlServerAdapter extends PdoAdapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
-    public function hasColumn($tableName, $columnName, $options = array())
+    public function hasColumn($tableName, $columnName)
     {
         $sql = sprintf(
             "SELECT count(*) as [count]
@@ -1056,7 +1069,7 @@ SQL;
         if (is_string($default) && 'CURRENT_TIMESTAMP' !== $default) {
             $default = $this->getConnection()->quote($default);
         } elseif (is_bool($default)) {
-            $default = (int) $default;
+            $default = $this->castToBool($default);
         }
         return isset($default) ? ' DEFAULT ' . $default : '';
     }
@@ -1146,7 +1159,7 @@ SQL;
         $def = ' CONSTRAINT "';
         $def .= $tableName . '_' . implode('_', $foreignKey->getColumns());
         $def .= '" FOREIGN KEY ("' . implode('", "', $foreignKey->getColumns()) . '")';
-        $def .= " REFERENCES {$foreignKey->getReferencedTable()->getName()} (\"" . implode('", "', $foreignKey->getReferencedColumns()) . '")';
+        $def .= " REFERENCES {$this->quoteTableName($foreignKey->getReferencedTable()->getName())} (\"" . implode('", "', $foreignKey->getReferencedColumns()) . '")';
         if ($foreignKey->getOnDelete()) {
             $def .= " ON DELETE {$foreignKey->getOnDelete()}";
         }
@@ -1163,34 +1176,5 @@ SQL;
     public function getColumnTypes()
     {
         return array_merge(parent::getColumnTypes(), array('filestream'));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function migrated(MigrationInterface $migration, $direction, $startTime, $endTime) {
-        if (strcasecmp($direction, MigrationInterface::UP) === 0) {
-            // up
-            $sql = sprintf(
-                "INSERT INTO %s ([version], [start_time], [end_time]) VALUES ('%s', '%s', '%s');",
-                $this->getSchemaTableName(),
-                $migration->getVersion(),
-                $startTime,
-                $endTime
-            );
-
-            $this->query($sql);
-        } else {
-            // down
-            $sql = sprintf(
-                "DELETE FROM %s WHERE [version] = '%s'",
-                $this->getSchemaTableName(),
-                $migration->getVersion()
-            );
-
-            $this->query($sql);
-        }
-
-        return $this;
     }
 }

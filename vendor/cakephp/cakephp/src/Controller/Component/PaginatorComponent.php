@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Controller\Component;
 
@@ -18,6 +18,7 @@ use Cake\Controller\Component;
 use Cake\Datasource\QueryInterface;
 use Cake\Datasource\RepositoryInterface;
 use Cake\Network\Exception\NotFoundException;
+use Cake\Utility\Hash;
 
 /**
  * This component is used to handle automatic model data pagination. The primary way to use this
@@ -27,7 +28,7 @@ use Cake\Network\Exception\NotFoundException;
  *
  * You configure pagination when calling paginate(). See that method for more details.
  *
- * @link http://book.cakephp.org/3.0/en/controllers/components/pagination.html
+ * @link https://book.cakephp.org/3.0/en/controllers/components/pagination.html
  */
 class PaginatorComponent extends Component
 {
@@ -141,13 +142,30 @@ class PaginatorComponent extends Component
      * $results = $paginator->paginate($query);
      * ```
      *
+     * ### Scoping Request parameters
+     *
+     * By using request parameter scopes you can paginate multiple queries in the same controller action:
+     *
+     * ```
+     * $articles = $paginator->paginate($articlesQuery, ['scope' => 'articles']);
+     * $tags = $paginator->paginate($tagsQuery, ['scope' => 'tags']);
+     * ```
+     *
+     * Each of the above queries will use different query string parameter sets
+     * for pagination data. An example URL paginating both results would be:
+     *
+     * ```
+     * /dashboard?articles[page]=1&tags[page]=2
+     * ```
+     *
      * @param \Cake\Datasource\RepositoryInterface|\Cake\Datasource\QueryInterface $object The table or query to paginate.
      * @param array $settings The settings/configuration used for pagination.
-     * @return array Query results
+     * @return \Cake\Datasource\ResultSetInterface Query results
      * @throws \Cake\Network\Exception\NotFoundException
      */
     public function paginate($object, array $settings = [])
     {
+        $query = null;
         if ($object instanceof QueryInterface) {
             $query = $object;
             $object = $query->repository();
@@ -158,19 +176,21 @@ class PaginatorComponent extends Component
         $options = $this->validateSort($object, $options);
         $options = $this->checkLimit($options);
 
-        $options += ['page' => 1];
+        $options += ['page' => 1, 'scope' => null];
         $options['page'] = (int)$options['page'] < 1 ? 1 : (int)$options['page'];
         list($finder, $options) = $this->_extractFinder($options);
 
+        /* @var \Cake\Datasource\RepositoryInterface $object */
         if (empty($query)) {
             $query = $object->find($finder, $options);
         } else {
             $query->applyOptions($options);
         }
 
+        $cleanQuery = clone $query;
         $results = $query->all();
         $numResults = count($results);
-        $count = $numResults ? $query->count() : 0;
+        $count = $numResults ? $cleanQuery->count() : 0;
 
         $defaults = $this->getDefaults($alias, $settings);
         unset($defaults[0]);
@@ -195,20 +215,21 @@ class PaginatorComponent extends Component
             'current' => $numResults,
             'count' => $count,
             'perPage' => $limit,
-            'prevPage' => ($page > 1),
-            'nextPage' => ($count > ($page * $limit)),
+            'prevPage' => $page > 1,
+            'nextPage' => $count > ($page * $limit),
             'pageCount' => $pageCount,
             'sort' => key($order),
             'direction' => current($order),
             'limit' => $defaults['limit'] != $limit ? $limit : null,
             'sortDefault' => $sortDefault,
-            'directionDefault' => $directionDefault
+            'directionDefault' => $directionDefault,
+            'scope' => $options['scope'],
         ];
 
-        if (!isset($request['paging'])) {
-            $request['paging'] = [];
+        if (!$request->getParam('paging')) {
+            $request->params['paging'] = [];
         }
-        $request['paging'] = [$alias => $paging] + (array)$request['paging'];
+        $request->params['paging'] = [$alias => $paging] + (array)$request->getParam('paging');
 
         if ($requestedPage > $page) {
             throw new NotFoundException();
@@ -257,29 +278,42 @@ class PaginatorComponent extends Component
     {
         $defaults = $this->getDefaults($alias, $settings);
         $request = $this->_registry->getController()->request;
-        $request = array_intersect_key($request->query, array_flip($this->_config['whitelist']));
+        $scope = Hash::get($settings, 'scope', null);
+        $query = $request->getQueryParams();
+        if ($scope) {
+            $query = Hash::get($request->getQueryParams(), $scope, []);
+        }
+        $request = array_intersect_key($query, array_flip($this->_config['whitelist']));
+
         return array_merge($defaults, $request);
     }
 
     /**
-     * Get the default settings for a $model. If there are no settings for a specific model, the general settings
+     * Get the settings for a $model. If there are no settings for a specific model, the general settings
      * will be used.
      *
-     * @param string $alias Model name to get default settings for.
-     * @param array $defaults The defaults to use for combining settings.
-     * @return array An array of pagination defaults for a model, or the general settings.
+     * @param string $alias Model name to get settings for.
+     * @param array $settings The settings which is used for combining.
+     * @return array An array of pagination settings for a model, or the general settings.
      */
-    public function getDefaults($alias, $defaults)
+    public function getDefaults($alias, $settings)
     {
-        if (isset($defaults[$alias])) {
-            $defaults = $defaults[$alias];
+        if (isset($settings[$alias])) {
+            $settings = $settings[$alias];
         }
-        if (isset($defaults['limit']) &&
-            (empty($defaults['maxLimit']) || $defaults['limit'] > $defaults['maxLimit'])
-        ) {
-            $defaults['maxLimit'] = $defaults['limit'];
+
+        $defaults = $this->getConfig();
+        $maxLimit = isset($settings['maxLimit']) ? $settings['maxLimit'] : $defaults['maxLimit'];
+        $limit = isset($settings['limit']) ? $settings['limit'] : $defaults['limit'];
+
+        if ($limit > $maxLimit) {
+            $limit = $maxLimit;
         }
-        return $defaults + $this->config();
+
+        $settings['maxLimit'] = $maxLimit;
+        $settings['limit'] = $limit;
+
+        return $settings + $defaults;
     }
 
     /**
@@ -326,11 +360,13 @@ class PaginatorComponent extends Component
             $inWhitelist = in_array($field, $options['sortWhitelist'], true);
             if (!$inWhitelist) {
                 $options['order'] = [];
+
                 return $options;
             }
         }
 
         $options['order'] = $this->_prefix($object, $options['order'], $inWhitelist);
+
         return $options;
     }
 
@@ -371,6 +407,7 @@ class PaginatorComponent extends Component
                 $tableOrder[$alias . '.' . $field] = $value;
             }
         }
+
         return $tableOrder;
     }
 
@@ -386,7 +423,8 @@ class PaginatorComponent extends Component
         if (empty($options['limit']) || $options['limit'] < 1) {
             $options['limit'] = 1;
         }
-        $options['limit'] = min($options['limit'], $options['maxLimit']);
+        $options['limit'] = max(min($options['limit'], $options['maxLimit']), 1);
+
         return $options;
     }
 }

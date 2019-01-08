@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Database\Driver;
 
@@ -45,6 +45,12 @@ class Sqlserver extends Driver
         'flags' => [],
         'init' => [],
         'settings' => [],
+        'attributes' => [],
+        'app' => null,
+        'connectionPooling' => null,
+        'failoverPartner' => null,
+        'loginTimeout' => null,
+        'multiSubnetFailover' => null,
     ];
 
     /**
@@ -69,6 +75,21 @@ class Sqlserver extends Driver
         }
 
         $dsn = "sqlsrv:Server={$config['host']};Database={$config['database']};MultipleActiveResultSets=false";
+        if ($config['app'] !== null) {
+            $dsn .= ";APP={$config['app']}";
+        }
+        if ($config['connectionPooling'] !== null) {
+            $dsn .= ";ConnectionPooling={$config['connectionPooling']}";
+        }
+        if ($config['failoverPartner'] !== null) {
+            $dsn .= ";Failover_Partner={$config['failoverPartner']}";
+        }
+        if ($config['loginTimeout'] !== null) {
+            $dsn .= ";LoginTimeout={$config['loginTimeout']}";
+        }
+        if ($config['multiSubnetFailover'] !== null) {
+            $dsn .= ";MultiSubnetFailover={$config['multiSubnetFailover']}";
+        }
         $this->_connect($dsn, $config);
 
         $connection = $this->connection();
@@ -82,6 +103,12 @@ class Sqlserver extends Driver
                 $connection->exec("SET {$key} {$value}");
             }
         }
+        if (!empty($config['attributes']) && is_array($config['attributes'])) {
+            foreach ($config['attributes'] as $key => $value) {
+                $connection->setAttribute($key, $value);
+            }
+        }
+
         return true;
     }
 
@@ -106,10 +133,11 @@ class Sqlserver extends Driver
         $this->connect();
         $options = [PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL];
         $isObject = $query instanceof Query;
-        if ($isObject && $query->bufferResults() === false) {
+        if ($isObject && $query->isBufferedResultsEnabled() === false) {
             $options = [];
         }
         $statement = $this->_connection->prepare($isObject ? $query->sql() : $query, $options);
+
         return new SqlserverStatement($statement, $this);
     }
 

@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Cache\Engine;
 
@@ -47,6 +47,7 @@ class WincacheEngine extends CacheEngine
         }
 
         parent::init($config);
+
         return true;
     }
 
@@ -69,6 +70,7 @@ class WincacheEngine extends CacheEngine
             $key => $value
         ];
         $result = wincache_ucache_set($data, null, $duration);
+
         return empty($result);
     }
 
@@ -88,6 +90,7 @@ class WincacheEngine extends CacheEngine
         if ($cachetime < $time || ($time + $this->_config['duration']) < $cachetime) {
             return false;
         }
+
         return wincache_ucache_get($key);
     }
 
@@ -153,6 +156,7 @@ class WincacheEngine extends CacheEngine
                 wincache_ucache_delete($key['key_name']);
             }
         }
+
         return true;
     }
 
@@ -187,6 +191,7 @@ class WincacheEngine extends CacheEngine
         foreach ($this->_config['groups'] as $i => $group) {
             $result[] = $group . $groups[$i];
         }
+
         return $result;
     }
 
@@ -199,8 +204,9 @@ class WincacheEngine extends CacheEngine
      */
     public function clearGroup($group)
     {
-        $success = null;
+        $success = false;
         wincache_ucache_inc($this->_config['prefix'] . $group, 1, $success);
+
         return $success;
     }
 }

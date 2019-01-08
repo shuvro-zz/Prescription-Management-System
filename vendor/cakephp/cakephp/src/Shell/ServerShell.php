@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.3.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 namespace Cake\Shell;
@@ -20,7 +20,6 @@ use Cake\Core\Configure;
 
 /**
  * built-in Server Shell
- *
  */
 class ServerShell extends Shell
 {
@@ -44,21 +43,21 @@ class ServerShell extends Shell
      *
      * @var string
      */
-    protected $_host = null;
+    protected $_host;
 
     /**
      * listen port
      *
-     * @var string
+     * @var int
      */
-    protected $_port = null;
+    protected $_port;
 
     /**
      * document root
      *
      * @var string
      */
-    protected $_documentRoot = null;
+    protected $_documentRoot;
 
     /**
      * Override initialize of the Shell
@@ -80,7 +79,7 @@ class ServerShell extends Shell
      * or otherwise modify the pre-command flow.
      *
      * @return void
-     * @link http://book.cakephp.org/3.0/en/console-and-shells.html#hook-methods
+     * @link https://book.cakephp.org/3.0/en/console-and-shells.html#hook-methods
      */
     public function startup()
     {
@@ -95,7 +94,7 @@ class ServerShell extends Shell
         }
 
         // For Windows
-        if (substr($this->_documentRoot, -1, 1) === DS) {
+        if (substr($this->_documentRoot, -1, 1) === DIRECTORY_SEPARATOR) {
             $this->_documentRoot = substr($this->_documentRoot, 0, strlen($this->_documentRoot) - 1);
         }
         if (preg_match("/^([a-z]:)[\\\]+(.+)$/i", $this->_documentRoot, $m)) {
@@ -129,7 +128,7 @@ class ServerShell extends Shell
     public function main()
     {
         $command = sprintf(
-            "php -S %s:%d -t %s %s",
+            'php -S %s:%d -t %s %s',
             $this->_host,
             $this->_port,
             escapeshellarg($this->_documentRoot),
@@ -151,7 +150,7 @@ class ServerShell extends Shell
     {
         $parser = parent::getOptionParser();
 
-        $parser->description([
+        $parser->setDescription([
             'PHP Built-in Server for CakePHP',
             '<warning>[WARN] Don\'t use this in a production environment</warning>',
         ])->addOption('host', [

@@ -28,6 +28,7 @@
  */
 namespace Phinx\Db\Adapter;
 
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Phinx\Db\Table;
 use Phinx\Db\Table\Column;
@@ -54,6 +55,7 @@ interface AdapterInterface
     const PHINX_TYPE_TIME           = 'time';
     const PHINX_TYPE_DATE           = 'date';
     const PHINX_TYPE_BINARY         = 'binary';
+    const PHINX_TYPE_VARBINARY      = 'varbinary';
     const PHINX_TYPE_BLOB           = 'blob';
     const PHINX_TYPE_BOOLEAN        = 'boolean';
     const PHINX_TYPE_JSON           = 'json';
@@ -77,6 +79,14 @@ interface AdapterInterface
      * @return array
      */
     public function getVersions();
+
+    /**
+     * Get all migration log entries, indexed by version creation time and sorted ascendingly by the configuration's 
+     * version order option
+     * 
+     * @return array
+     */
+    public function getVersionLog();
 
     /**
      * Set adapter configuration options.
@@ -110,6 +120,21 @@ interface AdapterInterface
     public function getOption($name);
 
     /**
+     * Sets the console input.
+     *
+     * @param InputInterface $input Input
+     * @return AdapterInterface
+     */
+    public function setInput(InputInterface $input);
+
+    /**
+     * Gets the console input.
+     *
+     * @return InputInterface
+     */
+    public function getInput();
+
+    /**
      * Sets the console output.
      *
      * @param OutputInterface $output Output
@@ -134,6 +159,22 @@ interface AdapterInterface
      * @return AdapterInterface
      */
     public function migrated(MigrationInterface $migration, $direction, $startTime, $endTime);
+
+    /**
+     * Toggle a migration breakpoint.
+     *
+     * @param MigrationInterface $migration
+     *
+     * @return AdapterInterface
+     */
+    public function toggleBreakpoint(MigrationInterface $migration);
+
+    /**
+     * Reset all migration breakpoints.
+     *
+     * @return int The number of breakpoints reset
+     */
+    public function resetAllBreakpoints();
 
     /**
      * Does the schema table exist?
@@ -290,6 +331,15 @@ interface AdapterInterface
      */
     public function dropTable($tableName);
 
+
+    /**
+     * Truncates the specified table
+     *
+     * @param string $tableName
+     * @return void
+     */
+    public function truncateTable($tableName);
+
     /**
      * Returns table columns
      *
@@ -439,7 +489,7 @@ interface AdapterInterface
      *
      * @param string $type
      * @param integer $limit
-     * @return string
+     * @return string[]
      */
     public function getSqlType($type, $limit = null);
 
@@ -467,4 +517,13 @@ interface AdapterInterface
      * @return void
      */
     public function dropDatabase($name);
+
+    /**
+     * Cast a value to a boolean appropriate for the adapter.
+     *
+     * @param mixed $value The value to be cast
+     *
+     * @return mixed
+     */
+    public function castToBool($value);
 }

@@ -13,8 +13,7 @@ namespace Migrations;
 
 use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
-use Cake\Utility\Inflector;
-use Migrations\Command\Seed;
+use Migrations\Util\UtilTrait;
 use Phinx\Config\Config;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -29,12 +28,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 trait ConfigurationTrait
 {
 
+    use UtilTrait;
+
     /**
      * The configuration object that phinx uses for connecting to the database
      *
      * @var \Phinx\Config\Config
      */
     protected $configuration;
+
+    /**
+     * Connection name to be used for this request
+     *
+     * @var string
+     */
+    protected $connection;
 
     /**
      * The console input instance
@@ -56,27 +64,9 @@ trait ConfigurationTrait
             return $this->configuration;
         }
 
-        $migrationsFolder = 'Migrations';
-        $seedsFolder = 'Seeds';
-
-        $source = $this->input->getOption('source');
-        if ($source) {
-            if ($this instanceof Seed || ($this instanceof Migrations && $this->getCommand() === 'seed')) {
-                $seedsFolder = $source;
-            } else {
-                $migrationsFolder = $source;
-            }
-        }
-
-        $migrationsPath = ROOT . DS . 'config' . DS . $migrationsFolder;
-        $seedsPath = ROOT . DS . 'config' . DS . $seedsFolder;
-        $plugin = null;
-
-        if ($this->input->getOption('plugin')) {
-            $plugin = $this->input->getOption('plugin');
-            $migrationsPath = Plugin::path($plugin) . 'config' . DS . $migrationsFolder;
-            $seedsPath = Plugin::path($plugin) . 'config' . DS . $seedsFolder;
-        }
+        $migrationsPath = $this->getOperationsPath($this->input);
+        $seedsPath = $this->getOperationsPath($this->input, 'Seeds');
+        $plugin = $this->getPlugin($this->input);
 
         if (!is_dir($migrationsPath)) {
             mkdir($migrationsPath, 0777, true);
@@ -86,20 +76,25 @@ trait ConfigurationTrait
             mkdir($seedsPath, 0777, true);
         }
 
-        $plugin = $plugin ? Inflector::underscore($plugin) . '_' : '';
-        $plugin = str_replace(['\\', '/', '.'], '_', $plugin);
+        $phinxTable = $this->getPhinxTable($plugin);
 
         $connection = $this->getConnectionName($this->input);
 
         $connectionConfig = ConnectionManager::config($connection);
         $adapterName = $this->getAdapterName($connectionConfig['driver']);
+
+        $templatePath = Plugin::path('Migrations') . 'src' . DS . 'Template' . DS;
         $config = [
             'paths' => [
                 'migrations' => $migrationsPath,
                 'seeds' => $seedsPath,
             ],
+            'templates' => [
+                'file' => $templatePath . 'Phinx' . DS . 'create.php.template'
+            ],
+            'migration_base_class' => 'Migrations\AbstractMigration',
             'environments' => [
-                'default_migration_table' => $plugin . 'phinxlog',
+                'default_migration_table' => $phinxTable,
                 'default_database' => 'default',
                 'default' => [
                     'adapter' => $adapterName,
@@ -139,8 +134,8 @@ trait ConfigurationTrait
      * that was configured for the configuration.
      *
      * @param string $driver The driver name as configured for the CakePHP app.
-     * @return \Phinx\Config\Config
-     * @throws \InvalidArgumentexception when it was not possible to infer the information
+     * @return string Name of the adapter.
+     * @throws \InvalidArgumentException when it was not possible to infer the information
      * out of the provided database configuration
      */
     public function getAdapterName($driver)
@@ -160,76 +155,7 @@ trait ConfigurationTrait
                 return 'sqlsrv';
         }
 
-        throw new \InvalidArgumentexception('Could not infer database type from driver');
-    }
-
-    /**
-     * Overrides the action execute method in order to vanish the idea of environments
-     * from phinx. CakePHP does not believe in the idea of having in-app environments
-     *
-     * @param \Symfony\Component\Console\Input\InputInterface $input the input object
-     * @param \Symfony\Component\Console\Output\OutputInterface $output the output object
-     * @return void
-     */
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        $this->beforeExecute($input, $output);
-        parent::execute($input, $output);
-    }
-
-    /**
-     * Overrides the action execute method in order to vanish the idea of environments
-     * from phinx. CakePHP does not believe in the idea of having in-app environments
-     *
-     * @param \Symfony\Component\Console\Input\InputInterface $input the input object
-     * @param \Symfony\Component\Console\Output\OutputInterface $output the output object
-     * @return void
-     */
-    protected function beforeExecute(InputInterface $input, OutputInterface $output)
-    {
-        $this->setInput($input);
-        $this->addOption('--environment', '-e', InputArgument::OPTIONAL);
-        $input->setOption('environment', 'default');
-    }
-
-    /**
-     * Sets the input object that should be used for the command class. This object
-     * is used to inspect the extra options that are needed for CakePHP apps.
-     *
-     * @param \Symfony\Component\Console\Input\InputInterface $input the input object
-     * @return void
-     */
-    public function setInput(InputInterface $input)
-    {
-        $this->input = $input;
-    }
-
-    /**
-     * A callback method that is used to inject the PDO object created from phinx into
-     * the CakePHP connection. This is needed in case the user decides to use tables
-     * from the ORM and executes queries.
-     *
-     * @param \Symfony\Component\Console\Input\InputInterface $input the input object
-     * @param \Symfony\Component\Console\Output\OutputInterface $output the output object
-     * @return void
-     */
-    public function bootstrap(InputInterface $input, OutputInterface $output)
-    {
-        parent::bootstrap($input, $output);
-        $name = $this->getConnectionName($input);
-        ConnectionManager::alias($name, 'default');
-        $connection = ConnectionManager::get($name);
-
-        $manager = $this->getManager();
-
-        if (!$manager instanceof CakeManager) {
-            $this->setManager(new CakeManager($this->getConfig(), $output));
-        }
-        $env = $this->getManager()->getEnvironment('default');
-        $adapter = $env->getAdapter();
-        if (!$adapter instanceof CakeAdapter) {
-            $env->setAdapter(new CakeAdapter($adapter, $connection));
-        }
+        throw new \InvalidArgumentException('Could not infer database type from driver');
     }
 
     /**

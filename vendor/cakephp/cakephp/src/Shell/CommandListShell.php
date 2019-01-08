@@ -1,21 +1,22 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP Project
  * @since         2.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Shell;
 
 use Cake\Console\ConsoleOutput;
 use Cake\Console\Shell;
+use Cake\Core\Configure;
 use Cake\Core\Plugin;
 use Cake\Utility\Inflector;
 use SimpleXmlElement;
@@ -23,6 +24,7 @@ use SimpleXmlElement;
 /**
  * Shows a list of commands available from the console.
  *
+ * @property \Cake\Shell\Task\CommandTask $Command
  */
 class CommandListShell extends Shell
 {
@@ -41,7 +43,7 @@ class CommandListShell extends Shell
      */
     public function startup()
     {
-        if (empty($this->params['xml'])) {
+        if (!$this->param('xml') && !$this->param('version')) {
             parent::startup();
         }
     }
@@ -53,22 +55,28 @@ class CommandListShell extends Shell
      */
     public function main()
     {
-        if (empty($this->params['xml'])) {
-            $this->out("<info>Current Paths:</info>", 2);
-            $this->out("* app:  " . APP_DIR);
-            $this->out("* root: " . rtrim(ROOT, DS));
-            $this->out("* core: " . rtrim(CORE_PATH, DS));
-            $this->out("");
+        if (!$this->param('xml') && !$this->param('version')) {
+            $this->out('<info>Current Paths:</info>', 2);
+            $this->out('* app:  ' . APP_DIR);
+            $this->out('* root: ' . rtrim(ROOT, DIRECTORY_SEPARATOR));
+            $this->out('* core: ' . rtrim(CORE_PATH, DIRECTORY_SEPARATOR));
+            $this->out('');
 
-            $this->out("<info>Available Shells:</info>", 2);
+            $this->out('<info>Available Shells:</info>', 2);
         }
 
-        $shellList = $this->Command->getShellList();
-        if (empty($shellList)) {
+        if ($this->param('version')) {
+            $this->out(Configure::version());
+
             return;
         }
 
-        if (empty($this->params['xml'])) {
+        $shellList = $this->Command->getShellList();
+        if (!$shellList) {
+            return;
+        }
+
+        if (!$this->param('xml')) {
             $this->_asText($shellList);
         } else {
             $this->_asXml($shellList);
@@ -89,9 +97,9 @@ class CommandListShell extends Shell
             $this->out();
         }
 
-        $this->out("To run an app or core command, type <info>`cake shell_name [args]`</info>");
-        $this->out("To run a plugin command, type <info>`cake Plugin.shell_name [args]`</info>");
-        $this->out("To get help on a specific command, type <info>`cake shell_name --help`</info>", 2);
+        $this->out('To run an app or core command, type <info>`cake shell_name [args]`</info>');
+        $this->out('To run a plugin command, type <info>`cake Plugin.shell_name [args]`</info>');
+        $this->out('To get help on a specific command, type <info>`cake shell_name --help`</info>', 2);
     }
 
     /**
@@ -119,7 +127,7 @@ class CommandListShell extends Shell
             }
         }
         $this->_io->outputAs(ConsoleOutput::RAW);
-        $this->out($shells->saveXml());
+        $this->out($shells->saveXML());
     }
 
     /**
@@ -131,10 +139,13 @@ class CommandListShell extends Shell
     {
         $parser = parent::getOptionParser();
 
-        $parser->description(
+        $parser->setDescription(
             'Get the list of available shells for this CakePHP application.'
         )->addOption('xml', [
             'help' => 'Get the listing as XML.',
+            'boolean' => true
+        ])->addOption('version', [
+            'help' => 'Prints the currently installed version of CakePHP.',
             'boolean' => true
         ]);
 

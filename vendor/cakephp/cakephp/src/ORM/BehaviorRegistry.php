@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\ORM;
 
@@ -92,6 +92,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
         if (!$result) {
             $result = App::className($class, 'ORM/Behavior', 'Behavior');
         }
+
         return $result;
     }
 
@@ -122,7 +123,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
      * @param string $class The classname that is missing.
      * @param string $alias The alias of the object.
      * @param array $config An array of config to use for the behavior.
-     * @return Behavior The constructed behavior class.
+     * @return \Cake\ORM\Behavior The constructed behavior class.
      */
     protected function _create($class, $alias, $config)
     {
@@ -134,6 +135,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
         $methods = $this->_getMethods($instance, $class, $alias);
         $this->_methodMap += $methods['methods'];
         $this->_finderMap += $methods['finders'];
+
         return $instance;
     }
 
@@ -198,6 +200,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
     public function hasMethod($method)
     {
         $method = strtolower($method);
+
         return isset($this->_methodMap[$method]);
     }
 
@@ -213,6 +216,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
     public function hasFinder($method)
     {
         $method = strtolower($method);
+
         return isset($this->_finderMap[$method]);
     }
 
@@ -229,6 +233,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
         $method = strtolower($method);
         if ($this->hasMethod($method) && $this->has($this->_methodMap[$method][0])) {
             list($behavior, $callMethod) = $this->_methodMap[$method];
+
             return call_user_func_array([$this->_loaded[$behavior], $callMethod], $args);
         }
 
@@ -251,6 +256,7 @@ class BehaviorRegistry extends ObjectRegistry implements EventDispatcherInterfac
 
         if ($this->hasFinder($type) && $this->has($this->_finderMap[$type][0])) {
             list($behavior, $callMethod) = $this->_finderMap[$type];
+
             return call_user_func_array([$this->_loaded[$behavior], $callMethod], $args);
         }
 

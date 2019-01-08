@@ -1,20 +1,20 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.2.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Network;
 
-use Cake\Network\Response;
+use Cake\Http\Response as HttpResponse;
 
 /**
  * A builder object that assists in defining Cross Origin Request related
@@ -26,14 +26,15 @@ use Cake\Network\Response;
  *
  * It is most convenient to get this object via `Request::cors()`.
  *
- * @see Cake\Network\Response::cors()
+ * @see \Cake\Http\Response::cors()
  */
 class CorsBuilder
 {
+
     /**
      * The response object this builder is attached to.
      *
-     * @var \Cake\Network\Response
+     * @var \Cake\Http\Response
      */
     protected $_response;
 
@@ -61,11 +62,11 @@ class CorsBuilder
     /**
      * Constructor.
      *
-     * @param \Cake\Network\Response $response The response object to add headers onto.
+     * @param \Cake\Http\Response $response The response object to add headers onto.
      * @param string $origin The request's Origin header.
      * @param bool $isSsl Whether or not the request was over SSL.
      */
-    public function __construct(Response $response, $origin, $isSsl = false)
+    public function __construct(HttpResponse $response, $origin, $isSsl = false)
     {
         $this->_origin = $origin;
         $this->_isSsl = $isSsl;
@@ -75,10 +76,10 @@ class CorsBuilder
     /**
      * Apply the queued headers to the response.
      *
-     * If the builer has no Origin, or if there are no allowed domains,
+     * If the builder has no Origin, or if there are no allowed domains,
      * or if the allowed domains do not match the Origin header no headers will be applied.
      *
-     * @return \Cake\Network\Response
+     * @return \Cake\Http\Response
      */
     public function build()
     {
@@ -88,6 +89,7 @@ class CorsBuilder
         if (isset($this->_headers['Access-Control-Allow-Origin'])) {
             $this->_response->header($this->_headers);
         }
+
         return $this->_response;
     }
 
@@ -111,6 +113,7 @@ class CorsBuilder
             $this->_headers['Access-Control-Allow-Origin'] = $value;
             break;
         }
+
         return $this;
     }
 
@@ -136,6 +139,7 @@ class CorsBuilder
             $preg = '@^' . str_replace('\*', '.*', preg_quote($preg, '@')) . '$@';
             $result[] = compact('original', 'preg');
         }
+
         return $result;
     }
 
@@ -148,6 +152,7 @@ class CorsBuilder
     public function allowMethods(array $methods)
     {
         $this->_headers['Access-Control-Allow-Methods'] = implode(', ', $methods);
+
         return $this;
     }
 
@@ -159,6 +164,7 @@ class CorsBuilder
     public function allowCredentials()
     {
         $this->_headers['Access-Control-Allow-Credentials'] = 'true';
+
         return $this;
     }
 
@@ -171,6 +177,7 @@ class CorsBuilder
     public function allowHeaders(array $headers)
     {
         $this->_headers['Access-Control-Allow-Headers'] = implode(', ', $headers);
+
         return $this;
     }
 
@@ -183,6 +190,7 @@ class CorsBuilder
     public function exposeHeaders(array $headers)
     {
         $this->_headers['Access-Control-Expose-Headers'] = implode(', ', $headers);
+
         return $this;
     }
 
@@ -195,6 +203,7 @@ class CorsBuilder
     public function maxAge($age)
     {
         $this->_headers['Access-Control-Max-Age'] = $age;
+
         return $this;
     }
 }

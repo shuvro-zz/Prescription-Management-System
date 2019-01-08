@@ -12,9 +12,9 @@
  */
 namespace DebugKit\Panel;
 
-use Cake\Controller\Controller;
+use Cake\Core\Configure;
 use Cake\Datasource\ConnectionManager;
-use Cake\Event\Event;
+use Cake\ORM\Table;
 use Cake\ORM\TableRegistry;
 use DebugKit\Database\Log\DebugLog;
 use DebugKit\DebugPanel;
@@ -39,11 +39,13 @@ class SqlLogPanel extends DebugPanel
      * This will unfortunately build all the connections, but they
      * won't connect until used.
      *
-     * @return array
+     * @return void
      */
     public function initialize()
     {
         $configs = ConnectionManager::configured();
+        $includeSchemaReflection = (bool)Configure::read('DebugKit.includeSchemaReflection');
+
         foreach ($configs as $name) {
             $connection = ConnectionManager::get($name);
             if ($connection->configName() === 'debug_kit') {
@@ -55,9 +57,10 @@ class SqlLogPanel extends DebugPanel
             }
 
             if ($logger instanceof DebugLog) {
+                $this->_loggers[] = $logger;
                 continue;
             }
-            $logger = new DebugLog($logger, $name);
+            $logger = new DebugLog($logger, $name, $includeSchemaReflection);
 
             $connection->logQueries(true);
             $connection->logger($logger);
@@ -73,7 +76,7 @@ class SqlLogPanel extends DebugPanel
     public function data()
     {
         return [
-            'tables' => array_map(function ($table) {
+            'tables' => array_map(function (Table $table) {
                 return $table->alias();
             }, TableRegistry::genericInstances()),
             'loggers' => $this->_loggers,
@@ -95,6 +98,7 @@ class SqlLogPanel extends DebugPanel
         if (!$count) {
             return '0';
         }
+
         return "$count / $time ms";
     }
 }

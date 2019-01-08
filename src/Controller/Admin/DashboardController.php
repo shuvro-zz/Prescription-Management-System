@@ -37,7 +37,7 @@ class DashboardController extends AppController
         $this->paginate = [
             'limit' => 30,
             'order' => [
-                'Users.modified' => 'desc'
+                'Users.updated' => 'desc'
             ]
         ];
         $users = $this->paginate($users);

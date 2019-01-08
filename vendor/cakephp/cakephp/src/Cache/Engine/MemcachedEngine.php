@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.5.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Cache\Engine;
 
@@ -27,7 +27,6 @@ use Memcached;
  * support of binary protocol, and igbinary serialization
  * (if memcached extension compiled with --enable-igbinary)
  * Compressed keys can also be incremented/decremented
- *
  */
 class MemcachedEngine extends CacheEngine
 {
@@ -37,7 +36,7 @@ class MemcachedEngine extends CacheEngine
      *
      * @var \Memcached
      */
-    protected $_Memcached = null;
+    protected $_Memcached;
 
     /**
      * The default config used unless overridden by runtime configuration
@@ -90,13 +89,18 @@ class MemcachedEngine extends CacheEngine
     protected $_serializers = [];
 
     /**
+     * @var string[]
+     */
+    protected $_compiledGroupNames = [];
+
+    /**
      * Initialize the Cache Engine
      *
      * Called automatically by the cache frontend
      *
      * @param array $config array of setting for the engine
      * @return bool True if the engine has been successfully initialized, false if not
-     * @throws InvalidArgumentException When you try use authentication without
+     * @throws \InvalidArgumentException When you try use authentication without
      *   Memcached compiled with SASL support
      */
     public function init(array $config = [])
@@ -125,7 +129,7 @@ class MemcachedEngine extends CacheEngine
         }
 
         if (isset($config['servers'])) {
-            $this->config('servers', $config['servers'], false);
+            $this->setConfig('servers', $config['servers'], false);
         }
 
         if (!is_array($this->_config['servers'])) {
@@ -189,7 +193,7 @@ class MemcachedEngine extends CacheEngine
      * Settings the memcached instance
      *
      * @return void
-     * @throws InvalidArgumentException When the Memcached extension is not built
+     * @throws \InvalidArgumentException When the Memcached extension is not built
      *   with the desired serializer engine.
      */
     protected function _setOptions()
@@ -259,6 +263,7 @@ class MemcachedEngine extends CacheEngine
             $host = substr($server, 0, $position);
             $port = substr($server, $position + 1);
         }
+
         return [$host, (int)$port];
     }
 
@@ -271,7 +276,7 @@ class MemcachedEngine extends CacheEngine
      * @param string $key Identifier for the data
      * @param mixed $value Data to be cached
      * @return bool True if the data was successfully cached, false on failure
-     * @see http://php.net/manual/en/memcache.set.php
+     * @see https://secure.php.net/manual/en/memcache.set.php
      */
     public function write($key, $value)
     {
@@ -305,6 +310,7 @@ class MemcachedEngine extends CacheEngine
         foreach (array_keys($data) as $key) {
             $return[$key] = $success;
         }
+
         return $return;
     }
 
@@ -342,6 +348,7 @@ class MemcachedEngine extends CacheEngine
             $return[$key] = array_key_exists($this->_key($key), $values) ?
                 $values[$this->_key($key)] : false;
         }
+
         return $return;
     }
 
@@ -407,6 +414,7 @@ class MemcachedEngine extends CacheEngine
         foreach ($keys as $key) {
             $return[$key] = $success;
         }
+
         return $return;
     }
 
@@ -451,6 +459,7 @@ class MemcachedEngine extends CacheEngine
         }
 
         $key = $this->_key($key);
+
         return $this->_Memcached->add($key, $value, $duration);
     }
 

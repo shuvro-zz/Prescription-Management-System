@@ -41,6 +41,11 @@ class Index
     const INDEX = 'index';
 
     /**
+     * @var string
+     */
+    const FULLTEXT = 'fulltext';
+
+    /**
      * @var array
      */
     protected $columns;
@@ -56,10 +61,15 @@ class Index
     protected $name = null;
 
     /**
+     * @var integer
+     */
+    protected $limit = null;
+
+    /**
      * Sets the index columns.
      *
      * @param array $columns
-     * @return Column
+     * @return Index
      */
     public function setColumns($columns)
     {
@@ -102,7 +112,8 @@ class Index
     /**
      * Sets the index name.
      *
-     * @return string
+     * @param string $name
+     * @return Index
      */
     public function setName($name)
     {
@@ -121,6 +132,28 @@ class Index
     }
 
     /**
+     * Sets the index limit.
+     *
+     * @param integer $limit
+     * @return Index
+     */
+    public function setLimit($limit)
+    {
+        $this->limit = $limit;
+        return $this;
+    }
+
+    /**
+     * Gets the index limit.
+     *
+     * @return integer
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
      * Utility method that maps an array of index options to this objects methods.
      *
      * @param array $options Options
@@ -130,10 +163,10 @@ class Index
     public function setOptions($options)
     {
         // Valid Options
-        $validOptions = array('type', 'unique', 'name');
+        $validOptions = array('type', 'unique', 'name', 'limit');
         foreach ($options as $option => $value) {
-            if (!in_array($option, $validOptions)) {
-                throw new \RuntimeException('\'' . $option . '\' is not a valid index option.');
+            if (!in_array($option, $validOptions, true)) {
+                throw new \RuntimeException(sprintf('"%s" is not a valid index option.', $option));
             }
 
             // handle $options['unique']
@@ -147,5 +180,6 @@ class Index
             $method = 'set' . ucfirst($option);
             $this->$method($value);
         }
+        return $this;
     }
 }

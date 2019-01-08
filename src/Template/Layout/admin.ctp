@@ -22,7 +22,7 @@
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
-		'admin_styles/css/style.css',
+		'admin_styles/css/style.css?v=1.1',
 		'admin_styles/css/tokenize2.css',
 		'lib/jquery.datetimepicker.min.css',
         'admin_styles/css/jquery.imageview.css',

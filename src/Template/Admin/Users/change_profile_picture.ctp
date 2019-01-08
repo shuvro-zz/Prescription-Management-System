@@ -1,5 +1,6 @@
-<?php echo $this->Form->create($user, [
-    'url' => ['controller' => 'Users', 'action' => 'changeProfilePicture'],
+<?php
+echo $this->Form->create('', [
+    'url' => ['controller' => 'Users', 'action' => 'changeProfilePicture/'.$this->request->params['pass'][0]],
     'class' => 'form-horizontal',
     'type' => 'file',
 ]); ?>

@@ -12,13 +12,15 @@
 namespace Migrations;
 
 use Cake\Database\Connection;
+use Cake\Database\Driver\Postgres;
 use PDO;
 use Phinx\Db\Adapter\AdapterInterface;
-use Phinx\Db\Table;
+use Phinx\Db\Table as PhinxTable;
 use Phinx\Db\Table\Column;
 use Phinx\Db\Table\ForeignKey;
 use Phinx\Db\Table\Index;
 use Phinx\Migration\MigrationInterface;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -57,17 +59,45 @@ class CakeAdapter implements AdapterInterface
         if ($pdo->getAttribute(PDO::ATTR_ERRMODE) !== PDO::ERRMODE_EXCEPTION) {
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
+        $connection->cacheMetadata(false);
+
+        if ($connection->driver() instanceof Postgres) {
+            $config = $connection->config();
+            $schema = empty($config['schema']) ? 'public' : $config['schema'];
+            $pdo->exec('SET search_path TO ' . $schema);
+        }
         $connection->driver()->connection($pdo);
     }
 
     /**
-     * Gets the database connection
+     * Gets the database PDO connection object.
      *
      * @return \PDO
      */
     public function getConnection()
     {
         return $this->adapter->getConnection();
+    }
+
+    /**
+     * Gets the database PDO connection object.
+     *
+     * @param \PDO $connection Connection
+     * @return AdapterInterface
+     */
+    public function setConnection($connection)
+    {
+        return $this->adapter->setConnection($connection);
+    }
+
+    /**
+     * Gets the CakePHP Connection object.
+     *
+     * @return \Cake\Database\Connection
+     */
+    public function getCakeConnection()
+    {
+        return $this->connection;
     }
 
     /**
@@ -81,10 +111,20 @@ class CakeAdapter implements AdapterInterface
     }
 
     /**
+     * Get all migration log entries, indexed by version number.
+     *
+     * @return array
+     */
+    public function getVersionLog()
+    {
+        return $this->adapter->getVersionLog();
+    }
+
+    /**
      * Set adapter configuration options.
      *
-     * @param  array $options
-     * @return AdapterInterface
+     * @param array $options
+     * @return $this
      */
     public function setOptions(array $options)
     {
@@ -127,7 +167,7 @@ class CakeAdapter implements AdapterInterface
      * Sets the console output.
      *
      * @param OutputInterface $output Output
-     * @return AdapterInterface
+     * @return $this
      */
     public function setOutput(OutputInterface $output)
     {
@@ -148,7 +188,7 @@ class CakeAdapter implements AdapterInterface
      * Sets the command start time
      *
      * @param int $time
-     * @return AdapterInterface
+     * @return $this
      */
     public function setCommandStartTime($time)
     {
@@ -205,7 +245,7 @@ class CakeAdapter implements AdapterInterface
      * @param string $direction Direction
      * @param int $startTime Start Time
      * @param int $endTime End Time
-     * @return AdapterInterface
+     * @return $this
      */
     public function migrated(MigrationInterface $migration, $direction, $startTime, $endTime)
     {
@@ -351,11 +391,11 @@ class CakeAdapter implements AdapterInterface
     /**
      * Inserts data into a table.
      *
-     * @param Table $table where to insert data
+     * @param \Phinx\Db\Table $table where to insert data
      * @param array $row
      * @return void
      */
-    public function insert(Table $table, $row)
+    public function insert(PhinxTable $table, $row)
     {
         $this->adapter->insert($table, $row);
     }
@@ -396,10 +436,10 @@ class CakeAdapter implements AdapterInterface
     /**
      * Creates the specified database table.
      *
-     * @param Table $table Table
+     * @param \Phinx\Db\Table $table Table
      * @return void
      */
-    public function createTable(Table $table)
+    public function createTable(PhinxTable $table)
     {
         $this->adapter->createTable($table);
     }
@@ -428,6 +468,17 @@ class CakeAdapter implements AdapterInterface
     }
 
     /**
+     * Truncates the specified table
+     *
+     * @param string $tableName
+     * @return void
+     */
+    public function truncateTable($tableName)
+    {
+        $this->adapter->truncateTable($tableName);
+    }
+
+    /**
      * Returns table columns
      *
      * @param string $tableName Table Name
@@ -453,11 +504,11 @@ class CakeAdapter implements AdapterInterface
     /**
      * Adds the specified column to a database table.
      *
-     * @param Table  $table  Table
-     * @param Column $column Column
+     * @param \Phinx\Db\Table  $table  Table
+     * @param \Phinx\Db\Table\Column $column Column
      * @return void
      */
-    public function addColumn(Table $table, Column $column)
+    public function addColumn(PhinxTable $table, Column $column)
     {
         $this->adapter->addColumn($table, $column);
     }
@@ -480,8 +531,8 @@ class CakeAdapter implements AdapterInterface
      *
      * @param string $tableName  Table Name
      * @param string $columnName Column Name
-     * @param Column $newColumn  New Column
-     * @return Table
+     * @param \Phinx\Db\Table\Column $newColumn  New Column
+     * @return \Phinx\Db\Table
      */
     public function changeColumn($tableName, $columnName, Column $newColumn)
     {
@@ -527,11 +578,11 @@ class CakeAdapter implements AdapterInterface
     /**
      * Adds the specified index to a database table.
      *
-     * @param Table $table Table
+     * @param \Phinx\Db\Table $table Table
      * @param Index $index Index
      * @return void
      */
-    public function addIndex(Table $table, Index $index)
+    public function addIndex(PhinxTable $table, Index $index)
     {
         $this->adapter->addIndex($table, $index);
     }
@@ -576,11 +627,11 @@ class CakeAdapter implements AdapterInterface
     /**
      * Adds the specified foreign key to a database table.
      *
-     * @param Table      $table
-     * @param ForeignKey $foreignKey
+     * @param \Phinx\Db\Table $table
+     * @param \Phinx\Db\Table\ForeignKey $foreignKey
      * @return void
      */
-    public function addForeignKey(Table $table, ForeignKey $foreignKey)
+    public function addForeignKey(PhinxTable $table, ForeignKey $foreignKey)
     {
         $this->adapter->addForeignKey($table, $foreignKey);
     }
@@ -666,5 +717,62 @@ class CakeAdapter implements AdapterInterface
     public function dropDatabase($name)
     {
         $this->adapter->dropDatabase($name);
+    }
+
+    /**
+     * Cast a value to a boolean appropriate for the adapter.
+     *
+     * @param mixed $value The value to be cast
+     *
+     * @return mixed
+     */
+    public function castToBool($value)
+    {
+        return $this->adapter->castToBool($value);
+    }
+
+    /**
+     * Sets the console input.
+     *
+     * @param InputInterface $input Input
+     * @return $this
+     */
+    public function setInput(InputInterface $input)
+    {
+        $this->adapter->setInput($input);
+        return $this;
+    }
+
+    /**
+     * Gets the console input.
+     *
+     * @return InputInterface
+     */
+    public function getInput()
+    {
+        return $this->adapter->getInput();
+    }
+
+    /**
+     * Toggle a migration breakpoint.
+     *
+     * @param MigrationInterface $migration
+     *
+     * @return $this
+     */
+    public function toggleBreakpoint(MigrationInterface $migration)
+    {
+        $this->adapter->toggleBreakpoint($migration);
+        return $this;
+    }
+
+    /**
+     * Reset all migration breakpoints.
+     *
+     * @return int The number of breakpoints reset
+     */
+    public function resetAllBreakpoints()
+    {
+        return $this->adapter->resetAllBreakpoints();
     }
 }

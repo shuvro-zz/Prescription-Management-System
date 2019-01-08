@@ -18,7 +18,7 @@
      * Delete method
      *
      * @param string|null $id <%= $singularHumanName %> id.
-     * @return \Cake\Network\Response|null Redirects to index.
+     * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
@@ -30,5 +30,6 @@
         } else {
             $this->Flash->error(__('The <%= strtolower($singularHumanName) %> could not be deleted. Please, try again.'));
         }
+
         return $this->redirect(['action' => 'index']);
     }

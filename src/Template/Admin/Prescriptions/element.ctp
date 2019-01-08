@@ -121,6 +121,18 @@
 
                     <div class="row">
                         <div class="col-sm-6 last_visit_date_level">
+                            <label>Weight:</label>
+                        </div>
+
+                        <div class="col-sm-6 padding_right_remove">
+                            <div class="inputs" id="weight">
+                                <?php echo $this->Form->input('patients.weight', ['class' => 'form-control reset_patient ', 'value' => (isset($prescription->user['weight']))? $prescription->user['weight']:'', 'label' => false, 'type' =>'text', 'id'=>'user-weight']); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 last_visit_date_level">
                             <label>Last Visit Date:</label>
                         </div>
 

@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Console;
 
@@ -21,7 +21,7 @@ use SimpleXmlElement;
  * An object to represent a single argument used in the command line.
  * ConsoleOptionParser creates these when you use addArgument()
  *
- * @see ConsoleOptionParser::addArgument()
+ * @see \Cake\Console\ConsoleOptionParser::addArgument()
  */
 class ConsoleInputArgument
 {
@@ -113,9 +113,10 @@ class ConsoleInputArgument
         if (!$this->isRequired()) {
             $optional = ' <comment>(optional)</comment>';
         }
-        if (!empty($this->_choices)) {
+        if ($this->_choices) {
             $optional .= sprintf(' <comment>(choices: %s)</comment>', implode('|', $this->_choices));
         }
+
         return sprintf('%s%s%s', $name, $this->_help, $optional);
     }
 
@@ -127,13 +128,14 @@ class ConsoleInputArgument
     public function usage()
     {
         $name = $this->_name;
-        if (!empty($this->_choices)) {
+        if ($this->_choices) {
             $name = implode('|', $this->_choices);
         }
         $name = '<' . $name . '>';
         if (!$this->isRequired()) {
             $name = '[' . $name . ']';
         }
+
         return $name;
     }
 
@@ -169,6 +171,7 @@ class ConsoleInputArgument
                 )
             );
         }
+
         return true;
     }
 
@@ -183,11 +186,12 @@ class ConsoleInputArgument
         $option = $parent->addChild('argument');
         $option->addAttribute('name', $this->_name);
         $option->addAttribute('help', $this->_help);
-        $option->addAttribute('required', $this->isRequired());
+        $option->addAttribute('required', (int)$this->isRequired());
         $choices = $option->addChild('choices');
         foreach ($this->_choices as $valid) {
             $choices->addChild('choice', $valid);
         }
+
         return $parent;
     }
 }

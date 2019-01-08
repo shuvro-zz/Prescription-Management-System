@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         1.2.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Cache;
 
@@ -19,7 +19,6 @@ use InvalidArgumentException;
 
 /**
  * Storage engine for CakePHP caching
- *
  */
 abstract class CacheEngine
 {
@@ -53,7 +52,7 @@ abstract class CacheEngine
      *
      * @var string
      */
-    protected $_groupPrefix = null;
+    protected $_groupPrefix;
 
     /**
      * Initialize the cache engine
@@ -66,7 +65,7 @@ abstract class CacheEngine
      */
     public function init(array $config = [])
     {
-        $this->config($config);
+        $this->setConfig($config);
 
         if (!empty($this->_config['groups'])) {
             sort($this->_config['groups']);
@@ -112,6 +111,7 @@ abstract class CacheEngine
         foreach ($data as $key => $value) {
             $return[$key] = $this->write($key, $value);
         }
+
         return $return;
     }
 
@@ -136,6 +136,7 @@ abstract class CacheEngine
         foreach ($keys as $key) {
             $return[$key] = $this->read($key);
         }
+
         return $return;
     }
 
@@ -165,7 +166,6 @@ abstract class CacheEngine
      */
     abstract public function delete($key);
 
-
     /**
      * Delete all keys from the cache
      *
@@ -187,6 +187,7 @@ abstract class CacheEngine
         foreach ($keys as $key) {
             $return[$key] = $this->delete($key);
         }
+
         return $return;
     }
 
@@ -206,6 +207,7 @@ abstract class CacheEngine
         if ($cachedValue === false) {
             return $this->write($key, $value);
         }
+
         return false;
     }
 
@@ -242,16 +244,17 @@ abstract class CacheEngine
      */
     public function key($key)
     {
-        if (empty($key)) {
+        if (!$key) {
             return false;
         }
 
         $prefix = '';
-        if (!empty($this->_groupPrefix)) {
+        if ($this->_groupPrefix) {
             $prefix = vsprintf($this->_groupPrefix, $this->groups());
         }
 
-        $key = preg_replace('/[\s]+/', '_', strtolower(trim(str_replace([DS, '/', '.'], '_', strval($key)))));
+        $key = preg_replace('/[\s]+/', '_', strtolower(trim(str_replace([DIRECTORY_SEPARATOR, '/', '.'], '_', (string)$key))));
+
         return $prefix . $key;
     }
 

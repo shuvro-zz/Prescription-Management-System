@@ -3,7 +3,7 @@
 /*
  * This file is part of Psy Shell.
  *
- * (c) 2012-2015 Justin Hileman
+ * (c) 2012-2017 Justin Hileman
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,8 +11,9 @@
 
 namespace Psy\Command;
 
-use JakubOnderka\PhpConsoleColor\ConsoleColor;
 use JakubOnderka\PhpConsoleHighlighter\Highlighter;
+use Psy\Configuration;
+use Psy\ConsoleColorFactory;
 use Psy\Output\ShellOutput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,8 +24,15 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class WhereamiCommand extends Command
 {
-    public function __construct()
+    private $colorMode;
+
+    /**
+     * @param null|string $colorMode (default: null)
+     */
+    public function __construct($colorMode = null)
     {
+        $this->colorMode = $colorMode ?: Configuration::COLOR_MODE_AUTO;
+
         if (version_compare(PHP_VERSION, '5.3.6', '>=')) {
             $this->backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
         } else {
@@ -46,7 +54,7 @@ class WhereamiCommand extends Command
             ))
             ->setDescription('Show where you are in the code.')
             ->setHelp(
-                <<<HELP
+                <<<'HELP'
 Show where you are in the code.
 
 Optionally, include how many lines before and after you want to display.
@@ -59,24 +67,28 @@ HELP
     }
 
     /**
-     * Obtains the correct trace in the full backtrace.
+     * Obtains the correct stack frame in the full backtrace.
      *
      * @return array
      */
     protected function trace()
     {
-        foreach ($this->backtrace as $i => $backtrace) {
-            if (!isset($backtrace['class'], $backtrace['function'])) {
-                continue;
-            }
-            $correctClass = $backtrace['class'] === 'Psy\Shell';
-            $correctFunction = $backtrace['function'] === 'debug';
-            if ($correctClass && $correctFunction) {
-                return $backtrace;
+        foreach (array_reverse($this->backtrace) as $stackFrame) {
+            if ($this->isDebugCall($stackFrame)) {
+                return $stackFrame;
             }
         }
 
         return end($this->backtrace);
+    }
+
+    private static function isDebugCall(array $stackFrame)
+    {
+        $class    = isset($stackFrame['class']) ? $stackFrame['class'] : null;
+        $function = isset($stackFrame['function']) ? $stackFrame['function'] : null;
+
+        return ($class === null && $function === 'Psy\debug') ||
+            ($class === 'Psy\Shell' && in_array($function, array('__construct', 'debug')));
     }
 
     /**
@@ -86,14 +98,14 @@ HELP
      */
     protected function fileInfo()
     {
-        $backtrace = $this->trace();
-        if (preg_match('/eval\(/', $backtrace['file'])) {
-            preg_match_all('/([^\(]+)\((\d+)/', $backtrace['file'], $matches);
+        $stackFrame = $this->trace();
+        if (preg_match('/eval\(/', $stackFrame['file'])) {
+            preg_match_all('/([^\(]+)\((\d+)/', $stackFrame['file'], $matches);
             $file = $matches[1][0];
             $line = (int) $matches[2][0];
         } else {
-            $file = $backtrace['file'];
-            $line = $backtrace['line'];
+            $file = $stackFrame['file'];
+            $line = $stackFrame['line'];
         }
 
         return compact('file', 'line');
@@ -106,8 +118,8 @@ HELP
     {
         $info = $this->fileInfo();
         $num = $input->getOption('num');
-        $colors = new ConsoleColor();
-        $colors->addTheme('line_number', array('blue'));
+        $factory = new ConsoleColorFactory($this->colorMode);
+        $colors = $factory->getConsoleColor();
         $highlighter = new Highlighter($colors);
         $contents = file_get_contents($info['file']);
         $output->page($highlighter->getCodeSnippet($contents, $info['line'], $num, $num), ShellOutput::OUTPUT_RAW);

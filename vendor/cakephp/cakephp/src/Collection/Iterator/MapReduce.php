@@ -1,15 +1,15 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Collection\Iterator;
 
@@ -52,7 +52,7 @@ class MapReduce implements IteratorAggregate
     /**
      * Holds the original data that needs to be processed
      *
-     * @var \Traversable
+     * @var \Traversable|null
      */
     protected $_data;
 
@@ -74,7 +74,7 @@ class MapReduce implements IteratorAggregate
     /**
      * Count of elements emitted during the Reduce phase
      *
-     * @var string
+     * @var int
      */
     protected $_counter = 0;
 
@@ -108,7 +108,7 @@ class MapReduce implements IteratorAggregate
      * @param callable $mapper the mapper callback. This function will receive 3 arguments.
      * The first one is the current value, second the current results key and third is
      * this class instance so you can call the result emitters.
-     * @param callable $reducer the reducer callback. This function will receive 3 arguments.
+     * @param callable|null $reducer the reducer callback. This function will receive 3 arguments.
      * The first one is the list of values inside a bucket, second one is the name
      * of the bucket that was created during the mapping phase and third one is an
      * instance of this class.
@@ -131,6 +131,7 @@ class MapReduce implements IteratorAggregate
         if (!$this->_executed) {
             $this->_execute();
         }
+
         return new ArrayIterator($this->_result);
     }
 
@@ -152,7 +153,7 @@ class MapReduce implements IteratorAggregate
      * for this record.
      *
      * @param mixed $value The value to be appended to the final list of results
-     * @param string $key and optional key to assign to the value
+     * @param string|null $key and optional key to assign to the value
      * @return void
      */
     public function emit($value, $key = null)

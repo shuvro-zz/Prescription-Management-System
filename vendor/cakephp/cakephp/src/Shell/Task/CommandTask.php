@@ -1,20 +1,19 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.5.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Shell\Task;
 
-use Cake\Console\ConsoleOptionParser;
 use Cake\Console\Shell;
 use Cake\Core\App;
 use Cake\Core\Plugin;
@@ -26,7 +25,6 @@ use ReflectionMethod;
 
 /**
  * Base class for Shell Command reflection.
- *
  */
 class CommandTask extends Shell
 {
@@ -75,6 +73,7 @@ class CommandTask extends Shell
         foreach ($shells as $shell) {
             $shellList[$type][] = Inflector::underscore(str_replace('Shell', '', $shell));
         }
+
         return $shellList;
     }
 
@@ -99,6 +98,7 @@ class CommandTask extends Shell
             }
             $shells[] = substr($file, 0, -4);
         }
+
         return $shells;
     }
 
@@ -164,7 +164,7 @@ class CommandTask extends Shell
             }
         }
 
-        $return += array_diff($methodNames, $shellMethodNames);
+        $return = array_merge($return, array_diff($methodNames, $shellMethodNames));
         sort($return);
 
         return $return;
@@ -210,6 +210,7 @@ class CommandTask extends Shell
             return false;
         }
 
+        /* @var \Cake\Console\Shell $Shell */
         $Shell = new $class();
         $Shell->plugin = trim($pluginDot, '.');
         $Shell->initialize();
@@ -246,6 +247,7 @@ class CommandTask extends Shell
 
         $options = [];
         $array = $parser->options();
+        /* @var \Cake\Console\ConsoleInputOption $obj */
         foreach ($array as $name => $obj) {
             $options[] = "--$name";
             $short = $obj->short();
@@ -253,6 +255,7 @@ class CommandTask extends Shell
                 $options[] = "-$short";
             }
         }
+
         return $options;
     }
 }

@@ -29,7 +29,7 @@ use Cake\Utility\Inflector;
  * application development by writing fully functional skeleton controllers,
  * models, and templates. Going further, Bake can also write Unit Tests for you.
  *
- * @link http://book.cakephp.org/3.0/en/console-and-shells/code-generation-with-bake.html
+ * @link https://book.cakephp.org/3.0/en/bake/usage.html
  */
 class BakeShell extends Shell
 {
@@ -59,6 +59,9 @@ class BakeShell extends Shell
             if (isset($this->params['connection'])) {
                 $this->{$task}->connection = $this->params['connection'];
             }
+            if (isset($this->params['tablePrefix'])) {
+                $this->{$task}->tablePrefix = $this->params['tablePrefix'];
+            }
         }
         if (isset($this->params['connection'])) {
             $this->connection = $this->params['connection'];
@@ -79,6 +82,7 @@ class BakeShell extends Shell
             array_shift($args);
             $args = implode($args, ' ');
             $this->out(sprintf('    <info>`bin/cake bake template %s`</info>', $args), 2);
+
             return false;
         }
 
@@ -86,6 +90,7 @@ class BakeShell extends Shell
         if (empty($connections)) {
             $this->out('Your database configuration was not found.');
             $this->out('Add your database connection information to config/app.php.');
+
             return false;
         }
         $this->out('The following commands can be used to generate skeleton code for your application.', 2);
@@ -102,6 +107,7 @@ class BakeShell extends Shell
         }
         $this->out('');
         $this->out('By using <info>`cake bake [name]`</info> you can invoke a specific bake task.');
+
         return false;
     }
 
@@ -126,7 +132,7 @@ class BakeShell extends Shell
             $tasks = $this->_findTasks(
                 $tasks,
                 Plugin::classPath($plugin),
-                $plugin,
+                str_replace('/', '\\', $plugin),
                 $plugin
             );
         }
@@ -158,6 +164,7 @@ class BakeShell extends Shell
             $fullName = ($prefix ? $prefix . '.' : '') . $name;
             $tasks[$name] = $fullName;
         }
+
         return $tasks;
     }
 
@@ -179,6 +186,7 @@ class BakeShell extends Shell
             $name = $item->getBasename('.php');
             $candidates[] = $namespace . '\Shell\Task\\' . $name;
         }
+
         return $candidates;
     }
 
@@ -204,6 +212,7 @@ class BakeShell extends Shell
             }
             $classes[] = $className;
         }
+
         return $classes;
     }
 
@@ -229,6 +238,7 @@ class BakeShell extends Shell
                 $this->out('- ' . $table);
             }
             $this->out('Run <info>`cake bake all [name]`</info> to generate skeleton files.');
+
             return false;
         }
 
@@ -240,19 +250,16 @@ class BakeShell extends Shell
             $filteredTables = collection($this->Model->listUnskipped());
         }
 
-        $filteredTables->each(function ($tableName) {
-            foreach (['Model', 'Controller', 'Template'] as $task) {
+        foreach (['Model', 'Controller', 'Template'] as $task) {
+            $filteredTables->each(function ($tableName) use ($task) {
+                $tableName = $this->_camelize($tableName);
                 $this->{$task}->connection = $this->connection;
-            }
-
-            $tableName = $this->_camelize($tableName);
-
-            $this->Model->main($tableName);
-            $this->Controller->main($tableName);
-            $this->Template->main($tableName);
-        });
+                $this->{$task}->main($tableName);
+            });
+        }
 
         $this->out('<success>Bake All complete.</success>', 1, Shell::QUIET);
+
         return true;
     }
 
@@ -273,7 +280,7 @@ class BakeShell extends Shell
             }
         }
 
-        $parser->description(
+        $parser->setDescription(
             'The Bake script generates controllers, models and template files for your application.' .
             ' If run with no command line arguments, Bake guides the user through the class creation process.' .
             ' You can customize the generation process by telling Bake where different parts of your application' .
@@ -298,6 +305,9 @@ class BakeShell extends Shell
             'help' => 'Plugin to bake into.'
         ])->addOption('prefix', [
             'help' => 'Prefix to bake controllers and templates into.'
+        ])->addOption('tablePrefix', [
+            'help' => 'Table prefix to be used in models.',
+            'default' => null
         ])->addOption('theme', [
             'short' => 't',
             'help' => 'The theme to use when baking code.',
@@ -307,7 +317,7 @@ class BakeShell extends Shell
         foreach ($this->_taskMap as $task => $config) {
             $taskParser = $this->{$task}->getOptionParser();
             $parser->addSubcommand(Inflector::underscore($task), [
-                'help' => $taskParser->description(),
+                'help' => $taskParser->getDescription(),
                 'parser' => $taskParser
             ]);
         }

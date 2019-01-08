@@ -49,6 +49,7 @@
                 <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('name') ?></th>
+                    <th><?= $this->Paginator->sort('weight') ?></th>
                     <th><?= $this->Paginator->sort('phone') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('age', 'Age/Years') ?></th>
@@ -63,6 +64,7 @@
                 <?php foreach ($users as $user): ?>
                     <tr>
                         <td><?= ucfirst(h($user->first_name )) ?></td>
+                        <td><?= h($user->weight) ?></td>
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->age) ?></td>

@@ -1,11 +1,25 @@
 <?php
-
+/**
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
+ * @since         3.0.0
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
+ */
 namespace Cake\Database\Type;
 
 use Cake\Database\Driver;
 use Cake\Database\Type;
+use Cake\Database\TypeInterface;
 use DateTimeInterface;
 use Exception;
+use PDO;
 use RuntimeException;
 
 /**
@@ -13,8 +27,17 @@ use RuntimeException;
  *
  * Use to convert datetime instances to strings & back.
  */
-class DateTimeType extends Type
+class DateTimeType extends Type implements TypeInterface
 {
+    /**
+     * Identifier name for this type.
+     *
+     * (This property is declared here again so that the inheritance from
+     * Cake\Database\Type can be removed in the future.)
+     *
+     * @var string|null
+     */
+    protected $_name;
 
     /**
      * The class to use for representing date objects
@@ -23,7 +46,7 @@ class DateTimeType extends Type
      * class is constructed. After that use `useMutable()` or `useImmutable()` instead.
      *
      * @var string
-     * @deprecated Use DateTimeType::useMutable() or DateTimeType::useImmutable() instead.
+     * @deprecated 3.2.0 Use DateTimeType::useMutable() or DateTimeType::useImmutable() instead.
      */
     public static $dateTimeClass = 'Cake\I18n\Time';
 
@@ -69,7 +92,8 @@ class DateTimeType extends Type
      */
     public function __construct($name = null)
     {
-        parent::__construct($name);
+        $this->_name = $name;
+
         $this->_setClassName(static::$dateTimeClass, 'DateTime');
     }
 
@@ -89,6 +113,7 @@ class DateTimeType extends Type
             $class = $this->_className;
             $value = new $class('@' . $value);
         }
+
         return $value->format($this->_format);
     }
 
@@ -110,6 +135,7 @@ class DateTimeType extends Type
         }
 
         $instance = clone $this->_datetimeInstance;
+
         return $instance->modify($value);
     }
 
@@ -130,11 +156,13 @@ class DateTimeType extends Type
             $compare = $date = false;
             if ($value === '' || $value === null || $value === false || $value === true) {
                 return null;
-            } elseif (is_numeric($value)) {
+            }
+            $isString = is_string($value);
+            if (ctype_digit($value)) {
                 $date = new $class('@' . $value);
-            } elseif (is_string($value) && $this->_useLocaleParser) {
+            } elseif ($isString && $this->_useLocaleParser) {
                 return $this->_parseValue($value);
-            } elseif (is_string($value)) {
+            } elseif ($isString) {
                 $date = new $class($value);
                 $compare = true;
             }
@@ -189,10 +217,12 @@ class DateTimeType extends Type
     {
         if ($enable === false) {
             $this->_useLocaleParser = $enable;
+
             return $this;
         }
         if (method_exists($this->_className, 'parseDateTime')) {
             $this->_useLocaleParser = $enable;
+
             return $this;
         }
         throw new RuntimeException(
@@ -212,6 +242,7 @@ class DateTimeType extends Type
     public function setLocaleFormat($format)
     {
         $this->_localeFormat = $format;
+
         return $this;
     }
 
@@ -223,6 +254,7 @@ class DateTimeType extends Type
     public function useImmutable()
     {
         $this->_setClassName('Cake\I18n\FrozenTime', 'DateTimeImmutable');
+
         return $this;
     }
 
@@ -243,6 +275,16 @@ class DateTimeType extends Type
     }
 
     /**
+     * Get the classname used for building objects.
+     *
+     * @return string
+     */
+    public function getDateTimeClassName()
+    {
+        return $this->_className;
+    }
+
+    /**
      * Change the preferred class name to the mutable Time implementation.
      *
      * @return $this
@@ -250,11 +292,12 @@ class DateTimeType extends Type
     public function useMutable()
     {
         $this->_setClassName('Cake\I18n\Time', 'DateTime');
+
         return $this;
     }
 
     /**
-     * Converts a string into a DateTime object after parseing it using the locale
+     * Converts a string into a DateTime object after parsing it using the locale
      * aware parser with the specified format.
      *
      * @param string $value The value to parse and convert to an object.
@@ -262,7 +305,22 @@ class DateTimeType extends Type
      */
     protected function _parseValue($value)
     {
+        /* @var \Cake\I18n\Time $class */
         $class = $this->_className;
+
         return $class::parseDateTime($value, $this->_localeFormat);
+    }
+
+    /**
+     * Casts given value to Statement equivalent
+     *
+     * @param mixed $value value to be converted to PDO statement
+     * @param \Cake\Database\Driver $driver object from which database preferences and configuration will be extracted
+     *
+     * @return mixed
+     */
+    public function toStatement($value, Driver $driver)
+    {
+        return PDO::PARAM_STR;
     }
 }

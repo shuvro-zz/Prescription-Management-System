@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.2.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Validation;
 
@@ -29,7 +29,7 @@ class ValidationSet implements ArrayAccess, IteratorAggregate, Countable
     /**
      * Holds the ValidationRule objects
      *
-     * @var array
+     * @var \Cake\Validation\ValidationRule[]
      */
     protected $_rules = [];
 
@@ -60,6 +60,7 @@ class ValidationSet implements ArrayAccess, IteratorAggregate, Countable
         if ($validatePresent === null) {
             return $this->_validatePresent;
         }
+
         return $this->_validatePresent = $validatePresent;
     }
 
@@ -77,6 +78,7 @@ class ValidationSet implements ArrayAccess, IteratorAggregate, Countable
         if ($allowEmpty === null) {
             return $this->_allowEmpty;
         }
+
         return $this->_allowEmpty = $allowEmpty;
     }
 
@@ -96,7 +98,7 @@ class ValidationSet implements ArrayAccess, IteratorAggregate, Countable
     /**
      * Returns all rules for this validation set
      *
-     * @return array
+     * @return \Cake\Validation\ValidationRule[]
      */
     public function rules()
     {
@@ -124,6 +126,7 @@ class ValidationSet implements ArrayAccess, IteratorAggregate, Countable
             $rule = new ValidationRule($rule);
         }
         $this->_rules[$name] = $rule;
+
         return $this;
     }
 
@@ -144,6 +147,7 @@ class ValidationSet implements ArrayAccess, IteratorAggregate, Countable
     public function remove($name)
     {
         unset($this->_rules[$name]);
+
         return $this;
     }
 

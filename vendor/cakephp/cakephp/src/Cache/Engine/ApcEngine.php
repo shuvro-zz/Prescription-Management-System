@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         1.2.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Cache\Engine;
 
@@ -19,7 +19,6 @@ use Cake\Cache\CacheEngine;
 
 /**
  * APC storage engine for cache
- *
  */
 class ApcEngine extends CacheEngine
 {
@@ -28,7 +27,7 @@ class ApcEngine extends CacheEngine
      * Contains the compiled group names
      * (prefixed with the global configuration prefix)
      *
-     * @var array
+     * @var string[]
      */
     protected $_compiledGroupNames = [];
 
@@ -47,6 +46,7 @@ class ApcEngine extends CacheEngine
         }
 
         parent::init($config);
+
         return true;
     }
 
@@ -67,6 +67,7 @@ class ApcEngine extends CacheEngine
             $expires = time() + $duration;
         }
         apcu_store($key . '_expires', $expires, $duration);
+
         return apcu_store($key, $value, $duration);
     }
 
@@ -86,6 +87,7 @@ class ApcEngine extends CacheEngine
         if ($cachetime !== 0 && ($cachetime < $time || ($time + $this->_config['duration']) < $cachetime)) {
             return false;
         }
+
         return apcu_fetch($key);
     }
 
@@ -142,11 +144,22 @@ class ApcEngine extends CacheEngine
         if ($check) {
             return true;
         }
-        $iterator = new APCUIterator(
-            '/^' . preg_quote($this->_config['prefix'], '/') . '/',
-            APC_ITER_NONE
-        );
-        apcu_delete($iterator);
+        if (class_exists('APCUIterator', false)) {
+            $iterator = new APCUIterator(
+                '/^' . preg_quote($this->_config['prefix'], '/') . '/',
+                APC_ITER_NONE
+            );
+            apcu_delete($iterator);
+
+            return true;
+        }
+        $cache = apcu_cache_info();
+        foreach ($cache['cache_list'] as $key) {
+            if (strpos($key['info'], $this->_config['prefix']) === 0) {
+                apcu_delete($key['info']);
+            }
+        }
+
         return true;
     }
 
@@ -157,7 +170,7 @@ class ApcEngine extends CacheEngine
      * @param string $key Identifier for the data.
      * @param mixed $value Data to be cached.
      * @return bool True if the data was successfully cached, false on failure.
-     * @link http://php.net/manual/en/function.apc-add.php
+     * @link https://secure.php.net/manual/en/function.apc-add.php
      */
     public function add($key, $value)
     {
@@ -169,6 +182,7 @@ class ApcEngine extends CacheEngine
             $expires = time() + $duration;
         }
         apcu_add($key . '_expires', $expires, $duration);
+
         return apcu_add($key, $value, $duration);
     }
 
@@ -203,6 +217,7 @@ class ApcEngine extends CacheEngine
         foreach ($this->_config['groups'] as $i => $group) {
             $result[] = $group . $groups[$i];
         }
+
         return $result;
     }
 
@@ -216,6 +231,7 @@ class ApcEngine extends CacheEngine
     public function clearGroup($group)
     {
         apcu_inc($this->_config['prefix'] . $group, 1, $success);
+
         return $success;
     }
 }

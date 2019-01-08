@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Core;
 
@@ -40,7 +40,7 @@ abstract class ObjectRegistry
     /**
      * Map of loaded objects.
      *
-     * @var array
+     * @var object[]
      */
     protected $_loaded = [];
 
@@ -92,6 +92,7 @@ abstract class ObjectRegistry
         }
         $instance = $this->_create($className, $name, $config);
         $this->_loaded[$name] = $instance;
+
         return $instance;
     }
 
@@ -122,7 +123,7 @@ abstract class ObjectRegistry
         if (empty($config)) {
             return;
         }
-        $existingConfig = $existing->config();
+        $existingConfig = $existing->getConfig();
         unset($config['enabled'], $existingConfig['enabled']);
 
         $fail = false;
@@ -207,6 +208,7 @@ abstract class ObjectRegistry
         if (isset($this->_loaded[$name])) {
             return $this->_loaded[$name];
         }
+
         return null;
     }
 
@@ -251,6 +253,7 @@ abstract class ObjectRegistry
             list(, $name) = pluginSplit($objectName);
             $normal[$name] = ['class' => $objectName, 'config' => $config];
         }
+
         return $normal;
     }
 
@@ -319,6 +322,7 @@ abstract class ObjectRegistry
         if (isset($properties['_loaded'])) {
             $properties['_loaded'] = array_keys($properties['_loaded']);
         }
+
         return $properties;
     }
 }

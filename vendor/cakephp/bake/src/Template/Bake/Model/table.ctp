@@ -13,13 +13,31 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 use Cake\Utility\Inflector;
+
+$annotations = [];
+foreach ($associations as $type => $assocs) {
+    foreach ($assocs as $assoc) {
+        $typeStr = Inflector::camelize($type);
+        $tableFqn = $associationInfo[$assoc['alias']]['targetFqn'];
+        $annotations[] = "@property {$tableFqn}|\Cake\ORM\Association\\{$typeStr} \${$assoc['alias']}";
+    }
+}
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity} get(\$primaryKey, \$options = [])";
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity} newEntity(\$data = null, array \$options = [])";
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity}[] newEntities(array \$data, array \$options = [])";
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity}|bool save(\\Cake\\Datasource\\EntityInterface \$entity, \$options = [])";
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity} patchEntity(\\Cake\\Datasource\\EntityInterface \$entity, array \$data, array \$options = [])";
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity}[] patchEntities(\$entities, array \$data, array \$options = [])";
+$annotations[] = "@method \\{$namespace}\\Model\\Entity\\{$entity} findOrCreate(\$search, callable \$callback = null, \$options = [])";
+foreach ($behaviors as $behavior => $behaviorData) {
+    $annotations[] = "@mixin \Cake\ORM\Behavior\\{$behavior}Behavior";
+}
 %>
 <?php
 namespace <%= $namespace %>\Model\Table;
 
 <%
 $uses = [
-    "use $namespace\\Model\\Entity\\$entity;",
     'use Cake\ORM\Query;',
     'use Cake\ORM\RulesChecker;',
     'use Cake\ORM\Table;',
@@ -30,17 +48,7 @@ echo implode("\n", $uses);
 %>
 
 
-/**
- * <%= $name %> Model
-<% if ($associations): %>
- *
-<% foreach ($associations as $type => $assocs): %>
-<% foreach ($assocs as $assoc): %>
- * @property \Cake\ORM\Association\<%= Inflector::camelize($type) %> $<%= $assoc['alias'] %>
-<% endforeach %>
-<% endforeach; %>
-<% endif; %>
- */
+<%= $this->DocBlock->classDescription($name, 'Model', $annotations) %>
 class <%= $name %>Table extends Table
 {
 
@@ -55,16 +63,16 @@ class <%= $name %>Table extends Table
         parent::initialize($config);
 
 <% if (!empty($table)): %>
-        $this->table('<%= $table %>');
+        $this->setTable('<%= $table %>');
 <% endif %>
 <% if (!empty($displayField)): %>
-        $this->displayField('<%= $displayField %>');
+        $this->setDisplayField('<%= $displayField %>');
 <% endif %>
 <% if (!empty($primaryKey)): %>
 <% if (count($primaryKey) > 1): %>
-        $this->primaryKey([<%= $this->Bake->stringifyList((array)$primaryKey, ['indent' => false]) %>]);
+        $this->setPrimaryKey([<%= $this->Bake->stringifyList((array)$primaryKey, ['indent' => false]) %>]);
 <% else: %>
-        $this->primaryKey('<%= current((array)$primaryKey) %>');
+        $this->setPrimaryKey('<%= current((array)$primaryKey) %>');
 <% endif %>
 <% endif %>
 <% if (!empty($behaviors)): %>
@@ -166,6 +174,7 @@ endforeach;
     <%- foreach ($rulesChecker as $field => $rule): %>
         $rules->add($rules-><%= $rule['name'] %>(['<%= $field %>']<%= !empty($rule['extra']) ? ", '$rule[extra]'" : '' %>));
     <%- endforeach; %>
+
         return $rules;
     }
 <% endif; %>

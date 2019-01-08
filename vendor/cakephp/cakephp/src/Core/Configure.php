@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         1.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Core;
 
@@ -28,7 +28,7 @@ use RuntimeException;
  * as methods for loading additional configuration files or storing runtime configuration
  * for future use.
  *
- * @link http://book.cakephp.org/3.0/en/development/configuration.html
+ * @link https://book.cakephp.org/3.0/en/development/configuration.html
  */
 class Configure
 {
@@ -45,17 +45,17 @@ class Configure
     /**
      * Configured engine classes, used to load config files from resources
      *
-     * @var array
-     * @see Configure::load()
+     * @see \Cake\Core\Configure::load()
+     * @var \Cake\Core\Configure\ConfigEngineInterface[]
      */
     protected static $_engines = [];
 
     /**
      * Flag to track whether or not ini_set exists.
      *
-     * @return void
+     * @var bool|null
      */
-    protected static $_hasIniSet = null;
+    protected static $_hasIniSet;
 
     /**
      * Used to store a dynamic variable in Configure.
@@ -79,7 +79,7 @@ class Configure
      * Alternatively can be an array containing key(s) and value(s).
      * @param mixed $value Value to set for var
      * @return bool True if write was successful
-     * @link http://book.cakephp.org/3.0/en/development/configuration.html#writing-configuration-data
+     * @link https://book.cakephp.org/3.0/en/development/configuration.html#writing-configuration-data
      */
     public static function write($config, $value = null)
     {
@@ -96,9 +96,10 @@ class Configure
                 static::$_hasIniSet = function_exists('ini_set');
             }
             if (static::$_hasIniSet) {
-                ini_set('display_errors', $config['debug'] ? 1 : 0);
+                ini_set('display_errors', $config['debug'] ? '1' : '0');
             }
         }
+
         return true;
     }
 
@@ -112,15 +113,16 @@ class Configure
      * Configure::read('Name.key'); will return only the value of Configure::Name[key]
      * ```
      *
-     * @param string $var Variable to obtain. Use '.' to access array elements.
+     * @param string|null $var Variable to obtain. Use '.' to access array elements.
      * @return mixed Value stored in configure, or null.
-     * @link http://book.cakephp.org/3.0/en/development/configuration.html#reading-configuration-data
+     * @link https://book.cakephp.org/3.0/en/development/configuration.html#reading-configuration-data
      */
     public static function read($var = null)
     {
         if ($var === null) {
             return static::$_values;
         }
+
         return Hash::get(static::$_values, $var);
     }
 
@@ -135,6 +137,7 @@ class Configure
         if (empty($var)) {
             return false;
         }
+
         return static::read($var) !== null;
     }
 
@@ -155,13 +158,14 @@ class Configure
      * @param string $var Variable to obtain. Use '.' to access array elements.
      * @return mixed Value stored in configure.
      * @throws \RuntimeException if the requested configuration is not set.
-     * @link http://book.cakephp.org/3.0/en/development/configuration.html#reading-configuration-data
+     * @link https://book.cakephp.org/3.0/en/development/configuration.html#reading-configuration-data
      */
     public static function readOrFail($var)
     {
         if (static::check($var) === false) {
             throw new RuntimeException(sprintf('Expected configuration key "%s" not found.', $var));
         }
+
         return static::read($var);
     }
 
@@ -176,7 +180,7 @@ class Configure
      *
      * @param string $var the var to be deleted
      * @return void
-     * @link http://book.cakephp.org/3.0/en/development/configuration.html#deleting-configuration-data
+     * @link https://book.cakephp.org/3.0/en/development/configuration.html#deleting-configuration-data
      */
     public static function delete($var)
     {
@@ -200,10 +204,12 @@ class Configure
             }
             $value = static::$_values[$var];
             unset(static::$_values[$var]);
+
             return $value;
         }
         $value = Hash::get(static::$_values, $var);
         static::delete($var);
+
         return $value;
     }
 
@@ -232,13 +238,14 @@ class Configure
      * Gets the names of the configured Engine objects.
      *
      * @param string|null $name Engine name.
-     * @return array Array of the configured Engine objects.
+     * @return array|bool Array of the configured Engine objects, bool for specific name.
      */
     public static function configured($name = null)
     {
         if ($name !== null) {
             return isset(static::$_engines[$name]);
         }
+
         return array_keys(static::$_engines);
     }
 
@@ -255,6 +262,7 @@ class Configure
             return false;
         }
         unset(static::$_engines[$name]);
+
         return true;
     }
 
@@ -282,7 +290,7 @@ class Configure
      * @param string $config Name of the configured engine to use to read the resource identified by $key.
      * @param bool $merge if config files should be merged instead of simply overridden
      * @return bool False if file not found, true if load successful.
-     * @link http://book.cakephp.org/3.0/en/development/configuration.html#reading-and-writing-configuration-files
+     * @link https://book.cakephp.org/3.0/en/development/configuration.html#reading-and-writing-configuration-files
      */
     public static function load($key, $config = 'default', $merge = true)
     {
@@ -338,6 +346,7 @@ class Configure
         if (!empty($keys) && is_array($keys)) {
             $values = array_intersect_key($values, array_flip($keys));
         }
+
         return (bool)$engine->dump($key, $values);
     }
 
@@ -346,7 +355,7 @@ class Configure
      * Will create new PhpConfig for default if not configured yet.
      *
      * @param string $config The name of the configured adapter
-     * @return ConfigEngineInterface|false Engine instance or false
+     * @return \Cake\Core\Configure\ConfigEngineInterface|false Engine instance or false
      */
     protected static function _getEngine($config)
     {
@@ -356,6 +365,7 @@ class Configure
             }
             static::config($config, new PhpConfig());
         }
+
         return static::$_engines[$config];
     }
 
@@ -375,6 +385,7 @@ class Configure
             $config = require CORE_PATH . 'config/config.php';
             static::write($config);
         }
+
         return static::$_values['Cake']['version'];
     }
 
@@ -385,7 +396,7 @@ class Configure
      *
      * @param string $name The storage name for the saved configuration.
      * @param string $cacheConfig The cache configuration to save into. Defaults to 'default'
-     * @param array $data Either an array of data to store, or leave empty to store all values.
+     * @param array|null $data Either an array of data to store, or leave empty to store all values.
      * @return bool Success
      */
     public static function store($name, $cacheConfig = 'default', $data = null)
@@ -393,6 +404,7 @@ class Configure
         if ($data === null) {
             $data = static::$_values;
         }
+
         return Cache::write($name, $data, $cacheConfig);
     }
 
@@ -410,6 +422,7 @@ class Configure
         if ($values) {
             return static::write($values);
         }
+
         return false;
     }
 
@@ -421,6 +434,7 @@ class Configure
     public static function clear()
     {
         static::$_values = [];
+
         return true;
     }
 }

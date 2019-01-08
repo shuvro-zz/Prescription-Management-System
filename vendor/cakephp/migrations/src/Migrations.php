@@ -14,7 +14,9 @@ namespace Migrations;
 use Cake\Datasource\ConnectionManager;
 use Phinx\Config\Config;
 use Phinx\Config\ConfigInterface;
+use Phinx\Migration\Manager;
 use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\NullOutput;
 
 /**
@@ -58,6 +60,14 @@ class Migrations
     protected $command;
 
     /**
+     * Stub input to feed the manager class since we might not have an input ready when we get the Manager using
+     * the `getManager()` method
+     *
+     * @var \Symfony\Component\Console\Input\ArrayInput
+     */
+    protected $stubInput;
+
+    /**
      * Constructor
      * @param array $default Default option to be used when calling a method.
      * Available options are :
@@ -68,8 +78,9 @@ class Migrations
     public function __construct(array $default = [])
     {
         $this->output = new NullOutput();
+        $this->stubInput = new ArrayInput([]);
 
-        if (!empty($default)) {
+        if ($default) {
             $this->default = $default;
         }
     }
@@ -84,6 +95,18 @@ class Migrations
     {
         $this->command = $command;
         return $this;
+    }
+
+    /**
+     * Sets the input object that should be used for the command class. This object
+     * is used to inspect the extra options that are needed for CakePHP apps.
+     *
+     * @param \Symfony\Component\Console\Input\InputInterface $input the input object
+     * @return void
+     */
+    public function setInput(InputInterface $input)
+    {
+        $this->input = $input;
     }
 
     /**
@@ -208,8 +231,9 @@ class Migrations
         $input = $this->getInput('MarkMigrated', ['version' => $version], $options);
         $this->setInput($input);
 
+        $migrationPaths = $this->getConfig()->getMigrationPaths();
         $params = [
-            $this->getConfig()->getMigrationPath(),
+            array_pop($migrationPaths),
             $this->getManager()->getVersionsToMark($input),
             $this->output
         ];
@@ -235,8 +259,14 @@ class Migrations
     {
         $this->setCommand('seed');
         $input = $this->getInput('Seed', [], $options);
-        $params = ['default', $input->getOption('seed')];
-        $this->run('Seed', $params, $input);
+
+        $seed = $input->getOption('seed');
+        if (!$seed) {
+            $seed = null;
+        }
+
+        $params = ['default', $seed];
+        $this->run('seed', $params, $input);
         return true;
     }
 
@@ -253,18 +283,36 @@ class Migrations
     protected function run($method, $params, $input)
     {
         if ($this->configuration instanceof Config) {
-            $migrationPath = $this->getConfig()->getMigrationPath();
-            $seedPath = $this->getConfig()->getSeedPath();
+            $migrationPaths = $this->getConfig()->getMigrationPaths();
+            $migrationPath = array_pop($migrationPaths);
+            $seedPaths = $this->getConfig()->getSeedPaths();
+            $seedPath = array_pop($seedPaths);
+        }
+
+        if ($this->manager instanceof Manager) {
+            $pdo = $this->manager->getEnvironment('default')
+                ->getAdapter()
+                ->getConnection();
         }
 
         $this->setInput($input);
         $newConfig = $this->getConfig(true);
         $manager = $this->getManager($newConfig);
+        $manager->setInput($input);
 
-        if (isset($migrationPath) && $newConfig->getMigrationPath() !== $migrationPath) {
+
+        if (isset($pdo)) {
+            $this->manager->getEnvironment('default')
+                ->getAdapter()
+                ->setConnection($pdo);
+        }
+
+        $newMigrationPaths = $newConfig->getMigrationPaths();
+        if (isset($migrationPath) && array_pop($newMigrationPaths) !== $migrationPath) {
             $manager->resetMigrations();
         }
-        if (isset($seedPath) && $newConfig->getSeedPath() !== $seedPath) {
+        $newSeedPaths = $newConfig->getSeedPaths();
+        if (isset($seedPath) && array_pop($newSeedPaths) !== $seedPath) {
             $manager->resetSeeds();
         }
 
@@ -286,8 +334,23 @@ class Migrations
                 );
             }
 
-            $this->manager = new CakeManager($config, $this->output);
+            $input = $this->input ?: $this->stubInput;
+            $this->manager = new CakeManager($config, $input, $this->output);
         } elseif ($config !== null) {
+            $defaultEnvironment = $config->getEnvironment('default');
+            try {
+                $environment = $this->manager->getEnvironment('default');
+                $oldConfig = $environment->getOptions();
+                unset($oldConfig['connection']);
+                if ($oldConfig == $defaultEnvironment) {
+                    $defaultEnvironment['connection'] = $environment
+                        ->getAdapter()
+                        ->getConnection();
+                }
+            } catch (\InvalidArgumentException $e) {
+            }
+            $config['environments'] = ['default' => $defaultEnvironment];
+            $this->manager->setEnvironments([]);
             $this->manager->setConfig($config);
         }
 
@@ -346,7 +409,7 @@ class Migrations
     protected function prepareOptions($options = [])
     {
         $options = array_merge($this->default, $options);
-        if (empty($options)) {
+        if (!$options) {
             return $options;
         }
 

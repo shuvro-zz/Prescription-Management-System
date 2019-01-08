@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         1.2.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Network;
 
@@ -24,7 +24,6 @@ use InvalidArgumentException;
  * CakePHP network socket connection class.
  *
  * Core base class for network communication.
- *
  */
 class Socket
 {
@@ -54,9 +53,9 @@ class Socket
     /**
      * Reference to socket connection resource
      *
-     * @var resource
+     * @var resource|null
      */
-    public $connection = null;
+    public $connection;
 
     /**
      * This boolean contains the current state of the Socket class
@@ -109,11 +108,11 @@ class Socket
      * Constructor.
      *
      * @param array $config Socket configuration, which will be merged with the base configuration
-     * @see Socket::$_baseConfig
+     * @see \Cake\Network\Socket::$_baseConfig
      */
     public function __construct(array $config = [])
     {
-        $this->config($config);
+        $this->setConfig($config);
     }
 
     /**
@@ -174,6 +173,7 @@ class Socket
         if ($this->connected) {
             stream_set_timeout($this->connection, $this->_config['timeout']);
         }
+
         return $this->connected;
     }
 
@@ -198,14 +198,8 @@ class Socket
         if (!isset($this->_config['context']['ssl']['SNI_enabled'])) {
             $this->_config['context']['ssl']['SNI_enabled'] = true;
         }
-        if (version_compare(PHP_VERSION, '5.6.0', '>=')) {
-            if (empty($this->_config['context']['ssl']['peer_name'])) {
-                $this->_config['context']['ssl']['peer_name'] = $host;
-            }
-        } else {
-            if (empty($this->_config['context']['ssl']['SNI_server_name'])) {
-                $this->_config['context']['ssl']['SNI_server_name'] = $host;
-            }
+        if (empty($this->_config['context']['ssl']['peer_name'])) {
+            $this->_config['context']['ssl']['peer_name'] = $host;
         }
         if (empty($this->_config['context']['ssl']['cafile'])) {
             $dir = dirname(dirname(__DIR__));
@@ -243,6 +237,7 @@ class Socket
         if (!$this->connection) {
             return null;
         }
+
         return stream_context_get_options($this->connection);
     }
 
@@ -256,6 +251,7 @@ class Socket
         if (Validation::ip($this->_config['host'])) {
             return gethostbyaddr($this->_config['host']);
         }
+
         return gethostbyaddr($this->address());
     }
 
@@ -269,6 +265,7 @@ class Socket
         if (Validation::ip($this->_config['host'])) {
             return $this->_config['host'];
         }
+
         return gethostbyname($this->_config['host']);
     }
 
@@ -282,6 +279,7 @@ class Socket
         if (Validation::ip($this->_config['host'])) {
             return [$this->_config['host']];
         }
+
         return gethostbynamel($this->_config['host']);
     }
 
@@ -295,6 +293,7 @@ class Socket
         if (!empty($this->lastError)) {
             return $this->lastError['num'] . ': ' . $this->lastError['str'];
         }
+
         return null;
     }
 
@@ -313,23 +312,24 @@ class Socket
     /**
      * Write data to the socket.
      *
-     * @param string $data The data to write to the socket
-     * @return bool Success
+     * @param string $data The data to write to the socket.
+     * @return int Bytes written.
      */
     public function write($data)
     {
-        if (!$this->connected) {
-            if (!$this->connect()) {
-                return false;
-            }
+        if (!$this->connected && !$this->connect()) {
+            return false;
         }
         $totalBytes = strlen($data);
-        for ($written = 0, $rv = 0; $written < $totalBytes; $written += $rv) {
+        $written = 0;
+        while ($written < $totalBytes) {
             $rv = fwrite($this->connection, substr($data, $written));
             if ($rv === false || $rv === 0) {
                 return $written;
             }
+            $written += $rv;
         }
+
         return $written;
     }
 
@@ -342,10 +342,8 @@ class Socket
      */
     public function read($length = 1024)
     {
-        if (!$this->connected) {
-            if (!$this->connect()) {
-                return false;
-            }
+        if (!$this->connected && !$this->connect()) {
+            return false;
         }
 
         if (!feof($this->connection)) {
@@ -353,10 +351,13 @@ class Socket
             $info = stream_get_meta_data($this->connection);
             if ($info['timed_out']) {
                 $this->setLastError(E_WARNING, 'Connection timed out');
+
                 return false;
             }
+
             return $buffer;
         }
+
         return false;
     }
 
@@ -369,6 +370,7 @@ class Socket
     {
         if (!is_resource($this->connection)) {
             $this->connected = false;
+
             return true;
         }
         $this->connected = !fclose($this->connection);
@@ -376,6 +378,7 @@ class Socket
         if (!$this->connected) {
             $this->connection = null;
         }
+
         return !$this->connected;
     }
 
@@ -390,7 +393,7 @@ class Socket
     /**
      * Resets the state of this Socket instance to it's initial state (before Object::__construct got executed)
      *
-     * @param array $state Array with key and values to reset
+     * @param array|null $state Array with key and values to reset
      * @return bool True on success
      */
     public function reset($state = null)
@@ -406,6 +409,7 @@ class Socket
         foreach ($state as $property => $value) {
             $this->{$property} = $value;
         }
+
         return true;
     }
 
@@ -433,6 +437,7 @@ class Socket
         }
         if ($enableCryptoResult === true) {
             $this->encrypted = $enable;
+
             return true;
         }
         $errorMessage = 'Unable to perform enableCrypto operation on the current socket';

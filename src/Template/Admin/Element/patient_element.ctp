@@ -68,10 +68,20 @@
 
             <div class="col-sm-6">
                 <div class="form-group">
+                    <label class="name">Weight<span aria-required="true"></span></label>
+                    <div class="inputs">
+                        <?php echo $this->Form->input('weight', ['class' => 'form-control','value' => (isset($user->weight))? $user->weight:'', 'label' => false, 'type' =>'text']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
 
                     <label class="name today_appointment">
-                        <?php echo $this->Form->control('today_appointment', ['type' => 'checkbox', 'checked' => (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y/m/d') == date('Y/m/d'))? true:false):'', 'id' => 'today-appointment']); ?>
-                        <span aria-required="true" class="today_appointment_level">Today's appointment</span>
+                        <?php echo $this->Form->control('today_appointment', ['type' => 'checkbox', 'checked' => (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y/m/d') == date('Y/m/d'))? true:false):'', 'label'=>'Today\'s Appointment', 'class'=>'todays_appointment_box']); ?>
                     </label>
 
                 </div>

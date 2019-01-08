@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Database;
 
@@ -21,7 +21,7 @@ use PDO;
  * Encapsulates all conversion functions for values coming from database into PHP and
  * going from PHP into database.
  */
-class Type
+class Type implements TypeInterface
 {
 
     /**
@@ -37,9 +37,10 @@ class Type
         'boolean' => 'Cake\Database\Type\BoolType',
         'date' => 'Cake\Database\Type\DateType',
         'datetime' => 'Cake\Database\Type\DateTimeType',
-        'decimal' => 'Cake\Database\Type\FloatType',
+        'decimal' => 'Cake\Database\Type\DecimalType',
         'float' => 'Cake\Database\Type\FloatType',
         'integer' => 'Cake\Database\Type\IntegerType',
+        'json' => 'Cake\Database\Type\JsonType',
         'string' => 'Cake\Database\Type\StringType',
         'text' => 'Cake\Database\Type\StringType',
         'time' => 'Cake\Database\Type\TimeType',
@@ -75,12 +76,12 @@ class Type
      *
      * @var string
      */
-    protected $_name = null;
+    protected $_name;
 
     /**
      * Constructor
      *
-     * @param string $name The name identifying this type
+     * @param string|null $name The name identifying this type
      */
     public function __construct($name = null)
     {
@@ -92,7 +93,7 @@ class Type
      *
      * @param string $name type identifier
      * @throws \InvalidArgumentException If type identifier is unknown
-     * @return Type
+     * @return \Cake\Database\Type
      */
     public static function build($name)
     {
@@ -105,7 +106,7 @@ class Type
         if (is_string(static::$_types[$name])) {
             return static::$_builtTypes[$name] = new static::$_types[$name]($name);
         }
-        
+
         return static::$_builtTypes[$name] = static::$_types[$name];
     }
 
@@ -120,6 +121,7 @@ class Type
         foreach (self::$_types as $name => $type) {
             $result[$name] = isset(static::$_builtTypes[$name]) ? static::$_builtTypes[$name] : static::build($name);
         }
+
         return $result;
     }
 
@@ -152,6 +154,7 @@ class Type
         }
         if (is_array($type)) {
             self::$_types = $type;
+
             return null;
         }
         if ($className === null) {
@@ -172,9 +175,7 @@ class Type
     }
 
     /**
-     * Returns type identifier name for this object
-     *
-     * @return string
+     * {@inheritDoc}
      */
     public function getName()
     {
@@ -182,12 +183,7 @@ class Type
     }
 
     /**
-     * Returns the base type name that this class is inheriting.
-     * This is useful when extending base type for adding extra functionality
-     * but still want the rest of the framework to use the same assumptions it would
-     * do about the base type it inherits from.
-     *
-     * @return string
+     * {@inheritDoc}
      */
     public function getBaseType()
     {
@@ -195,11 +191,7 @@ class Type
     }
 
     /**
-     * Casts given value from a PHP type to one acceptable by database
-     *
-     * @param mixed $value value to be converted to database equivalent
-     * @param \Cake\Database\Driver $driver object from which database preferences and configuration will be extracted
-     * @return mixed
+     * {@inheritDoc}
      */
     public function toDatabase($value, Driver $driver)
     {
@@ -237,15 +229,12 @@ class Type
                 return $typeInfo['callback']($value);
             }
         }
+
         return $value;
     }
 
     /**
-     * Casts give value to Statement equivalent
-     *
-     * @param mixed $value value to be converted to PHP equivalent
-     * @param \Cake\Database\Driver $driver object from which database preferences and configuration will be extracted
-     * @return mixed
+     * {@inheritDoc}
      */
     public function toStatement($value, Driver $driver)
     {
@@ -268,8 +257,9 @@ class Type
     public static function boolval($value)
     {
         if (is_string($value) && !is_numeric($value)) {
-            return strtolower($value) === 'true' ? true : false;
+            return strtolower($value) === 'true';
         }
+
         return !empty($value);
     }
 
@@ -279,7 +269,7 @@ class Type
      * Will convert values into strings
      *
      * @param mixed $value The value to convert to a string.
-     * @return bool
+     * @return string
      * @deprecated 3.1.8 This method is now unused.
      */
     public static function strval($value)
@@ -287,17 +277,12 @@ class Type
         if (is_array($value)) {
             $value = '';
         }
-        return strval($value);
+
+        return (string)$value;
     }
 
     /**
-     * Generate a new primary key value for a given type.
-     *
-     * This method can be used by types to create new primary key values
-     * when entities are inserted.
-     *
-     * @return mixed A new primary key value.
-     * @see \Cake\Database\Type\UuidType
+     * {@inheritDoc}
      */
     public function newId()
     {
@@ -305,13 +290,7 @@ class Type
     }
 
     /**
-     * Marshalls flat data into PHP objects.
-     *
-     * Most useful for converting request data into PHP objects
-     * that make sense for the rest of the ORM/Database layers.
-     *
-     * @param mixed $value The value to convert.
-     * @return mixed Converted value.
+     * {@inheritDoc}
      */
     public function marshal($value)
     {

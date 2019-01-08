@@ -51,13 +51,13 @@
                     <div class="row">
 
                         <div class="col-sm-12">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="doctor_image">
                                     <img src="<?php echo $profile_pic; ?>">
                                 </div>
                             </div>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <div class="doctor_info single_section default_prescription_info">
                                     <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
                                     <p><?php echo ($user['educational_qualification']) ?></p>
@@ -68,7 +68,7 @@
                                         <p> <?php echo ($user['clinic_name']) ?> </p>
                                     <?php } ?>
                                     <?php if($user['cember_name']){?>
-                                        <p>Chamber - <?php echo $user['cember_name'] .", ".$user['cember_address'] ?>
+                                        <p>Chamber - <?php echo $user['cember_name'] ." ".$user['cember_address'] ?>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -81,11 +81,12 @@
                     <div class="row">
 
                         <div class="col-sm-12">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="patient_details_default_prescription single_section">
                                     <h2>PATIENT</h2>
                                     <div class="info">
                                         <p><b>Name :</b> <?= ucfirst($prescription->user->first_name) ?></p>
+                                        <p><b>Weight :</b> <?= ucfirst($prescription->user->weight  ) ?></p>
                                         <p><b>Age :</b> <?= $prescription->user->age .' Years' ?></p>
                                         <p><b>Phone :</b> <?= $prescription->user->phone ?></p>
                                         <p><b>Address :</b> <?= ucfirst($prescription->user->address_line1) ?></p>
@@ -111,7 +112,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <div class="medicines_default_prescription single_section">
                                     <h2>MEDICINES</h2>
                                     <div class="info">
@@ -119,7 +120,7 @@
                                             <?php
                                             foreach ($prescription->medicines as $medicine){
                                                 echo '<li>
-                                                    <p class="">'. ucfirst($medicine->name).(($medicine->_joinData->rule)? ' : ( '.$medicine->_joinData->rule.' )': "").'</p>                                               
+                                                    <p>'. ucfirst($medicine->name).(($medicine->_joinData->rule)? ' : ( '.$medicine->_joinData->rule.' )': "").'</p>                                               
                                                 </li>';
                                             }
                                             ?>
@@ -134,7 +135,7 @@
                 <div class="instruction_deafult_prescription">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="examination_default_prescription single_section">
                                     <h2>EXAMINATION</h2>
                                     <div class="info">
@@ -149,7 +150,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <div class="instruction_default_prescription single_section">
                                     <h2>OTHERS INSTRUCTIONS</h2>
                                     <div class="info">
@@ -180,7 +181,7 @@
                     <div class="row">
                           <div class="col-sm-12">
                               <div class="col-sm-6">
-                                  <p><b>Address :</b> <?php echo ($user['address_line1']).','.($user['address_line2']) ?> </p>
+                                  <p><b>Address :</b> <?php echo ($user['address_line1']).' '.($user['address_line2']) ?> </p>
                                   <p><b>For Booking Call :</b>  <?php echo ($user['phone']) ?></p>
                                   <p>Must make booking before visiting the doctor.</p>
                               </div>

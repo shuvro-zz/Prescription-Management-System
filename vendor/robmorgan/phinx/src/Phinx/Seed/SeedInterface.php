@@ -30,6 +30,8 @@ namespace Phinx\Seed;
 
 use Phinx\Db\Adapter\AdapterInterface;
 use Phinx\Db\Table;
+use Phinx\Migration\MigrationInterface;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -55,7 +57,7 @@ interface SeedInterface
      * Sets the database adapter.
      *
      * @param AdapterInterface $adapter Database Adapter
-     * @return MigrationInterface
+     * @return SeedInterface
      */
     public function setAdapter(AdapterInterface $adapter);
 
@@ -67,10 +69,25 @@ interface SeedInterface
     public function getAdapter();
 
     /**
+     * Sets the input object to be used in migration object
+     *
+     * @param InputInterface $input
+     * @return SeedInterface
+     */
+    public function setInput(InputInterface $input);
+
+    /**
+     * Gets the input object to be used in migration object
+     *
+     * @return InputInterface
+     */
+    public function getInput();
+
+    /**
      * Sets the output object to be used in migration object
      *
      * @param OutputInterface $output
-     * @return MigrationInterface
+     * @return SeedInterface
      */
     public function setOutput(OutputInterface $output);
 

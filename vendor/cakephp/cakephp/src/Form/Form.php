@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Form;
 
@@ -39,7 +39,7 @@ class Form
     /**
      * The schema used by this form.
      *
-     * @var \Cake\Form\Schema;
+     * @var \Cake\Form\Schema
      */
     protected $_schema;
 
@@ -53,7 +53,7 @@ class Form
     /**
      * The validator used by this form.
      *
-     * @var \Cake\Validation\Validator;
+     * @var \Cake\Validation\Validator
      */
     protected $_validator;
 
@@ -64,7 +64,7 @@ class Form
      * is first built. This hook method lets you configure the
      * schema or load a pre-defined one.
      *
-     * @param \Cake\Form\Schema $schema The schema to set, or null.
+     * @param \Cake\Form\Schema|null $schema The schema to set, or null.
      * @return \Cake\Form\Schema the schema instance.
      */
     public function schema(Schema $schema = null)
@@ -75,6 +75,7 @@ class Form
         if ($schema) {
             $this->_schema = $schema;
         }
+
         return $this->_schema;
     }
 
@@ -100,7 +101,7 @@ class Form
      * is first built. This hook method lets you configure the
      * validator or load a pre-defined one.
      *
-     * @param \Cake\Validation\Validator $validator The validator to set, or null.
+     * @param \Cake\Validation\Validator|null $validator The validator to set, or null.
      * @return \Cake\Validation\Validator the validator instance.
      */
     public function validator(Validator $validator = null)
@@ -111,6 +112,7 @@ class Form
         if ($validator) {
             $this->_validator = $validator;
         }
+
         return $this->_validator;
     }
 
@@ -139,6 +141,7 @@ class Form
     {
         $validator = $this->validator();
         $this->_errors = $validator->errors($data);
+
         return count($this->_errors) === 0;
     }
 
@@ -172,6 +175,7 @@ class Form
         if (!$this->validate($data)) {
             return false;
         }
+
         return $this->_execute($data);
     }
 
@@ -200,6 +204,7 @@ class Form
             '_errors' => $this->errors(),
             '_validator' => $this->validator()->__debugInfo()
         ];
+
         return $special + get_object_vars($this);
     }
 }

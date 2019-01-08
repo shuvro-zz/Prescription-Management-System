@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.2.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\I18n;
 
@@ -31,7 +31,7 @@ class RelativeTimeFormatter
      * @param \Cake\Chronos\ChronosInterface|null $other The datetime to compare against.
      * @param bool $absolute removes time difference modifiers ago, after, etc
      * @return string The difference between the two days in a human readable format
-     * @see Cake\Chronos\ChronosInterface::diffForHumans
+     * @see \Cake\Chronos\ChronosInterface::diffForHumans
      */
     public function diffForHumans(ChronosInterface $date, ChronosInterface $other = null, $absolute = false)
     {
@@ -79,6 +79,7 @@ class RelativeTimeFormatter
         if ($isNow) {
             return $isFuture ? __d('cake', '{0} from now', $message) : __d('cake', '{0} ago', $message);
         }
+
         return $isFuture ? __d('cake', '{0} after', $message) : __d('cake', '{0} before', $message);
     }
 
@@ -88,7 +89,7 @@ class RelativeTimeFormatter
      * @param \DateTimeInterface $time The time instance to format.
      * @param array $options Array of options.
      * @return string Relative time string.
-     * @see Cake\I18n\Time::timeAgoInWords()
+     * @see \Cake\I18n\Time::timeAgoInWords()
      */
     public function timeAgoInWords(DatetimeInterface $time, array $options = [])
     {
@@ -152,8 +153,10 @@ class RelativeTimeFormatter
                 'hour' => __d('cake', 'about an hour ago'),
                 'day' => __d('cake', 'about a day ago'),
                 'week' => __d('cake', 'about a week ago'),
+                'month' => __d('cake', 'about a month ago'),
                 'year' => __d('cake', 'about a year ago')
             ];
+
             return $relativeDate ? sprintf($options['relativeString'], $relativeDate) : $aboutAgo[$fWord];
         }
 
@@ -167,8 +170,10 @@ class RelativeTimeFormatter
             'hour' => __d('cake', 'in about an hour'),
             'day' => __d('cake', 'in about a day'),
             'week' => __d('cake', 'in about a week'),
+            'month' => __d('cake', 'in about a month'),
             'year' => __d('cake', 'in about a year')
         ];
+
         return $aboutIn[$fWord];
     }
 
@@ -197,7 +202,7 @@ class RelativeTimeFormatter
 
             if ($months >= 12) {
                 $years = floor($months / 12);
-                $months = $months - ($years * 12);
+                $months -= ($years * 12);
             }
             if ($future['m'] < $past['m'] && $future['Y'] - $past['Y'] === 1) {
                 $years--;
@@ -226,25 +231,25 @@ class RelativeTimeFormatter
             }
 
             if ($months >= 12) {
-                $years = $years + 1;
-                $months = $months - 12;
+                $years++;
+                $months -= 12;
             }
 
             if ($days >= 7) {
                 $weeks = floor($days / 7);
-                $days = $days - ($weeks * 7);
+                $days -= ($weeks * 7);
             }
         } else {
             $years = $months = $weeks = 0;
             $days = floor($diff / 86400);
 
-            $diff = $diff - ($days * 86400);
+            $diff -= ($days * 86400);
 
             $hours = floor($diff / 3600);
-            $diff = $diff - ($hours * 3600);
+            $diff -= ($hours * 3600);
 
             $minutes = floor($diff / 60);
-            $diff = $diff - ($minutes * 60);
+            $diff -= ($minutes * 60);
             $seconds = $diff;
         }
 
@@ -264,6 +269,7 @@ class RelativeTimeFormatter
         }
 
         $fNum = str_replace(['year', 'month', 'week', 'day', 'hour', 'minute', 'second'], [1, 2, 3, 4, 5, 6, 7], $fWord);
+
         return [$fNum, $fWord, $years, $months, $weeks, $days, $hours, $minutes, $seconds];
     }
 
@@ -273,7 +279,7 @@ class RelativeTimeFormatter
      * @param \DatetimeInterface $date The date to format.
      * @param array $options Array of options.
      * @return string Relative date string.
-     * @see Cake\I18n\Date::timeAgoInWords()
+     * @see \Cake\I18n\Date::timeAgoInWords()
      */
     public function dateAgoInWords(DatetimeInterface $date, array $options = [])
     {
@@ -303,7 +309,7 @@ class RelativeTimeFormatter
         }
 
         $diffData = $this->_diffData($futureTime, $pastTime, $backwards, $options);
-        list($fNum, $fWord, $years, $months, $weeks, $days, $hours, $minutes, $seconds) = array_values($diffData);
+        list($fNum, $fWord, $years, $months, $weeks, $days) = array_values($diffData);
 
         $relativeDate = [];
         if ($fNum >= 1 && $years > 0) {
@@ -328,6 +334,7 @@ class RelativeTimeFormatter
                 'month' => __d('cake', 'about a month ago'),
                 'year' => __d('cake', 'about a year ago')
             ];
+
             return $relativeDate ? sprintf($options['relativeString'], $relativeDate) : $aboutAgo[$fWord];
         }
 
@@ -341,6 +348,7 @@ class RelativeTimeFormatter
             'month' => __d('cake', 'in about a month'),
             'year' => __d('cake', 'in about a year')
         ];
+
         return $aboutIn[$fWord];
     }
 
@@ -371,6 +379,7 @@ class RelativeTimeFormatter
         } else {
             $options['accuracy'] += $class::$wordAccuracy;
         }
+
         return $options;
     }
 }

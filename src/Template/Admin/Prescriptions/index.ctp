@@ -45,7 +45,8 @@
                 <thead>
                     <tr>
                         <th><?= $this->Paginator->sort('user_id','Patient') ?></th>
-                        <th><?= $this->Paginator->sort('phone','Phone') ?></th>
+                        <th><?= $this->Paginator->sort('weight') ?></th>
+                        <th><?= $this->Paginator->sort('phone') ?></th>
                         <th><?= $this->Paginator->sort('diagnosis') ?></th>
                         <th><?= $this->Paginator->sort('created') ?></th>
                         <th class="actions"><?= __('Actions') ?></th>
@@ -55,6 +56,7 @@
                     <?php foreach ($prescriptions as $prescription): ?>
                     <tr>
                         <td><?= ucfirst(h($prescription->user->first_name)) ?></td>
+                        <td><?= h($prescription->user->weight) ?></td>
                         <td><?= h($prescription->user->phone) ?></td>
                         <td>
                             <?php

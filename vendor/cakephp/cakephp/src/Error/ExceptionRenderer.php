@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Error;
 
@@ -19,11 +19,10 @@ use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Exception\Exception as CakeException;
 use Cake\Core\Exception\MissingPluginException;
-use Cake\Error\PHP7ErrorException;
 use Cake\Event\Event;
+use Cake\Http\Response;
+use Cake\Http\ServerRequest;
 use Cake\Network\Exception\HttpException;
-use Cake\Network\Request;
-use Cake\Network\Response;
 use Cake\Routing\DispatcherFactory;
 use Cake\Routing\Router;
 use Cake\Utility\Inflector;
@@ -48,15 +47,22 @@ use PDOException;
  * Using a subclass of ExceptionRenderer gives you full control over how Exceptions are rendered, you
  * can configure your class in your config/app.php.
  */
-class ExceptionRenderer
+class ExceptionRenderer implements ExceptionRendererInterface
 {
+
+    /**
+     * The exception being handled.
+     *
+     * @var \Exception
+     */
+    public $error;
 
     /**
      * Controller instance.
      *
-     * @var Controller
+     * @var \Cake\Controller\Controller
      */
-    public $controller = null;
+    public $controller;
 
     /**
      * Template to render for Cake\Core\Exception\Exception
@@ -73,18 +79,11 @@ class ExceptionRenderer
     public $method = '';
 
     /**
-     * The exception being handled.
-     *
-     * @var \Exception
-     */
-    public $error = null;
-
-    /**
      * Creates the controller to perform rendering on the error response.
      * If the error is a Cake\Core\Exception\Exception it will be converted to either a 400 or a 500
      * code error depending on the code used to construct the error.
      *
-     * @param Exception $exception Exception.
+     * @param \Exception $exception Exception.
      */
     public function __construct(Exception $exception)
     {
@@ -116,12 +115,14 @@ class ExceptionRenderer
     protected function _getController()
     {
         if (!$request = Router::getRequest(true)) {
-            $request = Request::createFromGlobals();
+            $request = ServerRequest::createFromGlobals();
         }
         $response = new Response();
+        $controller = null;
 
         try {
             $class = App::className('Error', 'Controller', 'Controller');
+            /* @var \Cake\Controller\Controller $controller */
             $controller = new $class($request, $response);
             $controller->startupProcess();
             $startup = true;
@@ -142,13 +143,14 @@ class ExceptionRenderer
         if (empty($controller)) {
             $controller = new Controller($request, $response);
         }
+
         return $controller;
     }
 
     /**
      * Renders the response for the exception.
      *
-     * @return \Cake\Network\Response The response to be sent.
+     * @return \Cake\Http\Response The response to be sent.
      */
     public function render()
     {
@@ -166,7 +168,7 @@ class ExceptionRenderer
         }
 
         $message = $this->_message($exception, $code);
-        $url = $this->controller->request->here();
+        $url = $this->controller->request->getRequestTarget();
 
         if (method_exists($exception, 'responseHeader')) {
             $this->controller->response->header($exception->responseHeader());
@@ -184,13 +186,17 @@ class ExceptionRenderer
                 'format' => 'array',
                 'args' => false
             ]);
-            $viewVars['_serialize'][] = 'trace';
+            $viewVars['file'] = $exception->getFile() ?: 'null';
+            $viewVars['line'] = $exception->getLine() ?: 'null';
+            $viewVars['_serialize'][] = 'file';
+            $viewVars['_serialize'][] = 'line';
         }
         $this->controller->set($viewVars);
 
         if ($unwrapped instanceof CakeException && $isDebug) {
             $this->controller->set($unwrapped->getAttributes());
         }
+
         return $this->_outputMessage($template);
     }
 
@@ -198,8 +204,8 @@ class ExceptionRenderer
      * Render a custom error method/template.
      *
      * @param string $method The method name to invoke.
-     * @param Exception $exception The exception to render.
-     * @return \Cake\Network\Response The response to send.
+     * @param \Exception $exception The exception to render.
+     * @return \Cake\Http\Response The response to send.
      */
     protected function _customMethod($method, $exception)
     {
@@ -209,12 +215,14 @@ class ExceptionRenderer
             $this->controller->response->body($result);
             $result = $this->controller->response;
         }
+
         return $result;
     }
+
     /**
      * Get method name
      *
-     * @param Exception $exception Exception instance.
+     * @param \Exception $exception Exception instance.
      * @return string
      */
     protected function _method(Exception $exception)
@@ -227,13 +235,14 @@ class ExceptionRenderer
         }
 
         $method = Inflector::variable($baseClass) ?: 'error500';
+
         return $this->method = $method;
     }
 
     /**
      * Get error message.
      *
-     * @param Exception $exception Exception.
+     * @param \Exception $exception Exception.
      * @param int $code Error code.
      * @return string Error message
      */
@@ -268,19 +277,12 @@ class ExceptionRenderer
         $exception = $this->_unwrap($exception);
         $isHttpException = $exception instanceof HttpException;
 
-        if (!Configure::read('debug') && !$isHttpException) {
+        if (!Configure::read('debug') && !$isHttpException || $isHttpException) {
             $template = 'error500';
             if ($code < 500) {
                 $template = 'error400';
             }
-            return $this->template = $template;
-        }
 
-        if ($isHttpException) {
-            $template = 'error500';
-            if ($code < 500) {
-                $template = 'error400';
-            }
             return $this->template = $template;
         }
 
@@ -307,6 +309,7 @@ class ExceptionRenderer
         if ($errorCode >= 400 && $errorCode < 506) {
             $code = $errorCode;
         }
+
         return $code;
     }
 
@@ -314,24 +317,27 @@ class ExceptionRenderer
      * Generate the response using the controller object.
      *
      * @param string $template The template to render.
-     * @return \Cake\Network\Response A response object that can be sent.
+     * @return \Cake\Http\Response A response object that can be sent.
      */
     protected function _outputMessage($template)
     {
         try {
             $this->controller->render($template);
+
             return $this->_shutdown();
         } catch (MissingTemplateException $e) {
             $attributes = $e->getAttributes();
             if (isset($attributes['file']) && strpos($attributes['file'], 'error500') !== false) {
                 return $this->_outputMessageSafe('error500');
             }
+
             return $this->_outputMessage('error500');
         } catch (MissingPluginException $e) {
             $attributes = $e->getAttributes();
             if (isset($attributes['plugin']) && $attributes['plugin'] === $this->controller->plugin) {
                 $this->controller->plugin = null;
             }
+
             return $this->_outputMessageSafe('error500');
         } catch (Exception $e) {
             return $this->_outputMessageSafe('error500');
@@ -343,20 +349,21 @@ class ExceptionRenderer
      * and doesn't call component methods.
      *
      * @param string $template The template to render.
-     * @return \Cake\Network\Response A response object that can be sent.
+     * @return \Cake\Http\Response A response object that can be sent.
      */
     protected function _outputMessageSafe($template)
     {
         $helpers = ['Form', 'Html'];
         $this->controller->helpers = $helpers;
         $builder = $this->controller->viewBuilder();
-        $builder->helpers($helpers, false)
-            ->layoutPath('')
-            ->templatePath('Error');
-        $view = $this->controller->createView();
+        $builder->setHelpers($helpers, false)
+            ->setLayoutPath('')
+            ->setTemplatePath('Error');
+        $view = $this->controller->createView('View');
 
         $this->controller->response->body($view->render($template, 'error'));
         $this->controller->response->type('html');
+
         return $this->controller->response;
     }
 
@@ -365,17 +372,22 @@ class ExceptionRenderer
      *
      * Triggers the afterFilter and afterDispatch events.
      *
-     * @return \Cake\Network\Response The response to serve.
+     * @return \Cake\Http\Response The response to serve.
      */
     protected function _shutdown()
     {
         $this->controller->dispatchEvent('Controller.shutdown');
         $dispatcher = DispatcherFactory::create();
+        $eventManager = $dispatcher->eventManager();
+        foreach ($dispatcher->filters() as $filter) {
+            $eventManager->on($filter);
+        }
         $args = [
             'request' => $this->controller->request,
             'response' => $this->controller->response
         ];
         $result = $dispatcher->dispatchEvent('Dispatcher.afterDispatch', $args);
-        return $result->data['response'];
+
+        return $result->getData('response');
     }
 }

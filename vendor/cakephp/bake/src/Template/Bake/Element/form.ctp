@@ -19,88 +19,86 @@ $fields = collection($fields)
         return $schema->columnType($field) !== 'binary';
     });
 
-if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
+if (isset($modelObject) && $modelObject->hasBehavior('Tree')) {
     $fields = $fields->reject(function ($field) {
         return $field === 'lft' || $field === 'rght';
     });
 }
 %>
-
-<?= $this->Form->create($<%= $singularVar %>) ?>
-<section class="workspace">
-    <div class="workspace-body">
-        <div class="page-heading">
-            <ol class="breadcrumb breadcrumb-small">
-                <li><a href="<?=$this->Url->build(array('action' => 'index' )) ?>" title="<?= __('<%= $singularHumanName %>') ?>"> <?= __('<%= $singularHumanName %>') ?></a></li>
-                <li class="active"><a href="#">Add <?= __('<%= $singularHumanName %>') ?></a></li>
-            </ol>
-        </div>
-        <div class="main-container">
-            <div class="content">
-                <div class="page-wrap">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-default panel-hovered panel-stacked">
-                                    <div class="panel-heading"><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>') ?></div>
-                                    <div class="panel-body">
-                                        <?php
-                                        <%
-                                        foreach ($fields as $field) {
-                                            if (in_array($field, $primaryKey)) {
-                                                continue;
-                                            }
-                                            if (isset($keyFields[$field])) {
-                                                $fieldData = $schema->column($field);
-                                                if (!empty($fieldData['null'])) {
-                                                    %>
-                                                    echo $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'empty' => true]);
-                                                    <%
-                                                } else {
-                                                    %>
-                                                    echo $this->Form->input('<%= $field %>', ['options' => $<%= $keyFields[$field] %>]);
-                                                    <%
-                                                }
-                                                continue;
-                                            }
-                                            if (!in_array($field, ['created', 'modified', 'updated'])) {
-                                                %> echo'<div class="col-sm-6">
-                                                    <div class="form-row">
-                                                        <label class="name"><%= Inflector::humanize($field) %><span class="required" aria-required="true"></span></label>
-                                                        <div class="inputs">';
-                                                            echo $this->Form->input('<%= $field %>', ['class' => 'form-control', 'label' => false, 'required' => true, 'type' =>'text']);
-                                                        echo '</div>
-                                                    </div>
-                                                </div>';
-                                                <%
-                                            }
-                                        }
-                                        if (!empty($associations['BelongsToMany'])) {
-                                            foreach ($associations['BelongsToMany'] as $assocName => $assocData) {%>
-                                                echo $this->Form->input('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>]);
-    <%
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+<% if (strpos($action, 'add') === false): %>
+        <li><?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $<%= $singularVar %>-><%= $primaryKey[0] %>],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $<%= $singularVar %>-><%= $primaryKey[0] %>)]
+            )
+        ?></li>
+<% endif; %>
+        <li><?= $this->Html->link(__('List <%= $pluralHumanName %>'), ['action' => 'index']) ?></li>
+<%
+        $done = [];
+        foreach ($associations as $type => $data) {
+            foreach ($data as $alias => $details) {
+                if ($details['controller'] !== $this->name && !in_array($details['controller'], $done)) {
+%>
+        <li><?= $this->Html->link(__('List <%= $this->_pluralHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New <%= $this->_singularHumanName($alias) %>'), ['controller' => '<%= $details['controller'] %>', 'action' => 'add']) ?></li>
+<%
+                    $done[] = $details['controller'];
                 }
-}
-%> ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <footer class="footer ">
-        <div class="flex-container">
-            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
-            <div class="flex-item">
-                <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
-            </div>
-        </div>
-    </footer>
-    
-</section>
-<?= $this->Form->end() ?>
+            }
+        }
+%>
+    </ul>
+</nav>
+<div class="<%= $pluralVar %> form large-9 medium-8 columns content">
+    <?= $this->Form->create($<%= $singularVar %>) ?>
+    <fieldset>
+        <legend><?= __('<%= Inflector::humanize($action) %> <%= $singularHumanName %>') ?></legend>
+        <?php
+<%
+        foreach ($fields as $field) {
+            if (in_array($field, $primaryKey)) {
+                continue;
+            }
+            if (isset($keyFields[$field])) {
+                $fieldData = $schema->column($field);
+                if (!empty($fieldData['null'])) {
+%>
+            echo $this->Form->control('<%= $field %>', ['options' => $<%= $keyFields[$field] %>, 'empty' => true]);
+<%
+                } else {
+%>
+            echo $this->Form->control('<%= $field %>', ['options' => $<%= $keyFields[$field] %>]);
+<%
+                }
+                continue;
+            }
+            if (!in_array($field, ['created', 'modified', 'updated'])) {
+                $fieldData = $schema->column($field);
+                if (in_array($fieldData['type'], ['date', 'datetime', 'time']) && (!empty($fieldData['null']))) {
+%>
+            echo $this->Form->control('<%= $field %>', ['empty' => true]);
+<%
+                } else {
+%>
+            echo $this->Form->control('<%= $field %>');
+<%
+                }
+            }
+        }
+        if (!empty($associations['BelongsToMany'])) {
+            foreach ($associations['BelongsToMany'] as $assocName => $assocData) {
+%>
+            echo $this->Form->control('<%= $assocData['property'] %>._ids', ['options' => $<%= $assocData['variable'] %>]);
+<%
+            }
+        }
+%>
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+</div>

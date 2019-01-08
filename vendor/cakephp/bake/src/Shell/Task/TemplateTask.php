@@ -123,6 +123,7 @@ class TemplateTask extends BakeTask
             foreach ($this->Model->listUnskipped() as $table) {
                 $this->out('- ' . $this->_camelize($table));
             }
+
             return true;
         }
         $name = $this->_getName($name);
@@ -206,6 +207,7 @@ class TemplateTask extends BakeTask
     {
         $path = parent::getPath();
         $path .= $this->controllerName . DS;
+
         return $path;
     }
 
@@ -239,6 +241,7 @@ class TemplateTask extends BakeTask
                 unset($methods[$i]);
             }
         }
+
         return $methods;
     }
 
@@ -263,6 +266,7 @@ class TemplateTask extends BakeTask
      *
      * - 'modelObject'
      * - 'modelClass'
+     * - 'entityClass'
      * - 'primaryKey'
      * - 'displayField'
      * - 'singularVar'
@@ -277,15 +281,22 @@ class TemplateTask extends BakeTask
      */
     protected function _loadController()
     {
-        $modelObject = TableRegistry::get($this->modelName);
+        if (TableRegistry::exists($this->modelName)) {
+            $modelObject = TableRegistry::get($this->modelName);
+        } else {
+            $modelObject = TableRegistry::get($this->modelName, [
+                'connectionName' => $this->connection
+            ]);
+        }
 
-        $primaryKey = (array)$modelObject->primaryKey();
-        $displayField = $modelObject->displayField();
+        $primaryKey = (array)$modelObject->getPrimaryKey();
+        $displayField = $modelObject->getDisplayField();
         $singularVar = $this->_singularName($this->controllerName);
         $singularHumanName = $this->_singularHumanName($this->controllerName);
-        $schema = $modelObject->schema();
+        $schema = $modelObject->getSchema();
         $fields = $schema->columns();
         $modelClass = $this->modelName;
+        list(, $entityClass) = namespaceSplit($this->_entityName($this->modelName));
         $associations = $this->_filteredAssociations($modelObject);
         $keyFields = [];
         if (!empty($associations['BelongsTo'])) {
@@ -297,9 +308,12 @@ class TemplateTask extends BakeTask
         $pluralVar = Inflector::variable($this->controllerName);
         $pluralHumanName = $this->_pluralHumanName($this->controllerName);
 
+        $namespace = Configure::read('App.namespace');
+
         return compact(
             'modelObject',
             'modelClass',
+            'entityClass',
             'schema',
             'primaryKey',
             'displayField',
@@ -309,7 +323,8 @@ class TemplateTask extends BakeTask
             'pluralHumanName',
             'fields',
             'associations',
-            'keyFields'
+            'keyFields',
+            'namespace'
         );
     }
 
@@ -356,7 +371,9 @@ class TemplateTask extends BakeTask
         $looksGood = $this->in('Look okay?', ['y', 'n'], 'y');
         if (strtolower($looksGood) === 'y') {
             $this->bake($action, ' ');
-            return $this->_stop();
+            $this->_stop();
+
+            return;
         }
         $this->out('Bake Aborted.');
     }
@@ -366,7 +383,7 @@ class TemplateTask extends BakeTask
      *
      * @param string $action Action to bake.
      * @param string $content Content to write.
-     * @return string Generated file content.
+     * @return string|false Generated file content.
      */
     public function bake($action, $content = '')
     {
@@ -375,12 +392,14 @@ class TemplateTask extends BakeTask
         }
         if (empty($content)) {
             $this->err("<warning>No generated content for '{$action}.ctp', not generating template.</warning>");
+
             return false;
         }
         $this->out("\n" . sprintf('Baking `%s` view template file...', $action), 1, Shell::QUIET);
         $path = $this->getPath();
         $filename = $path . Inflector::underscore($action) . '.ctp';
         $this->createFile($filename, $content);
+
         return $content;
     }
 
@@ -389,7 +408,7 @@ class TemplateTask extends BakeTask
      *
      * @param string $action name to generate content to
      * @param array|null $vars passed for use in templates
-     * @return string content from template
+     * @return string|false Content from template
      */
     public function getContent($action, $vars = null)
     {
@@ -399,12 +418,18 @@ class TemplateTask extends BakeTask
 
         if (empty($vars['primaryKey'])) {
             $this->error('Cannot generate views for models with no primary key');
+
             return false;
+        }
+
+        if ($action === "index" && !empty($this->params['index-columns'])) {
+            $this->BakeTemplate->set('indexColumns', $this->params['index-columns']);
         }
 
         $this->BakeTemplate->set('action', $action);
         $this->BakeTemplate->set('plugin', $this->plugin);
         $this->BakeTemplate->set($vars);
+
         return $this->BakeTemplate->generate("Template/$action");
     }
 
@@ -417,10 +442,10 @@ class TemplateTask extends BakeTask
     {
         $parser = parent::getOptionParser();
 
-        $parser->description(
+        $parser->setDescription(
             'Bake views for a controller, using built-in or custom templates. '
         )->addArgument('controller', [
-            'help' => 'Name of the controller views to bake. Can be Plugin.name as a shortcut for plugin baking.'
+            'help' => 'Name of the controller views to bake. You can use Plugin.name as a shortcut for plugin baking.'
         ])->addArgument('action', [
             'help' => "Will bake a single action's file. core templates are (index, add, edit, view)"
         ])->addArgument('alias', [
@@ -429,6 +454,9 @@ class TemplateTask extends BakeTask
             'help' => 'The controller name if you have a controller that does not follow conventions.'
         ])->addOption('prefix', [
             'help' => 'The routing prefix to generate views for.',
+        ])->addOption('index-columns', [
+            'help' => 'Limit for the number of index columns',
+            'default' => 0
         ])->addSubcommand('all', [
             'help' => '[optional] Bake all CRUD action views for all controllers. Requires models and controllers to exist.'
         ]);
@@ -448,6 +476,7 @@ class TemplateTask extends BakeTask
         if (is_null($this->_associationFilter)) {
             $this->_associationFilter = new AssociationFilter();
         }
+
         return $this->_associationFilter->filterAssociations($model);
     }
 }

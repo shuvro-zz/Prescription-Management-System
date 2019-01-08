@@ -22,13 +22,22 @@ use Cake\TestSuite\Fixture\TestFixture;
 class RequestsFixture extends TestFixture
 {
     /**
+     * table property
+     *
+     * This is necessary to prevent userland inflections from causing issues.
+     *
+     * @var string
+     */
+    public $table = 'requests';
+
+    /**
      * fields property
      *
      * @var array
      */
     public $fields = [
         'id' => ['type' => 'uuid', 'null' => false],
-        'url' => ['type' => 'string', 'null' => false],
+        'url' => ['type' => 'text', 'null' => false],
         'content_type' => ['type' => 'string'],
         'status_code' => ['type' => 'integer'],
         'method' => ['type' => 'string'],

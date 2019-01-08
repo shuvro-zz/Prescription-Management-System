@@ -215,6 +215,7 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
             $column = new Column();
             $column->setName('id')
                    ->setType('integer')
+                   ->setSigned(isset($options['signed']) ? $options['signed'] : true)
                    ->setIdentity(true);
 
             array_unshift($columns, $column);
@@ -331,6 +332,19 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
     /**
      * {@inheritdoc}
      */
+    public function truncateTable($tableName)
+    {
+        $sql = sprintf(
+            'TRUNCATE TABLE %s',
+            $this->quoteTableName($tableName)
+        );
+
+        $this->execute($sql);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getColumns($tableName)
     {
         $columns = array();
@@ -382,7 +396,7 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
         if (is_string($default) && 'CURRENT_TIMESTAMP' !== $default) {
             $default = $this->getConnection()->quote($default);
         } elseif (is_bool($default)) {
-            $default = (int) $default;
+            $default = $this->castToBool($default);
         }
         return isset($default) ? ' DEFAULT ' . $default : '';
     }
@@ -627,7 +641,6 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
             return false;
         } else {
             foreach ($foreignKeys as $key) {
-                $a = array_diff($columns, $key['columns']);
                 if ($columns == $key['columns']) {
                     return true;
                 }
@@ -761,6 +774,9 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
             case static::PHINX_TYPE_BINARY:
                 return array('name' => 'binary', 'limit' => $limit ? $limit : 255);
                 break;
+            case static::PHINX_TYPE_VARBINARY:
+                return array('name' => 'varbinary', 'limit' => $limit ? $limit : 255);
+                break;
             case static::PHINX_TYPE_BLOB:
                 if ($limit) {
                     $sizes = array(
@@ -848,6 +864,9 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
                 if (!$limit || in_array($limit, array(2, 4)))
                     $limit = 4;
                 return array('name' => 'year', 'limit' => $limit);
+                break;
+            case static::PHINX_TYPE_JSON:
+                return array('name' => 'json');
                 break;
             default:
                 throw new \RuntimeException('The type: "' . $type . '" is not supported.');
@@ -1028,6 +1047,8 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
         if (($values = $column->getValues()) && is_array($values)) {
             $def .= "('" . implode("', '", $values) . "')";
         }
+        $def .= $column->getEncoding() ? ' CHARACTER SET ' . $column->getEncoding() : '';
+        $def .= $column->getCollation() ? ' COLLATE ' . $column->getCollation() : '';
         $def .= (!$column->isSigned() && isset($this->signedColumnTypes[$column->getType()])) ? ' unsigned' : '' ;
         $def .= ($column->isNull() == false) ? ' NOT NULL' : ' NULL';
         $def .= ($column->isIdentity()) ? ' AUTO_INCREMENT' : '';
@@ -1053,9 +1074,17 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
     protected function getIndexSqlDefinition(Index $index)
     {
         $def = '';
+        $limit = '';
+        if ($index->getLimit()) {
+            $limit = '(' . $index->getLimit() . ')';
+        }
 
         if ($index->getType() == Index::UNIQUE) {
             $def .= ' UNIQUE';
+        }
+
+        if ($index->getType() == Index::FULLTEXT) {
+            $def .= ' FULLTEXT';
         }
 
         $def .= ' KEY';
@@ -1064,7 +1093,7 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
             $def .= ' `' . $index->getName() . '`';
         }
 
-        $def .= ' (`' . implode('`,`', $index->getColumns()) . '`)';
+        $def .= ' (`' . implode('`,`', $index->getColumns()) . '`' . $limit . ')';
 
         return $def;
     }
@@ -1129,6 +1158,6 @@ class MysqlAdapter extends PdoAdapter implements AdapterInterface
      */
     public function getColumnTypes()
     {
-        return array_merge(parent::getColumnTypes(), array ('enum', 'set', 'year'));
+        return array_merge(parent::getColumnTypes(), array ('enum', 'set', 'year', 'json'));
     }
 }

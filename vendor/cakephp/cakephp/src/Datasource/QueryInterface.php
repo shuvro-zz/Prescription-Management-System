@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.1
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 namespace Cake\Datasource;
@@ -32,7 +32,7 @@ interface QueryInterface
      * If no $alias is passed, the default table for this query will be used.
      *
      * @param string $field The field to alias
-     * @param string $alias the alias used to prefix the field
+     * @param string|null $alias the alias used to prefix the field
      * @return array
      */
     public function aliasField($field, $alias = null);
@@ -237,7 +237,7 @@ interface QueryInterface
      * Pages should start at 1.
      *
      * @param int $num The page number you want.
-     * @param int $limit The number of rows you want in the page. If null
+     * @param int|null $limit The number of rows you want in the page. If null
      *  the current limit clause will be used.
      * @return $this
      */
@@ -366,7 +366,7 @@ interface QueryInterface
      * If you use string conditions make sure that your values are correctly quoted.
      * The safest thing you can do is to never use string conditions.
      *
-     * @param string|array|callback|null $conditions The conditions to filter on.
+     * @param string|array|callable|null $conditions The conditions to filter on.
      * @param array $types associative array of type names used to bind values to query
      * @param bool $overwrite whether to reset conditions with passed list or not
      * @return $this

@@ -107,7 +107,7 @@ class PdfHandlerComponent extends Component
         $pdf->setJPEGQuality(100);
 
         //install font
-        //$fontname = $pdf->addTTFfont(WWW_ROOT.'SolaimanLipi_20-04-07.ttf', 'TrueTypeUnicode', '', 32);
+        //$fontname = $pdf->addTTFfont(WWW_ROOT.'Siyamrupali.ttf', 'TrueTypeUnicode', '', 32);
 
         // set font
        //$pdf->SetFont('solaimanlipi_200407', '', 12);
@@ -206,7 +206,7 @@ class PdfHandlerComponent extends Component
                         
                         <td colspan="2">                                                                                                   
                             <table class="single_table" align="center">
-                                <tr><td style="font-size:23px;color: #000">'.$user['first_name'].' '.$user['last_name'] .'</td></tr>';
+                                <tr><td style="font-size:23px;color: #000">'.$user['first_name'].' '.$user['last_name'] .' নিউরো লজিস্ট </td></tr>';
 
                                 if ($user['educational_qualification']){
                                     $html .= '<tr><td class="">'. $user['educational_qualification'] .'</td></tr>';
@@ -1223,8 +1223,6 @@ class PdfHandlerComponent extends Component
             ';
         }
         $html_pdf = $html;
-
-        //echo $html_pdf;die;
 
         return array('status'=>true,'message'=>$html_pdf);
     }

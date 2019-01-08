@@ -1,20 +1,21 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.3
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Validation;
 
 use Cake\Event\EventDispatcherInterface;
+use RuntimeException;
 
 /**
  * A trait that provides methods for building and
@@ -46,7 +47,7 @@ trait ValidatorAwareTrait
     /**
      * A list of validation objects indexed by name
      *
-     * @var array
+     * @var \Cake\Validation\Validator[]
      */
     protected $_validators = [];
 
@@ -87,10 +88,11 @@ trait ValidatorAwareTrait
      * should you wish to have a validation set that applies in cases where no other
      * set is specified.
      *
-     * @param string $name the name of the validation set to return
+     * @param string|null $name the name of the validation set to return
      * @param \Cake\Validation\Validator|null $validator The validator instance to store,
      *   use null to get a validator.
      * @return \Cake\Validation\Validator
+     * @throws \RuntimeException
      */
     public function validator($name = null, Validator $validator = null)
     {
@@ -107,9 +109,14 @@ trait ValidatorAwareTrait
             if ($this instanceof EventDispatcherInterface) {
                 $this->dispatchEvent('Model.buildValidator', compact('validator', 'name'));
             }
+
+            if (!$validator instanceof Validator) {
+                throw new RuntimeException(sprintf('The %s::%s() validation method must return an instance of %s.', __CLASS__, 'validation' . ucfirst($name), Validator::class));
+            }
         }
 
-        $validator->provider(self::VALIDATOR_PROVIDER_NAME, $this);
+        $validator->setProvider(self::VALIDATOR_PROVIDER_NAME, $this);
+
         return $this->_validators[$name] = $validator;
     }
 

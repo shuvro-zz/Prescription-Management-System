@@ -151,7 +151,7 @@ class UsersController extends AppController
             if(empty($user_phone)){
                 $user = $this->Users->patchEntity($user, $this->request->data);
 
-                if (isset($this->request->data['today_appointment'])){
+                if ($this->request->data['today_appointment']){
                     $user->appointment_date = date('Y/m/d');
                     $user->is_visited = 0;
                 }else{
@@ -214,7 +214,7 @@ class UsersController extends AppController
             if (empty($haveEmail)){
 
                 $user = $this->Users->patchEntity($user, $this->request->data);
-                $month=strtotime("+12 Months");
+                $month = strtotime("+12 Months");
                 $user->expire_date = date('d/m/Y', $month);
                 $user->role_id = 2;
                 $user->token = $this->generateToken();
@@ -515,7 +515,7 @@ class UsersController extends AppController
 
         $last_visit_date = '';
         if($latest_prescription){
-            $last_visit_date = $latest_prescription->created->format('d F Y');
+            $last_visit_date = $latest_prescription->created->format('j M Y');
         }
 
         echo json_encode(array('user' => $user, 'prescriptions' => $prescriptions_link, 'last_visit_date' => $last_visit_date));die;

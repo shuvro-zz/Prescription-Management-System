@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\ORM\Behavior;
 
@@ -18,7 +18,6 @@ use Cake\Datasource\EntityInterface;
 use Cake\Event\Event;
 use Cake\ORM\Association;
 use Cake\ORM\Behavior;
-use Cake\ORM\Entity;
 
 /**
  * CounterCache behavior
@@ -76,9 +75,70 @@ use Cake\ORM\Entity;
  * ]
  * ```
  *
+ * Ignore updating the field if it is dirty
+ * ```
+ * [
+ *     'Users' => [
+ *         'posts_published' => [
+ *             'ignoreDirty' => true
+ *         ]
+ *     ]
+ * ]
+ * ```
+ *
+ * You can disable counter updates entirely by sending the `ignoreCounterCache` option
+ * to your save operation:
+ *
+ * ```
+ * $this->Articles->save($article, ['ignoreCounterCache' => true]);
+ * ```
  */
 class CounterCacheBehavior extends Behavior
 {
+
+    /**
+     * Store the fields which should be ignored
+     *
+     * @var array
+     */
+    protected $_ignoreDirty = [];
+
+    /**
+     * beforeSave callback.
+     *
+     * Check if a field, which should be ignored, is dirty
+     *
+     * @param \Cake\Event\Event $event The beforeSave event that was fired
+     * @param \Cake\Datasource\EntityInterface $entity The entity that is going to be saved
+     * @param \ArrayObject $options The options for the query
+     * @return void
+     */
+    public function beforeSave(Event $event, EntityInterface $entity, $options)
+    {
+        if (isset($options['ignoreCounterCache']) && $options['ignoreCounterCache'] === true) {
+            return;
+        }
+
+        foreach ($this->_config as $assoc => $settings) {
+            $assoc = $this->_table->association($assoc);
+            foreach ($settings as $field => $config) {
+                if (is_int($field)) {
+                    continue;
+                }
+
+                $registryAlias = $assoc->getTarget()->getRegistryAlias();
+                $entityAlias = $assoc->getProperty();
+
+                if (!is_callable($config) &&
+                    isset($config['ignoreDirty']) &&
+                    $config['ignoreDirty'] === true &&
+                    $entity->$entityAlias->dirty($field)
+                ) {
+                    $this->_ignoreDirty[$registryAlias][$field] = true;
+                }
+            }
+        }
+    }
 
     /**
      * afterSave callback.
@@ -87,11 +147,17 @@ class CounterCacheBehavior extends Behavior
      *
      * @param \Cake\Event\Event $event The afterSave event that was fired.
      * @param \Cake\Datasource\EntityInterface $entity The entity that was saved.
+     * @param \ArrayObject $options The options for the query
      * @return void
      */
-    public function afterSave(Event $event, EntityInterface $entity)
+    public function afterSave(Event $event, EntityInterface $entity, $options)
     {
+        if (isset($options['ignoreCounterCache']) && $options['ignoreCounterCache'] === true) {
+            return;
+        }
+
         $this->_processAssociations($event, $entity);
+        $this->_ignoreDirty = [];
     }
 
     /**
@@ -101,10 +167,15 @@ class CounterCacheBehavior extends Behavior
      *
      * @param \Cake\Event\Event $event The afterDelete event that was fired.
      * @param \Cake\Datasource\EntityInterface $entity The entity that was deleted.
+     * @param \ArrayObject $options The options for the query
      * @return void
      */
-    public function afterDelete(Event $event, EntityInterface $entity)
+    public function afterDelete(Event $event, EntityInterface $entity, $options)
     {
+        if (isset($options['ignoreCounterCache']) && $options['ignoreCounterCache'] === true) {
+            return;
+        }
+
         $this->_processAssociations($event, $entity);
     }
 
@@ -134,8 +205,8 @@ class CounterCacheBehavior extends Behavior
      */
     protected function _processAssociation(Event $event, EntityInterface $entity, Association $assoc, array $settings)
     {
-        $foreignKeys = (array)$assoc->foreignKey();
-        $primaryKeys = (array)$assoc->bindingKey();
+        $foreignKeys = (array)$assoc->getForeignKey();
+        $primaryKeys = (array)$assoc->getBindingKey();
         $countConditions = $entity->extract($foreignKeys);
         $updateConditions = array_combine($primaryKeys, $countConditions);
         $countOriginalConditions = $entity->extractOriginalChanged($foreignKeys);
@@ -150,13 +221,19 @@ class CounterCacheBehavior extends Behavior
                 $config = [];
             }
 
+            if (isset($this->_ignoreDirty[$assoc->getTarget()->getRegistryAlias()][$field]) &&
+                $this->_ignoreDirty[$assoc->getTarget()->getRegistryAlias()][$field] === true
+            ) {
+                continue;
+            }
+
             if (!is_string($config) && is_callable($config)) {
                 $count = $config($event, $entity, $this->_table, false);
             } else {
                 $count = $this->_getCount($config, $countConditions);
             }
 
-            $assoc->target()->updateAll([$field => $count], $updateConditions);
+            $assoc->getTarget()->updateAll([$field => $count], $updateConditions);
 
             if (isset($updateOriginalConditions)) {
                 if (!is_string($config) && is_callable($config)) {
@@ -164,7 +241,7 @@ class CounterCacheBehavior extends Behavior
                 } else {
                     $count = $this->_getCount($config, $countOriginalConditions);
                 }
-                $assoc->target()->updateAll([$field => $count], $updateOriginalConditions);
+                $assoc->getTarget()->updateAll([$field => $count], $updateOriginalConditions);
             }
         }
     }

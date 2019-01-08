@@ -14,7 +14,6 @@
  */
 namespace Bake\Shell\Task;
 
-use Cake\Console\Shell;
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
@@ -59,13 +58,14 @@ class PluginTask extends BakeTask
      * Execution method always used for tasks
      *
      * @param string|null $name The name of the plugin to bake.
-     * @return void
+     * @return null|bool
      */
     public function main($name = null)
     {
         if (empty($name)) {
             $this->err('<error>You must provide a plugin name in CamelCase format.</error>');
-            $this->err('To make an "Example" plugin, run <info>`cake bake plugin Example`</info>.');
+            $this->err('To make an "MyExample" plugin, run <info>`cake bake plugin MyExample`</info>.');
+
             return false;
         }
         $plugin = $this->_camelize($name);
@@ -73,6 +73,7 @@ class PluginTask extends BakeTask
         if (is_dir($pluginPath)) {
             $this->out(sprintf('Plugin: %s already exists, no action taken', $plugin));
             $this->out(sprintf('Path: %s', $pluginPath));
+
             return false;
         }
         if (!$this->bake($plugin)) {
@@ -86,7 +87,7 @@ class PluginTask extends BakeTask
      * Also update the autoloader and the root composer.json file if it can be found
      *
      * @param string $plugin Name of the plugin in CamelCased format
-     * @return bool
+     * @return bool|null
      */
     public function bake($plugin)
     {
@@ -101,7 +102,7 @@ class PluginTask extends BakeTask
         $looksGood = $this->in('Look okay?', ['y', 'n', 'q'], 'y');
 
         if (strtolower($looksGood) !== 'y') {
-            return;
+            return null;
         }
 
         $this->_generateFiles($plugin, $this->path);
@@ -157,6 +158,7 @@ class PluginTask extends BakeTask
     protected function _generateFiles($pluginName, $path)
     {
         $namespace = str_replace('/', '\\', $pluginName);
+        $baseNamespace = Configure::read('App.namespace');
 
         $name = $pluginName;
         $vendor = 'your-name-here';
@@ -168,6 +170,7 @@ class PluginTask extends BakeTask
         $this->BakeTemplate->set([
             'package' => $package,
             'namespace' => $namespace,
+            'baseNamespace' => $baseNamespace,
             'plugin' => $pluginName,
             'routePath' => Inflector::dasherize($pluginName),
             'path' => $path,
@@ -225,6 +228,7 @@ class PluginTask extends BakeTask
 
         if (!file_exists($file)) {
             $this->out(sprintf('<info>Main composer file %s not found</info>', $file));
+
             return false;
         }
 
@@ -238,13 +242,14 @@ class PluginTask extends BakeTask
 
         $this->out('<info>Modifying composer autoloader</info>');
 
-        $out = json_encode($config, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . "\n";
+        $out = json_encode($config, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n";
         $this->createFile($file, $out);
 
         $composer = $this->findComposer();
 
         if (!$composer) {
             $this->error('Could not locate composer. Add composer to your PATH, or use the --composer option.');
+
             return false;
         }
 
@@ -260,6 +265,7 @@ class PluginTask extends BakeTask
         } catch (\RuntimeException $e) {
             $error = $e->getMessage();
             $this->error(sprintf('Could not run `composer dump-autoload`: %s', $error));
+
             return false;
         }
 
@@ -302,6 +308,7 @@ class PluginTask extends BakeTask
 
         if ($max === 1) {
             $this->path = $pathOptions[0];
+
             return;
         }
 
@@ -326,7 +333,7 @@ class PluginTask extends BakeTask
     public function getOptionParser()
     {
         $parser = parent::getOptionParser();
-        $parser->description(
+        $parser->setDescription(
             'Create the directory structure, AppController class and testing setup for a new plugin. ' .
             'Can create plugins in any of your bootstrapped plugin paths.'
         )->addArgument('name', [
@@ -358,6 +365,7 @@ class PluginTask extends BakeTask
             $paths = explode(PATH_SEPARATOR, $path);
             $composer = $this->_searchPath($paths);
         }
+
         return $composer;
     }
 
@@ -374,10 +382,12 @@ class PluginTask extends BakeTask
             foreach ($composer as $cmd) {
                 if (is_file($dir . DS . $cmd)) {
                     $this->_io->verbose('Found composer executable in ' . $dir);
+
                     return $dir . DS . $cmd;
                 }
             }
         }
+
         return false;
     }
 }

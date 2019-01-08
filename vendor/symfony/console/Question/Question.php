@@ -77,7 +77,7 @@ class Question
      *
      * @param bool $hidden
      *
-     * @return Question The current instance
+     * @return $this
      *
      * @throws LogicException In case the autocompleter is also used
      */
@@ -107,7 +107,7 @@ class Question
      *
      * @param bool $fallback
      *
-     * @return Question The current instance
+     * @return $this
      */
     public function setHiddenFallback($fallback)
     {
@@ -131,19 +131,19 @@ class Question
      *
      * @param null|array|\Traversable $values
      *
-     * @return Question The current instance
+     * @return $this
      *
      * @throws InvalidArgumentException
      * @throws LogicException
      */
     public function setAutocompleterValues($values)
     {
-        if (is_array($values) && $this->isAssoc($values)) {
-            $values = array_merge(array_keys($values), array_values($values));
+        if (is_array($values)) {
+            $values = $this->isAssoc($values) ? array_merge(array_keys($values), array_values($values)) : array_values($values);
         }
 
         if (null !== $values && !is_array($values)) {
-            if (!$values instanceof \Traversable || $values instanceof \Countable) {
+            if (!$values instanceof \Traversable || !$values instanceof \Countable) {
                 throw new InvalidArgumentException('Autocompleter values can be either an array, `null` or an object implementing both `Countable` and `Traversable` interfaces.');
             }
         }
@@ -162,7 +162,7 @@ class Question
      *
      * @param null|callable $validator
      *
-     * @return Question The current instance
+     * @return $this
      */
     public function setValidator(callable $validator = null)
     {
@@ -188,7 +188,7 @@ class Question
      *
      * @param null|int $attempts
      *
-     * @return Question The current instance
+     * @return $this
      *
      * @throws InvalidArgumentException In case the number of attempts is invalid.
      */
@@ -222,7 +222,7 @@ class Question
      *
      * @param callable $normalizer
      *
-     * @return Question The current instance
+     * @return $this
      */
     public function setNormalizer(callable $normalizer)
     {

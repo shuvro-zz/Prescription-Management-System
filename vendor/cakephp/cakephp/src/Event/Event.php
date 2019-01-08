@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         2.1.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Event;
 
@@ -19,6 +19,10 @@ namespace Cake\Event;
  * payload. The name can be any string that uniquely identifies the event across the application, while the subject
  * represents the object that the event applies to.
  *
+ * @property string $name (deprecated) Name of the event
+ * @property object $subject (deprecated) The object this event applies to
+ * @property mixed $result (deprecated) Property used to retain the result value of the event listeners
+ * @property array $data (deprecated) Custom data for the method that receives the event
  */
 class Event
 {
@@ -28,7 +32,7 @@ class Event
      *
      * @var string
      */
-    protected $_name = null;
+    protected $_name;
 
     /**
      * The object this event applies to (usually the same object that generates the event)
@@ -40,16 +44,16 @@ class Event
     /**
      * Custom data for the method that receives the event
      *
-     * @var mixed
+     * @var array
      */
-    public $data = null;
+    protected $_data;
 
     /**
      * Property used to retain the result value of the event listeners
      *
      * @var mixed
      */
-    public $result = null;
+    public $result;
 
     /**
      * Flags an event as stopped or not, default is false
@@ -70,25 +74,50 @@ class Event
      *
      * @param string $name Name of the event
      * @param object|null $subject the object that this event applies to (usually the object that is generating the event)
-     * @param array|null $data any value you wish to be transported with this event to it can be read by listeners
+     * @param array|\ArrayAccess|null $data any value you wish to be transported with this event to it can be read by listeners
      */
     public function __construct($name, $subject = null, $data = null)
     {
         $this->_name = $name;
-        $this->data = $data;
+        $this->_data = (array)$data;
         $this->_subject = $subject;
     }
 
     /**
-     * Dynamically returns the name and subject if accessed directly
+     * Provides read-only access for the name and subject properties.
      *
      * @param string $attribute Attribute name.
      * @return mixed
+     * @deprecated 3.4.0 Public properties will be removed.
      */
     public function __get($attribute)
     {
         if ($attribute === 'name' || $attribute === 'subject') {
             return $this->{$attribute}();
+        }
+        if ($attribute === 'data') {
+            return $this->_data;
+        }
+        if ($attribute === 'result') {
+            return $this->result;
+        }
+    }
+
+    /**
+     * Provides backward compatibility for write access to data and result properties.
+     *
+     * @param string $attribute Attribute name.
+     * @param mixed $value The value to set.
+     * @return void
+     * @deprecated 3.4.0 Public properties will be removed.
+     */
+    public function __set($attribute, $value)
+    {
+        if ($attribute === 'data') {
+            $this->_data = (array)$value;
+        }
+        if ($attribute === 'result') {
+            $this->result = $value;
         }
     }
 
@@ -96,8 +125,19 @@ class Event
      * Returns the name of this event. This is usually used as the event identifier
      *
      * @return string
+     * @deprecated 3.4.0 use getName() instead.
      */
     public function name()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * Returns the name of this event. This is usually used as the event identifier
+     *
+     * @return string
+     */
+    public function getName()
     {
         return $this->_name;
     }
@@ -106,8 +146,19 @@ class Event
      * Returns the subject of this event
      *
      * @return object
+     * @deprecated 3.4.0 use getSubject() instead.
      */
     public function subject()
+    {
+        return $this->_subject;
+    }
+
+    /**
+     * Returns the subject of this event
+     *
+     * @return object
+     */
+    public function getSubject()
     {
         return $this->_subject;
     }
@@ -133,12 +184,83 @@ class Event
     }
 
     /**
+     * The result value of the event listeners
+     *
+     * @return mixed
+     * @deprecated 3.4.0 use getResult() instead.
+     */
+    public function result()
+    {
+        return $this->result;
+    }
+
+    /**
+     * The result value of the event listeners
+     *
+     * @return mixed
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * Listeners can attach a result value to the event.
+     *
+     * @param mixed $value The value to set.
+     * @return $this
+     */
+    public function setResult($value = null)
+    {
+        $this->result = $value;
+
+        return $this;
+    }
+
+    /**
      * Access the event data/payload.
      *
-     * @return array
+     * @param string|null $key The data payload element to return, or null to return all data.
+     * @return array|mixed|null The data payload if $key is null, or the data value for the given $key. If the $key does not
+     * exist a null value is returned.
+     * @deprecated 3.4.0 use getData() instead.
      */
-    public function data()
+    public function data($key = null)
     {
-        return (array)$this->data;
+        return $this->getData($key);
+    }
+
+    /**
+     * Access the event data/payload.
+     *
+     * @param string|null $key The data payload element to return, or null to return all data.
+     * @return array|mixed|null The data payload if $key is null, or the data value for the given $key. If the $key does not
+     * exist a null value is returned.
+     */
+    public function getData($key = null)
+    {
+        if ($key !== null) {
+            return isset($this->_data[$key]) ? $this->_data[$key] : null;
+        }
+
+        return (array)$this->_data;
+    }
+
+    /**
+     * Assigns a value to the data/payload of this event.
+     *
+     * @param array|string $key An array will replace all payload data, and a key will set just that array item.
+     * @param mixed $value The value to set.
+     * @return $this
+     */
+    public function setData($key, $value = null)
+    {
+        if (is_array($key)) {
+            $this->_data = $key;
+        } else {
+            $this->_data[$key] = $value;
+        }
+
+        return $this;
     }
 }

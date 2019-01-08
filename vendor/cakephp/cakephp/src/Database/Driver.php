@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Database;
 
@@ -18,9 +18,8 @@ use InvalidArgumentException;
 use PDO;
 
 /**
- * Represents a database diver containing all specificities for
+ * Represents a database driver containing all specificities for
  * a database engine including its SQL dialect
- *
  */
 abstract class Driver
 {
@@ -52,7 +51,7 @@ abstract class Driver
      * Constructor
      *
      * @param array $config The configuration for the driver.
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     public function __construct($config = [])
     {
@@ -64,14 +63,14 @@ abstract class Driver
         $config += $this->_baseConfig;
         $this->_config = $config;
         if (!empty($config['quoteIdentifiers'])) {
-            $this->autoQuoting(true);
+            $this->enableAutoQuoting();
         }
     }
 
     /**
      * Establishes a connection to the database server
      *
-     * @return bool true con success
+     * @return bool true on success
      */
     abstract public function connect();
 
@@ -87,7 +86,7 @@ abstract class Driver
      * If first argument is passed,
      *
      * @param null|\PDO $connection The connection object
-     * @return void
+     * @return \Cake\Database\Connection
      */
     abstract public function connection($connection = null);
 
@@ -253,22 +252,33 @@ abstract class Driver
             return 'TRUE';
         }
         if (is_float($value)) {
-            return str_replace(',', '.', strval($value));
+            return str_replace(',', '.', (string)$value);
         }
         if ((is_int($value) || $value === '0') || (
             is_numeric($value) && strpos($value, ',') === false &&
             $value[0] !== '0' && strpos($value, 'e') === false)
         ) {
-            return $value;
+            return (string)$value;
         }
+
         return $this->_connection->quote($value, PDO::PARAM_STR);
+    }
+
+    /**
+     * Returns the schema name that's being used
+     *
+     * @return string
+     */
+    public function schema()
+    {
+        return $this->_config['schema'];
     }
 
     /**
      * Returns last id generated for a table or sequence in database
      *
-     * @param string $table table name or sequence to get last insert value from
-     * @param string $column the name of the column representing the primary key
+     * @param string|null $table table name or sequence to get last insert value from
+     * @param string|null $column the name of the column representing the primary key
      * @return string|int
      */
     public function lastInsertId($table = null, $column = null)
@@ -287,21 +297,48 @@ abstract class Driver
     }
 
     /**
+     * Sets whether or not this driver should automatically quote identifiers
+     * in queries.
+     *
+     * @param bool $enable Whether to enable auto quoting
+     * @return $this
+     */
+    public function enableAutoQuoting($enable = true)
+    {
+        $this->_autoQuoting = (bool)$enable;
+
+        return $this;
+    }
+
+    /**
+     * Returns whether or not this driver should automatically quote identifiers
+     * in queries
+     *
+     * @return bool
+     */
+    public function isAutoQuotingEnabled()
+    {
+        return $this->_autoQuoting;
+    }
+
+    /**
      * Returns whether or not this driver should automatically quote identifiers
      * in queries
      *
      * If called with a boolean argument, it will toggle the auto quoting setting
      * to the passed value
      *
-     * @param bool $enable whether to enable auto quoting
+     * @deprecated 3.4.0 use enableAutoQuoting()/isAutoQuotingEnabled() instead.
+     * @param bool|null $enable Whether to enable auto quoting
      * @return bool
      */
     public function autoQuoting($enable = null)
     {
-        if ($enable === null) {
-            return $this->_autoQuoting;
+        if ($enable !== null) {
+            $this->enableAutoQuoting($enable);
         }
-        return $this->_autoQuoting = (bool)$enable;
+
+        return $this->isAutoQuotingEnabled();
     }
 
     /**
@@ -318,6 +355,7 @@ abstract class Driver
         $processor = $this->newCompiler();
         $translator = $this->queryTranslator($query->type());
         $query = $translator($query);
+
         return [$query, $processor->compile($query, $generator)];
     }
 
@@ -328,7 +366,7 @@ abstract class Driver
      */
     public function newCompiler()
     {
-        return new QueryCompiler;
+        return new QueryCompiler();
     }
 
     /**
@@ -348,7 +386,7 @@ abstract class Driver
     public function __debugInfo()
     {
         return [
-            'connected' => $this->isConnected()
+            'connected' => $this->_connection !== null
         ];
     }
 }

@@ -1,4 +1,3 @@
-
 <?= $this->Form->create('', array('id' => 'userForm')) ?>
 <section class="workspace">
     <div class="workspace-body">

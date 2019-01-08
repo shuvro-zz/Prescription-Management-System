@@ -1,21 +1,20 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Datasource;
 
 use Cake\Datasource\Exception\MissingModelException;
-use InvalidArgumentException;
 use UnexpectedValueException;
 
 /**
@@ -41,7 +40,7 @@ trait ModelAwareTrait
     public $modelClass;
 
     /**
-     * A list of model factory functions.
+     * A list of overridden model factory functions.
      *
      * @var array
      */
@@ -80,7 +79,7 @@ trait ModelAwareTrait
      *
      * @param string|null $modelClass Name of model class to load. Defaults to $this->modelClass
      * @param string|null $modelType The type of repository to load. Defaults to the modelType() value.
-     * @return object The model instance created.
+     * @return \Cake\Datasource\RepositoryInterface The model instance created.
      * @throws \Cake\Datasource\Exception\MissingModelException If the model class cannot be found.
      * @throws \InvalidArgumentException When using a type that has not been registered.
      * @throws \UnexpectedValueException If no model type has been defined
@@ -104,22 +103,22 @@ trait ModelAwareTrait
             return $this->{$alias};
         }
 
-        if (!isset($this->_modelFactories[$modelType])) {
-            throw new InvalidArgumentException(sprintf(
-                'Unknown repository type "%s". Make sure you register a type before trying to use it.',
-                $modelType
-            ));
+        if (isset($this->_modelFactories[$modelType])) {
+            $factory = $this->_modelFactories[$modelType];
         }
-        $factory = $this->_modelFactories[$modelType];
+        if (!isset($factory)) {
+            $factory = FactoryLocator::get($modelType);
+        }
         $this->{$alias} = $factory($modelClass);
         if (!$this->{$alias}) {
             throw new MissingModelException([$modelClass, $modelType]);
         }
+
         return $this->{$alias};
     }
 
     /**
-     * Register a callable to generate repositories of a given type.
+     * Override a existing callable to generate repositories of a given type.
      *
      * @param string $type The name of the repository type the factory function is for.
      * @param callable $factory The factory function used to create instances.

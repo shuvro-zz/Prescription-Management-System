@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\Shell\Task;
 
@@ -21,7 +21,6 @@ use Cake\Utility\Inflector;
 
 /**
  * Task for symlinking / copying plugin assets to app's webroot.
- *
  */
 class AssetsTask extends Shell
 {
@@ -56,7 +55,7 @@ class AssetsTask extends Shell
     /**
      * Get list of plugins to process. Plugins without a webroot directory are skipped.
      *
-     * @param string|string $name Name of plugin for which to symlink assets.
+     * @param string|null $name Name of plugin for which to symlink assets.
      *   If null all plugins will be processed.
      * @return array List of plugins with meta data.
      */
@@ -67,6 +66,7 @@ class AssetsTask extends Shell
         } else {
             if (!Plugin::loaded($name)) {
                 $this->err(sprintf('Plugin %s is not loaded.', $name));
+
                 return [];
             }
             $pluginsList = [$name];
@@ -93,7 +93,7 @@ class AssetsTask extends Shell
                 $namespaced = true;
                 $parts = explode('/', $link);
                 $link = array_pop($parts);
-                $dir = WWW_ROOT . implode(DS, $parts) . DS;
+                $dir = WWW_ROOT . implode(DIRECTORY_SEPARATOR, $parts) . DIRECTORY_SEPARATOR;
             }
 
             $plugins[$plugin] = [
@@ -173,10 +173,12 @@ class AssetsTask extends Shell
 
         if ($result) {
             $this->out('Created directory ' . $dir);
+
             return true;
         }
 
         $this->err('Failed creating directory ' . $dir);
+
         return false;
     }
 
@@ -195,6 +197,7 @@ class AssetsTask extends Shell
 
         if ($result) {
             $this->out('Created symlink ' . $link);
+
             return true;
         }
 
@@ -213,10 +216,12 @@ class AssetsTask extends Shell
         $folder = new Folder($source);
         if ($folder->copy(['to' => $destination])) {
             $this->out('Copied assets to directory ' . $destination);
+
             return true;
         }
 
         $this->err('Error copying assets to directory ' . $destination);
+
         return false;
     }
 

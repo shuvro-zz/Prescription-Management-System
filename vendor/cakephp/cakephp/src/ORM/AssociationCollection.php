@@ -1,16 +1,16 @@
 <?php
 /**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @since         3.0.0
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 namespace Cake\ORM;
 
@@ -33,7 +33,7 @@ class AssociationCollection implements IteratorAggregate
     /**
      * Stored associations
      *
-     * @var array
+     * @var \Cake\ORM\Association[]
      */
     protected $_items = [];
 
@@ -50,6 +50,7 @@ class AssociationCollection implements IteratorAggregate
     public function add($alias, Association $association)
     {
         list(, $alias) = pluginSplit($alias);
+
         return $this->_items[strtolower($alias)] = $association;
     }
 
@@ -65,6 +66,7 @@ class AssociationCollection implements IteratorAggregate
         if (isset($this->_items[$alias])) {
             return $this->_items[$alias];
         }
+
         return null;
     }
 
@@ -77,10 +79,11 @@ class AssociationCollection implements IteratorAggregate
     public function getByProperty($prop)
     {
         foreach ($this->_items as $assoc) {
-            if ($assoc->property() === $prop) {
+            if ($assoc->getProperty() === $prop) {
                 return $assoc;
             }
         }
+
         return null;
     }
 
@@ -114,12 +117,14 @@ class AssociationCollection implements IteratorAggregate
      */
     public function type($class)
     {
-        $class = (array)$class;
+        $class = array_map('strtolower', (array)$class);
 
         $out = array_filter($this->_items, function ($assoc) use ($class) {
             list(, $name) = namespaceSplit(get_class($assoc));
-            return in_array($name, $class, true);
+
+            return in_array(strtolower($name), $class, true);
         });
+
         return array_values($out);
     }
 
@@ -168,6 +173,7 @@ class AssociationCollection implements IteratorAggregate
         if (empty($associations)) {
             return true;
         }
+
         return $this->_saveAssociations($table, $entity, $associations, $options, false);
     }
 
@@ -189,6 +195,7 @@ class AssociationCollection implements IteratorAggregate
         if (empty($associations)) {
             return true;
         }
+
         return $this->_saveAssociations($table, $entity, $associations, $options, true);
     }
 
@@ -217,7 +224,7 @@ class AssociationCollection implements IteratorAggregate
                 $msg = sprintf(
                     'Cannot save %s, it is not associated to %s',
                     $alias,
-                    $table->alias()
+                    $table->getAlias()
                 );
                 throw new InvalidArgumentException($msg);
             }
@@ -228,6 +235,7 @@ class AssociationCollection implements IteratorAggregate
                 return false;
             }
         }
+
         return true;
     }
 
@@ -242,12 +250,13 @@ class AssociationCollection implements IteratorAggregate
      */
     protected function _save($association, $entity, $nested, $options)
     {
-        if (!$entity->dirty($association->property())) {
+        if (!$entity->dirty($association->getProperty())) {
             return true;
         }
         if (!empty($nested)) {
             $options = (array)$nested + $options;
         }
+
         return (bool)$association->saveAssociated($entity, $options);
     }
 
@@ -261,17 +270,31 @@ class AssociationCollection implements IteratorAggregate
      */
     public function cascadeDelete(EntityInterface $entity, array $options)
     {
+        $noCascade = $this->_getNoCascadeItems($entity, $options);
+        foreach ($noCascade as $assoc) {
+            $assoc->cascadeDelete($entity, $options);
+        }
+    }
+
+    /**
+     * Returns items that have no cascade callback.
+     *
+     * @param \Cake\Datasource\EntityInterface $entity The entity to delete associations for.
+     * @param array $options The options used in the delete operation.
+     * @return \Cake\ORM\Association[]
+     */
+    protected function _getNoCascadeItems($entity, $options)
+    {
         $noCascade = [];
         foreach ($this->_items as $assoc) {
-            if (!$assoc->cascadeCallbacks()) {
+            if (!$assoc->getCascadeCallbacks()) {
                 $noCascade[] = $assoc;
                 continue;
             }
             $assoc->cascadeDelete($entity, $options);
         }
-        foreach ($noCascade as $assoc) {
-            $assoc->cascadeDelete($entity, $options);
-        }
+
+        return $noCascade;
     }
 
     /**
@@ -298,7 +321,7 @@ class AssociationCollection implements IteratorAggregate
     /**
      * Allow looping through the associations
      *
-     * @return ArrayIterator
+     * @return \ArrayIterator
      */
     public function getIterator()
     {

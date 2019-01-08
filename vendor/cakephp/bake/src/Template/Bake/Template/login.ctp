@@ -13,13 +13,18 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 %>
+<?php
+/**
+  * @var \<%= $namespace %>\View\AppView $this
+  */
+?>
 <div class="<%= $pluralVar %> form">
 <?= $this->Flash->render('auth') ?>
     <?= $this->Form->create() ?>
     <fieldset>
         <legend><?= __('Please enter your username and password') ?></legend>
-        <?= $this->Form->input('username') ?>
-        <?= $this->Form->input('password') ?>
+        <?= $this->Form->control('username') ?>
+        <?= $this->Form->control('password') ?>
     </fieldset>
     <?= $this->Form->button(__('Login')); ?>
     <?= $this->Form->end() ?>

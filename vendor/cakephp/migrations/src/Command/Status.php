@@ -20,6 +20,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Status extends StatusCommand
 {
 
+    use CommandTrait;
     use ConfigurationTrait;
 
     /**
@@ -71,7 +72,7 @@ class Status extends StatusCommand
 
         switch ($format) {
             case 'json':
-                $output->writeln($migrations);
+                $this->getManager()->getOutput()->writeln($migrations);
                 break;
             default:
                 $this->display($migrations);
@@ -96,14 +97,21 @@ class Status extends StatusCommand
 
             foreach ($migrations as $migration) {
                 $status = $migration['status'] === 'up' ? '     <info>up</info> ' : '   <error>down</error> ';
+                $maxNameLength = $this->getManager()->maxNameLength;
                 $name = $migration['name'] !== false ?
-                    ' <comment>' . $migration['name'] . ' </comment>' :
+                    ' <comment>' . str_pad($migration['name'], $maxNameLength, ' ') . ' </comment>' :
                     ' <error>** MISSING **</error>';
+
+                $missingComment = '';
+                if (!empty($migration['missing'])) {
+                    $missingComment = ' <error>** MISSING **</error>';
+                }
 
                 $output->writeln(
                     $status
                     . sprintf(' %14.0f ', $migration['id'])
                     . $name
+                    . $missingComment
                 );
             }
 
