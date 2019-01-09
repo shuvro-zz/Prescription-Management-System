@@ -40,7 +40,6 @@ class PdfHandlerComponent extends Component
             return $imagepath;
         } else {
             throw new Exception('yes');
-
         }
     }
 

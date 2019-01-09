@@ -106,7 +106,7 @@ class UsersController extends AppController
                 $user->role_id = 3;
                 $user->doctor_id = $doctor_id;
 
-                if (isset($this->request->data['today_appointment'])){
+                if ($this->request->data['today_appointment']){
                     $user->appointment_date = date('Y/m/d');
                 }
 
