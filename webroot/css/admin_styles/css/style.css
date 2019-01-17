@@ -222,7 +222,16 @@ select[multiple] {
 button, .wizard-config .btn-continue{
     min-width: 7%!important;
 }
-.medicines_row .dle_medicine_btn {
+.padding_remove{
+    padding: 0px;
+}
+.new_diagnosis_name{
+    height: 28px;
+}
+.new_diagnosis_row {
+    margin-top: 5px;
+}
+.medicines_row .dle_medicine_btn, .new_diagnosis_row .dle_diagnosis_btn {
     background: no-repeat;
     border: none;
     color: #000;
@@ -230,6 +239,9 @@ button, .wizard-config .btn-continue{
     top: 14px;
     left: -5px;
     height: auto;
+}
+.new_diagnosis_row .dle_diagnosis_btn{
+    top: 8px;
 }
 .medicine_name{
     margin-right: -3px;
@@ -374,7 +386,7 @@ button, .wizard-config .btn-continue{
 .add_more_btn{
     padding:0px;
 }
-.medicines_section #addMoreMedicine {
+#addMoreMedicine, #addMoreDiagnosis {
     width: 12px;
     position: absolute;
     right: 0px;
@@ -425,6 +437,7 @@ button, .wizard-config .btn-continue{
 }
 .diagnosis{
     color: #333;
+    position: relative;
 }
 .left_side h6,.right_side h6{
     color: #fff;

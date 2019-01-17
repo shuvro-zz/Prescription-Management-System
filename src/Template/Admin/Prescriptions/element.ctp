@@ -171,13 +171,31 @@
         <div class="col-sm-6">
             <div class="left_side">
                 <div class="diagnosis">
+                    <button type="button" id="addMoreDiagnosis" class="add_more_btn"><span class="fa fa-plus"></span></button>
                     <div class="panel-heading pescription_panel_heading">Diagnosis</div>
-                    <div class=" diagnosis_info diagnosis_box">
+                    <div class="diagnosis_info diagnosis_box">
                         <?php foreach($diagnosis as $id=>$name){ ?>
                             <div class="checkbox" style="margin-top: 0px">
                                 <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" id="test"><?php echo ucfirst($name) ?></label>
                             </div>
                         <?php } ?>
+
+                        <div id="diagnosisWrap">
+
+                            <?php
+                                $new_diagnosis = '<div class="col-sm-4 new_diagnosis_row padding_remove">';
+                                    $new_diagnosis .= '<div class="col-sm-10 padding_remove">';
+                                        $new_diagnosis .= $this->Form->input('new_diagnosis[]', [ 'class'=>'form-control new_diagnosis_name', 'label'=>false, ]);
+                                    $new_diagnosis .= '</div>';
+
+                                    $new_diagnosis .= '<div class="col-sm-2">';
+                                        $new_diagnosis .= '<button type="button"  class="dle_diagnosis_btn" onclick="removeDiagnosisField(this);"><span class="fa fa-minus"></span></button>';
+                                    $new_diagnosis .= '</div>';
+                                $new_diagnosis .= '</div>';
+                            ?>
+
+                        </div>
+
                     </div>
                 </div>
 
@@ -214,7 +232,7 @@
 
                                     $field_medicine .=  '<div class="col-sm-1">';
                                     $field_medicine .= '<div class="inputs">';
-                                    $field_medicine .= '<button type="button"  class="dle_medicine_btn" onclick="removeField(this);"><span class="fa fa-minus"></span></button>';
+                                    $field_medicine .= '<button type="button"  class="dle_medicine_btn" onclick="removeMedicineField(this);"><span class="fa fa-minus"></span></button>';
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
                                     $field_medicine .= '</div>';
@@ -261,6 +279,12 @@
 
         });
 
+        // Add Diagnosis field
+        $("#addMoreDiagnosis").click(function(){
+
+            $("#diagnosisWrap").append('<?php echo $new_diagnosis ?>');
+        });
+
         // Add Medicine field
         $("#addMoreMedicine").click(function(){
             $("#medicinesWrap").append('<?php echo $field_medicine ?>').find('select').last().val('');
@@ -284,8 +308,13 @@
         });
     });
 
-    // Delete field
-    function removeField(e){
+    // Delete Diagnosis field
+    function removeDiagnosisField(e){
+        $(e).parents('.new_diagnosis_row').remove();
+    }
+
+    // Delete Medicine field
+    function removeMedicineField(e){
         $(e).parents('.medicines_row').remove();
     }
 

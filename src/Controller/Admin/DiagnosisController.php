@@ -242,12 +242,16 @@ class DiagnosisController extends AppController
         if($session->check('diagnosis_search_query')){
             $search = $session->read('diagnosis_search_query');
             $where = ['Diagnosis.doctor_id' => $doctor_id,
-                'OR' => [
-                    ['DiagnosisLists.name LIKE' => '%' . $search . '%']
-                ]
+                      'Diagnosis.status' => 1,
+                    'OR' => [
+                        ['DiagnosisLists.name LIKE' => '%' . $search . '%']
+                    ]
             ];
         }else{
-            $where = ['Diagnosis.doctor_id' => $doctor_id];
+            $where = [
+                    'Diagnosis.doctor_id' => $doctor_id,
+                    'Diagnosis.status' => 1
+                ];
         }
         return $where;
     }

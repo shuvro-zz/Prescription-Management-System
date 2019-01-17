@@ -1,0 +1,271 @@
+2019-01-08 00:26:05 Notice: Notice (8): iconv(): Detected an illegal character in input string in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 12995]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+iconv - [internal], line ??
+Mpdf\Mpdf::WriteHTML() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 12995
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 783
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 00:49:20 Notice: Notice (8): Undefined offset: 1 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4115]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4115
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 00:49:20 Notice: Notice (8): Undefined offset: 1 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4118]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4118
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 00:49:20 Notice: Notice (8): Undefined offset: 1 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4124]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4124
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 00:49:20 Notice: Notice (8): Undefined offset: 2 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4125]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4125
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 01:05:48 Notice: Notice (8): Undefined offset: 1 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4115]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4115
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 01:05:48 Notice: Notice (8): Undefined offset: 1 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4118]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4118
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 01:05:48 Notice: Notice (8): Undefined offset: 1 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4124]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4124
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 01:05:48 Notice: Notice (8): Undefined offset: 2 in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4125]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::SetFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4125
+Mpdf\Mpdf::SetDefaultFont() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 10768
+Mpdf\Mpdf::__construct() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 1464
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 773
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 02:04:46 Notice: Notice (8): Undefined variable: txt in [D:\xampp_5\htdocs\pms\vendor\mpdf\mpdf\src\Mpdf.php, line 4436]
+Request URL: /admin/prescriptions/test
+Referer URL: http://localhost/pms/admin/prescriptions
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+Mpdf\Mpdf::WriteText() - ROOT\vendor\mpdf\mpdf\src\Mpdf.php, line 4436
+App\Controller\Admin\PrescriptionsController::test() - APP/Controller\Admin\PrescriptionsController.php, line 783
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 23:57:32 Notice: Notice (8): Trying to get property of non-object in [D:\xampp_5\htdocs\pms\src\Template\Admin\Users\change_profile_picture.ctp, line 3]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Admin\Users\change_profile_picture.ctp, line 3
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-08 23:57:41 Notice: Notice (8): Trying to get property of non-object in [D:\xampp_5\htdocs\pms\src\Template\Admin\Users\change_profile_picture.ctp, line 3]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Admin\Users\change_profile_picture.ctp, line 3
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-17 15:46:25 Notice: Notice (8): Undefined index: new_diagnosis in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 128]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-17 18:20:16 Notice: Notice (8): Undefined index: new_diagnosis in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 128]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-17 18:20:37 Notice: Notice (8): Undefined index: new_diagnosis in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 128]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-17 18:21:18 Notice: Notice (8): Undefined index: new_diagnosis in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 128]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-17 20:23:33 Notice: Notice (8): Undefined variable: new_diagnosis_template_ids in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 133]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 133
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+

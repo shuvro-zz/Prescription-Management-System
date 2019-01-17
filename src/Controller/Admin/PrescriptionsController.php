@@ -125,7 +125,13 @@ class PrescriptionsController extends AppController
 
             $patient_id = $this->savePatient($this->request->data['patients']);
 
+            $new_diagnosis_template_ids = [];
+            if (isset($this->request->data['new_diagnosis'])){
+                $new_diagnosis_template_ids = $this->saveNewDiagnosisList($this->request->data['new_diagnosis']);
+            }
+
             $diagnosis = isset($this->request->data['diagnosis'])?$this->request->data['diagnosis']:'';
+            $diagnosis = array_unique(array_merge($new_diagnosis_template_ids, $diagnosis));
             $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
 
             unset($this->request->data['medicines']);
@@ -181,6 +187,67 @@ class PrescriptionsController extends AppController
 
         $this->set(compact('prescription', 'users', 'prescription_tests', 'prescription_medicines', 'medicines', 'tests', 'diagnosis', 'prescriptions_link', 'last_visit_date'));
         $this->set('_serialize', ['prescription']);
+    }
+
+    public function saveNewDiagnosisList($new_diagnosis){
+        $this->loadModel('DiagnosisLists');
+
+        $new_diagnosis_list_ids = [];
+        foreach ($new_diagnosis as $diagnosis){
+            if ($diagnosis){
+                $have_diagnosis_list = $this->DiagnosisLists->findByName($diagnosis)->first();
+
+                if (empty($have_diagnosis_list)){
+
+                    $diagnosis_array = [];
+                    $diagnosis_array['name'] = $diagnosis;
+
+                    $diagnosis = $this->DiagnosisLists->newEntity();
+                    $diagnosis = $this->DiagnosisLists->patchEntity($diagnosis, $diagnosis_array);
+                    $save = $this->DiagnosisLists->save($diagnosis);
+
+                    $new_diagnosis_list_ids[] = $save->id;
+
+                }else{
+                    $new_diagnosis_list_ids[] = $have_diagnosis_list->id;
+                }
+            }
+        }
+
+        return $this->saveDiagnosisTemplateWithNewDiagnosisList($new_diagnosis_list_ids);
+    }
+
+    public function saveDiagnosisTemplateWithNewDiagnosisList($new_diagnosis_list_ids){
+        $this->loadModel('Diagnosis');
+
+        $new_diagnosis_template_ids = [];
+        foreach ($new_diagnosis_list_ids as $new_diagnosis_list_id){
+
+            $diagnosis_template = $this->Diagnosis->find('all')
+                ->where([
+                    'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                    'Diagnosis.diagnosis_list_id' => $new_diagnosis_list_id,
+                ])->first();
+
+            if (empty($diagnosis_template)){
+
+                $diagnosis_template_array = [];
+                $diagnosis_template_array['diagnosis_list_id'] = $new_diagnosis_list_id;
+
+                $diagnosi = $this->Diagnosis->newEntity();
+                $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $diagnosis_template_array);
+                $diagnosi->doctor_id = $this->request->session()->read('Auth.User.id');
+                $diagnosi->status = 0;
+                $save = $this->Diagnosis->save($diagnosi);
+
+                $new_diagnosis_template_ids[] = $save->id;
+
+            }else{
+                $new_diagnosis_template_ids[] = $diagnosis_template->id;
+            }
+        }
+
+        return $new_diagnosis_template_ids;
     }
 
     public function removeBlankArray(){
@@ -562,7 +629,8 @@ class PrescriptionsController extends AppController
         $diagnosis_info = $this->Diagnosis->find('all', ['contain' => ['DiagnosisLists']])
             ->order(['Diagnosis.id' => 'desc'])
             ->where([
-                'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id')
+                'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                'Diagnosis.status' => 1
             ]);
 
         $diagnosis_list = [];
