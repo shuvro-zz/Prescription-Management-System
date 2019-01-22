@@ -269,3 +269,47 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
 
 
 
+2019-01-22 13:41:46 Notice: Notice (8): Undefined variable: profile_pic_name in [D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 595]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\UsersController::uploadProfilePicture() - APP/Controller\Admin\UsersController.php, line 595
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 559
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-22 13:41:50 Notice: Notice (8): Undefined variable: profile_pic_name in [D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 595]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\UsersController::uploadProfilePicture() - APP/Controller\Admin\UsersController.php, line 595
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 559
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-22 21:37:04 Notice: Notice (8): Array to string conversion in [D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php, line 557]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\UsersController::changeProfilePicture() - APP/Controller\Admin\UsersController.php, line 557
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+

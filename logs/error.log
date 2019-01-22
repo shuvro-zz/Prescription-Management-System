@@ -66,3 +66,501 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
 
 
 2019-01-17 20:23:33 Warning: Headers already sent in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\Debugger.php:822
+2019-01-22 12:33:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ControllerFactory.php on line 89
+Request URL: /js/jquery.min.map
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Filter\ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Filter\ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(414): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(78): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 12:35:50 Warning: Warning (2): array_merge(): Argument #2 is not an array in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 134]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+array_merge - [internal], line ??
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 134
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-22 12:35:50 Warning: Warning (2): array_unique() expects parameter 1 to be array, null given in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 134]
+Request URL: /admin/prescriptions/add
+Referer URL: http://localhost/pms/admin/prescriptions/add
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+array_unique - [internal], line ??
+App\Controller\Admin\PrescriptionsController::add() - APP/Controller\Admin\PrescriptionsController.php, line 134
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-01-22 12:51:51 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:03:28 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(62): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:08:03 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:09:36 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:12:56 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:20:15 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:20:34 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:20:42 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:20:57 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:21:14 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:21:39 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:23:23 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:36:58 Error: Fatal Error (1): Call to a member function adminError() on null in [D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 59]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-22 13:36:58 Error: [Cake\Error\FatalErrorException] Call to a member function adminError() on null in D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php on line 59
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'D:\\xampp_5\\htdo...', 59)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-22 13:39:14 Error: Fatal Error (1): Call to a member function adminError() on null in [D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 60]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-22 13:39:14 Error: [Cake\Error\FatalErrorException] Call to a member function adminError() on null in D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php on line 60
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'D:\\xampp_5\\htdo...', 60)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-22 13:40:15 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:40:54 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(62): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 13:44:12 Error: Fatal Error (1): Call to a member function set() on null in [D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 59]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-22 13:44:12 Error: [Cake\Error\FatalErrorException] Call to a member function set() on null in D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php on line 59
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'D:\\xampp_5\\htdo...', 59)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-22 13:44:59 Error: Fatal Error (1): Call to a member function adminWarning() on null in [D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 59]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-22 13:44:59 Error: [Cake\Error\FatalErrorException] Call to a member function adminWarning() on null in D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php on line 59
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'D:\\xampp_5\\htdo...', 59)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-22 14:19:12 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 15:18:27 Error: Fatal Error (1): Call to a member function adminWarning() on null in [D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php, line 60]
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-22 15:18:27 Error: [Cake\Error\FatalErrorException] Call to a member function adminWarning() on null in D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php on line 60
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(1, 'Call to a membe...', 'D:\\xampp_5\\htdo...', 60)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-22 21:22:27 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(590): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(559): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+
+2019-01-22 21:36:05 Error: [Cake\Controller\Exception\MissingComponentException] Component class SessionComponent could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\ComponentRegistry.php on line 99
+Exception Attributes: array (
+  'class' => 'SessionComponent',
+  'plugin' => NULL,
+)
+Request URL: /admin/users/change-profile-picture/1
+Referer URL: http://localhost/pms/admin/users/change-profile-picture/1
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(91): Cake\Controller\ComponentRegistry->_throwMissingClassError('Session', NULL)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Component.php(169): Cake\Core\ObjectRegistry->load('Session', Array)
+#2 D:\xampp_5\htdocs\pms\src\Controller\Component\FileHandlerComponent.php(59): Cake\Controller\Component->__get('Session')
+#3 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(596): App\Controller\Component\FileHandlerComponent->uploadImage(Array)
+#4 D:\xampp_5\htdocs\pms\src\Controller\Admin\UsersController.php(561): App\Controller\Admin\UsersController->uploadProfilePicture(Array)
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\UsersController->changeProfilePicture('1')
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\UsersController))
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+

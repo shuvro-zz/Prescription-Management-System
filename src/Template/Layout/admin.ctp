@@ -22,7 +22,7 @@
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
-		'admin_styles/css/style.css?v=1.1',
+		'admin_styles/css/style.css?v=1.2',
 		'admin_styles/css/tokenize2.css',
 		'lib/jquery.datetimepicker.min.css',
         'admin_styles/css/jquery.imageview.css',
@@ -31,7 +31,7 @@
 
 	// lib
 	echo $this->Html->script([
-		'lib/jquery.min.js',
+		'lib/jquery.min.js?v=1.2',
 		'lib/bootstrap.min.js',
 		'lib/bootstrap-select.js',
         'lib/jquery.validate.min.js',

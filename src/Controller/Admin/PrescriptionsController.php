@@ -57,7 +57,6 @@ class PrescriptionsController extends AppController
             ]
         ];
 
-
         $prescriptions = $this->paginate($query);
 
         if(count($prescriptions)==0){
@@ -130,7 +129,7 @@ class PrescriptionsController extends AppController
                 $new_diagnosis_template_ids = $this->saveNewDiagnosisList($this->request->data['new_diagnosis']);
             }
 
-            $diagnosis = isset($this->request->data['diagnosis'])?$this->request->data['diagnosis']:'';
+            $diagnosis = isset($this->request->data['diagnosis'])?$this->request->data['diagnosis']:[];
             $diagnosis = array_unique(array_merge($new_diagnosis_template_ids, $diagnosis));
             $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
 

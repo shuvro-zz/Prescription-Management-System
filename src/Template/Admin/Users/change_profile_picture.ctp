@@ -40,7 +40,7 @@ echo $this->Form->create('', [
                                         <div class="col-sm-9">
                                             <div class="form-row">
                                                 <div class="inputs">
-                                                    <img id="thumbnil"   src="" alt="image" class="hidden preview_profile_picture pull-left"/>
+                                                    <img id="thumbnil" src="" alt="image" class="hidden preview_profile_picture pull-left"/>
                                                 </div>
                                             </div>
                                         </div>

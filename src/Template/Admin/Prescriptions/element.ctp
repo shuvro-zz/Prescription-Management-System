@@ -281,7 +281,6 @@
 
         // Add Diagnosis field
         $("#addMoreDiagnosis").click(function(){
-
             $("#diagnosisWrap").append('<?php echo $new_diagnosis ?>');
         });
 
