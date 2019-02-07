@@ -340,9 +340,13 @@ button, .wizard-config .btn-continue{
     width: 173px;
 }
 
-.patient_info_section input, select{
+.padding_top_none{
+    padding-top: 0px!important;
+}
+
+.patient_info_section input, .patient_info_section select{
     height: 23px;
-    padding-top: 6px!important;
+    padding-top: 6px;
 }
 .medicines input{
     height: 28px;
@@ -367,7 +371,8 @@ button, .wizard-config .btn-continue{
 .last_visit_date{
     padding-left: 0px;
     padding-right: 0px;
-    margin-left: 15px;
+    margin-left: 20px;
+    width: 40%;
 }
 
 .patient_details .input.select .bootstrap-select.btn-group button,
@@ -605,6 +610,9 @@ label.error {
 .padding_right_remove{
     padding-right:0px ;
 }
+.padding_left_remove{
+    padding-left:0px ;
+}
 .leftside-navigation .navigation-item {
     padding-left: 20px;
 }
@@ -728,7 +736,7 @@ label.error {
     margin-bottom: 12px;
 }
 .medicines_default_prescription{
-    min-height: 440px;
+    min-height: 479px;
 }
 .medicines_default_prescription p{
     margin: 0px!important;

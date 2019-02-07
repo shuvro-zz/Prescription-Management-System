@@ -138,7 +138,7 @@ class UsersController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
 
-            if ($user['role_id'] != 2){
+            if ($user['role_id'] != 2){ // doctor
                 $user_phone = $this->Users->find('all')
                     ->where([
                         'Users.phone' => $this->request->data['phone'],

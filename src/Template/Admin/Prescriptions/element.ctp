@@ -34,7 +34,7 @@
                             <div class="inputs" id='patient_drop_down'>
                                 <?php
                                 if (strtolower($this->request->params['action']) == 'edit') {
-                                    echo $this->Form->input('user_id', ['options' => $users, 'default' => (isset($prescription->user['id'])) ? $prescription->user['id'] : '', 'empty' => 'Select', 'required' => true, 'class' => ' selectpicker', 'data-live-search' => true, 'label' => false, 'onchange' => 'getUserInfo(this.value)']);
+                                    echo $this->Form->input('user_id', ['options' => $users, 'default' => (isset($prescription->user['id'])) ? $prescription->user['id'] : '', 'empty' => 'Select', 'required' => true, 'class' => 'selectpicker', 'data-live-search' => true, 'label' => false, 'onchange' => 'getUserInfo(this.value)']);
                                 } else {
                                     if ($users != '') {
                                         echo $this->Form->input('user_id', ['options' => $users, 'default' => (isset($prescription->user['id'])) ? $prescription->user['id'] : '', 'required' => true, 'empty' => 'Select', 'class' => 'selectpicker', 'data-live-search' => true, 'onchange' => 'getUserInfo(this.value)', 'required' => true, 'label' => false]);
@@ -76,15 +76,26 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-2">
-                            <label style="margin-bottom: 0px">Age:</label>
-                        </div>
-
-                        <div class="col-sm-10">
-                            <div class="inputs age_width">
-                                <?php echo $this->Form->input('patients.age', ['class' => 'form-control reset_patient ',  'value' => (isset($prescription->user['age']))? $prescription->user['age']:'', 'label' => false, 'type' =>'text', 'id'=>'user-age']); ?>
+                            <div class="col-sm-2">
+                                <label style="margin-bottom: 0px">Age:</label>
                             </div>
-                        </div>
+
+                            <div class="col-sm-4 padding_right_remove">
+                                <div class="inputs age_width">
+                                    <?php echo $this->Form->input('patients.age', ['class' => 'form-control reset_patient ',  'value' => (isset($prescription->user['age']))? $prescription->user['age']:'', 'label' => false, 'type' =>'text', 'id'=>'user-age']); ?>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-1">
+                                <label style="margin-bottom: 0px">Sex:</label>
+                            </div>
+
+                            <div class="col-sm-5">
+                                <div class="inputs age_width">
+                                    <?php echo $this->Form->input('patients.sex', ['options' => ['Male' => 'Male', 'Female' => 'Female'], 'default' => (isset($prescription->user['sex'])) ? $prescription->user['sex'] : '', 'empty' => 'Select', 'required' => false, 'class' => 'padding_top_none form-control reset_patient', 'label' => false, 'id' => 'user-sex']); ?>
+                                </div>
+                            </div>
+
                     </div>
 
 
@@ -101,7 +112,7 @@
                         <div class="col-sm-5 padding_right_remove">
                             <label>BP:</label>
                         </div>
-                        <div class="col-sm-7 padding_left_remove">
+                        <div class="col-sm-7">
                             <div class="inputs bp_width">
                                 <?php echo $this->Form->input('blood_pressure', ['class' => 'form-control ', 'value' => (isset($prescription['blood_pressure']))? $prescription['blood_pressure']:'', 'label' => false, 'id' => 'blood-pressure', 'type' =>'text']);?>
                             </div>
@@ -112,7 +123,7 @@
                         <div class="col-sm-5 padding_right_remove">
                             <label>Temperature:</label>
                         </div>
-                        <div class="col-sm-7 padding_left_remove">
+                        <div class="col-sm-7">
                             <div class="inputs temp_width">
                                 <?php echo $this->Form->input('temperature', [ 'class'=>'form-control ', 'value' => (isset($prescription['temperature']))? $prescription['temperature']:'', 'label'=>false, ]);?>
                             </div>
@@ -147,9 +158,9 @@
         </div>
         <div class="col-sm-4">
             <div class="patient_info_section">
-                <h6>Doctors Notes</h6>
+                <h6>Other Instructions</h6>
                 <div class=" doctors_note single_block">
-                    <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'value' => (isset($prescription['doctores_notes']))? $prescription['doctores_notes']:'', 'id' => 'all_instructions', 'label' => false, 'type' =>'textarea']); ?>
+                    <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea']);?>
                 </div>
             </div>
         </div>
@@ -248,11 +259,23 @@
                 </div>
 
                 <div class="other_instruction_section">
-                    <div class="panel-heading pescription_panel_heading">Other Instructions</div>
-                    <div class="other_instruction">
-                        <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
-                        <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea', 'placeholder'=>'Type here...' ]);?>
+
+                    <div class="col-sm-6 padding_remove">
+                        <div class="panel-heading pescription_panel_heading">Cheif Complain</div>
+                        <div class="other_instruction">
+                            <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
+                            <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'value' => (isset($prescription['doctores_notes']))? $prescription['doctores_notes']:'', 'id' => 'cheif-complain', 'label' => false, 'type' =>'textarea']); ?>
+                        </div>
                     </div>
+
+                    <div class="col-sm-6 padding_right_remove">
+                        <div class="panel-heading pescription_panel_heading">On Examination</div>
+                        <div class="other_instruction">
+                            <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
+                            <?php echo $this->Form->input('on_examination', ['class' => 'form-control', 'value' => (isset($prescription['on_examination']))? $prescription['on_examination']:'', 'id' => 'on-examination', 'label' => false, 'type' =>'textarea']); ?>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -325,7 +348,8 @@
         var all_id = checkedVals.join("_");
 
         $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
-        $('#all_instructions').val('');
+        $('#cheif-complain').val('');
+        $('#on-examination').val('');
         $('#medicinesWrap').html('');
 
         if(all_id!=''){
@@ -368,7 +392,10 @@
                     $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
                 });
 
-                $('#all_instructions').val(response.all_instructions);
+                console.log(response);
+
+                $('#cheif-complain').val(response.all_instructions);
+                $('#on-examination').val(response.all_on_examination);
                 $('#loading').addClass('hide');
 
             },'json');

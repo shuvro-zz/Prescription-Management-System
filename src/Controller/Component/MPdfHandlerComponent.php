@@ -173,17 +173,28 @@ class MPdfHandlerComponent extends Component
                     </div>
                 </div>
     
-                <div class="doctors_note_default_prescription">
+                 <div class="doctors_note_default_prescription">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="col-sm-12">
+
+                            <div class="col-sm-6 padding_right_two_percent">
                                 <div class="single_section">
-                                    <h2>DOCTORS NOTE</h2>
-                                    <div class="info default_prescription_note">
-                                        <p>' . ucfirst($prescription->doctores_notes) . '</p>
+                                    <h2>Cheif Complain</h2>
+                                    <div class="info">
+                                        <p>' .ucfirst($prescription->doctores_notes) .'</p>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-sm-6">
+                                <div class="single_section">
+                                    <h2>On Examination</h2>
+                                    <div class="info">
+                                        <p>' .ucfirst($prescription->on_examination) .'</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

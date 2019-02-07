@@ -79,11 +79,18 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
+                    <label class="name">Sex<span aria-required="true"></span></label>
+                    <div class="inputs">
+                        <?php echo $this->Form->input('sex', ['options' => ['Male' => 'Male', 'Female' => 'Female'], 'default' => (isset($user->sex)) ? $user->sex : '', 'empty' => 'Select', 'required' => false, 'class' => 'form-control', 'label' => false]); ?>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-sm-6">
+                <div class="form-group">
                     <label class="name today_appointment">
                         <?php echo $this->Form->control('today_appointment', ['type' => 'checkbox', 'checked' => (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y/m/d') == date('Y/m/d'))? true:false):'', 'label'=>'Today\'s Appointment', 'class'=>'todays_appointment_box']); ?>
                     </label>
-
                 </div>
             </div>
         </div>

@@ -111,6 +111,7 @@ class DiagnosisController extends AppController
                 ])->first();
 
             if(empty($diagnosis_template)){
+
                 $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
 
                 $diagnosi->doctor_id = $this->request->session()->read('Auth.User.id');
@@ -277,15 +278,21 @@ class DiagnosisController extends AppController
 
             $tests = $this->prepareTests($diagnosis);
 
-            $instructions = array();
+            $instructions = array(); /*Cheif Complain*/
             foreach($diagnosis as $item){
                 $instructions[] = $item->instructions;
             }
 
+            $on_examination = array();
+            foreach($diagnosis as $item){
+               $on_examination[] = $item->on_examination;
+            }
+
             $all_instructions = implode(",\n",$instructions);
+            $all_on_examination = implode(",\n",$on_examination);
         }
 
-        echo json_encode(array('medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions));die;
+        echo json_encode(array('medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions, 'all_on_examination' => $all_on_examination));die;
     }
 
     function prepareMedicines($diagnosis,$prescription_id){

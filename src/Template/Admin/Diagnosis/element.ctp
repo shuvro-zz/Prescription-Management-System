@@ -8,7 +8,7 @@
 </div>
 <div class="col-sm-6">
     <div class="form-group">
-        <label class="name">Instructions<span class="" aria-required="true"></span></label>
+        <label class="name">Cheif Complain<span class="" aria-required="true"></span></label> <!--Instruction-->
         <div class="inputs">
             <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => $diagnosi->instructions, 'label' => false, 'type' =>'text']); ?>
         </div>
@@ -25,6 +25,15 @@
     <div class="form-group">
         <div class="inputs">
             <?php  echo $this->Form->input('tests._ids', ['options' => $tests, 'default' => isset($default_tests)?$default_tests:'', 'class' => 'tokenize-sortable-demo1 test']); ?>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="form-group">
+        <label class="name">On Examination<span class="" aria-required="true"></span></label> <!--Instruction-->
+        <div class="inputs">
+            <?php echo $this->Form->input('on_examination', ['class' => 'form-control', 'value' => $diagnosi->on_examination, 'label' => false, 'type' =>'text']); ?>
         </div>
     </div>
 </div>

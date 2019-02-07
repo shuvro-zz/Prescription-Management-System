@@ -88,6 +88,7 @@
                                         <p><b>Name :</b> <?= ucfirst($prescription->user->first_name) ?></p>
                                         <p><b>Weight :</b> <?= ucfirst($prescription->user->weight  ) ?></p>
                                         <p><b>Age :</b> <?= $prescription->user->age .' Years' ?></p>
+                                        <p><b>Sex :</b> <?= $prescription->user->sex ?></p>
                                         <p><b>Phone :</b> <?= $prescription->user->phone ?></p>
                                         <p><b>Address :</b> <?= ucfirst($prescription->user->address_line1) ?></p>
                                     </div>
@@ -165,14 +166,25 @@
                 <div class="doctors_note_default_prescription">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="col-sm-12">
+
+                            <div class="col-sm-6">
                                 <div class="single_section">
-                                    <h2>DOCTORS NOTE</h2>
+                                    <h2>Cheif Complain</h2>
                                     <div class="info">
                                         <p><?= ucfirst($prescription->doctores_notes) ?></p>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-sm-6">
+                                <div class="single_section">
+                                    <h2>On Examination</h2>
+                                    <div class="info">
+                                        <p><?= ucfirst($prescription->on_examination) ?></p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

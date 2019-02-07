@@ -136,6 +136,7 @@ function getUserInfo(user_id){
             $('#user-phone').val(response.user.phone);
             $('#user-email').val(response.user.email);
             $('#user-age').val(response.user.age);
+            $('#user-sex').val(response.user.sex);
             $('#user-address').val(response.user.address_line1);
             $('#user-weight').val(response.user.weight);
             $('#loading').addClass('hide');

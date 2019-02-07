@@ -564,3 +564,74 @@ Stack Trace:
 #10 {main}
 
 
+2019-01-29 23:21:44 Error: Fatal Error (4): syntax error, unexpected ';' in [D:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 295]
+Request URL: /admin/diagnosis/get-diagnosis/34/2
+Referer URL: http://localhost/pms/admin/prescriptions/edit/2
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-29 23:21:44 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';' in D:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php on line 295
+Request URL: /admin/diagnosis/get-diagnosis/34/2
+Referer URL: http://localhost/pms/admin/prescriptions/edit/2
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'D:\\xampp_5\\htdo...', 295)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-29 23:21:45 Error: Fatal Error (4): syntax error, unexpected ';' in [D:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 295]
+Request URL: /admin/diagnosis/get-diagnosis/42_34/2
+Referer URL: http://localhost/pms/admin/prescriptions/edit/2
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-29 23:21:45 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';' in D:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php on line 295
+Request URL: /admin/diagnosis/get-diagnosis/42_34/2
+Referer URL: http://localhost/pms/admin/prescriptions/edit/2
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'D:\\xampp_5\\htdo...', 295)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-01-29 23:22:00 Error: Fatal Error (4): syntax error, unexpected ';' in [D:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php, line 295]
+Request URL: /admin/diagnosis/get-diagnosis/34/2
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE\src\Error\BaseErrorHandler.php, line 223
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE\src\Error\BaseErrorHandler.php, line 105
+[main] - [internal], line ??
+
+
+
+2019-01-29 23:22:00 Error: [Cake\Error\FatalErrorException] syntax error, unexpected ';' in D:\xampp_5\htdocs\pms\src\Controller\Admin\DiagnosisController.php on line 295
+Request URL: /admin/diagnosis/get-diagnosis/34/2
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Error\BaseErrorHandler.php(105): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', 'D:\\xampp_5\\htdo...', 295)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2019-02-07 21:04:14 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::test() could not be found, or is not accessible. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php on line 430
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'test',
+  'prefix' => 'admin',
+  'plugin' => false,
+)
+Request URL: /admin/prescriptions/test/11
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#4 {main}
+
+

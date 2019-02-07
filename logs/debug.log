@@ -313,3 +313,25 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
 
 
 
+2019-02-07 13:50:44 Notice: Notice (8): Undefined variable: users in [D:\xampp_5\htdocs\pms\src\Template\Admin\Element\patient_element.ctp, line 84]
+Request URL: /admin/users/edit/163
+Referer URL: http://localhost/pms/admin/users
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+include - APP/Template\Admin\Element\patient_element.ctp, line 84
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::_renderElement() - CORE\src\View\View.php, line 1372
+Cake\View\View::element() - CORE\src\View\View.php, line 513
+include - APP/Template\Admin\Users\edit.ctp, line 36
+Cake\View\View::_evaluate() - CORE\src\View\View.php, line 1025
+Cake\View\View::_render() - CORE\src\View\View.php, line 986
+Cake\View\View::render() - CORE\src\View\View.php, line 610
+Cake\Controller\Controller::render() - CORE\src\Controller\Controller.php, line 623
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 125
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
