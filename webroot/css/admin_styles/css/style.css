@@ -809,6 +809,81 @@ form.example::after {
     height: 100px;
     margin-top: -1.5px;
 }
+
+/**********Final Prescription**********/
+.final_prescriptoin_logo img{
+    width: 100%;
+    height: 115px;
+    padding: 5px;
+}
+.final_prescriptoin_single_section{
+    border: 2px solid red;
+    margin-bottom: 10px;
+}
+.final_prescription_head h1{
+    margin: 0px;
+}
+.final_prescription_head p, .final_prescription_head h1{
+    line-height: 5px;
+    margin-top: 15px;
+}
+.final_prescription_single_info{
+    border-right: 2px solid red;
+}
+.margin_remove{
+    margin: 0px;
+}
+.final_prescription_date_phn_area .row {
+    border-bottom: 2px solid red;
+}
+
+.final_prescription_date_phn_area .row:last-child{
+    border-bottom: none;
+}
+.final_prescription_date_phn_area .level{
+    background: #eee;
+    text-align: right;
+    padding: 1px 0px;
+    padding-right: 5px;
+}
+.align_center{
+    text-align: center;
+}
+.header_bottom_final_prescription{
+    margin-top: 10px;
+}
+.header_bottom_final_prescription, .final_prescription_heading{
+    text-align: center;
+}
+.final_prescription_heading {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+    background: #eee;
+    border-bottom: 2px solid red;
+}
+.header_bottom_final_prescription p, .medicine_area_final_prescription p{
+    margin: 0px;
+}
+.final_prescription_cheif_complain_area{
+    min-height: 150px;
+}
+
+.final_prescription_cheif_complain {
+    padding-left: 15px;
+}
+.final_prescription_medicine_area{
+    min-height: 468px;
+}
+.final_prescription_medicine {
+    padding: 20px 3px 4px 40px;
+}
+.final_prescription_medicine_area{
+    background-image: url(../images/Prescription_Template_bg.png);
+    background-position: center;
+    background-size: 250px;
+    background-repeat: no-repeat;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

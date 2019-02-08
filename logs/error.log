@@ -635,3 +635,26 @@ Stack Trace:
 #4 {main}
 
 
+2019-02-08 22:29:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ControllerFactory.php on line 89
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/admin_styles/css/Prescription_Template_bg.png
+Referer URL: http://localhost/pms/css/admin_styles/css/style.css?v=1.2
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ControllerFactory.php(70): Cake\Http\ControllerFactory->missingController(Object(Cake\Http\ServerRequest))
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Filter\ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#2 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Filter\ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(414): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(78): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 {main}
+
+

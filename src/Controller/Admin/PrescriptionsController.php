@@ -94,7 +94,7 @@ class PrescriptionsController extends AppController
         $this->set('_serialize', ['prescription']);
 
         if ($this->request->session()->read('Auth.User')['prescription_template_id'] == 1){
-            $this->render('default');
+            $this->render('final');
         }
         elseif($this->request->session()->read('Auth.User')['prescription_template_id'] == 2){
             $this->render('standard');
