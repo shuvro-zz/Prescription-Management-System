@@ -169,7 +169,7 @@
 
                             <div class="col-sm-6">
                                 <div class="single_section">
-                                    <h2>Cheif Complain</h2>
+                                    <h2>Cheif Complain</h2> <!--doctors note-->
                                     <div class="info">
                                         <p><?= ucfirst($prescription->doctores_notes) ?></p>
                                     </div>

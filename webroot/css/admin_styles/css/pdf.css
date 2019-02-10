@@ -1,17 +1,25 @@
-
+.final_prescription h1{
+    font-size: 18px;
+    line-height: 5px;
+}
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+    float: left;
+}
 .col-sm-12 {
     width: 100%;
 }
 
-.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
-    float: left;
-}
-
-.col-sm-2{width: 16%;}
-.col-sm-3{width: 30%;}
+.col-sm-2{width: 17%;}
+.col-sm-3{width: 24.50%;}
 .col-sm-4{width: 33%;}
 .col-sm-6{width: 49%;}
-.col-sm-9{width: 68%;}
+.col-sm-9{width: 73.50%;}
+
+/*.final_prescription.col-sm-2{width: 17%;}
+.final_prescription.col-sm-3{width: 24.50%;}
+.final_prescription.col-sm-4{width: 33%;}
+.final_prescription.col-sm-6{width: 48.43%;}
+.final_prescription.col-sm-9{width: 73.5%;}*/
 
 .medicines_default_prescription {
     min-height: 456px;
@@ -19,8 +27,6 @@
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
     margin: 15px 0!important;
-    font-size: 16px;
-    line-height: 24px;
 }
 b, strong {
     font-weight: bold!important;
@@ -820,5 +826,101 @@ form.example::after {
     margin-top: -1.5px;
 }
 
+/**********Final Prescription**********/
 
+.final_prescription p{
+    color: #000;
+}
+.final_prescriptoin_single_section{
+    border: 2px solid red;
+}
+
+.final_prescription_head, .header_bottom_final_prescription,
+.medicine_area_final_prescription, .diagnosis_area_final_prescription{
+    margin-bottom: 10px;
+}
+.final_prescription_head h1{
+    margin: 0px;
+}
+.margin_bottom_10{
+    margin-bottom: 10px;
+}
+.final_prescription_head p, .final_prescription_head h1{
+    line-height: 1px;
+    margin: 12px 0px;
+}
+.final_prescription_single_info{
+    border-right: 2px solid red;
+}
+.margin_remove{
+    margin: 0px;
+}
+.final_prescription_date_phn_area .row {
+    border-bottom: 2px solid red;
+}
+.final_prescription_date_phn_area p{
+    margin-top: 16px;
+}
+.final_prescription_date_phn_area .row:last-child{
+    border-bottom: none;
+}
+.final_prescription_date_phn_area .level{
+    background: #eee;
+    text-align: right;
+    padding-right: 5px;
+}
+.align_center{
+    text-align: center;
+}
+.header_bottom_final_prescription{
+
+}
+.header_bottom_final_prescription, .final_prescription_heading{
+    text-align: center;
+}
+.final_prescription_heading {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+    background: #eee;
+    border-bottom: 2px solid red;
+}
+.footer_final_prescription{
+    padding: 0px 15px;
+}
+.header_bottom_final_prescription p, .medicine_area_final_prescription p,
+.diagnosis_area_final_prescription p, .footer_final_prescription p{
+    margin: 0px;
+}
+.final_prescription_cheif_complain_area{
+    height: 150px;
+}
+.final_prescription_cheif_complain {
+    padding: 0px 15px;
+}
+.final_prescription_medicine_area{
+    height: 470px;
+}
+.final_prescription_medicine {
+    padding: 20px 3px 4px 40px;
+}
+.final_prescription_medicine_area{
+    /*background-image: url('../images/Prescription_Template_bg.png');*/
+    background-position: center;
+    background-size: 600px;
+    background-repeat:no-repeat;
+}
+.footer_top_final_prescription{
+    text-align: center;
+}
+.final_prescription_single_signature {
+    padding: 20px 0px;
+}
+.final_prescriptoin_doctor_info{
+    padding: 0px 10px;
+    margin-top: 3px;
+}
+.final_prescription_border_bottom_none{
+    border-bottom: none!important;
+}
 

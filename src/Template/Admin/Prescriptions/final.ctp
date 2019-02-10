@@ -46,7 +46,9 @@
         </div>
 
         <div class="cu_con_outer" id="printable_area">
-            <div class="printableArea cu_con_inner_view2">
+            <div class="printableArea cu_con_inner_view2 final_prescription">
+
+                <!--Header-->
                 <div class="final_prescription_head final_prescriptoin_single_section">
                     <div class="row margin_remove">
 
@@ -58,23 +60,27 @@
 
                         <div class="col-sm-6 final_prescription_single_info">
                             <div class="final_prescriptoin_doctor_info">
-                                <h1>MD Rezaul Kobir</h1>
-                                <p>MBBS,M,D(Cardiology) BCS (Health)</p>
-                                <p>Consaltent Cardiologist</p>
-                                <p>Rajshahi Medical College, Rajshahi</p>
-                                <p>Chamber - 154, Rajshahi Medical College</p>
+                                <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
+                                <p><?php echo ($user['educational_qualification']) ?></p>
+                                <?php if($user['specialist']){?>
+                                    <p> <?php echo ($user['specialist']) ?> </p>
+                                <?php } ?>
+                                <?php if($user['clinic_name']){?>
+                                    <p> <?php echo ($user['clinic_name']) ?> </p>
+                                <?php } ?>
+                                <p>Chamber - <?php echo $user['cember_name'] ." ".$user['cember_address'] ?></p>
                             </div>
                         </div>
 
                         <div class="col-sm-4 padding_remove final_prescription_date_phn_area">
                             <div class="row margin_remove">
                                 <div class="col-sm-6 padding_remove final_prescription_single_info level"><p>Date</p></div>
-                                <div class="col-sm-6 padding_remove align_center"><p>12/12/2019</p></div>
+                                <div class="col-sm-6 padding_remove align_center"><p><?= $prescription->created->format('d F Y'); ?></p></div>
                             </div>
 
                             <div class="row margin_remove">
                                 <div class="col-sm-6 padding_remove final_prescription_single_info level"><p>Phone</p></div>
-                                <div class="col-sm-6 padding_remove align_center"><p>12/12/2019</p></div>
+                                <div class="col-sm-6 padding_remove align_center"> <p> <?php echo ($user['phone']) ?> </p></div>
                             </div>
 
                             <div class="row margin_remove">
@@ -86,13 +92,14 @@
                     </div>
                 </div>
 
+                <!--Header bottom-->
                 <div class="header_bottom_final_prescription">
                     <div class="row margin_remove">
 
                         <div class="col-sm-3 padding_left_remove">
                             <div class="final_prescriptoin_single_section">
                                 <p class="final_prescription_heading">Name</p>
-                                <p>Abdullah Al Mamun</p>
+                                <p><?= ucfirst($prescription->user->first_name) ?></p>
                             </div>
                         </div>
 
@@ -100,67 +107,74 @@
                             <div class="col-sm-2 padding_remove">
                                 <div class="final_prescription_single_info">
                                     <p class="final_prescription_heading">Age</p>
-                                    <p>22</p>
+                                    <p><?= $prescription->user->age .' Years' ?></p>
                                 </div>
                             </div>
 
                             <div class="col-sm-3 padding_remove">
                                 <div class="final_prescription_single_info">
                                     <p class="final_prescription_heading">Sex</p>
-                                    <p>Male</p>
+                                    <p><?= $prescription->user->sex ?></p>
                                 </div>
                             </div>
 
                             <div class="col-sm-3 padding_remove">
                                 <div class="final_prescription_single_info">
                                     <p class="final_prescription_heading">Weight</p>
-                                    <p>55k</p>
+                                    <p><?= ucfirst($prescription->user->weight  ) ?></p>
                                 </div>
                             </div>
 
                             <div class="col-sm-2 padding_remove">
                                 <div class="final_prescription_single_info">
                                     <p class="final_prescription_heading">BP</p>
-                                    <p>Normal</p>
+                                    <p><?= ucfirst($prescription->blood_pressure) ?></p>
                                 </div>
                             </div>
 
                             <div class="col-sm-2 padding_remove">
                                 <p class="final_prescription_heading">Temp</p>
-                                <p>F98</p>
+                                <p><?= $prescription->temperature ?></p>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
+                <!--Medicines area-->
                 <div class="medicine_area_final_prescription">
                     <div class="row margin_remove">
 
                         <div class="col-sm-3 padding_left_remove">
-                            <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area">
-                                <p class="final_prescription_heading">Cheif Complain</p>
+                            <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area margin_bottom_10">
+                                <p class="final_prescription_heading">Cheif Complain</p> <!--doctors note-->
 
                                 <div class="final_prescription_cheif_complain">
-                                    <p>1. Abdominal Pain</p>
+                                    <p><?= ucfirst($prescription->doctores_notes) ?></p>
+                                </div>
+
+                            </div>
+
+                            <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area margin_bottom_10">
+                                <p class="final_prescription_heading">On Examination</p>
+
+                                <div class="final_prescription_cheif_complain">
+                                    <p><?= ucfirst($prescription->on_examination) ?></p>
                                 </div>
 
                             </div>
 
                             <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area">
-                                <p class="final_prescription_heading">Cheif Complain</p>
+                                <p class="final_prescription_heading">Advice/Investigation</p>
 
                                 <div class="final_prescription_cheif_complain">
-                                    <p>1. Abdominal Pain</p>
-                                </div>
-
-                            </div>
-
-                            <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area">
-                                <p class="final_prescription_heading">Cheif Complain</p>
-
-                                <div class="final_prescription_cheif_complain">
-                                    <p>1. Abdominal Pain</p>
+                                    <?php
+                                        $i = 1;
+                                        foreach ($prescription->tests as $test){
+                                            echo "<p>" .$i. ". ".ucfirst($test->name)."</p>";
+                                            $i++;
+                                        }
+                                    ?>
                                 </div>
 
                             </div>
@@ -170,13 +184,13 @@
                             <div class="final_prescriptoin_single_section final_prescription_medicine_area">
                                 <p class="final_prescription_heading">Rx(Medicines)</p>
                                 <div class="final_prescription_medicine">
-                                    <p>1. Abdominal Pain</p>
-                                    <p>1. Abdominal Pain</p>
-                                    <p>1. Abdominal Pain</p>
-                                    <p>1. Abdominal Pain</p>
-                                    <p>1. Abdominal Pain</p>
-                                    <p>1. Abdominal Pain</p>
-                                    <p>1. Abdominal Pain</p>
+                                    <?php
+                                        $i = 1;
+                                        foreach ($prescription->medicines as $medicine){
+                                            echo '<p>'. $i. ". ". ucfirst($medicine->name).(($medicine->_joinData->rule)? ' : ( '.$medicine->_joinData->rule.' )': "").'</p>';
+                                            $i++;
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -184,14 +198,89 @@
                     </div>
                 </div>
 
-                <div class="doctors_note_default_prescription">
-                    <div class="row">
+                <!--Diagnosis Area-->
+                <div class="diagnosis_area_final_prescription">
+                    <div class="row margin_remove">
+
+                        <div class="col-sm-3 padding_left_remove">
+                            <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area">
+                                <p class="final_prescription_heading">Diagnosis</p>
+
+                                <div class="final_prescription_cheif_complain">
+                                    <?php
+                                        $i = 1;
+                                        foreach($prescription->diagnosis as $diagnosis ) {
+                                            echo "<p>".$i.". ".ucfirst($diagnosis['diagnosis_list']['name'])."</p>";
+                                            $i++;
+                                        }
+                                    ?>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9 padding_remove">
+                            <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area">
+                                <p class="final_prescription_heading">Other Instructions</p>
+                                <div class="final_prescription_cheif_complain">
+                                    <p><?= ucfirst($prescription->other_instructions) ?></p>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
 
-                <div class="final_prescription_footer_default_prescription">
-                    <div class="row">
+                <!--Footer top area-->
+                <div class="footer_top_final_prescription diagnosis_area_final_prescription">
+                    <div class="row margin_remove">
+
+                        <div class="col-sm-3 padding_left_remove">
+                            <div class="final_prescriptoin_single_section final_prescription_single_signature">
+                                <p>Software Promotion</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 final_prescriptoin_single_section padding_remove">
+
+                            <div class="col-sm-3 padding_remove">
+                                <div class="final_prescription_single_signature final_prescription_single_info">
+                                    <p>Signature</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-9 padding_remove">
+                                <div class="final_prescription_single_signature">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Footer area-->
+                <div class="footer_final_prescription final_prescriptoin_single_section">
+                    <div class="row margin_remove">
+
+                        <div class="col-sm-6 padding_remove">
+                            <div class="">
+                                <p><b>Address: </b> <?php echo ($user['address_line1']).' '.($user['address_line2']) ?></p>
+                                <p><b>For Booking Call: </b> <?php echo ($user['phone']) ?></p>
+                                <p>Must make booking before visiting the doctor.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-2"></div>
+
+                        <div class="col-md-4 padding_remove">
+                            <div class="">
+                                <p><b>Visiting Time: </b> <?php echo ($user['visiting_time']) ?></p>
+                                <p><b>Off Day: </b> <?php echo ($user['off_day']) ?></p>
+                                <p><b>Website: </b> <?php echo ($user['website']) ?></p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

@@ -151,11 +151,13 @@ class UsersController extends AppController
             if(empty($user_phone)){
                 $user = $this->Users->patchEntity($user, $this->request->data);
 
-                if ($this->request->data['today_appointment']){
-                    $user->appointment_date = date('Y/m/d');
-                    $user->is_visited = 0;
-                }else{
-                    $user->appointment_date = null;
+                if ($user['role_id'] != 2){ // doctor
+                    if ($this->request->data['today_appointment']){
+                        $user->appointment_date = date('Y/m/d');
+                        $user->is_visited = 0;
+                    }else{
+                        $user->appointment_date = null;
+                    }
                 }
 
                 if ($this->Users->save($user)) {

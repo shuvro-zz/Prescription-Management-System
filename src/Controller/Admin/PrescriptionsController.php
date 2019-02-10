@@ -20,7 +20,7 @@ class PrescriptionsController extends AppController
         $this->Auth->allow(['getOnlinePrescriptions', 'getLocalPrescriptions']);
     }
 
-    public $components = ['EmailHandler','Common', 'MPdfHandler'];
+    public $components = ['EmailHandler','Common', 'MPdfHandler', 'MPdfHandler_Default'];
 
     /**
      * Index method
