@@ -265,7 +265,7 @@
                         <div class="col-sm-6 padding_remove">
                             <div class="">
                                 <p><b>Address: </b> <?php echo ($user['address_line1']).' '.($user['address_line2']) ?></p>
-                                <p><b>For Booking Call: </b> <?php echo ($user['phone']) ?></p>
+                                <p><b>Call For Booking: </b> <?php echo ($user['phone']) ?></p>
                                 <p>Must make booking before visiting the doctor.</p>
                             </div>
                         </div>

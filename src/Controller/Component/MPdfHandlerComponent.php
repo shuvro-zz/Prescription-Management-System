@@ -17,6 +17,7 @@ class MPdfHandlerComponent extends Component
         $mpdf = new mpdf();
 
         $stylesheet = file_get_contents(WWW_ROOT . '/css/admin_styles/css/pdf.css');
+        $mpdf->falseBoldWeight = 10;
         $mpdf->WriteHTML($stylesheet, \Mpdf\HTMLParserMode::HEADER_CSS);
 
         $html = $this->preparePdfHtml($prescription, $latest_prescription);
@@ -292,9 +293,9 @@ class MPdfHandlerComponent extends Component
     
                             <div class="col-sm-6 padding_remove">
                                 <div class="">
-                                    <p><b>Address: </b>' .($user['address_line1']).' '.($user['address_line2']). '</p>
-                                    <p><b>For Booking Call: </b>' .($user['phone']) .'</p>
-                                    <p>Must make booking before visiting the doctor.</p>
+                                    <p style="font-family: sans-serif"><b>Address: </b>' .($user['address_line1']).' '.($user['address_line2']). '</p>
+                                    <p style="font-family: sans-serif"><b>Call For Booking: </b>' .($user['phone']) .'</p>
+                                    <p style="font-family: sans-serif">Must make booking before visiting the doctor.</p>
                                 </div>
                             </div>
                             
@@ -302,9 +303,9 @@ class MPdfHandlerComponent extends Component
         
                             <div class="col-md-4 padding_remove">
                                 <div class="">
-                                    <p><b>Visiting Time: </b>' .($user['visiting_time']). '</p>
-                                    <p><b>Off Day: </b>' .($user['off_day']). '</p>
-                                    <p><b>Website: </b>' .($user['website']) .'</p>
+                                    <p style="font-family: sans-serif"><b>Visiting Time: </b>' .($user['visiting_time']). '</p>
+                                    <p style="font-family: sans-serif"><b>Off Day: </b>' .($user['off_day']). '</p>
+                                    <p style="font-family: sans-serif"><b>Website: </b>' .($user['website']) .'</p>
                                 </div>
                             </div>
     

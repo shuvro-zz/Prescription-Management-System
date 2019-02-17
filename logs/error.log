@@ -18951,3 +18951,28 @@ Stack Trace:
 #10 {main}
 
 
+2019-02-17 22:22:24 Error: [Cake\Datasource\Exception\RecordNotFoundException] Record not found in table "prescriptions" in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php on line 417
+Request URL: /admin/prescriptions/edit/9
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php(1432): Cake\ORM\Query->firstOrFail()
+#1 D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(275): Cake\ORM\Table->get('9', Array)
+#2 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\PrescriptionsController->edit('9')
+#3 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#4 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#5 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 {main}
+
+
+2019-02-17 22:22:36 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "prescriptions" with primary key [NULL] in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\ORM\Table.php on line 1405
+Request URL: /admin/prescriptions/edit/
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php(275): Cake\ORM\Table->get(NULL, Array)
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php(440): App\Controller\Admin\PrescriptionsController->edit()
+#2 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#3 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#4 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#6 {main}
+
+
