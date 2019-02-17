@@ -147,7 +147,7 @@ function getUserInfo(user_id){
 }
 
 function saveAndPrint(){
-    $('#is-print').val(1);
+    $('#isPrint').val(1);
     $( "#prescription-form" ).submit();
 }
 function setzIndex(e){

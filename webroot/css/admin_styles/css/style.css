@@ -806,7 +806,7 @@ form.example::after {
 }
 .logo img {
     width: 100%;
-    height: 100px;
+    height: 60px;
     margin-top: -1.5px;
 }
 
@@ -834,8 +834,16 @@ form.example::after {
     margin-bottom: 10px;
 }
 .final_prescription_head p, .final_prescription_head h1{
-    line-height: 5px;
-    margin-top: 15px;
+    line-height: 18px;
+    margin: 0px!important;
+}
+.final_prescription_date_phn_area p{
+    padding: 8px 0px;
+    line-height: 19px;
+}
+.final_prescriptoin_doctor_info{
+    height: 115px;
+    padding: 5px;
 }
 .final_prescription_single_info{
     border-right: 2px solid red;
@@ -897,7 +905,6 @@ form.example::after {
 .final_prescription_medicine_area{
     background-image: url(../images/Prescription_Template_bg.png);
     background-position: center;
-    background-size: 250px;
     background-repeat: no-repeat;
 }
 .footer_top_final_prescription{

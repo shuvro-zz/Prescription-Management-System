@@ -75,7 +75,7 @@ class MPdfHandlerComponent extends Component
                                 </div>
                             </div>
     
-                            <div class="col-sm-6 final_prescription_single_info">
+                            <div class="col-sm-6 final_prescription_single_info padding_remove">
                                 <div class="final_prescriptoin_doctor_info">
                                     
                                     <h1>' .($user['first_name']).' '.($user['last_name']) . '</h1>

@@ -58,8 +58,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6 final_prescription_single_info">
-                            <div class="final_prescriptoin_doctor_info">
+                        <div class="col-sm-6 final_prescription_single_info final_prescriptoin_doctor_info padding_remove">
                                 <h1><?php echo ($user['first_name']).' '.($user['last_name']) ?></h1>
                                 <p><?php echo ($user['educational_qualification']) ?></p>
                                 <?php if($user['specialist']){?>
@@ -69,7 +68,6 @@
                                     <p> <?php echo ($user['clinic_name']) ?> </p>
                                 <?php } ?>
                                 <p>Chamber - <?php echo $user['cember_name'] ." ".$user['cember_address'] ?></p>
-                            </div>
                         </div>
 
                         <div class="col-sm-4 padding_remove final_prescription_date_phn_area">

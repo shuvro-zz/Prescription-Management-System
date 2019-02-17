@@ -156,14 +156,25 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+
+        <div class="col-sm-2">
             <div class="patient_info_section">
-                <h6>Other Instructions</h6>
+                <h6>Cheif Complain</h6>
                 <div class=" doctors_note single_block">
-                    <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea']);?>
+                    <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'value' => (isset($prescription['doctores_notes']))? $prescription['doctores_notes']:'', 'id' => 'cheif-complain', 'label' => false, 'type' =>'textarea']); ?>
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-2">
+            <div class="patient_info_section">
+                <h6>On Examination</h6>
+                <div class=" doctors_note single_block">
+                    <?php echo $this->Form->input('on_examination', ['class' => 'form-control', 'value' => (isset($prescription['on_examination']))? $prescription['on_examination']:'', 'id' => 'on-examination', 'label' => false, 'type' =>'textarea']); ?>
+                </div>
+            </div>
+        </div>
+
         <div class="col-sm-2">
             <div class="patient_info_section">
                 <h6>Prescriptions</h6>
@@ -260,19 +271,11 @@
 
                 <div class="other_instruction_section">
 
-                    <div class="col-sm-6 padding_remove">
-                        <div class="panel-heading pescription_panel_heading">Cheif Complain</div>
+                    <div class="col-sm-12 padding_remove">
+                        <div class="panel-heading pescription_panel_heading">Other Instructions</div>
                         <div class="other_instruction">
-                            <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
-                            <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'value' => (isset($prescription['doctores_notes']))? $prescription['doctores_notes']:'', 'id' => 'cheif-complain', 'label' => false, 'type' =>'textarea']); ?>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 padding_right_remove">
-                        <div class="panel-heading pescription_panel_heading">On Examination</div>
-                        <div class="other_instruction">
-                            <?php echo $this->Form->input('is_print', ['id'=> 'is-print', 'type' => 'hidden', 'value' => 0]); ?>
-                            <?php echo $this->Form->input('on_examination', ['class' => 'form-control', 'value' => (isset($prescription['on_examination']))? $prescription['on_examination']:'', 'id' => 'on-examination', 'label' => false, 'type' =>'textarea']); ?>
+                            <?php echo $this->Form->input('is_print', ['id'=> 'isPrint', 'type' => 'hidden', 'value' => 0]); ?>
+                            <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea']);?>
                         </div>
                     </div>
 

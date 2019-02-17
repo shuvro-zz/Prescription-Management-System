@@ -419,3 +419,31 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
 
 
 
+2019-02-12 20:52:17 Notice: Notice (8): Array to string conversion in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 278]
+Request URL: /admin/prescriptions/edit/10
+Referer URL: http://localhost/pms/admin/prescriptions/edit/10
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 278
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
+2019-02-12 21:03:07 Notice: Notice (8): Trying to get property of non-object in [D:\xampp_5\htdocs\pms\src\Controller\Admin\PrescriptionsController.php, line 278]
+Request URL: /admin/prescriptions/edit/10
+Referer URL: http://localhost/pms/admin/prescriptions/edit/10
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 153
+App\Controller\Admin\PrescriptionsController::edit() - APP/Controller\Admin\PrescriptionsController.php, line 278
+Cake\Controller\Controller::invokeAction() - CORE\src\Controller\Controller.php, line 440
+Cake\Http\ActionDispatcher::_invoke() - CORE\src\Http\ActionDispatcher.php, line 119
+Cake\Http\ActionDispatcher::dispatch() - CORE\src\Http\ActionDispatcher.php, line 93
+Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
+[main] - ROOT\webroot\index.php, line 37
+
+
+
