@@ -805,9 +805,8 @@ form.example::after {
     display: table;
 }
 .logo img {
-    width: 100%;
+    width: 175px;
     height: 60px;
-    margin-top: -1.5px;
 }
 
 /**********Final Prescription**********/
