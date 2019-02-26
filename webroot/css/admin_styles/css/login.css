@@ -165,3 +165,16 @@ a{
 .registration:hover,.reset_password:hover{
     color: #3cc2bb;
 }
+.reg_btn{
+    background: #d8d4d4;
+    padding: 5px 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: #7d7d7d;
+    transition: .2s;
+}
+
+.reg_btn:hover{
+    background: #dedede;
+
+}

@@ -808,6 +808,12 @@ form.example::after {
     width: 175px;
     height: 60px;
 }
+.library .table-part{
+    height: calc(100vh - 167px)!important;
+}
+.library .table-responsive{
+    overflow-x: inherit!important;
+}
 
 /**********Final Prescription**********/
 .final_prescription p{

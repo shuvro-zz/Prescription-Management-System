@@ -24,7 +24,7 @@
 		<?php echo $this->Form->end() ?>
 
         <div class="login_bottom">
-            <a class="registration" style="float:left" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'registration' )); ?>" title="Registration">Registration</a>
+            <a class="reg_btn" style="float:left" target="_blank" href="https://healthtechbd.com/page1.html" title="Registration">Registration</a>
             <?php if (Configure::read('email_send_allow')) { ?>
                 <a class="reset_password" style="float:right" href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'forgotPassword' )); ?>" title="Reset Password">Forgot Password</a>
             <?php } ?>
