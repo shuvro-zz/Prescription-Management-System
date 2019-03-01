@@ -166,15 +166,15 @@ a{
     color: #3cc2bb;
 }
 .reg_btn{
-    background: #d8d4d4;
-    padding: 5px 15px;
+    background: #f3f2f2;
+    padding: 6px 22px;
     border: 1px solid #eee;
     border-radius: 4px;
-    color: #7d7d7d;
+    color: #000;
     transition: .2s;
 }
 
 .reg_btn:hover{
-    background: #dedede;
+    background: #ececec;
 
 }

@@ -159,7 +159,7 @@
 
         <div class="col-sm-2">
             <div class="patient_info_section">
-                <h6>Cheif Complain</h6>
+                <h6>Chief Complain</h6>
                 <div class=" doctors_note single_block">
                     <?php echo $this->Form->input('doctores_notes', ['class' => 'form-control', 'value' => (isset($prescription['doctores_notes']))? $prescription['doctores_notes']:'', 'id' => 'cheif-complain', 'label' => false, 'type' =>'textarea']); ?>
                 </div>

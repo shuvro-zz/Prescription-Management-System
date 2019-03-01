@@ -433,6 +433,7 @@ button, .wizard-config .btn-continue{
 .pescription_panel_heading{
     font-weight: bold;
     padding: 0px 2px;
+    color: #000;
 }
 .add_prescription_heading{
     background: #EBEBEB!important;

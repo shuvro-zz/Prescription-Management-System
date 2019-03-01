@@ -145,7 +145,7 @@
 
                         <div class="col-sm-3 padding_left_remove">
                             <div class="final_prescriptoin_single_section final_prescription_cheif_complain_area margin_bottom_10">
-                                <p class="final_prescription_heading">Cheif Complain</p> <!--doctors note-->
+                                <p class="final_prescription_heading">Chief Complain</p> <!--doctors note-->
 
                                 <div class="final_prescription_cheif_complain">
                                     <p><?= ucfirst($prescription->doctores_notes) ?></p>

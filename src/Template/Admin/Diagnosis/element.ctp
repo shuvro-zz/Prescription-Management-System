@@ -8,9 +8,9 @@
 </div>
 <div class="col-sm-6">
     <div class="form-group">
-        <label class="name">Cheif Complain<span class="" aria-required="true"></span></label> <!--Instruction-->
+        <label class="name">Chief Complain<span class="" aria-required="true"></span></label> <!--Instruction-->
         <div class="inputs">
-            <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => $diagnosi->instructions, 'label' => false, 'type' =>'text']); ?>
+            <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => isset($diagnosi->instructions)?$diagnosi->instructions:'', 'label' => false, 'type' =>'text']); ?>
         </div>
     </div>
 </div>

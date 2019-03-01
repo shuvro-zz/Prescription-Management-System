@@ -278,7 +278,7 @@ class DiagnosisController extends AppController
 
             $tests = $this->prepareTests($diagnosis);
 
-            $instructions = array(); /*Cheif Complain*/
+            $instructions = array(); /*Chief Complain*/
             foreach($diagnosis as $item){
                 $instructions[] = $item->instructions;
             }

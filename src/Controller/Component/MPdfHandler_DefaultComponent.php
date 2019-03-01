@@ -179,7 +179,7 @@ class MPdfHandler_DefaultComponent extends Component
 
                             <div class="col-sm-6 padding_right_two_percent">
                                 <div class="single_section">
-                                    <h2>Cheif Complain</h2>
+                                    <h2>Chief Complain</h2>
                                     <div class="info">
                                         <p>' .ucfirst($prescription->doctores_notes) .'</p>
                                     </div>
