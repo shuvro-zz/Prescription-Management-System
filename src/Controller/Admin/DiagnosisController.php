@@ -278,21 +278,33 @@ class DiagnosisController extends AppController
 
             $tests = $this->prepareTests($diagnosis);
 
-            $instructions = array(); /*Chief Complain*/
+            $chief_complain = array();
             foreach($diagnosis as $item){
-                $instructions[] = $item->instructions;
+                if ($item->chief_complain){
+                    $chief_complain[] = $item->chief_complain;
+                }
             }
 
             $on_examination = array();
             foreach($diagnosis as $item){
-               $on_examination[] = $item->on_examination;
+                if ($item->on_examination){
+                    $on_examination[] = $item->on_examination;
+                }
             }
 
-            $all_instructions = implode(",\n",$instructions);
+            $instructions = array();
+            foreach($diagnosis as $item){
+                if ($item->instructions){
+                    $instructions[] = $item->instructions;
+                }
+            }
+
+            $all_chief_complain = implode(",\n",$chief_complain);
             $all_on_examination = implode(",\n",$on_examination);
+            $all_instructions = implode(",\n",$instructions);
         }
 
-        echo json_encode(array('medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions, 'all_on_examination' => $all_on_examination));die;
+        echo json_encode(array('all_chief_complain' => $all_chief_complain, 'medicines' => $medicines, 'tests' => $tests, 'all_instructions' => $all_instructions, 'all_on_examination' => $all_on_examination));die;
     }
 
     function prepareMedicines($diagnosis,$prescription_id){

@@ -2,7 +2,7 @@
 <?= $this->Form->create($prescription,['id' => 'prescription-form']) ?>
 <section class="workspace work_section">
     <div class="workspace-body work_body_section">
-        <div class="main-container main_container_section">
+        <div class="main_container_section">
             <div class="content prescription_content">
                 <div class="col-md-12">
                     <?php echo $this->Flash->render('admin_success'); ?>

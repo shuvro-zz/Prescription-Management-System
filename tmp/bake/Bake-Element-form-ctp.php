@@ -95,7 +95,7 @@ if (isset($modelObject) && $modelObject->behaviors()->has('Tree')) {
 
     <footer class="footer ">
         <div class="flex-container">
-            <a href="<CakePHPBakeOpenTagphp echo $this->Url->build(array('action' => 'index' )) CakePHPBakeCloseTag>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+            <a href="<CakePHPBakeOpenTagphp echo $this->Url->build(array('action' => 'index' )) CakePHPBakeCloseTag>" class="btn btn-default  btn-cancel" >Cancel</a>
             <div class="flex-item">
                 <CakePHPBakeOpenTag= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) CakePHPBakeCloseTag>
             </div>

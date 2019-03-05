@@ -2,7 +2,7 @@
 <?= $this->Form->create('',['id' => 'prescription-form']); ?>
 <section class="workspace work_section">
     <div class="workspace-body work_body_section">
-        <div class="main-container main_container_section">
+        <div class="main_container_section">
             <div class="content prescription_content">
                 <div class="page-wrap">
                     <div class="col-sm-12 col-md-12">

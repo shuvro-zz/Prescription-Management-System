@@ -49,7 +49,7 @@ class TestsController extends AppController
         $tests = $this->paginate($query);
 
         if(count($tests)==0){
-            $this->Flash->adminWarning(__('No tests found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
+            $this->Flash->adminWarning(__('No examinations found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
         }
 
         $this->set(compact('tests', 'search'));
@@ -84,10 +84,10 @@ class TestsController extends AppController
         if ($this->request->is('post')) {
             $test = $this->Tests->patchEntity($test, $this->request->data);
             if ($this->Tests->save($test)) {
-                $success_message = __('The test has been saved.');
+                $success_message = __('The examination has been saved.');
                 $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
             } else {
-                $error_message = __('The test could not be save. Please, try again.');
+                $error_message = __('The examination could not be save. Please, try again.');
                 $this->Flash->adminError($error_message, ['key' => 'admin_error']);
             }
             return $this->redirect(['action' => 'index']);
@@ -119,15 +119,15 @@ class TestsController extends AppController
             if(empty($test_exit)){
                 $test = $this->Tests->patchEntity($test, $this->request->data);
                 if ($this->Tests->save($test)) {
-                    $success_message = __('The test has been edited.');
+                    $success_message = __('The examination has been edited.');
                     $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                 } else {
-                    $error_message = __('The test could not be edit. Please, try again.');
+                    $error_message = __('The examination could not be edit. Please, try again.');
                     $this->Flash->adminError($error_message, ['key' => 'admin_error']);
                 }
                 return $this->redirect(['action' => 'index']);
             }else{
-                $this->Flash->adminWarning(__('The test already exit'), ['key' => 'admin_warning']);
+                $this->Flash->adminWarning(__('The examination already exit'), ['key' => 'admin_warning']);
                 return $this->redirect(['action' => 'edit/'.$id]);
             }
         }
@@ -147,10 +147,10 @@ class TestsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $test = $this->Tests->get($id);
         if ($this->Tests->delete($test)) {
-            $success_message = __('The test has been deleted.');
+            $success_message = __('The examination has been deleted.');
             $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
         } else {
-            $error_message = __('The test could not be delete. Please, try again.');
+            $error_message = __('The examination could not be delete. Please, try again.');
             $this->Flash->adminError($error_message, ['key' => 'admin_error']);
         }
         return $this->redirect(['action' => 'index']);
@@ -218,7 +218,7 @@ class TestsController extends AppController
                         /*$file = new File(WWW_ROOT.DS. 'uploads'.DS. 'tests' .DS. $import_test);
                         $file->delete();*/
 
-                        $success_message = __('Tests import successfully.');
+                        $success_message = __('Examinations import successfully.');
                         $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                     }else {
                         $error_message = __('There was a problem. Please, try again.');

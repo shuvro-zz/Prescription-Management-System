@@ -6,7 +6,7 @@
                 <?php echo $this->Html->link(
                     '<span class="icon">+</span> Add Prescription',
                     ['action' => 'add'],
-                    ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Prescription']
+                    ['class' => 'add-event-btn', 'escapeTitle' => false]
                 ) ?>
             </div>
         </div>
@@ -30,7 +30,7 @@
                         echo $this->Html->link(
                             'Reset',
                             ['action' => 'reset'],
-                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
+                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false]
                         );
                         ?>
                     </div>

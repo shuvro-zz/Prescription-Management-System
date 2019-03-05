@@ -20333,3 +20333,19 @@ Cake\Routing\Dispatcher::dispatch() - CORE\src\Routing\Dispatcher.php, line 60
 
 
 
+2019-03-05 15:39:52 Error: [Cake\Controller\Exception\MissingActionException] Action PrescriptionsController::rdit() could not be found, or is not accessible. in D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Controller\Controller.php on line 430
+Exception Attributes: array (
+  'controller' => 'PrescriptionsController',
+  'action' => 'rdit',
+  'prefix' => 'admin',
+  'plugin' => false,
+)
+Request URL: /admin/prescriptions/rdit/16
+Stack Trace:
+#0 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(119): Cake\Controller\Controller->invokeAction()
+#1 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(93): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\Admin\PrescriptionsController))
+#2 D:\xampp_5\htdocs\pms\vendor\cakephp\cakephp\src\Routing\Dispatcher.php(60): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#3 D:\xampp_5\htdocs\pms\webroot\index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#4 {main}
+
+

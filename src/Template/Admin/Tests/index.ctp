@@ -2,23 +2,23 @@
 <div class="workspace-dashboard page page-ui-tables">
     <div class="page-heading">
         <div class="flex-container">
-            <div class="flex-item"><h4><?= __('Tests') ?></h4></div>
+            <div class="flex-item"><h4><?= __('Examinations') ?></h4></div>
             <div class="flex-item">
                 <div class="flex-container">
                     <?php
                     if ($this->request->session()->read('Auth.User.role_id') == 1) {
                         if (Configure::read('import_allow')) {
                             echo $this->Html->link(
-                                '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Tests',
+                                '<span class="icon import_icon"><i class="fa fa-upload"></i></span> Import Examinations',
                                 ['action' => 'import_csv'],
-                                ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Tests']
+                                ['class' => 'add-event-btn import_btn_padding', 'escapeTitle' => false, 'title' => 'Import Examinations']
                             );
                         }
                     }
                     echo $this->Html->link(
-                        '<span class="icon">+</span> Add Test',
+                        '<span class="icon">+</span> Add Examination',
                         ['action' => 'add'],
-                        ['class' => 'add-event-btn', 'escapeTitle' => false, 'title' => 'Add Test']
+                        ['class' => 'add-event-btn', 'escapeTitle' => false]
                     );
                     ?>
                 </div>
@@ -44,7 +44,7 @@
                         echo $this->Html->link(
                             'Reset',
                             ['action' => 'reset'],
-                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false, 'title' => 'Reset']
+                            ['class' => 'btn btn-default waves-effect btn-cancel', 'escapeTitle' => false]
                         );
                         ?>
                     </div>

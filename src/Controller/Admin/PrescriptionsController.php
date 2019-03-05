@@ -177,12 +177,22 @@ class PrescriptionsController extends AppController
         $tests = $this->Prescriptions->Tests->find('list', ['limit' => 1]);
         $diagnosis = $this->getDiagnosisInfo();
 
+        $prescriptions_link = $last_visit_date = '';
+
         if($patient_id){
             $patient = $this->Prescriptions->Users->get($patient_id);
             $prescription->user = $patient->toArray();
-        }
 
-        $prescriptions_link = $last_visit_date = '';
+            /*get all prescription*/
+            $all_prescriptions = $this->Common->getAllPrescriptions($patient_id);
+
+            if($all_prescriptions){
+                $prescriptions_link = null;
+                foreach($all_prescriptions as $all_prescription){
+                    $prescriptions_link .=  '<li><a href="'. Router::url('/admin/prescriptions/view/'.$all_prescription->id, true ).'" target="_blank">'.$all_prescription->created->format('d F Y').'</a></li>';
+                }
+            }
+        }
 
         $this->set(compact('prescription', 'users', 'prescription_tests', 'prescription_medicines', 'medicines', 'tests', 'diagnosis', 'prescriptions_link', 'last_visit_date'));
         $this->set('_serialize', ['prescription']);

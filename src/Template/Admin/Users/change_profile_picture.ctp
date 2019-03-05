@@ -56,7 +56,7 @@ echo $this->Form->create('', [
 
     <footer class="footer ">
         <div class="flex-container">
-            <a href="<?php echo $this->Url->build(array('controller' => 'dashboard', 'action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+            <a href="<?php echo $this->Url->build(array('controller' => 'dashboard', 'action' => 'index' )) ?>" class="btn btn-default  btn-cancel" >Cancel</a>
             <div class="flex-item">
                 <?= $this->Form->button(__('Submit'), ['class' => 'btn save event-save']) ?>
             </div>

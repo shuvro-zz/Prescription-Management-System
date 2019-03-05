@@ -9,111 +9,62 @@
     <nav class="leftside-navigation">
         <ul>
             <li class="navigation-item dashboard <?php if($this->name=='Dashboard') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'dashboard','action' => 'index' ));?>" title="Dashboard"><span class="nav-icon"><i class="fa fa-tachometer" aria-hidden="true"></i>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'dashboard','action' => 'index' ));?>"><span class="nav-icon"><i class="fa fa-tachometer" aria-hidden="true"></i>
                 </span><span class="nav-text">Dashboard</span></a>
             </li>
 
             <?php
             if( $this->request->session()->read('Auth.User.role_id') == 1){ // Admin role id ?>
                 <li class="navigation-item dashboard <?php if($this->name=='Users' and $this->request->session()->read('Auth.User.role_id') == 1) echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Doctor role id  ;?>" title="Users"><span class="nav-icon"><i class="fa fa-user-md" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Doctor role id  ;?>"><span class="nav-icon"><i class="fa fa-user-md" aria-hidden="true"></i>
                     </span><span class="nav-text">Doctors</span></a>
                 </li>
             <?php } ?>
             <li class="navigation-item dashboard <?php if($this->name=='DiagnosisLists') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosisLists','action' => 'index' )); ?>" title="Diagnosis"><span class="nav-icon"><i class="fa fa-heartbeat" aria-hidden="true"></i>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosisLists','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-heartbeat" aria-hidden="true"></i>
                 </span><span class="nav-text">Diagnosis</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Medicines') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'medicines','action' => 'index' )); ?>" title="Medicines"><span class="nav-icon"><i class="fa fa-medkit" aria-hidden="true"></i>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'medicines','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-medkit" aria-hidden="true"></i>
                 </span><span class="nav-text">Medicines</span></a>
             </li>
             <li class="navigation-item dashboard <?php if($this->name=='Tests') echo 'active'?>">
-                <a href="<?php echo $this->Url->build(array( 'controller' => 'tests','action' => 'index' )); ?>" title="Tests"><span class="nav-icon"><i class="fa fa-thermometer-empty" aria-hidden="true"></i>
-                </span><span class="nav-text">Tests</span></a>
+                <a href="<?php echo $this->Url->build(array( 'controller' => 'tests','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-thermometer-empty" aria-hidden="true"></i>
+                </span><span class="nav-text">Examinations</span></a>
             </li>
 
             <?php if( $this->request->session()->read('Auth.User.role_id') != 1){ // Admin role id ?>
                 <li class="navigation-item dashboard <?php if($this->name=='Users' and $this->request->session()->read('Auth.User.role_id') == 2) echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Patient role id ; ?>" title="Patients"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Patient role id ; ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </span><span class="nav-text">Patients</span></a>
                 </li>
                 <li class="navigation-item dashboard <?php if($this->name=='Diagnosis') echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosis','action' => 'index' )); ?>" title="Diagnosis Templates"><span class="nav-icon"><i class="fa fa-file-text" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosis','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-file-text" aria-hidden="true"></i>
                     </span><span class="nav-text">Diagnosis Templates</span></a>
                 </li>
                 <li class="navigation-item dashboard <?php if($this->name=='Prescriptions') echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'patientIdReset' )); ?>" title="Prescriptions"><span class="nav-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'prescriptions','action' => 'patientIdReset' )); ?>"><span class="nav-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i>
                     </span><span class="nav-text">Prescriptions</span></a>
                 </li>
 
                 <li class="navigation-item dashboard <?php if($this->name=='Library') echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'library','action' => 'index' )); ?>" title="Library"><span class="nav-icon"><i class="fa fa-book" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'library','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-book" aria-hidden="true"></i>
                     </span><span class="nav-text">Library</span></a>
                 </li>
 
                 <!--<li class="navigation-item dashboard <?php /*if($this->name=='Templatesettings') echo 'active'*/?>">
-                    <a href="<?php /*echo $this->Url->build(array( 'controller' => 'templatesettings','action' => 'add' )); */?>" title="Prescriptions"><span class="nav-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i>
+                    <a href="<?php /*echo $this->Url->build(array( 'controller' => 'templatesettings','action' => 'add' )); */?>"><span class="nav-icon"><i class="fa fa-product-hunt" aria-hidden="true"></i>
                     </span><span class="nav-text">Templates Settings</span></a>
                 </li>-->
             <?php } ?>
 
-            <!--<li class="navigation-item dashboard <?php /*if($this->name=='Events') echo 'active'*/?>">
-                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'events','action' => 'index' ));*/?>" title="Events"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Events</span></a>
-            </li>
-            <li class="navigation-item dashboard <?php /*if($this->name=='Venues') echo 'active'*/?>">
-                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'venues','action' => 'index' ));*/?>" title="Venues"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Venues</span></a>
-            </li>
-            <li class="navigation-item dashboard <?php /*if($this->name=='Conferences') echo 'active'*/?>">
-                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'conferences','action' => 'index' ));*/?>" title="Conferences"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Conferences</span></a>
-            </li>
-            <li class="navigation-item dashboard <?php /*if($this->name=='Attendees') echo 'active'*/?>">
-                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'attendees','action' => 'index' ));*/?>" title="Attendees"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Attendees</span></a>
-            </li>
-            <li class="navigation-item dashboard <?php /*if($this->name=='AttendeeTypes') echo 'active'*/?>">
-                <a href="<?php /*echo $this->Url->build(array( 'controller' => 'AttendeeTypes','action' => 'index' ));*/?>" title="Attendee Types"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Attendee Types</span></a>
-            </li>
-            <li class="navigation-item dashboard <?php /*if($this->name=='Reports') echo 'active'*/?>">
-                <a href="#" title="Reports"><span class="nav-icon"><span class="icon"></span>
-                </span><span class="nav-text">Reports</span></a>
-            </li>-->
             <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ // Admin role id ?>
                 <li class="navigation-item dashboard <?php if($this->name=='Settings') echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'Settings','action' => 'add' )) ?>" title="Settings"><span class="nav-icon"><i class="fa fa-cog" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'Settings','action' => 'add' )) ?>"><span class="nav-icon"><i class="fa fa-cog" aria-hidden="true"></i>
                     </span><span class="nav-text">Settings</span></a>
                 </li>
             <?php } ?>
 
-            <!--<li class="navigation-item ecommerce <?php /*if (in_array($this->name, array('customers', 'orders', 'order-tickets'))) echo 'active' */?> ">
-                <a href="#" class="sub-navigation ecommerce-nav <?php /*if (in_array($this->name, array('customers', 'orders', 'order-tickets'))) echo 'active' */?>">
-                          <span class="nav-icon">
-                            <span class="icon"></span>
-                          </span>Test</a>
-                <ul class="sub-menu sub-menu-ecommerce-nav" <?php /*if (!in_array($this->name, array('customers', 'orders', 'order-tickets'))) echo 'style="display:none"' */?>>
-                    <li class="navigation-item events <?php /*if ($this->name == 'customers') echo 'active' */?>">
-                        <a href="<?php /*echo $this->Url->build(array('controller' => 'users', 'action' => 'index')); */?>"
-                           title="Customers"><span class="nav-text">Customers</span></a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="navigation-item attendees <?php /*if (in_array($this->name, array('Students', 'OrderTicketAttendees'))) echo 'active' */?> ">
-                <a href="#" class="sub-navigation attendees-nav <?php /*if (in_array($this->name, array('Students', 'OrderTicketAttendees'))) echo 'active' */?>">
-                          <span class="nav-icon">
-                            <span class="icon"></span>
-                          </span>Test1</a>
-                <ul class="sub-menu-attendees sub-menu" <?php /*if (!in_array($this->name, array('Students', 'OrderTicketAttendees'))) echo 'style="display:none"' */?>>
-                    <li class="navigation-item customers <?php /*if ($this->name == 'Students') echo 'active' */?>">
-                        <a href="<?php /*echo $this->Url->build(array('controller' => 'students', 'action' => 'index')); */?>"
-                           title="Attendees - Eligible"><span class="nav-text">Attendees - Eligible</span></a>
-                    </li>
-                </ul>
-            </li>-->
         </ul>
     </nav>
 </aside>

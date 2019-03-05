@@ -45,7 +45,7 @@
 
     <footer class="footer ">
         <div class="flex-container">
-            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default  btn-cancel" >Cancel</a>
             <div class="flex-item">
 
                 <?php if($this->request->session()->read('Auth.User.role_id') == 1 && $user->is_localhost == 1){ ?>

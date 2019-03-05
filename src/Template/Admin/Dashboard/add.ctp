@@ -50,7 +50,7 @@
         </div>
         <footer class="footer ">
             <div class="flex-container">
-                <a href="/admin/venues" class="btn btn-default  btn-cancel" title="Cancel">Cancel</a>
+                <a href="/admin/venues" class="btn btn-default  btn-cancel" >Cancel</a>
 
                 <div class="flex-item">
                     <button type="submit" class="btn save event-save">Submit</button>

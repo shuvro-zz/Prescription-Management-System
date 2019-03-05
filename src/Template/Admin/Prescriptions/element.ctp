@@ -193,7 +193,7 @@
         <div class="col-sm-6">
             <div class="left_side">
                 <div class="diagnosis">
-                    <button type="button" id="addMoreDiagnosis" class="add_more_btn"><span class="fa fa-plus"></span></button>
+                    <button type="button" id="addMoreDiagnosis" class="add_more_btn" title="Add more diagnosis"><span class="fa fa-plus"></span></button>
                     <div class="panel-heading pescription_panel_heading">Diagnosis</div>
                     <div class="diagnosis_info diagnosis_box">
                         <?php foreach($diagnosis as $id=>$name){ ?>
@@ -233,7 +233,7 @@
         <div class="col-sm-6">
             <div class="right_side">
                 <div class="medicines_section">
-                    <button type="button" id="addMoreMedicine" class="add_more_btn"><span class="fa fa-plus"></span></button>
+                    <button type="button" id="addMoreMedicine" class="add_more_btn" title="Add more medicine"><span class="fa fa-plus"></span></button>
                     <div class="panel-heading pescription_panel_heading">Medicines</div>
                     <div class="medicines medicine_box">
                         <?php
@@ -275,7 +275,7 @@
                         <div class="panel-heading pescription_panel_heading">Other Instructions</div>
                         <div class="other_instruction">
                             <?php echo $this->Form->input('is_print', ['id'=> 'isPrint', 'type' => 'hidden', 'value' => 0]); ?>
-                            <?php echo $this->Form->input('other_instructions', [ 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea']);?>
+                            <?php echo $this->Form->input('other_instructions', ['id' => 'other-instruction', 'class'=>'form-control', 'value' => (isset($prescription['other_instructions']))? $prescription['other_instructions']:'', 'label'=>false, 'type' =>'textarea']);?>
                         </div>
                     </div>
 
@@ -287,7 +287,7 @@
 
     <div class="row">
         <div class="prescription_button_section">
-            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default btn-cancel prescription_btn" title="Cancel">Cancel</a>
+            <a href="<?php echo $this->Url->build(array('action' => 'index' )) ?>" class="btn btn-default btn-cancel prescription_btn" >Cancel</a>
             <div class="flex-item">
                 <?= $this->Form->button(__('Save'), ['class' => 'btn save event-save prescription_btn']) ?>
             </div>
@@ -353,6 +353,7 @@
         $('.tests .tokenize-sortable-demo1').trigger('tokenize:clear');
         $('#cheif-complain').val('');
         $('#on-examination').val('');
+        $('#other-instruction').val('');
         $('#medicinesWrap').html('');
 
         if(all_id!=''){
@@ -397,8 +398,9 @@
 
                 console.log(response);
 
-                $('#cheif-complain').val(response.all_instructions);
+                $('#cheif-complain').val(response.all_chief_complain);
                 $('#on-examination').val(response.all_on_examination);
+                $('#other-instruction').val(response.all_instructions);
                 $('#loading').addClass('hide');
 
             },'json');
