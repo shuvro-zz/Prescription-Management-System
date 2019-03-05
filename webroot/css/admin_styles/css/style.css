@@ -34,7 +34,9 @@ h5:before, .h5:before{
     color: #000!important;
     border: 1px solid #ccc!important;
 }
-
+.main-container{
+    height: calc(100vh - 176px)!important;
+}
 .form-control::placeholder{
     color: #7d7d7d!important;
 }
