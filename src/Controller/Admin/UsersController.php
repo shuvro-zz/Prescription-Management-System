@@ -42,6 +42,8 @@ class UsersController extends AppController
 
     public function index()
     {
+        $this->resetDashboardSearch();
+
         $session = $this->request->session();
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
             $session->write('users_search_query', $this->request->query['search']);
@@ -106,8 +108,15 @@ class UsersController extends AppController
                 $user->role_id = 3;
                 $user->doctor_id = $doctor_id;
 
-                if ($this->request->data['today_appointment']){
-                    $user->appointment_date = date('Y/m/d');
+                if ($appointment_date = $this->request->data['appointment_date']){
+
+                    if ($appointment_date == 'today_appointment'){
+                        $user->appointment_date = date('Y-m-d');
+                        $user->serial_no = $this->request->data['serial_no'];
+
+                    }elseif ($appointment_date = 'appointments'){
+                        $user->appointment_date = $this->request->data['appointment_calender_date'];
+                    }
                 }
 
                 if ($this->Users->save($user)) {
@@ -126,6 +135,7 @@ class UsersController extends AppController
                 return $this->redirect(['action' => 'add']);
             }
         }
+
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
@@ -152,11 +162,16 @@ class UsersController extends AppController
                 $user = $this->Users->patchEntity($user, $this->request->data);
 
                 if ($user['role_id'] != 2){ // doctor
-                    if ($this->request->data['today_appointment']){
-                        $user->appointment_date = date('Y/m/d');
-                        $user->is_visited = 0;
-                    }else{
-                        $user->appointment_date = null;
+                    if ($appointment_date = $this->request->data['appointment_date']){
+
+                        if ($appointment_date == 'today_appointment'){
+                            $user->appointment_date = date('Y-m-d');
+                            $user->serial_no = $this->request->data['serial_no'];
+
+                        }elseif ($appointment_date = 'appointments'){
+                            $user->appointment_date = $this->request->data['appointment_calender_date'];
+                            $user->serial_no = 0;
+                        }
                     }
                 }
 
@@ -503,6 +518,12 @@ class UsersController extends AppController
         $this->redirect(['action' => 'index']);
     }
 
+
+    function resetDashboardSearch(){
+        $session = $this->request->session();
+        $session->delete('users_search_from_dashboard');
+    }
+
     function getUser($user_id){
         $all_prescriptions = $this->Common->getAllPrescriptions($user_id);
 
@@ -658,7 +679,7 @@ class UsersController extends AppController
         $this->autoRender = false;
 
         $patient = $this->Users->get($id);
-        $patient->appointment_date = date('Y/m/d ');
+        $patient->appointment_date = date('Y-m-d ');
         $patient->is_visited = 0;
 
         if ( $this->Users->save($patient)){

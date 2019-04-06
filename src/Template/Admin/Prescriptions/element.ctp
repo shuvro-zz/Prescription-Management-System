@@ -196,9 +196,9 @@
                     <button type="button" id="addMoreDiagnosis" class="add_more_btn" title="Add more diagnosis"><span class="fa fa-plus"></span></button>
                     <div class="panel-heading pescription_panel_heading">Diagnosis</div>
                     <div class="diagnosis_info diagnosis_box">
-                        <?php foreach($diagnosis as $id=>$name){ ?>
+                        <?php foreach($diagnosis as $id=>$diagnosis_template_name){ ?>
                             <div class="checkbox" style="margin-top: 0px">
-                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" id="test"><?php echo ucfirst($name) ?></label>
+                                <label for="diagnosis-ids-<?php echo $id ?>"><input type="checkbox" name="diagnosis[]" value="<?php echo $id ?>" <?php echo isset($prescription_diagnosis)?selected($id, $prescription_diagnosis):'' ?> id="diagnosis-ids-<?php echo $id ?>" onclick="getDiagnosis(this)" id="test"><?php echo ucfirst($diagnosis_template_name) ?></label>
                             </div>
                         <?php } ?>
 
@@ -369,7 +369,6 @@
                     $("#medicinesWrap").append('<?php echo $field_medicine ?>');
                 });
 
-
                 $('.prescription_medicine').tokenize2({
                     dataSource: function(search, object){
                         $.ajax(home_url+'admin/medicines/medicine-list/'+search, {
@@ -395,8 +394,6 @@
                 $.each(response.tests, function( id, value ) {
                     $('.tests .tokenize-sortable-demo1').trigger('tokenize:tokens:add', [id, value, true]);
                 });
-
-                console.log(response);
 
                 $('#cheif-complain').val(response.all_chief_complain);
                 $('#on-examination').val(response.all_on_examination);

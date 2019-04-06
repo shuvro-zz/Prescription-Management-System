@@ -31,7 +31,17 @@
                 <div class="form-group">
                     <label class="name">Phone*<span class="required" aria-required="true"></span></label>
                     <div class="inputs">
-                        <?php echo $this->Form->input('phone', ['class' => 'form-control ','value' => (isset($user->phone))? $user->phone:'', 'id' => 'userPhone',  'label' => false, 'required' => true, 'type' =>'text']); ?>
+                        <?php
+
+                            $session = $this->request->session();
+                            if($session->check('users_search_from_dashboard')) {
+                                $phone = $session->read('users_search_from_dashboard');
+                            }else{
+                                $phone = (isset($user->phone))? $user->phone:'';
+                            }
+
+                        ?>
+                        <?php echo $this->Form->input('phone', ['class' => 'form-control ','value' => $phone, 'id' => 'userPhone',  'label' => false, 'required' => true, 'type' =>'text']); ?>
                     </div>
                 </div>
             </div>
@@ -86,13 +96,30 @@
                 </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="form-group">
-                    <label class="name today_appointment">
-                        <?php echo $this->Form->control('today_appointment', ['type' => 'checkbox', 'checked' => (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y/m/d') == date('Y/m/d'))? true:false):'', 'label'=>'Today\'s Appointment', 'class'=>'todays_appointment_box']); ?>
-                    </label>
+
+                    <input type="radio" name="appointment_date" value="today_appointment" id="today_appointment" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') == date('Y-m-d'))? "checked":""):"" ?>>
+                    <label for="today_appointment">Today's Appointment</label>
+
+                    <input type="hidden" name="serial_no" value="23">
+
                 </div>
             </div>
+
+
+            <div class="col-sm-3">
+                <div class="form-group">
+
+                    <input type="radio" name="appointment_date" value="appointments" id="appointments" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') > date('Y-m-d'))? "checked":""):"" ?>>
+                    <label for="appointments">Appointments</label>
+
+                    <input type="hidden" name="appointment_calender_date" value="2019-04-10">
+
+                </div>
+            </div>
+
+
         </div>
     <?php }?>
 

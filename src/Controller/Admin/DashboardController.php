@@ -30,8 +30,7 @@ class DashboardController extends AppController
 
         $users = $this->Users->find('all')->where(['Users.doctor_id' => $doctor_id,
                                                     'Users.role_id' => 3,  // patient = role_id 3
-                                                    'Users.appointment_date' => date('Y/m/d'),
-                                                    'Users.is_visited' => 0
+                                                    'Users.appointment_date' => date('Y-m-d')
                                                   ]);
 
         $this->paginate = [

@@ -44,6 +44,7 @@
                 <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('name') ?></th>
+                    <th><?= $this->Paginator->sort('diagnosis') ?></th>
                     <!--<th><?/*= $this->Paginator->sort('medicines') */?></th>-->
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
@@ -52,6 +53,7 @@
                 <tbody>
                 <?php foreach ($diagnosis as $diagnosi): ?>
                     <tr>
+                        <td><?= ucfirst(h($diagnosi['template_name'])) ?></td>
                         <td><?= ucfirst(h($diagnosi['diagnosis_list']['name'])) ?></td>
                         <!--<td>
                             <?php

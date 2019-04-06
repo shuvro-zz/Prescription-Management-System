@@ -65,7 +65,6 @@ class DiagnosisController extends AppController
             ]
         ];
         $diagnosis = $this->paginate($query);
-        //pr($diagnosis);die;
 
         if(count($diagnosis)==0){
             $this->Flash->adminWarning(__('No diagnosis template  found!')  ,['key' => 'admin_warning'], ['key' => 'admin_warning'] );
@@ -107,7 +106,7 @@ class DiagnosisController extends AppController
             $diagnosis_template = $this->Diagnosis->find('all')
                 ->where([
                     'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
-                    'Diagnosis.diagnosis_list_id' => $this->request->data['diagnosis_list_id'],
+                    'Diagnosis.template_name' => trim($this->request->data['template_name'])
                 ])->first();
 
             if(empty($diagnosis_template)){
@@ -122,7 +121,7 @@ class DiagnosisController extends AppController
                 }
                 return $this->redirect(['action' => 'index']);
             }else{
-                $this->Flash->adminWarning(__('The diagnosis template already created for this diagnosis'), ['key' => 'admin_warning']);
+                $this->Flash->adminWarning(__('The template name already taken'), ['key' => 'admin_warning']);
                 return $this->redirect(['action' => 'add']);
             }
         }
@@ -131,6 +130,7 @@ class DiagnosisController extends AppController
         $diagnosis_list = $this->DiagnosisLists->find('list', ['limit' => 1]);
 
         $medicines = $tests = [];
+
         $this->set(compact('diagnosi', 'diagnosis_list', 'medicines', 'tests'));
         $this->set('_serialize', ['diagnosi']);
     }
@@ -154,7 +154,7 @@ class DiagnosisController extends AppController
             $diagnosis_template = $this->Diagnosis->find('all')
                 ->where([
                     'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
-                    'Diagnosis.diagnosis_list_id' => trim($this->request->data['diagnosis_list_id']),
+                    'Diagnosis.template_name' => trim($this->request->data['template_name']),
                     'Diagnosis.id !=' => $id
                 ])
                 ->first();
@@ -168,7 +168,7 @@ class DiagnosisController extends AppController
                 }
                 return $this->redirect(['action' => 'index']);
             }else{
-                $this->Flash->adminWarning(__('The diagnosis template already created for this diagnosis'), ['key' => 'admin_warning']);
+                $this->Flash->adminWarning(__('The template name already taken'), ['key' => 'admin_warning']);
                 return $this->redirect(['action' => 'edit/'.$id]);
             }
         }

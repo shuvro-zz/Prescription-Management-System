@@ -20,7 +20,6 @@ class TestsController extends AppController
      */
     public function index()
     {
-
         $session = $this->request->session();
 
         if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {

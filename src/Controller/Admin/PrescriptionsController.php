@@ -548,8 +548,8 @@ class PrescriptionsController extends AppController
     function searchPatient(){
         $this->autoRender = false;
 
-        if(isset($this->request->query['search']) and trim($this->request->query['search'])!='' ) {
-            $search_phone_no = $this->request->query['search'];
+        $search_phone_no = $this->request->query['search'];
+        if(isset($search_phone_no) and trim($search_phone_no)!='' ) {
 
             $this->loadModel('Users');
             $patient_info = $this->Users->find('all')
@@ -559,19 +559,10 @@ class PrescriptionsController extends AppController
                 ])->first();
 
             if($patient_info){
-                $this->request->session()->write('users_search_query', $patient_info->phone);
-
-                return $this->redirect(['controller' => 'users', 'action' => '']);
-
-                /*$latest_prescription = $this->Common->getLatestPrescription($patient_id);
-
-                if($latest_prescription){
-                    return $this->redirect(['action' => 'edit/'.$latest_prescription->id]);
-                }else{
-                    $this->Flash->admin_success('Patient found, You can create prescription for this patient', ['key' => 'admin_success']);
-                    return $this->redirect(['action' => 'add/'.$patient_id]);
-                }*/
+                $this->request->session()->write('users_search_query', $search_phone_no);
+                return $this->redirect(['controller' => 'users', 'action' => 'index']);
             }else{
+                $this->request->session()->write('users_search_from_dashboard', $search_phone_no);
                 $this->Flash->admin_warning('Patient not found, Please create a Patient', ['key' => 'admin_warning']);
                 return $this->redirect(['controller' => 'users', 'action' => 'add']);
             }
@@ -592,7 +583,7 @@ class PrescriptionsController extends AppController
         $user->role_id = 3;
         $user->doctor_id = $this->request->session()->read('Auth.User.id');
         $user->appointment_date = null;
-        $user->is_visited = 1;
+        $user->serial_no = 0;
         $user = $this->Users->patchEntity($user, $patients);
         $user = $this->Users->save($user);
         if($user) {
@@ -635,7 +626,7 @@ class PrescriptionsController extends AppController
     function getDiagnosisInfo(){
         $this->loadModel('Diagnosis');
 
-        $diagnosis_info = $this->Diagnosis->find('all', ['contain' => ['DiagnosisLists']])
+        $diagnosis_info = $this->Diagnosis->find('all')
             ->order(['Diagnosis.id' => 'desc'])
             ->where([
                 'Diagnosis.doctor_id' => $this->request->session()->read('Auth.User.id'),
@@ -645,7 +636,7 @@ class PrescriptionsController extends AppController
         $diagnosis_list = [];
         if($diagnosis_info){
             foreach($diagnosis_info as $diagnosis){
-                $diagnosis_list[$diagnosis->id] = $diagnosis->diagnosis_list['name'];
+                $diagnosis_list[$diagnosis->id] = $diagnosis['template_name'];
             }
         }
 

@@ -16,7 +16,7 @@
             <?php
             if( $this->request->session()->read('Auth.User.role_id') == 1){ // Admin role id ?>
                 <li class="navigation-item dashboard <?php if($this->name=='Users' and $this->request->session()->read('Auth.User.role_id') == 1) echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Doctor role id  ;?>"><span class="nav-icon"><i class="fa fa-user-md" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Admin role id  ;?>"><span class="nav-icon"><i class="fa fa-user-md" aria-hidden="true"></i>
                     </span><span class="nav-text">Doctors</span></a>
                 </li>
             <?php } ?>
@@ -33,10 +33,14 @@
                 </span><span class="nav-text">Examinations</span></a>
             </li>
 
-            <?php if( $this->request->session()->read('Auth.User.role_id') != 1){ // Admin role id ?>
-                <li class="navigation-item dashboard <?php if($this->name=='Users' and $this->request->session()->read('Auth.User.role_id') == 2) echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) // Patient role id ; ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <?php if( $this->request->session()->read('Auth.User.role_id') != 1){ ?> <!--Admin role id-->
+                <li class="navigation-item dashboard <?php if($this->name=='Users') echo 'active'?>">
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </span><span class="nav-text">Patients</span></a>
+                </li>
+                <li class="navigation-item dashboard <?php if($this->name=='Appointments') echo 'active'?>">
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'Appointments','action' => 'index' )) ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    </span><span class="nav-text">Appointments</span></a>
                 </li>
                 <li class="navigation-item dashboard <?php if($this->name=='Diagnosis') echo 'active'?>">
                     <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosis','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-file-text" aria-hidden="true"></i>
