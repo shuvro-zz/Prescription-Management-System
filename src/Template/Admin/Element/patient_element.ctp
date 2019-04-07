@@ -99,22 +99,32 @@
             <div class="col-sm-3">
                 <div class="form-group">
 
-                    <input type="radio" name="appointment_date" value="today_appointment" id="today_appointment" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') == date('Y-m-d'))? "checked":""):"" ?>>
-                    <label for="today_appointment">Today's Appointment</label>
+                    <input id="today-appointment" type="radio" name="appointment_date" value="today_appointment" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') == date('Y-m-d'))? "checked":""):"" ?>>
+                    <label for="today-appointment" class="cursore_pointer">Today's Appointment</label><br>
 
-                    <input type="hidden" name="serial_no" value="23">
+                    <span id="serial-no-section" class="hidden">
+                        <label>Serial No</label> <i class="fa fa-magic cursore_pointer" onclick="setLastSerialNo()" title="Automatic make last serial no" aria-hidden="true"></i>
+
+                        <span class="hide" id="today-appointment-loading"><i class="fa fa-spinner fa-spin today_appointment_loading" style=""></i></span>
+
+                        <input id="serial-no" type="text" name="serial_no" required value="<?php echo (isset($user->serial_no))? $user->serial_no:'' ?>" class="serail_no">
+                    </span>
 
                 </div>
+
             </div>
 
 
             <div class="col-sm-3">
                 <div class="form-group">
 
-                    <input type="radio" name="appointment_date" value="appointments" id="appointments" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') > date('Y-m-d'))? "checked":""):"" ?>>
-                    <label for="appointments">Appointments</label>
+                    <input id="appointments" type="radio" name="appointment_date" value="appointments" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') > date('Y-m-d'))? "checked":""):"" ?>>
+                    <label for="appointments" class="cursore_pointer">Appointments</label><br>
 
-                    <input type="hidden" name="appointment_calender_date" value="2019-04-10">
+                    <span id="appointment_calender_date" class="hidden">
+                        <label class="name">Date</label>
+                        <input type="text" name="appointment_calender_date" required value="<?php echo isset($user->appointment_date)?date_format($user->appointment_date, 'Y-m-d'):'' ?>" placeholder="Click here" autocomplete="off" class="appointment_calender_date">
+                    </span>
 
                 </div>
             </div>
@@ -126,3 +136,62 @@
     <?php echo $this->Form->input('id', ['type' =>'hidden', 'id' => 'patient-id', 'value' => (isset($id)? $id:'') ]); ?>
 </div>
 
+<script type="text/javascript">
+
+    $(".appointment_calender_date").each(function(){
+        $(this).datetimepicker({
+            timepicker:false,
+            format: 'Y-m-d',
+            minDate:new Date()
+        });
+    });
+
+    $( document ).ready(function() {
+
+        //When page load.......
+        if ( $("#today-appointment").is(":checked")) {
+            $('#serial-no-section').removeClass('hidden');
+        }
+
+        if ( $("#appointments").is(":checked")) {
+            $('#appointment_calender_date').removeClass('hidden');
+        }
+        //End when page load.......
+
+        //Onchange.................
+        $('#today-appointment').change(function () {
+
+            if ($(this).prop("checked")) {
+
+                //Get last serial no
+                setLastSerialNo();
+
+                $('#serial-no-section').removeClass('hidden');
+                $('#appointment_calender_date').addClass('hidden');
+            }
+        });
+
+        $('#appointments').change(function () {
+
+            if ($(this).prop("checked")) {
+                $('#serial-no-section').addClass('hidden');
+                $('#appointment_calender_date').removeClass('hidden');
+            }
+        });
+        //End onchange.................
+    });
+
+    //Get last serial no for today appointment
+    function setLastSerialNo(){
+
+        $('#today-appointment-loading').removeClass('hide');
+
+        $.get(home_url+"admin/users/get-last-serial-no", function(response, status){
+            $('#serial-no').val($.parseJSON(response).last_serial_no+1)
+
+            $('#today-appointment-loading').addClass('hide');
+        });
+    }
+
+
+</script>

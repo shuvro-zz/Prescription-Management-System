@@ -921,6 +921,32 @@ form.example::after {
 .final_prescription_single_signature {
     padding: 20px 0px;
 }
+
+.serail_no {
+    width: 40%;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.appointment_calender_date {
+    width: 55%;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.today_appointment_loading{
+    position: absolute;
+    left: 128px;
+    top: 34px;
+    font-size: 20px;
+}
+.cursore_pointer{
+    cursor: pointer;
+}
+.appointment_date_search{
+    margin-right: 15px;
+    float: left;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

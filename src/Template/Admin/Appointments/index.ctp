@@ -17,6 +17,13 @@
             <div class="status-area flex-container">
                 <div class="event-src-box">
                     <?php echo $this->Form->create('Users',['type' => 'get'],array('id' => 'site-search','url'=>array('action'=>'index'),'method'=>'get'));?>
+
+                    <span class="pull-left"><label>Filter :</label></span>
+
+                    <span class="appointment_date_search">
+                        <?php echo $this->Form->input('appointment_date',array('class' => 'form-control appointment_calender_date_search', 'value'  => $appointment_date, 'autocomplete' => 'off', 'label' => false, 'placeholder' => 'Appointment date')); ?>
+                    </span>
+
                     <?php echo $this->Form->input('search',array('class' => 'form-control', 'value'  => $search, 'label' => false, 'placeholder' => 'Type here for search...')); ?>
                     <button type="submit"> <i class="fa fa-search"></i></button>
                     <div class="flex-container">
@@ -45,6 +52,7 @@
                     <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ ?>
                         <th><?= $this->Paginator->sort('expire date') ?></th>
                     <?php } ?>
+                    <th><?= $this->Paginator->sort('appointment') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -60,7 +68,8 @@
                         <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ ?>
                             <td><?= h($user->expire_date) ?></td>
                         <?php } ?>
-                        <td><?= h($user->created->format('d/m/Y')) ?></td>
+                        <td><?= h($user->appointment_date->format('Y/m/d')) ?></td>
+                        <td><?= h($user->created->format('Y/m/d')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
@@ -122,3 +131,15 @@
 
     </div>
 </div>
+
+<script type="text/javascript">
+
+    $(".appointment_calender_date_search").each(function(){
+        $(this).datetimepicker({
+            timepicker:false,
+            format: 'Y-m-d',
+            minDate:new Date()
+        });
+    });
+
+</script>

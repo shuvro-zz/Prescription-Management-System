@@ -502,8 +502,11 @@ class UsersController extends AppController
             $where = [$this->checkById($user_id),
                 'OR' => [
                     ['Users.first_name LIKE' => '%' . $search . '%'],
+                    ['Users.weight LIKE' => '%' . $search . '%'],
                     ['Users.phone LIKE' => '%' . $search . '%'],
-                    ['Users.email LIKE' => '%' . $search . '%']
+                    ['Users.email LIKE' => '%' . $search . '%'],
+                    ['Users.age LIKE' => '%' . $search . '%'],
+                    ['Users.created LIKE' => '%' . $search . '%']
                 ]
             ];
         }else{
@@ -689,6 +692,20 @@ class UsersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    function getLastSerialNo(){
+
+        $today_appointment = $this->Users->find('All')->order(['Users.serial_no' => 'desc'])
+            ->where([
+                'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                'Users.role_id' => 3,  // patient = role_id 3
+                'Users.appointment_date' => date('Y-m-d')
+            ])->first();
+
+        $last_serial_no = isset($today_appointment->serial_no)?$today_appointment->serial_no:0;
+
+        echo json_encode(['last_serial_no' => $last_serial_no]);die;
     }
 
 

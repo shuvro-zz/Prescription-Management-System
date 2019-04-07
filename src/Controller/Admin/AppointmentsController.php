@@ -28,12 +28,23 @@ class AppointmentsController extends AppController
 
         $session = $this->request->session();
         if (isset($this->request->query['search']) and trim($this->request->query['search']) != '') {
-            $session->write('users_search_query', $this->request->query['search']);
+            $session->write('appointments_search_query', $this->request->query['search']);
         }
-        if ($session->check('users_search_query')) {
-            $search = $session->read('users_search_query');
+
+        if ($session->check('appointments_search_query')) {
+            $search = $session->read('appointments_search_query');
         } else {
             $search = '';
+        }
+
+        if (isset($this->request->query['appointment_date']) and trim($this->request->query['appointment_date']) != '') {
+            $session->write('appointment_date_query', $this->request->query['appointment_date']);
+        }
+
+        if ($session->check('appointment_date_query')) {
+            $appointment_date = $session->read('appointment_date_query');
+        } else {
+            $appointment_date = '';
         }
 
         $where = $this->__search();
@@ -47,7 +58,7 @@ class AppointmentsController extends AppController
         $this->paginate = [
             'limit' => 30,
             'order' => [
-                'Users.id' => 'desc'
+                'Users.appointment_date' => 'asc'
             ]
         ];
         $users = $this->paginate($query);
@@ -56,7 +67,7 @@ class AppointmentsController extends AppController
             $this->Flash->adminWarning(__('No patient found!'), ['key' => 'admin_warning'], ['key' => 'admin_warning']);
         }
 
-        $this->set(compact('users', 'search'));
+        $this->set(compact('users', 'search', 'appointment_date'));
         $this->set('_serialize', ['users']);
     }
 
@@ -64,20 +75,30 @@ class AppointmentsController extends AppController
     function __search()
     {
         $session = $this->request->session();
-        $user_id = $session->read('Auth.User.id');
 
-        if ($session->check('users_search_query')) {
-            $search = $session->read('users_search_query');
-            $where = [$this->checkById($user_id),
+        if ($session->check('appointments_search_query') OR $session->check('appointment_date_query')) {
+            $search = $session->read('appointments_search_query');
+            $appointment_date = $session->read('appointment_date_query');
+
+            $appointment_date_filter = isset($appointment_date)?['Users.appointment_date' => $appointment_date]:'';
+
+            $where = ['Users.role_id' => 3, //patient
+                'Users.doctor_id' => $session->read('Auth.User.id'),
+                'Users.appointment_date >' => date('Y-m-d'),
+                $appointment_date_filter,
                 'OR' => [
                     ['Users.first_name LIKE' => '%' . $search . '%'],
+                    ['Users.weight LIKE' => '%' . $search . '%'],
                     ['Users.phone LIKE' => '%' . $search . '%'],
-                    ['Users.email LIKE' => '%' . $search . '%']
+                    ['Users.email LIKE' => '%' . $search . '%'],
+                    ['Users.age LIKE' => '%' . $search . '%'],
+                    ['Users.created LIKE' => '%' . $search . '%']
                 ]
             ];
         } else {
-            $where = [$this->checkById($user_id),
-                    'Users.appointment_date >' => date('Y-m-d h:i:s')
+            $where = ['Users.role_id' => 3, //patient
+                    'Users.doctor_id' => $session->read('Auth.User.id'),
+                    'Users.appointment_date >' => date('Y-m-d')
                 ];
         }
         return $where;
@@ -86,7 +107,8 @@ class AppointmentsController extends AppController
     function reset()
     {
         $session = $this->request->session();
-        $session->delete('users_search_query');
+        $session->delete('appointments_search_query');
+        $session->delete('appointment_date_query');
         $this->redirect(['action' => 'index']);
     }
 
@@ -115,14 +137,4 @@ class AppointmentsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
-
-    function checkById($user_id){
-        if($this->request->session()->read('Auth.User.role_id') == 1){ //Admin role_id
-            $checkById = ['Users.role_id' => 2]; //Doctor role_id
-        }else{
-            $checkById = ['Users.doctor_id' => $user_id];
-        }
-        return $checkById;
-    }
-
 }

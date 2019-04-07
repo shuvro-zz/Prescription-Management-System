@@ -60,7 +60,7 @@ class DiagnosisController extends AppController
         $this->paginate = [
             'contain' => ['DiagnosisLists', 'Medicines', 'Tests'],
             'limit' => 30,
-            'order' => [
+            'template_name' => [
                 'Diagnosis.id' => 'desc'
             ]
         ];

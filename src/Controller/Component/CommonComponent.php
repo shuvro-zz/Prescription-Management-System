@@ -63,7 +63,7 @@ class CommonComponent extends Component
                 'Prescriptions.doctor_id' => $doctor_id,
                 'Prescriptions.user_id' => $patient_id
             ])
-            ->order(['Prescriptions.id' => 'desc'])->first();
+            ->template_name(['Prescriptions.id' => 'desc'])->first();
 
         return $latest_prescription;
     }
