@@ -49,6 +49,7 @@
                     <table class="table table-hover  table-striped">
                         <thead>
                         <tr>
+                            <th><?= $this->Paginator->sort('serial no') ?></th>
                             <th><?= $this->Paginator->sort('name') ?></th>
                             <th><?= $this->Paginator->sort('weight') ?></th>
                             <th><?= $this->Paginator->sort('phone') ?></th>
@@ -64,6 +65,7 @@
                         <tbody>
                         <?php foreach ($users as $user): ?>
                             <tr>
+                                <td><?= h($user->serial_no) ?></td>
                                 <td><?= ucfirst(h($user->first_name )) ?></td>
                                 <td><?= h($user->weight) ?></td>
                                 <td><?= h($user->phone) ?></td>
@@ -111,6 +113,15 @@
                                                 ['escapeTitle' => false, 'title' => 'Edit User']
                                             );
                                             echo "</li>";
+
+                                            echo "<li>";
+                                            echo $this->Html->link(
+                                                '<span class="fa fa-calendar"></span> Appointments',
+                                                ['action' => '#0'],
+                                                ['escapeTitle' => false, 'onclick' => "setUserIdForDate(this)", 'user_id' => $user->id, 'title' => 'Add to appointments', 'data-toggle' => 'modal',
+                                                    'data-target' => '#calender-date-modal', 'type' => 'button']
+                                            );
+                                            echo "</li>";
                                             ?>
 
                                         </ul>
@@ -120,6 +131,10 @@
                         <?php endforeach; ?>
                         </tbody>
                     </table>
+
+                    <!-- Calender date modal -->
+                    <?php echo $this->element('Modal/calender_modal') ?>
+
                 </div>
 
                 <div class="bottom-pagination">

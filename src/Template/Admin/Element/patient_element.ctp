@@ -123,7 +123,7 @@
 
                     <span id="appointment_calender_date" class="hidden">
                         <label class="name">Date</label>
-                        <input type="text" name="appointment_calender_date" required value="<?php echo isset($user->appointment_date)?date_format($user->appointment_date, 'Y-m-d'):'' ?>" placeholder="Click here" autocomplete="off" class="appointment_calender_date">
+                        <input type="text" name="appointment_calender_date" required value="<?php echo isset($user->appointment_date)?date( 'd-m-Y', strtotime($user->appointment_date)):'' ?>" placeholder="Click here" autocomplete="off" class="appointment_calender_date">
                     </span>
 
                 </div>
@@ -137,14 +137,6 @@
 </div>
 
 <script type="text/javascript">
-
-    $(".appointment_calender_date").each(function(){
-        $(this).datetimepicker({
-            timepicker:false,
-            format: 'Y-m-d',
-            minDate:new Date()
-        });
-    });
 
     $( document ).ready(function() {
 
@@ -180,18 +172,6 @@
         });
         //End onchange.................
     });
-
-    //Get last serial no for today appointment
-    function setLastSerialNo(){
-
-        $('#today-appointment-loading').removeClass('hide');
-
-        $.get(home_url+"admin/users/get-last-serial-no", function(response, status){
-            $('#serial-no').val($.parseJSON(response).last_serial_no+1)
-
-            $('#today-appointment-loading').addClass('hide');
-        });
-    }
 
 
 </script>

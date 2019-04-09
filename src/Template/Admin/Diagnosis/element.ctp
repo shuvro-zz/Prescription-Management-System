@@ -34,10 +34,52 @@
     </div>
 </div>
 
-<div class="col-sm-12">
+<!--<div class="col-sm-12">
     <div class="form-group">
         <div class="inputs">
-            <?php echo $this->Form->input('medicines._ids', ['options' => $medicines, 'default' => isset($default_medicines)?$default_medicines:'', 'class' => 'tokenize-sortable-demo1 medicine']); ?>
+            <?php /*echo $this->Form->input('medicines._ids', ['options' => $medicines, 'default' => isset($default_medicines)?$default_medicines:'', 'class' => 'tokenize-sortable-demo1 medicine']); */?>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="col-sm-12">
+    <div class="medicines_section">
+        <button type="button" id="addMoreMedicine" class="add_more_btn" title="Add more medicine"><span class="fa fa-plus"></span></button>
+        <label class="name">Medicines<span class="" aria-required="true"></span></label>
+        <div class="medicines medicine_box diagnosis_template_medicine_box">
+            <?php
+            echo '<div class="medicines_wrap" id="medicinesWrap">';
+            foreach($diagnosis_medicines as $diagnosis_medicine){
+                $field_medicine = '<div class="medicines_row">';
+                $field_medicine .= '<div class="col-sm-3 medicine_name" onmouseover="setzIndex(this)"  onmouseout="unsetzIndex(this)">';
+                $field_medicine .= '<div class="inputs">';
+                $field_medicine .=  $this->Form->input('medicines.medicine_id[]', ['options' => $medicines, 'default' => (isset($diagnosis_medicine->medicine_id))? $diagnosis_medicine->medicine_id:'', 'class' => 'tokenize-sortable-demo1 prescription_medicine', 'label'=>false, 'multiple'=>true]);
+                $field_medicine .= '</div>';
+                $field_medicine .= '</div>';
+
+                $field_medicine .= '<div class="col-sm-2 medicine_rule">';
+                $field_medicine .= '<div class="inputs">';
+                $field_medicine .=  $this->Form->input('medicines.rule[]', ['class'=>'form-control', 'default' => (isset($diagnosis_medicine->rule))? $diagnosis_medicine->rule:'', 'placeholder'=>'0-1-0', 'label'=>false]);
+                $field_medicine .= '</div>';
+                $field_medicine .= '</div>';
+
+                $field_medicine .=  '<div class="col-sm-1">';
+                $field_medicine .= '<div class="inputs">';
+                $field_medicine .= '<button type="button"  class="dle_medicine_btn" onclick="removeMedicineField(this);"><span class="fa fa-minus"></span></button>';
+                $field_medicine .= '</div>';
+                $field_medicine .= '</div>';
+                $field_medicine .= '</div>';
+
+                //dd($diagnosis_medicine);
+
+                if(strtolower($this->request->params['action']) == 'edit' && isset($diagnosis_medicine->medicine_id) ){
+                    echo  $field_medicine;
+                }
+
+            }
+            echo '</div>';
+            ?>
         </div>
     </div>
 </div>
@@ -59,3 +101,36 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        // Add Medicine field
+        $("#addMoreMedicine").click(function(){
+            $("#medicinesWrap").append('<?php echo $field_medicine ?>').find('select').last().val('');
+            $("#medicinesWrap").find('input').last().val('');
+
+            $('.prescription_medicine').tokenize2({
+                dataSource: function(search, object){
+                    $.ajax(home_url+'admin/medicines/medicine-list/'+search, {
+                        dataType: 'json',
+                        success: function(data){
+                            object.trigger('tokenize:dropdown:fill', [data]);
+                        }
+                    });
+                },
+                sortable: true,
+                displayNoResultsMessage: true,
+                tokensMaxItems: 1
+            });
+            //$('.selectpicker').selectpicker('refresh');
+
+        });
+    });
+
+    // Delete Medicine field
+    function removeMedicineField(e){
+        $(e).parents('.medicines_row').remove();
+    }
+
+</script>

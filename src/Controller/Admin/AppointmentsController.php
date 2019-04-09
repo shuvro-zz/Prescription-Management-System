@@ -16,6 +16,8 @@ use Cake\Utility\Text;
 
 class AppointmentsController extends AppController
 {
+    public $components = ['Common'];
+
     public $paginate = [
         'limit' => 20
     ];
@@ -80,7 +82,7 @@ class AppointmentsController extends AppController
             $search = $session->read('appointments_search_query');
             $appointment_date = $session->read('appointment_date_query');
 
-            $appointment_date_filter = isset($appointment_date)?['Users.appointment_date' => $appointment_date]:'';
+            $appointment_date_filter = isset($appointment_date)?['Users.appointment_date' => date('Y-m-d', strtotime($appointment_date))]:'';
 
             $where = ['Users.role_id' => 3, //patient
                 'Users.doctor_id' => $session->read('Auth.User.id'),
@@ -119,22 +121,15 @@ class AppointmentsController extends AppController
         $session->delete('users_search_from_dashboard');
     }
 
-    function addTodayAppointment($id = null)
-    {
-        $this->loadModel('Users');
+    function addTodayAppointment(){
+       $save = $this->Common->addTodayAppointment();
 
-        $this->autoRender = false;
-
-        $patient = $this->Users->get($id);
-        $patient->appointment_date = date('Y/m/d ');
-        $patient->is_visited = 0;
-
-        if ($this->Users->save($patient)) {
+        if ($save){
             $this->Flash->adminSuccess('Patient has been added for today\'s appointment', ['key' => 'admin_success']);
-        } else {
+        }else{
             $this->Flash->adminError('Patient could not be added for today\'s appointment ', ['key' => 'admin_error']);
         }
 
-        return $this->redirect(['action' => 'index']);
+        return $this->redirect([ 'action' => 'index']);
     }
 }

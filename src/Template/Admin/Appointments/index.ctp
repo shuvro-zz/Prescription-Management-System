@@ -21,7 +21,7 @@
                     <span class="pull-left"><label>Filter :</label></span>
 
                     <span class="appointment_date_search">
-                        <?php echo $this->Form->input('appointment_date',array('class' => 'form-control appointment_calender_date_search', 'value'  => $appointment_date, 'autocomplete' => 'off', 'label' => false, 'placeholder' => 'Appointment date')); ?>
+                        <?php echo $this->Form->input('appointment_date',array('class' => 'form-control appointment_calender_date appointment_calender_date_search', 'value'  => $appointment_date, 'autocomplete' => 'off', 'label' => false, 'placeholder' => 'Appointment date')); ?>
                     </span>
 
                     <?php echo $this->Form->input('search',array('class' => 'form-control', 'value'  => $search, 'label' => false, 'placeholder' => 'Type here for search...')); ?>
@@ -68,8 +68,8 @@
                         <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ ?>
                             <td><?= h($user->expire_date) ?></td>
                         <?php } ?>
-                        <td><?= h($user->appointment_date->format('Y/m/d')) ?></td>
-                        <td><?= h($user->created->format('Y/m/d')) ?></td>
+                        <td><?= h($user->appointment_date->format('d/m/Y')) ?></td>
+                        <td><?= h($user->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">
                             <div class="dropdown action-button">
                             <span class="dropdown-toggle event-action" type="button" data-toggle="dropdown" >
@@ -80,9 +80,11 @@
                                         if($this->request->session()->read('Auth.User.role_id') != 1){
                                             echo "<li>";
                                             echo $this->Html->link(
-                                                '<span class="fa fa-calendar"></span> Today\'s Appointment',
-                                                ['action' => 'add-today-appointment/'.$user->id],
-                                                ['escapeTitle' => false, 'title' => 'Today\'s Appointment']
+                                                '<i class="fa fa-calendar-check-o" aria-hidden="true"></i> Today\'s Appointment',
+                                                ['action' => '#0'],
+                                                ['escapeTitle' => false, 'onclick' => "setUserId(this)", 'user_id' => $user->id, 'title' => 'Add to today\'s Appointment', 'data-toggle' => 'modal',
+                                                    'data-target' => '#serial-no-modal', 'type' => 'button'
+                                                ]
                                             );
                                             echo "</li>";
 
@@ -110,6 +112,10 @@
                 <?php endforeach; ?>
                 </tbody>
             </table>
+
+            <!-- Serial no modal -->
+            <?php echo $this->element('Modal/serial_no_modal') ?>
+
         </div>
 
         <div class="bottom-pagination">
@@ -131,15 +137,3 @@
 
     </div>
 </div>
-
-<script type="text/javascript">
-
-    $(".appointment_calender_date_search").each(function(){
-        $(this).datetimepicker({
-            timepicker:false,
-            format: 'Y-m-d',
-            minDate:new Date()
-        });
-    });
-
-</script>

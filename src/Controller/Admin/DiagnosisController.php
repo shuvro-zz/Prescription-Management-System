@@ -60,7 +60,7 @@ class DiagnosisController extends AppController
         $this->paginate = [
             'contain' => ['DiagnosisLists', 'Medicines', 'Tests'],
             'limit' => 30,
-            'template_name' => [
+            'order' => [
                 'Diagnosis.id' => 'desc'
             ]
         ];
@@ -111,10 +111,20 @@ class DiagnosisController extends AppController
 
             if(empty($diagnosis_template)){
 
+                if (isset($this->request->data['medicines']['medicine_id'])){
+                    $this->removeBlankArray();
+                }
+
+                $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
+                unset($this->request->data['medicines']);
+
                 $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
 
                 $diagnosi->doctor_id = $this->request->session()->read('Auth.User.id');
                 if ($this->Diagnosis->save($diagnosi)) {
+
+                    $this->saveDiagnosisMedicines($medicines, $diagnosi->id);
+
                     $this->Flash->adminSuccess(__('The diagnosis template has been saved.'),  ['key' => 'admin_success'] );
                 } else {
                     $this->Flash->adminError(__('The diagnosis template could not be saved. Please, try again.'), ['key' => 'admin_error']);
@@ -130,8 +140,9 @@ class DiagnosisController extends AppController
         $diagnosis_list = $this->DiagnosisLists->find('list', ['limit' => 1]);
 
         $medicines = $tests = [];
+        $diagnosis_medicines = array('medicine_id'=>'');
 
-        $this->set(compact('diagnosi', 'diagnosis_list', 'medicines', 'tests'));
+        $this->set(compact('diagnosi', 'diagnosis_list', 'medicines', 'diagnosis_medicines', 'tests'));
         $this->set('_serialize', ['diagnosi']);
     }
 
@@ -160,8 +171,19 @@ class DiagnosisController extends AppController
                 ->first();
 
             if(empty($diagnosis_template)){
+
+                if (isset($this->request->data['medicines']['medicine_id'])){
+                    $this->removeBlankArray();
+                }
+
+                $medicines = isset($this->request->data['medicines'])?$this->request->data['medicines']:'';
+                unset($this->request->data['medicines']);
+
                 $diagnosi = $this->Diagnosis->patchEntity($diagnosi, $this->request->data);
                 if ($this->Diagnosis->save($diagnosi)) {
+
+                    $this->saveDiagnosisMedicines($medicines, $diagnosi->id);
+
                     $this->Flash->adminSuccess(__('The diagnosis template has been saved.'), ['key' => 'admin_success']);
                 } else {
                     $this->Flash->adminError(__('The diagnosis template could not be saved. Please, try again.'), ['key' => 'admin_error']);
@@ -174,11 +196,21 @@ class DiagnosisController extends AppController
         }
 
         // get existing medicines
-        $default_medicines = [];
-        if($diagnosi['medicines']){
-            foreach($diagnosi['medicines'] as $medicine){
-                $default_medicines[] = $medicine['id'];
+        $diagnosis_medicines = $this->Diagnosis->DiagnosisMedicines->find('all')->where(['DiagnosisMedicines.diagnosis_id' => $id ]);
+
+        // populate selected medicines only if medicines are available
+        $medicines = '';
+        if(count($diagnosis_medicines->toArray())==0){
+            $diagnosis_medicines = array('medicine_id'=>'');
+        }else{
+            $default_medicines = [];
+            foreach($diagnosis_medicines as $diagnosis_medicine){
+                $default_medicines[] = $diagnosis_medicine->medicine_id;
             }
+
+            $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 200])->where(
+                ['Medicines.id IN' => $default_medicines]
+            );
         }
 
         // get existing tests
@@ -187,14 +219,6 @@ class DiagnosisController extends AppController
             foreach($diagnosi['tests'] as $test){
                 $default_tests[] = $test['id'];
             }
-        }
-
-        // populate selected medicines only if medicines are available
-        $medicines = '';
-        if($default_medicines){
-            $medicines = $this->Diagnosis->Medicines->find('list', ['limit' => 100])->where([
-                'Medicines.id IN ' => $default_medicines
-            ]);
         }
 
         // populate selected tests only if tests are available
@@ -211,7 +235,7 @@ class DiagnosisController extends AppController
         $diagnosis_list = [];
         $diagnosis_list[$get_diagnosis->id] = $get_diagnosis['name'];
 
-        $this->set(compact('diagnosi', 'medicines', 'tests', 'default_medicines', 'default_tests', 'diagnosis_list'));
+        $this->set(compact('diagnosi', 'medicines', 'tests', 'diagnosis_medicines', 'default_tests', 'diagnosis_list'));
         $this->set('_serialize', ['diagnosi']);
     }
 
@@ -313,8 +337,7 @@ class DiagnosisController extends AppController
         foreach($diagnosis as $item){
             if($item->medicines){
                 foreach($item->medicines as $medicine){
-                    $rule = $this->getMedicineRule($prescription_id, $medicine->id);
-                    $medicines[] = array('id' => $medicine->id, 'name' => $medicine->name, 'rule' => $rule  );
+                    $medicines[] = array('id' => $medicine->id, 'name' => $medicine->name, 'rule' => $medicine->_joinData->rule  );
                 }
             }
         }
@@ -334,18 +357,54 @@ class DiagnosisController extends AppController
         return $tests;
     }
 
-    function getMedicineRule($prescription_id, $medicine_id){
-        if(is_numeric($prescription_id)){
-            $this->loadModel('PrescriptionsMedicines');
-            $prescriptions_medicines = $this->PrescriptionsMedicines->find('all')
-                ->where(['PrescriptionsMedicines.prescription_id' => $prescription_id,
-                    'PrescriptionsMedicines.medicine_id' => $medicine_id])->first();
-
-            if(!empty($prescriptions_medicines->rule)) {
-                return $prescriptions_medicines->rule;
+    public function removeBlankArray(){
+        if($this->request->data['medicines']['medicine_id']){
+            $medicine_ids = [];
+            foreach($this->request->data['medicines']['medicine_id'] as $key => $value){
+                if(!empty($value) and $value!='' and is_array($value)){
+                    $medicine_ids[] = $value[0];
+                }
             }
+            $this->request->data['medicines']['medicine_id'] = $medicine_ids;
         }
     }
+
+    function saveDiagnosisMedicines($medicines, $diagnosis_id){
+        // Start: Prescriptions medicines
+        $this->loadModel('DiagnosisMedicines');
+        $this->DiagnosisMedicines->deleteAll(['DiagnosisMedicines.diagnosis_id' => $diagnosis_id]);
+
+        $prescriptions_medicines = $this->prepareMedicine($medicines, $diagnosis_id);
+        if($prescriptions_medicines){
+            foreach($prescriptions_medicines as $prescriptions_medicine){
+                $prescription_medicine = $this->DiagnosisMedicines->newEntity();
+                $prescription_medicine = $this->DiagnosisMedicines->patchEntity($prescription_medicine, $prescriptions_medicine );
+                if(!$this->DiagnosisMedicines->save($prescription_medicine)){
+                    $this->log('DiagnosisMedicines could not save');
+                }
+            }
+        }
+        // End: Prescriptions medicines
+    }
+
+    function prepareMedicine($medicines,$diagnosis_id){
+        if($medicines){
+            $new_medicines = [];
+            foreach($medicines['medicine_id'] as $key => $val) {
+                $new_medicines[$key]['diagnosis_id'] = $diagnosis_id;
+                $new_medicines[$key]['medicine_id'] = $val;
+                $new_medicines[$key]['rule'] = $medicines['rule'][$key];
+            }
+
+            return $new_medicines;
+        }
+    }
+
+
+
+
+
+
 
 
 

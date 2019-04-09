@@ -11,17 +11,6 @@ class DashboardController extends AppController
 
     public $components = ['Common'];
 
-    public function beforeFilter(Event $event)
-    {
-        parent::beforeFilter($event);
-        // Allow users to register and logout.
-        // You should not add the "login" action to allow list. Doing so would
-        // cause problems with normal functioning of AuthComponent.
-        $this->Auth->allow(['add', 'logout', 'login']);
-
-        $this->set('loadDashboardScript', false);
-    }
-
     public function index() {
 
         $this->loadModel("Users");
@@ -36,7 +25,7 @@ class DashboardController extends AppController
         $this->paginate = [
             'limit' => 30,
             'order' => [
-                'Users.updated' => 'desc'
+                'Users.serial_no' => 'asc'
             ]
         ];
         $users = $this->paginate($users);
@@ -45,7 +34,15 @@ class DashboardController extends AppController
         $this->set('_serialize', ['users']);
     }
 
-    public function listView(){}
+    function addAppointments(){
+        $save = $this->Common->addAppointments();
 
-    public function add(){}
+        if ($save){
+            $this->Flash->adminSuccess('Patient has been added for appointments', ['key' => 'admin_success']);
+        }else{
+            $this->Flash->adminError('Patient could not be added for appointments ', ['key' => 'admin_error']);
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
 }

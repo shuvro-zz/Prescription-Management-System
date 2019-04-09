@@ -218,6 +218,10 @@ select[multiple] {
     top: 28px;
     position: absolute;
 }
+.diagnosis_template_medicine_box{
+    border: 1px solid #EBEBEB;
+    height: 152px!important;
+}
 .increase_zindex{
     z-index: 999999;
 }
@@ -623,6 +627,7 @@ label.error {
 .leftside-navigation .navigation-item a {
     font-size: 16px;
     color: #fff;
+    height: 52px;
 }
 .leftside-navigation .navigation-item a .nav-icon {
     width: 40px;
@@ -923,21 +928,25 @@ form.example::after {
 }
 
 .serail_no {
-    width: 40%;
+    width: 70px;
     margin-left: 5px;
     text-align: center;
+    border: 1px solid #dde3e5;
+    border-radius: 3px;
 }
 
 .appointment_calender_date {
-    width: 55%;
+    width: 95px;
     margin-left: 5px;
     text-align: center;
+    border: 1px solid #dde3e5;
+    border-radius: 3px;
 }
 
 .today_appointment_loading{
     position: absolute;
-    left: 128px;
-    top: 34px;
+    left: 120px;
+    top: 33px;
     font-size: 20px;
 }
 .cursore_pointer{
@@ -947,6 +956,36 @@ form.example::after {
     margin-right: 15px;
     float: left;
 }
+.width_auto{
+    width: auto!important;
+}
+.modal-header{
+    padding: 0px 15px!important;
+}
+.modal-body{
+    height: 130px;
+}
+#serial-no-modal .modal-content label.error, #calender-date-modal .modal-content label.error {
+    bottom: -27px;
+    top: 50px;
+    left: 80px;
+}
+#calender-date-modal .modal-content label.error {
+    bottom: -27px;
+    top: 50px;
+    left: 53px;
+}
+#serial-no-modal .today_appointment_loading {
+    position: absolute;
+    left: 105px;
+    top: 19px;
+    font-size: 20px;
+}
+.appointment_calender_date_search{
+    width: 140px;
+    text-align: left;
+}
+
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

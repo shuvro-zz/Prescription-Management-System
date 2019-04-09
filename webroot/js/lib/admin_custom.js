@@ -83,26 +83,15 @@ jQuery(document).ready(function ($) {
         displayNoResultsMessage: true
     });
 
+    jQuery('#user-serial-no').validate({
+    });
+
+    jQuery('#user-calender-date').validate({
+    });
+
 });
 
 function initDatePicker(){
-
-    $(".datetime").each(function(){
-        var format = $(this).attr('format')
-        if(!format || $.trim(format)==""){
-            format = 'Y/m/d h:m A'
-        }
-        var formatTime = $(this).attr('formatTime')
-        if(!formatTime || $.trim(formatTime)==""){
-            formatTime = 'h:m A'
-        }
-
-        $('.datetime').datetimepicker({
-            format:'Y/m/d h:m A',
-            formatTime:formatTime
-        });
-
-    });
 
     $(".date").each(function(){
         $(this).datetimepicker({
@@ -111,15 +100,14 @@ function initDatePicker(){
         });
     });
 
-
-    $('.time').datetimepicker({
-        datepicker:false,
-        format:'H:i'
+    $(".appointment_calender_date").each(function(){
+        $(this).datetimepicker({
+            timepicker:false,
+            format: 'd-m-Y',
+            minDate:new Date()
+        });
     });
 
-    $(".date").prop('readonly', false);
-
-    $(".time").prop('readonly', false);
 
 }
 
@@ -159,4 +147,27 @@ function unsetzIndex(e){
     if($(e).find('input[type=text]').focusout(function(){
         $(e).removeClass('drop_down_overlap');
     }));
+}
+
+//Set user id to add patient to today appointment
+function setUserId(e) {
+    $('#user-id').val(e.getAttribute('user_id'))
+    setLastSerialNo();
+}
+
+//Set user id to add patient to appointments
+function setUserIdForDate(e) {
+    $('#user-id-for-date').val(e.getAttribute('user_id'))
+}
+
+//Get last serial no for today appointment
+function setLastSerialNo(){
+
+    $('#today-appointment-loading').removeClass('hide');
+
+    $.get(home_url+"admin/users/get-last-serial-no", function(response, status){
+        $('#serial-no').val($.parseJSON(response).last_serial_no+1)
+
+        $('#today-appointment-loading').addClass('hide');
+    });
 }

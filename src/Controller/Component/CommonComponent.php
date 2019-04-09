@@ -63,7 +63,7 @@ class CommonComponent extends Component
                 'Prescriptions.doctor_id' => $doctor_id,
                 'Prescriptions.user_id' => $patient_id
             ])
-            ->template_name(['Prescriptions.id' => 'desc'])->first();
+            ->order(['Prescriptions.id' => 'desc'])->first();
 
         return $latest_prescription;
     }
@@ -75,5 +75,26 @@ class CommonComponent extends Component
                             ->select('id')->first();
 
         return $online_doctor_id['id'];
+    }
+
+    function addTodayAppointment(){
+        $this->controller->loadModel('Users');
+
+        $patient = $this->controller->Users->get($this->request->data['user_id']);
+        $patient->appointment_date = date('Y-m-d ');
+        $patient->serial_no = $this->request->data['serial_no'];
+        $patient->is_visited = 0;
+
+        return $this->controller->Users->save($patient);
+    }
+
+    function addAppointments(){
+        $this->controller->loadModel('Users');
+
+        $patient = $this->controller->Users->get($this->request->data['user_id']);
+        $patient->appointment_date = date('Y-m-d', strtotime($this->request->data['appointment_calender_date']));
+        $patient->is_visited = 0;
+
+        return $this->controller->Users->save($patient);
     }
 }

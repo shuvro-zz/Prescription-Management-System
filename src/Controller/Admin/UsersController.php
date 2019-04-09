@@ -115,7 +115,7 @@ class UsersController extends AppController
                         $user->serial_no = $this->request->data['serial_no'];
 
                     }elseif ($appointment_date = 'appointments'){
-                        $user->appointment_date = $this->request->data['appointment_calender_date'];
+                        $user->appointment_date = date('Y-m-d', strtotime($this->request->data['appointment_calender_date']));
                     }
                 }
 
@@ -169,7 +169,7 @@ class UsersController extends AppController
                             $user->serial_no = $this->request->data['serial_no'];
 
                         }elseif ($appointment_date = 'appointments'){
-                            $user->appointment_date = $this->request->data['appointment_calender_date'];
+                            $user->appointment_date = date('Y-m-d', strtotime($this->request->data['appointment_calender_date']));
                             $user->serial_no = 0;
                         }
                     }
@@ -678,17 +678,25 @@ class UsersController extends AppController
         return $token;
     }
 
-    function addTodayAppointment($id = null){
-        $this->autoRender = false;
+    function addTodayAppointment(){
+        $save = $this->Common->addTodayAppointment();
 
-        $patient = $this->Users->get($id);
-        $patient->appointment_date = date('Y-m-d ');
-        $patient->is_visited = 0;
-
-        if ( $this->Users->save($patient)){
+        if ($save){
             $this->Flash->adminSuccess('Patient has been added for today\'s appointment', ['key' => 'admin_success']);
         }else{
             $this->Flash->adminError('Patient could not be added for today\'s appointment ', ['key' => 'admin_error']);
+        }
+
+        return $this->redirect([ 'action' => 'index']);
+    }
+
+    function addAppointments(){
+        $save = $this->Common->addAppointments();
+
+        if ($save){
+            $this->Flash->adminSuccess('Patient has been added for appointments', ['key' => 'admin_success']);
+        }else{
+            $this->Flash->adminError('Patient could not be added for appointments ', ['key' => 'admin_error']);
         }
 
         return $this->redirect(['action' => 'index']);
