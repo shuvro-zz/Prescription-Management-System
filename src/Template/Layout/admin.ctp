@@ -22,7 +22,7 @@
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
-		'admin_styles/css/style.css?v=1.5',
+		'admin_styles/css/style.css?v=1.6',
 		'admin_styles/css/tokenize2.css',
 		'lib/jquery.datetimepicker.min.css',
         'admin_styles/css/jquery.imageview.css',
@@ -40,6 +40,7 @@
 		'lib/form_builder/form-builder.min.js',
 		'lib/jquery.datetimepicker.min.js',
 		'lib/admin_custom.js',
+		'lib/admin_appointment.js',
 		'lib/tokenize2.js',
 		'lib/jquery.imageview.js',
 	]);

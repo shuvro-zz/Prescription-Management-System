@@ -82,22 +82,11 @@
                                         if($this->request->session()->read('Auth.User.role_id') != 1){
                                             echo "<li>";
                                             echo $this->Html->link(
-                                                '<i class="fa fa-calendar-check-o" aria-hidden="true"></i> Today\'s Appointment',
+                                                '<i class="fa fa-calendar" aria-hidden="true"></i> Appointments',
                                                 ['action' => '#0'],
-                                                ['escapeTitle' => false, 'onclick' => "setUserId(this)", 'user_id' => $user->id, 'title' => 'Add to today\'s Appointment', 'data-toggle' => 'modal',
+                                                ['escapeTitle' => false, 'onclick' => "setAppointmentUserId(this)", 'user_id' => $user->id, 'title' => 'Add to today\'s Appointment', 'data-toggle' => 'modal',
                                                     'data-target' => '#serial-no-modal', 'type' => 'button'
                                                 ]
-                                            );
-                                            echo "</li>";
-
-                                            /*'add-today-appointment/'.$user->id*/
-
-                                            echo "<li>";
-                                            echo $this->Html->link(
-                                                '<span class="fa fa-calendar"></span> Appointments',
-                                                ['action' => '#0'],
-                                                ['escapeTitle' => false, 'onclick' => "setUserIdForDate(this)", 'user_id' => $user->id, 'title' => 'Add to appointments', 'data-toggle' => 'modal',
-                                                    'data-target' => '#calender-date-modal', 'type' => 'button']
                                             );
                                             echo "</li>";
 
@@ -148,11 +137,8 @@
                 </tbody>
             </table>
 
-            <!-- Serial no modal -->
-            <?php echo $this->element('Modal/serial_no_modal') ?>
-
-            <!-- Calender date modal -->
-            <?php echo $this->element('Modal/calender_modal') ?>
+            <!--  Appointment modal -->
+            <?php echo $this->element('Modal/appointment_modal') ?>
 
         </div>
 

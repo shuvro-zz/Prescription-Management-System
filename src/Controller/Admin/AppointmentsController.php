@@ -60,7 +60,8 @@ class AppointmentsController extends AppController
         $this->paginate = [
             'limit' => 30,
             'order' => [
-                'Users.appointment_date' => 'asc'
+                'Users.appointment_date' => 'asc',
+                'Users.serial_no' => 'asc'
             ]
         ];
         $users = $this->paginate($query);
@@ -121,15 +122,15 @@ class AppointmentsController extends AppController
         $session->delete('users_search_from_dashboard');
     }
 
-    function addTodayAppointment(){
-       $save = $this->Common->addTodayAppointment();
+    function addAppointment(){
+        $save = $this->Common->addAppointments();
 
         if ($save){
-            $this->Flash->adminSuccess('Patient has been added for today\'s appointment', ['key' => 'admin_success']);
+            $this->Flash->adminSuccess('Patient has been added for appointments', ['key' => 'admin_success']);
         }else{
-            $this->Flash->adminError('Patient could not be added for today\'s appointment ', ['key' => 'admin_error']);
+            $this->Flash->adminError('Patient could not be added for appointments ', ['key' => 'admin_error']);
         }
 
-        return $this->redirect([ 'action' => 'index']);
+        return $this->redirect(['action' => 'index']);
     }
 }

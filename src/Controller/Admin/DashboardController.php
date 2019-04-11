@@ -34,7 +34,7 @@ class DashboardController extends AppController
         $this->set('_serialize', ['users']);
     }
 
-    function addAppointments(){
+    function addAppointment(){
         $save = $this->Common->addAppointments();
 
         if ($save){

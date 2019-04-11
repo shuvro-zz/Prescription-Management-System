@@ -945,7 +945,7 @@ form.example::after {
 
 .today_appointment_loading{
     position: absolute;
-    left: 120px;
+    left: 113px;
     top: 33px;
     font-size: 20px;
 }
@@ -965,11 +965,7 @@ form.example::after {
 .modal-body{
     height: 130px;
 }
-#serial-no-modal .modal-content label.error, #calender-date-modal .modal-content label.error {
-    bottom: -27px;
-    top: 50px;
-    left: 80px;
-}
+
 #calender-date-modal .modal-content label.error {
     bottom: -27px;
     top: 50px;
@@ -977,8 +973,8 @@ form.example::after {
 }
 #serial-no-modal .today_appointment_loading {
     position: absolute;
-    left: 105px;
-    top: 19px;
+    left: 98px;
+    top: 33px;
     font-size: 20px;
 }
 .appointment_calender_date_search{

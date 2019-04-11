@@ -99,16 +99,6 @@ function initDatePicker(){
             format: 'd/m/Y'
         });
     });
-
-    $(".appointment_calender_date").each(function(){
-        $(this).datetimepicker({
-            timepicker:false,
-            format: 'd-m-Y',
-            minDate:new Date()
-        });
-    });
-
-
 }
 
 function getUserInfo(user_id){
@@ -149,25 +139,3 @@ function unsetzIndex(e){
     }));
 }
 
-//Set user id to add patient to today appointment
-function setUserId(e) {
-    $('#user-id').val(e.getAttribute('user_id'))
-    setLastSerialNo();
-}
-
-//Set user id to add patient to appointments
-function setUserIdForDate(e) {
-    $('#user-id-for-date').val(e.getAttribute('user_id'))
-}
-
-//Get last serial no for today appointment
-function setLastSerialNo(){
-
-    $('#today-appointment-loading').removeClass('hide');
-
-    $.get(home_url+"admin/users/get-last-serial-no", function(response, status){
-        $('#serial-no').val($.parseJSON(response).last_serial_no+1)
-
-        $('#today-appointment-loading').addClass('hide');
-    });
-}

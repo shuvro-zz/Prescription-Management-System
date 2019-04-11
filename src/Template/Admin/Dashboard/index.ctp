@@ -116,10 +116,11 @@
 
                                             echo "<li>";
                                             echo $this->Html->link(
-                                                '<span class="fa fa-calendar"></span> Appointments',
+                                                '<i class="fa fa-calendar" aria-hidden="true"></i> Appointments',
                                                 ['action' => '#0'],
-                                                ['escapeTitle' => false, 'onclick' => "setUserIdForDate(this)", 'user_id' => $user->id, 'title' => 'Add to appointments', 'data-toggle' => 'modal',
-                                                    'data-target' => '#calender-date-modal', 'type' => 'button']
+                                                ['escapeTitle' => false, 'onclick' => "setAppointmentUserId(this)", 'user_id' => $user->id, 'title' => 'Add to today\'s Appointment', 'data-toggle' => 'modal',
+                                                    'data-target' => '#serial-no-modal', 'type' => 'button'
+                                                ]
                                             );
                                             echo "</li>";
                                             ?>
@@ -132,8 +133,8 @@
                         </tbody>
                     </table>
 
-                    <!-- Calender date modal -->
-                    <?php echo $this->element('Modal/calender_modal') ?>
+                    <!-- Appointment modal -->
+                    <?php echo $this->element('Modal/appointment_modal') ?>
 
                 </div>
 

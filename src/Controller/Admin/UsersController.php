@@ -108,15 +108,17 @@ class UsersController extends AppController
                 $user->role_id = 3;
                 $user->doctor_id = $doctor_id;
 
-                if ($appointment_date = $this->request->data['appointment_date']){
+                if (isset($this->request->data['appointment_date'])){
+
+                    $appointment_date = $this->request->data['appointment_date'];
 
                     if ($appointment_date == 'today_appointment'){
                         $user->appointment_date = date('Y-m-d');
-                        $user->serial_no = $this->request->data['serial_no'];
 
-                    }elseif ($appointment_date = 'appointments'){
+                    }else {
                         $user->appointment_date = date('Y-m-d', strtotime($this->request->data['appointment_calender_date']));
                     }
+                    $user->serial_no = $this->request->data['serial_no'];
                 }
 
                 if ($this->Users->save($user)) {
@@ -162,16 +164,17 @@ class UsersController extends AppController
                 $user = $this->Users->patchEntity($user, $this->request->data);
 
                 if ($user['role_id'] != 2){ // doctor
-                    if ($appointment_date = $this->request->data['appointment_date']){
+                    if (isset($this->request->data['appointment_date'])){
+
+                        $appointment_date = $this->request->data['appointment_date'];
 
                         if ($appointment_date == 'today_appointment'){
                             $user->appointment_date = date('Y-m-d');
-                            $user->serial_no = $this->request->data['serial_no'];
 
-                        }elseif ($appointment_date = 'appointments'){
+                        }else {
                             $user->appointment_date = date('Y-m-d', strtotime($this->request->data['appointment_calender_date']));
-                            $user->serial_no = 0;
                         }
+                        $user->serial_no = $this->request->data['serial_no'];
                     }
                 }
 
@@ -678,19 +681,7 @@ class UsersController extends AppController
         return $token;
     }
 
-    function addTodayAppointment(){
-        $save = $this->Common->addTodayAppointment();
-
-        if ($save){
-            $this->Flash->adminSuccess('Patient has been added for today\'s appointment', ['key' => 'admin_success']);
-        }else{
-            $this->Flash->adminError('Patient could not be added for today\'s appointment ', ['key' => 'admin_error']);
-        }
-
-        return $this->redirect([ 'action' => 'index']);
-    }
-
-    function addAppointments(){
+    function addAppointment(){
         $save = $this->Common->addAppointments();
 
         if ($save){
@@ -702,7 +693,7 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    function getLastSerialNo(){
+    function getTodayAppointmentLastSerialNo(){
 
         $today_appointment = $this->Users->find('All')->order(['Users.serial_no' => 'desc'])
             ->where([
@@ -712,6 +703,25 @@ class UsersController extends AppController
             ])->first();
 
         $last_serial_no = isset($today_appointment->serial_no)?$today_appointment->serial_no:0;
+
+        echo json_encode(['last_serial_no' => $last_serial_no]);die;
+    }
+
+    function getAppointmentDateLastSerialNo($appointment_calender_date = null){
+
+        if ($appointment_calender_date != null){
+
+            $appointments = $this->Users->find('All')->order(['Users.serial_no' => 'desc'])
+                ->where([
+                    'Users.doctor_id' => $this->request->session()->read('Auth.User.id'),
+                    'Users.role_id' => 3,  // patient = role_id 3
+                    'Users.appointment_date' => date('Y-m-d', strtotime($appointment_calender_date))
+                ])->first();
+
+            $last_serial_no = isset($appointments->serial_no)?$appointments->serial_no:0;
+        }else{
+            $last_serial_no = 0;
+        }
 
         echo json_encode(['last_serial_no' => $last_serial_no]);die;
     }

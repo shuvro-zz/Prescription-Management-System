@@ -34,15 +34,6 @@
     </div>
 </div>
 
-<!--<div class="col-sm-12">
-    <div class="form-group">
-        <div class="inputs">
-            <?php /*echo $this->Form->input('medicines._ids', ['options' => $medicines, 'default' => isset($default_medicines)?$default_medicines:'', 'class' => 'tokenize-sortable-demo1 medicine']); */?>
-        </div>
-    </div>
-</div>
--->
-
 <div class="col-sm-12">
     <div class="medicines_section">
         <button type="button" id="addMoreMedicine" class="add_more_btn" title="Add more medicine"><span class="fa fa-plus"></span></button>

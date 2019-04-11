@@ -102,12 +102,12 @@
                     <input id="today-appointment" type="radio" name="appointment_date" value="today_appointment" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') == date('Y-m-d'))? "checked":""):"" ?>>
                     <label for="today-appointment" class="cursore_pointer">Today's Appointment</label><br>
 
-                    <span id="serial-no-section" class="hidden">
-                        <label>Serial No</label> <i class="fa fa-magic cursore_pointer" onclick="setLastSerialNo()" title="Automatic make last serial no" aria-hidden="true"></i>
+                    <span id="serial-no-section" class="<?php echo (isset($user->appointment_date))?(((strtotime($user->appointment_date)) != strtotime(date('d-m-Y')))? "":"hidden"):"" ?>">
+                        <label>Serial No</label> <i class="fa fa-magic cursore_pointer" onclick="setAppointmentLastSerialNo()" title="Automatic make last serial no" aria-hidden="true"></i>
 
                         <span class="hide" id="today-appointment-loading"><i class="fa fa-spinner fa-spin today_appointment_loading" style=""></i></span>
 
-                        <input id="serial-no" type="text" name="serial_no" required value="<?php echo (isset($user->serial_no))? $user->serial_no:'' ?>" class="serail_no">
+                        <input id="serial-no" type="number" min="1" name="serial_no" required value="<?php echo (isset($user->serial_no))? $user->serial_no:'' ?>" class="serail_no">
                     </span>
 
                 </div>
@@ -118,12 +118,12 @@
             <div class="col-sm-3">
                 <div class="form-group">
 
-                    <input id="appointments" type="radio" name="appointment_date" value="appointments" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') > date('Y-m-d'))? "checked":""):"" ?>>
+                    <input id="appointments" type="radio" name="appointment_date" value="appointments" <?php echo (isset($user->appointment_date))?(((strtotime($user->appointment_date)) != strtotime(date('d-m-Y')))? "checked":""):"" ?>>
                     <label for="appointments" class="cursore_pointer">Appointments</label><br>
 
                     <span id="appointment_calender_date" class="hidden">
                         <label class="name">Date</label>
-                        <input type="text" name="appointment_calender_date" required value="<?php echo isset($user->appointment_date)?date( 'd-m-Y', strtotime($user->appointment_date)):'' ?>" placeholder="Click here" autocomplete="off" class="appointment_calender_date">
+                        <input type="text" id="appointment-calender-date" name="appointment_calender_date" required value="<?php echo isset($user->appointment_date)?date( 'd-m-Y', strtotime($user->appointment_date)):'' ?>" placeholder="Click here" autocomplete="off" class="appointment_calender_date">
                     </span>
 
                 </div>
@@ -135,43 +135,3 @@
 
     <?php echo $this->Form->input('id', ['type' =>'hidden', 'id' => 'patient-id', 'value' => (isset($id)? $id:'') ]); ?>
 </div>
-
-<script type="text/javascript">
-
-    $( document ).ready(function() {
-
-        //When page load.......
-        if ( $("#today-appointment").is(":checked")) {
-            $('#serial-no-section').removeClass('hidden');
-        }
-
-        if ( $("#appointments").is(":checked")) {
-            $('#appointment_calender_date').removeClass('hidden');
-        }
-        //End when page load.......
-
-        //Onchange.................
-        $('#today-appointment').change(function () {
-
-            if ($(this).prop("checked")) {
-
-                //Get last serial no
-                setLastSerialNo();
-
-                $('#serial-no-section').removeClass('hidden');
-                $('#appointment_calender_date').addClass('hidden');
-            }
-        });
-
-        $('#appointments').change(function () {
-
-            if ($(this).prop("checked")) {
-                $('#serial-no-section').addClass('hidden');
-                $('#appointment_calender_date').removeClass('hidden');
-            }
-        });
-        //End onchange.................
-    });
-
-
-</script>

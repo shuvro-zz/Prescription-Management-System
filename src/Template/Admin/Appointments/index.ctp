@@ -44,6 +44,7 @@
             <table class="table table-hover  table-striped">
                 <thead>
                 <tr>
+                    <th><?= $this->Paginator->sort('serial no') ?></th>
                     <th><?= $this->Paginator->sort('name') ?></th>
                     <th><?= $this->Paginator->sort('weight') ?></th>
                     <th><?= $this->Paginator->sort('phone') ?></th>
@@ -60,6 +61,7 @@
                 <tbody>
                 <?php foreach ($users as $user): ?>
                     <tr>
+                        <td><?= h($user->serial_no) ?></td>
                         <td><?= ucfirst(h($user->first_name )) ?></td>
                         <td><?= h($user->weight) ?></td>
                         <td><?= h($user->phone) ?></td>
@@ -80,9 +82,9 @@
                                         if($this->request->session()->read('Auth.User.role_id') != 1){
                                             echo "<li>";
                                             echo $this->Html->link(
-                                                '<i class="fa fa-calendar-check-o" aria-hidden="true"></i> Today\'s Appointment',
+                                                '<i class="fa fa-calendar" aria-hidden="true"></i> Appointments',
                                                 ['action' => '#0'],
-                                                ['escapeTitle' => false, 'onclick' => "setUserId(this)", 'user_id' => $user->id, 'title' => 'Add to today\'s Appointment', 'data-toggle' => 'modal',
+                                                ['escapeTitle' => false, 'onclick' => "setAppointmentUserId(this)", 'user_id' => $user->id, 'title' => 'Add to today\'s Appointment', 'data-toggle' => 'modal',
                                                     'data-target' => '#serial-no-modal', 'type' => 'button'
                                                 ]
                                             );
@@ -113,8 +115,8 @@
                 </tbody>
             </table>
 
-            <!-- Serial no modal -->
-            <?php echo $this->element('Modal/serial_no_modal') ?>
+            <!-- Appointment modal -->
+            <?php echo $this->element('Modal/appointment_modal') ?>
 
         </div>
 
