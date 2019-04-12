@@ -102,7 +102,7 @@
                     <input id="today-appointment" type="radio" name="appointment_date" value="today_appointment" <?php echo (isset($user->appointment_date))?((date_format($user->appointment_date, 'Y-m-d') == date('Y-m-d'))? "checked":""):"" ?>>
                     <label for="today-appointment" class="cursore_pointer">Today's Appointment</label><br>
 
-                    <span id="serial-no-section" class="<?php echo (isset($user->appointment_date))?(((strtotime($user->appointment_date)) != strtotime(date('d-m-Y')))? "":"hidden"):"" ?>">
+                    <span id="serial-no-section" class="<?php echo (isset($user->appointment_date))?"":"hidden" ?>">
                         <label>Serial No</label> <i class="fa fa-magic cursore_pointer" onclick="setAppointmentLastSerialNo()" title="Automatic make last serial no" aria-hidden="true"></i>
 
                         <span class="hide" id="today-appointment-loading"><i class="fa fa-spinner fa-spin today_appointment_loading" style=""></i></span>
