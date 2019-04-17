@@ -2,7 +2,7 @@
 <div class="workspace-dashboard page page-ui-tables">
     <div class="page-heading">
         <div class="flex-container">
-            <div class="flex-item"><h4><?= __('Appointments') ?></h4></div>
+            <div class="flex-item"><h4><?= __('Future Appointments') ?></h4></div>
         </div>
     </div>
 

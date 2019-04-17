@@ -20,7 +20,7 @@
     <div class="form-group">
         <label class="name">Chief Complain<span class="" aria-required="true"></span></label>
         <div class="inputs">
-            <?php echo $this->Form->input('chief_complain', ['class' => 'form-control', 'value' => isset($diagnosi->chief_complain)?$diagnosi->chief_complain:'', 'label' => false, 'type' =>'text']); ?>
+            <?php echo $this->Form->input('chief_complain', ['class' => 'form-control', 'value' => isset($diagnosi->chief_complain)?$diagnosi->chief_complain:'', 'rows' => '7', 'label' => false, 'type' =>'textarea']); ?>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
     <div class="form-group">
         <label class="name">On Examination<span class="" aria-required="true"></span></label>
         <div class="inputs">
-            <?php echo $this->Form->input('on_examination', ['class' => 'form-control', 'value' => isset($diagnosi->on_examination)?$diagnosi->on_examination:'', 'label' => false, 'type' =>'text']); ?>
+            <?php echo $this->Form->input('on_examination', ['class' => 'form-control', 'value' => isset($diagnosi->on_examination)?$diagnosi->on_examination:'', 'rows' => '7', 'label' => false, 'type' =>'textarea']); ?>
         </div>
     </div>
 </div>
@@ -88,7 +88,7 @@
     <div class="form-group">
         <label class="name">Other Instruction<span class="" aria-required="true"></span></label> <!--Instruction-->
         <div class="inputs">
-            <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => isset($diagnosi->instructions)?$diagnosi->instructions:'', 'label' => false, 'type' =>'text']); ?>
+            <?php echo $this->Form->input('instructions', ['class' => 'form-control', 'value' => isset($diagnosi->instructions)?$diagnosi->instructions:'', 'rows' => '7', 'label' => false, 'type' =>'textarea']); ?>
         </div>
     </div>
 </div>

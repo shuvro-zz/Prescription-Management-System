@@ -119,7 +119,7 @@
                 <div class="form-group">
 
                     <input id="appointments" type="radio" name="appointment_date" value="appointments" <?php echo (isset($user->appointment_date))?(((strtotime($user->appointment_date)) != strtotime(date('d-m-Y')))? "checked":""):"" ?>>
-                    <label for="appointments" class="cursore_pointer">Appointments</label><br>
+                    <label for="appointments" class="cursore_pointer">Future Appointments</label><br>
 
                     <span id="appointment_calender_date" class="hidden">
                         <label class="name">Date</label>

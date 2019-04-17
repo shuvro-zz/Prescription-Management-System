@@ -39,8 +39,8 @@
                     </span><span class="nav-text">Patients</span></a>
                 </li>
                 <li class="navigation-item dashboard <?php if($this->name=='Appointments') echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'Appointments','action' => 'index' )) ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                    </span><span class="nav-text">Appointments</span></a>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'Appointments','action' => 'index' )) ?>"><span class="nav-icon"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    </span><span class="nav-text">Future Appointments</span></a>
                 </li>
                 <li class="navigation-item dashboard <?php if($this->name=='Diagnosis') echo 'active'?>">
                     <a href="<?php echo $this->Url->build(array( 'controller' => 'diagnosis','action' => 'index' )); ?>"><span class="nav-icon"><i class="fa fa-file-text" aria-hidden="true"></i>
