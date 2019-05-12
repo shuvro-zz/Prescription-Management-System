@@ -4,8 +4,6 @@ jQuery(document).ready(function ($) {
         jQuery('#slug').val(slug(jQuery('#name').val()));
     });
 
-
-
     var slug = function(str) {
         var $slug = '';
         var trimmed = jQuery.trim(str);
@@ -13,9 +11,7 @@ jQuery(document).ready(function ($) {
         replace(/-+/g, '-').
         replace(/^-|-$/g, '');
         return $slug.toLowerCase();
-    }
-
-
+    };
 
     $("#new_patient").click(function(){
         $("#patient_drop_down").toggleClass("hide");
@@ -79,6 +75,7 @@ jQuery(document).ready(function ($) {
                 }
             });
         },
+        dropdownMaxItems: 20,
         sortable: true,
         displayNoResultsMessage: true
     });

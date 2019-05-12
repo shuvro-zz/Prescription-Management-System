@@ -981,7 +981,6 @@ form.example::after {
     width: 140px;
     text-align: left;
 }
-
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

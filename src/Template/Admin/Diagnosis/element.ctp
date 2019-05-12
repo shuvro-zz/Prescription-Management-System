@@ -1,3 +1,10 @@
+<style>
+    .dropdown-menu{
+        overflow-y: scroll!important;
+        max-height: 300px!important;
+    }
+</style>
+
 <div class="col-sm-12">
     <div class="form-group">
         <label class="name">Template Name *<span class="" aria-required="true"></span></label>
