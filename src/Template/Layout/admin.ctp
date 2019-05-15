@@ -18,7 +18,7 @@
 		'styles/vendors/bootstrap.min.css',
 		'font-awesome/css/font-awesome.min.css',
 		'bootstrap-select/bootstrap-select.min.css',
-        'admin_styles/css/admin_style.css',
+        'admin_styles/css/admin_style.css?v=1.7',
 		'admin_styles/css/form-builder.min.css',
 		'admin_styles/css/form-render.min.css',
 		'admin_styles/css/demo.css',
