@@ -981,6 +981,9 @@ form.example::after {
     width: 140px;
     text-align: left;
 }
+#patient_drop_down .dropdown-menu .inner{
+    overflow-y: initial!important;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

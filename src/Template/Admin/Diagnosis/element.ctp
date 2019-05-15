@@ -117,6 +117,7 @@
                         }
                     });
                 },
+                dropdownMaxItems: 50,
                 sortable: true,
                 displayNoResultsMessage: true,
                 tokensMaxItems: 1

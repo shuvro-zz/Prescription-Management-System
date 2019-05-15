@@ -14,6 +14,13 @@
             }
         }
     ?>
+    
+    <style>
+        .dropdown-menu{
+            overflow-y: scroll!important;
+            max-height: 300px!important;
+        }
+    </style>
 
     <div class="row">
         <div class="col-sm-4">
@@ -324,6 +331,7 @@
                         }
                     });
                 },
+                dropdownMaxItems: 50,
                 sortable: true,
                 displayNoResultsMessage: true,
                 tokensMaxItems: 1
@@ -378,6 +386,7 @@
                             }
                         });
                     },
+                    dropdownMaxItems: 50,
                     sortable: true,
                     displayNoResultsMessage: true,
                     tokensMaxItems: 1
