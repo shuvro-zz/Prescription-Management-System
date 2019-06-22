@@ -125,4 +125,3 @@ function unsetzIndex(e){
         $(e).removeClass('drop_down_overlap');
     }));
 }
-
