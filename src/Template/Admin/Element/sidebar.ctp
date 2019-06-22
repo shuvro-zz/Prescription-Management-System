@@ -35,7 +35,7 @@
 
             <?php if( $this->request->session()->read('Auth.User.role_id') != 1){ ?> <!--Admin role id-->
                 <li class="navigation-item dashboard <?php if($this->name=='Users') echo 'active'?>">
-                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'index' )) ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <a href="<?php echo $this->Url->build(array( 'controller' => 'users','action' => 'reset' )) ?>"><span class="nav-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </span><span class="nav-text">Patients</span></a>
                 </li>
                 <li class="navigation-item dashboard <?php if($this->name=='Appointments') echo 'active'?>">

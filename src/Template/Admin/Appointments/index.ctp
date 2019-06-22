@@ -1,8 +1,26 @@
+<?php
+
+use Cake\Core\Configure;
+
+?>
 
 <div class="workspace-dashboard page page-ui-tables">
     <div class="page-heading">
         <div class="flex-container">
             <div class="flex-item"><h4><?= __('Future Appointments') ?></h4></div>
+
+            <div class="flex-item">
+                <div class="flex-container">
+                    <?php
+                        echo $this->Html->link(
+                            '<span class="icon">+</span> Add Appointments',
+                            ['controller' => 'users', 'action' => 'add'],
+                            ['class' => 'add-event-btn', 'escapeTitle' => false]
+                        );
+                    ?>
+                </div>
+            </div>
+
         </div>
     </div>
 
