@@ -121,12 +121,18 @@ class UsersController extends AppController
                     $user->serial_no = $this->request->data['serial_no'];
                 }
 
+                $future_appointment = $this->request->query('future-appointment')? : false;
+
                 if ($this->Users->save($user)) {
                     $success_message = __('The patient has been saved.');
                     $this->Flash->adminSuccess($success_message, ['key' => 'admin_success']);
                 } else {
                     $error_message = __('The patient could not be saved. Please, try again.');
                     $this->Flash->adminError($error_message, ['key' => 'admin_error']);
+                }
+
+                if($future_appointment){
+                    return $this->redirect(['controller' => 'Appointments', 'action' => 'index']);
                 }
 
                 return $this->redirect(['action' => 'index']);

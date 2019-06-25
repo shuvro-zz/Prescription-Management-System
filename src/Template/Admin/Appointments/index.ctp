@@ -14,7 +14,7 @@ use Cake\Core\Configure;
                     <?php
                         echo $this->Html->link(
                             '<span class="icon">+</span> Add Appointments',
-                            ['controller' => 'users', 'action' => 'add'],
+                            ['controller' => 'users', 'action' => 'add'. '?future_appointment=1'],
                             ['class' => 'add-event-btn', 'escapeTitle' => false]
                         );
                     ?>
@@ -58,22 +58,19 @@ use Cake\Core\Configure;
             </div>
         </div>
 
-        <div class="table-responsive table-part">
+        <div class="table-responsive table-part appointment_table">
             <table class="table table-hover  table-striped">
                 <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('serial no') ?></th>
-                    <th><?= $this->Paginator->sort('name') ?></th>
-                    <th><?= $this->Paginator->sort('weight') ?></th>
-                    <th><?= $this->Paginator->sort('phone') ?></th>
-                    <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('age', 'Age/Years') ?></th>
-                    <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ ?>
-                        <th><?= $this->Paginator->sort('expire date') ?></th>
-                    <?php } ?>
-                    <th><?= $this->Paginator->sort('appointment') ?></th>
-                    <th><?= $this->Paginator->sort('created') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
+                    <th style="width: 5%"><?= $this->Paginator->sort('serial no') ?></th>
+                    <th style="width: 15%"><?= $this->Paginator->sort('name') ?></th>
+                    <th style="width: 10%"><?= $this->Paginator->sort('weight') ?></th>
+                    <th style="width: 15%"><?= $this->Paginator->sort('phone') ?></th>
+                    <th style="width: 15%"><?= $this->Paginator->sort('email') ?></th>
+                    <th style="width: 10%"><?= $this->Paginator->sort('age', 'Age/Years') ?></th>
+                    <th style="width: 10%"><?= $this->Paginator->sort('appointment') ?></th>
+                    <th style="width: 10%"><?= $this->Paginator->sort('created') ?></th>
+                    <th style="width: 10%" class="actions"><?= __('Actions') ?></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -85,9 +82,6 @@ use Cake\Core\Configure;
                         <td><?= h($user->phone) ?></td>
                         <td><?= h($user->email) ?></td>
                         <td><?= h($user->age) ?></td>
-                        <?php if( $this->request->session()->read('Auth.User.role_id') == 1){ ?>
-                            <td><?= h($user->expire_date) ?></td>
-                        <?php } ?>
                         <td><?= h($user->appointment_date->format('d/m/Y')) ?></td>
                         <td><?= h($user->created->format('d/m/Y')) ?></td>
                         <td class="actions" style="width: 204px;">

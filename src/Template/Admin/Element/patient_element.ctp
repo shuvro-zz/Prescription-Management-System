@@ -135,3 +135,12 @@
 
     <?php echo $this->Form->input('id', ['type' =>'hidden', 'id' => 'patient-id', 'value' => (isset($id)? $id:'') ]); ?>
 </div>
+
+<script>
+
+    $("#appointments").trigger('click');
+
+    setAppointmentLastSerialNo();
+    $('#serial-no-section').removeClass('hidden');
+
+</script>

@@ -984,6 +984,9 @@ form.example::after {
 #patient_drop_down .dropdown-menu .inner{
     overflow-y: initial!important;
 }
+.appointment_table table{
+    table-layout: fixed;
+}
 /**********Responsive**********/
 
 @media only screen and (max-width: 1199px) {

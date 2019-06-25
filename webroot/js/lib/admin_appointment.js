@@ -1,3 +1,5 @@
+// Created  by Abdullah al mamuun
+
 jQuery(document).ready(function ($) {
 
     jQuery('#appointment-form').validate({
