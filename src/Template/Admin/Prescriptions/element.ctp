@@ -337,7 +337,6 @@
                 tokensMaxItems: 1
             });
             //$('.selectpicker').selectpicker('refresh');
-
         });
     });
 
